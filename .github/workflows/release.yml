@@ -1,0 +1,24 @@
+name: Kunden-ZIP bauen
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ZIP bauen (ohne Interna)
+        run: |
+          mkdir -p build/autopilot-kit
+          cp START_HIER.md build/autopilot-kit/
+          cp -r core adapter-claude notfall build/autopilot-kit/
+          rm -rf build/autopilot-kit/core/skills/vertrieb/_TEMPLATE_SKILL.md \
+                 build/autopilot-kit/core/vertraege/_TEMPLATE_VERTRAG.md \
+                 build/autopilot-kit/core/testfaelle/_TEMPLATE_TESTFALL.md
+          cd build && zip -r "autopilot-kit-${GITHUB_REF_NAME}.zip" autopilot-kit
+      - name: An Release anhängen
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/autopilot-kit-*.zip

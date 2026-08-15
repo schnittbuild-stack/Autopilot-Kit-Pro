@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autopilot Kit — Interner Fahrplan</title>
+<style>
+  :root {
+    color-scheme: light;
+    --surface-1: #fcfcfb;
+    --surface-2: #f2f1ee;
+    --surface-3: #e9e8e4;
+    --border: #d8d6d0;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #7a7975;
+    --accent: #2a78d6;
+    --accent-soft: #e3edf9;
+    --good: #008300;
+    --good-soft: #e3f2e3;
+    --warn: #b57b00;
+    --warn-soft: #fdf3dc;
+    --serious: #c43a39;
+    --serious-soft: #fbe7e7;
+    --violet: #4a3aa7;
+    --violet-soft: #ebe8f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --surface-1: #1a1a19;
+      --surface-2: #232322;
+      --surface-3: #2d2d2b;
+      --border: #3d3d3a;
+      --text-primary: #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted: #8f8e86;
+      --accent: #3987e5;
+      --accent-soft: #1d2c3f;
+      --good: #35a035;
+      --good-soft: #1d2e1d;
+      --warn: #c98500;
+      --warn-soft: #33290f;
+      --serious: #e66767;
+      --serious-soft: #3a1f1f;
+      --violet: #9085e9;
+      --violet-soft: #262040;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--surface-1);
+    color: var(--text-primary);
+    line-height: 1.55;
+    padding: 32px 20px 80px;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; }
+
+  header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+  header .sub { color: var(--text-secondary); margin-top: 6px; font-size: 15px; max-width: 720px; }
+  .meta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 18px; }
+  .meta-chip {
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 14px; font-size: 13px; color: var(--text-secondary);
+  }
+  .meta-chip strong { color: var(--text-primary); font-weight: 600; }
+
+  h2 { font-size: 17px; font-weight: 700; margin: 44px 0 6px; letter-spacing: -0.01em; }
+  .h2-sub { color: var(--text-muted); font-size: 13.5px; margin-bottom: 16px; }
+
+  /* ---------- Prinzipien ---------- */
+  .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+  .principle {
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;
+  }
+  .principle .p-title { font-weight: 650; font-size: 13.5px; display: flex; align-items: center; gap: 8px; }
+  .principle .p-title .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+  .principle p { font-size: 12.5px; color: var(--text-secondary); margin-top: 6px; }
+
+  /* ---------- Phasen-Diagramm ---------- */
+  .flow { display: flex; flex-wrap: wrap; gap: 0; align-items: stretch; margin-top: 8px; }
+  .phase-node {
+    position: relative;
+    flex: 1 1 210px; min-width: 200px; max-width: 260px;
+    background: var(--surface-2); border: 1.5px solid var(--border); border-radius: 12px;
+    padding: 14px 16px 12px; margin: 6px 22px 6px 0; cursor: pointer;
+    transition: border-color .15s, transform .1s, box-shadow .15s;
+    text-align: left; font: inherit; color: inherit;
+  }
+  .phase-node:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .phase-node.active { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); background: var(--surface-1); }
+  .phase-node::after {
+    content: "→"; position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+    color: var(--text-muted); font-size: 15px;
+  }
+  .phase-node:last-child::after { content: ""; }
+  .ph-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+  .ph-name { font-weight: 650; font-size: 14.5px; margin-top: 2px; }
+  .ph-time { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .ph-bar { height: 5px; border-radius: 3px; background: var(--surface-3); margin-top: 10px; overflow: hidden; }
+  .ph-bar > i { display: block; height: 100%; width: 0%; background: var(--good); border-radius: 3px; transition: width .25s; }
+  .ph-count { font-size: 11px; color: var(--text-muted); margin-top: 5px; }
+
+  /* ---------- Detailpanel ---------- */
+  .detail {
+    display: none; margin-top: 20px; background: var(--surface-2);
+    border: 1px solid var(--border); border-left: 4px solid var(--accent);
+    border-radius: 12px; padding: 22px 24px;
+  }
+  .detail.open { display: block; }
+  .detail h3 { font-size: 17px; font-weight: 700; }
+  .detail .goal { color: var(--text-secondary); font-size: 14px; margin: 6px 0 18px; max-width: 780px; }
+  .d-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+  @media (max-width: 760px) { .d-grid { grid-template-columns: 1fr; } }
+  .d-col h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); margin-bottom: 10px; }
+  .task { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; cursor: pointer; }
+  .task:last-child { border-bottom: none; }
+  .task input { margin-top: 3px; accent-color: var(--good); cursor: pointer; }
+  .task.done span { color: var(--text-muted); text-decoration: line-through; }
+  .box { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
+  .box .b-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 6px; }
+  .box.dod .b-label { color: var(--good); }
+  .box.risk .b-label { color: var(--serious); }
+  .box.dep .b-label { color: var(--violet); }
+  .box p, .box li { font-size: 13px; color: var(--text-secondary); }
+  .box ul { padding-left: 18px; }
+  .box li { margin: 3px 0; }
+  .risk-item { display: flex; gap: 8px; align-items: flex-start; margin: 5px 0; font-size: 13px; color: var(--text-secondary); }
+  .risk-item .sev { flex: none; font-size: 10.5px; font-weight: 700; border-radius: 5px; padding: 1px 7px; margin-top: 1px; }
+  .sev.hoch { background: var(--serious-soft); color: var(--serious); }
+  .sev.mittel { background: var(--warn-soft); color: var(--warn); }
+
+  /* ---------- Gates ---------- */
+  .gates { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .gate { border: 1.5px dashed var(--warn); border-radius: 12px; padding: 16px 18px; background: var(--warn-soft); }
+  .gate .g-title { font-weight: 700; font-size: 14px; display: flex; gap: 8px; align-items: center; }
+  .gate .g-title::before { content: "⛔"; font-size: 14px; }
+  .gate p { font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
+  .gate .g-crit { margin-top: 10px; font-size: 12.5px; }
+  .gate .g-crit b { color: var(--text-primary); }
+
+  /* ---------- Repo-Struktur ---------- */
+  .repo-flex { display: grid; grid-template-columns: 340px 1fr; gap: 22px; }
+  @media (max-width: 760px) { .repo-flex { grid-template-columns: 1fr; } }
+  .tree {
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px;
+  }
+  .tree-line { padding: 3px 8px; border-radius: 6px; cursor: pointer; white-space: pre; color: var(--text-secondary); }
+  .tree-line:hover { background: var(--surface-3); }
+  .tree-line.sel { background: var(--accent-soft); color: var(--text-primary); font-weight: 600; }
+  .tree-info {
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px;
+  }
+  .tree-info h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .tree-info p { font-size: 13.5px; color: var(--text-secondary); }
+  .tree-info .ti-rule { margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: var(--accent-soft); font-size: 12.5px; color: var(--text-primary); }
+
+  footer { margin-top: 48px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Autopilot Kit — Interner Fahrplan</h1>
+  <p class="sub">Vom leeren Repo zum verkaufsfähigen Produkt. Ein Kern, ein Funnel, Claude Code zuerst.
+  Klicke auf eine Phase für Aufgaben, Deliverables und Risiken. Haken sind nur für diese Sitzung (kein Speichern).</p>
+  <div class="meta-row">
+    <div class="meta-chip">Zeithorizont: <strong>~4 Wochen bis Launch</strong></div>
+    <div class="meta-chip">Produkt V1: <strong>Vertriebspaket, nur Claude Code</strong></div>
+    <div class="meta-chip">Preis: <strong>299 € Intro → 499 € Anker</strong></div>
+    <div class="meta-chip">Team: <strong>2 Personen + eigene Agenten</strong></div>
+  </div>
+</header>
+
+<h2>Die vier Bauprinzipien</h2>
+<p class="h2-sub">Gelten in jeder Phase. Verstöße hier erzeugen die Support- und Drift-Probleme später.</p>
+<div class="principles">
+  <div class="principle"><div class="p-title"><span class="dot"></span>Eine Quelle der Wahrheit</div>
+    <p>Profil, Firmendaten, Tonalität, Verbote stehen genau einmal (profil.md). Skills referenzieren, nie duplizieren. Kein Agent ändert gemeinsame Dateien selbst.</p></div>
+  <div class="principle"><div class="p-title"><span class="dot"></span>Zustand auf der Platte</div>
+    <p>Jede Phase schreibt Fortschritt in STATUS.md. Sessions dürfen jederzeit sterben — nichts geht verloren. Kontextverlust ist kein Ereignis.</p></div>
+  <div class="principle"><div class="p-title"><span class="dot"></span>Übergabeverträge</div>
+    <p>Wo Agent A an Agent B übergibt, ist das Format fest definiert. A darf sich intern ändern, ohne B zu brechen. Der Watchdog testet die Ketten, nicht nur Einzelteile.</p></div>
+  <div class="principle"><div class="p-title"><span class="dot"></span>Kern ≠ Plattform</div>
+    <p>Inhalt (Skills, Interview, Testfälle) ist plattformneutrales Markdown. Nur die dünne Installationsschicht ist Claude-spezifisch. ChatGPT/Codex wird später ein Adapter, kein neues Produkt.</p></div>
+</div>
+
+<h2>Phasenplan</h2>
+<p class="h2-sub">Phasen 2–4 überlappen bewusst — Skills, Installer und Tests entstehen ineinandergreifend.</p>
+<div class="flow" id="flow"></div>
+<div class="detail" id="detail"></div>
+
+<h2>Die zwei Go/No-Go-Gates</h2>
+<p class="h2-sub">Vor diesen Punkten wird kein weiteres Geld und keine weitere Woche investiert.</p>
+<div class="gates">
+  <div class="gate">
+    <div class="g-title">Gate 1 — nach dem Smoke-Test (Ende Woche 1)</div>
+    <p>Video-Creative + Landingpage + kleines Ad-Budget laufen, BEVOR das Kit fertig ist. Gemessen wird Kaufabsicht (Vorbestellung 299 €), nicht Klicks.</p>
+    <p class="g-crit"><b>Weiter, wenn:</b> Klickpreis unter ~1,50 € und Vorbestell-Conversion über ~0,7 %. Sonst: Creative oder Zielgruppe drehen — nicht das Produkt weiterbauen.</p>
+  </div>
+  <div class="gate">
+    <div class="g-title">Gate 2 — nach der Beta (Ende Woche 3)</div>
+    <p>10 echte Nutzer aus dem Netzwerk haben installiert. Gemessen wird: Wie viele kommen ohne Hilfe bis zum Wow-Moment (Phase „Beweis“)?</p>
+    <p class="g-crit"><b>Weiter, wenn:</b> mindestens 8 von 10 ohne Support durchkommen. Sonst: Installer härten, bevor Ads skaliert werden — jeder Gescheiterte ist Rückerstattung + schlechte Bewertung.</p>
+  </div>
+</div>
+
+<h2>Repo-Struktur (klicken für Erklärung)</h2>
+<p class="h2-sub">Ein privates Monorepo in einer neuen GitHub-Organisation. Releases erzeugen das Kunden-ZIP automatisch.</p>
+<div class="repo-flex">
+  <div class="tree" id="tree"></div>
+  <div class="tree-info" id="treeInfo">
+    <h4>Wähle links eine Datei oder einen Ordner</h4>
+    <p>Jeder Eintrag erklärt seine Rolle im System und welches Bauprinzip er umsetzt.</p>
+  </div>
+</div>
+
+<footer>Interner Fahrplan · Stand 14.08.2026 · Haken und Auswahl werden nicht gespeichert (bewusst: Ein-Datei-Artefakt ohne Browser-Storage)</footer>
+</div>
+
+<script>
+const phases = [
+  {
+    tag: "Phase 0", name: "Fundament & Entscheidungen", time: "Tag 0–1",
+    goal: "Die drei Entscheidungen treffen, die alles Weitere bestimmen — bevor eine Zeile gebaut wird. Falsch entschieden kostet hier Wochen, richtig entschieden einen Nachmittag.",
+    tasks: [
+      "Zielgruppe V1 festlegen: KI-Berater (empfohlen) oder Büro-Endnutzer — bestimmt Tonalität, Preis und GitHub-Pflicht",
+      "Produktname + Domain sichern",
+      "Neue GitHub-Organisation anlegen (getrennt von bestehenden Projekten), privates Repo autopilot-kit",
+      "Claude Code Max-Abo auf beiden Rechnern eingerichtet, git konfiguriert",
+      "Digistore24- oder CopeCart-Konto beantragen (Freischaltung dauert Tage — jetzt anstoßen)",
+      "Den EINEN Vertriebs-Workflow benennen, den ihr am besten kennt (wird Agent Nr. 1)"
+    ],
+    dod: "Repo existiert, beide können committen, Zahlungsanbieter beantragt, Zielgruppe schriftlich festgehalten.",
+    risks: [
+      ["mittel", "Zielgruppen-Entscheidung wird vertagt und implizit „beide“ — dann passt weder Ton noch Installationsweg."]
+    ],
+    dep: "Keine. Startpunkt."
+  },
+  {
+    tag: "Phase 1", name: "Architektur & Repo-Skelett", time: "Tag 1–2",
+    goal: "Das Fundament gegen Drift und Kontextverlust — die Struktur, in der alles Weitere entsteht. Hier werden die vier Bauprinzipien zu Dateien.",
+    tasks: [
+      "Ordnerstruktur anlegen (siehe Repo-Struktur unten)",
+      "profil.md-Schema definieren: welche Felder das Interview füllt (Rolle, Firma, Tonalität, Verbote)",
+      "STATUS.md-Format definieren: Phasen, Entscheidungen, offene Punkte, nächster Schritt",
+      "CLAUDE.md-Vorlage schreiben: liest STATUS.md bei Session-Start, kennt die Nie-Regeln",
+      "Übergabevertrags-Format festlegen: ein Markdown-Schema pro Schnittstelle zwischen Agenten",
+      "Release-Pipeline: GitHub Action, die aus einem Tag das Kunden-ZIP baut"
+    ],
+    dod: "Ein leeres Kit lässt sich als ZIP aus einem Release ziehen; eine Test-Session liest CLAUDE.md und STATUS.md korrekt.",
+    risks: [
+      ["hoch", "Skills werden vor der Architektur geschrieben — dann duplizieren sie Profilwissen und der Drift ist eingebaut."]
+    ],
+    dep: "Phase 0 (Repo, Zielgruppe)."
+  },
+  {
+    tag: "Phase 2", name: "Vertriebs-Skills & Verträge", time: "Tag 2–5",
+    goal: "Die 10 Agenten des Vertriebspakets als Skill-Dateien — jeder zu 80 % fertig, die letzten 20 % füllt später das Interview. Ketten vor Einzelteilen.",
+    tasks: [
+      "Agent Nr. 1 komplett bauen (der Workflow aus Phase 0): Prozess, Ausgabeformat, Qualitätsregeln, 5 Beispiele",
+      "Die Kette definieren: welche der 10 Agenten übergeben aneinander (z. B. Recherche → Angebot → Follow-up)",
+      "Übergabeverträge für jede Schnittstelle schreiben, BEVOR die restlichen Agenten entstehen",
+      "Agenten 2–10 bauen, jeder referenziert profil.md statt eigener Kopien",
+      "Platzhalter-Konvention einheitlich ({{firma}}, {{tonalitaet}} …) — der Installer muss sie maschinell finden",
+      "Pro Agent 3 realistische Testfälle mit erwartetem Ergebnis ablegen"
+    ],
+    dod: "Alle 10 Skills laufen einzeln gegen ihre Testfälle; die Hauptkette läuft einmal komplett durch.",
+    risks: [
+      ["hoch", "Generische Agenten ohne echte Beispiele — dann bleibt der Wow-Moment in der Beta aus."],
+      ["mittel", "Zu viele Agenten statt guter: lieber 8 exzellente als 10 mittelmäßige."]
+    ],
+    dep: "Phase 1 (profil.md-Schema, Vertragsformat)."
+  },
+  {
+    tag: "Phase 3", name: "Installer", time: "Tag 4–7",
+    goal: "INSTALLER.md — das Herzstück. Fünf Phasen: Systemcheck → Interview → Selbstbau → Beweis → Watchdog. Nach jeder Phase Schreiben in STATUS.md; jede Phase unter 15 Minuten.",
+    tasks: [
+      "Phase Systemcheck: OS, Claude-Code-Version, Plan erkennen; fehlendes nachinstallieren oder in 2 Klicks erklären",
+      "Die 10 Interviewfragen final formulieren und gegen das profil.md-Schema mappen",
+      "Selbstbau-Logik: Skills auswählen (5–6 passende), Platzhalter füllen, CLAUDE.md des Kunden erzeugen",
+      "Phase „Beweis“: echte Aufgabe des Käufers anfordern und live erledigen — dieser Moment IST das Produkt",
+      "Abbruch-Test: Session in jeder Phase hart beenden, neue Session muss nahtlos via STATUS.md fortsetzen",
+      "notfall/-Ordner: Diagnose-Prompts für die häufigsten Fehlerbilder"
+    ],
+    dod: "Kompletter Durchlauf auf einem frischen Rechner (nicht eurem!) unter 30 Minuten, inkl. eines erzwungenen Session-Abbruchs.",
+    risks: [
+      ["hoch", "Installer nur auf den eigenen, perfekt eingerichteten Maschinen getestet — der Beta-Nutzer scheitert an Schritt 1."],
+      ["mittel", "Interview zu lang: über 10 Fragen bricht die Magie."]
+    ],
+    dep: "Phase 1 (STATUS-Format) + Phase 2 (Skills mit Platzhaltern)."
+  },
+  {
+    tag: "Phase 4", name: "Watchdog & Ketten-Tests", time: "Tag 6–8",
+    goal: "Das Selbsttest-Modul: auf Zuruf laufen alle eingerichteten Agenten gegen ihre Testfälle — einzeln UND an den Übergabepunkten. Meldung mit Reparaturvorschlag.",
+    tasks: [
+      "Watchdog-Skill: liest Testfälle, führt aus, vergleicht gegen Soll, erzeugt Bericht",
+      "Ketten-Testfälle: 5 Durchläufe der Hauptkette Ende-zu-Ende mit Sollergebnissen",
+      "Berichtsformat: verständlich für Nicht-Techniker („3 von 10 Fällen weichen ab — Fix einspielen?“)",
+      "Reparatur-Flow: Watchdog schlägt Änderung vor, Nutzer bestätigt, STATUS.md protokolliert",
+      "Ehrlichkeits-Check: lieber 4 harte Testsätze als 20 geschönte — eine geschönte Zahl killt das Versprechen"
+    ],
+    dod: "Watchdog erkennt eine absichtlich eingebaute Abweichung in der Kette und schlägt den korrekten Fix vor.",
+    risks: [
+      ["hoch", "Geschönte Evals: wenn die Zahl nicht trägt und ein Kunde sich darauf verlässt, ist das Versprechen öffentlich tot."]
+    ],
+    dep: "Phase 2 (Testfälle, Verträge)."
+  },
+  {
+    tag: "Phase 5", name: "Smoke-Test (parallel!)", time: "Woche 1, parallel",
+    goal: "Kaufabsicht messen, bevor das Kit fertig ist. Das Anzeigen-Video entscheidet über die 20–40k — nicht das Kit. Läuft parallel zu Phase 2–4.",
+    tasks: [
+      "Bildschirmvideo aufnehmen: KI richtet sich in Echtzeit selbst ein, erledigt nach 20 Min. eine echte E-Mail-Aufgabe",
+      "Landingpage mit Vorbestellung zu 299 € (Einführungspreis, 499 € als durchgestrichener Anker)",
+      "2 Hooks testen: „Schulung gemacht — und jetzt?“ vs. „Agentur-Setup 1.850 € — das hier: 299 €“",
+      "300–500 € Meta-Ads auf beide Hooks, 5–7 Tage laufen lassen",
+      "Messen: Klickpreis, Landingpage-Conversion, Vorbestellungen"
+    ],
+    dod: "Gate 1 entschieden: Zahlen liegen vor, Go oder Pivot ist gefallen.",
+    risks: [
+      ["hoch", "Diese Phase wird übersprungen, weil Bauen sich produktiver anfühlt als Testen — dann fließen 4 Wochen in ein ungetestetes Produkt."]
+    ],
+    dep: "Nur Phase 0 (Name, Domain). Braucht KEIN fertiges Kit — das Video zeigt euren eigenen Prototyp-Durchlauf."
+  },
+  {
+    tag: "Phase 6", name: "Beta mit 10 echten Nutzern", time: "Woche 2–3",
+    goal: "10 Leute aus dem Netzwerk (aus der V1-Zielgruppe!) installieren ohne eure Hilfe. Jedes Scheitern ist ein Geschenk: ein Support-Fall, den ihr vor dem Launch fixt statt danach.",
+    tasks: [
+      "10 Beta-Tester rekrutieren — gegen Feedback-Call, nicht gratis „für Freunde“",
+      "Beobachten, NICHT helfen: Wo bleiben sie hängen? Screen-Recording erbitten",
+      "Jeden Stolperstein in den Installer oder notfall/-Ordner zurückbauen",
+      "Testimonials + Vorher/Nachher-Fälle einsammeln (Material für Landingpage & Ads)",
+      "Rückerstattungs- & Support-Prozess definieren (wer antwortet, in welcher Zeit, Textbausteine)"
+    ],
+    dod: "Gate 2 entschieden: mindestens 8 von 10 erreichen den Wow-Moment ohne Hilfe.",
+    risks: [
+      ["hoch", "Beta-Tester sind zu technisch (Entwickler-Freunde) — dann misst die Beta nichts über echte Käufer."],
+      ["mittel", "Feedback wird gesammelt, aber nicht eingebaut — Beta ohne Iteration ist Theater."]
+    ],
+    dep: "Phase 3 + 4 fertig, Gate 1 bestanden."
+  },
+  {
+    tag: "Phase 7", name: "Launch & Skalierung", time: "Woche 4+",
+    goal: "Verkaufsstrecke live, Ads hochdrehen — diszipliniert entlang der Unit Economics. Die ersten 100 Kunden sind bezahlter Betatest, nicht Umsatz.",
+    tasks: [
+      "Zahlungsstrecke live: Kauf → automatische ZIP-Auslieferung aus dem GitHub-Release + Rechnungs-PDF",
+      "Ads auf den Gewinner-Hook, Start 100 €/Tag, wöchentlich verdoppeln NUR wenn CAC unter ~120 € bleibt",
+      "Support-Rhythmus: tägliches 30-Min-Fenster, alles Wiederkehrende in notfall/ oder Installer zurückbauen",
+      "Kennzahlen wöchentlich: CAC, Conversion, Rückerstattungsquote (Alarm ab 10 %), Support-Fälle pro 100 Käufer",
+      "Ab stabilem Lauf: ChatGPT/Codex-Adapter als V2 planen — der Kern bleibt unverändert"
+    ],
+    dod: "4 Wochen stabil: positiver Deckungsbeitrag pro Verkauf inkl. USt, Zahlungsgebühr, Rückerstattungen und anteiliger Ads.",
+    risks: [
+      ["hoch", "Skalieren vor Stabilität: Ads verdoppeln, während die Rückerstattungsquote unbekannt ist."],
+      ["mittel", "Modell-Update von Anthropic bricht das Kit — Watchdog-Testfälle wöchentlich selbst laufen lassen, Fix-Release binnen 48 h."]
+    ],
+    dep: "Gate 2 bestanden."
+  }
+];
+
+const tree = [
+  ["autopilot-kit/  (privates Repo, neue GitHub-Org)", "root",
+   "Das Monorepo", "Ein Repo für alles: Kern, Adapter, Tests, Release-Pipeline. Kunden sehen es nie direkt — sie bekommen das ZIP aus dem Release oder (Berater-Variante) Lesezugriff auf ein separates Auslieferungs-Repo.",
+   "Prinzip: Kern ≠ Plattform. Der core/ ist neutral, Adapter sind dünn."],
+  ["├── core/", "core",
+   "Der plattformneutrale Kern", "Alles, was den Wert ausmacht und auf jeder Plattform gilt: Skills, Interview-Logik, Testfälle, Vertragsschemata. Reines Markdown. Wird von den Adaptern eingebunden, nie kopiert.",
+   "Wenn ChatGPT/Codex als V2 kommt, wird NUR ein neuer Adapter gebaut — core/ bleibt unangetastet."],
+  ["│   ├── skills/vertrieb/  (10 Agenten)", "skills",
+   "Die 10 Vertriebs-Agenten", "Je eine Skill-Datei: Prozess, Ausgabeformat, Qualitätsregeln, Beispiele. Enthält Platzhalter ({{firma}}, {{tonalitaet}}), die der Installer aus profil.md füllt. Referenziert Profildaten, dupliziert sie NIE.",
+   "Prinzip: Eine Quelle der Wahrheit — Drift zwischen Agenten ist damit strukturell ausgeschlossen."],
+  ["│   ├── vertraege/  (Übergabe-Schemata)", "vertraege",
+   "Übergabeverträge", "Pro Schnittstelle zwischen zwei Agenten ein festes Format: was Recherche an den Angebots-Schreiber liefert, was der an Follow-up übergibt. Agenten dürfen sich intern ändern, solange der Vertrag hält.",
+   "Der Watchdog testet genau diese Punkte — hier bricht Drift zuerst sichtbar."],
+  ["│   ├── testfaelle/", "testfaelle",
+   "Eval-Testfälle", "Pro Agent 3+ realistische Eingaben mit Sollergebnis, plus 5 Ketten-Durchläufe Ende-zu-Ende. Euer eigentlicher Graben: echte Fälle aus eurer Beratung kann kein Wettbewerber von GitHub abschreiben.",
+   "Regel: lieber 4 ehrlich harte Testsätze als 20 geschönte."],
+  ["│   └── interview/  (10 Fragen + Mapping)", "interview",
+   "Das Einrichtungs-Interview", "Die 10 Fragen und ihr Mapping auf das profil.md-Schema. Plattformneutral formuliert — der Adapter entscheidet nur, WIE gefragt wird, nicht WAS.",
+   "Über 10 Fragen bricht die Magie. Kürzen ist hier immer richtig."],
+  ["├── adapter-claude/", "adapter",
+   "Die Claude-Code-Schicht (V1)", "INSTALLER.md (die 5 Phasen), die CLAUDE.md-Vorlage, Hook-Konfiguration für das automatische STATUS-Lesen bei Session-Start, der Watchdog als Skill. Dünn — die Logik liegt in core/.",
+   "Abbruch-Test gehört hierher: Session in jeder Phase hart beenden, Fortsetzung muss nahtlos sein."],
+  ["│   ├── INSTALLER.md", "installer",
+   "Das Herzstück", "Kein Text zum Lesen — ein Skript für das LLM des Käufers. Systemcheck → Interview → Selbstbau → Beweis → Watchdog. Schreibt nach JEDER Phase in STATUS.md; jede Phase unter 15 Minuten.",
+   "Prinzip: Zustand auf der Platte. Kontextverlust ist kein Ereignis, sondern eingeplant."],
+  ["│   └── vorlagen/  (CLAUDE.md, STATUS.md, profil.md)", "vorlagen",
+   "Die Zustands-Dateien", "profil.md = einzige Quelle für Person/Firma/Ton. STATUS.md = Fortschritt, Entscheidungen, nächster Schritt. CLAUDE.md = liest STATUS bei jedem Start, kennt die Nie-Regeln. Kein Agent ändert diese Dateien selbst — nur der Einstellungs-Flow.",
+   "Der „Übergabeprompt“ schrumpft damit auf einen Satz: „Prüfe STATUS.md und setze fort.“"],
+  ["├── notfall/", "notfall",
+   "Selbsthilfe vor Support", "Fertige Diagnose-Prompts für die häufigsten Fehlerbilder („Kopiere das in dein LLM, es findet den Fehler selbst“). Wächst mit jedem Beta- und Support-Fall. Senkt eure Supportlast direkt.",
+   "Jeder wiederkehrende Support-Fall wird hierher oder in den Installer zurückgebaut — sonst skaliert der Support mit dem Umsatz."],
+  ["├── vermarktung/  (nicht im Kunden-ZIP)", "vermarktung",
+   "Landingpage, Video, Hooks", "Creative-Skripte, Hook-Varianten, Landingpage-Quelltext, Beta-Testimonials. Liegt im Repo für Versionierung, wird aber vom Release-Build ausgeschlossen.",
+   "Das Video-Creative entscheidet über die 20–40k — es verdient denselben Ernst wie der Code."],
+  ["└── .github/workflows/release.yml", "release",
+   "Die Release-Pipeline", "GitHub Action: Ein Git-Tag baut das Kunden-ZIP (core + adapter-claude + notfall, ohne vermarktung/ und Testinterna), hängt es an den Release. Zahlungsanbieter liefert nach Kauf den Link.",
+   "Updates = neuer Tag. Käufer der Berater-Variante ziehen per git pull, Endnutzer laden das neue ZIP."]
+];
+
+// ---- Render Phasen ----
+const flow = document.getElementById("flow");
+const detail = document.getElementById("detail");
+let activePhase = -1;
+const checks = phases.map(p => p.tasks.map(() => false));
+
+phases.forEach((p, i) => {
+  const b = document.createElement("button");
+  b.className = "phase-node";
+  b.innerHTML = `<div class="ph-tag">${p.tag}</div><div class="ph-name">${p.name}</div>
+    <div class="ph-time">${p.time}</div><div class="ph-bar"><i id="bar${i}"></i></div>
+    <div class="ph-count" id="cnt${i}">0 / ${p.tasks.length} erledigt</div>`;
+  b.onclick = () => togglePhase(i);
+  flow.appendChild(b);
+});
+
+function togglePhase(i) {
+  const nodes = flow.children;
+  if (activePhase === i) {
+    activePhase = -1; detail.classList.remove("open");
+    nodes[i].classList.remove("active"); return;
+  }
+  if (activePhase >= 0) nodes[activePhase].classList.remove("active");
+  activePhase = i; nodes[i].classList.add("active");
+  renderDetail(i); detail.classList.add("open");
+  detail.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+function renderDetail(i) {
+  const p = phases[i];
+  detail.innerHTML = `
+    <h3>${p.tag} — ${p.name} <span style="font-weight:400;color:var(--text-muted);font-size:13px">· ${p.time}</span></h3>
+    <p class="goal">${p.goal}</p>
+    <div class="d-grid">
+      <div class="d-col">
+        <h4>Aufgaben</h4>
+        ${p.tasks.map((t, j) => `
+          <label class="task ${checks[i][j] ? "done" : ""}">
+            <input type="checkbox" ${checks[i][j] ? "checked" : ""} onchange="toggleTask(${i},${j},this)">
+            <span>${t}</span>
+          </label>`).join("")}
+      </div>
+      <div class="d-col">
+        <div class="box dod"><div class="b-label">✓ Definition of Done</div><p>${p.dod}</p></div>
+        <div class="box risk"><div class="b-label">⚠ Risiken</div>
+          ${p.risks.map(r => `<div class="risk-item"><span class="sev ${r[0]}">${r[0]}</span><span>${r[1]}</span></div>`).join("")}
+        </div>
+        <div class="box dep"><div class="b-label">⇢ Hängt ab von</div><p>${p.dep}</p></div>
+      </div>
+    </div>`;
+}
+
+function toggleTask(i, j, el) {
+  checks[i][j] = el.checked;
+  el.closest(".task").classList.toggle("done", el.checked);
+  const done = checks[i].filter(Boolean).length;
+  document.getElementById("bar" + i).style.width = (100 * done / phases[i].tasks.length) + "%";
+  document.getElementById("cnt" + i).textContent = `${done} / ${phases[i].tasks.length} erledigt`;
+}
+
+// ---- Render Repo-Baum ----
+const treeEl = document.getElementById("tree");
+const infoEl = document.getElementById("treeInfo");
+tree.forEach((row, i) => {
+  const d = document.createElement("div");
+  d.className = "tree-line"; d.textContent = row[0];
+  d.onclick = () => {
+    treeEl.querySelectorAll(".tree-line").forEach(x => x.classList.remove("sel"));
+    d.classList.add("sel");
+    infoEl.innerHTML = `<h4>${row[2]}</h4><p>${row[3]}</p><div class="ti-rule">${row[4]}</div>`;
+  };
+  treeEl.appendChild(d);
+});
+</script>
+</body>
+</html>
