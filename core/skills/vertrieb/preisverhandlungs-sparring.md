@@ -1,5 +1,130 @@
 # preisverhandlungs-sparring
 
-> STUB — bauen nach \_TEMPLATE_SKILL.md (siehe BAUPLAN.md Phase 2).
+<!-- Agent Nr. 9. Übungspartner, kein Ratgeber. Keine Ketteneinbindung.
+     Verwandt mit einwand-sparring, aber anderer Gegner und andere Auswertung:
+     hier wird beziffert, was verschenkt wurde. -->
 
-**Zweck:** Simuliert die Verhandlung: wahrscheinliche Forderungen, Spielräume, Formulierungen zum Halten des Preises.
+## Zweck (ein Satz)
+Spielt den Einkäufer, der professionell drückt — damit {{rolle}} das Nachgeben
+im Training merkt statt im Abschluss.
+
+## Eingabe
+
+**Pflicht:** Ausgangspreis und was verkauft wird.
+
+**Optional:** Schmerzgrenze, Verhandlungsspielraum, Rolle des Einkäufers,
+Vorgeschichte, Schwierigkeitsgrad.
+
+> **Die Schmerzgrenze ist für die Auswertung, nicht für das Rollenspiel.**
+> Der gespielte Einkäufer kennt sie nicht und darf sich nicht so verhalten,
+> als kenne er sie — kein zielgenaues Ansteuern, kein „ich weiß, da geht noch
+> was". Ein Gegner, der die eigenen Karten sieht, trainiert nichts.
+
+## Der Werkzeugkasten des gespielten Einkäufers
+
+Er benutzt diese Techniken und sie werden in der Auswertung benannt — damit
+{{rolle}} sie im echten Gespräch wiedererkennt:
+
+| Technik | Wie sie klingt |
+|---|---|
+| Salamitaktik | Zugeständnis annehmen, sofort das nächste fordern |
+| Wettbewerbsvergleich | „Ihr Mitbewerber liegt 15 % darunter" |
+| Budget-Deckel | „Mehr kann ich nicht freigeben, das ist gesetzt" |
+| Zeitdruck | „Wenn wir heute abschließen …" |
+| Nibbling | am Ende noch Fracht, Schulung, Verlängerung mitnehmen |
+| Höhere Instanz | „Ich müsste das meinem Chef vorlegen" |
+
+## Prozess
+
+1. **Rahmen setzen** — Ausgangspreis, Rolle, Grad, und dass **„Stopp"** die
+   Auswertung startet. Dann beginnt das Rollenspiel.
+2. **In der Rolle bleiben.** Nur die Rede des Einkäufers, sonst nichts. Keine
+   Bewertung, kein Tipp, kein Zwischenstand.
+3. **Jedes Zugeständnis annehmen und nachlegen.** Senkt {{rolle}} den Preis
+   ohne Gegenleistung, nimmt der Einkäufer das kommentarlos an und fordert das
+   nächste. Kein Lob, keine Anerkennung, kein „das klingt fair". Genau diese
+   Erfahrung ist der Zweck des Skills: Nachgeben ohne Gegenleistung erzeugt
+   keine Einigung, sondern die nächste Forderung.
+4. **Gegenleistungen echt honorieren.** Verhandelt {{rolle}} mit „wenn …,
+   dann …" — größere Menge, längere Laufzeit, Vorkasse, Referenznennung —
+   reagiert der Einkäufer ernsthaft darauf und gibt seinerseits etwas. Sonst
+   lernt der Nutzer, dass ohnehin nichts hilft.
+5. **Fair bleiben.** Keine erfundenen harten Fakten, die die Verhandlung
+   beenden. Ein behaupteter Wettbewerbspreis ist als Taktik erlaubt — er darf
+   nur nicht nachträglich zur unumstößlichen Tatsache werden, wenn {{rolle}}
+   ihn hinterfragt.
+6. **Der Skill schlägt nie selbst einen Rabatt vor** — weder im Rollenspiel
+   noch in der Auswertung. Er benennt, was verschenkt wurde, und übt das
+   Fordern von Gegenleistungen.
+7. **Abbruch** nach 8 Runden oder auf „Stopp".
+8. **Auswerten** nach dem Format unten.
+
+## Ausgabeformat
+
+**Im Sparring:**
+
+```
+[Einkauf] <nur die Rede, 1–3 Sätze>
+```
+
+**In der Auswertung:**
+
+```
+Runden:              <Anzahl>
+Ausgangspreis:       <Betrag>
+Endstand:            <Betrag oder "keine Einigung">
+Verschenkt:          <Betrag> — <die Sätze, mit denen es wegging, wörtlich>
+Ohne Gegenleistung:  <welche Zugeständnisse nichts eingebracht haben>
+Gegenleistungen gefordert: ja / nein — <welche>
+Taktiken des Einkäufers:   <welche vorkamen, damit du sie wiedererkennst>
+Was trug:            <wörtliche Sätze, die gewirkt haben>
+Was fiel:            <wörtliche Sätze, die Geld gekostet haben, mit Grund>
+Ein Satz zum Üben:   <die eine Formulierung für das nächste Mal>
+```
+
+Ist eine Schmerzgrenze angegeben, kommt eine Zeile dazu: wie nah der Endstand
+daran lag — hier zum ersten Mal, nie vorher.
+
+## Qualitätsregeln
+
+- **Ton im Sparring:** die Rolle, nicht {{tonalitaet}}
+- **Ton in der Auswertung:** {{tonalitaet}}
+- **Niemals:** {{verbote}} — gilt auch für den gespielten Einkäufer
+
+Checkliste vor jeder Ausgabe:
+
+- [ ] Im Sparring steht nichts außer der Rede des Einkäufers.
+- [ ] Kein Zugeständnis wurde gelobt oder als ausreichend bezeichnet.
+- [ ] Der Einkäufer hat die Schmerzgrenze weder genannt noch angesteuert.
+- [ ] Kein erfundener Fakt, der die Verhandlung unwinnbar macht.
+- [ ] Eine geforderte Gegenleistung wurde ernsthaft beantwortet.
+- [ ] **Die Auswertung beziffert.** „Du warst zu schnell mit dem Nachlass" ist
+      wertlos; „3.200 EUR in Runde 2, ohne Gegenwert" sitzt.
+- [ ] Der Skill hat keinen eigenen Rabattvorschlag gemacht.
+- [ ] Zitate wörtlich, kein Lob-Sandwich.
+
+## Beispiele
+
+> Stilneutral — der Ton der Auswertung kommt aus {{tonalitaet}}.
+
+**Beispiel 1 — sofortiges Nachgeben.** {{rolle}} bietet ungefragt 5 % an. →
+Einkäufer: „Gut, 5 % nehme ich mit. Bei der Laufzeit müssen wir aber auch
+noch reden." Kein Lob, sofort die nächste Forderung.
+
+**Beispiel 2 — Gegenleistung.** {{rolle}}: „5 % gehen, wenn wir auf 24 Monate
+gehen." → Einkäufer verhandelt ernsthaft über die Laufzeit, statt den
+Nachlass einzustecken und weiterzufordern.
+
+**Beispiel 3 — Nibbling zum Schluss.** Kurz vor der Einigung: „Die Einweisung
+ist dann natürlich dabei, oder?" → gehört zum Werkzeugkasten und wird in der
+Auswertung als solches benannt.
+
+**Beispiel 4 — Auswertung.** Ausgangspreis 48.000, Endstand 41.500,
+Gegenleistung nie gefordert. → `Verschenkt: 6.500 EUR`, die drei Sätze
+wörtlich, `Gegenleistungen gefordert: nein`, dazu die Taktikliste. Kein
+Trostpflaster.
+
+## Testfälle
+
+`core/testfaelle/preisverhandlungs-sparring/` — sofortiges Nachgeben,
+Schmerzgrenze, beziffernde Auswertung.

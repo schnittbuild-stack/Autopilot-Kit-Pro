@@ -12,14 +12,53 @@
   - [x] `angebots-schreiber` auf Vertrag 2 nachgezogen (Block B = ÜBERGABE ANGEBOT)
   - [x] Agent 2 `account-recherche` + 3 Testfälle
   - [x] Agent 3 `follow-up-generator` + 3 Testfälle
-  - [ ] Agenten 4–10 (noch STUB): ausschreibungs-analyse, crm-notiz-zu-schritt,
-        einwand-sparring, forecast-erklaerer, meeting-nachbereitung,
-        outreach-personalisierer, preisverhandlungs-sparring
+  - [x] Agenten 4–10 gebaut, je 3 Testfälle — alle 10 Skills sind stubfrei
+  - [ ] **Definition of Done noch NICHT erreicht** — siehe unten
 - [ ] Phase 3 — Installer fertigstellen
 - [ ] Phase 4 — Watchdog & Ketten-Tests
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
 - [ ] Phase 6 — Beta mit 10 Nutzern
 - [ ] Phase 7 — Launch
+
+## Definition of Done Phase 2 — Prüfstand vom 17.08.2026
+
+BAUPLAN verlangt: „Alle 10 Skills laufen einzeln gegen ihre Testfälle; die
+Hauptkette läuft einmal Ende-zu-Ende durch."
+
+**Geprüft und erfüllt (maschinell):**
+
+- [x] 10 Skills gebaut, keine Stubs, alle 7 Pflichtabschnitte je Skill
+- [x] 32 Testfälle (3 je Skill + 2 Ketten-Fälle), alle mit Eingabe,
+      Soll-Ergebnis, Bewertung und Herkunftszeile
+- [x] 11 Platzhalter, alle in `core/interview/mapping.md` registriert
+- [x] `core/` frei von Plattform-Spezifika (Prinzip 4)
+- [x] Beide Verträge geschrieben, Feldnamen stimmen mit den Skills überein
+- [x] Release-Build läuft, Praxisordner bleibt draußen
+
+**NICHT erfüllt — und das ist der eigentliche Teil der DoD:**
+
+- [ ] **Kein einziger Testfall wurde ausgeführt.** Es liegen 32 Sollwerte vor
+      und null Istwerte. Die Skills sind gebaut, nicht geprüft.
+- [ ] Die Hauptkette ist nie Ende-zu-Ende gelaufen.
+
+**Warum das gerade nicht geht — und was es kostet, es zu lösen:**
+
+Die Skills stecken voller `{{platzhalter}}`, die erst das Installer-Interview
+füllt (Phase 3). Ohne gefülltes Profil ist ein Durchlauf nicht aussagekräftig:
+Ein Skill, der `{{tonalitaet}}` nicht auflösen kann, fällt aus Gründen durch,
+die nichts mit seiner Qualität zu tun haben.
+
+Der Ausweg ist ein **Testprofil**: ein erfundener, aber vollständiger
+`profil.md`-Datensatz (Rolle, Firma, Ton, Anrede, Signatur, Verbote,
+Preisgrundlage) allein für Evals, abgelegt außerhalb des Kundenbaums. Damit
+laufen alle 32 Fälle, bevor der Installer existiert — und Phase 3 startet auf
+geprüften statt auf vermuteten Skills.
+
+**Zweite Einschränkung, ehrlich vermerkt:** Wer die Skills gebaut hat, sollte
+sie nicht allein bewerten. Ein Durchlauf, bei dem dasselbe Modell schreibt und
+benotet, ist ein schwacher Beleg. Für die Beta braucht es mindestens eine
+Bewertung durch einen zweiten Durchgang mit ausschließlich den Testfall-Kriterien
+im Kontext, ohne den Skill-Text.
 
 ## Offene Punkte
 - Digistore24/CopeCart-Konto beantragen (Freischaltung dauert Tage)
@@ -43,12 +82,15 @@
   der Käufer nur gegen unsere neutralen Fälle und nie gegen seinen echten Alltag.
 
 ## Nächster Schritt
-Die verbleibenden **sieben Agenten** (4–10) nach dem Muster der ersten drei:
-je Skill nach `_TEMPLATE_SKILL.md`, je 3 Testfälle, keine Ketteneinbindung.
-Sie sind unabhängig voneinander — Reihenfolge frei, sinnvoll ist nach Nähe
-zur Kette: `outreach-personalisierer`, `einwand-sparring`,
-`meeting-nachbereitung`, `crm-notiz-zu-schritt`, `ausschreibungs-analyse`,
-`preisverhandlungs-sparring`, `forecast-erklaerer`.
+**Testprofil anlegen und die 32 Fälle tatsächlich durchlaufen lassen.** Das
+schließt Phase 2 ab. Konkret:
 
-Danach Phase 2 Definition of Done prüfen: alle 10 Skills gegen ihre Testfälle,
-Hauptkette einmal Ende-zu-Ende.
+1. `evals/testprofil.md` — erfundenes, aber vollständiges Profil, außerhalb
+   des ausgelieferten Baums (wie `testfaelle-praxis/`).
+2. Alle 32 Fälle durchlaufen, Istwerte festhalten.
+3. Bewertung in einem zweiten Durchgang, der nur die Kriterien sieht.
+4. Abweichungen entweder im Skill beheben oder als bekannte Schwäche
+   dokumentieren — nicht den Testfall weichspülen.
+
+Erst danach Phase 3 (Installer). Die Reihenfolge lohnt: Ein Installer, der
+ungeprüfte Skills ausrollt, verlagert jeden Fehler in die Beta.
