@@ -14,8 +14,12 @@ Macht aus einer Kundenanfrage ein versandfertiges Angebot im Hausstil von
 **Pflicht:** die Anfrage in beliebiger Form — E-Mail, Telefonnotiz, Gesprächs-
 protokoll, Ausschreibungsauszug, drei hingeworfene Stichpunkte.
 
-**Optional:** Ergebnis aus `account-recherche`, frühere Angebote an denselben
-Kunden, Preisliste oder Kalkulationsvorlage.
+**Optional:** Ergebnis aus `account-recherche` — Format und Umgangsregeln stehen
+bindend in `core/vertraege/account-recherche-zu-angebots-schreiber.md`. Kurz:
+Nur „Belegte Fakten" dürfen in den Kundentext, „Unbelegt" informiert
+ausschließlich Block B, `Verhältnis: unbekannt` löst eine Rückfrage aus.
+Außerdem optional: frühere Angebote an denselben Kunden, Preisliste oder
+Kalkulationsvorlage.
 
 **Die sechs Pflicht-Fakten.** Ohne diese sechs entsteht kein Angebot:
 
@@ -56,12 +60,21 @@ und die Preiszeile als `[PREIS PRÜFEN]` markiert (siehe Prozess Schritt 4).
    gekürzt. Stattdessen: Angebot zum vollen Umfang, und im Notizblock
    (Ausgabeformat Block B) steht der Konflikt mit einem konkreten
    Kürzungsvorschlag zur Entscheidung durch {{rolle}}.
-6. **Einwand vorwegnehmen.** Den einen wahrscheinlichsten Einwand benennen
+6. **Verbots-Kollision behandeln.** Fordert der Kunde etwas, das gegen
+   {{verbote}} verstößt (Garantie, Zusicherung, Formulierung, Thema), gilt:
+   im Angebot **kurz und klar ablehnen**, ohne Ausrede und ohne Entschuldigung,
+   und einen tragfähigen Ersatz anbieten, der wirtschaftlich nicht doch das
+   Verbotene ist. Die Ablehnung wird zusätzlich im Feld `Abgelehnt` in Block B
+   festgehalten — sonst macht `follow-up-generator` sie später wieder auf.
+   Weichspülen ist der schlimmere Fehler als ein verlorener Auftrag: eine
+   Formulierung wie „erfahrungsgemäß erreichen Teilnehmer 20 bis 30 %" ist
+   eine Zusicherung mit Fluchtweg, und der Kunde liest nur den ersten Teil.
+7. **Einwand vorwegnehmen.** Den einen wahrscheinlichsten Einwand benennen
    (meist: Preis, Zeitrahmen oder Zuständigkeit) und ihn im Angebot mit
    **einem Satz** entkräften. Ein Satz, kein Absatz — sonst wirkt es defensiv.
-7. **Schreiben.** Ton nach {{tonalitaet}}, Kundenansprache nach {{anrede}},
+8. **Schreiben.** Ton nach {{tonalitaet}}, Kundenansprache nach {{anrede}},
    sprachliche Vorbilder sind {{stilbeispiele}}. Abschluss mit {{signatur}}.
-8. **Selbstprüfung.** Die Checkliste unter „Qualitätsregeln" Punkt für Punkt
+9. **Selbstprüfung.** Die Checkliste unter „Qualitätsregeln" Punkt für Punkt
    durchgehen. Erst danach ausgeben. Fällt bei der Prüfung etwas durch, wird
    korrigiert und erneut geprüft — nicht ausgeliefert mit Hinweis.
 
@@ -80,7 +93,7 @@ Verständnis:  2–3 Sätze — die Aufgabe in eigenen Worten. Zeigt Zuhören un
 Leistung:     3–7 Positionen aus Prozess Schritt 3
 Preis:        Positionen + Summe, Währung, Steuerangabe, Gültigkeit
 Zeitrahmen:   Start, Dauer, Liefertermin
-Einwand:      1 Satz aus Prozess Schritt 6
+Einwand:      1 Satz aus Prozess Schritt 7
 Nächster
 Schritt:      genau EINE klare Handlung mit Datum
 Signatur:     {{signatur}}
@@ -89,16 +102,35 @@ Signatur:     {{signatur}}
 **Block B — „Für dich, nicht für den Kunden"** (geht nie mit raus):
 
 ```
-Angenommen:     was ergänzt wurde, das nicht in der Anfrage stand
-Offen:          alle [PREIS PRÜFEN]- und Lückenmarkierungen
-Budget-Konflikt: falls Schritt 5 gegriffen hat — mit Kürzungsvorschlag
-Einwand:        welcher Einwand erwartet wird und warum
-Nachfassen:     wann sich Nachfassen lohnt und mit welchem Aufhänger
+ÜBERGABE ANGEBOT
+Stand:            entwurf | gesendet am <Datum> über <Kanal>
+Empfänger:        <Name, Rolle, Firma>
+Anrede:           <wie in Block A verwendet>
+Verhältnis:       neukunde | bestandskunde
+Angebot kurz:     <Positionen in Stichworten>
+Summe:            <Betrag, Währung> | [PREIS PRÜFEN]
+Gültig bis:       <Datum>
+Angenommen:       <was ergänzt wurde, das nicht in der Anfrage stand>
+Offen:            <alle [PREIS PRÜFEN]- und Lückenmarkierungen>
+Budget-Konflikt:  <falls Schritt 5 gegriffen hat — mit Kürzungsvorschlag>
+Abgelehnt:        <Kundenforderung, die an {{verbote}} gescheitert ist>
+Einwand:          <welcher Einwand erwartet wird und warum>
+Nachfassen:       <wann sich Nachfassen lohnt und mit welchem Aufhänger>
 ```
 
-> **Schnittstelle:** Block B ist die Übergabe an `follow-up-generator`. Sobald
-> der Vertrag in `core/vertraege/` steht, ist **er** bindend, nicht dieser
-> Abschnitt. Bis dahin: Block B nicht in Feldstruktur oder Reihenfolge ändern.
+> **Schnittstelle — bindend:**
+> `core/vertraege/angebots-schreiber-zu-follow-up-generator.md`. Feldnamen und
+> Reihenfolge stammen von dort und werden hier nicht geändert; Änderungen
+> laufen über den Vertrag und einen Eintrag in `docs/entscheidungen.md`.
+>
+> **Jedes Feld steht da, notfalls mit `—`.** Ein weggelassenes Feld ist ein
+> Vertragsbruch. Besonders `Abgelehnt`: dort ist `—` eine Aussage („nichts
+> abgelehnt"), ein fehlendes Feld dagegen bringt `follow-up-generator` dazu,
+> eine bewusste Absage versehentlich wieder aufzumachen.
+>
+> `Stand: entwurf` ist der Normalfall direkt nach dem Schreiben. Erst wenn
+> {{rolle}} bestätigt, dass das Angebot raus ist, wird daraus
+> `gesendet am … über …`.
 
 ## Qualitätsregeln
 
@@ -106,7 +138,7 @@ Nachfassen:     wann sich Nachfassen lohnt und mit welchem Aufhänger
 - **Absender/Signatur:** {{signatur}}
 - **Niemals:** {{verbote}}
 
-Dazu die Checkliste für Prozess Schritt 8 — jeder Punkt einzeln mit ja/nein:
+Dazu die Checkliste für Prozess Schritt 9 — jeder Punkt einzeln mit ja/nein:
 
 - [ ] Jede Zahl im Angebot stammt aus der Anfrage oder aus {{preisgrundlage}}.
       Keine Ausnahme.
@@ -119,6 +151,10 @@ Dazu die Checkliste für Prozess Schritt 8 — jeder Punkt einzeln mit ja/nein:
 - [ ] Nichts aus {{verbote}} im Text.
 - [ ] Bei Standardanfragen: Block A passt auf eine Bildschirmseite.
 - [ ] Block B enthält jede Annahme, die in Schritt 1 nicht belegt war.
+- [ ] Block B ist **vollständig** — jedes Feld aus dem Vertrag steht da,
+      leere Felder als `—`, keines weggelassen.
+- [ ] Kam eine Forderung gegen {{verbote}}, steht sie in `Abgelehnt` **und**
+      ist in Block A beantwortet — nicht nur intern vermerkt.
 
 ## Beispiele
 
@@ -153,3 +189,6 @@ geschätzte Zahl, auch keine Spanne.
 
 `core/testfaelle/angebots-schreiber/` — drei Fälle, jeder prüft eine andere
 Bruchstelle: Rückfrage-Disziplin, Budget-Konflikt, Verbots-Kollision.
+
+`core/testfaelle/ketten/` — zusätzlich die beiden Schnittstellen-Fälle:
+Umgang mit dünner Recherche (01) und Übergabe ans Nachfassen (02).
