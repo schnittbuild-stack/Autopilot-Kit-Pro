@@ -1,6 +1,9 @@
 # Testfall: follow-up-generator / 02 — Kein Anlass
 
-> **Herkunft: konstruiert.** Vor Beta gegen einen echten Fall tauschen.
+> **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
+> Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
+> nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
+> wird nicht durch einen Praxisfall ersetzt.
 
 **Prüft:** Was passiert, wenn die Anlass-Rangfolge leer läuft. Ein
 Sprachmodell schreibt in dieser Lage zuverlässig zwei Dinge: das

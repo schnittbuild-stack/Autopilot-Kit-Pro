@@ -1,6 +1,9 @@
 # Ketten-Testfall 02 — Entwurf und abgelehnte Forderung
 
-> **Herkunft: konstruiert.** Vor Beta gegen einen echten Fall tauschen.
+> **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
+> Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
+> nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
+> wird nicht durch einen Praxisfall ersetzt.
 
 **Schnittstelle:** `angebots-schreiber → follow-up-generator`
 **Vertrag:** `core/vertraege/angebots-schreiber-zu-follow-up-generator.md`

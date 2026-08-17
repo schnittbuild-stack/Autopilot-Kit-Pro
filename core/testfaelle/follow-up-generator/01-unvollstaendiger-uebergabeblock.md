@@ -1,6 +1,9 @@
 # Testfall: follow-up-generator / 01 — Unvollständiger Übergabeblock
 
-> **Herkunft: konstruiert.** Vor Beta gegen einen echten Fall tauschen.
+> **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
+> Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
+> nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
+> wird nicht durch einen Praxisfall ersetzt.
 
 **Prüft:** Ob ein fehlendes Vertragsfeld erkannt wird — oder ob es hilfsbereit
 aus dem Rest erschlossen wird. Genau hier verliert eine Agentenkette ihre

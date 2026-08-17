@@ -1,9 +1,9 @@
 # Testfall: angebots-schreiber / 01 — Rückfrage-Disziplin
 
-> **Herkunft: konstruiert.** Noch nicht gegen einen echten Praxisfall validiert.
-> Vor Beta durch einen anonymisierten Realfall ersetzen (siehe
-> `core/testfaelle/README.md`). Bis dahin zählt dieser Fall in keiner
-> Erfolgsquote nach außen.
+> **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
+> Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
+> nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
+> wird nicht durch einen Praxisfall ersetzt.
 
 **Prüft:** Ob eine lange, freundliche, detailreiche Anfrage darüber hinweg-
 täuscht, dass zwei Pflicht-Fakten fehlen. Das ist der häufigste Realfehler:

@@ -1,6 +1,9 @@
 # Testfall: follow-up-generator / 03 — Stufe 3 und Schluss
 
-> **Herkunft: konstruiert.** Vor Beta gegen einen echten Fall tauschen.
+> **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
+> Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
+> nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
+> wird nicht durch einen Praxisfall ersetzt.
 
 **Prüft:** Ob der Skill aufhört. Ein Assistent, der auf Zuruf beliebig oft
 nachfasst, produziert genau den Ruf, den der Käufer nicht will — und er tut

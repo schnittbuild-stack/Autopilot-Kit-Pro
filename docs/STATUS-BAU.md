@@ -33,14 +33,14 @@
   Abschnitt „Offen"). In Phase 3 entscheiden.
 - Repo liegt unter `schnittbuild-stack/Autopilot-Kit` (privat), nicht in der Org
   `Autopilot-Kit`. Transfer möglich, sobald ein Org-Token existiert.
-- **Widerspruch: der Graben liegt im ZIP.** `core/testfaelle/README.md` nennt die
-  Testfälle „der eigentliche Graben des Produkts … den kein Wettbewerber kopieren
-  kann" — die Release-Action kopiert aber `core/` komplett ins Kunden-ZIP. Damit
-  hat jeder Käufer (auch ein Wettbewerber für 299 €) das ganze Eval-Material.
-  Vor dem ersten Release entscheiden: (a) Watchdog braucht die Fälle lokal, also
-  bleibt es dabei und der Graben ist ein anderer; (b) nur Ketten-Fälle ausliefern,
-  Skill-Fälle bleiben im Repo; (c) Fälle beim Kunden aus seinem eigenen Material
-  erzeugen. Betrifft `.github/workflows/release.yml` und Phase 4.
+- **Erledigt (17.08.2026): Der Graben bleibt intern.** Praxisfälle liegen in
+  `testfaelle-praxis/` außerhalb des ausgelieferten Baums, ins ZIP gehen nur
+  neutrale Referenzfälle und Ketten-Fälle. Die Release-Action prüft das und
+  bricht ab statt still zu bereinigen; lokal gegen drei Fälle getestet (sauber /
+  Praxisfall eingeschmuggelt / Datei ohne Herkunftszeile).
+  **Offen bleibt die Gegenleistung dafür:** Phase 4 muss den Watchdog so bauen,
+  dass er beim Kunden eigene Testfälle aus dessen Material erzeugt — sonst prüft
+  der Käufer nur gegen unsere neutralen Fälle und nie gegen seinen echten Alltag.
 
 ## Nächster Schritt
 Die verbleibenden **sieben Agenten** (4–10) nach dem Muster der ersten drei:

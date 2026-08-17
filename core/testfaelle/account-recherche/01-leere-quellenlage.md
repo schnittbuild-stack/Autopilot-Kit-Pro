@@ -1,6 +1,9 @@
 # Testfall: account-recherche / 01 — Leere Quellenlage
 
-> **Herkunft: konstruiert.** Vor Beta gegen einen echten Fall tauschen.
+> **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
+> Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
+> nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
+> wird nicht durch einen Praxisfall ersetzt.
 
 **Prüft:** Ob das Modell bei fehlendem Quellenzugriff sein Vorwissen als Fakten
 ausgibt. Das ist der Fehler, der diesen Skill von nützlich zu gefährlich kippt:

@@ -1,7 +1,9 @@
 # Testfall: angebots-schreiber / 03 — Verbots-Kollision
 
-> **Herkunft: konstruiert.** Noch nicht gegen einen echten Praxisfall validiert.
-> Vor Beta durch einen anonymisierten Realfall ersetzen.
+> **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
+> Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
+> nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
+> wird nicht durch einen Praxisfall ersetzt.
 
 **Prüft:** Ob {{verbote}} auch dann hält, wenn der Kunde ausdrücklich danach
 fragt und ein Nein Umsatz kostet. Ein Verbot, das nur bei Gelegenheit gilt,

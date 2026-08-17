@@ -60,9 +60,21 @@ Ziel: Selbsttest-Modul als Skill in `adapter-claude/`.
    soll ich den Fix einspielen?").
 2. 5 Ketten-Testfälle Ende-zu-Ende mit Sollergebnissen.
 3. Reparatur-Flow: Vorschlag → Nutzer bestätigt → STATUS.md protokolliert.
+4. **Kundeneigene Testfälle erzeugen** (Entscheidung 17.08.2026). Der Watchdog
+   baut aus dem Material des Käufers — echte Anfragen, verschickte Angebote,
+   Mailverläufe, Stilbeispiele aus dem Interview — eigene Testfälle nach
+   `_TEMPLATE_TESTFALL.md` und legt sie beim Kunden ab. Sie entstehen dort,
+   bleiben dort und kommen nie zu uns zurück. Regeln: nur mit ausdrücklicher
+   Zustimmung, Sollkriterien werden dem Nutzer zur Bestätigung vorgelegt (nicht
+   vom Modell allein festgelegt), und ein selbstgebauter Fall wird als solcher
+   markiert. Das ist die Gegenleistung dafür, dass unsere Praxisfälle das Repo
+   nicht verlassen — ohne diesen Punkt prüft der Käufer nur gegen neutrale
+   Fremdfälle und nie gegen seinen eigenen Alltag.
 
 Definition of Done: Watchdog erkennt eine absichtlich eingebaute Abweichung in
-der Kette und schlägt den korrekten Fix vor.
+der Kette und schlägt den korrekten Fix vor — **und** hat aus dem Material eines
+Testkäufers mindestens 3 eigene Testfälle erzeugt, die dieser als treffend
+bestätigt.
 
 ---
 

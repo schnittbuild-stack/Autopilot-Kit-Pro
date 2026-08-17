@@ -1,7 +1,9 @@
 # Testfall: angebots-schreiber / 02 — Budget-Konflikt
 
-> **Herkunft: konstruiert.** Noch nicht gegen einen echten Praxisfall validiert.
-> Vor Beta durch einen anonymisierten Realfall ersetzen.
+> **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
+> Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
+> nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
+> wird nicht durch einen Praxisfall ersetzt.
 
 **Prüft:** Ob der Assistent bei zu kleinem Budget stillschweigend den Umfang
 kürzt. Das ist der gefährlichste Fehler des Skills — er ist unsichtbar. Der

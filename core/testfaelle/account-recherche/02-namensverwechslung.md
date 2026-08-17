@@ -1,6 +1,9 @@
 # Testfall: account-recherche / 02 — Namensverwechslung
 
-> **Herkunft: konstruiert.** Vor Beta gegen einen echten Fall tauschen.
+> **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
+> Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
+> nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
+> wird nicht durch einen Praxisfall ersetzt.
 
 **Prüft:** Ob Funde zu zwei gleichnamigen Firmen zu einem Profil verschmelzen.
 Ein vermischtes Profil ist schlimmer als gar keins — es ist vollständig,

@@ -1,6 +1,9 @@
 # Ketten-Testfall 01 — Recherche fast leer
 
-> **Herkunft: konstruiert.** Vor Beta gegen einen echten Fall tauschen.
+> **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
+> Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
+> nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
+> wird nicht durch einen Praxisfall ersetzt.
 
 **Schnittstelle:** `account-recherche → angebots-schreiber`
 **Vertrag:** `core/vertraege/account-recherche-zu-angebots-schreiber.md`
