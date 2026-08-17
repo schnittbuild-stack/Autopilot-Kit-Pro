@@ -10,8 +10,11 @@
   - [x] Agent 1 `angebots-schreiber` gebaut, 3 Testfälle
   - [x] Hauptkette V1 festgelegt, 2 Verträge geschrieben, 2 Ketten-Testfälle
   - [x] `angebots-schreiber` auf Vertrag 2 nachgezogen (Block B = ÜBERGABE ANGEBOT)
-  - [ ] Agenten 2–10 (alle noch STUB) — Reihenfolge: erst `account-recherche`
-        und `follow-up-generator`, weil deren Verträge stehen
+  - [x] Agent 2 `account-recherche` + 3 Testfälle
+  - [x] Agent 3 `follow-up-generator` + 3 Testfälle
+  - [ ] Agenten 4–10 (noch STUB): ausschreibungs-analyse, crm-notiz-zu-schritt,
+        einwand-sparring, forecast-erklaerer, meeting-nachbereitung,
+        outreach-personalisierer, preisverhandlungs-sparring
 - [ ] Phase 3 — Installer fertigstellen
 - [ ] Phase 4 — Watchdog & Ketten-Tests
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
@@ -30,11 +33,22 @@
   Abschnitt „Offen"). In Phase 3 entscheiden.
 - Repo liegt unter `schnittbuild-stack/Autopilot-Kit` (privat), nicht in der Org
   `Autopilot-Kit`. Transfer möglich, sobald ein Org-Token existiert.
+- **Widerspruch: der Graben liegt im ZIP.** `core/testfaelle/README.md` nennt die
+  Testfälle „der eigentliche Graben des Produkts … den kein Wettbewerber kopieren
+  kann" — die Release-Action kopiert aber `core/` komplett ins Kunden-ZIP. Damit
+  hat jeder Käufer (auch ein Wettbewerber für 299 €) das ganze Eval-Material.
+  Vor dem ersten Release entscheiden: (a) Watchdog braucht die Fälle lokal, also
+  bleibt es dabei und der Graben ist ein anderer; (b) nur Ketten-Fälle ausliefern,
+  Skill-Fälle bleiben im Repo; (c) Fälle beim Kunden aus seinem eigenen Material
+  erzeugen. Betrifft `.github/workflows/release.yml` und Phase 4.
 
 ## Nächster Schritt
-Phase 2, Schritt 4 aus BAUPLAN.md: **Agenten 2 und 3 bauen** —
-`account-recherche` und `follow-up-generator`, in dieser Reihenfolge. Ihre
-Verträge stehen bereits, das Ausgabeformat ist damit vorgegeben:
-`account-recherche` muss `RECHERCHE-ERGEBNIS` liefern, `follow-up-generator`
-muss `ÜBERGABE ANGEBOT` lesen und die vier harten Regeln einhalten.
-Danach die verbleibenden sieben Agenten (ohne Ketteneinbindung, je 3 Testfälle).
+Die verbleibenden **sieben Agenten** (4–10) nach dem Muster der ersten drei:
+je Skill nach `_TEMPLATE_SKILL.md`, je 3 Testfälle, keine Ketteneinbindung.
+Sie sind unabhängig voneinander — Reihenfolge frei, sinnvoll ist nach Nähe
+zur Kette: `outreach-personalisierer`, `einwand-sparring`,
+`meeting-nachbereitung`, `crm-notiz-zu-schritt`, `ausschreibungs-analyse`,
+`preisverhandlungs-sparring`, `forecast-erklaerer`.
+
+Danach Phase 2 Definition of Done prüfen: alle 10 Skills gegen ihre Testfälle,
+Hauptkette einmal Ende-zu-Ende.
