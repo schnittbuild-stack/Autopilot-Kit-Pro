@@ -8,3 +8,4 @@
 | 14.08.2026 | Preis: 299 € Einführung, 499 € Anker | Genehmigungsfähig, unter Agentur-Setup (ab 1.850 €), Funnel-Mathematik |
 | 14.08.2026 | GitHub = einzige Quelle der Wahrheit, Releases bauen das Kunden-ZIP | Struktur, Versionierung, kein Handbetrieb |
 | 14.08.2026 | Keine API-Keys: Aufbau auf dem Claude-Abo des Kunden | Null laufende Kosten/Haftung; Keys nur optional für Drittsysteme, lokal in .env |
+| 17.08.2026 | Repo-Heimat vorerst `schnittbuild-stack/Autopilot-Kit` (privat), nicht die Org `Autopilot-Kit` | Fine-grained Token war auf den User-Account ausgestellt; Org-Zugriff bräuchte neues Token + Repo. Transfer in die Org später per GitHub-Ownership-Transfer, alte URL bleibt per Redirect gültig |
