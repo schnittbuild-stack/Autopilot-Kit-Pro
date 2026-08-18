@@ -71,9 +71,9 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | bestanden | bestanden | **bestanden** |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 01-weiche-zusage` | bestanden | bestanden | bestanden | **bestanden** |
-| `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
+| `meeting-nachbereitung / 02-widerspruch` | bestanden | bestanden | bestanden | **bestanden** |
 
-**Stand: 11 von 12 abgeschlossen** — 10 bestanden · 1 abweichend · 1 offen.
+**Stand: 12 von 12 abgeschlossen** — 11 bestanden · 1 abweichend.
 
 ## Die einzelnen Fälle
 
@@ -380,6 +380,94 @@ Aufgaben Inhaberin:
 
 **Prüfer, Lauf 3:** Unter „Aufgaben Inhaberin" steht genau eine Zeile, und zwar die geforderte: „| Katrin Reinhardt | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung" |" — mit Beleg und mit dem Termin aus den Notizen; die Jahresangabe 2026 ist aus dem Termindatum „12.08.2026" abgeleitet und kein erfundenes Datum. „Zugesagt vom Kunden:  —" ist wie gefordert leer. Beide weichen Äußerungen stehen unter „Unverbindlich": „Schnellwechselsystem ansehen — Osei: „Wir könnten uns das Schnellwechselsystem ja mal ansehen." Keine Aufgabe, kein Termin." und „Zweite Schicht im Herbst — Lindner: „Das Thema zweite Schicht schauen wir uns im Herbst nochmal an." Keine …
 
+
+### meeting-nachbereitung / 02-widerspruch
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Termin:            14.08.2026, Jour fixe Weberhaus GmbH
+Teilnehmer:        Herr Weber; Frau Kranz (Einkauf); Katrin Reinhardt (Inhaberin)
+Worum es ging:     Jour fixe zum Projekt bei der Weberhaus GmbH. Themen waren
+                   der Zeitplan bis zum Rollout, das Budget und die Abnahme
+                   durch die IT. Zu Zeitplan und Budget stehen zwei
+                   gegensätzliche Aussagen in den Notizen.
+
+Entscheidungen:    Eine Abnahme durch die IT ist erforderlich — Beleg: „Abnahme durch die IT nötig"
+
+Aufgaben Inhaberin:
+
+| Wer | Was | Bis wann | Beleg |
+|---|---|---|---|
+| Katrin Reinhardt | Projektplan liefern | 22.08.2026 | „Ich liefere den Projektplan bis 22.08." |
+… (33 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Beide Widersprüche stehen vollständig und mit je beiden Varianten im Abschnitt `Widersprüche`: zum Zeitplan „«Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober» (Weber, Anfang des Gesprächs) gegen «Livegang 15.11., davor kein Personal frei» (Weber, später im Gespräch)", zum Budget „«Budget ist freigegeben, 40.000» (Kranz) gegen «40.000 noch durch die Bereichsleitung» (Kranz, später im Gespräch)". Die Fundstellen sind jeweils benannt (Sprecher plus Position im Gespräch), damit ist die Abweichend-Regel „ohne Fundstellen" nicht ausgelöst. Beide Punkte enden ausdrücklich mit „Beide Angaben stehen so in den Notizen, der Widerspruch wurde im Termin nicht aufgelöst" — es gibt also …
+
+**Prüfer, Lauf 2:** Beide Widersprüche stehen unter `Widersprüche` mit jeweils beiden Varianten und wörtlichen Fundstellen: beim Termin „Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober" (Weber, erste Gesprächshälfte) gegen „Livegang 15.11., davor kein Personal frei", beim Budget „Budget ist freigegeben, 40.000" (Kranz) gegen „40.000 noch durch die Bereichsleitung". Keine der beiden Durchgefallen-Regeln greift: Es wird nichts aufgelöst, gedeutet oder weggelassen — die Ausgabe stellt im Gegenteil ausdrücklich fest „Beide Aussagen stehen so in den Notizen, keine wurde im Termin zurückgenommen.", und das Budget erscheint nicht als freigegeben, denn unter `Entscheidungen` steht allein „Eine Abnahme …
+
+**Prüfer, Lauf 3:** Beide geforderten Widersprüche stehen unter `Widersprüche` mit jeweils beiden Varianten und einer Fundstelle: zum Zeitplan „‚Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober' (Weber, Zeile 1) gegen ‚Livegang 15.11., davor kein Personal frei' (Weber, Zeile 4)", zum Budget „‚Budget ist freigegeben, 40.000' (Kranz, Zeile 2) gegen ‚40.000 noch durch die Bereichsleitung' (Kranz, Zeile 5)". Keine der beiden Durchgefallen-Regeln greift: Kein Widerspruch wird aufgelöst, gedeutet oder weggelassen — beide Einträge schließen ausdrücklich mit „Nicht aufgelöst.", und die einzige Zusatzaussage („Beide Aussagen stammen von Herrn Weber, beide stehen so in den Notizen.") ist eine Feststellung …
+
+## Der eine Befund: `ketten / 02-entwurf-und-abgelehnte-forderung`
+
+Dreimal dieselbe Abweichung, dreimal dieselbe Ursache — das ist kein Wackeln,
+sondern ein reproduzierbarer Defekt in `follow-up-generator`.
+
+**Was passiert.** Stufe 1 ist in allen drei Läufen korrekt: Der Skill erkennt
+`Stand: entwurf`, schreibt keinen Nachfass-Text und fragt zurück, ob und wann
+das Angebot rausgegangen ist. Auch die abgelehnte Garantie bleibt in allen drei
+Läufen unangetastet, und `[PREIS PRÜFEN]` gelangt nie in den Kundentext.
+
+**Wo es bricht.** In Stufe 2 verwirft der Skill den Aufhänger, den der
+Übergabeblock im Feld `Nachfassen` ausdrücklich vorgibt („Zwischenreview nach
+Termin 2 als Sicherheitsnetz"), und wählt stattdessen einen eigenen Anlass —
+zweimal die offenen Reisekosten. Damit adressiert die Nachfass-Nachricht genau
+den Einwand nicht, an dem laut Übergabeblock die Freigabe durch die
+Geschäftsführung hängt. Zwei Läufe sagen das sogar wörtlich:
+
+> „Das habe ich bewusst nicht genommen." (Lauf 1)
+> „**Den Aufhänger aus dem Feld `Nachfassen` habe ich nicht benutzt.**
+> **Der erwartete Einwand bleibt außen vor.**" (Lauf 2)
+
+**Warum das zählt.** Der Fall prüft eine Übergabe, keine Formulierung. Das Feld
+`Nachfassen` ist Bestandteil des Vertrags
+`core/vertraege/angebots-schreiber-zu-follow-up-generator.md`. Ein Empfänger,
+der ein Vertragsfeld bewusst übergeht, bricht die Übergabe — Bauprinzip 3.
+Dass er die Abweichung transparent benennt, macht sie nicht folgenlos: Die
+Nachricht geht an den Kunden, der Hinweis bleibt beim Nutzer.
+
+**Nicht behoben in diesem Lauf.** Eine Skill-Änderung mitten in der Regression
+hätte alle übrigen Messungen entwertet — die bereits gelaufenen Fälle wären
+gegen eine andere Fassung geprüft als die späteren, also genau der Fehler, den
+dieser Lauf beheben sollte. Die Korrektur gehört in eine eigene Sitzung, danach
+läuft dieser Fall erneut dreimal.
+
 ## Was dieser Lauf nicht zeigt
 
-<!-- wird am Ende gefüllt -->
+Damit die Zahl oben nicht mehr behauptet, als sie trägt:
+
+1. **Er ist keine Vollregression.** Geprüft sind 12 von 32 Fällen. Die übrigen
+   20 sind zwar gegen die aktuelle Skill-Fassung gelaufen, aber nur **einmal**.
+   Der Dreifachlauf steht für sie aus. Nach dem Maßstab „bestanden heißt 3 von 3"
+   ist ihr Zustand unbekannt, nicht bestanden.
+2. **Drei Läufe sind eine kleine Stichprobe.** Sie fangen grobe Unstetigkeit,
+   nicht seltene Ausreißer. Ein Verhalten, das in einem von zwanzig Fällen
+   kippt, überlebt drei Läufe mit hoher Wahrscheinlichkeit unbemerkt.
+3. **Die Testfälle sind weiterhin konstruiert.** Sie stammen nicht aus der
+   Praxis (siehe offener Punkt in `docs/STATUS-BAU.md`). Eine Erfolgsquote aus
+   erfundenen Fällen taugt zur Entwicklung, nicht als Aussage nach außen.
+4. **Ein Bewerter je Ausgabe.** Jedes Urteil stammt aus genau einem Lauf. Wo ein
+   Kriterium Auslegungsspielraum lässt, ist das Urteil entsprechend wackelig —
+   gemessen wurde die Stabilität des Skills, nicht die des Bewerters.
+5. **`account-recherche / 01-leere-quellenlage` steht ungeklärt daneben.** Der
+   abgebrochene Vollregressionslauf hat diesen Fall auf `abweichend` bewertet,
+   obwohl er im Testlauf bestanden hatte. Er liegt außerhalb dieses Umfangs und
+   wurde hier weder wiederholt noch geprüft — er ist damit ein zweiter offener
+   Verdacht neben dem Ketten-Befund.
+
+**Konsequenz für die Definition of Done.** Phase 2 ist mit diesem Lauf **nicht**
+abgeschlossen. Offen bleiben: der Ketten-Befund, der Verdacht bei
+`account-recherche / 01`, und der Dreifachlauf für die übrigen 20 Fälle.
