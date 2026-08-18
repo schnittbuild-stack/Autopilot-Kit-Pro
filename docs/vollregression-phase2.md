@@ -60,16 +60,16 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ausschreibungs-analyse` | 3 | offen — noch nicht gelaufen |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
-| `follow-up-generator` | 3 | **angefangen** — 2 von 3 Fällen fertig |
+| `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
 | `ketten` | 2 | **angefangen** — 1 von 2 Fällen fertig |
 | `meeting-nachbereitung` | 3 | offen — noch nicht gelaufen |
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
-**Durch:** `account-recherche`, `angebots-schreiber`
+**Durch:** `account-recherche`, `angebots-schreiber`, `follow-up-generator`
 
-**Offen für die nächste Sitzung:** `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `ketten`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
+**Offen für die nächste Sitzung:** `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `forecast-erklaerer`, `ketten`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
 
 ## Ergebnis
 
@@ -92,7 +92,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `einwand-sparring / 03-ehrliche-auswertung` | — | — | — | offen |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
-| `follow-up-generator / 03-stufe-drei-und-schluss` | — | — | — | offen |
+| `follow-up-generator / 03-stufe-drei-und-schluss` | bestanden | bestanden | bestanden | **bestanden** |
 | `forecast-erklaerer / 01-luecke-zum-ziel` | — | — | — | offen |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
 | `forecast-erklaerer / 03-lueckenhafte-daten` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 9 von 32 abgeschlossen** — 9 bestanden · 23 offen.
+**Stand: 10 von 32 abgeschlossen** — 10 bestanden · 22 offen.
 
 ## Die einzelnen Fälle
 
@@ -349,6 +349,37 @@ Drei Möglichkeiten:
 **Prüfer, Lauf 2:** Die Ausgabe liefert keinen Nachfass-Text, sondern verweigert ihn begründet: "Zum Steinbach-Angebot habe ich kein Nachfassen geschrieben. Es fehlt der Anlass." Die Leerprüfung ist einzeln belegt — "Neue Entwicklung seit dem 14.08.: keine geliefert.", "Offene Punkte: keine im Angebot vermerkt.", "Budget-Konflikt: keiner." und "Gültig bis 31.12.2026: noch über vier Monate hin."; vom 18.08.2026 aus gerechnet stimmt die Angabe "über vier Monate" (rund 4,4 Monate). Die Rückfrage kommt mit ausdrücklich benannten Optionen und einer Wahlaufforderung am Schluss: "Was soll gelten — 1, 2, 3 oder der Preis-Aufhänger?" — also greift die Abweichend-Regel "wenn die Rückfrage kommt, aber ohne konkrete …
 
 **Prüfer, Lauf 3:** Die Ausgabe liefert keinen fertigen Nachfass-Text, sondern benennt das Fehlen des Anlasses ausdrücklich: „Zum Steinbach-Angebot entsteht gerade kein Nachfass-Text. Es fehlt der Anlass." Die leerlaufende Rangfolge wird belegt nachvollzogen — „Das Feld `Nachfassen` ist leer, es gibt keinen offenen Punkt, keinen Budget-Konflikt und keine neue Entwicklung" sowie „Die Gültigkeit läuft bis zum 31.12.2026, also noch über vier Monate" (Rechnung stimmt: vom 18.08.2026 bis 31.12.2026 sind es gut viereinhalb Monate). Die geforderte Rückfrage kommt mit konkret benannten Optionen und einer expliziten Entscheidungsfrage am Ende: „1. **Etwas Neues.**", „2. **Gültigkeit vorziehen.**", „3. **Abwarten.**" …
+
+
+### follow-up-generator / 03-stufe-drei-und-schluss
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**Block A — die Nachricht**
+
+```
+Betreff:   Re: Angebot Aufmaß und Montage 18 Fenster, Altbau
+
+Sehr geehrter Herr Steinbach,
+
+mein Angebot vom 14.08.2026 über Aufmaß und Montage der 18 Fenster im
+Altbau, inklusive Entsorgung, ist bis zum 30.09.2026 gültig. Eine
+Rückmeldung dazu habe ich bisher nicht. Wenn das Vorhaben derzeit nicht
+ansteht oder Sie sich anders entschieden haben, ist das in Ordnung.
+Sagen Sie mir bitte kurz, ob ich den Vorgang zulegen soll — oder nennen
+Sie mir ein Datum, an dem ich mich wieder bei Ihnen melden soll?
+
+… (73 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Stufe 3 ist ausdrücklich erkannt und mit dem richtigen Anlass begründet: Block B nennt „Stufe:            3" und „Anlass gewählt:   Ablauf der Gültigkeit am 30.09.2026", die Nachricht selbst greift das auf mit „ist bis zum 30.09.2026 gültig" — die Abweichend-Regel „Stufe 3 nicht als solche erkannt" greift damit nicht. Der geforderte Ausweg steht wörtlich in Teil 1: „Wenn das Vorhaben derzeit nicht ansteht oder Sie sich anders entschieden haben, ist das in Ordnung. Sagen Sie mir bitte kurz, ob ich den Vorgang zulegen soll" — der Kunde darf ohne Rechtfertigung absagen, die Durchgefallen-Regel „kein Ausweg" greift also nicht. Vorwurf oder Enttäuschung transportiert der Text nicht; die einzige …
+
+**Prüfer, Lauf 2:** Teil 1 ordnet den Fall ausdrücklich als dritte Stufe ein („Stufe:            3") und wählt das Ablaufdatum als echten Anlass: „unser Angebot ist bis zum 30.09.2026 gültig, also noch diese Woche", im Innenblock begründet mit „Ablauf der Gültigkeit am 30.09.2026 — ein nachprüfbares Datum aus dem Angebot selbst, kein erfundener Grund". Die Durchgefallen-Regel zum fehlenden Ausweg greift nicht: Der Text lässt dem Kunden ausdrücklich das Nein und das Später, ohne Rechtfertigung — „Wenn es gerade nicht passt oder Sie sich anders entschieden haben, sagen Sie mir kurz Bescheid — dann lege ich den Vorgang zu und melde mich nicht weiter." Vorwurf oder Enttäuschung transportiert die Nachricht nicht; …
+
+**Prüfer, Lauf 3:** Teil 1 ordnet den Fall ausdrücklich als dritte Stufe ein („Stufe:            3") und schließt sie ab („Nächste Stufe:    keine — hier ist Schluss."); die Abweichend-Regel „Stufe 3 nicht als solche erkannt" greift damit nicht. Als Anlass dient der echte Ablauf der Gültigkeit — „das Angebot ist bis zum 30.09.2026 gültig, also noch vier Tage." —, und Block B benennt ihn als „der einzige Anlass, der aus dem Angebot selbst kommt". Der geforderte Ausweg steht wörtlich da: „Wenn Sie sich anders entschieden haben oder das Projekt später kommt, reicht mir eine kurze Zeile, dann lege ich den Vorgang zu." Die Nachricht enthält genau eine, mit ja/nein beantwortbare Frage: „Soll ich das Angebot über den …
 
 
 ### ketten / 01-recherche-fast-leer
