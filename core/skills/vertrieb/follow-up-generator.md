@@ -111,6 +111,23 @@ was offen ist. Nicht aus dem Gedächtnis rekonstruieren.
 
 ## Ausgabeformat
 
+**Zuerst die Weiche: entsteht überhaupt ein Text?** In diesen vier Fällen
+entstehen Block A und Block B **nicht**:
+
+```
+Pflichtfeld fehlt:  Fehlt `Stand`, `Empfänger`, `Summe` oder `Abgelehnt` →
+                    Abbruch mit Meldung nach Vertrag, die das fehlende Feld
+                    nennt. Nichts wird ergänzt, nichts abgeleitet.
+`Stand: entwurf`:   kein Text, sondern genau EINE Rückfrage („Ist das Angebot
+                    rausgegangen — wann und über welchen Kanal?"), dann Stopp.
+Kein Übergabe-
+block vorhanden:    kein Text, sondern die tragenden Angaben einzeln erfragen —
+                    Empfänger, was angeboten wurde, wann es rausging,
+                    Gültigkeit, was offen ist. Nichts rekonstruieren.
+Nur Rang 5 übrig:   kein Text. Der erwartete Einwand wird {{rolle}} als
+                    Vorschlag vorgelegt, nie eigenmächtig umgesetzt.
+```
+
 **Block A — die Nachricht** (versandfertig):
 
 ```
@@ -131,6 +148,9 @@ Anlass gewählt:   <welcher, und warum dieser>
 Aufhänger-Quelle: Feld `Nachfassen` (bindend übernommen)
                   | eigene Rangfolge, Rang <n> — weil `Nachfassen` leer bzw.
                     ab Stufe 2 verbraucht
+                  | kein Text — Abweichung vom vorgegebenen Aufhänger
+                    angesprochen und {{rolle}} vorgelegt
+                  | kein Text — Rang 5 als Vorschlag vorgelegt, nicht umgesetzt
 Noch im Vorrat:   <welche Anlässe für die nächste Stufe übrig sind>
 Nächste Stufe:    <Datum als Vorschlag> | keine — hier ist Schluss
 Nicht berührt:    <Inhalt des Feldes Abgelehnt, zur Kontrolle> | —
@@ -147,6 +167,13 @@ vor dem Senden noch einmal zu lesen.
 
 Checkliste für Prozess Schritt 7 — jeder Punkt einzeln mit ja/nein:
 
+- [ ] Fehlte `Stand`, `Empfänger`, `Summe` oder `Abgelehnt`, ist **kein Text**
+      entstanden, sondern die Abbruchmeldung mit Nennung des fehlenden Feldes
+      — nichts ergänzt, nichts abgeleitet.
+- [ ] Bei `Stand: entwurf` ist kein Kundentext entstanden, sondern genau eine
+      Rückfrage.
+- [ ] Lag kein Übergabeblock vor, wurden die tragenden Angaben erfragt —
+      nichts aus dem Gedächtnis rekonstruiert.
 - [ ] Höchstens sechs Sätze in Block A.
 - [ ] **Das Feld `Nachfassen` wurde nicht übergangen.** War es gefüllt und ist
       dies das erste Nachfassen, steht sein Aufhänger im Text — oder es ist
@@ -169,6 +196,10 @@ Checkliste für Prozess Schritt 7 — jeder Punkt einzeln mit ja/nein:
       vorgelegten Möglichkeiten da.
 - [ ] Rang 5 wurde nicht benutzt, wenn der Einwand inhaltlich in `Abgelehnt`
       steht.
+- [ ] Rang 5 wurde nicht eigenmächtig umgesetzt, sondern {{rolle}} als
+      Vorschlag vorgelegt.
+- [ ] Ab Stufe 2 steht ein **neuer** Anlass im Text — nicht der Aufhänger der
+      Stufe davor.
 - [ ] **Waren Rang 1–4 leer, ist kein Kundentext entstanden** — auch kein
       versandfertiger „Vorschlag". Rang 5 allein trägt keinen Text.
 - [ ] Nach Stufe 3 wurde **empfohlen, nicht verweigert** — auf ausdrücklichen

@@ -86,11 +86,20 @@ sie so aussehen zu lassen wie eine mit Quellen schon.
 
 Bindend: `core/vertraege/account-recherche-zu-angebots-schreiber.md`.
 
+**Bevor überhaupt ein Ergebnis entsteht — zwei Weichen:**
+
+- **Zweck der Recherche fehlt** (Angebot, Erstansprache, Ausschreibung): kein
+  Block, sondern genau eine Frage nach dem Zweck, dann Stopp. Der Zweck ist
+  Pflichtangabe, er wird nicht angenommen.
+- **Kein Zugriff auf öffentliche Quellen:** Die Ansage darüber steht **vor**
+  der Recherche, nicht im Ergebnis danach.
+
 ```
 RECHERCHE-ERGEBNIS
 Stand:            <Datum der Recherche>
 Firma:            <Name>
 Verhältnis:       neukunde | bestandskunde | unbekannt
+                  [nur aus Nutzerquellen — nie aus öffentlichen erschlossen]
 Ansprechpartner:  <Name, Rolle>
 Branche/Größe:    <…>
 Anlass:           <warum ausgerechnet jetzt angefragt>
@@ -99,7 +108,21 @@ Unbelegt:         <je Zeile: Vermutung — worauf gestützt>
 Nicht gefunden:   <je Zeile: wonach gesucht wurde>
 ```
 
-Alle Felder stehen da, leere als `—`.
+Alle neun Felder stehen da, leere als `—`.
+
+**Wann die Recherche endet:** nach zwei aufeinanderfolgenden Suchen, die nichts
+Neues zum Raster beitragen, spätestens nach 15 Minuten. Was dann fehlt, steht
+unter `Nicht gefunden`.
+
+**Bei gleichlautenden Firmennamen — statt des Ergebnisses:**
+
+```
+Treffer 1:  <Firmierung> — <genau 1 Unterscheidungsmerkmal, z. B. Sitz>
+Treffer 2:  <Firmierung> — <genau 1 Unterscheidungsmerkmal>
+Frage:      genau eine — welche Firma gemeint ist
+```
+
+Kein zusammengeführtes Ergebnis, keine Auswahl von selbst.
 
 **Was `Belegte Fakten` aufnimmt — und was nicht:**
 
@@ -133,6 +156,19 @@ Checkliste für Prozess Schritt 7 — jeder Punkt einzeln mit ja/nein:
       `Belegte Fakten` genau `—`** und keine einzige Zeile.
 - [ ] `Nicht gefunden` ist gefüllt und nennt, **wonach** gesucht wurde —
       nicht nur, dass nichts kam.
+- [ ] Der Zweck der Recherche stand fest, bevor recherchiert wurde — sonst
+      wurde genau danach gefragt und kein Ergebnis ausgegeben.
+- [ ] Fehlte der Zugriff auf öffentliche Quellen, wurde das **vor** der
+      Recherche angesagt, nicht erst im Ergebnis.
+- [ ] `Verhältnis` stammt ausschließlich aus Nutzerquellen ({{tools}},
+      Mailverlauf, alte Angebote) — nichts daraus ist aus einer öffentlichen
+      Quelle erschlossen.
+- [ ] Abgebrochen wurde nach zwei aufeinanderfolgenden Suchen ohne neuen
+      Beitrag zum Raster, spätestens nach 15 Minuten.
+- [ ] Alle neun Felder des Blocks stehen da, leere als `—`, keines
+      weggelassen.
+- [ ] `Hinweis an dich` ist höchstens eine Zeile lang — und keine
+      Nutzereingabe steht in einem der drei Listenfelder.
 - [ ] Keine Bewertungen der Firma. „12 Mitarbeitende laut Impressum" ist ein
       Fakt, „solide aufgestellt" ist ein Urteil und hat hier nichts verloren.
 - [ ] **Nichts Privates.** Recherchiert wird ausschließlich Geschäftliches.

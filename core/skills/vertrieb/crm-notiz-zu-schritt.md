@@ -64,13 +64,17 @@ das Schließen vor, wenn die Notiz das hergibt.
 ```
 Signal:        fortschritt | stillstand | ende | unklar
 Belegsatz:     "<wörtlich aus der Notiz>"
+Einschätzung statt Beleg:  <1 Satz, wenn die Notiz nur Stimmung trägt> | —
 Ergebnis:      aktion | wiedervorlage | schliessen | rueckfrage
   Wer:         <…>          (nur bei aktion)
   Was:         <…>          (nur bei aktion)
   Bis wann:    <Datum>      (bei aktion und wiedervorlage)
   Grund:       <1 Satz>     (bei wiedervorlage und schliessen)
 Begründung:    1 Satz — warum dieser Schritt aus dem Belegsatz folgt
-CRM-Zeile:     <max 2 Zeilen, copy-paste-fertig>
+Zweiter Vorgang:  wiedervorlage <Datum> — <Grund> | —
+CRM-Zeile:     <max 2 Zeilen, copy-paste-fertig; beim Ansprechpartnerwechsel
+               mit dem Vermerk, dass der bisherige Empfänger nicht mehr
+               zuständig ist>
 ```
 
 Bei `rueckfrage` entfallen die Unterfelder; stattdessen die eine Frage, die
@@ -83,8 +87,11 @@ den Schritt entscheidbar macht.
 
 Checkliste für Schritt 8:
 
-- [ ] Genau ein Ergebnis, keine Optionsliste.
+- [ ] Genau ein Ergebnis, keine Optionsliste — ein Hinweis auf später ist
+      kein zweites Ergebnis, sondern steht in `Zweiter Vorgang`.
 - [ ] Der Belegsatz steht **wörtlich** in der Notiz — nicht sinngemäß.
+- [ ] Gibt es keinen wörtlichen Belegsatz, steht `Ergebnis: rueckfrage` —
+      kein Schritt ohne Belegsatz.
 - [ ] Kein erfundener Ansprechpartner, kein erfundener Termin, kein
       erfundener Wettbewerber.
 - [ ] Der Schritt ist überprüfbar: Verb, Objekt, Datum.
@@ -100,6 +107,9 @@ Checkliste für Schritt 8:
       nicht als Nebensatz im geschlossenen Vorgang.
 - [ ] Beim Ansprechpartnerwechsel führt der Schritt den Vorgang neu ein und
       setzt keine Kenntnis des Angebots voraus.
+- [ ] Beim Ansprechpartnerwechsel vermerkt die CRM-Zeile, dass der bisherige
+      Empfänger nicht mehr zuständig ist.
+- [ ] `Grund` und `Begründung` sind je höchstens ein Satz.
 
 ## Beispiele
 

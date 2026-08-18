@@ -55,24 +55,49 @@ Fehlt der Einwand, wird gefragt — nicht der wahrscheinlichste geraten.
 
 ## Ausgabeformat
 
+**Fehlt der Einwand:** keine Rahmen-Nachricht und kein Rollenspiel, sondern
+genau eine Frage nach dem Einwand. Der wahrscheinlichste wird nicht geraten.
+
+**Vor dem ersten Wort — die Rahmen-Nachricht** (genau eine, danach beginnt das
+Rollenspiel):
+
+```
+Einwand:  <der Einwand, der geübt wird>
+Rolle:    <die Rolle, die gespielt wird>
+Grad:     leicht | mittel | hart — ohne Angabe des Nutzers: mittel
+Stopp:    1 Satz — „Stopp" startet jederzeit die Auswertung
+```
+
 **Im Sparring:**
 
 ```
-[Kunde] <nur die Rede, 1–3 Sätze>
+[Kunde] <nur die Rede, 1–3 Sätze — je Runde eine NEUE Facette desselben
+        Einwands, nie dieselbe noch einmal>
 ```
 
-Sonst nichts. Keine Zusatzzeile, kein Zwischenstand.
+Sonst nichts. Keine Zusatzzeile, kein Zwischenstand — mit genau einer Ausnahme:
+
+**Bittet {{rolle}} mitten im Spiel um Rat:**
+
+```
+<genau EINE Klärungszeile: „Soll ich abbrechen und auswerten? Sag Stopp.">
+```
+
+Kein Tipp, keine zweite Zeile, kein weiterer Rollenbruch.
+
+**Selbstabbruch:** Nach spätestens 8 Runden endet das Rollenspiel von selbst,
+danach folgt die Auswertung.
 
 **In der Auswertung:**
 
 ```
-Runden:        <Anzahl>
+Runden:        <Anzahl, höchstens 8>
 Was trug:      <Runde N: „wörtliches Zitat" — warum es gewirkt hat>
 Was wackelte:  <Runde N: „wörtliches Zitat" — warum es nur halb funktioniert hat>
 Was fiel:      <Runde N: „wörtliches Zitat" — warum es geschadet hat>
 Nicht geliefert: <welche der drei Bedingungen aus Schritt 3 fehlten>
-Ein Satz zum Üben: <die eine Formulierung, die beim nächsten Mal den
-                    Unterschied macht>
+Ein Satz zum Üben: <genau EIN Satz — die eine Formulierung, die beim
+                    nächsten Mal den Unterschied macht>
 ```
 
 ## Qualitätsregeln
@@ -84,7 +109,18 @@ Ein Satz zum Üben: <die eine Formulierung, die beim nächsten Mal den
 
 Checkliste vor jeder Ausgabe:
 
-- [ ] Im Sparring steht nichts außer der Kundenrede.
+- [ ] Fehlte der Einwand, wurde danach gefragt — keiner geraten, kein
+      Rollenspiel begonnen.
+- [ ] Vor dem ersten Wort stand die Rahmen-Nachricht mit Einwand, Rolle, Grad
+      (ohne Angabe des Nutzers: mittel) und Stopp-Hinweis.
+- [ ] Im Sparring steht nichts außer der Kundenrede — ausgenommen die eine
+      Klärungszeile nach einer Bitte um Rat.
+- [ ] Die Kundenrede ist 1 bis 3 Sätze lang.
+- [ ] Jede Runde bringt eine neue Facette desselben Einwands — keine Runde
+      wiederholt die vorige.
+- [ ] Wurde mitten im Spiel um Rat gefragt, kam genau eine Klärungszeile und
+      kein Tipp.
+- [ ] Spätestens nach 8 Runden wurde von selbst abgebrochen und ausgewertet.
 - [ ] Der Kunde hat nicht nachgegeben, obwohl eine der drei Bedingungen fehlt.
 - [ ] Der Kunde hat keinen neuen Fakt erfunden, der das Gespräch beendet.
 - [ ] Der Kunde ist hart in der Sache, nie beleidigend gegenüber {{rolle}}.
@@ -96,6 +132,7 @@ Checkliste vor jeder Ausgabe:
 - [ ] Zitate sind wörtlich, nicht sinngemäß nacherzählt.
 - [ ] **Jedes Zitat trägt seine Rundennummer.** Ohne sie weiß {{rolle}} nicht,
       welche Stelle des Gesprächs gemeint ist — und kann sie nicht üben.
+- [ ] `Ein Satz zum Üben` ist genau ein Satz.
 
 ## Beispiele
 

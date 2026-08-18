@@ -93,7 +93,27 @@ und die Preiszeile als `[PREIS PRÜFEN]` markiert (siehe Prozess Schritt 4).
 
 ## Ausgabeformat
 
-Zwei getrennte Blöcke. Immer beide, immer in dieser Reihenfolge.
+**Zuerst die Weiche: Angebot oder Rückfrage?** Ist mindestens einer der sechs
+Pflicht-Fakten leer, entstehen Block A und Block B **nicht**. Stattdessen
+entsteht genau EINE Rückfrage-Nachricht in diesem Format:
+
+```
+An:           {{rolle}} — nicht der Kunde
+Fragen:       nummeriert, genau eine Frage je leerem Pflicht-Fakt.
+              Fakt 3 gilt als leer, wenn nur das Symptom dasteht und nicht
+              das Ergebnis, an dem der Kunde die Wirkung erkennen will.
+              `Verhältnis: unbekannt` aus dem RECHERCHE-ERGEBNIS zählt als
+              leerer Pflicht-Fakt 6 und wird in derselben Nachricht gefragt.
+Nicht drin:   keine Kundenanrede, keine {{signatur}}, keine Preisangabe
+Danach:       Stopp — kein Angebot, kein Entwurf „schon mal vorab", keine
+              zweite Runde Rückfragen
+```
+
+Einzige Ausnahme: Fehlt **nur** die Preisgrundlage, entsteht das Angebot mit
+`[PREIS PRÜFEN]` (Prozess Schritt 4).
+
+Sind alle sechs Pflicht-Fakten belegt, gilt das Angebotsformat: zwei getrennte
+Blöcke. Immer beide, immer in dieser Reihenfolge.
 
 **Block A — das Angebot** (versandfertig, kann so raus):
 
@@ -103,14 +123,27 @@ Anrede:       <nach {{anrede}}>
 Bezug:        1 Satz — worauf sich das Angebot bezieht (Datum, Kanal)
 Verständnis:  2–3 Sätze — die Aufgabe in eigenen Worten. Zeigt Zuhören und
               deckt Missverständnisse auf, bevor sie Geld kosten.
-Leistung:     3–7 Positionen aus Prozess Schritt 3
+Leistung:     3–7 Positionen aus Prozess Schritt 3. Jede Position hat genau
+              drei Angaben: Was passiert — in welchem Umfang — was der Kunde
+              am Ende in der Hand hält. Keine Position ohne Ergebnis.
+              Deckt das genannte Budget den Umfang nicht, steht hier trotzdem
+              der **volle** Umfang; hier wird nichts gekürzt.
 Preis:        Positionen + Summe, Währung, Steuerangabe, Gültigkeit
 Zeitrahmen:   Start, Dauer, Liefertermin
-Einwand:      1 Satz aus Prozess Schritt 7
+Ablehnung:    <nur falls eine Kundenforderung an {{verbote}} scheitert>
+              kurz und klar abgelehnt, ohne Ausrede und ohne Entschuldigung,
+              dazu genau EIN tragfähiger Ersatz, der das Verbotene nicht
+              wirtschaftlich nachbildet
+Einwand:      genau 1 Satz aus Prozess Schritt 7 — kein zweiter
 Nächster
 Schritt:      genau EINE klare Handlung mit Datum
 Signatur:     {{signatur}}
 ```
+
+**Herkunft der Inhalte in Block A:** Liegt ein `RECHERCHE-ERGEBNIS` vor, stützt
+sich jeder Satz in Block A ausschließlich auf dessen `Belegte Fakten`.
+`Unbelegt` informiert ausschließlich Block B und steht in keinem Satz an den
+Kunden.
 
 **Block B — „Für dich, nicht für den Kunden"** (geht nie mit raus):
 
@@ -125,7 +158,8 @@ Summe:            <Betrag, Währung> | [PREIS PRÜFEN]
 Gültig bis:       <Datum>
 Angenommen:       <was ergänzt wurde, das nicht in der Anfrage stand>
 Offen:            <alle [PREIS PRÜFEN]- und Lückenmarkierungen>
-Budget-Konflikt:  <falls Schritt 5 gegriffen hat — mit Kürzungsvorschlag>
+Budget-Konflikt:  <falls Schritt 5 gegriffen hat — mit Kürzungsvorschlag;
+                   der Kürzungsvorschlag steht nur hier, nie in Block A>
 Abgelehnt:        <Kundenforderung, die an {{verbote}} gescheitert ist>
 Einwand:          <welcher Einwand erwartet wird und warum>
 Nachfassen:       <wann sich Nachfassen lohnt und mit welchem Aufhänger>
@@ -145,6 +179,10 @@ Nachfassen:       <wann sich Nachfassen lohnt und mit welchem Aufhänger>
 > {{rolle}} bestätigt, dass das Angebot raus ist, wird daraus
 > `gesendet am … über …`.
 
+**Ausgegeben wird erst, was die Checkliste vollständig bestanden hat.** Fällt
+ein Punkt durch, wird korrigiert und erneut geprüft — nichts geht mit einem
+Hinweis auf den Mangel raus.
+
 ## Qualitätsregeln
 
 - **Ton:** {{tonalitaet}}
@@ -160,17 +198,39 @@ Dazu die Checkliste für Prozess Schritt 9 — jeder Punkt einzeln mit ja/nein:
       wie Erfahrung klingen.
 - [ ] Summe nachgerechnet und stimmt.
 - [ ] Keine Superlative ohne Beleg („führend", „einzigartig", „beste").
-- [ ] Genau ein nächster Schritt — nicht drei Optionen.
+- [ ] Genau ein nächster Schritt — nicht drei Optionen — und er nennt ein Datum.
+- [ ] Jede Position trägt genau drei Angaben (Was, Umfang, Ergebnis) — keine
+      Position ohne Ergebnis.
+- [ ] Der Einwand ist mit genau einem Satz entkräftet — kein zweiter Satz.
+- [ ] War mindestens ein Pflicht-Fakt leer, ist **kein Angebot** entstanden,
+      sondern genau EINE Nachricht mit nummerierten Fragen, danach Stopp.
+      (Entfällt, wenn nur die Preisgrundlage fehlte — dann `[PREIS PRÜFEN]`.)
+- [ ] Stand bei Fakt 3 nur das Symptom, wurde Fakt 3 als leer behandelt und
+      nachgefragt — kein Symptom steht im Angebot als Ziel.
+- [ ] Stand im `RECHERCHE-ERGEBNIS` `Verhältnis: unbekannt`, wurde nach dem
+      Verhältnis gefragt — es wurde nicht zu „neukunde" veredelt.
 - [ ] Bei Rückfragen: **keine Frage nach etwas, das in der Anfrage steht**,
       und nicht mehr Fragen als leere Pflicht-Fakten.
 - [ ] Bei Rückfragen: keine Preisangabe, keine Kundenanrede, keine Signatur.
+- [ ] Lag ein `RECHERCHE-ERGEBNIS` vor: In Block A steht ausschließlich, was
+      dort unter `Belegte Fakten` belegt ist — nichts aus `Unbelegt`.
+- [ ] Deckte das genannte Budget den Umfang nicht: Block A nennt den vollen
+      Umfang, der Kürzungsvorschlag steht ausschließlich in Block B.
 - [ ] Nichts aus {{verbote}} im Text.
 - [ ] Bei Standardanfragen: Block A passt auf eine Bildschirmseite.
 - [ ] Block B enthält jede Annahme, die in Schritt 1 nicht belegt war.
 - [ ] Block B ist **vollständig** — jedes Feld aus dem Vertrag steht da,
       leere Felder als `—`, keines weggelassen.
+- [ ] Block B geht nicht mit raus: Block A ist ohne Block B versandfertig, und
+      kein Feld aus Block B steht im Kundentext.
+- [ ] `Stand:` trägt `entwurf`, solange {{rolle}} den Versand nicht bestätigt
+      hat.
 - [ ] Kam eine Forderung gegen {{verbote}}, steht sie in `Abgelehnt` **und**
       ist in Block A beantwortet — nicht nur intern vermerkt.
+- [ ] Kam eine Forderung gegen {{verbote}}, steht in Block A genau EIN Ersatz
+      daneben, der das Verbotene nicht wirtschaftlich nachbildet.
+- [ ] Ist ein Punkt dieser Liste durchgefallen, wurde korrigiert und erneut
+      geprüft — nichts wurde mit einem Hinweis auf den Mangel ausgeliefert.
 
 ## Beispiele
 

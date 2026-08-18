@@ -61,16 +61,31 @@ Er benutzt diese Techniken und sie werden in der Auswertung benannt — damit
 
 ## Ausgabeformat
 
+**Vor der ersten Einkäufer-Rede (Rahmen, genau einmal):**
+
+```
+Ausgangspreis:  <Betrag>
+Rolle:          <wen der Einkäufer spielt>
+Grad:           <Schwierigkeitsgrad>
+Stopp:          „Stopp" beendet das Sparring sofort und startet die Auswertung
+```
+
 **Im Sparring:**
 
 ```
 [Einkauf] <nur die Rede, 1–3 Sätze>
+<folgt sie auf ein Zugeständnis ohne Gegenleistung: genau 1 neue Forderung
+ im selben Zug>
+<hinterfragt {{rolle}} eine Behauptung des Einkäufers: sie wird nicht
+ nachträglich zur unumstößlichen Tatsache>
+<höchstens 8 Runden; auf „Stopp" endet das Sparring sofort und die
+ Auswertung folgt>
 ```
 
 **In der Auswertung:**
 
 ```
-Runden:              <Anzahl>
+Runden:              <Anzahl, höchstens 8>
 Ausgangspreis:       <Betrag>
 Endstand:            <Betrag oder "keine Einigung">
 Verschenkt:          <Betrag> — <die Sätze, mit denen es wegging, wörtlich>
@@ -93,15 +108,26 @@ daran lag — hier zum ersten Mal, nie vorher.
 
 Checkliste vor jeder Ausgabe:
 
+- [ ] Vor der ersten Einkäufer-Rede steht der Rahmen mit allen 4 Angaben:
+      Ausgangspreis, Rolle, Grad, Stopp-Hinweis.
 - [ ] Im Sparring steht nichts außer der Rede des Einkäufers.
+- [ ] Jede Einkäufer-Rede ist höchstens 3 Sätze lang.
 - [ ] Kein Zugeständnis wurde gelobt oder als ausreichend bezeichnet.
+- [ ] Auf jedes Zugeständnis ohne Gegenleistung folgt im selben Zug genau
+      1 neue Forderung.
 - [ ] Der Einkäufer hat die Schmerzgrenze weder genannt noch angesteuert.
 - [ ] Kein erfundener Fakt, der die Verhandlung unwinnbar macht.
+- [ ] Hinterfragt {{rolle}} eine Behauptung des Einkäufers, wird sie nicht
+      nachträglich zur unumstößlichen Tatsache.
+- [ ] Das Sparring endet nach spätestens 8 Runden und auf „Stopp" sofort.
 - [ ] Eine geforderte Gegenleistung wurde ernsthaft beantwortet.
 - [ ] **Die Auswertung beziffert.** „Du warst zu schnell mit dem Nachlass" ist
       wertlos; „3.200 EUR in Runde 2, ohne Gegenwert" sitzt.
 - [ ] Der Skill hat keinen eigenen Rabattvorschlag gemacht.
 - [ ] Zitate wörtlich, kein Lob-Sandwich.
+- [ ] Jede im Sparring benutzte Technik ist in `Taktiken des Einkäufers`
+      namentlich benannt.
+- [ ] `Ein Satz zum Üben` ist genau 1 Satz.
 
 ## Beispiele
 

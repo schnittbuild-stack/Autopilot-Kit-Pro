@@ -36,10 +36,10 @@ gerade abgeben wollte.
 1. **Anknüpfungspunkt prüfen** mit dem Austauschtest: Ließe sich der
    Firmenname austauschen, ohne dass der Satz falsch wird? Dann ist es keine
    Personalisierung, sondern Füllmaterial — und der Satz fällt raus.
-2. **Brücke bauen.** Ein Satz, der den Anknüpfungspunkt mit dem Angebot
-   verbindet. Diese Brücke ist die eigentliche Arbeit: ohne sie steht die
-   Personalisierung als Höflichkeitsfloskel vorneweg und das Angebot dahinter
-   als Fremdkörper.
+2. **Brücke bauen.** Ein bis zwei Sätze, die den Anknüpfungspunkt mit dem
+   Angebot verbinden. Diese Brücke ist die eigentliche Arbeit: ohne sie steht
+   die Personalisierung als Höflichkeitsfloskel vorneweg und das Angebot
+   dahinter als Fremdkörper.
 3. **Wahrheitsprüfung.** Jede Behauptung über gemeinsame Geschichte —
    Treffen, Empfehlung, früherer Kontakt, gemeinsame Bekannte — muss belegt
    sein. Ist sie es nicht, wird sie gestrichen, nicht abgeschwächt.
@@ -60,6 +60,16 @@ gerade abgeben wollte.
 
 ## Ausgabeformat
 
+**Zuerst die Weiche: Fehlt der Anknüpfungspunkt, entsteht Block A nicht.**
+Stattdessen:
+
+```
+Kein Text.
+Was reichen würde:  genau 3 Sorten brauchbarer Information, je 1 Zeile mit
+                    Fundort — wo sie üblicherweise steht
+Angebot:            1 Satz — `account-recherche` für diese Suche laufen lassen
+```
+
 **Block A — die Nachricht:**
 
 ```
@@ -68,9 +78,13 @@ Anrede:       nach {{anrede}}
 Aufhänger:    1 Satz, der Anknüpfungspunkt
 Brücke:       1–2 Sätze, Verbindung zum Angebot
 Angebot:      1 Satz, was {{rolle}} konkret tun kann
-Frage:        genau eine, mit ja/nein/Termin beantwortbar
+Frage:        genau eine, mit ja/nein/Termin beantwortbar — sie zielt auf das
+              erste Gespräch, nicht auf den Abschluss
 Signatur:     {{signatur}}
 ```
+
+Liegt ein `RECHERCHE-ERGEBNIS` vor, steht in Block A ausschließlich, was dort
+unter `Belegte Fakten` belegt ist — nichts aus `Unbelegt`.
 
 **Block B — für {{rolle}}:**
 
@@ -80,6 +94,10 @@ Austauschtest:    bestanden — <warum der Satz nur auf diesen Empfänger passt>
 Weggelassen:      <was nicht belegt war und warum — höchstens 2 Sätze> | —
 Kanal-Hinweis:    <genau 1 Satz, nur beim ersten Text zu diesem Kanal> | —
 ```
+
+Der Kanal-Hinweis steht ausschließlich in Block B und **ersetzt Block A
+nicht** — die Nachricht entsteht trotzdem, es gibt keine Weigerung. Bei jedem
+weiteren Text zu demselben Kanal steht dort `—`.
 
 ## Qualitätsregeln
 
@@ -98,14 +116,23 @@ Checkliste für Schritt 7:
 - [ ] Nichts Privates als Aufhänger — auch nicht, wenn es öffentlich steht.
       Fachbeiträge und Vorträge sind fachlich, Hobbys sind es nicht.
 - [ ] Höchstens fünf Sätze, genau eine Frage.
+- [ ] Die eine Frage zielt auf das erste Gespräch, nicht auf den Abschluss.
+- [ ] Lag ein `RECHERCHE-ERGEBNIS` vor, steht im Text nur Belegtes — nichts
+      aus `Unbelegt`.
 - [ ] Kein Schmeicheln als Ersatz für einen Anlass („Ihr beeindruckender
       Auftritt").
 - [ ] Nichts aus {{verbote}}.
 - [ ] `Weggelassen` ist höchstens zwei Sätze lang.
 - [ ] Der Kanal-Hinweis ist **genau ein Satz** und enthält keinen
       Haftungszusatz.
+- [ ] Der Kanal-Hinweis hat den Text nicht ersetzt: Block A ist entstanden,
+      es gab keine Weigerung.
+- [ ] Der Kanal-Hinweis steht nur beim ersten Text zu diesem Kanal; bei jedem
+      weiteren steht dort `—`.
 - [ ] Fehlt der Anknüpfungspunkt, wurde `account-recherche` ausdrücklich
       angeboten.
+- [ ] Fehlte der Anknüpfungspunkt, ist **kein Text** entstanden, sondern genau
+      drei Sorten brauchbarer Information, je mit Fundort.
 
 ## Beispiele
 

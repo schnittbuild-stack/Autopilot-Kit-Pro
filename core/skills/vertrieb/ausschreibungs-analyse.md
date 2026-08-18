@@ -95,17 +95,23 @@ und der Nutzer merkt es erst auf der letzten Seite.
 
 ```
 FRISTEN
+  Erster Satz:     nennt genau 3 Dinge — Abgabefrist, verbleibende Arbeitszeit
+                   in Arbeitstagen (keine Kalendertage), jede abgelaufene
+                   Nebenfrist mit ihrer Dauer („seit 12 Tagen vorbei")
+  Nachweise Dritter: <1 Satz zur Beschaffungsdauer, im selben Absatz wie der
+                   erste Satz> | keine gefordert
   Vergabeart:      öffentliche Vergabe | private Anfrage
   Abgabe:          <Datum, Uhrzeit> | nicht gefunden
   Bieterfragen:    <Datum> | nicht gefunden
   Bindefrist:      <…> | nicht gefunden
-  Verbleibend:     <Tage> — <Warnhinweis, falls knapp oder abgelaufen>
+  Verbleibend:     <Arbeitstage> — <Warnhinweis, falls knapp oder abgelaufen>
 
 FORMALIEN
-  <Abgabeweg, Nachweise, Lose, Nebenangebote>
+  <je Punkt: Abgabeweg, Nachweise, Lose, Nebenangebote> | nicht geprüft
 
 K.O.-KRITERIEN
   | Kriterium | Fundstelle | erfüllt / nicht erfüllt / unklar |
+  — oder: `entfällt — die Unterlage stellt keine Eignungskriterien`
 
 LEISTUNGSUMFANG
   <gefordert> — <auffällig/ungewöhnlich>
@@ -115,7 +121,13 @@ AUFWAND (Einschätzung)
 
 EMPFEHLUNG
   bieten | bieten mit Vorbehalt | nicht bieten
+  (liegt nur ein Auszug vor: höchstens `bieten mit Vorbehalt`)
   <2 Sätze Begründung, bei "nicht bieten" der ausschlaggebende Punkt>
+
+OFFENE FRAGEN AN DICH (entfällt nie)
+  <je Zeile: welche Angabe von {{rolle}} fehlt — welches Kriterium sie auf
+   `unklar` hält>
+  — oder: `keine`
 
 BIETERFRAGEN (bis <Frist>)
   1. …
@@ -130,6 +142,11 @@ BIETERFRAGEN (bis <Frist>)
 Checkliste für Schritt 8:
 
 - [ ] Fristen stehen ganz oben, auch wenn sie nicht gefunden wurden.
+- [ ] Der erste Satz nennt alle 3 Angaben: Abgabefrist, verbleibende
+      Arbeitszeit in Arbeitstagen, jede abgelaufene Nebenfrist mit Dauer.
+- [ ] Sind Nachweise von Dritten gefordert (Behörde, Krankenkasse,
+      Zertifizierer), steht ein Satz zu ihrer Beschaffungsdauer im selben
+      Absatz wie der erste Satz.
 - [ ] Kein Datum geschätzt oder aus dem Zusammenhang abgeleitet.
 - [ ] Jedes K.o.-Kriterium hat eine Fundstelle. Ohne Fundstelle ist es kein
       K.o.-Kriterium, sondern eine Vermutung.
@@ -138,11 +155,21 @@ Checkliste für Schritt 8:
       insbesondere keine „üblichen" Anforderungen aus Erfahrung.
 - [ ] Aufwandszahlen sind als Einschätzung markiert und als Spanne angegeben.
 - [ ] Die Empfehlung ist eine von dreien, nicht „kommt darauf an".
+- [ ] Die Begründung der Empfehlung ist höchstens 2 Sätze lang; bei
+      `nicht bieten` steht genau ein ausschlaggebender Punkt, keine Liste.
+- [ ] Im `LEISTUNGSUMFANG` ist Gefordertes von nur Beschriebenem getrennt,
+      und jede ungewöhnliche Anforderung ist hervorgehoben.
 - [ ] Liegt nur ein Auszug vor, steht das in der Empfehlung.
+- [ ] Liegt nur ein Auszug vor, lautet die Empfehlung höchstens
+      `bieten mit Vorbehalt`.
 - [ ] **Keine Frage in der Liste zielt auf eine Ausnahme von einem nicht
       erfüllten K.o.-Kriterium.**
-- [ ] Bieterfragen entfallen, wenn ihre Frist abgelaufen ist oder nicht
-      geboten wird — und der Grund steht da.
+- [ ] Bieterfragen entfallen, wenn ihre Frist abgelaufen ist, nicht geboten
+      wird oder es keine Vergabestelle gibt, an die zu fragen wäre — und der
+      Grund steht da.
+- [ ] Jedes Kriterium auf `unklar` steht mit der fehlenden Angabe in
+      `OFFENE FRAGEN AN DICH` — auch bei `nicht bieten`, wo `BIETERFRAGEN`
+      entfällt.
 - [ ] Keine Fristverlängerung, Wiederholung oder Nachreichmöglichkeit
       unterstellt, die nicht im Dokument steht.
 - [ ] K.o.-Tabelle nur, wenn die Unterlage Eignungskriterien stellt.

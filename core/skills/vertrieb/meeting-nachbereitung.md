@@ -56,17 +56,19 @@ belegen, kommen sie in die Unklar-Liste. Sie werden nicht geschätzt.
 ## Ausgabeformat
 
 ```
+<Jede Aussage aus den Notizen: genau eine Stufe, genau ein Block — nie in zweien.>
+
 Termin:            <Datum, Anlass> | unklar
 Teilnehmer:        <Namen, Rollen> | unklar
 Worum es ging:     2–3 Sätze, sachlich
 
-Entscheidungen:    <je Zeile: Entscheidung — Beleg> | —
+Entscheidungen:    <je Zeile: Entscheidung — Beleg, wörtlich aus den Notizen> | —
 
 Aufgaben {{rolle}}:
-  | Wer | Was | Bis wann | Beleg |
+  | Wer | Was | Bis wann | Beleg (wörtlich) |
 
 Zugesagt vom Kunden:
-  | Wer | Was | Bis wann | Beleg |
+  | Wer | Was | Bis wann | Beleg (wörtlich) |
 
 Unverbindlich:     <Angedachtes, ausdrücklich ohne Aufgabe> | —
 Widersprüche:      <je Zeile: beide Varianten + Fundstellen> | —
@@ -86,13 +88,19 @@ Checkliste für Schritt 7:
 - [ ] Keine Aufgabe ohne alle drei Angaben — Wer, Was, Bis wann. Unvollständig
       heißt Unklar, nicht „bis KW 34" geraten.
 - [ ] Keine Aufgabe aus einer angedachten Äußerung.
+- [ ] Jede Aussage steht in genau einem Block — keine Aussage taucht in
+      zwei Blöcken auf.
 - [ ] Jede Aufgabe und jede Entscheidung hat einen Beleg aus den Notizen.
+- [ ] Jeder Beleg steht wörtlich in den Notizen — verkürzen erlaubt,
+      umformulieren nicht.
 - [ ] Keine Namen, Zahlen, Termine oder Themen, die nicht in den Notizen
       stehen.
 - [ ] Widersprüche sind benannt, nicht aufgelöst.
 - [ ] Kundenzusagen stehen nicht bei den eigenen Aufgaben.
 - [ ] `Nächster Termin` steht auf „nicht vereinbart", wenn keiner vereinbart
       wurde — nicht auf einem Vorschlag.
+- [ ] `Worum es ging` ist höchstens 3 Sätze lang.
+- [ ] Zu jedem Punkt in `Unklar` steht genau eine Frage in `Fragen an dich`.
 - [ ] Nichts aus {{verbote}}.
 - [ ] Nichts steht in `Unklar`, was in den Notizen belegt ist — verkürzte
       Datums-, Monats- und Namensangaben zählen als belegt.
