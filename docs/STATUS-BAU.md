@@ -19,9 +19,13 @@
         (`docs/testlauf-phase2-regression.md`)
   - [x] Ketten-Befund behoben: Feld `Nachfassen` ist bindend, Vertrag Regel 4
         geändert, `ketten/02` danach 3 von 3 bestanden
-  - [ ] **Definition of Done NICHT erreicht** — Befund in `account-recherche`
-        offen, zwei Fälle durch die Korrektur veraltet, Dreifachlauf für die
-        übrigen 19 Fälle steht aus, siehe unten
+  - [x] `account-recherche`-Befund behoben, danach 3 von 3; beide
+        `follow-up-generator`-Fälle nachgezogen — **13 von 13 bestanden**
+  - [x] Bauregel-Gegenprobe über alle zehn Skills: 36 Funde, 30 Teilfunde,
+        alle verankert (`docs/gegenprobe-bauregel.md`)
+  - [ ] **Definition of Done NICHT erreicht** — die Gegenprobe hat alle zehn
+        Skills angefasst, damit sind alle 32 Fälle gegen eine vorige Fassung
+        gemessen. Vollständiger Dreifachlauf steht aus, siehe unten
 - [ ] Phase 3 — Installer fertigstellen
   - [ ] **Sitzungswechsel unsichtbar** — neue Pflichtanforderung, siehe unten
 - [ ] Phase 4 — Watchdog & Ketten-Tests
@@ -45,37 +49,38 @@ Hauptkette läuft einmal Ende-zu-Ende durch."
 - [x] 15 Befunde im Skill behoben, kein Testfall weichgespült
 - [x] Endstand 32/32 bestanden — Einzelheiten in `docs/testlauf-phase2.md`
 
-**Stand nach Teilregression und Korrektur (18.08.2026):**
+**Stand nach Teilregression, zwei Korrekturen und Gegenprobe (18.08.2026):**
 
 - [x] **Die schlimmere Hälfte der Lücke ist zu.** Die 11 Fälle, die nur gegen
       die *vorige* Skill-Fassung geprüft waren — darunter beide Ketten-Fälle —
-      sind erneut gelaufen, je dreimal. Dazu der Wackelkandidat
-      `follow-up-generator / 02-kein-anlass`: **3 von 3, er hält.**
-- [x] **Ketten-Befund behoben und nachgewiesen.** `ketten / 02` fiel dreimal
-      auf `abweichend`, weil `follow-up-generator` den vorgegebenen Aufhänger
-      verwarf. Die Ursache lag in der Regel, nicht im Verhalten: Prozess-Schritt 4
-      führte eine Rangfolge ohne das Feld `Nachfassen`, und der Vertrag nannte
-      das Feld ausdrücklich unverbindlich. **Vertragsregel 4 ist geändert**
-      (Feld bindend, Datum weiter Vorschlag, Abweichung nur per Rückfrage —
-      protokolliert in `docs/entscheidungen.md`), Skill, Block B, Checkliste
-      und Beispiele sind nachgezogen. Drei neue Läufe: **3 von 3 bestanden.**
-- [ ] **Neuer bestätigter Befund: `account-recherche / 01-leere-quellenlage`.**
-      Dreimal `abweichend`, dreimal dieselbe Ursache: Bei völlig leerer
-      Quellenlage verlangt das Soll `Belegte Fakten: —`, der Skill füllt das
-      Feld stattdessen mit der Eingabe des Nutzers (Firmenname, Zweck) — mit
-      Herkunftsvermerk, also ohne Erfindung; keine Durchgefallen-Regel greift.
-      Trotzdem lässt es eine Recherche als geleistet erscheinen, die es nicht
-      gab. **Der Skill ist seit dem 17.08. unverändert** — im Testlauf ließ er
-      das Feld leer und bestand, jetzt füllt er es dreimal. Über vier Läufe
-      derselben Fassung: 1× bestanden, 3× abweichend. Korrektur gehört in
-      `account-recherche`, nicht in den Testfall.
-- [ ] **Zwei Fälle sind durch die Korrektur veraltet.**
-      `follow-up-generator / 01` und `/ 02` stehen mit 3× `bestanden` da, diese
-      Läufe stammen aber von **vor** der Änderung an `follow-up-generator`.
-      Streng gelesen ist ihr Zustand offen; sie brauchen je drei neue Läufe.
-- [ ] **Dreifachlauf für die übrigen 19 Fälle.** Sie sind gegen die aktuelle
-      Fassung gelaufen, aber nur einmal. `account-recherche / 01` zeigt gerade,
-      was ein einzelner Durchlauf wert ist: nichts.
+      sind erneut gelaufen, je dreimal. Dazu `follow-up-generator / 02`, der
+      Wackelkandidat: **3 von 3, er hält.**
+- [x] **Zwei Befunde gefunden, beide behoben, beide nachgewiesen.**
+      1. `ketten / 02`: `follow-up-generator` verwarf den vorgegebenen
+         Aufhänger. Ursache war die Regel, nicht das Verhalten —
+         **Vertragsregel 4 geändert** (Feld `Nachfassen` bindend, Datum weiter
+         Vorschlag; protokolliert in `docs/entscheidungen.md`).
+      2. `account-recherche / 01`: Das Feld `Belegte Fakten` spiegelte die
+         Bitte des Nutzers zurück. Ursache war die Quellenklassen-Tabelle, die
+         „vom Nutzer geliefert" pauschal als Beleg zählte — jetzt getrennt in
+         **Material** (Beleg) und **die Bitte selbst** (nie Beleg). Kein
+         Vertragsbruch, deshalb keine Vertragsänderung.
+      Beide Fälle danach dreimal neu: **je 3 von 3 bestanden.**
+- [x] **Endstand der Teilregression: 13 von 13 bestanden**, jeder Fall dreimal,
+      Erzeugung und Bewertung getrennt. Kein Testfall wurde angefasst.
+- [x] **Bauregel-Gegenprobe über alle zehn Skills abgeschlossen.**
+      **36 Funde und 30 Teilfunde** — keine Datei war sauber. Am schlechtesten
+      verankert waren ausgerechnet die Abbruch- und Kein-Text-Regeln. Dazu zwei
+      echte Selbstwidersprüche (`outreach-personalisierer`: Brücke „ein Satz"
+      vs. „1–2 Sätze"; `einwand-sparring`: Checklistenpunkt verbot die vom
+      Testfall verlangte Klärungszeile). Alles behoben und verankert,
+      Einzelheiten in `docs/gegenprobe-bauregel.md`.
+- [ ] **Vollständiger Dreifachlauf über alle 32 Fälle steht aus — und ist
+      jetzt dringender als vorher.** Die Gegenprobe hat **alle zehn Skills**
+      geändert. Damit sind sämtliche 32 Testfälle gegen eine vorige Fassung
+      gemessen, auch die 13 gerade bestandenen. Die Gegenprobe war eine
+      Struktur-, keine Verhaltensprüfung: Sie belegt, dass die Regeln jetzt
+      dort stehen, wo sie halten — nicht, dass die Skills sich daran halten.
 
 Die vollständige kritische Bewertung — wo die Fälle zu schwach sind, was sie
 nicht prüfen — steht in `docs/testlauf-phase2.md` unter „Wie belastbar ist das".
@@ -151,19 +156,13 @@ tippt „weiter". Klappt das nicht, ist Phase 3 nicht fertig.
   der Käufer nur gegen unsere neutralen Fälle und nie gegen seinen echten Alltag.
 
 ## Nächster Schritt
-1. **`account-recherche` korrigieren** — bei leerer Quellenlage gehört die
-   Nutzereingabe nicht unter `Belegte Fakten`. Danach den Fall dreimal neu.
-2. **`follow-up-generator / 01` und `/ 02` je dreimal nachziehen** — sie sind
-   gegen die vorige Fassung gemessen.
-3. **Dreifachlauf für die übrigen 19 Fälle.**
+**Vollständiger Dreifachlauf über alle 32 Fälle** gegen die jetzige Fassung —
+96 Erzeugungen, 96 Bewertungen, bestanden nur bei 3 von 3. Das ist zugleich
+die Definition of Done aus Phase 2 und die Gegenprobe zur Verankerungsaktion.
 
-Belege und Zitate zu allem drei: `docs/testlauf-phase2-regression.md`.
+Der Aufbau steht und ist wiederverwendbar: Zerlegung, getrennte Anweisungen für
+Erzeugung und Bewertung, Statusskript, Berichtsgenerator. Die drei Läufe je Fall
+sind unabhängig und können bis zur Nebenläufigkeitsgrenze parallel laufen.
 
-Erst danach Phase 3 (Installer). Die Reihenfolge lohnt: Ein Installer, der
-ungeprüfte Skills ausrollt, verlagert jeden Fehler in die Beta.
-
-**Übertragbare Lehre aus dem Ketten-Befund:** Die Bindung stand nur im
-Prozess-Fließtext — genau das Muster, das die neue Bauregel in
-`core/skills/vertrieb/_TEMPLATE_SKILL.md` verbietet. Die Korrektur hat sie in
-Ausgabeformat (`Aufhänger-Quelle`) und Checkliste verankert. Beim nächsten
-Skill-Durchgang lohnt die dort beschriebene Gegenprobe für alle zehn Skills.
+Erst danach Phase 3 (Installer). Ein Installer, der ungeprüfte Skills ausrollt,
+verlagert jeden Fehler in die Beta.
