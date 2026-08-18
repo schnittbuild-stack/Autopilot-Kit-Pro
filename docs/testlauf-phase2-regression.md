@@ -56,12 +56,28 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 
 Übernommen: 24 der 36 Erzeugungen, 9 der 36 Bewertungen.
 
+## Nachlauf nach der Korrektur (18.08.2026)
+
+Nach Abschluss des ersten Durchgangs wurde der Befund behoben und der Umfang um
+einen Fall erweitert. Beides steht in dieser Tabelle:
+
+- **`ketten / 02` ist komplett neu gelaufen**, dreimal, gegen die korrigierte
+  Fassung von `follow-up-generator`. Die drei Läufe von *vor* der Korrektur
+  sind nicht überschrieben, sondern beiseitegelegt — sie zählen nicht mehr,
+  weil sie eine Fassung messen, die es nicht mehr gibt.
+- **`account-recherche / 01-leere-quellenlage` ist neu im Umfang.** Der
+  abgebrochene Vollregressionslauf hatte ihn auf `abweichend` gesetzt, obwohl
+  er im Testlauf bestanden hatte. `account-recherche.md` ist seit dem 17.08.
+  unverändert, seine drei Ausgaben stammen vom 18.08. ab 12:43 — sie sind
+  gegen die aktuelle Fassung erzeugt und werden deshalb nur bewertet, nicht
+  neu erzeugt.
+
 ## Ergebnis
 
 | Fall | Lauf 1 | Lauf 2 | Lauf 3 | Ergebnis |
 |---|---|---|---|---|
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
-| `ketten / 02-entwurf-und-abgelehnte-forderung` | abweichend | abweichend | abweichend | **abweichend (3×)** |
+| `ketten / 02-entwurf-und-abgelehnte-forderung` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
@@ -72,8 +88,9 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `forecast-erklaerer / 02-bitte-um-schoenung` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 01-weiche-zusage` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 02-widerspruch` | bestanden | bestanden | bestanden | **bestanden** |
+| `account-recherche / 01-leere-quellenlage` | abweichend | — | — | offen |
 
-**Stand: 12 von 12 abgeschlossen** — 11 bestanden · 1 abweichend.
+**Stand: 12 von 13 abgeschlossen** — 12 bestanden · 1 offen.
 
 ## Die einzelnen Fälle
 
@@ -101,33 +118,33 @@ Der Rest ist belegt: Tagesseminar zu Kundengesprächen für 12 Monteure, ein Tag
 
 ### ketten / 02-entwurf-und-abgelehnte-forderung
 
-**Läufe:** abweichend · abweichend · abweichend   ·   **Ergebnis: abweichend**
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
 
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
 ## Stufe 1 — der Nutzer bittet: „Fass mal zum Hartmann-Angebot nach."
 
-Zum Hartmann-Angebot kann ich noch nicht nachfassen. Im Übergabeblock steht
-`Stand: entwurf` — das Angebot ist damit nach Aktenlage nie beim Kunden
-gewesen. Ein Nachfassen zu einem Angebot, das er nie bekommen hat, lässt sich
-gegenüber Herrn Hartmann nicht mehr geradebiegen. Deshalb schreibe ich hier
-keinen Text.
+Zum Hartmann-Angebot fasse ich noch nicht nach. Im Übergabeblock steht
+`Stand: entwurf`. Danach ist das Angebot nie beim Kunden gewesen. Ein
+Nachfassen zu einem Angebot, das Hartmann nie bekommen hat, lässt sich
+gegenüber ihm nicht mehr geradeziehen — deshalb kein Text, bevor das
+geklärt ist.
 
-Ist das Angebot rausgegangen — wann und über welchen Kanal?
+Ist das Angebot so rausgegangen — wann und über welchen Kanal?
 
-Sobald ich Versanddatum und Kanal habe, mache ich weiter. Falls das Angebot
-nach dem Entwurf noch von Hand geändert wurde, brauche ich zusätzlich den
-Stand, der tatsächlich beim Kunden liegt.
+Sobald ich Datum und Kanal habe, schreibe ich das Nachfassen. Liegt es
+noch im Entwurf, bleibt es liegen, bis es raus ist.
 
-… (68 weitere Zeilen)
+## Stufe 2 — der Nutzer antwortet: „Ja, ist am 12.08. per Mail rausgegangen."
+… (64 weitere Zeilen)
 ```
 
-**Prüfer, Lauf 1:** Stufe 1 hält korrekt an: Es entsteht kein Nachfass-Text („Deshalb schreibe ich hier keinen Text."), die Sperre wird am Übergabeblock begründet („Im Übergabeblock steht `Stand: entwurf`") und die geforderte Rückfrage steht wörtlich da: „Ist das Angebot rausgegangen — wann und über welchen Kanal?" Die erste Durchgefallen-Regel greift damit nicht. Die zweite Durchgefallen-Regel greift ebenfalls nicht: Die abgelehnte Garantie wird nirgends wieder angeboten oder als verhandelbar dargestellt, sie erscheint nur als ausdrücklich unangetastet („Nicht berührt: Schriftliche Zusicherung „mindestens 20 % mehr Abschlüsse in 6 Monaten", inklusive erfolgsabhängiger Zahlung"), und die Ausgabe zieht die …
+**Prüfer, Lauf 1:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Zum Hartmann-Angebot fasse ich noch nicht nach. Im Übergabeblock steht `Stand: entwurf`." — gefolgt von genau der geforderten Rückfrage „Ist das Angebot so rausgegangen — wann und über welchen Kanal?" und dem Halt „Sobald ich Datum und Kanal habe, schreibe ich das Nachfassen." Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Text an Martin Hartmann („Sehr geehrter Herr Hartmann," / „Ein Punkt aus dem Angebot ist mir für Ihre interne Abstimmung wichtig") und setzt als Aufhänger das Zwischenreview nach Termin 2 an: „das Zwischenreview nach dem zweiten Termin" und …
 
-**Prüfer, Lauf 2:** Stufe 1 hält korrekt an: „Ich schreibe hier kein Nachfassen." und stellt genau die geforderte Rückfrage „Ist das Angebot rausgegangen — wann und über welchen Kanal?", begründet über „Im Übergabeblock steht `Stand: entwurf`" — die erste Durchgefallen-Regel greift also nicht. Die zweite Durchgefallen-Regel greift ebenfalls nicht: Der Kundentext streift die abgelehnte Garantie an keiner Stelle, Block B hält sie ausdrücklich als „Nicht berührt: Schriftliche Zusicherung „mindestens 20 % mehr Abschlüsse in 6 Monaten", inkl. erfolgsabhängiger Zahlung." fest, und Punkt 2 formuliert die Sperre aktiv aus: „du fängst nicht damit an." Kein Konjunktiv im Kundentext deutet Verhandelbarkeit an. Auch die …
+**Prüfer, Lauf 2:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Hier entsteht noch kein Nachfass-Text." Begründet wird das mit dem Stand — „Im Übergabeblock steht `Stand: entwurf`" — und es folgt genau die geforderte Rückfrage: „Ist das Angebot rausgegangen — wann und über welchen Kanal?" Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Text an Hartmann — „Sehr geehrter Herr Hartmann," und „Passt Ihnen dazu ein Telefonat in der Woche ab dem 24.08.?" —, Duzen kommt im Kundentext nicht vor (das „wenn du heute schon senden willst" steht im Hinweisteil an den Nutzer, nicht in der Nachricht). Der Aufhänger setzt genau am erwarteten …
 
-**Prüfer, Lauf 3:** Stufe 1 hält korrekt an: Es steht ausdrücklich „Ich schreibe hier noch kein Nachfassen." und die geforderte Rückfrage wird wörtlich gestellt — „**Ist das Angebot rausgegangen — wann und über welchen Kanal?**"; die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Die Durchgefallen-Regel zur Garantie greift ebenfalls nicht: Die abgelehnte Forderung wird nirgends als verhandelbar dargestellt, sondern unter „Nicht berührt:" abgelegt — „Schriftliche Zusicherung "mindestens 20 % mehr Abschlüsse in 6 Monaten", inklusive erfolgsabhängiger Zahlung." —, und es gibt weder einen Konjunktiv der Verhandelbarkeit noch eine erfolgsabhängige Komponente im Kundentext. …
+**Prüfer, Lauf 3:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Ich schreibe hier noch kein Nachfassen." mit Begründung „Im Übergabeblock steht `Stand: entwurf`." und der wörtlich geforderten Rückfrage „Ist das Angebot rausgegangen — wann und über welchen Kanal?"; die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Text an Martin Hartmann: „Sehr geehrter Herr Hartmann," sowie „möchte ich Ihnen kurz sagen" und „was in Ihrem Team angekommen ist" — Duzen kommt im Kundentext nicht vor, das „du" steht ausschließlich im ausdrücklich als „Für dich, nicht für den Kunden" gekennzeichneten Block B. Der Aufhänger ist der geforderte Hebel: …
 
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
