@@ -24,7 +24,8 @@ wird gefragt.
 
 | Klasse | Beispiele | Zählt als |
 |---|---|---|
-| **Vom Nutzer geliefert** | Anfrage-Mail, CRM-Auszug, Website-Text, alte Angebote | **Beleg** |
+| **Material vom Nutzer** | Anfrage-Mail, CRM-Auszug, Website-Text, alte Angebote | **Beleg**, mit Fundstelle |
+| **Die Bitte selbst** | „Recherchier mir Firma Y, ich will ein Angebot machen" — Firmenname, Zweck, beiläufig genannter Name | **niemals Beleg** |
 | **Öffentlich abgerufen** | Firmenwebsite, Impressum, Handelsregister, Pressemitteilung | **Beleg**, mit Fundstelle |
 | **Eigenes Vorwissen** | „Ich meine, die Firma gehört zu …" | **niemals Beleg** |
 
@@ -32,6 +33,19 @@ Das Vorwissen eines Sprachmodells ist alt, lückenhaft und klingt trotzdem
 sicher. Es darf in `Unbelegt` stehen, mit dem Vermerk „aus Vorwissen, nicht
 geprüft" — nie in `Belegte Fakten`. Diese eine Regel entscheidet, ob dieser
 Skill nützt oder schadet.
+
+**Die Bitte ist der Auftrag, nicht sein Ergebnis.** Was der Nutzer in seiner
+Anfrage nennt — Firmenname, Zweck der Recherche, ein hingeworfener Name — ist
+keine Fundstelle, sondern das, was zu prüfen war. Wer es unter `Belegte Fakten`
+zurückspiegelt, macht aus der Frage eine Antwort. Der Firmenname gehört in das
+Feld `Firma:`, der Zweck steuert die Suche und steht in keinem Beleg-Feld.
+**Liegt weder Material noch eine abrufbare Quelle vor, lautet
+`Belegte Fakten: —`** — auch dann, wenn eine Zeile wie „Firmenname laut deiner
+Anfrage" sachlich zuträfe. Sie ist kein Rechercheergebnis, und ein gefülltes
+Beleg-Feld lässt eine Recherche als geleistet erscheinen, die nicht
+stattgefunden hat. Muss die Eingabe des Nutzers festgehalten werden, geschieht
+das ausdrücklich gekennzeichnet in der `Hinweis an dich`-Zeile unter dem Block,
+nie in einem der drei Listenfelder.
 
 **Kein Zugriff auf öffentliche Quellen?** Dann wird das *vor* der Recherche
 gesagt, nicht danach: „Ich kann von hier aus nichts im Netz nachschlagen. Ich
@@ -80,12 +94,22 @@ Verhältnis:       neukunde | bestandskunde | unbekannt
 Ansprechpartner:  <Name, Rolle>
 Branche/Größe:    <…>
 Anlass:           <warum ausgerechnet jetzt angefragt>
-Belegte Fakten:   <je Zeile: Fakt — Quelle>
+Belegte Fakten:   <je Zeile: Fakt — Quelle>   [nur Rechercheergebnisse]
 Unbelegt:         <je Zeile: Vermutung — worauf gestützt>
 Nicht gefunden:   <je Zeile: wonach gesucht wurde>
 ```
 
-Alle Felder stehen da, leere als `—`. Danach ist **eine** Zeile erlaubt, die
+Alle Felder stehen da, leere als `—`.
+
+**Was `Belegte Fakten` aufnimmt — und was nicht:**
+
+- **Hinein** kommt nur, was aus **Material** des Nutzers oder einer
+  **abgerufenen Quelle** stammt, jede Zeile mit nachprüfbarer Fundstelle.
+- **Nicht hinein** kommt, was in der Bitte des Nutzers stand: Firmenname,
+  Zweck der Recherche, dort genannte Namen. Der Firmenname steht in `Firma:`,
+  der Zweck in keinem Feld.
+- **Lag weder Material noch eine abrufbare Quelle vor, steht dort `—`** und
+  sonst nichts — kein einziger Eintrag, auch kein zutreffender. Danach ist **eine** Zeile erlaubt, die
 nicht zur Übergabe gehört und als solche gekennzeichnet ist:
 
 ```
@@ -103,6 +127,10 @@ Checkliste für Prozess Schritt 7 — jeder Punkt einzeln mit ja/nein:
       URL, Dokumentname, „Mail von X vom 12.08.". Nicht „öffentlich
       recherchiert", nicht „laut Website" ohne Seite.
 - [ ] Nichts aus dem eigenen Vorwissen steht unter `Belegte Fakten`.
+- [ ] **Nichts aus der Bitte des Nutzers steht unter `Belegte Fakten`** — weder
+      Firmenname noch Zweck noch ein dort genannter Name.
+- [ ] **Lag weder Material noch eine abrufbare Quelle vor, steht unter
+      `Belegte Fakten` genau `—`** und keine einzige Zeile.
 - [ ] `Nicht gefunden` ist gefüllt und nennt, **wonach** gesucht wurde —
       nicht nur, dass nichts kam.
 - [ ] Keine Bewertungen der Firma. „12 Mitarbeitende laut Impressum" ist ein
@@ -131,11 +159,18 @@ ausgefüllt.
 Arbeit allein mit der Anfrage-Mail. Ergebnis: zwei belegte Fakten aus der
 Signatur, alles andere unter `Nicht gefunden`. Kein Wort aus dem Vorwissen.
 
-**Beispiel 3 — Namensgleichheit.** Zwei Treffer „Meyer Logistik GmbH",
+**Beispiel 3 — weder Material noch Netz.** Nur die mündliche Bitte, einen
+Firmennamen zu recherchieren; kein Anhang, kein CRM, kein Zugriff. → Ansage
+vorweg, dann ein Ergebnis mit `Firma` gefüllt, `Verhältnis: unbekannt`,
+**`Belegte Fakten: —`** und einem `Nicht gefunden`, das alle fünf Rasterpunkte
+aufzählt. Der Firmenname wird **nicht** als Beleg zurückgespiegelt — er war die
+Frage, nicht der Fund.
+
+**Beispiel 4 — Namensgleichheit.** Zwei Treffer „Meyer Logistik GmbH",
 Hamburg und Nürnberg. → Keine Zusammenführung, Rückfrage an {{rolle}},
 welche gemeint ist, mit je einem Unterscheidungsmerkmal pro Treffer.
 
-**Beispiel 4 — Bitte um Privates.** Nutzer fragt zusätzlich nach dem
+**Beispiel 5 — Bitte um Privates.** Nutzer fragt zusätzlich nach dem
 privaten Hintergrund des Geschäftsführers. → Geschäftlicher Teil wird
 geliefert, der private nicht, mit einem Satz Begründung und ohne Belehrung.
 
