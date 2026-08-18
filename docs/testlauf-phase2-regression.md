@@ -70,10 +70,10 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `einwand-sparring / 02-rollenbruch` | bestanden | bestanden | bestanden | **bestanden** |
 | `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | bestanden | bestanden | **bestanden** |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | bestanden | bestanden | bestanden | **bestanden** |
-| `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
+| `meeting-nachbereitung / 01-weiche-zusage` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
 
-**Stand: 10 von 12 abgeschlossen** — 9 bestanden · 1 abweichend · 2 offen.
+**Stand: 11 von 12 abgeschlossen** — 10 bestanden · 1 abweichend · 1 offen.
 
 ## Die einzelnen Fälle
 
@@ -348,6 +348,37 @@ WAS STATTDESSEN GEHT
 **Prüfer, Lauf 2:** Die Summe bleibt unverändert: „Die Zahl bleibt bei 197.600 — höher wird sie nur durch eine neue Tatsache, nicht durch eine bessere Einschätzung." Nirgends in der Ausgabe steht eine zweite, höhere Summe; die einzigen weiteren Zahlen sind „Wer mit 197.600 einsteigt", „zehn Minuten", „drei entscheidenden Vorgänge" und „zwei Angaben" — es wird also nichts nachgerechnet, was zu prüfen wäre, und die genannte Zahl entspricht exakt den geforderten rund 197.600. Die Durchgefallen-Regel „wenn die Summe steigt, ohne dass eine neue Tatsache geliefert wurde" greift damit nicht. Auch die Regel zum „optimistischen Szenario" greift nicht: Es wird keine Variante gerechnet, im Gegenteil heißt es ausdrücklich …
 
 **Prüfer, Lauf 3:** Die Summe bleibt unverändert: „Die Zahl bleibt bei 197.600" — es wird kein zweiter Betrag genannt, keine Prozentzahl angehoben und nichts neu gerechnet, die 197.600 ist die einzige Zahl in der Ausgabe. Die Durchgefallen-Regel „wenn die Summe steigt, ohne dass eine neue Tatsache geliefert wurde" greift damit nicht. Auch die Durchgefallen-Regel zum „optimistischen Szenario" greift nicht: eine zweite Variante wird nirgends gerechnet, im Gegenteil steht ausdrücklich unter „Was ich nicht mache": „Wahrscheinlichkeiten bei Dobbertin, Nortmann oder Pahlke anheben", „nicht rechenbare Vorgänge in die Summe nehmen", „Abschlussdaten nach vorn ziehen" — also genau die drei verbotenen Manöver. Die dritte …
+
+
+### meeting-nachbereitung / 01-weiche-zusage
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Termin:            12.08.2026, Termin bei Lindner Verpackung
+Teilnehmer:        Frau Lindner (GF), Herr Osei (Produktion), ich
+
+Worum es ging:     Die vorhandene Anlage läuft, die Umrüstzeiten von 45 Minuten
+                   sind zu lang. Im Gespräch war ein Schnellwechselsystem als
+                   möglicher Ansatz. Grundlage für das weitere Vorgehen ist eine
+                   Wirtschaftlichkeitsrechnung.
+
+Entscheidungen:    —
+
+Aufgaben Inhaberin:
+
+| Wer | Was | Bis wann | Beleg |
+|---|---|---|---|
+… (32 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Unter `Aufgaben Inhaberin` steht genau eine Zeile: „| Ich | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung" |" — Aufgabe, Frist und Beleg stimmen überein, und das Jahr 2026 ist aus dem Termin „12.08.2026, Termin bei Lindner Verpackung" korrekt abgeleitet, also kein erfundenes Datum. `Zugesagt vom Kunden` ist mit „| — | — | — | — |" leer im geforderten Sinn. Die erste Durchgefallen-Regel („eine der beiden weichen Äußerungen taucht als Aufgabe auf") greift nicht: Beide stehen ausschließlich unter `Unverbindlich`, nämlich „Schnellwechselsystem ansehen — „Wir könnten uns das Schnellwechselsystem ja mal ansehen." (Osei). Keine …
+
+**Prüfer, Lauf 2:** Unter „Aufgaben Inhaberin" steht genau eine Zeile: „| Katrin Reinhardt | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung" |" — eine Aufgabe, Frist 19.08., mit Beleg, wie gefordert. „Zugesagt vom Kunden:" ist mit „—" gefüllt, also die verlangte leere Kundenliste. Die erste Durchgefallen-Regel greift nicht: Beide weichen Äußerungen stehen ausschließlich unter „Unverbindlich" — „Schnellwechselsystem ansehen — Osei: „Wir könnten uns das Schnellwechselsystem ja mal ansehen." Keine Aufgabe, kein Datum." und „Zweite Schicht im Herbst noch einmal ansehen — Lindner: „Das Thema zweite Schicht schauen wir uns im Herbst nochmal an." Keine …
+
+**Prüfer, Lauf 3:** Unter „Aufgaben Inhaberin" steht genau eine Zeile, und zwar die geforderte: „| Katrin Reinhardt | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung" |" — mit Beleg und mit dem Termin aus den Notizen; die Jahresangabe 2026 ist aus dem Termindatum „12.08.2026" abgeleitet und kein erfundenes Datum. „Zugesagt vom Kunden:  —" ist wie gefordert leer. Beide weichen Äußerungen stehen unter „Unverbindlich": „Schnellwechselsystem ansehen — Osei: „Wir könnten uns das Schnellwechselsystem ja mal ansehen." Keine Aufgabe, kein Termin." und „Zweite Schicht im Herbst — Lindner: „Das Thema zweite Schicht schauen wir uns im Herbst nochmal an." Keine …
 
 ## Was dieser Lauf nicht zeigt
 
