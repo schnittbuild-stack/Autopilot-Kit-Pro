@@ -67,13 +67,13 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 01-kunde-knickt-ein` | bestanden | bestanden | bestanden | **bestanden** |
-| `einwand-sparring / 02-rollenbruch` | bestanden | — | — | offen |
+| `einwand-sparring / 02-rollenbruch` | bestanden | bestanden | bestanden | **bestanden** |
 | `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | — | — | offen |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
 | `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
 
-**Stand: 7 von 12 abgeschlossen** — 6 bestanden · 1 abweichend · 5 offen.
+**Stand: 8 von 12 abgeschlossen** — 7 bestanden · 1 abweichend · 4 offen.
 
 ## Die einzelnen Fälle
 
@@ -269,6 +269,23 @@ Verständnis:  Sie wollen vier Coachingtage für Ihren Vertrieb, Start im
 **Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Zeile, die mit `[Kunde]` beginnt und drei Sätze enthält: „Das sagt mir jeder Anbieter.", „Ich habe zwei Angebote auf dem Tisch, die liegen niedriger." und „Was rechtfertigt bei Ihnen den Aufschlag?" — damit ist die Vorgabe „Ein bis drei Sätze, nur die Kundenrede, mit `[Kunde]` davor" erfüllt. Die Durchgefallen-Regel „wenn der Kunde nachgibt oder zustimmt" greift nicht: Es steht kein zustimmender oder abschwächender Satz da, im Gegenteil wischt „Das sagt mir jeder Anbieter." die vorangegangene Antwort pauschal beiseite und hält die Preisposition. Die zweite Durchgefallen-Regel „wenn im Sparring etwas außerhalb der Kundenrede steht" greift ebenfalls nicht: …
 
 **Prüfer, Lauf 3:** Die Ausgabe besteht aus genau zwei Sätzen reiner Kundenrede mit vorangestelltem Rollenmarker: „[Kunde] Rundum-Service schreiben mir alle in ihre Angebote. Ich habe hier zwei weitere Angebote liegen, beide unter Ihrem — und die sind auch schon lange am Markt." Damit ist die Formvorgabe „Ein bis drei Sätze, nur die Kundenrede, mit `[Kunde]` davor" erfüllt. Die Durchgefallen-Regel „wenn der Kunde nachgibt oder zustimmt" greift nicht: Es steht kein zustimmender oder relativierender Satzteil in der Ausgabe, im Gegenteil entwertet der Kunde das Verkäuferargument mit „schreiben mir alle in ihre Angebote" und hält seine Position unverändert. Die zweite Durchgefallen-Regel „wenn im Sparring etwas …
+
+
+### einwand-sparring / 02-rollenbruch
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Soll ich abbrechen und auswerten? Sag Stopp.
+```
+
+**Prüfer, Lauf 1:** Die Ausgabe besteht vollständig aus einer einzigen Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." Damit ist die Forderung „Genau eine Klärungszeile" wörtlich erfüllt; es steht keine weitere Zeile darunter, weder eine Erläuterung noch eine Rückfrage. Ein inhaltlicher Tipp ist nicht vorhanden: Die Ausgabe enthält außer „Soll ich abbrechen und auswerten? Sag Stopp." keinen Satz, also weder eine Formulierungshilfe noch einen als Frage getarnten Hinweis der Art „Hast du schon an … gedacht?". Die Durchgefallen-Regel „wenn ein inhaltlicher Tipp gegeben wird" greift deshalb nicht. Die zweite Durchgefallen-Regel „wenn ohne ‚Stopp' in die Auswertung gewechselt wird" greift ebenfalls nicht — es …
+
+**Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." Damit ist die Forderung „Genau eine Klärungszeile" wörtlich erfüllt, und zwar in exakt der geforderten Sinnrichtung — die Zeile fragt nach dem Abbruch und benennt „Stopp" als das Wort, das ihn auslöst. Ein inhaltlicher Tipp ist nicht vorhanden: Die Ausgabe enthält keinen einzigen Satz über den Einwand, die Verhandlung oder eine mögliche Antwort, es gibt keine eingeklammerte Anregung und keine als Frage getarnte Richtungsvorgabe wie „Hast du schon an … gedacht?". Die Durchgefallen-Regel „durchgefallen, wenn ein inhaltlicher Tipp gegeben wird" greift daher nicht. Die zweite Durchgefallen-Regel …
+
+**Prüfer, Lauf 3:** Die Ausgabe besteht vollständig aus einer einzigen Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." Damit ist die Muss-Anforderung „Genau eine Klärungszeile" erfüllt — es steht nichts davor und nichts danach, insbesondere keine zweite Zeile und kein Nachsatz. Ein inhaltlicher Tipp ist nicht vorhanden: Die Ausgabe enthält kein einziges Wort zum Einwand, zur Gesprächsführung oder zu einer möglichen Richtung, auch nicht als getarnte Frage — die einzige Frage lautet „Soll ich abbrechen und auswerten?" und betrifft ausschließlich den Modus, nicht den Inhalt. Ein Vorschlag, was der Nutzer sagen könnte, fehlt ebenso in jeder Form; es gibt keine Klammern, keine Anregung, keine …
 
 ## Was dieser Lauf nicht zeigt
 
