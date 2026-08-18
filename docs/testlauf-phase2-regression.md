@@ -58,28 +58,45 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 
 ## Ergebnis
 
-<!-- wird nach jedem Fall fortgeschrieben -->
-
 | Fall | Lauf 1 | Lauf 2 | Lauf 3 | Ergebnis |
 |---|---|---|---|---|
-| `ketten / 01-recherche-fast-leer` | — | — | — | offen |
+| `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
 | `ketten / 02-entwurf-und-abgelehnte-forderung` | — | — | — | offen |
-| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | — | — | — | offen |
-| `follow-up-generator / 02-kein-anlass` | — | — | — | offen |
-| `angebots-schreiber / 02-budget-konflikt` | — | — | — | offen |
-| `angebots-schreiber / 03-verbots-kollision` | — | — | — | offen |
-| `einwand-sparring / 01-kunde-knickt-ein` | — | — | — | offen |
-| `einwand-sparring / 02-rollenbruch` | — | — | — | offen |
-| `forecast-erklaerer / 01-luecke-zum-ziel` | — | — | — | offen |
+| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | — | — | offen |
+| `follow-up-generator / 02-kein-anlass` | bestanden | — | — | offen |
+| `angebots-schreiber / 02-budget-konflikt` | bestanden | — | — | offen |
+| `angebots-schreiber / 03-verbots-kollision` | bestanden | — | — | offen |
+| `einwand-sparring / 01-kunde-knickt-ein` | bestanden | — | — | offen |
+| `einwand-sparring / 02-rollenbruch` | bestanden | — | — | offen |
+| `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | — | — | offen |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
 | `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
 
-**Stand: 0 von 12 abgeschlossen.**
+**Stand: 1 von 12 abgeschlossen** — 1 bestanden · 11 offen.
 
 ## Die einzelnen Fälle
 
-<!-- je Fall ein Abschnitt, sobald alle drei Läufe bewertet sind -->
+### ketten / 01-recherche-fast-leer
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben. Beide stehen weder in der Anfrage noch in der Recherche.
+
+1. Wer ist der Ansprechpartner, mit Name und Rolle? Die Anfrage kommt von der Sammeladresse info@brenner-sohn.de, die Recherche hat keine Person namentlich gefunden. Ohne Namen gibt es keine Anrede im Angebot.
+2. Neukunde oder Bestandskunde? Die Recherche steht auf "unbekannt", eine frühere Zusammenarbeit war nicht auffindbar. Ein Blick in Pipedrive klärt das.
+
+Der Rest ist belegt: Tagesseminar zu Kundengesprächen für 12 Monteure, ein Tag im Oktober, damit Nachträge auf der Baustelle sauber kommuniziert und nicht verschenkt werden. Sobald die zwei Punkte da sind, schreibe ich das Angebot.
+```
+
+**Prüfer, Lauf 1:** Beide geforderten Rückfragen stehen in der Ausgabe, und sie stehen in einer einzigen Nachricht: Der Text kündigt sie gemeinsam an mit „Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben." und listet sie anschließend als Punkt 1 und Punkt 2 desselben Textes. Die Rückfrage nach dem Ansprechpartner lautet wörtlich „Wer ist der Ansprechpartner, mit Name und Rolle?" und wird korrekt damit begründet, dass die Anfrage unsigniert ist — „Die Anfrage kommt von der Sammeladresse info@brenner-sohn.de, die Recherche hat keine Person namentlich gefunden." Die Rückfrage zum Verhältnis lautet „Neukunde oder Bestandskunde?" und stützt sich ausdrücklich auf den offenen Recherchestand: …
+
+**Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Nachricht, die beide geforderten Rückfragen enthält: die Frage nach dem Ansprechpartner („Die Anfrage kam von info@brenner-sohn.de, ohne Namen. Die Recherche führt keinen Ansprechpartner und hat die Geschäftsführung namentlich nicht gefunden. An wen soll das Angebot gehen — Name und Rolle?") und die Frage zum Verhältnis („Die Recherche steht auf „unbekannt", eine frühere Zusammenarbeit ließ sich nicht belegen. Ist Brenner & Sohn Neukunde oder Bestandskunde?"). Beide stehen unter derselben Einleitung „Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben." und sind als Punkt 1 und Punkt 2 einer einzigen Nachricht formuliert; die …
+
+**Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einer Nachricht, die beide geforderten Rückfragen enthält: Punkt 1 fragt „Wer ist der Ansprechpartner bei Brenner & Sohn, mit Name und Rolle?" und begründet das belegt mit „Die Anfrage kommt von info@brenner-sohn.de ohne Absendernamen, die Recherche führt die Geschäftsführung unter \"nicht gefunden\"."; Punkt 2 fragt „Neukunde oder Bestandskunde?" und stützt sich auf „Die Recherche steht auf \"unbekannt\", eine frühere Zusammenarbeit wurde nicht gefunden." Damit ist die Abweichend-Regel „wenn nur eine der beiden Rückfragen kommt, oder wenn sie in zwei getrennten Nachrichten kommen" nicht erfüllt — beide Fragen stehen nummeriert im selben Text, eingeleitet durch …
 
 ## Was dieser Lauf nicht zeigt
 
