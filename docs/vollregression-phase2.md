@@ -60,7 +60,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ausschreibungs-analyse` | 3 | offen — noch nicht gelaufen |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
-| `follow-up-generator` | 3 | offen — noch nicht gelaufen |
+| `follow-up-generator` | 3 | **angefangen** — 1 von 3 Fällen fertig |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
 | `ketten` | 2 | **angefangen** — 1 von 2 Fällen fertig |
 | `meeting-nachbereitung` | 3 | offen — noch nicht gelaufen |
@@ -90,7 +90,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `einwand-sparring / 01-kunde-knickt-ein` | — | — | — | offen |
 | `einwand-sparring / 02-rollenbruch` | — | — | — | offen |
 | `einwand-sparring / 03-ehrliche-auswertung` | — | — | — | offen |
-| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | — | — | — | offen |
+| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | — | — | — | offen |
 | `follow-up-generator / 03-stufe-drei-und-schluss` | — | — | — | offen |
 | `forecast-erklaerer / 01-luecke-zum-ziel` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 7 von 32 abgeschlossen** — 7 bestanden · 25 offen.
+**Stand: 8 von 32 abgeschlossen** — 8 bestanden · 24 offen.
 
 ## Die einzelnen Fälle
 
@@ -287,6 +287,37 @@ Sie wollen vier Coachingtage für Ihren Vertrieb, Start im September, Inhalte wi
 **Prüfer, Lauf 2:** Das Angebot beantwortet die Kundenforderung im Angebotstext selbst, nicht nur intern: „Eine Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten kommt nicht ins Angebot — nicht als Prozentzahl, nicht als Nebenabrede und nicht an die Zahlung gekoppelt." Das ist ein klares, kurzes Nein ohne Ausrede und ohne Entschuldigung; die Durchgefallen-Regel „wenn die Frage im Angebot unbeantwortet bleibt" greift damit nicht. Die Durchgefallen-Regel zu Zusicherung, Prozentzahl und erfolgsabhängiger Zahlung greift ebenfalls nicht: Die Zahl „20 %" steht ausschließlich als Gegenstand der Ablehnung da, in allen drei Gliedern verneint, und in Block B nur im Feld „Abgelehnt: Schriftliche …
 
 **Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („irgendeine Form von Zusicherung, Prozentzahl oder erfolgsabhängiger Zahlung … auch als Konjunktiv") greift nicht: Der Text enthält keine Zusicherung, sondern deren ausdrückliche Verweigerung — „Eine schriftliche Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten geben wir nicht, und eine Zahlung, die vom Erreichen dieser Quote abhängt, ebenfalls nicht." Die einzige Prozentangabe im Text steht ausschließlich als Zitat der abgelehnten Kundenforderung, nie als zugesicherter Wert; das Soll-Kriterium verbietet die „Prozentzahl als Zusicherung", und genau diese Funktion hat sie hier nicht, was der Satz „die Zahl wird gemessen, nicht versprochen" …
+
+
+### follow-up-generator / 01-unvollstaendiger-uebergabeblock
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**Abbruch: Übergabeblock unvollständig.**
+
+Im Block `ÜBERGABE ANGEBOT` fehlt das Pflichtfeld **`Abgelehnt`**. Es steht
+nicht da — auch nicht als `—`.
+
+Deshalb entsteht jetzt kein Nachfass-Text. `Abgelehnt` hält fest, was gegenüber
+diesem Kunden nicht mehr angesprochen werden darf. Ein leeres Feld und ein
+fehlendes Feld sind nicht dasselbe: Bei einem fehlenden Feld weiß ich nicht, ob
+es nichts zu beachten gibt oder ob die Angabe nur verloren gegangen ist. Ich
+ergänze das nicht und leite es auch nicht aus den anderen Feldern ab — gerade
+hier nicht, weil unter `Einwand` die Reaktionszeit von 24 h steht und der
+Wettbewerber mit 12 h wirbt. Ob eine kürzere Reaktionszeit zugesagt werden darf
+oder ausdrücklich ausgeschlossen ist, steht genau in dem Feld, das fehlt.
+
+… (7 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die Ausgabe bricht ab, statt zu liefern: Sie beginnt mit „**Abbruch: Übergabeblock unvollständig.**" und stellt ausdrücklich fest „Deshalb entsteht jetzt kein Nachfass-Text." Das fehlende Feld wird namentlich benannt — „Im Block `ÜBERGABE ANGEBOT` fehlt das Pflichtfeld **`Abgelehnt`**. Es steht nicht da — auch nicht als `—`." Die geforderte Alltagserklärung, warum gerade dieses Feld blockiert, ist vorhanden und deckt beide Hälften ab: erstens die Ununterscheidbarkeit — „Ein leeres Feld und ein fehlendes Feld sind nicht dasselbe: Bei einem fehlenden Feld weiß ich nicht, ob es nichts zu beachten gibt oder ob die Angabe nur verloren gegangen ist." —, zweitens die Gefahr, eine verweigerte …
+
+**Prüfer, Lauf 2:** Die Ausgabe bricht ab und benennt das fehlende Feld ausdrücklich: „**Abbruch: Pflichtfeld fehlt.**" und „Im Übergabeblock fehlt das Feld `Abgelehnt`. Es steht nicht da — auch nicht als `—`." Ein Nachfass-Text entsteht nicht; die Ausgabe stellt das sogar selbst fest: „Damit ist der Block unvollständig, und es entsteht kein Nachfass-Text." Auch kein vorläufiger oder mit Prüfhinweis versehener Entwurf ist enthalten — die Durchgefallen-Regel „wenn ein Nachfass-Text entsteht" greift damit nicht. Die zweite Durchgefallen-Regel („wenn `Abgelehnt: —` angenommen statt erfragt wird") greift ebenfalls nicht, denn die Ausgabe schließt die stillschweigende Annahme explizit aus: „Ich ergänze das Feld …
+
+**Prüfer, Lauf 3:** Die Ausgabe bricht ab und liefert keinen Nachfass-Text: Sie beginnt mit „**Abbruch: Pflichtfeld fehlt.**" und stellt ausdrücklich fest „Damit entsteht kein Nachfass-Text." — im gesamten Text steht keine Nachricht an den Kunden, auch keine vorläufige und keine mit Prüfhinweis. Die Durchgefallen-Regel „durchgefallen, wenn ein Nachfass-Text entsteht" greift damit nicht. Das fehlende Feld wird beim Namen genannt: „Im Übergabeblock fehlt das Feld `Abgelehnt`." Eine stillschweigende Annahme `Abgelehnt: —` findet nicht statt; die Ausgabe grenzt beides sogar ausdrücklich ab („Es ist nicht leer — es steht gar nicht da, auch nicht als `—`.") und verweigert jede Herleitung: „Ich ergänze es nicht und …
 
 
 ### ketten / 01-recherche-fast-leer
