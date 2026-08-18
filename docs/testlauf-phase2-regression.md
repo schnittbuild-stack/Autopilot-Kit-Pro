@@ -68,12 +68,12 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 01-kunde-knickt-ein` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 02-rollenbruch` | bestanden | bestanden | bestanden | **bestanden** |
-| `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | — | — | offen |
+| `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | bestanden | bestanden | **bestanden** |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
 | `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
 
-**Stand: 8 von 12 abgeschlossen** — 7 bestanden · 1 abweichend · 4 offen.
+**Stand: 9 von 12 abgeschlossen** — 8 bestanden · 1 abweichend · 3 offen.
 
 ## Die einzelnen Fälle
 
@@ -286,6 +286,37 @@ Soll ich abbrechen und auswerten? Sag Stopp.
 **Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." Damit ist die Forderung „Genau eine Klärungszeile" wörtlich erfüllt, und zwar in exakt der geforderten Sinnrichtung — die Zeile fragt nach dem Abbruch und benennt „Stopp" als das Wort, das ihn auslöst. Ein inhaltlicher Tipp ist nicht vorhanden: Die Ausgabe enthält keinen einzigen Satz über den Einwand, die Verhandlung oder eine mögliche Antwort, es gibt keine eingeklammerte Anregung und keine als Frage getarnte Richtungsvorgabe wie „Hast du schon an … gedacht?". Die Durchgefallen-Regel „durchgefallen, wenn ein inhaltlicher Tipp gegeben wird" greift daher nicht. Die zweite Durchgefallen-Regel …
 
 **Prüfer, Lauf 3:** Die Ausgabe besteht vollständig aus einer einzigen Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." Damit ist die Muss-Anforderung „Genau eine Klärungszeile" erfüllt — es steht nichts davor und nichts danach, insbesondere keine zweite Zeile und kein Nachsatz. Ein inhaltlicher Tipp ist nicht vorhanden: Die Ausgabe enthält kein einziges Wort zum Einwand, zur Gesprächsführung oder zu einer möglichen Richtung, auch nicht als getarnte Frage — die einzige Frage lautet „Soll ich abbrechen und auswerten?" und betrifft ausschließlich den Modus, nicht den Inhalt. Ein Vorschlag, was der Nutzer sagen könnte, fehlt ebenso in jeder Form; es gibt keine Klammern, keine Anregung, keine …
+
+
+### forecast-erklaerer / 01-luecke-zum-ziel
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+DATENLAGE
+  Vorgänge gesamt:   6, davon rechenbar 6
+  Nicht rechenbar:   keiner — Wert, Stand und Abschlussdatum liegen bei allen
+                     sechs Vorgängen vor.
+  Auffällig:         Steinbach — Abschluss 30.09. liegt vor dem Zeitraum
+                     Q4/2026. Entweder das Datum ist alt oder der Vorgang
+                     gehört nicht in diesen Forecast. Er bleibt unten drin,
+                     die Wirkung steht daneben.
+  Auffällig:         Die Prozentzahlen folgen der Stufe, nicht dem einzelnen
+                     Vorgang: beide „Angebot abgegeben" 50 %, beide frühen
+                     Stufen 20 %. Woher die Zahlen kommen, steht nicht in der
+                     Eingabe. Laut Profil führt Pipedrive Stufen, keine
+                     Prozentzahlen.
+
+… (72 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Beide Summen stehen da und stimmen: „Ungewichtet: 371.250 EUR" und „Gewichtet: rund 197.600 EUR (exakt 197.625)" — nachgerechnet ergeben die sechs Positionen 371.250 bzw. 197.625, und die Tabelle weist jeden Vorgang mit Wert und Wahrscheinlichkeit einzeln aus, sodass die Rechnung je Vorgang nachvollziehbar ist. Die Lücke ist unmissverständlich als Betrag beziffert: „Lücke: 202.400 EUR unter Ziel (gewichtet)" (400.000 − 197.625 = 202.375, gerundet 202.400); die Durchgefallen-Regel „wenn die Lücke nicht als Betrag genannt wird" greift damit nicht. Das Klumpenrisiko ist benannt und durchgerechnet: „Dobbertin — trägt 126.000 EUR und damit rund 64 % des gewichteten Forecasts. Rutscht er ins Q1, …
+
+**Prüfer, Lauf 2:** Beide Summen stehen da und sind je Vorgang nachrechenbar: „Ungewichtet: 371.250" (180.000+62.000+45.000+40.000+35.000+9.250 = 371.250) und „Gewichtet: rund 197.600 (gerechnet 197.625)" (126.000+31.000+9.000+20.000+7.000+4.625 = 197.625) — beide Werte sind korrekt und ohne Nachkommastellen angegeben. Die Lücke ist als Betrag beziffert: „Lücke: rund 202.400 unter Ziel (gewichtet)"; 400.000 − 197.625 = 202.375, also korrekt gerundet, damit greift die erste Durchgefallen-Regel nicht. Das Klumpenrisiko ist benannt und durchgerechnet: „Dobbertin — 126.000 gewichtet, 64 % des Forecasts. Kippt er, bleiben rund 71.600 gewichtet, die Lücke wächst auf rund 328.400." — 126.000/197.625 = 63,8 %, 197.625 …
+
+**Prüfer, Lauf 3:** Beide Summen stehen da und stimmen nachgerechnet: „Ungewichtet: 371.250" und „Gewichtet: 197.600" — die Einzelwerte summieren sich exakt auf 371.250 bzw. 197.625, und die Ausgabe rundet durchgängig ohne Nachkommastellen, auch je Vorgang („Dobbertin 126.000, Kelber 31.000, Weberhaus 20.000, Nortmann 9.000, Pahlke 7.000, Steinbach 4.600"). Die Lücke ist als Betrag beziffert — „Lücke: 202.400 unter Ziel (gewichtet)" —, also greift die erste Durchgefallen-Regel nicht. Das Klumpenrisiko ist benannt und durchgerechnet: „Dobbertin — 126.000 gewichtet, rund 64 % des Forecasts. Rutscht er ins nächste Quartal oder kippt er, bleiben 71.600 gewichtet, die Lücke wächst auf 328.400" sowie „Klumpenrisiko: …
 
 ## Was dieser Lauf nicht zeigt
 
