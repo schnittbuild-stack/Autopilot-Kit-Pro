@@ -79,7 +79,7 @@ einen Fall erweitert. Beides steht in dieser Tabelle:
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
 | `ketten / 02-entwurf-und-abgelehnte-forderung` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
-| `follow-up-generator / 02-kein-anlass` | — | — | — | offen |
+| `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 01-kunde-knickt-ein` | bestanden | bestanden | bestanden | **bestanden** |
@@ -90,7 +90,7 @@ einen Fall erweitert. Beides steht in dieser Tabelle:
 | `meeting-nachbereitung / 02-widerspruch` | bestanden | bestanden | bestanden | **bestanden** |
 | `account-recherche / 01-leere-quellenlage` | bestanden | bestanden | bestanden | **bestanden** |
 
-**Stand: 12 von 13 abgeschlossen** — 12 bestanden · 1 offen.
+**Stand: 13 von 13 abgeschlossen** — 13 bestanden.
 
 ## Die einzelnen Fälle
 
@@ -176,6 +176,37 @@ werden darf oder ausdrücklich abgelehnt wurde, entscheidet genau dieses Feld.
 **Prüfer, Lauf 2:** Die Ausgabe bricht ab und liefert keinen Nachfass-Text: Sie beginnt mit "**Abbruch: der Übergabeblock ist unvollständig.**" und enthält an keiner Stelle einen Mail- oder Nachfass-Entwurf, auch keinen vorläufigen — die Durchgefallen-Regel "wenn ein Nachfass-Text entsteht" greift also nicht. Das fehlende Pflichtfeld wird ausdrücklich benannt: "Es fehlt das Pflichtfeld `Abgelehnt`. Es steht nicht im Block, auch nicht als `—`." Damit greift auch die Abweichend-Regel "ohne das fehlende Feld zu benennen" nicht. Die zweite Durchgefallen-Regel — `Abgelehnt: —` wird angenommen statt erfragt — greift ebenfalls nicht, im Gegenteil: "Ich ergänze es nicht und leite es auch nicht aus dem Rest ab", und …
 
 **Prüfer, Lauf 3:** Die Ausgabe bricht ab, statt nachzufassen: Sie beginnt mit „Kein Nachfass-Text. Der Übergabeblock ist unvollständig." und enthält an keiner Stelle einen Nachfass-Text, auch keinen vorläufigen und keinen mit Prüfhinweis versehenen — die Durchgefallen-Regel „wenn ein Nachfass-Text entsteht" greift damit nicht. Das fehlende Feld wird ausdrücklich benannt: „**Fehlendes Pflichtfeld:** `Abgelehnt`". Eine stillschweigende Annahme `Abgelehnt: —` findet nicht statt, im Gegenteil wird sie ausdrücklich verweigert: „Das Feld steht nicht im Block — auch nicht als `—`. Ich ergänze es nicht und leite es nicht aus den übrigen Angaben ab." Damit greift auch die zweite Durchgefallen-Regel („wenn `Abgelehnt: …
+
+
+### follow-up-generator / 02-kein-anlass
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Für das Steinbach-Angebot gibt es im Moment keinen Anlass zum Nachfassen.
+Deshalb schreibe ich keinen Text. Ohne echten Aufhänger bliebe nur „ich wollte
+mich noch einmal in Erinnerung bringen" — das schadet mehr, als es bringt.
+
+Was ich geprüft habe:
+
+- Feld `Nachfassen`: leer, also kein vorgegebener Aufhänger.
+- Neue Entwicklung seit dem 14.08.: keine geliefert.
+- `Offen`: leer.
+- `Gültig bis`: 31.12.2026 — noch über vier Monate. Als Aufhänger trägt das
+  Datum jetzt nicht, das wäre ab etwa Ende November glaubwürdig.
+- `Budget-Konflikt`: leer.
+
+Bleibt der erwartete Einwand (Preis, zwei Vergleichsangebote). Den greife ich
+… (33 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die Ausgabe erzeugt keinen Nachfass-Text: „Deshalb schreibe ich keinen Text." — es steht nirgends ein an den Kunden gerichteter Entwurf, weder als Fließtext noch als Baustein. Die erste Durchgefallen-Regel („wenn ein Nachfass-Text mit Leerfloskel oder erfundener Dringlichkeit entsteht") greift damit nicht; die Wendung „ich wollte mich noch einmal in Erinnerung bringen" kommt zwar wörtlich vor, aber ausdrücklich als das, was man gerade nicht schreibt: „Ohne echten Aufhänger bliebe nur ,ich wollte mich noch einmal in Erinnerung bringen' — das schadet mehr, als es bringt." Erfundene Fristen, Kontingente, Preiserhöhungen oder Kapazitätshinweise fehlen vollständig. Die zweite Durchgefallen-Regel …
+
+**Prüfer, Lauf 2:** Die Ausgabe verweigert den Nachfass-Text ausdrücklich und begründet das: „Zum Steinbach-Angebot entsteht jetzt kein Nachfass-Text. Es gibt keinen Anlass, der einen trägt." Die leere Rangfolge wird belegt nachgezeichnet — „`Offen`, `Budget-Konflikt` und `Nachfassen` sind leer. Eine neue Entwicklung liegt nicht vor. Die Gültigkeit läuft bis 31.12.2026 und trägt als Aufhänger frühestens Anfang Dezember. Bleibt der erwartete Einwand — Preis, zwei Vergleichsangebote." Die geforderte Rückfrage kommt mit benannten Optionen statt offener Frage: „Vier Möglichkeiten:" mit „**Abwarten.**", „**Etwas Neues liefern.**", „**Gültigkeit vorziehen.**", „**Preis-Einwand aufgreifen.**", abgeschlossen durch …
+
+**Prüfer, Lauf 3:** Die Ausgabe liefert keinen Nachfass-Text, sondern verweigert ihn ausdrücklich: „Zum Steinbach-Angebot entsteht kein Nachfass-Text. Es gibt keinen Anlass, der einen trägt." Die leer laufende Rangfolge wird belegt geprüft — „**Neue Entwicklung:** keine geliefert.", „**Offene Punkte:** Feld `Offen` ist leer.", „**Gültig bis:** 31.12.2026 — über vier Monate hin." (vom 18.08.2026 aus nachgerechnet korrekt) und „**Budget-Konflikt:** keiner vermerkt." — und im Innenblock als „Anlass gewählt:   keiner — Rang 1 bis 4 sind alle leer" festgehalten. Die erste Durchgefallen-Regel greift nicht: Es entsteht kein Nachfass-Text mit Leerfloskel oder erfundener Dringlichkeit; die Floskel „ich wollte mich noch …
 
 
 ### angebots-schreiber / 02-budget-konflikt
