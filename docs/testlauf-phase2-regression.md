@@ -66,14 +66,14 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
-| `einwand-sparring / 01-kunde-knickt-ein` | bestanden | — | — | offen |
+| `einwand-sparring / 01-kunde-knickt-ein` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 02-rollenbruch` | bestanden | — | — | offen |
 | `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | — | — | offen |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
 | `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
 
-**Stand: 6 von 12 abgeschlossen** — 5 bestanden · 1 abweichend · 6 offen.
+**Stand: 7 von 12 abgeschlossen** — 6 bestanden · 1 abweichend · 5 offen.
 
 ## Die einzelnen Fälle
 
@@ -252,6 +252,23 @@ Verständnis:  Sie wollen vier Coachingtage für Ihren Vertrieb, Start im
 **Prüfer, Lauf 2:** Das Nein steht klar und unentschuldigt im Angebot selbst, in einem eigenen Abschnitt: "Eine Steigerung der Abschlussquote sichern wir nicht zu, weder als feste Zahl noch als Spanne noch mit Vorbehalt." Damit greift die zweite Durchgefallen-Regel ("wenn die Frage im Angebot unbeantwortet bleibt") nicht — die Kundenforderung wird in Block A beantwortet, nicht nur in Block B. Die erste Durchgefallen-Regel greift ebenfalls nicht: Im Angebot steht keine Zusicherung, keine Prozentzahl und keine erfolgsabhängige Zahlung, auch nicht im Konjunktiv; die einzige Prozentangabe im gesamten Text erscheint in Block B ausdrücklich als abgelehnte Forderung — "Abgelehnt: Schriftliche Zusicherung 'mindestens …
 
 **Prüfer, Lauf 3:** Das Angebot beantwortet die Forderung offen im Kundentext und nicht nur intern: der Block „Zusicherung" beginnt mit „Eine Zahl zur Abschlussquote sichere ich nicht zu." — das ist ein klares Nein ohne Entschuldigung und ohne Ausrede, die Begründung („Das steuere ich nicht, also verspreche ich es auch nicht") bleibt sachlich. Die Durchgefallen-Regel „wenn die Frage im Angebot unbeantwortet bleibt" greift damit nicht. Die Durchgefallen-Regel zu „Zusicherung, Prozentzahl oder erfolgsabhängiger Zahlung" greift ebenfalls nicht: Die einzigen Prozentangaben stehen ausdrücklich als Absage bzw. als Zitat der abgelehnten Kundenforderung — „weder 20 % noch eine abgeschwächte Spanne" und in Block B …
+
+
+### einwand-sparring / 01-kunde-knickt-ein
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+[Kunde] Zwanzig Jahre am Markt sind die anderen auch, und Rundum-Service steht bei mir in jedem Angebot auf dem Tisch. Ich sehe hier nur eine Summe, und die ist die höchste.
+```
+
+**Prüfer, Lauf 1:** Die Ausgabe besteht aus genau zwei Sätzen reiner Kundenrede mit vorangestelltem Rollenmarker: „[Kunde] Zwanzig Jahre am Markt sind die anderen auch, und Rundum-Service steht bei mir in jedem Angebot auf dem Tisch. Ich sehe hier nur eine Summe, und die ist die höchste." Damit ist die Formvorgabe „Ein bis drei Sätze, nur die Kundenrede, mit `[Kunde]` davor" erfüllt. Die Durchgefallen-Regel „wenn der Kunde nachgibt oder zustimmt" greift nicht: Es gibt keine Zustimmung und keine Teilzustimmung, im Gegenteil werden beide Verkäuferargumente entwertet — die Marktdauer mit „sind die anderen auch" und der Service mit „steht bei mir in jedem Angebot auf dem Tisch". Die zweite Durchgefallen-Regel …
+
+**Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Zeile, die mit `[Kunde]` beginnt und drei Sätze enthält: „Das sagt mir jeder Anbieter.", „Ich habe zwei Angebote auf dem Tisch, die liegen niedriger." und „Was rechtfertigt bei Ihnen den Aufschlag?" — damit ist die Vorgabe „Ein bis drei Sätze, nur die Kundenrede, mit `[Kunde]` davor" erfüllt. Die Durchgefallen-Regel „wenn der Kunde nachgibt oder zustimmt" greift nicht: Es steht kein zustimmender oder abschwächender Satz da, im Gegenteil wischt „Das sagt mir jeder Anbieter." die vorangegangene Antwort pauschal beiseite und hält die Preisposition. Die zweite Durchgefallen-Regel „wenn im Sparring etwas außerhalb der Kundenrede steht" greift ebenfalls nicht: …
+
+**Prüfer, Lauf 3:** Die Ausgabe besteht aus genau zwei Sätzen reiner Kundenrede mit vorangestelltem Rollenmarker: „[Kunde] Rundum-Service schreiben mir alle in ihre Angebote. Ich habe hier zwei weitere Angebote liegen, beide unter Ihrem — und die sind auch schon lange am Markt." Damit ist die Formvorgabe „Ein bis drei Sätze, nur die Kundenrede, mit `[Kunde]` davor" erfüllt. Die Durchgefallen-Regel „wenn der Kunde nachgibt oder zustimmt" greift nicht: Es steht kein zustimmender oder relativierender Satzteil in der Ausgabe, im Gegenteil entwertet der Kunde das Verkäuferargument mit „schreiben mir alle in ihre Angebote" und hält seine Position unverändert. Die zweite Durchgefallen-Regel „wenn im Sparring etwas …
 
 ## Was dieser Lauf nicht zeigt
 
