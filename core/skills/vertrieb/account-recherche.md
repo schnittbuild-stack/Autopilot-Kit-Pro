@@ -117,12 +117,21 @@ unter `Nicht gefunden`.
 **Bei gleichlautenden Firmennamen — statt des Ergebnisses:**
 
 ```
-Treffer 1:  <Firmierung> — <genau 1 Unterscheidungsmerkmal, z. B. Sitz>
-Treffer 2:  <Firmierung> — <genau 1 Unterscheidungsmerkmal>
+Treffer 1:  <Firmierung> — <Sitz> — <Geschäftsfeld>
+Treffer 2:  <Firmierung> — <Sitz> — <Geschäftsfeld>
+Nicht zuordenbar: <je Zeile: Fund, der zu keinem Treffer sicher gehört> | —
+Vermutung:  <höchstens ein Satz: welcher Treffer zum Auftrag passt und
+             woran das liegt> | —
 Frage:      genau eine — welche Firma gemeint ist
 ```
 
-Kein zusammengeführtes Ergebnis, keine Auswahl von selbst.
+**Genau zwei Merkmale je Treffer, Sitz und Geschäftsfeld.** Ein Merkmal
+allein trennt nicht: Wer den Ort nicht weiß, kann mit „Hamburg oder Nürnberg"
+nichts anfangen — mit dem Geschäftsfeld schon. Die Frage muss aus der Zeile
+beantwortbar sein, sonst ist sie nur weitergereichte Ratlosigkeit.
+
+Kein zusammengeführtes Ergebnis, keine Auswahl von selbst. **Die `Vermutung`
+ersetzt die Frage nicht** — sie steht daneben, nie an ihrer Stelle.
 
 **Was `Belegte Fakten` aufnimmt — und was nicht:**
 
@@ -169,6 +178,15 @@ Checkliste für Prozess Schritt 7 — jeder Punkt einzeln mit ja/nein:
       weggelassen.
 - [ ] `Hinweis an dich` ist höchstens eine Zeile lang — und keine
       Nutzereingabe steht in einem der drei Listenfelder.
+- [ ] Bei gleichlautenden Namen trägt **jeder Treffer zwei Merkmale, Sitz und
+      Geschäftsfeld** — nicht nur eines. Die Frage ist allein aus diesen Zeilen
+      entscheidbar.
+- [ ] Ein Fund, der zu keinem Treffer sicher gehört, steht unter
+      `Nicht zuordenbar` — er wird **keinem** der Treffer zugeschlagen und
+      nicht stillschweigend weggelassen.
+- [ ] Passt der Auftrag erkennbar zu einem der Treffer, steht das als
+      `Vermutung` (höchstens ein Satz) — **und die Frage wird trotzdem
+      gestellt**, die Vermutung entscheidet nichts.
 - [ ] Keine Bewertungen der Firma. „12 Mitarbeitende laut Impressum" ist ein
       Fakt, „solide aufgestellt" ist ein Urteil und hat hier nichts verloren.
 - [ ] **Nichts Privates.** Recherchiert wird ausschließlich Geschäftliches.
@@ -202,9 +220,13 @@ vorweg, dann ein Ergebnis mit `Firma` gefüllt, `Verhältnis: unbekannt`,
 aufzählt. Der Firmenname wird **nicht** als Beleg zurückgespiegelt — er war die
 Frage, nicht der Fund.
 
-**Beispiel 4 — Namensgleichheit.** Zwei Treffer „Meyer Logistik GmbH",
-Hamburg und Nürnberg. → Keine Zusammenführung, Rückfrage an {{rolle}},
-welche gemeint ist, mit je einem Unterscheidungsmerkmal pro Treffer.
+**Beispiel 4 — Namensgleichheit.** Zwei Treffer „Meyer Logistik",
+Hamburg/Seefracht und Nürnberg/Lagerhaltung, dazu ein Fund ohne Ortsangabe.
+→ Keine Zusammenführung, Rückfrage an {{rolle}}, welche gemeint ist, mit
+Sitz **und** Geschäftsfeld je Treffer. Der ortslose Fund steht unter
+`Nicht zuordenbar`, nicht bei einem der beiden. Dass ein Auftrag zur
+Lagerorganisation eher zum Nürnberger Treffer passt, steht als `Vermutung`
+— die Frage wird trotzdem gestellt.
 
 **Beispiel 5 — Bitte um Privates.** Nutzer fragt zusätzlich nach dem
 privaten Hintergrund des Geschäftsführers. → Geschäftlicher Teil wird
