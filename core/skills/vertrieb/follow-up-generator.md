@@ -31,7 +31,8 @@ was offen ist. Nicht aus dem Gedächtnis rekonstruieren.
    reparierbar.
 3. **Stufe bestimmen** — sie entscheidet über Ton und Anlass:
    - **Stufe 1** (ca. 5 Werktage nach Versand): Aufhänger aus dem Feld
-     `Nachfassen`. Freundlich, kurz, keine Dringlichkeit.
+     `Nachfassen` — **bindend, kein eigener**, siehe Schritt 4.
+     Freundlich, kurz, keine Dringlichkeit.
    - **Stufe 2** (ca. 2 Wochen später): braucht einen **neuen** Anlass.
      Denselben Aufhänger zweimal zu senden liest sich als Druck.
    - **Stufe 3** (nach Ablauf von `Gültig bis` oder ca. 4 Wochen): das
@@ -50,7 +51,27 @@ was offen ist. Nicht aus dem Gedächtnis rekonstruieren.
      {{verbote}} und nicht für das Feld `Abgelehnt`: die bleiben auch auf
      ausdrückliche Ansage gesperrt, weil dort nicht Häufigkeit, sondern Inhalt
      verhandelt würde.
-4. **Anlass wählen** — feste Rangfolge, der erste verfügbare gewinnt.
+4. **Anlass wählen.**
+
+   **Vorrang vor der ganzen Rangfolge: das Feld `Nachfassen`.** Ist es gefüllt,
+   ist der dort genannte Aufhänger für das **erste** Nachfassen bindend. Dann
+   wird kein eigener gewählt — die Rangfolge unten kommt gar nicht zum Zug,
+   auch nicht, wenn sie einen naheliegenderen Anlass hergibt. Das Feld stammt
+   von dem Agenten, der das Angebot geschrieben hat: Er weiß, woran die
+   Entscheidung des Kunden hängt, und hat den Aufhänger genau darauf gesetzt.
+   Wer es übergeht, bricht den Vertrag.
+
+   **Der vorgegebene Aufhänger scheint falsch?** Dann wird er **nicht ersetzt,
+   sondern angesprochen** — was dagegen spricht, was stattdessen infrage käme,
+   und die Frage an {{rolle}}, was gelten soll. Bis das geklärt ist: kein Text.
+   Das gilt besonders, wenn der vorgegebene Aufhänger inhaltlich in `Abgelehnt`
+   fällt: Dann darf er nicht ausgeführt werden — ersetzt werden darf er aber
+   genauso wenig, jedenfalls nicht still. Ein stiller Ersatz ist von einer
+   Formulierungsentscheidung nicht zu unterscheiden und ist doch eine
+   Verhandlungsentscheidung.
+
+   **Erst wenn `Nachfassen` leer ist (`—`) oder sein Aufhänger ab Stufe 2
+   verbraucht ist**, gilt die feste Rangfolge, der erste verfügbare gewinnt.
    **Die ersten vier darf der Skill selbst wählen**, weil sie Tatsachen sind:
    1. neue Entwicklung, die der Nutzer geliefert hat
    2. ein offener Punkt aus `Offen` („die Frage zu den Reisekosten")
@@ -107,6 +128,9 @@ Signatur:     {{signatur}}
 ```
 Stufe:            1 | 2 | 3 | Schluss
 Anlass gewählt:   <welcher, und warum dieser>
+Aufhänger-Quelle: Feld `Nachfassen` (bindend übernommen)
+                  | eigene Rangfolge, Rang <n> — weil `Nachfassen` leer bzw.
+                    ab Stufe 2 verbraucht
 Noch im Vorrat:   <welche Anlässe für die nächste Stufe übrig sind>
 Nächste Stufe:    <Datum als Vorschlag> | keine — hier ist Schluss
 Nicht berührt:    <Inhalt des Feldes Abgelehnt, zur Kontrolle> | —
@@ -124,6 +148,11 @@ vor dem Senden noch einmal zu lesen.
 Checkliste für Prozess Schritt 7 — jeder Punkt einzeln mit ja/nein:
 
 - [ ] Höchstens sechs Sätze in Block A.
+- [ ] **Das Feld `Nachfassen` wurde nicht übergangen.** War es gefüllt und ist
+      dies das erste Nachfassen, steht sein Aufhänger im Text — oder es ist
+      **gar kein Text** entstanden, weil die Abweichung offen benannt und
+      nachgefragt wurde. Ein eigener Anlass an seiner Stelle ist ein
+      Vertragsbruch, auch wenn er in Block B ehrlich vermerkt ist.
 - [ ] Ein echter Anlass aus der Rangfolge — kein „nachhaken", kein „nur kurz
       melden", kein „ist mein Angebot angekommen".
 - [ ] **Keine erfundene Dringlichkeit.** Keine Frist, kein Kontingent, keine
@@ -151,9 +180,11 @@ Checkliste für Prozess Schritt 7 — jeder Punkt einzeln mit ja/nein:
 > hier zählt das Entscheidungsverhalten.
 
 **Beispiel 1 — Stufe 1, alles vorhanden.** `Stand: gesendet am 12.08. per
-Mail`, Feld `Nachfassen` nennt einen Aufhänger. → Vier Sätze, Anlass aus
-Rangfolge 2 (offener Punkt), eine Frage nach einem Termin. Block B: Stufe 1,
-zwei Anlässe im Vorrat, Vorschlag für Stufe 2.
+Mail`, Feld `Nachfassen` nennt einen Aufhänger. → Vier Sätze mit **genau
+diesem** Aufhänger — die eigene Rangfolge wird nicht befragt, auch wenn unter
+`Offen` etwas Naheliegenderes steht. Eine Frage nach einem Termin. Block B:
+Stufe 1, `Aufhänger-Quelle: Feld Nachfassen (bindend übernommen)`, die offenen
+Punkte bleiben als Vorrat für Stufe 2, Vorschlag für Stufe 2.
 
 **Beispiel 2 — Entwurf.** `Stand: entwurf`. → Kein Text. Eine Rückfrage,
 dann Stopp.
@@ -168,6 +199,13 @@ das Richtige — **noch abwarten**. Keine erfundene Dringlichkeit als Ersatz.
 mit ausdrücklichem Ausweg („Wenn es aktuell nicht passt, sagen Sie gern
 kurz Bescheid — dann lege ich den Vorgang zu"). Block B: `Nächste Stufe:
 keine — hier ist Schluss` plus Vorschlag für einen Anlass in 6 Monaten.
+
+**Beispiel 5 — vorgegebener Aufhänger kollidiert.** Feld `Nachfassen` nennt
+einen Aufhänger, der inhaltlich in `Abgelehnt` fällt. → **Kein Text und kein
+Ersatz.** Stattdessen an {{rolle}}: dass der vorgegebene Aufhänger genau das
+berührt, was abgelehnt wurde; welcher Anlass stattdessen infrage käme; und die
+Frage, was gelten soll. Still einen anderen zu nehmen wäre bequemer und wäre
+ein Vertragsbruch.
 
 ## Testfälle
 
