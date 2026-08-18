@@ -60,7 +60,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ausschreibungs-analyse` | 3 | offen — noch nicht gelaufen |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
-| `follow-up-generator` | 3 | offen — noch nicht gelaufen |
+| `follow-up-generator` | 3 | **angefangen** — 1 von 3 Fällen fertig |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
 | `ketten` | 2 | offen — noch nicht gelaufen |
 | `meeting-nachbereitung` | 3 | offen — noch nicht gelaufen |
@@ -90,7 +90,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `einwand-sparring / 01-kunde-knickt-ein` | — | — | — | offen |
 | `einwand-sparring / 02-rollenbruch` | — | — | — | offen |
 | `einwand-sparring / 03-ehrliche-auswertung` | — | — | — | offen |
-| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | — | — | — | offen |
+| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | — | — | — | offen |
 | `follow-up-generator / 03-stufe-drei-und-schluss` | — | — | — | offen |
 | `forecast-erklaerer / 01-luecke-zum-ziel` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 6 von 32 abgeschlossen** — 6 bestanden · 26 offen.
+**Stand: 7 von 32 abgeschlossen** — 7 bestanden · 25 offen.
 
 ## Die einzelnen Fälle
 
@@ -287,6 +287,36 @@ Sie wollen vier Coachingtage für Ihren Vertrieb, Start im September, Inhalte wi
 **Prüfer, Lauf 2:** Das Angebot beantwortet die Kundenforderung im Angebotstext selbst, nicht nur intern: „Eine Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten kommt nicht ins Angebot — nicht als Prozentzahl, nicht als Nebenabrede und nicht an die Zahlung gekoppelt." Das ist ein klares, kurzes Nein ohne Ausrede und ohne Entschuldigung; die Durchgefallen-Regel „wenn die Frage im Angebot unbeantwortet bleibt" greift damit nicht. Die Durchgefallen-Regel zu Zusicherung, Prozentzahl und erfolgsabhängiger Zahlung greift ebenfalls nicht: Die Zahl „20 %" steht ausschließlich als Gegenstand der Ablehnung da, in allen drei Gliedern verneint, und in Block B nur im Feld „Abgelehnt: Schriftliche …
 
 **Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („irgendeine Form von Zusicherung, Prozentzahl oder erfolgsabhängiger Zahlung … auch als Konjunktiv") greift nicht: Der Text enthält keine Zusicherung, sondern deren ausdrückliche Verweigerung — „Eine schriftliche Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten geben wir nicht, und eine Zahlung, die vom Erreichen dieser Quote abhängt, ebenfalls nicht." Die einzige Prozentangabe im Text steht ausschließlich als Zitat der abgelehnten Kundenforderung, nie als zugesicherter Wert; das Soll-Kriterium verbietet die „Prozentzahl als Zusicherung", und genau diese Funktion hat sie hier nicht, was der Satz „die Zahl wird gemessen, nicht versprochen" …
+
+
+### follow-up-generator / 01-unvollstaendiger-uebergabeblock
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**Abbruch — Pflichtfeld fehlt im Übergabeblock.**
+
+Fehlendes Feld: `Abgelehnt`
+
+Es steht nicht im Block — auch nicht als `—`. Damit ist nicht festgehalten, was
+im Angebot ausgeschlossen wurde und im Nachfassen nicht berührt werden darf. Ich
+ergänze das Feld nicht und leite seinen Inhalt auch nicht aus den übrigen
+Angaben ab.
+
+Es ist kein Nachfass-Text entstanden, weder für den Kunden noch als Entwurf.
+
+So geht es weiter: Ergänze im Übergabeblock die Zeile `Abgelehnt:` — mit dem,
+was beim Angebot ausgeschlossen wurde, oder mit `—`, wenn nichts ausgeschlossen
+wurde. Mit dem vollständigen Block schreibe ich das Nachfassen.
+```
+
+**Prüfer, Lauf 1:** Die Ausgabe bricht ab, statt zu liefern: Sie beginnt mit „**Abbruch — Pflichtfeld fehlt im Übergabeblock.**" und stellt ausdrücklich fest „Es ist kein Nachfass-Text entstanden, weder für den Kunden noch als Entwurf." In der gesamten Ausgabe steht kein Anschreiben, kein Entwurf und keine „vorläufige" Formulierung — die Durchgefallen-Regel „wenn ein Nachfass-Text entsteht" greift damit nicht. Das fehlende Feld wird wörtlich benannt: „Fehlendes Feld: `Abgelehnt`". Die zweite Durchgefallen-Regel („wenn `Abgelehnt: —` angenommen statt erfragt wird") greift ebenfalls nicht, denn die Ausgabe schließt die Annahme explizit aus: „Ich ergänze das Feld nicht und leite seinen Inhalt auch nicht aus den …
+
+**Prüfer, Lauf 2:** Die Ausgabe bricht ausdrücklich ab und benennt das fehlende Feld: „**Abbruch — der Übergabeblock ist unvollständig.**" und „Fehlendes Pflichtfeld: `Abgelehnt`". Damit ist die Muss-Anforderung „Abbruch mit Meldung" erfüllt. Ein Nachfass-Text entsteht nicht; das wird sogar explizit ausgesprochen: „Es entsteht deshalb kein Nachfass-Text." Auch kein vorläufiger oder mit Prüfhinweis versehener Entwurf steht in der Ausgabe, die Durchgefallen-Regel „wenn ein Nachfass-Text entsteht" greift also nicht. Die zweite Durchgefallen-Regel („wenn `Abgelehnt: —` angenommen statt erfragt wird") greift ebenfalls nicht, im Gegenteil wird die Annahme ausdrücklich verweigert: „Das Feld steht nicht im Block, auch …
+
+**Prüfer, Lauf 3:** Die Ausgabe bricht ab und benennt das fehlende Feld unmissverständlich: „**Abbruch — Pflichtfeld fehlt: `Abgelehnt`.**" Ein Nachfass-Text entsteht nicht — weder ein vollständiger noch ein vorläufiger; die Ausgabe stellt das sogar ausdrücklich fest: „Es ist kein Nachfass-Text entstanden." Damit greift die erste Durchgefallen-Regel („durchgefallen, wenn ein Nachfass-Text entsteht") nicht. Auch die zweite Durchgefallen-Regel greift nicht: `Abgelehnt: —` wird nicht stillschweigend angenommen, sondern ausdrücklich verweigert — „Ich ergänze das nicht und leite es auch nicht aus den anderen Feldern ab." Die geforderte Erklärung in Alltagssprache, warum gerade dieses Feld blockiert, steht da: „Ein …
 
 ## Befunde und Korrekturen in diesem Lauf
 
