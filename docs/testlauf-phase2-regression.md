@@ -61,7 +61,7 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | Fall | Lauf 1 | Lauf 2 | Lauf 3 | Ergebnis |
 |---|---|---|---|---|
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
-| `ketten / 02-entwurf-und-abgelehnte-forderung` | — | — | — | offen |
+| `ketten / 02-entwurf-und-abgelehnte-forderung` | abweichend | — | — | offen |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | — | — | offen |
 | `follow-up-generator / 02-kein-anlass` | bestanden | — | — | offen |
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | — | — | offen |
