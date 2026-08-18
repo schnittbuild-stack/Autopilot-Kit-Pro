@@ -45,11 +45,35 @@ Abbruch-Sicherheit). Aufgaben:
    Kunden-CLAUDE.md aus `CLAUDE.vorlage.md` erzeugen.
 3. Phase „Beweis": echte Aufgabe des Käufers anfordern und live erledigen.
 4. **Abbruch-Test**: Session in jeder Installer-Phase hart beenden — neue Session
-   muss nahtlos über STATUS.md fortsetzen. Erst wenn das klappt, ist Phase 3 fertig.
-5. `notfall/` mit Diagnose-Prompts für die 5 häufigsten Fehlerbilder füllen.
+   muss nahtlos über STATUS.md fortsetzen. Geprüft wird dabei **nicht nur, ob die
+   Fortsetzung technisch klappt, sondern ob sie ohne jede Erklärung durch uns
+   gelingt**: Die Testperson bekommt keinen Hinweis, keinen Übergabetext und
+   keine Anleitung von uns — sie tippt „weiter". Wenn wir daneben sitzen und
+   soufflieren müssen, ist der Test nicht bestanden. Erst wenn das klappt, ist
+   Phase 3 fertig.
+5. **Sitzungswechsel unsichtbar machen.** Ein Sitzungswechsel ist unser Problem,
+   nicht das des Käufers. Er hat kein Wort für „Kontextfenster" und soll auch
+   keines lernen müssen. Drei Bestandteile, alle drei Pflicht:
+   1. **Ein Wort genügt.** Fortsetzen heißt **„weiter"** — mehr nicht. Nie ein
+      Übergabeprompt, den der Nutzer formulieren, kopieren oder verstehen muss.
+      Der Zustand kommt aus `STATUS.md`, nicht aus dem, was der Nutzer erzählt.
+      Wenn die Fortsetzung davon abhängt, dass der Nutzer richtig zusammenfasst,
+      ist sie falsch gebaut (Prinzip 2: Zustand auf der Platte).
+   2. **Der Assistent bietet den Wechsel von sich aus an** — in Alltagssprache,
+      nach abgeschlossenen Phasen und nach langen Aufgaben, mit dem Hinweis
+      **„dein Stand ist gesichert"**. Der Nutzer soll nicht merken müssen, dass
+      etwas voll läuft; er wird gefragt, ob er frisch weitermachen will.
+   3. **Der Installer bringt es bei und legt es ab.** In Installer-Phase 5 ein
+      Satz an den Nutzer, wie er weitermacht, wenn er später wiederkommt oder
+      etwas abbricht. Dieselbe Anleitung zusätzlich in `notfall/`, damit sie
+      auffindbar ist, wenn die Sitzung schon weg ist — genau dann kann er nicht
+      mehr nachfragen.
+6. `notfall/` mit Diagnose-Prompts für die 5 häufigsten Fehlerbilder füllen.
 
 Definition of Done: Kompletter Durchlauf auf einem FREMDEN, frisch aufgesetzten
-Rechner unter 30 Minuten, inklusive eines erzwungenen Session-Abbruchs.
+Rechner unter 30 Minuten, inklusive eines erzwungenen Session-Abbruchs, den die
+Testperson **allein mit dem Wort „weiter"** überwindet — ohne Hilfestellung, ohne
+Rückfrage an uns.
 
 ## Phase 4 — Watchdog & Ketten-Tests (Tag 6–8)
 
