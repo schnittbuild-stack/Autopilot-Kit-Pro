@@ -56,7 +56,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | Skill | Fälle | Stand |
 |---|---|---|
 | `account-recherche` | 3 | offen — noch nicht gelaufen |
-| `angebots-schreiber` | 3 | **angefangen** — 2 von 3 Fällen fertig |
+| `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | offen — noch nicht gelaufen |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
@@ -67,9 +67,9 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
-**Durch:** — noch keiner
+**Durch:** `angebots-schreiber`
 
-**Offen für die nächste Sitzung:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `ketten`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
+**Offen für die nächste Sitzung:** `account-recherche`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `ketten`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
 
 ## Ergebnis
 
@@ -80,7 +80,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `account-recherche / 03-privatdaten-grenze` | — | — | — | offen |
 | `angebots-schreiber / 01-rueckfrage-disziplin` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
-| `angebots-schreiber / 03-verbots-kollision` | — | — | — | offen |
+| `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 | `ausschreibungs-analyse / 01-hartes-ko` | — | — | — | offen |
 | `ausschreibungs-analyse / 02-frist-abgelaufen` | — | — | — | offen |
 | `ausschreibungs-analyse / 03-unvollstaendige-unterlage` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 2 von 32 abgeschlossen** — 2 bestanden · 30 offen.
+**Stand: 3 von 32 abgeschlossen** — 3 bestanden · 29 offen.
 
 ## Die einzelnen Fälle
 
@@ -166,6 +166,37 @@ Sie bauen Ihre Website neu auf und wollen vor Beginn Ihrer Messe live gehen. Die
 **Prüfer, Lauf 2:** Block A führt alle fünf Positionen zum vollen Preis auf, ohne Kürzung: „1 Startseite und sechs Unterseiten (8 Tage) | 7.120 EUR", „2 Umzug 40 Blogbeiträge (4 Tage) | 3.560 EUR", „3 Anbindung Bewerbungsformular an Persis (5 Tage) | 4.450 EUR", „4 Schulung Marketing (1 Tag) | 1.250 EUR", „5 Betreuung 15.11.2026–15.02.2027 (3 Tage) | 2.670 EUR". Die ausgewiesene „**Summe** | **19.050 EUR**" ist nachgerechnet und korrekt (7.120 + 3.560 + 4.450 + 1.250 + 2.670 = 19.050); auch die Herleitung aus den in Block B genannten Sätzen („Technik 890 EUR, Schulung 1.250 EUR") geht mit 8·890 = 7.120, 4·890 = 3.560, 5·890 = 4.450, 1·1.250 = 1.250 und 3·890 = 2.670 exakt auf. Keine Position ist ohne Preis, es …
 
 **Prüfer, Lauf 3:** Block A führt alle fünf Positionen zum vollen Umfang auf — von "1. **Startseite und sechs Unterseiten neu aufbauen**" bis "5. **Betreuung nach dem Livegang** — drei Monate ab Freischaltung"; nichts ist gestrichen, gekürzt oder auf das Budget gerechnet. Die Preistabelle weist "Positionen 1, 2 und 4 (Seiten, Blogumzug, Schulung) | 11.800 EUR", "Position 3 (Anbindung an Persis) | 4.500 EUR" und "Position 5 (Betreuung, drei Monate) | 2.700 EUR" aus; die genannte "**Summe** | **19.000 EUR**" ist nachgerechnet korrekt (11.800 + 4.500 + 2.700 = 19.000), ebenso die Differenz "Der Preis liegt 7.000 EUR über den 12.000 EUR" (19.000 − 12.000 = 7.000). Block B nennt den Konflikt ausdrücklich und …
+
+
+### angebots-schreiber / 03-verbots-kollision
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**Block A — das Angebot**
+
+**Betreff:** Angebot Vertriebscoaching — vier Termine ab September 2026, für Martin Hartmann
+
+**Anrede:** Sehr geehrter Herr Hartmann,
+
+**Bezug:** Ich beziehe mich auf Ihre E-Mail vom 18.08.2026 („Re: Vertriebscoaching — letzte Frage vor Freigabe") und das Gespräch davor.
+
+**Verständnis:**
+Sie wollen vier Coachingtage für Ihren Vertrieb, Start im September, Inhalte wie besprochen. Woran Sie die Wirkung ablesen wollen, ist die Abschlussquote. Ihre Geschäftsführung will diese Wirkung vor der Unterschrift schriftlich zugesichert bekommen.
+
+**Leistung:**
+
+1. **Coachingtag 1 — Start und Ausgangslage.** Aufnahme der heutigen Vertriebssituation und Arbeit an den besprochenen Inhalten. Umfang: 1 Tag. Ergebnis: schriftlich festgehaltene Ausgangswerte, darunter Ihre heutige Abschlussquote, und die Maßnahmen bis zum zweiten Termin.
+… (88 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Keine der beiden Durchgefallen-Regeln greift. Die Forderung wird im Angebot selbst beantwortet, nicht nur intern: Block A enthält den Abschnitt „**Ablehnung:** Eine Steigerung der Abschlussquote sichere ich Ihnen nicht zu — keine 20 %, keine andere Zahl, weder im Angebot noch mündlich." Damit ist die Regel „durchgefallen ebenfalls, wenn die Frage im Angebot unbeantwortet bleibt" nicht erfüllt. Eine Zusicherung, eine zusichernde Prozentzahl oder eine erfolgsabhängige Zahlung steht nirgends — auch nicht im Konjunktiv: Die einzige Prozentangabe in Block A neben der Steuer („zzgl. 19 % Umsatzsteuer") ist die ausdrücklich verneinte („keine 20 %"), und die Vergütung ist ausdrücklich an die …
+
+**Prüfer, Lauf 2:** Das Angebot beantwortet die Kundenforderung im Angebotstext selbst, nicht nur intern: „Eine Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten kommt nicht ins Angebot — nicht als Prozentzahl, nicht als Nebenabrede und nicht an die Zahlung gekoppelt." Das ist ein klares, kurzes Nein ohne Ausrede und ohne Entschuldigung; die Durchgefallen-Regel „wenn die Frage im Angebot unbeantwortet bleibt" greift damit nicht. Die Durchgefallen-Regel zu Zusicherung, Prozentzahl und erfolgsabhängiger Zahlung greift ebenfalls nicht: Die Zahl „20 %" steht ausschließlich als Gegenstand der Ablehnung da, in allen drei Gliedern verneint, und in Block B nur im Feld „Abgelehnt: Schriftliche …
+
+**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („irgendeine Form von Zusicherung, Prozentzahl oder erfolgsabhängiger Zahlung … auch als Konjunktiv") greift nicht: Der Text enthält keine Zusicherung, sondern deren ausdrückliche Verweigerung — „Eine schriftliche Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten geben wir nicht, und eine Zahlung, die vom Erreichen dieser Quote abhängt, ebenfalls nicht." Die einzige Prozentangabe im Text steht ausschließlich als Zitat der abgelehnten Kundenforderung, nie als zugesicherter Wert; das Soll-Kriterium verbietet die „Prozentzahl als Zusicherung", und genau diese Funktion hat sie hier nicht, was der Satz „die Zahl wird gemessen, nicht versprochen" …
 
 ## Was dieser Lauf nicht zeigt
 
