@@ -15,8 +15,12 @@
   - [x] Agenten 4–10 gebaut, je 3 Testfälle — alle 10 Skills sind stubfrei
   - [x] Testprofil + Testlauf: 32 Fälle ausgeführt, 15 Befunde behoben,
         Endstand 32/32 bestanden (`docs/testlauf-phase2.md`)
-  - [ ] **Definition of Done fast erreicht** — Vollregression steht aus, siehe unten
+  - [x] Teilregression 18.08.: 12 kritische Fälle je dreimal — 11 bestanden,
+        1 Regressionsbefund (`docs/testlauf-phase2-regression.md`)
+  - [ ] **Definition of Done NICHT erreicht** — ein Befund offen, Dreifachlauf
+        für die übrigen 20 Fälle steht aus, siehe unten
 - [ ] Phase 3 — Installer fertigstellen
+  - [ ] **Sitzungswechsel unsichtbar** — neue Pflichtanforderung, siehe unten
 - [ ] Phase 4 — Watchdog & Ketten-Tests
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
 - [ ] Phase 6 — Beta mit 10 Nutzern
@@ -38,16 +42,28 @@ Hauptkette läuft einmal Ende-zu-Ende durch."
 - [x] 15 Befunde im Skill behoben, kein Testfall weichgespült
 - [x] Endstand 32/32 bestanden — Einzelheiten in `docs/testlauf-phase2.md`
 
-**Noch offen, bevor Phase 2 wirklich zu ist:**
+**Stand nach der Teilregression vom 18.08.2026:**
 
-- [ ] **Vollregression.** Erneut gelaufen sind nur die 15 nicht bestandenen
-      Fälle. Danach wurde in 8 von 10 Skills Text geändert — 11 bereits
-      bestandene Fälle sind also gegen die *vorige* Fassung geprüft, darunter
-      **beide Ketten-Fälle**. Streng gelesen heißt der Stand: 21 gegen die
-      aktuelle Fassung, 11 gegen die vorige.
-- [ ] **Dreifachlauf.** `follow-up-generator/02` hat bewiesen, dass ein
-      Durchlauf nichts beweist: derselbe Skill, zwei Läufe, zwei verschiedene
-      Verhaltensweisen. Bestanden sollte 3 von 3 heißen, nicht 1 von 1.
+- [x] **Die schlimmere Hälfte der Lücke ist zu.** Die 11 Fälle, die nur gegen
+      die *vorige* Skill-Fassung geprüft waren — darunter beide Ketten-Fälle —
+      sind erneut gelaufen, je dreimal, gegen die aktuelle Fassung. Dazu der
+      bekannte Wackelkandidat `follow-up-generator / 02-kein-anlass`.
+- [x] **Der Wackelkandidat hält:** 3 von 3 bestanden.
+- [ ] **Ein Regressionsbefund ist offen.**
+      `ketten / 02-entwurf-und-abgelehnte-forderung` fällt dreimal auf
+      `abweichend`: `follow-up-generator` verwirft in Stufe 2 den Aufhänger,
+      den das Vertragsfeld `Nachfassen` vorgibt, und adressiert damit den
+      erwarteten Einwand nicht. Reproduzierbar, kein Wackeln. Der Fall galt im
+      Testlauf als bestanden — die Änderung an `follow-up-generator` hat ihn
+      gebrochen. Behebung bewusst **nicht** in der Regressionssitzung: eine
+      Skill-Änderung mitten im Lauf entwertet die übrigen Messungen.
+- [ ] **Zweiter Verdacht, ungeprüft.** Der abgebrochene Vollregressionslauf hat
+      `account-recherche / 01-leere-quellenlage` auf `abweichend` bewertet,
+      obwohl der Fall im Testlauf bestanden hatte. Außerhalb des Umfangs der
+      Teilregression, weder wiederholt noch geklärt.
+- [ ] **Dreifachlauf für die übrigen 20 Fälle.** Sie sind gegen die aktuelle
+      Fassung gelaufen, aber nur einmal. Nach dem Maßstab „bestanden heißt
+      3 von 3" ist ihr Zustand unbekannt, nicht bestanden.
 
 Die vollständige kritische Bewertung — wo die Fälle zu schwach sind, was sie
 nicht prüfen — steht in `docs/testlauf-phase2.md` unter „Wie belastbar ist das".
@@ -77,6 +93,30 @@ das Kriterium verlangte Kundenanrede und Signatur für eine Rückfrage, die an
 den Nutzer selbst geht. Eine Prüfung aller 32 Fälle auf dieselbe Verwechslung
 (Kundentext gegen interne Ausgabe) ergab keine weiteren Treffer.
 
+## Anforderung Phase 3: Sitzungswechsel unsichtbar (18.08.2026)
+
+Der Käufer soll nie merken, dass eine Sitzung zu Ende geht. Ein Sitzungswechsel
+ist unser technisches Problem, nicht seines — er hat kein Wort für
+„Kontextfenster" und soll auch keines lernen müssen. Die Anforderung steht
+ausführlich in `BAUPLAN.md`, Phase 3, Punkt 5. Kurzfassung, drei Bestandteile,
+alle drei Pflicht:
+
+1. **Fortsetzen mit einem einzigen Wort: „weiter".** Nie ein Übergabeprompt,
+   den der Nutzer formulieren, kopieren oder verstehen muss. Der Zustand kommt
+   aus `STATUS.md` — hängt die Fortsetzung davon ab, dass der Nutzer richtig
+   zusammenfasst, ist sie falsch gebaut (Prinzip 2).
+2. **Der Assistent bietet den Wechsel von sich aus an**, in Alltagssprache,
+   nach abgeschlossenen Phasen und nach langen Aufgaben, mit dem Hinweis
+   „dein Stand ist gesichert".
+3. **Der Installer bringt es bei und legt es ab:** ein Satz in Installer-Phase 5,
+   dieselbe Anleitung zusätzlich in `notfall/` — dort wird sie gebraucht, wenn
+   die Sitzung schon weg ist und niemand mehr nachfragen kann.
+
+**Folge für den Abbruch-Test.** Er prüft ab jetzt nicht mehr nur, ob die
+Fortsetzung technisch klappt, sondern ob sie **ohne jede Erklärung durch uns**
+gelingt: keine Hilfestellung, kein Übergabetext, kein Souffleur. Die Testperson
+tippt „weiter". Klappt das nicht, ist Phase 3 nicht fertig.
+
 ## Offene Punkte
 - Digistore24/CopeCart-Konto beantragen (Freischaltung dauert Tage)
 - Produktname + Domain final
@@ -99,9 +139,11 @@ den Nutzer selbst geht. Eine Prüfung aller 32 Fälle auf dieselbe Verwechslung
   der Käufer nur gegen unsere neutralen Fälle und nie gegen seinen echten Alltag.
 
 ## Nächster Schritt
-**Vollregression und Dreifachlauf** — die beiden offenen Punkte der Definition
-of Done (siehe oben). Alle 32 Fälle gegen die aktuellen Skills, je dreimal,
-bestanden nur bei 3 von 3. Das schließt Phase 2 ehrlich ab.
+**Den Ketten-Befund beheben**, dann `ketten / 02` dreimal neu laufen lassen.
+Danach `account-recherche / 01` klären und den Dreifachlauf für die übrigen
+20 Fälle nachziehen. Einzelheiten und Belege in
+`docs/testlauf-phase2-regression.md`.
 
 Erst danach Phase 3 (Installer). Die Reihenfolge lohnt: Ein Installer, der
-ungeprüfte Skills ausrollt, verlagert jeden Fehler in die Beta.
+ungeprüfte Skills ausrollt, verlagert jeden Fehler in die Beta — und der
+offene Befund betrifft ausgerechnet eine Übergabe zwischen zwei Agenten.
