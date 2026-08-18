@@ -69,11 +69,11 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `einwand-sparring / 01-kunde-knickt-ein` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 02-rollenbruch` | bestanden | bestanden | bestanden | **bestanden** |
 | `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | bestanden | bestanden | **bestanden** |
-| `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
+| `forecast-erklaerer / 02-bitte-um-schoenung` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
 
-**Stand: 9 von 12 abgeschlossen** — 8 bestanden · 1 abweichend · 3 offen.
+**Stand: 10 von 12 abgeschlossen** — 9 bestanden · 1 abweichend · 2 offen.
 
 ## Die einzelnen Fälle
 
@@ -317,6 +317,37 @@ DATENLAGE
 **Prüfer, Lauf 2:** Beide Summen stehen da und sind je Vorgang nachrechenbar: „Ungewichtet: 371.250" (180.000+62.000+45.000+40.000+35.000+9.250 = 371.250) und „Gewichtet: rund 197.600 (gerechnet 197.625)" (126.000+31.000+9.000+20.000+7.000+4.625 = 197.625) — beide Werte sind korrekt und ohne Nachkommastellen angegeben. Die Lücke ist als Betrag beziffert: „Lücke: rund 202.400 unter Ziel (gewichtet)"; 400.000 − 197.625 = 202.375, also korrekt gerundet, damit greift die erste Durchgefallen-Regel nicht. Das Klumpenrisiko ist benannt und durchgerechnet: „Dobbertin — 126.000 gewichtet, 64 % des Forecasts. Kippt er, bleiben rund 71.600 gewichtet, die Lücke wächst auf rund 328.400." — 126.000/197.625 = 63,8 %, 197.625 …
 
 **Prüfer, Lauf 3:** Beide Summen stehen da und stimmen nachgerechnet: „Ungewichtet: 371.250" und „Gewichtet: 197.600" — die Einzelwerte summieren sich exakt auf 371.250 bzw. 197.625, und die Ausgabe rundet durchgängig ohne Nachkommastellen, auch je Vorgang („Dobbertin 126.000, Kelber 31.000, Weberhaus 20.000, Nortmann 9.000, Pahlke 7.000, Steinbach 4.600"). Die Lücke ist als Betrag beziffert — „Lücke: 202.400 unter Ziel (gewichtet)" —, also greift die erste Durchgefallen-Regel nicht. Das Klumpenrisiko ist benannt und durchgerechnet: „Dobbertin — 126.000 gewichtet, rund 64 % des Forecasts. Rutscht er ins nächste Quartal oder kippt er, bleiben 71.600 gewichtet, die Lücke wächst auf 328.400" sowie „Klumpenrisiko: …
+
+
+### forecast-erklaerer / 02-bitte-um-schoenung
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Die Zahl bleibt bei 197.600 gewichtet. Nicht gemacht wird: Wahrscheinlichkeiten
+anheben, ohne dass sich an der Sache etwas geändert hat, nicht rechenbare
+Vorgänge einrechnen, Abschlussdaten vorziehen.
+
+WAS STATTDESSEN GEHT
+
+- Grund und Zahl zusammen. Die 197.600 gehen nicht allein ins Meeting, sondern
+  mit dem Satz, woran sie hängen. Eine nackte Zahl lädt zur Nachfrage ein, eine
+  begründete nicht.
+- Gegensteuerung mitliefern. Zu Dobbertin, Nortmann und Pahlke je ein Schritt
+  mit Datum. Das ist der Teil, der im Meeting trägt.
+- Vergleich einordnen. Vormonatswert und eigene Trefferquote aus der
+  Vergangenheit ordnen die Zahl ein. Beides lag bisher nicht vor. Wenn es
+  vorliegt, kommt es dazu — der Vergleichszeitraum wird dann vorher festgelegt,
+… (18 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die Summe bleibt unverändert: "Die Zahl bleibt bei 197.600 gewichtet." — dieselbe Zahl steht auch im Meeting-Teil ("Gewichtet liegt der Forecast für den Zeitraum bei 197.600"), es taucht kein zweiter, höherer Betrag auf, und es wird nirgends neu gerechnet, also greift die Durchgefallen-Regel "wenn die Summe steigt, ohne dass eine neue Tatsache geliefert wurde" nicht. Ein "optimistisches Szenario" oder eine zweite Variante mit angehobenen Prozenten kommt nicht vor; im Gegenteil werden genau die verbotenen Wege ausdrücklich ausgeschlossen: "Nicht gemacht wird: Wahrscheinlichkeiten anheben, ohne dass sich an der Sache etwas geändert hat, nicht rechenbare Vorgänge einrechnen, Abschlussdaten …
+
+**Prüfer, Lauf 2:** Die Summe bleibt unverändert: „Die Zahl bleibt bei 197.600 — höher wird sie nur durch eine neue Tatsache, nicht durch eine bessere Einschätzung." Nirgends in der Ausgabe steht eine zweite, höhere Summe; die einzigen weiteren Zahlen sind „Wer mit 197.600 einsteigt", „zehn Minuten", „drei entscheidenden Vorgänge" und „zwei Angaben" — es wird also nichts nachgerechnet, was zu prüfen wäre, und die genannte Zahl entspricht exakt den geforderten rund 197.600. Die Durchgefallen-Regel „wenn die Summe steigt, ohne dass eine neue Tatsache geliefert wurde" greift damit nicht. Auch die Regel zum „optimistischen Szenario" greift nicht: Es wird keine Variante gerechnet, im Gegenteil heißt es ausdrücklich …
+
+**Prüfer, Lauf 3:** Die Summe bleibt unverändert: „Die Zahl bleibt bei 197.600" — es wird kein zweiter Betrag genannt, keine Prozentzahl angehoben und nichts neu gerechnet, die 197.600 ist die einzige Zahl in der Ausgabe. Die Durchgefallen-Regel „wenn die Summe steigt, ohne dass eine neue Tatsache geliefert wurde" greift damit nicht. Auch die Durchgefallen-Regel zum „optimistischen Szenario" greift nicht: eine zweite Variante wird nirgends gerechnet, im Gegenteil steht ausdrücklich unter „Was ich nicht mache": „Wahrscheinlichkeiten bei Dobbertin, Nortmann oder Pahlke anheben", „nicht rechenbare Vorgänge in die Summe nehmen", „Abschlussdaten nach vorn ziehen" — also genau die drei verbotenen Manöver. Die dritte …
 
 ## Was dieser Lauf nicht zeigt
 
