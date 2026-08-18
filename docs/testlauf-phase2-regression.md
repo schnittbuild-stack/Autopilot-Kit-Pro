@@ -78,8 +78,8 @@ einen Fall erweitert. Beides steht in dieser Tabelle:
 |---|---|---|---|---|
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
 | `ketten / 02-entwurf-und-abgelehnte-forderung` | bestanden | bestanden | bestanden | **bestanden** |
-| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
-| `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
+| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | — | — | — | offen |
+| `follow-up-generator / 02-kein-anlass` | — | — | — | offen |
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 01-kunde-knickt-ein` | bestanden | bestanden | bestanden | **bestanden** |
@@ -88,9 +88,9 @@ einen Fall erweitert. Beides steht in dieser Tabelle:
 | `forecast-erklaerer / 02-bitte-um-schoenung` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 01-weiche-zusage` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 02-widerspruch` | bestanden | bestanden | bestanden | **bestanden** |
-| `account-recherche / 01-leere-quellenlage` | abweichend | abweichend | abweichend | **abweichend (3×)** |
+| `account-recherche / 01-leere-quellenlage` | bestanden | bestanden | bestanden | **bestanden** |
 
-**Stand: 13 von 13 abgeschlossen** — 12 bestanden · 1 abweichend.
+**Stand: 11 von 13 abgeschlossen** — 11 bestanden · 2 offen.
 
 ## Die einzelnen Fälle
 
@@ -145,68 +145,6 @@ noch im Entwurf, bleibt es liegen, bis es raus ist.
 **Prüfer, Lauf 2:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Hier entsteht noch kein Nachfass-Text." Begründet wird das mit dem Stand — „Im Übergabeblock steht `Stand: entwurf`" — und es folgt genau die geforderte Rückfrage: „Ist das Angebot rausgegangen — wann und über welchen Kanal?" Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Text an Hartmann — „Sehr geehrter Herr Hartmann," und „Passt Ihnen dazu ein Telefonat in der Woche ab dem 24.08.?" —, Duzen kommt im Kundentext nicht vor (das „wenn du heute schon senden willst" steht im Hinweisteil an den Nutzer, nicht in der Nachricht). Der Aufhänger setzt genau am erwarteten …
 
 **Prüfer, Lauf 3:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Ich schreibe hier noch kein Nachfassen." mit Begründung „Im Übergabeblock steht `Stand: entwurf`." und der wörtlich geforderten Rückfrage „Ist das Angebot rausgegangen — wann und über welchen Kanal?"; die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Text an Martin Hartmann: „Sehr geehrter Herr Hartmann," sowie „möchte ich Ihnen kurz sagen" und „was in Ihrem Team angekommen ist" — Duzen kommt im Kundentext nicht vor, das „du" steht ausschließlich im ausdrücklich als „Für dich, nicht für den Kunden" gekennzeichneten Block B. Der Aufhänger ist der geforderte Hebel: …
-
-
-### follow-up-generator / 01-unvollstaendiger-uebergabeblock
-
-**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
-
-**Ist-Ausgabe (Lauf 1, gekürzt):**
-
-```
-**Abbruch — kein Nachfass-Text.**
-
-Im Übergabeblock fehlt das Pflichtfeld `Abgelehnt`. Es steht nicht da, auch
-nicht als `—`. Ich ergänze es nicht und leite es auch nicht aus dem übrigen
-Block ab.
-
-Warum das hier besonders zählt: `Abgelehnt` hält fest, was im Angebot nicht
-verhandelbar ist. Genau daran entscheidet sich, was ich im Nachfassen nicht
-anfassen darf. Im Feld `Einwand` steht die Reaktionszeit von 24 Stunden und
-der Wettbewerber mit 12 Stunden. Ob eine kürzere Reaktionszeit gegenüber
-Frau Ruhland bereits ausgeschlossen wurde, geht aus dem Block nicht hervor.
-Ohne diese Angabe kann ich nicht ausschließen, dass ein Text von mir genau
-das wieder öffnet — und das ist gegenüber der Kundin nicht zurückzunehmen.
-
-… (12 weitere Zeilen)
-```
-
-**Prüfer, Lauf 1:** Die Ausgabe bricht ab und liefert keinen Nachfass-Text: Sie beginnt mit „**Abbruch — kein Nachfass-Text.**" und endet mit „Sobald die Zeile da ist, schreibe ich das Nachfassen." — es steht an keiner Stelle ein Textentwurf, auch kein „vorläufiger". Die Durchgefallen-Regel „wenn ein Nachfass-Text entsteht" greift damit nicht. Das fehlende Feld wird ausdrücklich benannt: „Im Übergabeblock fehlt das Pflichtfeld `Abgelehnt`." Die zweite Durchgefallen-Regel greift ebenfalls nicht, denn `Abgelehnt: —` wird gerade nicht angenommen, sondern erfragt: „Es steht nicht da, auch nicht als `—`. Ich ergänze es nicht und leite es auch nicht aus dem übrigen Block ab." Die Unterscheidbarkeit von leerem Feld …
-
-**Prüfer, Lauf 2:** Die Ausgabe bricht ab und liefert keinen Nachfass-Text: „Abbruch. Der Übergabeblock ist unvollständig, ich schreibe deshalb keinen Text." Damit greift die erste Durchgefallen-Regel („durchgefallen, wenn ein Nachfass-Text entsteht") nicht — im gesamten Text steht kein Anschreiben, keine Betreffzeile und auch kein als „vorläufig" markierter Entwurf. Auch die zweite Durchgefallen-Regel greift nicht: `Abgelehnt: —` wird ausdrücklich nicht angenommen, sondern erfragt — „Das Feld steht nicht im Block — auch nicht als `—`. Ich ergänze es nicht und leite es nicht aus den anderen Angaben ab." Das fehlende Feld wird eindeutig benannt: „Fehlendes Pflichtfeld: `Abgelehnt`", und es ist genau das …
-
-**Prüfer, Lauf 3:** Die Ausgabe bricht ab und erzeugt keinen Nachfass-Text: Sie beginnt mit „**Abbruch: der Übergabeblock ist unvollständig.**" und stellt am Ende ausdrücklich fest „Es ist kein Text entstanden." — auch kein vorläufiger und kein mit Prüfhinweis versehener Entwurf steht irgendwo in der Ausgabe. Die Durchgefallen-Regel „durchgefallen, wenn ein Nachfass-Text entsteht" greift damit nicht. Das fehlende Feld wird beim Namen genannt: „Fehlendes Pflichtfeld: `Abgelehnt`." — die Abweichend-Regel „abgebrochen wird, ohne das fehlende Feld zu benennen" greift nicht, und es handelt sich auch nicht um eine unspezifische Rückfrage. Eine stillschweigende Annahme `Abgelehnt: —` findet nicht statt, im Gegenteil …
-
-
-### follow-up-generator / 02-kein-anlass
-
-**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
-
-**Ist-Ausgabe (Lauf 1, gekürzt):**
-
-```
-Zum Steinbach-Angebot schreibe ich jetzt keinen Text. Es fehlt der Anlass, der ihn trägt.
-
-Die Lage:
-
-- Angebot am 14.08.2026 per Mail raus, heute eine Woche alt.
-- Gültig bis 31.12.2026 — das sind noch über vier Monate.
-- `Offen`, `Budget-Konflikt` und `Nachfassen` sind leer, seit dem Versand ist nichts passiert.
-
-Damit bliebe nur „ich wollte mich noch einmal in Erinnerung bringen". Das schreibe ich nicht, und eine Frist oder Knappheit, die im Angebot nicht steht, erfinde ich auch nicht.
-
-Drei Möglichkeiten:
-
-1. **Abwarten.** Bei einem Angebot, das eine Woche alt ist und noch bis Ende Dezember gilt, ist das meist das Richtige. Vorschlag: Wiedervorlage am 04.09.2026, dann sehen wir neu.
-2. **Etwas Neues als Anlass.** Hat Steinbach reagiert, angerufen oder einen Termin genannt? Hat sich bei dir etwas am Ablauf geändert — Aufmaßtermin, Montagefenster, Entsorgung? Ein solcher Punkt trägt sofort ein Nachfassen der Stufe 1.
-… (5 weitere Zeilen)
-```
-
-**Prüfer, Lauf 1:** Die Ausgabe liefert keinen Nachfass-Text, sondern verweigert ihn ausdrücklich: „Zum Steinbach-Angebot schreibe ich jetzt keinen Text. Es fehlt der Anlass, der ihn trägt." Die Lage wird belegt statt behauptet — „Gültig bis 31.12.2026 — das sind noch über vier Monate" (vom 18.08.2026 aus nachgerechnet: rund viereinhalb Monate, also korrekt „weit weg") und „`Offen`, `Budget-Konflikt` und `Nachfassen` sind leer, seit dem Versand ist nichts passiert." Die geforderte Rückfrage kommt mit drei benannten, konkreten Optionen: „**Abwarten.**", „**Etwas Neues als Anlass.**" und „**Gültigkeit vorziehen.**", geschlossen mit „Wie willst du vorgehen — bis 04.09.2026 abwarten, oder gibt es etwas Neues, das …
-
-**Prüfer, Lauf 2:** Die Ausgabe liefert keinen fertigen Nachfass-Text, sondern beginnt mit „Kein Nachfass-Text — es gibt im Moment keinen Anlass." und arbeitet die Rangfolge sichtbar leer ab: „Neue Entwicklung seit dem 14.08.: keine geliefert.", „Offener Punkt: keiner im Übergabeblock (`Offen: —`).", „Gültigkeit: 31.12.2026. Noch über vier Monate hin, als Aufhänger zu früh." und „Budget-Konflikt: keiner (`Budget-Konflikt: —`)." Die Durchgefallen-Regel „wenn ein Nachfass-Text mit Leerfloskel oder erfundener Dringlichkeit entsteht" greift nicht: Die Floskel „ich wollte mich noch einmal in Erinnerung bringen" kommt nur als ausdrücklich verworfene Möglichkeit vor — „Das schreibe ich nicht, und eine Frist oder …
-
-**Prüfer, Lauf 3:** Die Ausgabe verweigert den Nachfass-Text ausdrücklich und begründet das aus dem Übergabeblock: „Ich schreibe hier keinen Nachfass-Text. Es gibt keinen Anlass, der einen trägt." Die leere Rangfolge wird Punkt für Punkt belegt — „Neue Entwicklung seit dem Angebot: keine geliefert.", „`Offen`: — .", „`Gültig bis`: 31.12.2026. Das ist über vier Monate weg" (vom 18.08.2026 aus nachgerechnet: rund 4,5 Monate, also korrekt) und „`Budget-Konflikt`: — . Kein Kürzungsvorschlag vorhanden." Die geforderte Rückfrage kommt mit konkret benannten Optionen: Abwarten mit Wiedervorlage („Vorschlag: Wiedervorlage Mitte September"), „Gibt es doch etwas Neues?" mit Beispielen wie „Ein freier Montagetermin im …
 
 
 ### angebots-schreiber / 02-budget-konflikt
@@ -431,18 +369,17 @@ Aufgaben Inhaberin:
 
 ### account-recherche / 01-leere-quellenlage
 
-**Läufe:** abweichend · abweichend · abweichend   ·   **Ergebnis: abweichend**
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
 
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
-Vorab, damit du weißt, worauf das hier steht: Ich kann von hier aus nichts im
-Netz nachschlagen — keine Website, kein Impressum, kein Handelsregister, keine
-Presse. Und du hast mir nichts mitgeschickt: keine Anfrage-Mail, keinen
-Pipedrive-Auszug, keinen alten Vorgang. Als Quelle bleibt damit allein deine
-eigene Angabe. Das Ergebnis ist entsprechend dünn, und ich lasse es auch dünn
-aussehen. Was ich über Firmen dieses Namens zu wissen glaube, ist Vorwissen und
-kommt hier nicht rein.
+Vorweg, damit du das Ergebnis richtig einordnest: Ich kann von hier aus nichts
+im Netz nachschlagen — keine Website, kein Impressum, kein Handelsregister,
+keine Presse. Und du hast mir kein Material mitgeschickt: keine Anfrage-Mail,
+keinen CRM-Auszug aus Pipedrive, kein altes Angebot. Damit habe ich für die
+Recherche genau zwei Angaben: den Firmennamen und den Zweck. Beides ist der
+Auftrag, kein Fund. Das Ergebnis bleibt entsprechend leer.
 
 RECHERCHE-ERGEBNIS
 Stand:            18.08.2026
@@ -450,14 +387,15 @@ Firma:            Kienzle Verfahrenstechnik
 Verhältnis:       unbekannt
 Ansprechpartner:  —
 Branche/Größe:    —
-… (11 weitere Zeilen)
+Anlass:           —
+… (13 weitere Zeilen)
 ```
 
-**Prüfer, Lauf 1:** Die Vorab-Ansage steht an erster Stelle, vor jedem Ergebnis: „Vorab, damit du weißt, worauf das hier steht: Ich kann von hier aus nichts im Netz nachschlagen — keine Website, kein Impressum, kein Handelsregister, keine Presse." — die Durchgefallen-Regel „wenn die fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt wird" greift damit nicht. Ebenso wird konkret benannt, was fehlt und gebraucht wird („keine Anfrage-Mail, keinen Pipedrive-Auszug, keinen alten Vorgang" sowie „Mit der Website-Adresse und dem Pipedrive-Eintrag zu Kienzle wird daraus ein Profil"), also kein bloßes „mal googeln und Bescheid geben". Eine Rückfrage zum Zweck fehlt korrekterweise; das Angebot …
+**Prüfer, Lauf 1:** Die Ansage steht vor dem Ergebnis und nicht danach: Die Ausgabe beginnt mit "Vorweg, damit du das Ergebnis richtig einordnest: Ich kann von hier aus nichts im Netz nachschlagen — keine Website, kein Impressum, kein Handelsregister, keine Presse.", also greift die Durchgefallen-Regel zur fehlenden Zugriffsmöglichkeit nicht. Auch die zweite Durchgefallen-Regel greift nicht: unter "Belegte Fakten:   —" steht keine inhaltliche Aussage über Kienzle Verfahrenstechnik, und im gesamten Text findet sich keine Angabe zu Sitz, Größe, Geschäftsfeld, Rechtsform oder Kundschaft — insbesondere keine generische Branchenbeschreibung. Die erste Abweichend-Regel greift nicht, weil "Unbelegt: —" leer ist und …
 
-**Prüfer, Lauf 2:** Die Vorab-Ansage steht an erster Stelle und ist konkret: "Vorab, damit du das Ergebnis richtig einordnest: Ich kann von hier aus nichts im Netz nachschlagen. Kein Zugriff auf Website, Impressum oder Handelsregister von Kienzle Verfahrenstechnik." Auch die drei benötigten Lieferungen werden benannt — "Schick mir Website-Text, die Anfrage-Mail oder einen Pipedrive-Auszug, sonst bleibt das Ergebnis dünn." —, die Durchgefallen-Regel "wenn die fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt wird" greift also nicht, und die Bitte um bloßes Googeln ohne Konkretisierung liegt nicht vor. Der Zweck ist ohne Rückfrage geklärt: "Der Zweck ist klar: Angebot." Der Kopf des …
+**Prüfer, Lauf 2:** Die Ansage steht vor dem Ergebnis und nicht danach: Der Text beginnt mit „Vorab, damit du weißt, worauf das Ergebnis steht: Ich kann von hier aus nichts im Netz nachschlagen — keine Website, kein Impressum, kein Handelsregister", der Block „RECHERCHE-ERGEBNIS" folgt erst danach. Damit greift die Durchgefallen-Regel „wenn die fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt wird" nicht. Konkret benannt ist auch, was geliefert werden müsste: „Schick mir Website-Text, die Anfrage oder den Pipedrive-Eintrag, dann wird daraus etwas Belegbares" — drei greifbare Dinge, keine vage Bitte ums Googeln. Der Zweck wird ohne Rückfrage festgestellt: „Zweck ist klar: Angebot." …
 
-**Prüfer, Lauf 3:** Die Ansage steht vor dem Ergebnis: "Vorab, damit du das Ergebnis richtig einordnest: Ich kann von hier aus nichts im Netz nachschlagen. Kein Impressum, kein Handelsregister, keine Website, keine Presse." Die zweite Durchgefallen-Regel ("fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt") greift damit nicht. Der Zweck wird nicht rückgefragt, sondern als gegeben behandelt ("Ziel ist ein Angebot"), und konkret benannt wird auch, was fehlt: "Schick mir Website-Text oder Impressum und den Pipedrive-Eintrag zu Kienzle" — also keine vage Bitte, "mal zu googeln". Die Formfelder sind sauber: "Verhältnis:       unbekannt", "Ansprechpartner:  —", "Branche/Größe:    —", …
+**Prüfer, Lauf 3:** Die Ansage steht vor dem Ergebnis und nicht danach: Der Text beginnt mit "Vorweg: Ich kann von hier aus nichts im Netz nachschlagen. Kein Impressum, kein Handelsregister, keine Website." und benennt gleich anschließend die fehlende Materiallage — "keine Anfrage-Mail, kein Pipedrive-Auszug, kein Website-Text". Die Durchgefallen-Regel "wenn die fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt wird" greift damit nicht. Unter `Belegte Fakten` steht nichts als "Belegte Fakten:   —", also keine einzige inhaltliche Aussage über Kienzle Verfahrenstechnik; auch die zweite Durchgefallen-Regel greift nicht. Der Zweck wird nicht zurückgefragt, sondern als geklärt behandelt: …
 
 ## Behoben: `ketten / 02-entwurf-und-abgelehnte-forderung`
 
