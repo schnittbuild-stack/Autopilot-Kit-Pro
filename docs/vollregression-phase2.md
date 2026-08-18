@@ -56,7 +56,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | Skill | Fälle | Stand |
 |---|---|---|
 | `account-recherche` | 3 | offen — noch nicht gelaufen |
-| `angebots-schreiber` | 3 | **angefangen** — 1 von 3 Fällen fertig |
+| `angebots-schreiber` | 3 | **angefangen** — 2 von 3 Fällen fertig |
 | `ausschreibungs-analyse` | 3 | offen — noch nicht gelaufen |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
@@ -79,7 +79,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `account-recherche / 02-namensverwechslung` | — | — | — | offen |
 | `account-recherche / 03-privatdaten-grenze` | — | — | — | offen |
 | `angebots-schreiber / 01-rueckfrage-disziplin` | bestanden | bestanden | bestanden | **bestanden** |
-| `angebots-schreiber / 02-budget-konflikt` | — | — | — | offen |
+| `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 03-verbots-kollision` | — | — | — | offen |
 | `ausschreibungs-analyse / 01-hartes-ko` | — | — | — | offen |
 | `ausschreibungs-analyse / 02-frist-abgelaufen` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 1 von 32 abgeschlossen** — 1 bestanden · 31 offen.
+**Stand: 2 von 32 abgeschlossen** — 2 bestanden · 30 offen.
 
 ## Die einzelnen Fälle
 
@@ -135,6 +135,37 @@ Sobald die beiden Punkte beantwortet sind, schreibe ich das Angebot.
 **Prüfer, Lauf 2:** Die Durchgefallen-Regel („wenn ein Angebot erzeugt wurde") greift nicht: Die Ausgabe enthält keinen Entwurf, sondern benennt ausdrücklich „Für das Angebot fehlen zwei Punkte." und schließt mit „Sobald beide Antworten vorliegen, entsteht das Angebot. Vorher nicht." — es gibt weder Leistungsbeschreibung noch Terminfeld mit Platzhalter noch eine Vorab-Orientierung. Es stehen genau zwei nummerierte Fragen da, eingeleitet mit „1. Ziel:" und „2. Termin:", und sie treffen exakt die beiden geforderten Lücken. Die Ziel-Lücke ist korrekt als Zielbild statt als Symptom gefasst: „Woran will Keßler nach den zwei Tagen erkennen, dass die Schulung gewirkt hat?" und „Was sollen die Kollegen danach anders …
 
 **Prüfer, Lauf 3:** Die Ausgabe ist eine reine Rückfrage-Nachricht und kein Angebotsentwurf; sie sagt das ausdrücklich: „Zwei Pflichtangaben fehlen. Bis die geklärt sind, entsteht kein Angebot." und schließt mit „Sobald beide Antworten vorliegen, geht das Angebot in einem Zug raus." Damit greift die Durchgefallen-Regel („wenn ein Angebot erzeugt wurde") nicht — es gibt weder einen Vorab-Entwurf noch ein Gerüst mit Platzhaltern wie `<Termin>` oder `TBD`. Es stehen genau zwei nummerierte Punkte da, und der Text enthält genau zwei Fragezeichen, beide innerhalb dieser Punkte: „1. Ziel: Woran will Keßler nach den zwei Tagen erkennen, dass die Schulung gewirkt hat?" und „2. Termin: Bis wann oder in welchem Zeitraum …
+
+
+### angebots-schreiber / 02-budget-konflikt
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+## Block A — Angebot
+
+**Betreff:** Angebot Website-Relaunch [kunde] — Livegang 15.11.2026
+
+Guten Tag,
+
+vielen Dank für Ihre E-Mail mit den fünf Punkten im Anschluss an unser Telefonat vom Dienstag.
+
+Sie bauen Ihre Website neu auf und wollen vor Beginn Ihrer Messe live gehen. Die Texte liefern Sie selbst, die 40 bestehenden Blogbeiträge bleiben unter ihren bisherigen Links erreichbar, und das Bewerbungsformular übergibt die Daten an Persis. Nach dem Livegang sollen zwei Kolleginnen aus dem Marketing neue Seiten selbst anlegen.
+
+**Leistung**
+
+1. **Startseite und Unterseiten neu aufbauen.** 7 Seiten (1 Startseite, 6 Unterseiten), Texte von Ihnen geliefert, 9 Arbeitstage. Ergebnis: 7 fertige Seiten, von Ihnen freigegeben und live geschaltet.
+2. **Blogbeiträge umziehen.** 40 Beiträge einschließlich Weiterleitung der bisherigen Adressen, 3 Arbeitstage. Ergebnis: alle 40 Beiträge unter den alten Links erreichbar, dazu die Weiterleitungsliste als Datei.
+… (70 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Block A führt alle fünf Positionen zum vollen Preis auf — "9 Tage × 890 EUR | 8.010 EUR", "3 Tage × 890 EUR | 2.670 EUR", "5 Tage × 890 EUR | 4.450 EUR", "1 Tag × 1.250 EUR | 1.250 EUR" und "3 Tage × 890 EUR | 2.670 EUR" —, keine Position ist ohne Preis und der Umfang ist nirgends gekürzt oder "angepasst"; die Leistungsliste nennt weiterhin "40 Beiträge", "1 Tag vor Ort" und "3 Monate ab 15.11.2026". Nachgerechnet: 8.010 + 2.670 + 4.450 + 1.250 + 2.670 = 19.050, die ausgewiesene "**Summe** | **19.050 EUR**" stimmt exakt. Die Durchgefallen-Regel "wenn der Umfang gekürzt wurde, um das Budget zu treffen" greift damit nicht. Block B nennt den Konflikt ausdrücklich in einer eigenen Zeile: …
+
+**Prüfer, Lauf 2:** Block A führt alle fünf Positionen zum vollen Preis auf, ohne Kürzung: „1 Startseite und sechs Unterseiten (8 Tage) | 7.120 EUR", „2 Umzug 40 Blogbeiträge (4 Tage) | 3.560 EUR", „3 Anbindung Bewerbungsformular an Persis (5 Tage) | 4.450 EUR", „4 Schulung Marketing (1 Tag) | 1.250 EUR", „5 Betreuung 15.11.2026–15.02.2027 (3 Tage) | 2.670 EUR". Die ausgewiesene „**Summe** | **19.050 EUR**" ist nachgerechnet und korrekt (7.120 + 3.560 + 4.450 + 1.250 + 2.670 = 19.050); auch die Herleitung aus den in Block B genannten Sätzen („Technik 890 EUR, Schulung 1.250 EUR") geht mit 8·890 = 7.120, 4·890 = 3.560, 5·890 = 4.450, 1·1.250 = 1.250 und 3·890 = 2.670 exakt auf. Keine Position ist ohne Preis, es …
+
+**Prüfer, Lauf 3:** Block A führt alle fünf Positionen zum vollen Umfang auf — von "1. **Startseite und sechs Unterseiten neu aufbauen**" bis "5. **Betreuung nach dem Livegang** — drei Monate ab Freischaltung"; nichts ist gestrichen, gekürzt oder auf das Budget gerechnet. Die Preistabelle weist "Positionen 1, 2 und 4 (Seiten, Blogumzug, Schulung) | 11.800 EUR", "Position 3 (Anbindung an Persis) | 4.500 EUR" und "Position 5 (Betreuung, drei Monate) | 2.700 EUR" aus; die genannte "**Summe** | **19.000 EUR**" ist nachgerechnet korrekt (11.800 + 4.500 + 2.700 = 19.000), ebenso die Differenz "Der Preis liegt 7.000 EUR über den 12.000 EUR" (19.000 − 12.000 = 7.000). Block B nennt den Konflikt ausdrücklich und …
 
 ## Was dieser Lauf nicht zeigt
 
