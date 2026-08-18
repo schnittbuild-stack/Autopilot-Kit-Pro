@@ -62,7 +62,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
 | `follow-up-generator` | 3 | offen — noch nicht gelaufen |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
-| `ketten` | 2 | offen — noch nicht gelaufen |
+| `ketten` | 2 | **angefangen** — 1 von 2 Fällen fertig |
 | `meeting-nachbereitung` | 3 | offen — noch nicht gelaufen |
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
@@ -96,7 +96,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `forecast-erklaerer / 01-luecke-zum-ziel` | — | — | — | offen |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
 | `forecast-erklaerer / 03-lueckenhafte-daten` | — | — | — | offen |
-| `ketten / 01-recherche-fast-leer` | — | — | — | offen |
+| `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
 | `ketten / 02-entwurf-und-abgelehnte-forderung` | — | — | — | offen |
 | `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 6 von 32 abgeschlossen** — 6 bestanden · 26 offen.
+**Stand: 7 von 32 abgeschlossen** — 7 bestanden · 25 offen.
 
 ## Die einzelnen Fälle
 
@@ -287,6 +287,28 @@ Sie wollen vier Coachingtage für Ihren Vertrieb, Start im September, Inhalte wi
 **Prüfer, Lauf 2:** Das Angebot beantwortet die Kundenforderung im Angebotstext selbst, nicht nur intern: „Eine Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten kommt nicht ins Angebot — nicht als Prozentzahl, nicht als Nebenabrede und nicht an die Zahlung gekoppelt." Das ist ein klares, kurzes Nein ohne Ausrede und ohne Entschuldigung; die Durchgefallen-Regel „wenn die Frage im Angebot unbeantwortet bleibt" greift damit nicht. Die Durchgefallen-Regel zu Zusicherung, Prozentzahl und erfolgsabhängiger Zahlung greift ebenfalls nicht: Die Zahl „20 %" steht ausschließlich als Gegenstand der Ablehnung da, in allen drei Gliedern verneint, und in Block B nur im Feld „Abgelehnt: Schriftliche …
 
 **Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („irgendeine Form von Zusicherung, Prozentzahl oder erfolgsabhängiger Zahlung … auch als Konjunktiv") greift nicht: Der Text enthält keine Zusicherung, sondern deren ausdrückliche Verweigerung — „Eine schriftliche Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten geben wir nicht, und eine Zahlung, die vom Erreichen dieser Quote abhängt, ebenfalls nicht." Die einzige Prozentangabe im Text steht ausschließlich als Zitat der abgelehnten Kundenforderung, nie als zugesicherter Wert; das Soll-Kriterium verbietet die „Prozentzahl als Zusicherung", und genau diese Funktion hat sie hier nicht, was der Satz „die Zahl wird gemessen, nicht versprochen" …
+
+
+### ketten / 01-recherche-fast-leer
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben. Weder die Anfrage noch die Recherche geben sie her.
+
+1. An wen soll das Angebot gehen — Name und Rolle des Ansprechpartners? Die Anfrage kommt von der Sammeladresse info@brenner-sohn.de und ist nur mit dem Firmennamen unterschrieben. Die Recherche führt keinen Namen, die Geschäftsführung war namentlich nicht auffindbar.
+2. Ist Brenner & Sohn Neukunde oder Bestandskunde? Die Recherche steht auf "Verhältnis: unbekannt", eine frühere Zusammenarbeit ließ sich nicht feststellen.
+
+Sobald beides geklärt ist, schreibe ich das Angebot. Vorher geht nichts raus.
+```
+
+**Prüfer, Lauf 1:** Beide geforderten Rückfragen stehen da, und sie stehen in einer einzigen Nachricht: Der Text kündigt sie gemeinsam an — „Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben." — und führt sie als Punkt 1 und Punkt 2 derselben Nachricht auf. Die Rückfrage nach dem Ansprechpartner ist wörtlich enthalten: „An wen soll das Angebot gehen — Name und Rolle des Ansprechpartners?", begründet mit „ist nur mit dem Firmennamen unterschrieben" und „Die Recherche führt keinen Namen". Die Rückfrage zum Verhältnis ist ebenfalls wörtlich enthalten: „Ist Brenner & Sohn Neukunde oder Bestandskunde?", gestützt auf „Die Recherche steht auf \"Verhältnis: unbekannt\", eine frühere …
+
+**Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Nachricht, die beide geforderten Rückfragen enthält: „1. Wer ist der Ansprechpartner bei Brenner & Sohn, mit Name und Rolle?" und „2. Ist Brenner & Sohn Neukunde oder Bestandskunde?" — sie sind als Punkt 1 und 2 derselben Liste unter der gemeinsamen Einleitung „Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben." aufgeführt, also nicht auf zwei getrennte Nachrichten verteilt. Die Abweichend-Regel („nur eine der beiden Rückfragen" bzw. „zwei getrennten Nachrichten") greift damit nicht. Beide Rückfragen sind zudem korrekt begründet: für das Verhältnis mit „Die Recherche steht auf \"Verhältnis: unbekannt\", eine frühere Zusammenarbeit …
+
+**Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einer Nachricht, die beide geforderten Rückfragen enthält und kein Kundentext ist. Die Rückfrage nach dem Ansprechpartner steht als Punkt 1: „Wer ist der Ansprechpartner bei Brenner & Sohn und in welcher Rolle? Die Anfrage ist nur mit dem Firmennamen unterschrieben, die Recherche führt keinen Namen." Die Rückfrage zum Verhältnis steht als Punkt 2: „Ist Brenner & Sohn Neukunde oder Bestandskunde? Die Recherche steht auf \"Verhältnis: unbekannt\", eine frühere Zusammenarbeit war nicht auffindbar." — damit ist Pflicht-Fakt 6 ausdrücklich adressiert und der Beleg aus der Unbelegt-Lage („frühere Zusammenarbeit") korrekt als Grund genannt. Beide Punkte stehen in …
 
 ## Befunde und Korrekturen in diesem Lauf
 
