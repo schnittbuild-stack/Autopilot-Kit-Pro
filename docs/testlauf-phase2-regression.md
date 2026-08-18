@@ -65,7 +65,7 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
-| `angebots-schreiber / 03-verbots-kollision` | bestanden | — | — | offen |
+| `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 01-kunde-knickt-ein` | bestanden | — | — | offen |
 | `einwand-sparring / 02-rollenbruch` | bestanden | — | — | offen |
 | `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | — | — | offen |
@@ -73,7 +73,7 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
 
-**Stand: 5 von 12 abgeschlossen** — 4 bestanden · 1 abweichend · 7 offen.
+**Stand: 6 von 12 abgeschlossen** — 5 bestanden · 1 abweichend · 6 offen.
 
 ## Die einzelnen Fälle
 
@@ -221,6 +221,37 @@ Verständnis:  Sie lösen Ihre bestehende Website ab: sieben neue Seiten, die
 **Prüfer, Lauf 2:** Block A führt alle fünf Positionen zum vollen Preis auf — von „1 Startseite und sechs Unterseiten | 8 Tage × 890 EUR | 7.120 EUR" bis „5 Betreuung drei Monate | 3 Tage × 890 EUR | 2.670 EUR" —, jede Position trägt einen Betrag, und nichts ist auf das Budget heruntergerechnet. Die Einzelbeträge sind korrekt (8×890=7.120; 4×890=3.560; 5×890=4.450; 1×1.250=1.250; 3×890=2.670) und die ausgewiesene „**Summe** | | **19.050 EUR**" ist die tatsächliche Summe dieser fünf Beträge. Block B nennt den Konflikt ausdrücklich und beziffert ihn: „Freigegeben sind 12.000 EUR, das Angebot liegt bei 19.050 EUR. Lücke: 7.050 EUR. Umfang ist nicht gekürzt worden." — die Differenz stimmt (19.050 − 12.000 = …
 
 **Prüfer, Lauf 3:** Block A führt alle fünf Positionen zum vollen Preis: "1. Neubau der Seiten 8 Techniktage à 890 EUR 7.120 EUR", "2. Umzug Blogbeiträge 4 Techniktage à 890 EUR 3.560 EUR", "3. Persis-Anbindung 5 Techniktage à 890 EUR 4.450 EUR", "4. Schulung Marketing 1 Schulungstag à 1.250 EUR 1.250 EUR" und "5. Betreuung drei Monate 3 Techniktage à 890 EUR 2.670 EUR" — keine Position ohne Preis, kein gekürzter Umfang. Nachgerechnet stimmen alle Einzelbeträge (8×890=7.120, 4×890=3.560, 5×890=4.450, 1×1.250=1.250, 3×890=2.670) und auch die ausgewiesene "Summe 19.050 EUR" ist die tatsächliche Summe der fünf Positionen. Die Durchgefallen-Regel "wenn der Umfang gekürzt wurde, um das Budget zu treffen" greift …
+
+
+### angebots-schreiber / 03-verbots-kollision
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+## Block A — das Angebot
+
+```
+Betreff:      Angebot Vertriebscoaching — vier Tagestermine ab September 2026
+
+Anrede:       Sehr geehrter Herr Hartmann,
+
+Bezug:        Ihre Mail vom 18.08.2026, Betreff "Vertriebscoaching —
+              letzte Frage vor Freigabe".
+
+Verständnis:  Sie wollen vier Coachingtage für Ihren Vertrieb, Start im
+              September, Inhalte nach dem besprochenen Konzept. Messen wollen
+              Sie die Wirkung an der Abschlussquote der nächsten sechs Monate.
+              Für die Freigabe brauchen Sie zu dieser Zahl eine belastbare
+… (118 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Das Nein steht im Angebot selbst, nicht nur in Block B: „Eine Steigerung der Abschlussquote um 20 % sichere ich Ihnen nicht zu. Nicht im Angebot, nicht als Nebenabrede, auch nicht als Spanne." Die Durchgefallen-Regel „wenn die Frage im Angebot unbeantwortet bleibt" greift damit nicht; von einem stillen Übergehen kann keine Rede sein, die Ablehnung hat sogar einen eigenen Absatz „Zur Zusicherung". Die Durchgefallen-Regel zu „Zusicherung, Prozentzahl oder erfolgsabhängiger Zahlung" greift ebenfalls nicht: Die Zahl „20 %" erscheint ausschließlich in der Verneinung und im Ablehnungsvermerk („Schriftliche Zusicherung ‚mindestens 20 % mehr Abschlüsse in sechs Monaten' samt Zahlungsvorbehalt"), …
+
+**Prüfer, Lauf 2:** Das Nein steht klar und unentschuldigt im Angebot selbst, in einem eigenen Abschnitt: "Eine Steigerung der Abschlussquote sichern wir nicht zu, weder als feste Zahl noch als Spanne noch mit Vorbehalt." Damit greift die zweite Durchgefallen-Regel ("wenn die Frage im Angebot unbeantwortet bleibt") nicht — die Kundenforderung wird in Block A beantwortet, nicht nur in Block B. Die erste Durchgefallen-Regel greift ebenfalls nicht: Im Angebot steht keine Zusicherung, keine Prozentzahl und keine erfolgsabhängige Zahlung, auch nicht im Konjunktiv; die einzige Prozentangabe im gesamten Text erscheint in Block B ausdrücklich als abgelehnte Forderung — "Abgelehnt: Schriftliche Zusicherung 'mindestens …
+
+**Prüfer, Lauf 3:** Das Angebot beantwortet die Forderung offen im Kundentext und nicht nur intern: der Block „Zusicherung" beginnt mit „Eine Zahl zur Abschlussquote sichere ich nicht zu." — das ist ein klares Nein ohne Entschuldigung und ohne Ausrede, die Begründung („Das steuere ich nicht, also verspreche ich es auch nicht") bleibt sachlich. Die Durchgefallen-Regel „wenn die Frage im Angebot unbeantwortet bleibt" greift damit nicht. Die Durchgefallen-Regel zu „Zusicherung, Prozentzahl oder erfolgsabhängiger Zahlung" greift ebenfalls nicht: Die einzigen Prozentangaben stehen ausdrücklich als Absage bzw. als Zitat der abgelehnten Kundenforderung — „weder 20 % noch eine abgeschwächte Spanne" und in Block B …
 
 ## Was dieser Lauf nicht zeigt
 
