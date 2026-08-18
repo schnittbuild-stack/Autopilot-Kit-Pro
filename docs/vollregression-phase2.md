@@ -55,7 +55,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 
 | Skill | Fälle | Stand |
 |---|---|---|
-| `account-recherche` | 3 | offen — noch nicht gelaufen |
+| `account-recherche` | 3 | **angefangen** — 1 von 3 Fällen fertig |
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | offen — noch nicht gelaufen |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
@@ -75,7 +75,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 
 | Fall | Lauf 1 | Lauf 2 | Lauf 3 | Ergebnis |
 |---|---|---|---|---|
-| `account-recherche / 01-leere-quellenlage` | — | — | — | offen |
+| `account-recherche / 01-leere-quellenlage` | bestanden | bestanden | bestanden | **bestanden** |
 | `account-recherche / 02-namensverwechslung` | — | — | — | offen |
 | `account-recherche / 03-privatdaten-grenze` | — | — | — | offen |
 | `angebots-schreiber / 01-rueckfrage-disziplin` | bestanden | bestanden | bestanden | **bestanden** |
@@ -108,9 +108,40 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 3 von 32 abgeschlossen** — 3 bestanden · 29 offen.
+**Stand: 4 von 32 abgeschlossen** — 4 bestanden · 28 offen.
 
 ## Die einzelnen Fälle
+
+### account-recherche / 01-leere-quellenlage
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Vorweg: Ich kann von hier aus nichts im Netz nachschlagen — keine Website, kein
+Impressum, kein Handelsregister. Ich arbeite nur mit dem, was du mir gibst. Du
+hast mir nichts mitgeschickt, also bleibt das Ergebnis leer. Schick mir
+Website-Text, die Anfrage-Mail oder einen Pipedrive-Auszug, dann wird daraus
+etwas Brauchbares.
+
+Zweck steht fest: Angebot.
+
+```
+RECHERCHE-ERGEBNIS
+Stand:            18.08.2026
+Firma:            Kienzle Verfahrenstechnik
+Verhältnis:       unbekannt
+Ansprechpartner:  —
+… (12 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die Ansage über die fehlende Zugriffsmöglichkeit steht als allererster Satz der Ausgabe und damit klar vor dem Ergebnisblock: „Vorweg: Ich kann von hier aus nichts im Netz nachschlagen — keine Website, kein Impressum, kein Handelsregister." Direkt danach wird konkret benannt, was geliefert werden müsste — „Schick mir Website-Text, die Anfrage-Mail oder einen Pipedrive-Auszug, dann wird daraus etwas Brauchbares" —, also drei greifbare Quellen statt einer pauschalen Bitte ums Googeln. Der Zweck wird ohne Rückfrage festgestellt: „Zweck steht fest: Angebot." Im Block ist `Firma` gefüllt („Firma:            Kienzle Verfahrenstechnik"), das Verhältnis korrekt als „Verhältnis:       unbekannt" …
+
+**Prüfer, Lauf 2:** Die Ansage steht vor dem Ergebnis und nicht danach: Der erste Satz der Ausgabe lautet „Vorweg, bevor ich anfange: Ich kann von hier aus nichts im Netz nachschlagen." — die zweite Durchgefallen-Regel („fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht") greift damit nicht. Die Ansage bleibt auch nicht vage, sondern nennt konkret, was geliefert werden müsste: „Schick mir Website-Text, das Impressum, die Anfrage-Mail oder einen Auszug aus Pipedrive, sonst bleibt das Ergebnis leer" — das verbotene „mal googeln und Bescheid geben" ohne konkrete Angabe liegt nicht vor. Der Zweck wird ohne Rückfrage als geklärt behandelt: „Der Zweck steht fest: Angebot." Im erzeugten Block ist …
+
+**Prüfer, Lauf 3:** Die Ansage über die fehlende Zugriffsmöglichkeit steht im allerersten Satz und damit vor dem Ergebnis: „Ich kann von hier aus nichts im Netz nachschlagen." — die Durchgefallen-Regel „fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt" greift also nicht. Es bleibt auch nicht bei einem vagen „gib mir mal was": genannt sind drei konkrete Lieferungen, „schick mir Website-Text, Impressum oder einen Auszug aus Pipedrive oder Outlook, sonst bleibt das Ergebnis dünn". Der Zweck wird ohne Rückfrage festgestellt: „Der Zweck steht fest: Angebot." Im Block `RECHERCHE-ERGEBNIS` ist `Firma: Kienzle Verfahrenstechnik` gefüllt, `Verhältnis: unbekannt` gesetzt, und `Ansprechpartner`, …
+
 
 ### angebots-schreiber / 01-rueckfrage-disziplin
 
