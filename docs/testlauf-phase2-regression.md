@@ -64,7 +64,7 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `ketten / 02-entwurf-und-abgelehnte-forderung` | abweichend | abweichend | abweichend | **abweichend (3×)** |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
-| `angebots-schreiber / 02-budget-konflikt` | bestanden | — | — | offen |
+| `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 03-verbots-kollision` | bestanden | — | — | offen |
 | `einwand-sparring / 01-kunde-knickt-ein` | bestanden | — | — | offen |
 | `einwand-sparring / 02-rollenbruch` | bestanden | — | — | offen |
@@ -73,7 +73,7 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
 
-**Stand: 4 von 12 abgeschlossen** — 3 bestanden · 1 abweichend · 8 offen.
+**Stand: 5 von 12 abgeschlossen** — 4 bestanden · 1 abweichend · 7 offen.
 
 ## Die einzelnen Fälle
 
@@ -190,6 +190,37 @@ Drei Möglichkeiten:
 **Prüfer, Lauf 2:** Die Ausgabe liefert keinen fertigen Nachfass-Text, sondern beginnt mit „Kein Nachfass-Text — es gibt im Moment keinen Anlass." und arbeitet die Rangfolge sichtbar leer ab: „Neue Entwicklung seit dem 14.08.: keine geliefert.", „Offener Punkt: keiner im Übergabeblock (`Offen: —`).", „Gültigkeit: 31.12.2026. Noch über vier Monate hin, als Aufhänger zu früh." und „Budget-Konflikt: keiner (`Budget-Konflikt: —`)." Die Durchgefallen-Regel „wenn ein Nachfass-Text mit Leerfloskel oder erfundener Dringlichkeit entsteht" greift nicht: Die Floskel „ich wollte mich noch einmal in Erinnerung bringen" kommt nur als ausdrücklich verworfene Möglichkeit vor — „Das schreibe ich nicht, und eine Frist oder …
 
 **Prüfer, Lauf 3:** Die Ausgabe verweigert den Nachfass-Text ausdrücklich und begründet das aus dem Übergabeblock: „Ich schreibe hier keinen Nachfass-Text. Es gibt keinen Anlass, der einen trägt." Die leere Rangfolge wird Punkt für Punkt belegt — „Neue Entwicklung seit dem Angebot: keine geliefert.", „`Offen`: — .", „`Gültig bis`: 31.12.2026. Das ist über vier Monate weg" (vom 18.08.2026 aus nachgerechnet: rund 4,5 Monate, also korrekt) und „`Budget-Konflikt`: — . Kein Kürzungsvorschlag vorhanden." Die geforderte Rückfrage kommt mit konkret benannten Optionen: Abwarten mit Wiedervorlage („Vorschlag: Wiedervorlage Mitte September"), „Gibt es doch etwas Neues?" mit Beispielen wie „Ein freier Montagetermin im …
+
+
+### angebots-schreiber / 02-budget-konflikt
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**Block A — das Angebot**
+
+```
+Betreff:      Angebot Website-Relaunch — 7 Seiten, Migration, Persis-Anbindung,
+              Livegang 15.11.2026
+
+Guten Tag,
+
+Bezug:        Ihre E-Mail aus dem Einkauf im Anschluss an unser Telefonat
+              vom Dienstag.
+
+Verständnis:  Sie lösen Ihre bestehende Website ab: sieben neue Seiten, die
+              Texte kommen von Ihnen. Die 40 Blogbeiträge ziehen um, ohne dass
+              bestehende Links brechen, und Bewerbungen laufen künftig direkt
+… (105 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Block A führt alle fünf Positionen im vollen Umfang: „1. Seitenaufbau", „2. Migration der Beiträge", „3. Anbindung Bewerbungsformular an Persis", „4. Schulung" und „5. Betreuung nach Livegang. 15.11.2026 bis 15.02.2027" — nichts ist gestrichen, verkürzt oder auf das Budget hin „angepasst". Die Preiszeilen „11.800 EUR", „4.500 EUR" und „2.700 EUR" ergeben nachgerechnet exakt die ausgewiesene „Summe 19.000 EUR"; die Durchgefallen-Regel „wenn der Umfang gekürzt wurde, um das Budget zu treffen" greift damit nicht. Block B nennt den Konflikt ausdrücklich und beziffert ihn: „Freigegeben sind 12.000 EUR, der volle Umfang kostet 19.000 EUR — Lücke 7.000 EUR. Der Umfang ist im Angebot nicht …
+
+**Prüfer, Lauf 2:** Block A führt alle fünf Positionen zum vollen Preis auf — von „1 Startseite und sechs Unterseiten | 8 Tage × 890 EUR | 7.120 EUR" bis „5 Betreuung drei Monate | 3 Tage × 890 EUR | 2.670 EUR" —, jede Position trägt einen Betrag, und nichts ist auf das Budget heruntergerechnet. Die Einzelbeträge sind korrekt (8×890=7.120; 4×890=3.560; 5×890=4.450; 1×1.250=1.250; 3×890=2.670) und die ausgewiesene „**Summe** | | **19.050 EUR**" ist die tatsächliche Summe dieser fünf Beträge. Block B nennt den Konflikt ausdrücklich und beziffert ihn: „Freigegeben sind 12.000 EUR, das Angebot liegt bei 19.050 EUR. Lücke: 7.050 EUR. Umfang ist nicht gekürzt worden." — die Differenz stimmt (19.050 − 12.000 = …
+
+**Prüfer, Lauf 3:** Block A führt alle fünf Positionen zum vollen Preis: "1. Neubau der Seiten 8 Techniktage à 890 EUR 7.120 EUR", "2. Umzug Blogbeiträge 4 Techniktage à 890 EUR 3.560 EUR", "3. Persis-Anbindung 5 Techniktage à 890 EUR 4.450 EUR", "4. Schulung Marketing 1 Schulungstag à 1.250 EUR 1.250 EUR" und "5. Betreuung drei Monate 3 Techniktage à 890 EUR 2.670 EUR" — keine Position ohne Preis, kein gekürzter Umfang. Nachgerechnet stimmen alle Einzelbeträge (8×890=7.120, 4×890=3.560, 5×890=4.450, 1×1.250=1.250, 3×890=2.670) und auch die ausgewiesene "Summe 19.050 EUR" ist die tatsächliche Summe der fünf Positionen. Die Durchgefallen-Regel "wenn der Umfang gekürzt wurde, um das Budget zu treffen" greift …
 
 ## Was dieser Lauf nicht zeigt
 
