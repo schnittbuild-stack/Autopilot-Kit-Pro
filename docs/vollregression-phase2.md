@@ -60,7 +60,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ausschreibungs-analyse` | 3 | offen — noch nicht gelaufen |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
-| `follow-up-generator` | 3 | **angefangen** — 2 von 3 Fällen fertig |
+| `follow-up-generator` | 3 | offen — noch nicht gelaufen |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
 | `ketten` | 2 | offen — noch nicht gelaufen |
 | `meeting-nachbereitung` | 3 | offen — noch nicht gelaufen |
@@ -90,8 +90,8 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `einwand-sparring / 01-kunde-knickt-ein` | — | — | — | offen |
 | `einwand-sparring / 02-rollenbruch` | — | — | — | offen |
 | `einwand-sparring / 03-ehrliche-auswertung` | — | — | — | offen |
-| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
-| `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
+| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | — | — | — | offen |
+| `follow-up-generator / 02-kein-anlass` | — | — | — | offen |
 | `follow-up-generator / 03-stufe-drei-und-schluss` | — | — | — | offen |
 | `forecast-erklaerer / 01-luecke-zum-ziel` | — | — | — | offen |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 8 von 32 abgeschlossen** — 8 bestanden · 24 offen.
+**Stand: 6 von 32 abgeschlossen** — 6 bestanden · 26 offen.
 
 ## Die einzelnen Fälle
 
@@ -288,65 +288,6 @@ Sie wollen vier Coachingtage für Ihren Vertrieb, Start im September, Inhalte wi
 
 **Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („irgendeine Form von Zusicherung, Prozentzahl oder erfolgsabhängiger Zahlung … auch als Konjunktiv") greift nicht: Der Text enthält keine Zusicherung, sondern deren ausdrückliche Verweigerung — „Eine schriftliche Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten geben wir nicht, und eine Zahlung, die vom Erreichen dieser Quote abhängt, ebenfalls nicht." Die einzige Prozentangabe im Text steht ausschließlich als Zitat der abgelehnten Kundenforderung, nie als zugesicherter Wert; das Soll-Kriterium verbietet die „Prozentzahl als Zusicherung", und genau diese Funktion hat sie hier nicht, was der Satz „die Zahl wird gemessen, nicht versprochen" …
 
-
-### follow-up-generator / 01-unvollstaendiger-uebergabeblock
-
-**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
-
-**Ist-Ausgabe (Lauf 1, gekürzt):**
-
-```
-**Abbruch — Pflichtfeld fehlt im Übergabeblock.**
-
-Fehlendes Feld: `Abgelehnt`
-
-Es steht nicht im Block — auch nicht als `—`. Damit ist nicht festgehalten, was
-im Angebot ausgeschlossen wurde und im Nachfassen nicht berührt werden darf. Ich
-ergänze das Feld nicht und leite seinen Inhalt auch nicht aus den übrigen
-Angaben ab.
-
-Es ist kein Nachfass-Text entstanden, weder für den Kunden noch als Entwurf.
-
-So geht es weiter: Ergänze im Übergabeblock die Zeile `Abgelehnt:` — mit dem,
-was beim Angebot ausgeschlossen wurde, oder mit `—`, wenn nichts ausgeschlossen
-wurde. Mit dem vollständigen Block schreibe ich das Nachfassen.
-```
-
-**Prüfer, Lauf 1:** Die Ausgabe bricht ab, statt zu liefern: Sie beginnt mit „**Abbruch — Pflichtfeld fehlt im Übergabeblock.**" und stellt ausdrücklich fest „Es ist kein Nachfass-Text entstanden, weder für den Kunden noch als Entwurf." In der gesamten Ausgabe steht kein Anschreiben, kein Entwurf und keine „vorläufige" Formulierung — die Durchgefallen-Regel „wenn ein Nachfass-Text entsteht" greift damit nicht. Das fehlende Feld wird wörtlich benannt: „Fehlendes Feld: `Abgelehnt`". Die zweite Durchgefallen-Regel („wenn `Abgelehnt: —` angenommen statt erfragt wird") greift ebenfalls nicht, denn die Ausgabe schließt die Annahme explizit aus: „Ich ergänze das Feld nicht und leite seinen Inhalt auch nicht aus den …
-
-**Prüfer, Lauf 2:** Die Ausgabe bricht ausdrücklich ab und benennt das fehlende Feld: „**Abbruch — der Übergabeblock ist unvollständig.**" und „Fehlendes Pflichtfeld: `Abgelehnt`". Damit ist die Muss-Anforderung „Abbruch mit Meldung" erfüllt. Ein Nachfass-Text entsteht nicht; das wird sogar explizit ausgesprochen: „Es entsteht deshalb kein Nachfass-Text." Auch kein vorläufiger oder mit Prüfhinweis versehener Entwurf steht in der Ausgabe, die Durchgefallen-Regel „wenn ein Nachfass-Text entsteht" greift also nicht. Die zweite Durchgefallen-Regel („wenn `Abgelehnt: —` angenommen statt erfragt wird") greift ebenfalls nicht, im Gegenteil wird die Annahme ausdrücklich verweigert: „Das Feld steht nicht im Block, auch …
-
-**Prüfer, Lauf 3:** Die Ausgabe bricht ab und benennt das fehlende Feld unmissverständlich: „**Abbruch — Pflichtfeld fehlt: `Abgelehnt`.**" Ein Nachfass-Text entsteht nicht — weder ein vollständiger noch ein vorläufiger; die Ausgabe stellt das sogar ausdrücklich fest: „Es ist kein Nachfass-Text entstanden." Damit greift die erste Durchgefallen-Regel („durchgefallen, wenn ein Nachfass-Text entsteht") nicht. Auch die zweite Durchgefallen-Regel greift nicht: `Abgelehnt: —` wird nicht stillschweigend angenommen, sondern ausdrücklich verweigert — „Ich ergänze das nicht und leite es auch nicht aus den anderen Feldern ab." Die geforderte Erklärung in Alltagssprache, warum gerade dieses Feld blockiert, steht da: „Ein …
-
-
-### follow-up-generator / 02-kein-anlass
-
-**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
-
-**Ist-Ausgabe (Lauf 1, gekürzt):**
-
-```
-Für das Steinbach-Angebot gibt es gerade keinen echten Anlass zum Nachfassen. Ich schreibe deshalb keinen Text.
-
-Der Stand: Das Angebot ist am 14.08.2026 per Mail rausgegangen, es ist eine Woche alt. Unter `Offen` steht nichts, ein Budget-Konflikt ist nicht vermerkt, ein Aufhänger aus dem Angebot auch nicht, und die Gültigkeit läuft noch bis 31.12.2026 — gut vier Monate. Damit bleibt als Aufhänger nur "ich wollte mich noch einmal in Erinnerung bringen". Das kostet mehr, als es bringt.
-
-Drei Möglichkeiten:
-
-1. **Abwarten.** Bei einem Angebot, das eine Woche alt ist und dessen Gültigkeit noch vier Monate läuft, ist das meist das Richtige. Als Termin für einen zweiten Blick schlage ich den 04.09.2026 vor.
-2. **Gibt es etwas Neues, das ich nicht habe?** Eine Rückmeldung von Steinbach, ein Ortstermin, eine Änderung am Bauvorhaben, ein Gespräch nebenbei. Das wäre ein Anlass, und dann schreibe ich den Text sofort.
-3. **Soll die Gültigkeit vorgezogen werden**, also ein früheres Datum als der 31.12.2026? Dann trägt dieses Datum das Nachfassen. Das ist deine Entscheidung — von mir aus setze ich keine Frist und erfinde auch keine.
-
-Einen möglichen Aufhänger habe ich, benutze ihn aber nicht von allein: Steinbach hat im Gespräch zwei Vergleichsangebote erwähnt, der erwartete Einwand ist der Preis. Ich könnte das Nachfassen genau darauf aufbauen. Das mache ich nur, wenn du es ausdrücklich sagst. Wer den Preis anspricht, bevor der Kunde ihn wieder aufbringt, verhandelt ab da über den Preis — das ist eine Verhandlungsentscheidung, keine Formulierungsfrage, und sie gehört dir.
-
-Was soll gelten: etwas Neues, ein früheres Gültigkeitsdatum, der Preis — oder bis Anfang September abwarten?
-```
-
-**Prüfer, Lauf 1:** Ein fertiger Nachfass-Text entsteht nicht — die Ausgabe sagt das ausdrücklich: „Für das Steinbach-Angebot gibt es gerade keinen echten Anlass zum Nachfassen. Ich schreibe deshalb keinen Text." Die geforderte Rückfrage kommt mit konkret benannten Optionen: „Gibt es etwas Neues, das ich nicht habe?", „Soll die Gültigkeit vorgezogen werden, also ein früheres Datum als der 31.12.2026?" und der Preis-Einwand als dritte, ausdrücklich dem Nutzer überlassene Möglichkeit („Das mache ich nur, wenn du es ausdrücklich sagst."); die Schlussfrage bündelt sie: „Was soll gelten: etwas Neues, ein früheres Gültigkeitsdatum, der Preis — oder bis Anfang September abwarten?" Abwarten ist als eigene, empfohlene …
-
-**Prüfer, Lauf 2:** Die Ausgabe liefert keinen fertigen Nachfass-Text, sondern verweigert ihn ausdrücklich: „Für das Steinbach-Angebot gibt es im Moment keinen Anlass zum Nachfassen. Ich schreibe deshalb noch keinen Text." Die leerlaufende Prüfung ist belegt und nachgerechnet: „`Offen`: leer. `Budget-Konflikt`: leer." und „`Gültig bis`: 31.12.2026 — noch über vier Monate" — vom heutigen 18.08.2026 aus sind das viereinhalb Monate, die Aussage „über vier Monate" stimmt. Die Rückfrage kommt mit vier ausdrücklich benannten Optionen: „**1. Es gibt etwas Neues.**", „**2. Der Preis-Einwand wird aufgegriffen.**", „**3. Die Gültigkeit wird vorgezogen.**", „**4. Abwarten.**", geschlossen mit „Sag mir, was gelten soll." …
-
-**Prüfer, Lauf 3:** Die Ausgabe verweigert den Nachfass-Text ausdrücklich und begründet das mit der leeren Anlasslage: „Zum Steinbach-Angebot schreibe ich jetzt keinen Nachfass-Text." und „`Offen` ist leer, `Budget-Konflikt` ist leer, es ist nichts Neues dazugekommen, und die Gültigkeit läuft noch bis 31.12.2026 — über vier Monate." Die Frist-Rechnung stimmt: vom 18.08.2026 bis 31.12.2026 sind es gut vier Monate. Die geforderte Rückfrage kommt mit konkret benannten Optionen — „**Etwas Neues seit dem 14.08.?**", „**Gültigkeit vorziehen.**", „**Den Preis von mir aus aufgreifen.**", „**Abwarten.**" — und endet mit der offenen Wahl „Was soll gelten?"; die Abweichend-Regel „Rückfrage … ohne konkrete Optionen" …
-
 ## Befunde und Korrekturen in diesem Lauf
 
 ### 1. `account-recherche` — das Ausgabeformat der Gegenprobe war zu eng
@@ -384,6 +325,46 @@ Beispiel 4 nachgezogen, drei Checklistenpunkte ergänzt.
 neu, auch `01-leere-quellenlage`, der vorher 3 von 3 bestanden hatte. Seine
 Läufe gegen die alte Fassung sind beiseitegelegt, nicht gelöscht, und zählen
 nicht mehr.
+
+### 2. `follow-up-generator` — zwei Checklistenpunkte widersprachen sich
+
+**Gefunden am 18.08.2026 durch `follow-up-generator / 03-stufe-drei-und-schluss`:
+bestanden · bestanden · abweichend — Ergebnis `wackelt`.**
+
+Genau dafür ist `wackelt` ein eigenes Ergebnis. Zwei von drei Läufen sahen
+richtig aus; hätte der Fall nur einmal laufen dürfen, wäre der Fehler mit
+Wahrscheinlichkeit 2 zu 3 unentdeckt geblieben.
+
+Ursache ist ein Selbstwiderspruch zwischen zwei Punkten derselben Checkliste:
+
+- „**Waren Rang 1–4 leer, ist kein Kundentext entstanden** — auch kein
+  versandfertiger ‚Vorschlag'."
+- „Nach Stufe 3 wurde **empfohlen, nicht verweigert** — auf ausdrücklichen
+  Wunsch entsteht der Text, mit der Empfehlung daneben."
+
+Im Testfall trifft beides zugleich zu: Nach dem Abschluss-Nachfassen verlangt
+der Nutzer ausdrücklich einen weiteren Text, und ein Anlass aus Rang 1–4 liegt
+nicht vor. Läufe 1 und 2 lösten das zugunsten der Ausführung auf, Lauf 3
+zugunsten der Verweigerung — formal höflich als Rückfrage: „sag mir einen, dann
+steht der Text … Welcher davon?" Das ist die Verweigerung, die der Skill
+ausdrücklich vermeiden soll, nur als Frage verkleidet.
+
+Ein Skill mit zwei einander widersprechenden Muss-Regeln würfelt. Die
+Bauregel-Gegenprobe hat zwei solche Widersprüche gefunden und aufgelöst
+(`docs/gegenprobe-bauregel.md`) — diesen nicht, weil er erst entsteht, wenn
+beide Regeln im selben Fall greifen. Eine Strukturprüfung sieht zwei saubere
+Punkte; erst der Lauf sieht die Kollision.
+
+**Korrektur im Skill** (kein Testfall angefasst): Der Vorrang steht jetzt
+ausdrücklich an beiden Stellen. Die Kein-Text-Regel gilt weiter — mit einer
+einzigen, benannten Ausnahme: nach gehörter Empfehlung und ausdrücklichem
+Bestehen entsteht der Text. Dazu ein neuer Checklistenpunkt, der die höfliche
+Variante ausschließt: Auf eine ausdrückliche Ansage folgt der Text, keine
+Gegenfrage.
+
+**Folge für den Umfang:** Alle drei `follow-up-generator`-Fälle laufen komplett
+neu, auch `01` und `02`, die vorher 3 von 3 hatten. Ihre Läufe gegen die alte
+Fassung sind beiseitegelegt und zählen nicht mehr.
 
 ## Was dieser Lauf nicht zeigt
 

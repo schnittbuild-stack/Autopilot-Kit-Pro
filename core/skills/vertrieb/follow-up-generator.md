@@ -91,7 +91,14 @@ was offen ist. Nicht aus dem Gedächtnis rekonstruieren.
       geradewegs in das Verbot, das Regel 2 schützt.
 
    Sind Rang 1–4 alle leer: **kein Text.** Auch dann nicht, wenn Rang 5
-   verfügbar wäre. Stattdessen die Möglichkeiten vorlegen und nachfragen. Nicht
+   verfügbar wäre. Stattdessen die Möglichkeiten vorlegen und nachfragen.
+
+   **Ausnahme, und nur diese eine:** Hat {{rolle}} die Empfehlung gehört und
+   besteht danach ausdrücklich auf dem Text, wird er geschrieben — auch ohne
+   Anlass aus Rang 1–4. Der fehlende Anlass ist dann ein Satz Empfehlung
+   daneben, kein Grund, die Ausgabe zu verweigern. „Nenn mir erst einen
+   Anlass" ist keine zulässige Antwort auf eine ausdrückliche Ansage: Das ist
+   dieselbe Verweigerung, nur als Rückfrage verkleidet. Nicht
    „ich wollte mich noch einmal in Erinnerung bringen" schreiben — das ist
    die Formulierung, die Nachfassen in Verruf gebracht hat.
 
@@ -202,8 +209,14 @@ Checkliste für Prozess Schritt 7 — jeder Punkt einzeln mit ja/nein:
       Stufe davor.
 - [ ] **Waren Rang 1–4 leer, ist kein Kundentext entstanden** — auch kein
       versandfertiger „Vorschlag". Rang 5 allein trägt keinen Text.
+      **Es sei denn, {{rolle}} hat nach der Empfehlung ausdrücklich darauf
+      bestanden** — dann steht der Text da, mit der Empfehlung daneben.
 - [ ] Nach Stufe 3 wurde **empfohlen, nicht verweigert** — auf ausdrücklichen
       Wunsch entsteht der Text, mit der Empfehlung daneben.
+- [ ] Auf eine ausdrückliche Ansage von {{rolle}} folgt **der Text, keine
+      Gegenfrage**. Weder „nenn mir erst einen Anlass" noch „welchen davon?"
+      steht anstelle des Textes — eine Rückfrage statt der Ausführung ist
+      dieselbe Verweigerung in höflich.
 
 ## Beispiele
 
