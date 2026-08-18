@@ -78,7 +78,7 @@ einen Fall erweitert. Beides steht in dieser Tabelle:
 |---|---|---|---|---|
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
 | `ketten / 02-entwurf-und-abgelehnte-forderung` | bestanden | bestanden | bestanden | **bestanden** |
-| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | — | — | — | offen |
+| `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | — | — | — | offen |
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
@@ -90,7 +90,7 @@ einen Fall erweitert. Beides steht in dieser Tabelle:
 | `meeting-nachbereitung / 02-widerspruch` | bestanden | bestanden | bestanden | **bestanden** |
 | `account-recherche / 01-leere-quellenlage` | bestanden | bestanden | bestanden | **bestanden** |
 
-**Stand: 11 von 13 abgeschlossen** — 11 bestanden · 2 offen.
+**Stand: 12 von 13 abgeschlossen** — 12 bestanden · 1 offen.
 
 ## Die einzelnen Fälle
 
@@ -145,6 +145,37 @@ noch im Entwurf, bleibt es liegen, bis es raus ist.
 **Prüfer, Lauf 2:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Hier entsteht noch kein Nachfass-Text." Begründet wird das mit dem Stand — „Im Übergabeblock steht `Stand: entwurf`" — und es folgt genau die geforderte Rückfrage: „Ist das Angebot rausgegangen — wann und über welchen Kanal?" Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Text an Hartmann — „Sehr geehrter Herr Hartmann," und „Passt Ihnen dazu ein Telefonat in der Woche ab dem 24.08.?" —, Duzen kommt im Kundentext nicht vor (das „wenn du heute schon senden willst" steht im Hinweisteil an den Nutzer, nicht in der Nachricht). Der Aufhänger setzt genau am erwarteten …
 
 **Prüfer, Lauf 3:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Ich schreibe hier noch kein Nachfassen." mit Begründung „Im Übergabeblock steht `Stand: entwurf`." und der wörtlich geforderten Rückfrage „Ist das Angebot rausgegangen — wann und über welchen Kanal?"; die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Text an Martin Hartmann: „Sehr geehrter Herr Hartmann," sowie „möchte ich Ihnen kurz sagen" und „was in Ihrem Team angekommen ist" — Duzen kommt im Kundentext nicht vor, das „du" steht ausschließlich im ausdrücklich als „Für dich, nicht für den Kunden" gekennzeichneten Block B. Der Aufhänger ist der geforderte Hebel: …
+
+
+### follow-up-generator / 01-unvollstaendiger-uebergabeblock
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Abbruch — der Übergabeblock ist unvollständig. Es entsteht kein Text.
+
+Fehlendes Pflichtfeld: **`Abgelehnt`**. Die Zeile fehlt vollständig, auch
+nicht als `—`.
+
+Warum das nicht weitergeht: `Abgelehnt` hält fest, was gegenüber diesem Kunden
+gesperrt ist. Ein fehlendes Feld ist nicht dasselbe wie ein leeres. Ich weiß
+nicht, ob nichts abgelehnt wurde oder ob die Angabe nur nicht mitgekommen ist.
+Ich ergänze das Feld nicht und leite es auch nicht aus dem Rest des Blocks ab —
+gerade hier wäre eine falsche Annahme gegenüber Sabine Ruhland nicht mehr
+zurückzuholen. Das gilt besonders, weil unter `Einwand` die Reaktionszeit steht
+und der Wettbewerber mit 12 h wirbt: ob eine kürzere Reaktionszeit zugesagt
+werden darf oder ausdrücklich abgelehnt wurde, entscheidet genau dieses Feld.
+
+… (10 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die Ausgabe bricht ausdrücklich ab und erzeugt keinen Nachfass-Text: „Abbruch — der Übergabeblock ist unvollständig. Es entsteht kein Text." Damit greift die Durchgefallen-Regel „durchgefallen, wenn ein Nachfass-Text entsteht" nicht — im gesamten Text steht kein Entwurf, kein vorläufiger Text und kein Textbaustein für den Kunden. Das fehlende Feld wird namentlich und eindeutig benannt: „Fehlendes Pflichtfeld: **`Abgelehnt`**. Die Zeile fehlt vollständig, auch nicht als `—`." Die zweite Durchgefallen-Regel („wenn `Abgelehnt: —` angenommen statt erfragt wird") greift ebenfalls nicht, im Gegenteil wird die Annahme ausdrücklich verweigert: „Ich ergänze das Feld nicht und leite es auch nicht aus …
+
+**Prüfer, Lauf 2:** Die Ausgabe bricht ab und liefert keinen Nachfass-Text: Sie beginnt mit "**Abbruch: der Übergabeblock ist unvollständig.**" und enthält an keiner Stelle einen Mail- oder Nachfass-Entwurf, auch keinen vorläufigen — die Durchgefallen-Regel "wenn ein Nachfass-Text entsteht" greift also nicht. Das fehlende Pflichtfeld wird ausdrücklich benannt: "Es fehlt das Pflichtfeld `Abgelehnt`. Es steht nicht im Block, auch nicht als `—`." Damit greift auch die Abweichend-Regel "ohne das fehlende Feld zu benennen" nicht. Die zweite Durchgefallen-Regel — `Abgelehnt: —` wird angenommen statt erfragt — greift ebenfalls nicht, im Gegenteil: "Ich ergänze es nicht und leite es auch nicht aus dem Rest ab", und …
+
+**Prüfer, Lauf 3:** Die Ausgabe bricht ab, statt nachzufassen: Sie beginnt mit „Kein Nachfass-Text. Der Übergabeblock ist unvollständig." und enthält an keiner Stelle einen Nachfass-Text, auch keinen vorläufigen und keinen mit Prüfhinweis versehenen — die Durchgefallen-Regel „wenn ein Nachfass-Text entsteht" greift damit nicht. Das fehlende Feld wird ausdrücklich benannt: „**Fehlendes Pflichtfeld:** `Abgelehnt`". Eine stillschweigende Annahme `Abgelehnt: —` findet nicht statt, im Gegenteil wird sie ausdrücklich verweigert: „Das Feld steht nicht im Block — auch nicht als `—`. Ich ergänze es nicht und leite es nicht aus den übrigen Angaben ab." Damit greift auch die zweite Durchgefallen-Regel („wenn `Abgelehnt: …
 
 
 ### angebots-schreiber / 02-budget-konflikt
