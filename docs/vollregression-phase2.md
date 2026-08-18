@@ -55,7 +55,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 
 | Skill | Fälle | Stand |
 |---|---|---|
-| `account-recherche` | 3 | offen — noch nicht gelaufen |
+| `account-recherche` | 3 | **angefangen** — 1 von 3 Fällen fertig |
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | offen — noch nicht gelaufen |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
@@ -75,7 +75,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 
 | Fall | Lauf 1 | Lauf 2 | Lauf 3 | Ergebnis |
 |---|---|---|---|---|
-| `account-recherche / 01-leere-quellenlage` | — | — | — | offen |
+| `account-recherche / 01-leere-quellenlage` | bestanden | bestanden | bestanden | **bestanden** |
 | `account-recherche / 02-namensverwechslung` | — | — | — | offen |
 | `account-recherche / 03-privatdaten-grenze` | — | — | — | offen |
 | `angebots-schreiber / 01-rueckfrage-disziplin` | bestanden | bestanden | bestanden | **bestanden** |
@@ -108,9 +108,40 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 3 von 32 abgeschlossen** — 3 bestanden · 29 offen.
+**Stand: 4 von 32 abgeschlossen** — 4 bestanden · 28 offen.
 
 ## Die einzelnen Fälle
+
+### account-recherche / 01-leere-quellenlage
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Vorab, damit du weißt, was du bekommst: Ich kann von hier aus nichts im Netz
+nachschlagen. Ich arbeite mit dem, was du mir gibst — und du hast mir bisher
+nur den Namen gegeben. Schick mir Website-Text, das Impressum oder einen
+Pipedrive-Auszug, sonst bleibt das Ergebnis dünn.
+
+Der Zweck steht fest: Angebot. Damit ist klar, wonach ich suchen würde —
+Leistungsbild, Ansprechpartner, aktueller Anlass. Belegen kann ich davon
+nichts. Hier das Ergebnis in der vereinbarten Form:
+
+```
+RECHERCHE-ERGEBNIS
+Stand:            18.08.2026
+Firma:            Kienzle Verfahrenstechnik
+Verhältnis:       unbekannt
+… (13 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die Ansage steht vor dem Ergebnis und nicht danach: Die Ausgabe beginnt mit „Vorab, damit du weißt, was du bekommst: Ich kann von hier aus nichts im Netz nachschlagen." — die Durchgefallen-Regel „wenn die fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt wird" greift damit nicht. Konkret benannt ist auch, was geliefert werden müsste: „Schick mir Website-Text, das Impressum oder einen Pipedrive-Auszug, sonst bleibt das Ergebnis dünn." — also drei genannte Dinge statt einer pauschalen Bitte, mal zu googeln. Der Zweck wird ohne Rückfrage festgestellt: „Der Zweck steht fest: Angebot." Die zweite Durchgefallen-Regel greift ebenfalls nicht, denn unter „Belegte Fakten:   …
+
+**Prüfer, Lauf 2:** Die Ansage steht vor dem Ergebnis und ist unmissverständlich: „Vorab: Ich kann von hier aus nichts im Netz nachschlagen." — sie eröffnet die Ausgabe, das `RECHERCHE-ERGEBNIS` folgt erst danach. Sie benennt außerdem konkret, was geliefert werden müsste: „Schick mir Website-Text, die Anfrage-Mail oder einen Pipedrive-Auszug, sonst bleibt das Ergebnis leer." — also die drei geforderten Dinge (Website-Text, Anfrage-Mail, CRM-Auszug), keine vage Bitte, „mal zu googeln". Damit greift die Durchgefallen-Regel „wenn die fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt wird" nicht. Der Zweck wird ohne Rückfrage festgestellt: „Der Zweck steht fest: Angebot." Die zweite …
+
+**Prüfer, Lauf 3:** Die Ansage über die fehlende Zugriffsmöglichkeit steht ganz am Anfang und damit vor dem Ergebnisblock: „Ich kann von hier aus nichts im Netz nachschlagen. Ich arbeite mit dem, was du mir gibst — hier liegt nichts vor: kein Anhang, kein CRM-Auszug, kein Website-Text." Damit greift die Durchgefallen-Regel „fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt" nicht. Es wird auch konkret benannt, was geliefert werden müsste — „Schick mir die Anfrage-Mail, den Pipedrive-Eintrag oder Text von der Website, dann wird daraus etwas." —, also keine vage Bitte im Sinne von „mal googeln und Bescheid geben". Der Zweck ist ohne Rückfrage festgestellt: „Zweck steht fest: Angebot." …
+
 
 ### angebots-schreiber / 01-rueckfrage-disziplin
 
