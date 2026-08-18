@@ -15,10 +15,13 @@
   - [x] Agenten 4–10 gebaut, je 3 Testfälle — alle 10 Skills sind stubfrei
   - [x] Testprofil + Testlauf: 32 Fälle ausgeführt, 15 Befunde behoben,
         Endstand 32/32 bestanden (`docs/testlauf-phase2.md`)
-  - [x] Teilregression 18.08.: 12 kritische Fälle je dreimal — 11 bestanden,
-        1 Regressionsbefund (`docs/testlauf-phase2-regression.md`)
-  - [ ] **Definition of Done NICHT erreicht** — ein Befund offen, Dreifachlauf
-        für die übrigen 20 Fälle steht aus, siehe unten
+  - [x] Teilregression 18.08.: 13 Fälle je dreimal — 12 bestanden
+        (`docs/testlauf-phase2-regression.md`)
+  - [x] Ketten-Befund behoben: Feld `Nachfassen` ist bindend, Vertrag Regel 4
+        geändert, `ketten/02` danach 3 von 3 bestanden
+  - [ ] **Definition of Done NICHT erreicht** — Befund in `account-recherche`
+        offen, zwei Fälle durch die Korrektur veraltet, Dreifachlauf für die
+        übrigen 19 Fälle steht aus, siehe unten
 - [ ] Phase 3 — Installer fertigstellen
   - [ ] **Sitzungswechsel unsichtbar** — neue Pflichtanforderung, siehe unten
 - [ ] Phase 4 — Watchdog & Ketten-Tests
@@ -42,28 +45,37 @@ Hauptkette läuft einmal Ende-zu-Ende durch."
 - [x] 15 Befunde im Skill behoben, kein Testfall weichgespült
 - [x] Endstand 32/32 bestanden — Einzelheiten in `docs/testlauf-phase2.md`
 
-**Stand nach der Teilregression vom 18.08.2026:**
+**Stand nach Teilregression und Korrektur (18.08.2026):**
 
 - [x] **Die schlimmere Hälfte der Lücke ist zu.** Die 11 Fälle, die nur gegen
       die *vorige* Skill-Fassung geprüft waren — darunter beide Ketten-Fälle —
-      sind erneut gelaufen, je dreimal, gegen die aktuelle Fassung. Dazu der
-      bekannte Wackelkandidat `follow-up-generator / 02-kein-anlass`.
-- [x] **Der Wackelkandidat hält:** 3 von 3 bestanden.
-- [ ] **Ein Regressionsbefund ist offen.**
-      `ketten / 02-entwurf-und-abgelehnte-forderung` fällt dreimal auf
-      `abweichend`: `follow-up-generator` verwirft in Stufe 2 den Aufhänger,
-      den das Vertragsfeld `Nachfassen` vorgibt, und adressiert damit den
-      erwarteten Einwand nicht. Reproduzierbar, kein Wackeln. Der Fall galt im
-      Testlauf als bestanden — die Änderung an `follow-up-generator` hat ihn
-      gebrochen. Behebung bewusst **nicht** in der Regressionssitzung: eine
-      Skill-Änderung mitten im Lauf entwertet die übrigen Messungen.
-- [ ] **Zweiter Verdacht, ungeprüft.** Der abgebrochene Vollregressionslauf hat
-      `account-recherche / 01-leere-quellenlage` auf `abweichend` bewertet,
-      obwohl der Fall im Testlauf bestanden hatte. Außerhalb des Umfangs der
-      Teilregression, weder wiederholt noch geklärt.
-- [ ] **Dreifachlauf für die übrigen 20 Fälle.** Sie sind gegen die aktuelle
-      Fassung gelaufen, aber nur einmal. Nach dem Maßstab „bestanden heißt
-      3 von 3" ist ihr Zustand unbekannt, nicht bestanden.
+      sind erneut gelaufen, je dreimal. Dazu der Wackelkandidat
+      `follow-up-generator / 02-kein-anlass`: **3 von 3, er hält.**
+- [x] **Ketten-Befund behoben und nachgewiesen.** `ketten / 02` fiel dreimal
+      auf `abweichend`, weil `follow-up-generator` den vorgegebenen Aufhänger
+      verwarf. Die Ursache lag in der Regel, nicht im Verhalten: Prozess-Schritt 4
+      führte eine Rangfolge ohne das Feld `Nachfassen`, und der Vertrag nannte
+      das Feld ausdrücklich unverbindlich. **Vertragsregel 4 ist geändert**
+      (Feld bindend, Datum weiter Vorschlag, Abweichung nur per Rückfrage —
+      protokolliert in `docs/entscheidungen.md`), Skill, Block B, Checkliste
+      und Beispiele sind nachgezogen. Drei neue Läufe: **3 von 3 bestanden.**
+- [ ] **Neuer bestätigter Befund: `account-recherche / 01-leere-quellenlage`.**
+      Dreimal `abweichend`, dreimal dieselbe Ursache: Bei völlig leerer
+      Quellenlage verlangt das Soll `Belegte Fakten: —`, der Skill füllt das
+      Feld stattdessen mit der Eingabe des Nutzers (Firmenname, Zweck) — mit
+      Herkunftsvermerk, also ohne Erfindung; keine Durchgefallen-Regel greift.
+      Trotzdem lässt es eine Recherche als geleistet erscheinen, die es nicht
+      gab. **Der Skill ist seit dem 17.08. unverändert** — im Testlauf ließ er
+      das Feld leer und bestand, jetzt füllt er es dreimal. Über vier Läufe
+      derselben Fassung: 1× bestanden, 3× abweichend. Korrektur gehört in
+      `account-recherche`, nicht in den Testfall.
+- [ ] **Zwei Fälle sind durch die Korrektur veraltet.**
+      `follow-up-generator / 01` und `/ 02` stehen mit 3× `bestanden` da, diese
+      Läufe stammen aber von **vor** der Änderung an `follow-up-generator`.
+      Streng gelesen ist ihr Zustand offen; sie brauchen je drei neue Läufe.
+- [ ] **Dreifachlauf für die übrigen 19 Fälle.** Sie sind gegen die aktuelle
+      Fassung gelaufen, aber nur einmal. `account-recherche / 01` zeigt gerade,
+      was ein einzelner Durchlauf wert ist: nichts.
 
 Die vollständige kritische Bewertung — wo die Fälle zu schwach sind, was sie
 nicht prüfen — steht in `docs/testlauf-phase2.md` unter „Wie belastbar ist das".
@@ -139,11 +151,19 @@ tippt „weiter". Klappt das nicht, ist Phase 3 nicht fertig.
   der Käufer nur gegen unsere neutralen Fälle und nie gegen seinen echten Alltag.
 
 ## Nächster Schritt
-**Den Ketten-Befund beheben**, dann `ketten / 02` dreimal neu laufen lassen.
-Danach `account-recherche / 01` klären und den Dreifachlauf für die übrigen
-20 Fälle nachziehen. Einzelheiten und Belege in
-`docs/testlauf-phase2-regression.md`.
+1. **`account-recherche` korrigieren** — bei leerer Quellenlage gehört die
+   Nutzereingabe nicht unter `Belegte Fakten`. Danach den Fall dreimal neu.
+2. **`follow-up-generator / 01` und `/ 02` je dreimal nachziehen** — sie sind
+   gegen die vorige Fassung gemessen.
+3. **Dreifachlauf für die übrigen 19 Fälle.**
+
+Belege und Zitate zu allem drei: `docs/testlauf-phase2-regression.md`.
 
 Erst danach Phase 3 (Installer). Die Reihenfolge lohnt: Ein Installer, der
-ungeprüfte Skills ausrollt, verlagert jeden Fehler in die Beta — und der
-offene Befund betrifft ausgerechnet eine Übergabe zwischen zwei Agenten.
+ungeprüfte Skills ausrollt, verlagert jeden Fehler in die Beta.
+
+**Übertragbare Lehre aus dem Ketten-Befund:** Die Bindung stand nur im
+Prozess-Fließtext — genau das Muster, das die neue Bauregel in
+`core/skills/vertrieb/_TEMPLATE_SKILL.md` verbietet. Die Korrektur hat sie in
+Ausgabeformat (`Aufhänger-Quelle`) und Checkliste verankert. Beim nächsten
+Skill-Durchgang lohnt die dort beschriebene Gegenprobe für alle zehn Skills.
