@@ -50,18 +50,27 @@ was offen ist. Nicht aus dem Gedächtnis rekonstruieren.
      {{verbote}} und nicht für das Feld `Abgelehnt`: die bleiben auch auf
      ausdrückliche Ansage gesperrt, weil dort nicht Häufigkeit, sondern Inhalt
      verhandelt würde.
-4. **Anlass wählen** — feste Rangfolge, der erste verfügbare gewinnt:
+4. **Anlass wählen** — feste Rangfolge, der erste verfügbare gewinnt.
+   **Die ersten vier darf der Skill selbst wählen**, weil sie Tatsachen sind:
    1. neue Entwicklung, die der Nutzer geliefert hat
    2. ein offener Punkt aus `Offen` („die Frage zu den Reisekosten")
    3. das Datum aus `Gültig bis`
    4. der Kürzungsvorschlag aus `Budget-Konflikt`
-   5. der erwartete Einwand aus `Einwand`, sachlich aufgegriffen — **aber nur,
-      wenn er inhaltlich nicht das ist, was unter `Abgelehnt` steht.** Ist der
-      Einwand genau die verweigerte Forderung (Feld `Einwand`: „fehlende
-      Garantie", Feld `Abgelehnt`: „Erfolgsgarantie"), fällt Rang 5 weg. Sonst
-      führt die eigene Rangfolge geradewegs in das Verbot, das Regel 2 schützt.
 
-   Ist keiner davon verfügbar: **nachfragen**, welcher Anlass passt. Nicht
+   **Rang 5 ist anders und wird nicht selbst gewählt:**
+   5. der erwartete Einwand aus `Einwand`, sachlich aufgegriffen — **wird
+      {{rolle}} als Vorschlag vorgelegt, nie eigenmächtig umgesetzt.** Den
+      Einwand des Kunden von sich aus aufzumachen ist eine
+      Verhandlungsentscheidung, keine Formulierung: Wer den Preis anspricht,
+      bevor der Kunde ihn wieder aufbringt, verhandelt ab da über den Preis.
+      Diese Entscheidung gehört dem, der den Kunden hat.
+      Rang 5 entfällt ganz, **wenn der Einwand inhaltlich das ist, was unter
+      `Abgelehnt` steht** (Feld `Einwand`: „fehlende Garantie", Feld
+      `Abgelehnt`: „Erfolgsgarantie"). Sonst führt die eigene Rangfolge
+      geradewegs in das Verbot, das Regel 2 schützt.
+
+   Sind Rang 1–4 alle leer: **kein Text.** Auch dann nicht, wenn Rang 5
+   verfügbar wäre. Stattdessen die Möglichkeiten vorlegen und nachfragen. Nicht
    „ich wollte mich noch einmal in Erinnerung bringen" schreiben — das ist
    die Formulierung, die Nachfassen in Verruf gebracht hat.
 
@@ -131,6 +140,8 @@ Checkliste für Prozess Schritt 7 — jeder Punkt einzeln mit ja/nein:
       vorgelegten Möglichkeiten da.
 - [ ] Rang 5 wurde nicht benutzt, wenn der Einwand inhaltlich in `Abgelehnt`
       steht.
+- [ ] **Waren Rang 1–4 leer, ist kein Kundentext entstanden** — auch kein
+      versandfertiger „Vorschlag". Rang 5 allein trägt keinen Text.
 - [ ] Nach Stufe 3 wurde **empfohlen, nicht verweigert** — auf ausdrücklichen
       Wunsch entsteht der Text, mit der Empfehlung daneben.
 

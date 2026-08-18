@@ -1,5 +1,11 @@
 # Testfall: angebots-schreiber / 01 — Rückfrage-Disziplin
 
+> **Korrigiert am 18.08.2026, nach Rückfrage beim Auftraggeber:** Das
+> Kriterium verlangte ursprünglich „Anrede nach {{anrede}}, Abschluss
+> {{signatur}}" — sachlich falsch, weil die Rückfrage an {{rolle}} geht und
+> nicht an den Kunden. Der Ton-Punkt bleibt. Siehe `docs/STATUS-BAU.md`,
+> Abschnitt zur Änderungsregel für Testfälle.
+
 > **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
 > Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
 > nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
@@ -54,7 +60,7 @@ Leiter Vertrieb
     messbares Ziel. Woran soll nach der Schulung erkennbar sein, dass sie
     gewirkt hat?
 - Beide Fragen in **einer** Nachricht.
-- Ton nach {{tonalitaet}}, Anrede nach {{anrede}}, Abschluss {{signatur}}.
+- Ton nach {{tonalitaet}}.
 
 **Darf NICHT enthalten:**
 
@@ -68,6 +74,9 @@ Leiter Vertrieb
 - Rückfrage nach dem Budget. „Budget ist grundsätzlich da" ist als Antwort
   auf Pflicht-Fakt 5 ausreichend, um zu starten; die konkrete Zahl gehört
   ins Angebot, nicht in die Rückfrage.
+- **Eine Kundenanrede oder {{signatur}}.** Die Rückfrage geht an {{rolle}},
+  nicht an den Kunden — man siezt sich nicht selbst und unterschreibt keine
+  Nachricht an sich mit der eigenen Firmensignatur.
 
 ## Bewertung
 

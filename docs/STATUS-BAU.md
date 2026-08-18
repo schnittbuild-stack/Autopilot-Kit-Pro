@@ -13,52 +13,69 @@
   - [x] Agent 2 `account-recherche` + 3 Testfälle
   - [x] Agent 3 `follow-up-generator` + 3 Testfälle
   - [x] Agenten 4–10 gebaut, je 3 Testfälle — alle 10 Skills sind stubfrei
-  - [ ] **Definition of Done noch NICHT erreicht** — siehe unten
+  - [x] Testprofil + Testlauf: 32 Fälle ausgeführt, 15 Befunde behoben,
+        Endstand 32/32 bestanden (`docs/testlauf-phase2.md`)
+  - [ ] **Definition of Done fast erreicht** — Vollregression steht aus, siehe unten
 - [ ] Phase 3 — Installer fertigstellen
 - [ ] Phase 4 — Watchdog & Ketten-Tests
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
 - [ ] Phase 6 — Beta mit 10 Nutzern
 - [ ] Phase 7 — Launch
 
-## Definition of Done Phase 2 — Prüfstand vom 17.08.2026
+## Definition of Done Phase 2 — Stand 18.08.2026
 
 BAUPLAN verlangt: „Alle 10 Skills laufen einzeln gegen ihre Testfälle; die
 Hauptkette läuft einmal Ende-zu-Ende durch."
 
-**Geprüft und erfüllt (maschinell):**
+**Erfüllt:**
 
-- [x] 10 Skills gebaut, keine Stubs, alle 7 Pflichtabschnitte je Skill
-- [x] 32 Testfälle (3 je Skill + 2 Ketten-Fälle), alle mit Eingabe,
-      Soll-Ergebnis, Bewertung und Herkunftszeile
-- [x] 11 Platzhalter, alle in `core/interview/mapping.md` registriert
-- [x] `core/` frei von Plattform-Spezifika (Prinzip 4)
-- [x] Beide Verträge geschrieben, Feldnamen stimmen mit den Skills überein
-- [x] Release-Build läuft, Praxisordner bleibt draußen
+- [x] 10 Skills, 32 Testfälle, 11 Platzhalter registriert, `core/` ohne
+      Plattform-Spezifika, Verträge deckungsgleich mit den Skills
+- [x] `evals/testprofil.md` angelegt, alle 11 Platzhalter gefüllt
+- [x] **Alle 32 Fälle tatsächlich ausgeführt** — Erzeugung und Bewertung
+      strikt getrennt, Bewerter ohne Skill-Text
+- [x] **Beide Ketten Ende-zu-Ende gelaufen**, beide bestanden
+- [x] 15 Befunde im Skill behoben, kein Testfall weichgespült
+- [x] Endstand 32/32 bestanden — Einzelheiten in `docs/testlauf-phase2.md`
 
-**NICHT erfüllt — und das ist der eigentliche Teil der DoD:**
+**Noch offen, bevor Phase 2 wirklich zu ist:**
 
-- [ ] **Kein einziger Testfall wurde ausgeführt.** Es liegen 32 Sollwerte vor
-      und null Istwerte. Die Skills sind gebaut, nicht geprüft.
-- [ ] Die Hauptkette ist nie Ende-zu-Ende gelaufen.
+- [ ] **Vollregression.** Erneut gelaufen sind nur die 15 nicht bestandenen
+      Fälle. Danach wurde in 8 von 10 Skills Text geändert — 11 bereits
+      bestandene Fälle sind also gegen die *vorige* Fassung geprüft, darunter
+      **beide Ketten-Fälle**. Streng gelesen heißt der Stand: 21 gegen die
+      aktuelle Fassung, 11 gegen die vorige.
+- [ ] **Dreifachlauf.** `follow-up-generator/02` hat bewiesen, dass ein
+      Durchlauf nichts beweist: derselbe Skill, zwei Läufe, zwei verschiedene
+      Verhaltensweisen. Bestanden sollte 3 von 3 heißen, nicht 1 von 1.
 
-**Warum das gerade nicht geht — und was es kostet, es zu lösen:**
+Die vollständige kritische Bewertung — wo die Fälle zu schwach sind, was sie
+nicht prüfen — steht in `docs/testlauf-phase2.md` unter „Wie belastbar ist das".
 
-Die Skills stecken voller `{{platzhalter}}`, die erst das Installer-Interview
-füllt (Phase 3). Ohne gefülltes Profil ist ein Durchlauf nicht aussagekräftig:
-Ein Skill, der `{{tonalitaet}}` nicht auflösen kann, fällt aus Gründen durch,
-die nichts mit seiner Qualität zu tun haben.
+## Änderungsregel für Testfälle (18.08.2026)
 
-Der Ausweg ist ein **Testprofil**: ein erfundener, aber vollständiger
-`profil.md`-Datensatz (Rolle, Firma, Ton, Anrede, Signatur, Verbote,
-Preisgrundlage) allein für Evals, abgelegt außerhalb des Kundenbaums. Damit
-laufen alle 32 Fälle, bevor der Installer existiert — und Phase 3 startet auf
-geprüften statt auf vermuteten Skills.
+Die Regel „Abweichungen werden im Skill behoben, nie im Testfall" richtet sich
+gegen **Weichspülen**: Ein Kriterium darf nicht gesenkt werden, weil der Skill
+es nicht schafft. Genau daraus entstehen die geschönten Eval-Zahlen, die
+CLAUDE.md verbietet.
 
-**Zweite Einschränkung, ehrlich vermerkt:** Wer die Skills gebaut hat, sollte
-sie nicht allein bewerten. Ein Durchlauf, bei dem dasselbe Modell schreibt und
-benotet, ist ein schwacher Beleg. Für die Beta braucht es mindestens eine
-Bewertung durch einen zweiten Durchgang mit ausschließlich den Testfall-Kriterien
-im Kontext, ohne den Skill-Text.
+Sie richtet sich **nicht** gegen die Korrektur sachlich falscher Kriterien.
+Ein Testfall kann selbst einen Fehler enthalten — dann misst er das Falsche,
+und ein Skill, der ihn besteht, ist schlechter als einer, der durchfällt.
+
+Verfahren, wenn ein Kriterium falsch erscheint:
+
+1. Testfall **nicht** anfassen. Erst melden, mit Begründung und Vorschlag.
+2. Entscheidung durch den Auftraggeber.
+3. Erst danach ändern — mit **Änderungsvermerk im Testfall** (Datum, was
+   vorher dastand, warum korrigiert). Eine stille Korrektur ist von
+   Weichspülen nicht unterscheidbar.
+4. Der betroffene Fall wird gegen die korrigierten Kriterien **neu bewertet**.
+
+Bisher angewandt: einmal, `angebots-schreiber/01-rueckfrage-disziplin` —
+das Kriterium verlangte Kundenanrede und Signatur für eine Rückfrage, die an
+den Nutzer selbst geht. Eine Prüfung aller 32 Fälle auf dieselbe Verwechslung
+(Kundentext gegen interne Ausgabe) ergab keine weiteren Treffer.
 
 ## Offene Punkte
 - Digistore24/CopeCart-Konto beantragen (Freischaltung dauert Tage)
@@ -82,15 +99,9 @@ im Kontext, ohne den Skill-Text.
   der Käufer nur gegen unsere neutralen Fälle und nie gegen seinen echten Alltag.
 
 ## Nächster Schritt
-**Testprofil anlegen und die 32 Fälle tatsächlich durchlaufen lassen.** Das
-schließt Phase 2 ab. Konkret:
-
-1. `evals/testprofil.md` — erfundenes, aber vollständiges Profil, außerhalb
-   des ausgelieferten Baums (wie `testfaelle-praxis/`).
-2. Alle 32 Fälle durchlaufen, Istwerte festhalten.
-3. Bewertung in einem zweiten Durchgang, der nur die Kriterien sieht.
-4. Abweichungen entweder im Skill beheben oder als bekannte Schwäche
-   dokumentieren — nicht den Testfall weichspülen.
+**Vollregression und Dreifachlauf** — die beiden offenen Punkte der Definition
+of Done (siehe oben). Alle 32 Fälle gegen die aktuellen Skills, je dreimal,
+bestanden nur bei 3 von 3. Das schließt Phase 2 ehrlich ab.
 
 Erst danach Phase 3 (Installer). Die Reihenfolge lohnt: Ein Installer, der
 ungeprüfte Skills ausrollt, verlagert jeden Fehler in die Beta.
