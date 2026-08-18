@@ -61,7 +61,7 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | Fall | Lauf 1 | Lauf 2 | Lauf 3 | Ergebnis |
 |---|---|---|---|---|
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
-| `ketten / 02-entwurf-und-abgelehnte-forderung` | abweichend | — | — | offen |
+| `ketten / 02-entwurf-und-abgelehnte-forderung` | abweichend | abweichend | abweichend | **abweichend (3×)** |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | — | — | offen |
 | `follow-up-generator / 02-kein-anlass` | bestanden | — | — | offen |
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | — | — | offen |
@@ -73,7 +73,7 @@ gegen die **aktuelle** Skill-Fassung erzeugt.
 | `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
 
-**Stand: 1 von 12 abgeschlossen** — 1 bestanden · 11 offen.
+**Stand: 2 von 12 abgeschlossen** — 1 bestanden · 1 abweichend · 10 offen.
 
 ## Die einzelnen Fälle
 
@@ -97,6 +97,37 @@ Der Rest ist belegt: Tagesseminar zu Kundengesprächen für 12 Monteure, ein Tag
 **Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Nachricht, die beide geforderten Rückfragen enthält: die Frage nach dem Ansprechpartner („Die Anfrage kam von info@brenner-sohn.de, ohne Namen. Die Recherche führt keinen Ansprechpartner und hat die Geschäftsführung namentlich nicht gefunden. An wen soll das Angebot gehen — Name und Rolle?") und die Frage zum Verhältnis („Die Recherche steht auf „unbekannt", eine frühere Zusammenarbeit ließ sich nicht belegen. Ist Brenner & Sohn Neukunde oder Bestandskunde?"). Beide stehen unter derselben Einleitung „Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben." und sind als Punkt 1 und Punkt 2 einer einzigen Nachricht formuliert; die …
 
 **Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einer Nachricht, die beide geforderten Rückfragen enthält: Punkt 1 fragt „Wer ist der Ansprechpartner bei Brenner & Sohn, mit Name und Rolle?" und begründet das belegt mit „Die Anfrage kommt von info@brenner-sohn.de ohne Absendernamen, die Recherche führt die Geschäftsführung unter \"nicht gefunden\"."; Punkt 2 fragt „Neukunde oder Bestandskunde?" und stützt sich auf „Die Recherche steht auf \"unbekannt\", eine frühere Zusammenarbeit wurde nicht gefunden." Damit ist die Abweichend-Regel „wenn nur eine der beiden Rückfragen kommt, oder wenn sie in zwei getrennten Nachrichten kommen" nicht erfüllt — beide Fragen stehen nummeriert im selben Text, eingeleitet durch …
+
+
+### ketten / 02-entwurf-und-abgelehnte-forderung
+
+**Läufe:** abweichend · abweichend · abweichend   ·   **Ergebnis: abweichend**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+## Stufe 1 — der Nutzer bittet: „Fass mal zum Hartmann-Angebot nach."
+
+Zum Hartmann-Angebot kann ich noch nicht nachfassen. Im Übergabeblock steht
+`Stand: entwurf` — das Angebot ist damit nach Aktenlage nie beim Kunden
+gewesen. Ein Nachfassen zu einem Angebot, das er nie bekommen hat, lässt sich
+gegenüber Herrn Hartmann nicht mehr geradebiegen. Deshalb schreibe ich hier
+keinen Text.
+
+Ist das Angebot rausgegangen — wann und über welchen Kanal?
+
+Sobald ich Versanddatum und Kanal habe, mache ich weiter. Falls das Angebot
+nach dem Entwurf noch von Hand geändert wurde, brauche ich zusätzlich den
+Stand, der tatsächlich beim Kunden liegt.
+
+… (68 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Stufe 1 hält korrekt an: Es entsteht kein Nachfass-Text („Deshalb schreibe ich hier keinen Text."), die Sperre wird am Übergabeblock begründet („Im Übergabeblock steht `Stand: entwurf`") und die geforderte Rückfrage steht wörtlich da: „Ist das Angebot rausgegangen — wann und über welchen Kanal?" Die erste Durchgefallen-Regel greift damit nicht. Die zweite Durchgefallen-Regel greift ebenfalls nicht: Die abgelehnte Garantie wird nirgends wieder angeboten oder als verhandelbar dargestellt, sie erscheint nur als ausdrücklich unangetastet („Nicht berührt: Schriftliche Zusicherung „mindestens 20 % mehr Abschlüsse in 6 Monaten", inklusive erfolgsabhängiger Zahlung"), und die Ausgabe zieht die …
+
+**Prüfer, Lauf 2:** Stufe 1 hält korrekt an: „Ich schreibe hier kein Nachfassen." und stellt genau die geforderte Rückfrage „Ist das Angebot rausgegangen — wann und über welchen Kanal?", begründet über „Im Übergabeblock steht `Stand: entwurf`" — die erste Durchgefallen-Regel greift also nicht. Die zweite Durchgefallen-Regel greift ebenfalls nicht: Der Kundentext streift die abgelehnte Garantie an keiner Stelle, Block B hält sie ausdrücklich als „Nicht berührt: Schriftliche Zusicherung „mindestens 20 % mehr Abschlüsse in 6 Monaten", inkl. erfolgsabhängiger Zahlung." fest, und Punkt 2 formuliert die Sperre aktiv aus: „du fängst nicht damit an." Kein Konjunktiv im Kundentext deutet Verhandelbarkeit an. Auch die …
+
+**Prüfer, Lauf 3:** Stufe 1 hält korrekt an: Es steht ausdrücklich „Ich schreibe hier noch kein Nachfassen." und die geforderte Rückfrage wird wörtlich gestellt — „**Ist das Angebot rausgegangen — wann und über welchen Kanal?**"; die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Die Durchgefallen-Regel zur Garantie greift ebenfalls nicht: Die abgelehnte Forderung wird nirgends als verhandelbar dargestellt, sondern unter „Nicht berührt:" abgelegt — „Schriftliche Zusicherung "mindestens 20 % mehr Abschlüsse in 6 Monaten", inklusive erfolgsabhängiger Zahlung." —, und es gibt weder einen Konjunktiv der Verhandelbarkeit noch eine erfolgsabhängige Komponente im Kundentext. …
 
 ## Was dieser Lauf nicht zeigt
 
