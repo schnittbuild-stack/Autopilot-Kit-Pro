@@ -22,6 +22,10 @@ der Vergangenheit, bekannte Sondereffekte.
    mit der Angabe, was fehlt. Er wird nicht geschätzt, nicht mit einem
    Durchschnitt gefüllt und nicht weggelassen. Ein Forecast, der stillschweigend
    die Hälfte der Pipeline ignoriert, ist schlimmer als gar keiner.
+   Aus dieser Liste entsteht am Ende die **Nachtrag-Liste**: dieselben Vorgänge,
+   aber **nach Hebel sortiert** — der größte fehlende Wert zuerst. Sie
+   beantwortet die einzige Frage, die {{rolle}} danach hat: Wo lohnt sich das
+   Nachpflegen am meisten?
 2. **Wahrscheinlichkeit begründen.** Zu jedem rechenbaren Vorgang gehört die
    Bedingung: **was müsste passieren, damit er zugeht.** Eine Prozentzahl ohne
    Bedingung ist eine Stimmung, keine Prognose. Liegt nur eine Stufe aus
@@ -62,6 +66,9 @@ DIE DREI ENTSCHEIDENDEN
 RISIKEN
   <je Zeile: was den Forecast kippen kann>
 
+NACHZUTRAGEN (nach Hebel sortiert, größter Wert zuerst)
+  <je Zeile: Vorgang — welche Angabe fehlt — Wirkung auf den Forecast>
+
 FÜR DAS MEETING
   <genau 3 Sätze>
 ```
@@ -83,6 +90,8 @@ Checkliste für Schritt 7:
 - [ ] Die Lücke zum Ziel steht als Betrag da, auch wenn sie negativ ist.
 - [ ] Die drei Meeting-Sätze beschönigen nicht und entschuldigen nicht.
 - [ ] Nichts aus {{verbote}}.
+- [ ] Gibt es nicht rechenbare Vorgänge, existiert die Nachtrag-Liste — als
+      eigener Abschnitt, nach Hebel sortiert, nicht verstreut im Text.
 
 **Wenn {{rolle}} um eine schönere Zahl bittet:** Die Zahl bleibt. Was der
 Skill anbietet: die Reihenfolge ändern, den Grund für die Abweichung

@@ -67,9 +67,9 @@ Sonst nichts. Keine Zusatzzeile, kein Zwischenstand.
 
 ```
 Runden:        <Anzahl>
-Was trug:      <konkrete Sätze von {{rolle}}, die gewirkt haben — wörtlich>
-Was wackelte:  <Sätze, die halb funktioniert haben, mit Grund>
-Was fiel:      <Sätze, die es schlechter gemacht haben, mit Grund>
+Was trug:      <Runde N: „wörtliches Zitat" — warum es gewirkt hat>
+Was wackelte:  <Runde N: „wörtliches Zitat" — warum es nur halb funktioniert hat>
+Was fiel:      <Runde N: „wörtliches Zitat" — warum es geschadet hat>
 Nicht geliefert: <welche der drei Bedingungen aus Schritt 3 fehlten>
 Ein Satz zum Üben: <die eine Formulierung, die beim nächsten Mal den
                     Unterschied macht>
@@ -94,6 +94,8 @@ Checkliste vor jeder Ausgabe:
 - [ ] „Was fiel" ist gefüllt, wenn etwas gefallen ist — auch wenn es
       unangenehm ist.
 - [ ] Zitate sind wörtlich, nicht sinngemäß nacherzählt.
+- [ ] **Jedes Zitat trägt seine Rundennummer.** Ohne sie weiß {{rolle}} nicht,
+      welche Stelle des Gesprächs gemeint ist — und kann sie nicht üben.
 
 ## Beispiele
 

@@ -21,6 +21,13 @@ Fehlen diese Angaben, wird jedes betroffene Kriterium auf `unklar` gesetzt
 und in die Fragenliste an {{rolle}} aufgenommen — nicht als erfüllt
 angenommen, weil es meistens erfüllt ist.
 
+Umgekehrt gilt aber genauso: **Liegt die Angabe vor, wird sie geglaubt.**
+Sagt {{rolle}} „vier passende Referenzen" oder „Umsatz 3,4 Mio.", steht das
+Kriterium auf `erfüllt` — der Nachweis in der geforderten Form ist dann eine
+Aufgabe für die Angebotsmappe, kein Zweifel in der Tabelle. `unklar` ist für
+fehlende Angaben da, nicht für Angaben, die noch nicht als Dokument vorliegen.
+Wer jede gelieferte Auskunft in Zweifel zieht, macht die Tabelle wertlos.
+
 ## Prozess
 
 **Die Reihenfolge ist verbindlich.** Eine gründliche inhaltliche Analyse zu
@@ -32,7 +39,20 @@ und der Nutzer merkt es erst auf der letzten Seite.
    Ist die Abgabefrist abgelaufen oder so knapp, dass eine seriöse Abgabe
    unrealistisch wird, steht das **als erster Satz** — vor allem anderen.
    Fristen werden nie geschätzt: nicht gefunden heißt `nicht gefunden`.
-2. **Formalien.** Abgabeweg (Portal, Papier, Signatur), geforderte Nachweise,
+   Der erste Satz nennt drei Dinge, nicht nur das Datum: die Frist, die
+   verbleibende **Arbeitszeit** (nicht Kalenderzeit — eine Nacht ist keine
+   Bearbeitungszeit), und abgelaufene Nebenfristen mit Dauer („seit 12 Tagen
+   vorbei"). Sind Nachweise beizubringen, die von Dritten kommen — Behörden,
+   Krankenkassen, Zertifizierer —, gehört in denselben Absatz, dass die nicht
+   über Nacht zu beschaffen sind.
+2. **Formalien — und zuerst die Vergabeart.** Öffentliche Vergabe oder private
+   Anfrage? Das entscheidet über alles Weitere: Bei einer öffentlichen Vergabe
+   sind Fristen und Formalien gesetzt, bei einer privaten Anfrage sind sie
+   verhandelbar — dort ist ein Anruf oft schneller als jede Bieterfrage, und
+   eine fehlende Angabe ist kein Ausschluss, sondern ein Gespräch. Die
+   Einordnung steht in der Ausgabe, weil daran hängt, was die Fragenliste
+   überhaupt bewirken kann.
+   Dann: Abgabeweg (Portal, Papier, Signatur), geforderte Nachweise,
    Eigenerklärungen, Lose und ob Teillose zulässig sind, Nebenangebote.
 3. **K.o.-Kriterien.** Jedes einzeln, mit **Fundstelle** (Abschnitt, Seite,
    Ziffer) und einer von drei Bewertungen: erfüllt / nicht erfüllt / unklar.
@@ -40,6 +60,10 @@ und der Nutzer merkt es erst auf der letzten Seite.
    „darüber ließe sich argumentieren", kein „in der Praxis wird das oft
    großzügig gehandhabt". Wer hier weich wird, produziert Angebote, die
    ungeöffnet aussortiert werden.
+   Stellt die Unterlage **keine** Eignungskriterien — bei privaten Anfragen der
+   Normalfall —, entfällt die Tabelle ganz. Sie wird nicht ersatzweise mit
+   Leistungsanforderungen gefüllt, die keine Ausschlusskriterien sind: Eine
+   erfundene K.o.-Tabelle lässt eine harmlose Anfrage gefährlich aussehen.
 4. **Leistungsumfang.** Was wirklich gefordert ist, getrennt von dem, was nur
    beschrieben wird. Ungewöhnliche Anforderungen ausdrücklich hervorheben.
 5. **Aufwand und Chance** — ausdrücklich als **Einschätzung** markiert, in
@@ -47,14 +71,31 @@ und der Nutzer merkt es erst auf der letzten Seite.
 6. **Empfehlung:** bieten / bieten mit Vorbehalt / nicht bieten, mit
    Begründung in zwei Sätzen. Bei `nicht bieten` wird der ausschlaggebende
    Punkt genannt, nicht eine Liste.
-7. **Bieterfragen sammeln** — nummeriert, mit der Frist aus Schritt 1. Alles,
-   was für ein belastbares Angebot fehlt, wird gefragt, nicht angenommen.
+7. **Bieterfragen — nur wenn sie noch etwas ändern können.** Die Liste
+   **entfällt vollständig**, wenn einer dieser Fälle vorliegt:
+   - Die Frist für Bieterfragen ist abgelaufen → `Bieterfragen: Frist am
+     <Datum> abgelaufen, keine Liste`. Es wird auch keine Liste „für den Fall
+     einer Verlängerung" gebaut — eine Verlängerung, die nicht im Dokument
+     steht, gibt es nicht.
+   - Die Empfehlung lautet `nicht bieten`. Wer nicht bietet, fragt nicht.
+   - Es gibt keine Vergabestelle, an die zu fragen wäre.
+
+   Und die härteste Regel dieses Skills: **Keine Frage darf auf eine Ausnahme
+   von einem nicht erfüllten K.o.-Kriterium zielen.** „Werden gleichwertige
+   Nachweise anerkannt?" ist genau die Relativierung, die Schritt 3
+   ausschließt — sie über die Fragenliste wieder hereinzuholen, hebt die
+   eigene Empfehlung hinten wieder auf. Ob sich die fehlende Zertifizierung
+   für die Zukunft lohnt, ist eine getrennte Notiz, keine Bieterfrage.
+
+   Sonst: nummeriert, mit der Frist aus Schritt 1. Alles, was für ein
+   belastbares Angebot fehlt, wird gefragt, nicht angenommen.
 8. **Selbstprüfung.**
 
 ## Ausgabeformat
 
 ```
 FRISTEN
+  Vergabeart:      öffentliche Vergabe | private Anfrage
   Abgabe:          <Datum, Uhrzeit> | nicht gefunden
   Bieterfragen:    <Datum> | nicht gefunden
   Bindefrist:      <…> | nicht gefunden
@@ -78,6 +119,7 @@ EMPFEHLUNG
 
 BIETERFRAGEN (bis <Frist>)
   1. …
+  — oder: `entfällt — <Grund: Frist abgelaufen / nicht bieten / keine Stelle>`
 ```
 
 ## Qualitätsregeln
@@ -97,14 +139,25 @@ Checkliste für Schritt 8:
 - [ ] Aufwandszahlen sind als Einschätzung markiert und als Spanne angegeben.
 - [ ] Die Empfehlung ist eine von dreien, nicht „kommt darauf an".
 - [ ] Liegt nur ein Auszug vor, steht das in der Empfehlung.
+- [ ] **Keine Frage in der Liste zielt auf eine Ausnahme von einem nicht
+      erfüllten K.o.-Kriterium.**
+- [ ] Bieterfragen entfallen, wenn ihre Frist abgelaufen ist oder nicht
+      geboten wird — und der Grund steht da.
+- [ ] Keine Fristverlängerung, Wiederholung oder Nachreichmöglichkeit
+      unterstellt, die nicht im Dokument steht.
+- [ ] K.o.-Tabelle nur, wenn die Unterlage Eignungskriterien stellt.
+- [ ] Angaben, die {{rolle}} geliefert hat, stehen auf `erfüllt`, nicht auf
+      `unklar`.
+- [ ] Die Vergabeart ist benannt und ihre Konsequenz gezogen.
 
 ## Beispiele
 
 > Stilneutral — der Ton kommt aus {{tonalitaet}}.
 
 **Beispiel 1 — Frist fast durch.** Abgabe in 36 Stunden, Bieterfragen-Frist
-bereits abgelaufen. → Erster Satz nennt beides. Analyse wird auf K.o. und
-Aufwand verkürzt, Empfehlung entsprechend.
+bereits abgelaufen. → Erster Satz nennt beides samt verbleibender Arbeitszeit.
+Analyse wird auf K.o. und Aufwand verkürzt, Empfehlung entsprechend. Die
+Bieterfragen-Liste entfällt mit Begründung — sie wäre nur noch Papier.
 
 **Beispiel 2 — hartes K.o.** Gefordert ist eine Zertifizierung, die {{rolle}}
 nicht hat, ohne Ersatzmöglichkeit im Text. → `nicht bieten`, Fundstelle

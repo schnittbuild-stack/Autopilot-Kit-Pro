@@ -25,7 +25,10 @@ Kalkulationsvorlage.
 
 1. **Wer** fragt an — Firma, Ansprechpartner, Rolle
 2. **Was** wird gebraucht — Leistung, Umfang, Menge
-3. **Wozu** — welches Problem der Kunde damit löst
+3. **Wozu** — woran der Kunde nach der Leistung erkennen will, dass sie
+   gewirkt hat. **Ein Symptom ist kein Ziel:** „die Kollegen können den Wert
+   nicht erklären" beschreibt den Schmerz, nicht das Ergebnis. Steht nur das
+   Symptom da, ist Fakt 3 leer und wird nachgefragt.
 4. **Bis wann** — Termin, Frist oder Zeitraum
 5. **Preisgrundlage** — aus {{preisgrundlage}} oder aus der Anfrage
 6. **Empfänger-Verhältnis** — Neukunde oder Bestandskunde
@@ -44,6 +47,16 @@ und die Preiszeile als `[PREIS PRÜFEN]` markiert (siehe Prozess Schritt 4).
    bleibt leer. Nichts sinngemäß ergänzen.
 2. **Lücken prüfen.** Leere Pflicht-Fakten → Rückfragen stellen und anhalten
    (siehe Eingabe). Sonst weiter.
+   **Vor jeder Frage: steht die Antwort schon in der Anfrage?** Gefragt wird
+   ausschließlich nach dem, was in Schritt 1 leer geblieben ist. Eine Frage
+   nach etwas, das im selben Absatz steht — Ort, Teilnehmerzahl, Raum,
+   Bestandsverhältnis —, kostet beim Kunden mehr Vertrauen als jede fehlende
+   Zahl. Vor dem Abschicken jede Frage gegen die Fundstellen aus Schritt 1
+   halten.
+   Die Rückfrage-Nachricht geht an {{rolle}}, nicht an den Kunden: Ton nach
+   {{tonalitaet}}, aber **ohne Kundenanrede und ohne {{signatur}}** — man
+   unterschreibt keine Nachricht an sich selbst. Auch keine Preisangabe: Preise
+   entstehen erst, wenn die Pflicht-Fakten stehen.
 3. **Leistung gliedern.** Den Auftrag in 3 bis 7 Positionen zerlegen. Jede
    Position hat genau drei Angaben: *Was passiert*, *in welchem Umfang*,
    *was der Kunde am Ende in der Hand hält*. Keine Position ohne Ergebnis —
@@ -148,6 +161,9 @@ Dazu die Checkliste für Prozess Schritt 9 — jeder Punkt einzeln mit ja/nein:
 - [ ] Summe nachgerechnet und stimmt.
 - [ ] Keine Superlative ohne Beleg („führend", „einzigartig", „beste").
 - [ ] Genau ein nächster Schritt — nicht drei Optionen.
+- [ ] Bei Rückfragen: **keine Frage nach etwas, das in der Anfrage steht**,
+      und nicht mehr Fragen als leere Pflicht-Fakten.
+- [ ] Bei Rückfragen: keine Preisangabe, keine Kundenanrede, keine Signatur.
 - [ ] Nichts aus {{verbote}} im Text.
 - [ ] Bei Standardanfragen: Block A passt auf eine Bildschirmseite.
 - [ ] Block B enthält jede Annahme, die in Schritt 1 nicht belegt war.

@@ -19,6 +19,11 @@ das Schließen vor, wenn die Notiz das hergibt.
    Er wird wörtlich zitiert. **Gibt es keinen, entsteht kein Schritt** — dann
    Rückfrage. Ein Schritt ohne Belegsatz ist Vertriebsfolklore, kein Ergebnis
    aus dieser Notiz.
+   **Einschätzungen sind keine Belegsätze.** „War nett", „wirkte interessiert",
+   „guter Draht", „lief gut" beschreiben die Stimmung von {{rolle}}, nicht das
+   Verhalten des Kunden. Steht in der Notiz nichts anderes, wird das
+   ausdrücklich gesagt — sonst hält der Nutzer seine eigene Einschätzung für
+   einen Befund und baut darauf eine Prognose.
 2. **Signal einstufen:** Fortschritt, Stillstand, Ende oder unklar. Diese
    Einstufung entscheidet über alles Weitere und wird mit ausgegeben, damit
    {{rolle}} sie widersprechen kann.
@@ -32,14 +37,27 @@ das Schließen vor, wenn die Notiz das hergibt.
    Opportunity im Trichter kostet Forecast-Genauigkeit und Nachfass-Zeit.
    Wer sie am Leben hält, weil ein Assistent immer einen Rettungsversuch
    findet, betrügt sich selbst.
+
+   **Ein Hinweis auf später ist ein eigener Vorgang.** Sagt der Kunde beim
+   Absagen „melden Sie sich 2028 wieder", gehört das nicht als Nebensatz in
+   die geschlossene Opportunity, sondern als **getrennte Wiedervorlage mit
+   eigenem Datum**. In einem geschlossenen Vorgang sucht später niemand — dort
+   abgelegt ist der Hinweis so gut wie gelöscht.
 4. **Nur ein Vorschlag.** Keine Auswahl aus drei Möglichkeiten — das schiebt
    die Entscheidung zurück, für die dieser Skill da ist. {{rolle}} kann
    widersprechen, das genügt.
-5. **Überprüfbar formulieren.** „Beziehung vertiefen", „Mehrwert liefern",
+5. **Ist der Ansprechpartner weg, läuft der Vorgang neu an.** Ein Angebot, das
+   an einen nicht mehr Zuständigen ging, ist beim neuen Gegenüber **nicht
+   angekommen** — auch wenn im CRM „versendet" steht. Der Schritt fragt deshalb
+   nicht nach dem Stand, sondern führt den Vorgang neu ein: wer anruft, worum
+   es geht, was vorliegt. Dass der bisherige Empfänger nicht mehr zuständig
+   ist, wird in der CRM-Zeile vermerkt, sonst wirkt die Historie später
+   belastbarer, als sie ist.
+6. **Überprüfbar formulieren.** „Beziehung vertiefen", „Mehrwert liefern",
    „am Ball bleiben" sind keine Schritte. Ein Schritt hat ein Verb, ein
    Objekt und ein Datum.
-6. **CRM-Zeile bauen.** Höchstens zwei Zeilen, direkt zum Einfügen.
-7. **Selbstprüfung.**
+7. **CRM-Zeile bauen.** Höchstens zwei Zeilen, direkt zum Einfügen.
+8. **Selbstprüfung.**
 
 ## Ausgabeformat
 
@@ -63,7 +81,7 @@ den Schritt entscheidbar macht.
 - **Ton:** {{tonalitaet}}
 - **Niemals:** {{verbote}}
 
-Checkliste für Schritt 7:
+Checkliste für Schritt 8:
 
 - [ ] Genau ein Ergebnis, keine Optionsliste.
 - [ ] Der Belegsatz steht **wörtlich** in der Notiz — nicht sinngemäß.
@@ -76,6 +94,12 @@ Checkliste für Schritt 7:
 - [ ] Die CRM-Zeile passt in zwei Zeilen und enthält keine Markierungen wie
       `[PREIS PRÜFEN]`.
 - [ ] Nichts aus {{verbote}}.
+- [ ] Stimmungsangaben („war nett", „wirkte interessiert") sind nicht als
+      Beleg verwendet und ausdrücklich als Einschätzung benannt.
+- [ ] Ein Hinweis auf einen künftigen Vorgang steht als eigene Wiedervorlage,
+      nicht als Nebensatz im geschlossenen Vorgang.
+- [ ] Beim Ansprechpartnerwechsel führt der Schritt den Vorgang neu ein und
+      setzt keine Kenntnis des Angebots voraus.
 
 ## Beispiele
 

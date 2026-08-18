@@ -34,6 +34,13 @@ belegen, kommen sie in die Unklar-Liste. Sie werden nicht geschätzt.
    Sitzung widerspricht.
 2. **Belegen.** Jede Zeile in Aufgaben und Entscheidungen trägt den Satz aus
    den Notizen, auf den sie sich stützt — verkürzt, aber wörtlich.
+   **Belegt heißt belegt, auch wenn es verkürzt notiert ist.** „15.8." ist ein
+   Datum, „Nortmann" ist ein Name, „Okt." ist ein Monat. Solche Kürzel werden
+   aufgelöst — das Jahr aus dem Zusammenhang — und als **belegt** geführt, nicht
+   in die Unklar-Liste geschoben. Die Regel „nie raten" schützt vor Erfindung,
+   nicht vor Lesen. Wer {{rolle}} nach etwas fragt, das sie oder er zwei Zeilen
+   vorher selbst aufgeschrieben hat, verbrennt genau das Vertrauen, das die
+   Regel aufbauen soll.
 3. **Seiten trennen.** Was {{rolle}} tun muss und was der Kunde zugesagt hat,
    stehen getrennt. Vermischt kann niemand daraus arbeiten.
 4. **Widersprüche stehen lassen.** Nennen die Notizen zwei verschiedene
@@ -87,6 +94,8 @@ Checkliste für Schritt 7:
 - [ ] `Nächster Termin` steht auf „nicht vereinbart", wenn keiner vereinbart
       wurde — nicht auf einem Vorschlag.
 - [ ] Nichts aus {{verbote}}.
+- [ ] Nichts steht in `Unklar`, was in den Notizen belegt ist — verkürzte
+      Datums-, Monats- und Namensangaben zählen als belegt.
 
 ## Beispiele
 

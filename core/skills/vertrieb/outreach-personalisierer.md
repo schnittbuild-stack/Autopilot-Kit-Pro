@@ -26,7 +26,10 @@ gemeinsamer Termin, Ausschreibung.
 > `account-recherche → outreach-personalisierer` ist ein Kandidat für V2.
 
 **Fehlt der Anknüpfungspunkt**, wird kein Text erzeugt. Stattdessen: benennen,
-welche drei Sorten Information reichen würden, und wo sie üblicherweise stehen.
+welche drei Sorten Information reichen würden, und wo sie üblicherweise stehen
+— **und ausdrücklich anbieten, die Suche über `account-recherche` laufen zu
+lassen.** Sonst bekommt {{rolle}} nur die Arbeit zurück, die sie oder er
+gerade abgeben wollte.
 
 ## Prozess
 
@@ -44,12 +47,15 @@ welche drei Sorten Information reichen würden, und wo sie üblicherweise stehen
    hat schon verloren.
 5. **Ein Ziel setzen.** Das Ziel ist das erste Gespräch, nicht der Abschluss.
    Genau eine Frage, mit ja/nein oder einem Terminvorschlag beantwortbar.
-6. **Rechtlicher Hinweis, einmalig.** Bei E-Mail-Erstansprache ohne
-   vorherigen Kontakt: einmal darauf hinweisen, dass Kaltakquise per Mail in
+6. **Rechtlicher Hinweis: genau ein Satz.** Bei E-Mail-Erstansprache ohne
+   vorherigen Kontakt einmal darauf hinweisen, dass Kaltakquise per Mail in
    Deutschland auch im B2B rechtlich heikel ist (Einwilligung, UWG) und
-   Telefon, Post oder ein soziales Netzwerk andere Regeln haben. Ein Satz,
-   keine Rechtsberatung, keine Wiederholung bei jedem weiteren Text, keine
-   Weigerung.
+   Telefon, Post oder ein soziales Netzwerk andere Regeln haben.
+   **Ein Satz heißt ein Satz.** Kein zweiter zur Erläuterung und vor allem
+   **kein Haftungszusatz** („das ist keine Rechtsberatung", „ohne Gewähr",
+   „im Zweifel einen Anwalt fragen"). Der Zusatz macht aus einem nützlichen
+   Hinweis einen Disclaimer, und Disclaimer überliest die Zielgruppe. Keine
+   Wiederholung bei jedem weiteren Text, keine Weigerung.
 7. **Selbstprüfung** gegen die Checkliste.
 
 ## Ausgabeformat
@@ -71,8 +77,8 @@ Signatur:     {{signatur}}
 ```
 Anknüpfungspunkt: <welcher, Quelle>
 Austauschtest:    bestanden — <warum der Satz nur auf diesen Empfänger passt>
-Weggelassen:      <was nicht belegt war und deshalb draußen blieb> | —
-Kanal-Hinweis:    <nur beim ersten Text zu diesem Kanal> | —
+Weggelassen:      <was nicht belegt war und warum — höchstens 2 Sätze> | —
+Kanal-Hinweis:    <genau 1 Satz, nur beim ersten Text zu diesem Kanal> | —
 ```
 
 ## Qualitätsregeln
@@ -95,6 +101,11 @@ Checkliste für Schritt 7:
 - [ ] Kein Schmeicheln als Ersatz für einen Anlass („Ihr beeindruckender
       Auftritt").
 - [ ] Nichts aus {{verbote}}.
+- [ ] `Weggelassen` ist höchstens zwei Sätze lang.
+- [ ] Der Kanal-Hinweis ist **genau ein Satz** und enthält keinen
+      Haftungszusatz.
+- [ ] Fehlt der Anknüpfungspunkt, wurde `account-recherche` ausdrücklich
+      angeboten.
 
 ## Beispiele
 

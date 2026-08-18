@@ -37,19 +37,40 @@ was offen ist. Nicht aus dem Gedächtnis rekonstruieren.
    - **Stufe 3** (nach Ablauf von `Gültig bis` oder ca. 4 Wochen): das
      Abschluss-Nachfassen. Es gibt dem Kunden ausdrücklich die Möglichkeit,
      „nein" oder „später" zu sagen, ohne Gesicht zu verlieren.
-   - **Nach Stufe 3: Schluss.** Kein vierter Versuch. Stattdessen ein Hinweis
-     an {{rolle}}, dass weiteres Nachfassen dem Verhältnis mehr schadet als
-     der Vorgang wert ist, mit Vorschlag für einen Anlass in einigen Monaten.
+   - **Nach Stufe 3: Schluss — als Empfehlung, nicht als Weigerung.** Von sich
+     aus kein vierter Versuch. Stattdessen ein Hinweis an {{rolle}}, dass
+     weiteres Nachfassen dem Verhältnis mehr schadet als der Vorgang wert ist,
+     mit Vorschlag für einen Anlass in einigen Monaten.
+     **Besteht {{rolle}} danach ausdrücklich darauf, wird der Text
+     geschrieben.** Die Empfehlung bleibt als ein Satz stehen, die Entscheidung
+     gehört dem, der den Kunden hat. Ein Assistent, der die geschäftliche
+     Entscheidung seines Nutzers gegen dessen ausdrückliche Ansage bei sich
+     behält, ist kein Assistent — und wird umgangen statt benutzt.
+     Das gilt für die **Anzahl** der Nachfassungen. Es gilt nicht für
+     {{verbote}} und nicht für das Feld `Abgelehnt`: die bleiben auch auf
+     ausdrückliche Ansage gesperrt, weil dort nicht Häufigkeit, sondern Inhalt
+     verhandelt würde.
 4. **Anlass wählen** — feste Rangfolge, der erste verfügbare gewinnt:
    1. neue Entwicklung, die der Nutzer geliefert hat
    2. ein offener Punkt aus `Offen` („die Frage zu den Reisekosten")
    3. das Datum aus `Gültig bis`
    4. der Kürzungsvorschlag aus `Budget-Konflikt`
-   5. der erwartete Einwand aus `Einwand`, sachlich aufgegriffen
+   5. der erwartete Einwand aus `Einwand`, sachlich aufgegriffen — **aber nur,
+      wenn er inhaltlich nicht das ist, was unter `Abgelehnt` steht.** Ist der
+      Einwand genau die verweigerte Forderung (Feld `Einwand`: „fehlende
+      Garantie", Feld `Abgelehnt`: „Erfolgsgarantie"), fällt Rang 5 weg. Sonst
+      führt die eigene Rangfolge geradewegs in das Verbot, das Regel 2 schützt.
 
    Ist keiner davon verfügbar: **nachfragen**, welcher Anlass passt. Nicht
    „ich wollte mich noch einmal in Erinnerung bringen" schreiben — das ist
    die Formulierung, die Nachfassen in Verruf gebracht hat.
+
+   **Abwarten gehört immer zu den vorgelegten Möglichkeiten.** Ohne Anlass ist
+   Nichtstun häufig die beste Option, und bei einem Angebot, das erst wenige
+   Tage alt ist oder dessen Gültigkeit noch weit läuft, wird das ausdrücklich
+   gesagt. Ein Skill, der nur Handlungsoptionen anbietet, erzeugt Druck, den
+   die Lage nicht hergibt — und drängt {{rolle}} in genau das Nachfassen ohne
+   Grund, das dieser Skill verhindern soll.
 5. **Einwand adressieren, Verbotenes nicht.** Was in `Abgelehnt` steht, wird
    nicht erwähnt, nicht abgeschwächt, nicht als verhandelbar angedeutet. Der
    Einwand wird stattdessen über einen erlaubten Hebel bearbeitet.
@@ -106,6 +127,12 @@ Checkliste für Prozess Schritt 7 — jeder Punkt einzeln mit ja/nein:
 - [ ] Das Datum der nächsten Stufe ist als **Vorschlag** ausgewiesen, nicht
       als gesetzt.
 - [ ] Bei Stufe 3: Der Kunde bekommt einen gesichtswahrenden Ausweg.
+- [ ] Lief die Anlass-Rangfolge leer, steht **Abwarten** als eine der
+      vorgelegten Möglichkeiten da.
+- [ ] Rang 5 wurde nicht benutzt, wenn der Einwand inhaltlich in `Abgelehnt`
+      steht.
+- [ ] Nach Stufe 3 wurde **empfohlen, nicht verweigert** — auf ausdrücklichen
+      Wunsch entsteht der Text, mit der Empfehlung daneben.
 
 ## Beispiele
 
@@ -122,8 +149,9 @@ dann Stopp.
 
 **Beispiel 3 — kein Anlass übrig.** `Offen: —`, `Budget-Konflikt: —`,
 Gültigkeit weit weg, keine neue Entwicklung. → Kein Text. Rückfrage an
-{{rolle}}: Gibt es etwas Neues, oder soll das Gültigkeitsdatum vorgezogen
-werden? Keine erfundene Dringlichkeit als Ersatz.
+{{rolle}} mit drei Möglichkeiten: Gibt es etwas Neues? Soll das
+Gültigkeitsdatum vorgezogen werden? Oder — bei einem frischen Angebot meist
+das Richtige — **noch abwarten**. Keine erfundene Dringlichkeit als Ersatz.
 
 **Beispiel 4 — Stufe 3 erreicht, keine Reaktion.** → Abschluss-Nachfassen
 mit ausdrücklichem Ausweg („Wenn es aktuell nicht passt, sagen Sie gern
