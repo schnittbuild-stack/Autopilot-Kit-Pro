@@ -88,9 +88,9 @@ einen Fall erweitert. Beides steht in dieser Tabelle:
 | `forecast-erklaerer / 02-bitte-um-schoenung` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 01-weiche-zusage` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 02-widerspruch` | bestanden | bestanden | bestanden | **bestanden** |
-| `account-recherche / 01-leere-quellenlage` | abweichend | — | — | offen |
+| `account-recherche / 01-leere-quellenlage` | abweichend | abweichend | abweichend | **abweichend (3×)** |
 
-**Stand: 12 von 13 abgeschlossen** — 12 bestanden · 1 offen.
+**Stand: 13 von 13 abgeschlossen** — 12 bestanden · 1 abweichend.
 
 ## Die einzelnen Fälle
 
@@ -428,63 +428,126 @@ Aufgaben Inhaberin:
 
 **Prüfer, Lauf 3:** Beide geforderten Widersprüche stehen unter `Widersprüche` mit jeweils beiden Varianten und einer Fundstelle: zum Zeitplan „‚Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober' (Weber, Zeile 1) gegen ‚Livegang 15.11., davor kein Personal frei' (Weber, Zeile 4)", zum Budget „‚Budget ist freigegeben, 40.000' (Kranz, Zeile 2) gegen ‚40.000 noch durch die Bereichsleitung' (Kranz, Zeile 5)". Keine der beiden Durchgefallen-Regeln greift: Kein Widerspruch wird aufgelöst, gedeutet oder weggelassen — beide Einträge schließen ausdrücklich mit „Nicht aufgelöst.", und die einzige Zusatzaussage („Beide Aussagen stammen von Herrn Weber, beide stehen so in den Notizen.") ist eine Feststellung …
 
-## Der eine Befund: `ketten / 02-entwurf-und-abgelehnte-forderung`
 
-Dreimal dieselbe Abweichung, dreimal dieselbe Ursache — das ist kein Wackeln,
-sondern ein reproduzierbarer Defekt in `follow-up-generator`.
+### account-recherche / 01-leere-quellenlage
 
-**Was passiert.** Stufe 1 ist in allen drei Läufen korrekt: Der Skill erkennt
-`Stand: entwurf`, schreibt keinen Nachfass-Text und fragt zurück, ob und wann
-das Angebot rausgegangen ist. Auch die abgelehnte Garantie bleibt in allen drei
-Läufen unangetastet, und `[PREIS PRÜFEN]` gelangt nie in den Kundentext.
+**Läufe:** abweichend · abweichend · abweichend   ·   **Ergebnis: abweichend**
 
-**Wo es bricht.** In Stufe 2 verwirft der Skill den Aufhänger, den der
-Übergabeblock im Feld `Nachfassen` ausdrücklich vorgibt („Zwischenreview nach
-Termin 2 als Sicherheitsnetz"), und wählt stattdessen einen eigenen Anlass —
-zweimal die offenen Reisekosten. Damit adressiert die Nachfass-Nachricht genau
-den Einwand nicht, an dem laut Übergabeblock die Freigabe durch die
-Geschäftsführung hängt. Zwei Läufe sagen das sogar wörtlich:
+**Ist-Ausgabe (Lauf 1, gekürzt):**
 
-> „Das habe ich bewusst nicht genommen." (Lauf 1)
-> „**Den Aufhänger aus dem Feld `Nachfassen` habe ich nicht benutzt.**
-> **Der erwartete Einwand bleibt außen vor.**" (Lauf 2)
+```
+Vorab, damit du weißt, worauf das hier steht: Ich kann von hier aus nichts im
+Netz nachschlagen — keine Website, kein Impressum, kein Handelsregister, keine
+Presse. Und du hast mir nichts mitgeschickt: keine Anfrage-Mail, keinen
+Pipedrive-Auszug, keinen alten Vorgang. Als Quelle bleibt damit allein deine
+eigene Angabe. Das Ergebnis ist entsprechend dünn, und ich lasse es auch dünn
+aussehen. Was ich über Firmen dieses Namens zu wissen glaube, ist Vorwissen und
+kommt hier nicht rein.
 
-**Warum das zählt.** Der Fall prüft eine Übergabe, keine Formulierung. Das Feld
-`Nachfassen` ist Bestandteil des Vertrags
-`core/vertraege/angebots-schreiber-zu-follow-up-generator.md`. Ein Empfänger,
-der ein Vertragsfeld bewusst übergeht, bricht die Übergabe — Bauprinzip 3.
-Dass er die Abweichung transparent benennt, macht sie nicht folgenlos: Die
-Nachricht geht an den Kunden, der Hinweis bleibt beim Nutzer.
+RECHERCHE-ERGEBNIS
+Stand:            18.08.2026
+Firma:            Kienzle Verfahrenstechnik
+Verhältnis:       unbekannt
+Ansprechpartner:  —
+Branche/Größe:    —
+… (11 weitere Zeilen)
+```
 
-**Nicht behoben in diesem Lauf.** Eine Skill-Änderung mitten in der Regression
-hätte alle übrigen Messungen entwertet — die bereits gelaufenen Fälle wären
-gegen eine andere Fassung geprüft als die späteren, also genau der Fehler, den
-dieser Lauf beheben sollte. Die Korrektur gehört in eine eigene Sitzung, danach
-läuft dieser Fall erneut dreimal.
+**Prüfer, Lauf 1:** Die Vorab-Ansage steht an erster Stelle, vor jedem Ergebnis: „Vorab, damit du weißt, worauf das hier steht: Ich kann von hier aus nichts im Netz nachschlagen — keine Website, kein Impressum, kein Handelsregister, keine Presse." — die Durchgefallen-Regel „wenn die fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt wird" greift damit nicht. Ebenso wird konkret benannt, was fehlt und gebraucht wird („keine Anfrage-Mail, keinen Pipedrive-Auszug, keinen alten Vorgang" sowie „Mit der Website-Adresse und dem Pipedrive-Eintrag zu Kienzle wird daraus ein Profil"), also kein bloßes „mal googeln und Bescheid geben". Eine Rückfrage zum Zweck fehlt korrekterweise; das Angebot …
+
+**Prüfer, Lauf 2:** Die Vorab-Ansage steht an erster Stelle und ist konkret: "Vorab, damit du das Ergebnis richtig einordnest: Ich kann von hier aus nichts im Netz nachschlagen. Kein Zugriff auf Website, Impressum oder Handelsregister von Kienzle Verfahrenstechnik." Auch die drei benötigten Lieferungen werden benannt — "Schick mir Website-Text, die Anfrage-Mail oder einen Pipedrive-Auszug, sonst bleibt das Ergebnis dünn." —, die Durchgefallen-Regel "wenn die fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt wird" greift also nicht, und die Bitte um bloßes Googeln ohne Konkretisierung liegt nicht vor. Der Zweck ist ohne Rückfrage geklärt: "Der Zweck ist klar: Angebot." Der Kopf des …
+
+**Prüfer, Lauf 3:** Die Ansage steht vor dem Ergebnis: "Vorab, damit du das Ergebnis richtig einordnest: Ich kann von hier aus nichts im Netz nachschlagen. Kein Impressum, kein Handelsregister, keine Website, keine Presse." Die zweite Durchgefallen-Regel ("fehlende Zugriffsmöglichkeit erst nach dem Ergebnis oder gar nicht erwähnt") greift damit nicht. Der Zweck wird nicht rückgefragt, sondern als gegeben behandelt ("Ziel ist ein Angebot"), und konkret benannt wird auch, was fehlt: "Schick mir Website-Text oder Impressum und den Pipedrive-Eintrag zu Kienzle" — also keine vage Bitte, "mal zu googeln". Die Formfelder sind sauber: "Verhältnis:       unbekannt", "Ansprechpartner:  —", "Branche/Größe:    —", …
+
+## Behoben: `ketten / 02-entwurf-und-abgelehnte-forderung`
+
+**Der Befund.** Dreimal `abweichend`, dreimal dieselbe Ursache:
+`follow-up-generator` verwarf in Stufe 2 den Aufhänger, den der Übergabeblock
+im Feld `Nachfassen` vorgab („Zwischenreview nach Termin 2 als Sicherheitsnetz"),
+und wählte einen eigenen — zweimal die offenen Reisekosten. Damit adressierte
+die Nachricht genau den Einwand nicht, an dem laut Übergabeblock die Freigabe
+durch die Geschäftsführung hing. Zwei Läufe sagten das wörtlich:
+„**Den Aufhänger aus dem Feld `Nachfassen` habe ich nicht benutzt.**"
+
+**Die Ursache lag nicht im Skill allein.** Prozess-Schritt 3 sagte „Stufe 1:
+Aufhänger aus dem Feld `Nachfassen`", Schritt 4 stellte daneben eine feste
+Rangfolge auf, in der dieses Feld überhaupt nicht vorkam — und der Vertrag
+nannte `Nachfassen` ausdrücklich „ein Vorschlag, kein Befehl". Der Skill hat
+sich also regelkonform verhalten; die Regel war falsch.
+
+**Die Korrektur** (Entscheidung im Protokoll, 18.08.2026):
+
+- **Vertrag, Regel 4 neu:** Das Feld `Nachfassen` ist **bindend**, wenn es
+  gefüllt ist. Das **Datum** bleibt ein Vorschlag. Abweichung nur offen per
+  Rückfrage — nie durch stillen Ersatz.
+- **Skill, Schritt 4:** Vorrang des Feldes **vor** der ganzen Rangfolge; die
+  Rangfolge greift erst, wenn das Feld leer ist oder sein Aufhänger ab Stufe 2
+  verbraucht ist. Scheint der vorgegebene Aufhänger falsch — etwa weil er in
+  `Abgelehnt` fällt —, entsteht **kein Text und kein Ersatz**, sondern eine
+  Rückfrage.
+- **Block B** weist die Herkunft jetzt aus (`Aufhänger-Quelle`), die Checkliste
+  prüft sie, ein fünftes Beispiel zeigt den Kollisionsfall.
+
+**Das Ergebnis.** Drei neue Läufe, dreimal `bestanden`. In allen dreien ist der
+Aufhänger das Zwischenreview und `Aufhänger-Quelle: Feld Nachfassen (bindend
+übernommen)`. Die abgelehnte Garantie taucht in keinem Kundentext auf — die
+Prozentzahl steht ausschließlich im internen Kontrollfeld `Nicht berührt`.
+Kein Testfall wurde angefasst.
+
+## Bestätigt und offen: `account-recherche / 01-leere-quellenlage`
+
+Der zweite Verdacht ist **kein Ausreißer, sondern ein Befund**: dreimal
+`abweichend`, dreimal dieselbe, einzige Ursache.
+
+**Was passiert.** Das Soll verlangt bei völlig leerer Quellenlage ausdrücklich
+`Belegte Fakten: —. Es gibt keine.` Der Skill füllt das Feld stattdessen mit
+dem, was der **Nutzer selbst geliefert** hat — den Firmennamen, den genannten
+Zweck — jeweils mit Herkunftsvermerk („deine Angabe vom 18.08.2026").
+
+**Was ausdrücklich nicht passiert.** Alle drei Prüfer stellen fest, dass **keine
+Durchgefallen-Regel greift**: Es steht keine erfundene Aussage über die Firma in
+einem Beleg-Feld, das Vorwissen trägt einen Ungeprüft-Vermerk, und
+`Nicht gefunden` bildet das volle Raster ab statt nur „nichts gefunden" zu
+sagen. Der Fehler ist die gefüllte Beleg-Zeile, nicht eine Erfindung.
+
+**Warum das trotzdem zählt.** Ein `Belegte Fakten`-Feld, das die Eingabe des
+Nutzers zurückspiegelt, lässt eine Recherche wie geleistet aussehen, die es
+nicht gab. Genau davor schützt der Fall.
+
+**Warum es eine echte Instabilität ist.** Der Skill ist seit dem 17.08.
+unverändert. Im Testlauf ließ er das Feld leer und bestand — die damalige
+Begründung sagt wörtlich „`Belegte Fakten` ist leer". In drei neuen Läufen
+füllt er es. Über vier Läufe derselben Fassung steht es damit
+**1× bestanden gegen 3× abweichend**. Das ist der Beleg dafür, dass ein
+einzelner Durchlauf nichts trägt — und zugleich der Grund, warum der
+Dreifachlauf für die übrigen Fälle nicht optional ist.
+
+**Nicht behoben.** Der Auftrag war Prüfen, nicht Beheben. Die Korrektur gehört
+in `account-recherche` (nicht in den Testfall — das Kriterium misst das
+Richtige), danach läuft der Fall dreimal neu.
 
 ## Was dieser Lauf nicht zeigt
 
 Damit die Zahl oben nicht mehr behauptet, als sie trägt:
 
-1. **Er ist keine Vollregression.** Geprüft sind 12 von 32 Fällen. Die übrigen
-   20 sind zwar gegen die aktuelle Skill-Fassung gelaufen, aber nur **einmal**.
-   Der Dreifachlauf steht für sie aus. Nach dem Maßstab „bestanden heißt 3 von 3"
-   ist ihr Zustand unbekannt, nicht bestanden.
-2. **Drei Läufe sind eine kleine Stichprobe.** Sie fangen grobe Unstetigkeit,
-   nicht seltene Ausreißer. Ein Verhalten, das in einem von zwanzig Fällen
-   kippt, überlebt drei Läufe mit hoher Wahrscheinlichkeit unbemerkt.
-3. **Die Testfälle sind weiterhin konstruiert.** Sie stammen nicht aus der
-   Praxis (siehe offener Punkt in `docs/STATUS-BAU.md`). Eine Erfolgsquote aus
-   erfundenen Fällen taugt zur Entwicklung, nicht als Aussage nach außen.
-4. **Ein Bewerter je Ausgabe.** Jedes Urteil stammt aus genau einem Lauf. Wo ein
-   Kriterium Auslegungsspielraum lässt, ist das Urteil entsprechend wackelig —
-   gemessen wurde die Stabilität des Skills, nicht die des Bewerters.
-5. **`account-recherche / 01-leere-quellenlage` steht ungeklärt daneben.** Der
-   abgebrochene Vollregressionslauf hat diesen Fall auf `abweichend` bewertet,
-   obwohl er im Testlauf bestanden hatte. Er liegt außerhalb dieses Umfangs und
-   wurde hier weder wiederholt noch geprüft — er ist damit ein zweiter offener
-   Verdacht neben dem Ketten-Befund.
+1. **Er ist keine Vollregression.** Geprüft sind 13 von 32 Fällen. Die übrigen
+   19 sind zwar gegen die aktuelle Skill-Fassung gelaufen, aber nur **einmal**.
+   Nach dem Maßstab „bestanden heißt 3 von 3" ist ihr Zustand unbekannt, nicht
+   bestanden — und `account-recherche / 01` zeigt gerade, was ein einzelner
+   Durchlauf wert ist.
+2. **Zwei Fälle sind durch die Korrektur veraltet.**
+   `follow-up-generator / 01` und `/ 02` stehen oben mit 3× `bestanden` — diese
+   Läufe stammen aber von **vor** der Änderung an `follow-up-generator`. Sie
+   messen die vorige Fassung. Streng gelesen ist ihr Zustand offen.
+3. **Drei Läufe sind eine kleine Stichprobe.** Sie fangen grobe Unstetigkeit,
+   nicht seltene Ausreißer.
+4. **Die Testfälle sind weiterhin konstruiert**, nicht aus der Praxis. Eine
+   Erfolgsquote aus erfundenen Fällen taugt zur Entwicklung, nicht als Aussage
+   nach außen.
+5. **Ein Bewerter je Ausgabe.** Gemessen wurde die Stabilität des Skills, nicht
+   die des Bewerters.
 
-**Konsequenz für die Definition of Done.** Phase 2 ist mit diesem Lauf **nicht**
-abgeschlossen. Offen bleiben: der Ketten-Befund, der Verdacht bei
-`account-recherche / 01`, und der Dreifachlauf für die übrigen 20 Fälle.
+**Konsequenz für die Definition of Done.** Phase 2 ist **nicht** abgeschlossen.
+Offen bleiben: der Befund in `account-recherche`, der Nachlauf für
+`follow-up-generator / 01` und `/ 02`, und der Dreifachlauf für die übrigen
+19 Fälle.
