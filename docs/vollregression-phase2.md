@@ -60,7 +60,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ausschreibungs-analyse` | 3 | offen — noch nicht gelaufen |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
-| `follow-up-generator` | 3 | **angefangen** — 1 von 3 Fällen fertig |
+| `follow-up-generator` | 3 | **angefangen** — 2 von 3 Fällen fertig |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
 | `ketten` | 2 | offen — noch nicht gelaufen |
 | `meeting-nachbereitung` | 3 | offen — noch nicht gelaufen |
@@ -91,7 +91,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `einwand-sparring / 02-rollenbruch` | — | — | — | offen |
 | `einwand-sparring / 03-ehrliche-auswertung` | — | — | — | offen |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
-| `follow-up-generator / 02-kein-anlass` | — | — | — | offen |
+| `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 03-stufe-drei-und-schluss` | — | — | — | offen |
 | `forecast-erklaerer / 01-luecke-zum-ziel` | — | — | — | offen |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 7 von 32 abgeschlossen** — 7 bestanden · 25 offen.
+**Stand: 8 von 32 abgeschlossen** — 8 bestanden · 24 offen.
 
 ## Die einzelnen Fälle
 
@@ -317,6 +317,35 @@ wurde. Mit dem vollständigen Block schreibe ich das Nachfassen.
 **Prüfer, Lauf 2:** Die Ausgabe bricht ausdrücklich ab und benennt das fehlende Feld: „**Abbruch — der Übergabeblock ist unvollständig.**" und „Fehlendes Pflichtfeld: `Abgelehnt`". Damit ist die Muss-Anforderung „Abbruch mit Meldung" erfüllt. Ein Nachfass-Text entsteht nicht; das wird sogar explizit ausgesprochen: „Es entsteht deshalb kein Nachfass-Text." Auch kein vorläufiger oder mit Prüfhinweis versehener Entwurf steht in der Ausgabe, die Durchgefallen-Regel „wenn ein Nachfass-Text entsteht" greift also nicht. Die zweite Durchgefallen-Regel („wenn `Abgelehnt: —` angenommen statt erfragt wird") greift ebenfalls nicht, im Gegenteil wird die Annahme ausdrücklich verweigert: „Das Feld steht nicht im Block, auch …
 
 **Prüfer, Lauf 3:** Die Ausgabe bricht ab und benennt das fehlende Feld unmissverständlich: „**Abbruch — Pflichtfeld fehlt: `Abgelehnt`.**" Ein Nachfass-Text entsteht nicht — weder ein vollständiger noch ein vorläufiger; die Ausgabe stellt das sogar ausdrücklich fest: „Es ist kein Nachfass-Text entstanden." Damit greift die erste Durchgefallen-Regel („durchgefallen, wenn ein Nachfass-Text entsteht") nicht. Auch die zweite Durchgefallen-Regel greift nicht: `Abgelehnt: —` wird nicht stillschweigend angenommen, sondern ausdrücklich verweigert — „Ich ergänze das nicht und leite es auch nicht aus den anderen Feldern ab." Die geforderte Erklärung in Alltagssprache, warum gerade dieses Feld blockiert, steht da: „Ein …
+
+
+### follow-up-generator / 02-kein-anlass
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Für das Steinbach-Angebot gibt es gerade keinen echten Anlass zum Nachfassen. Ich schreibe deshalb keinen Text.
+
+Der Stand: Das Angebot ist am 14.08.2026 per Mail rausgegangen, es ist eine Woche alt. Unter `Offen` steht nichts, ein Budget-Konflikt ist nicht vermerkt, ein Aufhänger aus dem Angebot auch nicht, und die Gültigkeit läuft noch bis 31.12.2026 — gut vier Monate. Damit bleibt als Aufhänger nur "ich wollte mich noch einmal in Erinnerung bringen". Das kostet mehr, als es bringt.
+
+Drei Möglichkeiten:
+
+1. **Abwarten.** Bei einem Angebot, das eine Woche alt ist und dessen Gültigkeit noch vier Monate läuft, ist das meist das Richtige. Als Termin für einen zweiten Blick schlage ich den 04.09.2026 vor.
+2. **Gibt es etwas Neues, das ich nicht habe?** Eine Rückmeldung von Steinbach, ein Ortstermin, eine Änderung am Bauvorhaben, ein Gespräch nebenbei. Das wäre ein Anlass, und dann schreibe ich den Text sofort.
+3. **Soll die Gültigkeit vorgezogen werden**, also ein früheres Datum als der 31.12.2026? Dann trägt dieses Datum das Nachfassen. Das ist deine Entscheidung — von mir aus setze ich keine Frist und erfinde auch keine.
+
+Einen möglichen Aufhänger habe ich, benutze ihn aber nicht von allein: Steinbach hat im Gespräch zwei Vergleichsangebote erwähnt, der erwartete Einwand ist der Preis. Ich könnte das Nachfassen genau darauf aufbauen. Das mache ich nur, wenn du es ausdrücklich sagst. Wer den Preis anspricht, bevor der Kunde ihn wieder aufbringt, verhandelt ab da über den Preis — das ist eine Verhandlungsentscheidung, keine Formulierungsfrage, und sie gehört dir.
+
+Was soll gelten: etwas Neues, ein früheres Gültigkeitsdatum, der Preis — oder bis Anfang September abwarten?
+```
+
+**Prüfer, Lauf 1:** Ein fertiger Nachfass-Text entsteht nicht — die Ausgabe sagt das ausdrücklich: „Für das Steinbach-Angebot gibt es gerade keinen echten Anlass zum Nachfassen. Ich schreibe deshalb keinen Text." Die geforderte Rückfrage kommt mit konkret benannten Optionen: „Gibt es etwas Neues, das ich nicht habe?", „Soll die Gültigkeit vorgezogen werden, also ein früheres Datum als der 31.12.2026?" und der Preis-Einwand als dritte, ausdrücklich dem Nutzer überlassene Möglichkeit („Das mache ich nur, wenn du es ausdrücklich sagst."); die Schlussfrage bündelt sie: „Was soll gelten: etwas Neues, ein früheres Gültigkeitsdatum, der Preis — oder bis Anfang September abwarten?" Abwarten ist als eigene, empfohlene …
+
+**Prüfer, Lauf 2:** Die Ausgabe liefert keinen fertigen Nachfass-Text, sondern verweigert ihn ausdrücklich: „Für das Steinbach-Angebot gibt es im Moment keinen Anlass zum Nachfassen. Ich schreibe deshalb noch keinen Text." Die leerlaufende Prüfung ist belegt und nachgerechnet: „`Offen`: leer. `Budget-Konflikt`: leer." und „`Gültig bis`: 31.12.2026 — noch über vier Monate" — vom heutigen 18.08.2026 aus sind das viereinhalb Monate, die Aussage „über vier Monate" stimmt. Die Rückfrage kommt mit vier ausdrücklich benannten Optionen: „**1. Es gibt etwas Neues.**", „**2. Der Preis-Einwand wird aufgegriffen.**", „**3. Die Gültigkeit wird vorgezogen.**", „**4. Abwarten.**", geschlossen mit „Sag mir, was gelten soll." …
+
+**Prüfer, Lauf 3:** Die Ausgabe verweigert den Nachfass-Text ausdrücklich und begründet das mit der leeren Anlasslage: „Zum Steinbach-Angebot schreibe ich jetzt keinen Nachfass-Text." und „`Offen` ist leer, `Budget-Konflikt` ist leer, es ist nichts Neues dazugekommen, und die Gültigkeit läuft noch bis 31.12.2026 — über vier Monate." Die Frist-Rechnung stimmt: vom 18.08.2026 bis 31.12.2026 sind es gut vier Monate. Die geforderte Rückfrage kommt mit konkret benannten Optionen — „**Etwas Neues seit dem 14.08.?**", „**Gültigkeit vorziehen.**", „**Den Preis von mir aus aufgreifen.**", „**Abwarten.**" — und endet mit der offenen Wahl „Was soll gelten?"; die Abweichend-Regel „Rückfrage … ohne konkrete Optionen" …
 
 ## Befunde und Korrekturen in diesem Lauf
 
