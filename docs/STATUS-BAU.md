@@ -23,9 +23,12 @@
         `follow-up-generator`-Fälle nachgezogen — **13 von 13 bestanden**
   - [x] Bauregel-Gegenprobe über alle zehn Skills: 36 Funde, 30 Teilfunde,
         alle verankert (`docs/gegenprobe-bauregel.md`)
-  - [ ] **Definition of Done NICHT erreicht** — die Gegenprobe hat alle zehn
-        Skills angefasst, damit sind alle 32 Fälle gegen eine vorige Fassung
-        gemessen. Vollständiger Dreifachlauf steht aus, siehe unten
+  - [ ] **Vollregression läuft, portioniert** (`docs/vollregression-phase2.md`)
+        — **11 von 32 Fällen abgeschlossen, alle bestanden**, je dreimal.
+        Vier Skills durch: `angebots-schreiber`, `account-recherche`,
+        `follow-up-generator`, `ketten`. **Zwei Befunde gefunden und behoben**,
+        beide nachgewiesen. Sieben Skills stehen aus, siehe unten.
+  - [ ] **Definition of Done noch nicht erreicht** — 21 Fälle offen
 - [ ] Phase 3 — Installer fertigstellen
   - [ ] **Sitzungswechsel unsichtbar** — neue Pflichtanforderung, siehe unten
 - [ ] Phase 4 — Watchdog & Ketten-Tests
@@ -75,12 +78,14 @@ Hauptkette läuft einmal Ende-zu-Ende durch."
       vs. „1–2 Sätze"; `einwand-sparring`: Checklistenpunkt verbot die vom
       Testfall verlangte Klärungszeile). Alles behoben und verankert,
       Einzelheiten in `docs/gegenprobe-bauregel.md`.
-- [ ] **Vollständiger Dreifachlauf über alle 32 Fälle steht aus — und ist
-      jetzt dringender als vorher.** Die Gegenprobe hat **alle zehn Skills**
-      geändert. Damit sind sämtliche 32 Testfälle gegen eine vorige Fassung
-      gemessen, auch die 13 gerade bestandenen. Die Gegenprobe war eine
-      Struktur-, keine Verhaltensprüfung: Sie belegt, dass die Regeln jetzt
-      dort stehen, wo sie halten — nicht, dass die Skills sich daran halten.
+- [ ] **Vollständiger Dreifachlauf über alle 32 Fälle — begonnen, 11 erledigt.**
+      Die Gegenprobe hat **alle zehn Skills** geändert; damit waren sämtliche 32
+      Testfälle gegen eine vorige Fassung gemessen. Sie war eine Struktur-,
+      keine Verhaltensprüfung: Sie belegt, dass die Regeln dort stehen, wo sie
+      halten — nicht, dass die Skills sich daran halten. **Der laufende
+      Dreifachlauf hat genau das bestätigt: zwei Befunde, beide von der
+      Gegenprobe selbst verursacht** (siehe unten). Stand und offene Skills:
+      `docs/vollregression-phase2.md`.
 
 Die vollständige kritische Bewertung — wo die Fälle zu schwach sind, was sie
 nicht prüfen — steht in `docs/testlauf-phase2.md` unter „Wie belastbar ist das".
@@ -155,14 +160,57 @@ tippt „weiter". Klappt das nicht, ist Phase 3 nicht fertig.
   dass er beim Kunden eigene Testfälle aus dessen Material erzeugt — sonst prüft
   der Käufer nur gegen unsere neutralen Fälle und nie gegen seinen echten Alltag.
 
+## Vollregression — Stand 19.08.2026
+
+Der Dreifachlauf über alle 32 Fälle läuft **portioniert über mehrere Sitzungen**,
+um Nutzungskontingent nicht in einem Stück zu verbrennen. Bericht und
+Fortschritt: `docs/vollregression-phase2.md`. Die Fortschrittstabelle dort
+schreibt sich aus den Urteilsdateien selbst — sie ist die Quelle der Wahrheit
+dafür, welcher Skill durch ist, nicht diese Datei.
+
+**Erledigt (11 von 32 Fällen, alle bestanden, je dreimal):**
+`angebots-schreiber` (3), `account-recherche` (3), `follow-up-generator` (3),
+`ketten` (2).
+
+**Zwei Befunde, beide im Skill behoben, kein Testfall angefasst:**
+
+1. **`account-recherche`, 3× abweichend** — also stabil, kein Wackler. Das in
+   der Gegenprobe verankerte Ausgabeformat für gleichlautende Firmennamen gab
+   „genau 1 Unterscheidungsmerkmal" vor und hatte keine Zeile für einen Fund
+   ohne Zuordnung. Die Zählvorgabe war als Zahl korrekt gebaut und inhaltlich
+   falsch gewählt: Eine Rückfrage, die nur den Sitz nennt, entscheidet nichts.
+   Korrigiert auf Sitz **und** Geschäftsfeld, plus Zeilen `Nicht zuordenbar`
+   und `Vermutung`. Danach 3 von 3.
+2. **`follow-up-generator`, `wackelt`** (bestanden · bestanden · abweichend).
+   Zwei Punkte derselben Checkliste widersprachen sich, sobald beide im selben
+   Fall greifen: „Rang 1–4 leer → kein Text" gegen „auf ausdrücklichen Wunsch
+   entsteht der Text". Lauf 3 verweigerte, als Rückfrage getarnt. Vorrang jetzt
+   an beiden Stellen geregelt. Danach 3 von 3 — und `02-kein-anlass` hält
+   weiterhin, die Ausnahme hat die Kein-Anlass-Regel nicht aufgeweicht.
+
+**Was die beiden Befunde über die Gegenprobe sagen:** Beide entstanden *durch*
+sie. Sie hat die Regeln an die richtige Stelle geschrieben und dabei in einem
+Fall den Inhalt beschädigt, im anderen einen Widerspruch erzeugt, der nur im
+Zusammentreffen sichtbar wird. Eine Strukturprüfung kann das nicht sehen — sie
+sieht saubere Regeln an sauberen Stellen. Das ist der Beleg dafür, dass der
+Dreifachlauf nach der Gegenprobe kein Formalismus ist.
+
+**Regel bestätigt:** Nach jeder Skill-Korrektur laufen **alle** Fälle dieses
+Skills neu, auch die bereits bestandenen. So sind `account-recherche / 01` und
+`follow-up-generator / 01` und `02` ein zweites Mal gelaufen. Mechanisch
+geprüft: keine der 33 Ausgaben ist älter als die Skill-Datei, gegen die sie
+gemessen wurde.
+
 ## Nächster Schritt
-**Vollständiger Dreifachlauf über alle 32 Fälle** gegen die jetzige Fassung —
-96 Erzeugungen, 96 Bewertungen, bestanden nur bei 3 von 3. Das ist zugleich
-die Definition of Done aus Phase 2 und die Gegenprobe zur Verankerungsaktion.
+**Vollregression fortsetzen — 21 Fälle, sieben Skills:**
+`ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`,
+`forecast-erklaerer`, `meeting-nachbereitung`, `outreach-personalisierer`,
+`preisverhandlungs-sparring`.
 
 Der Aufbau steht und ist wiederverwendbar: Zerlegung, getrennte Anweisungen für
-Erzeugung und Bewertung, Statusskript, Berichtsgenerator. Die drei Läufe je Fall
-sind unabhängig und können bis zur Nebenläufigkeitsgrenze parallel laufen.
+Erzeugung und Bewertung, Statusskript, Berichtsgenerator. Ablauf je Fall:
+dreimal erzeugen, dreimal bewerten, Bericht schreiben, committen, pushen.
+Bestanden nur bei 3 von 3.
 
 Erst danach Phase 3 (Installer). Ein Installer, der ungeprüfte Skills ausrollt,
 verlagert jeden Fehler in die Beta.

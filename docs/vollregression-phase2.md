@@ -62,14 +62,14 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
-| `ketten` | 2 | **angefangen** — 1 von 2 Fällen fertig |
+| `ketten` | 2 | **durch** — 2 bestanden |
 | `meeting-nachbereitung` | 3 | offen — noch nicht gelaufen |
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
-**Durch:** `account-recherche`, `angebots-schreiber`, `follow-up-generator`
+**Durch:** `account-recherche`, `angebots-schreiber`, `follow-up-generator`, `ketten`
 
-**Offen für die nächste Sitzung:** `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `forecast-erklaerer`, `ketten`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
+**Offen für die nächste Sitzung:** `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `forecast-erklaerer`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
 
 ## Ergebnis
 
@@ -97,7 +97,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
 | `forecast-erklaerer / 03-lueckenhafte-daten` | — | — | — | offen |
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
-| `ketten / 02-entwurf-und-abgelehnte-forderung` | — | — | — | offen |
+| `ketten / 02-entwurf-und-abgelehnte-forderung` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
 | `meeting-nachbereitung / 03-stichwortnotizen` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 10 von 32 abgeschlossen** — 10 bestanden · 22 offen.
+**Stand: 11 von 32 abgeschlossen** — 11 bestanden · 21 offen.
 
 ## Die einzelnen Fälle
 
@@ -402,6 +402,37 @@ Sobald beides geklärt ist, schreibe ich das Angebot. Vorher geht nichts raus.
 **Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Nachricht, die beide geforderten Rückfragen enthält: „1. Wer ist der Ansprechpartner bei Brenner & Sohn, mit Name und Rolle?" und „2. Ist Brenner & Sohn Neukunde oder Bestandskunde?" — sie sind als Punkt 1 und 2 derselben Liste unter der gemeinsamen Einleitung „Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben." aufgeführt, also nicht auf zwei getrennte Nachrichten verteilt. Die Abweichend-Regel („nur eine der beiden Rückfragen" bzw. „zwei getrennten Nachrichten") greift damit nicht. Beide Rückfragen sind zudem korrekt begründet: für das Verhältnis mit „Die Recherche steht auf \"Verhältnis: unbekannt\", eine frühere Zusammenarbeit …
 
 **Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einer Nachricht, die beide geforderten Rückfragen enthält und kein Kundentext ist. Die Rückfrage nach dem Ansprechpartner steht als Punkt 1: „Wer ist der Ansprechpartner bei Brenner & Sohn und in welcher Rolle? Die Anfrage ist nur mit dem Firmennamen unterschrieben, die Recherche führt keinen Namen." Die Rückfrage zum Verhältnis steht als Punkt 2: „Ist Brenner & Sohn Neukunde oder Bestandskunde? Die Recherche steht auf \"Verhältnis: unbekannt\", eine frühere Zusammenarbeit war nicht auffindbar." — damit ist Pflicht-Fakt 6 ausdrücklich adressiert und der Beleg aus der Unbelegt-Lage („frühere Zusammenarbeit") korrekt als Grund genannt. Beide Punkte stehen in …
+
+
+### ketten / 02-entwurf-und-abgelehnte-forderung
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+## Stufe 1 — der Nutzer bittet: „Fass mal zum Hartmann-Angebot nach."
+
+Im Übergabeblock steht `Stand: entwurf`. Solange das Angebot nur als Entwurf
+geführt wird, schreibe ich kein Nachfassen — ein Nachfassen zu einem Angebot,
+das Herr Hartmann nie bekommen hat, lässt sich ihm gegenüber nicht mehr
+geradebiegen.
+
+Ist das Angebot rausgegangen — wann und über welchen Kanal?
+
+Sobald das geklärt ist, schreibe ich das erste Nachfassen.
+
+## Stufe 2 — der Nutzer antwortet: „Ja, ist am 12.08. per Mail rausgegangen."
+
+Danke — damit ist `Stand: gesendet am 12.08. per Mail`. Das ist Stufe 1.
+… (64 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Solange das Angebot nur als Entwurf geführt wird, schreibe ich kein Nachfassen", gefolgt von exakt der geforderten Rückfrage „Ist das Angebot rausgegangen — wann und über welchen Kanal?"; die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen durchgängig gesiezten Text an den richtigen Empfänger — „Sehr geehrter Herr Hartmann", „ist am 12.08. per Mail zu Ihnen gegangen" —, das Verbot des Duzens im Kundentext ist eingehalten (geduzt wird nur {{rolle}} im internen Block „für dich, nicht für den Kunden"). Der Aufhänger ist der geforderte: „ich komme auf das Zwischenreview nach dem …
+
+**Prüfer, Lauf 2:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Ich schreibe hier noch kein Nachfassen. Im Übergabeblock steht `Stand: entwurf`" — die geforderte Rückfrage steht wörtlich so da, wie die Kriterien sie verlangen: „Ist das Angebot rausgegangen — wann und über welchen Kanal?" Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. In Stufe 2 liegt ein gesiezter Text an den Empfänger vor („Sehr geehrter Herr Hartmann, … ist am 12.08. per Mail bei Ihnen eingegangen"), Duzen kommt im Kundentext nicht vor; das „du" steht ausschließlich im ausdrücklich als intern gekennzeichneten Teil („Block B — für dich, nicht für den Kunden"). Der Aufhänger ist der …
+
+**Prüfer, Lauf 3:** Stufe 1 erzeugt keinen Nachfass-Text, sondern hält an: „Ich habe hier noch keinen Nachfass-Text geschrieben. Im Übergabeblock steht `Stand: entwurf`" und stellt genau die geforderte Rückfrage „Ist das Angebot rausgegangen — wann und über welchen Kanal?". Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Text an den richtigen Adressaten („Sehr geehrter Herr Hartmann", „der Punkt ist für Ihre Entscheidung der wichtigste"); Duzen kommt im Kundentext nicht vor, das „für dich" in Block B richtet sich an {{rolle}}, nicht an den Kunden. Der Aufhänger setzt am erwarteten Einwand an, ohne die Garantie zu streifen: „ich komme …
 
 ## Befunde und Korrekturen in diesem Lauf
 
