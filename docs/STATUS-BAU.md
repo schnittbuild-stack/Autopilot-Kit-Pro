@@ -23,15 +23,19 @@
         `follow-up-generator`-Fälle nachgezogen — **13 von 13 bestanden**
   - [x] Bauregel-Gegenprobe über alle zehn Skills: 36 Funde, 30 Teilfunde,
         alle verankert (`docs/gegenprobe-bauregel.md`)
-  - [ ] **Vollregression läuft, portioniert** (`docs/vollregression-phase2.md`)
-        — **23 von 32 Fällen abgeschlossen, alle bestanden**, je dreimal.
-        Acht Skills durch: `account-recherche`, `angebots-schreiber`,
-        `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`,
-        `follow-up-generator`, `forecast-erklaerer`, `ketten`.
-        **Fünf Befunde gefunden und behoben**, alle nachgewiesen. Drei Skills
-        stehen aus: `meeting-nachbereitung`, `outreach-personalisierer`,
-        `preisverhandlungs-sparring`.
-  - [ ] **Definition of Done noch nicht erreicht** — 9 Fälle offen
+  - [x] **Vollregression abgeschlossen** (`docs/vollregression-phase2.md`)
+        — **32 von 32 Fällen gelaufen**, je dreimal erzeugt und dreimal
+        getrennt bewertet: **30 bestanden, 1 abweichend, 1 wackelt.**
+        Neun Skills und beide Ketten sind durch. **Neun Befunde gefunden und
+        im Skill behoben**, kein Testfall weichgespült — **sechs davon waren
+        Wackler**, die ein Einzellauf durchgewunken hätte.
+  - [ ] **Zwei Fälle hängen an einer Entscheidung, nicht am Skill.**
+        `meeting-nachbereitung / 01` (abweichend) und `/ 03` (wackelt)
+        scheitern an Kriterien, die Einträge zählen statt Inhalte zu prüfen.
+        Beide Läufe legten korrekt zusätzliche Punkte ab und fielen dafür
+        durch. Vorschlag und Begründung stehen im Vollregressions-Dokument
+        unter „Testfall-Befund `meeting-nachbereitung`" — **Entscheidung
+        durch den Auftraggeber steht aus.**
 - [ ] Phase 3 — Installer fertigstellen
   - [ ] **Sitzungswechsel unsichtbar** — neue Pflichtanforderung, siehe unten
 - [ ] Phase 4 — Watchdog & Ketten-Tests
@@ -81,18 +85,19 @@ Hauptkette läuft einmal Ende-zu-Ende durch."
       vs. „1–2 Sätze"; `einwand-sparring`: Checklistenpunkt verbot die vom
       Testfall verlangte Klärungszeile). Alles behoben und verankert,
       Einzelheiten in `docs/gegenprobe-bauregel.md`.
-- [ ] **Vollständiger Dreifachlauf über alle 32 Fälle — begonnen, 23 erledigt.**
+- [x] **Vollständiger Dreifachlauf über alle 32 Fälle — abgeschlossen.**
       Die Gegenprobe hat **alle zehn Skills** geändert; damit waren sämtliche 32
       Testfälle gegen eine vorige Fassung gemessen. Sie war eine Struktur-,
       keine Verhaltensprüfung: Sie belegt, dass die Regeln dort stehen, wo sie
       halten — nicht, dass die Skills sich daran halten. **Der laufende
-      Dreifachlauf hat genau das bestätigt: bisher fünf Befunde.** Die ersten
-      zwei stammten aus der Gegenprobe selbst; die drei aus der Sitzung vom
-      19.08. sind eigenständige Skill-Lücken (`ausschreibungs-analyse`,
-      `einwand-sparring`, `forecast-erklaerer`) — **alle drei waren Wackler,
-      keiner davon wäre in einem Einzellauf aufgefallen.** Das ist der
-      empirische Beleg dafür, dass die 3-von-3-Regel nötig ist. Stand und
-      offene Skills: `docs/vollregression-phase2.md`.
+      Dreifachlauf hat genau das bestätigt: neun Befunde.** Zwei stammten aus
+      der Gegenprobe selbst, sieben sind eigenständige Skill-Lücken.
+      **Sechs der neun waren Wackler** — sie traten in einem oder zwei von drei
+      Läufen auf und wären in einem Einzellauf durchgegangen. Das ist der
+      empirische Beleg dafür, dass die 3-von-3-Regel nötig ist.
+      `preisverhandlungs-sparring` brauchte allein drei Korrekturrunden und ist
+      damit der schwächste Skill im Kit. Gesamtfazit, alle neun Befunde und die
+      offene Entscheidung: `docs/vollregression-phase2.md`.
 
 Die vollständige kritische Bewertung — wo die Fälle zu schwach sind, was sie
 nicht prüfen — steht in `docs/testlauf-phase2.md` unter „Wie belastbar ist das".
