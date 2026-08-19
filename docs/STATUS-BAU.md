@@ -24,11 +24,14 @@
   - [x] Bauregel-Gegenprobe über alle zehn Skills: 36 Funde, 30 Teilfunde,
         alle verankert (`docs/gegenprobe-bauregel.md`)
   - [ ] **Vollregression läuft, portioniert** (`docs/vollregression-phase2.md`)
-        — **11 von 32 Fällen abgeschlossen, alle bestanden**, je dreimal.
-        Vier Skills durch: `angebots-schreiber`, `account-recherche`,
-        `follow-up-generator`, `ketten`. **Zwei Befunde gefunden und behoben**,
-        beide nachgewiesen. Sieben Skills stehen aus, siehe unten.
-  - [ ] **Definition of Done noch nicht erreicht** — 21 Fälle offen
+        — **23 von 32 Fällen abgeschlossen, alle bestanden**, je dreimal.
+        Acht Skills durch: `account-recherche`, `angebots-schreiber`,
+        `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`,
+        `follow-up-generator`, `forecast-erklaerer`, `ketten`.
+        **Fünf Befunde gefunden und behoben**, alle nachgewiesen. Drei Skills
+        stehen aus: `meeting-nachbereitung`, `outreach-personalisierer`,
+        `preisverhandlungs-sparring`.
+  - [ ] **Definition of Done noch nicht erreicht** — 9 Fälle offen
 - [ ] Phase 3 — Installer fertigstellen
   - [ ] **Sitzungswechsel unsichtbar** — neue Pflichtanforderung, siehe unten
 - [ ] Phase 4 — Watchdog & Ketten-Tests
@@ -78,14 +81,18 @@ Hauptkette läuft einmal Ende-zu-Ende durch."
       vs. „1–2 Sätze"; `einwand-sparring`: Checklistenpunkt verbot die vom
       Testfall verlangte Klärungszeile). Alles behoben und verankert,
       Einzelheiten in `docs/gegenprobe-bauregel.md`.
-- [ ] **Vollständiger Dreifachlauf über alle 32 Fälle — begonnen, 11 erledigt.**
+- [ ] **Vollständiger Dreifachlauf über alle 32 Fälle — begonnen, 23 erledigt.**
       Die Gegenprobe hat **alle zehn Skills** geändert; damit waren sämtliche 32
       Testfälle gegen eine vorige Fassung gemessen. Sie war eine Struktur-,
       keine Verhaltensprüfung: Sie belegt, dass die Regeln dort stehen, wo sie
       halten — nicht, dass die Skills sich daran halten. **Der laufende
-      Dreifachlauf hat genau das bestätigt: zwei Befunde, beide von der
-      Gegenprobe selbst verursacht** (siehe unten). Stand und offene Skills:
-      `docs/vollregression-phase2.md`.
+      Dreifachlauf hat genau das bestätigt: bisher fünf Befunde.** Die ersten
+      zwei stammten aus der Gegenprobe selbst; die drei aus der Sitzung vom
+      19.08. sind eigenständige Skill-Lücken (`ausschreibungs-analyse`,
+      `einwand-sparring`, `forecast-erklaerer`) — **alle drei waren Wackler,
+      keiner davon wäre in einem Einzellauf aufgefallen.** Das ist der
+      empirische Beleg dafür, dass die 3-von-3-Regel nötig ist. Stand und
+      offene Skills: `docs/vollregression-phase2.md`.
 
 Die vollständige kritische Bewertung — wo die Fälle zu schwach sind, was sie
 nicht prüfen — steht in `docs/testlauf-phase2.md` unter „Wie belastbar ist das".
