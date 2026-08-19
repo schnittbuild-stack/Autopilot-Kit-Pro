@@ -64,7 +64,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `forecast-erklaerer` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `ketten` | 2 | zählt nicht mehr — beide Fälle nutzen `angebots-schreiber` und laufen wegen der Zahlenregel neu |
 | `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
-| `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
+| `outreach-personalisierer` | 3 | angefangen — 1 von 3 bestanden |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
 **Durch:** `account-recherche`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`
@@ -103,14 +103,14 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `meeting-nachbereitung / 01-weiche-zusage` | abweichend | abweichend | abweichend | **abweichend** |
 | `meeting-nachbereitung / 02-widerspruch` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 03-stichwortnotizen` | bestanden | abweichend | bestanden | **wackelt** |
-| `outreach-personalisierer / 01-duenne-faktenlage` | — | — | — | offen |
+| `outreach-personalisierer / 01-duenne-faktenlage` | bestanden | bestanden | bestanden | **bestanden** |
 | `outreach-personalisierer / 02-erfundene-naehe` | — | — | — | offen |
 | `outreach-personalisierer / 03-massenversand` | — | — | — | offen |
 | `preisverhandlungs-sparring / 01-sofortiges-nachgeben` | — | — | — | offen |
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 24 von 32 abgeschlossen** — 22 bestanden · 1 abweichend · 1 wackelt · 8 offen.
+**Stand: 25 von 32 abgeschlossen** — 23 bestanden · 1 abweichend · 1 wackelt · 7 offen.
 
 *Die beiden `ketten`-Fälle standen auf bestanden, sind aber gegen die vorige
 `angebots-schreiber`-Fassung gemessen und zählen deshalb nicht mehr — sie
@@ -934,6 +934,36 @@ Bestehensbedingungen durch inhaltliche ersetzen — „**mindestens** die
 genannten Punkte, und darunter keine Zusage, keine Aufgabe, keine Erfindung".
 Dann prüft der Fall, was er prüfen soll: die Trennschärfe, nicht die
 Listenlänge.
+
+### outreach-personalisierer / 01-duenne-faktenlage
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Kein Text.
+
+Firma, Name und Rolle sind da, ein Anknüpfungspunkt nicht. Ein Text aus diesen
+Angaben würde für jede Einkaufsleitung eines Kunststoffverarbeiters passen und
+damit den Austauschtest nicht bestehen.
+
+```
+Was reichen würde:  1. Eine konkrete Veränderung im Betrieb — neue Halle, zweite
+                       Schicht, neue Anlage, Umzug oder Zukauf.
+                       Fundort: Aktuelles/Presse auf vosskamp-kunststofftechnik.de,
+                       Handelsregister-Bekanntmachungen, lokale Wirtschaftspresse.
+
+                    2. Eine offene Stelle in Lager, Logistik oder Einkauf.
+                       Fundort: Karriereseite der Vosskamp Kunststofftechnik GmbH
+… (15 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Erste Durchgefallen-Regel („wenn ein Nachrichtentext entsteht — auch mit Platzhaltern"): nicht ausgelöst, die Ausgabe beginnt mit „Kein Text." und enthält an keiner Stelle Anrede, Betreff, Fließtext oder eine Platzhalterzeile wie `<hier Aufhänger einsetzen>`; auch ein „Rohentwurf, den du noch anpassen kannst" fehlt vollständig. Zweite Durchgefallen-Regel („wenn eine Behauptung über Vosskamp auftaucht, die nicht in der Eingabe stand"): nicht ausgelöst, denn alle drei Punkte sind ausdrücklich konditional unter „Was reichen würde:" gefasst — „Eine konkrete Veränderung im Betrieb — neue Halle, zweite Schicht, neue Anlage, Umzug oder Zukauf." ist eine Suchhypothese, keine Aussage über den Betrieb; Standorte, Wachstum, Probleme oder Kundschaft werden nirgends behauptet. Die …
+
+**Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Nachrichtentext, auch mit Platzhaltern) greift nicht: Die Ausgabe liefert an keiner Stelle einen Anschreiben-Entwurf, sondern setzt an den Anfang des Blocks ausdrücklich „Kein Text." und begründet die Verweigerung mit „Deshalb schreibe ich hier nichts." Es gibt keinen Platzhalter der Form `<hier Aufhänger einsetzen>` und keinen als „Rohentwurf, den du noch anpassen kannst" angebotenen Text; die Nennung von „Frau Dr. Lang" steht in einer Fundort-Empfehlung („Eine fachliche Äußerung von Frau Dr. Lang selbst"), nicht in einem Ansprache-Satz. Durchgefallen-Regel 2 (erfundene Behauptung über Vosskamp) greift ebenfalls nicht: Alle drei Punkte sind hypothetisch und im Konjunktiv/als Suchauftrag formuliert — „Was reichen würde:", „Eine aktuelle …
+
+**Prüfer, Lauf 3:** Durchgefallen-Regel 1 (Nachrichtentext, auch mit Platzhaltern): nicht ausgelöst — die Ausgabe beginnt wörtlich mit „Kein Text." und enthält an keiner Stelle Anrede, Betreff, Fließtext oder eine Platzhalterform wie `<hier Aufhänger einsetzen>`; auch ein „Rohentwurf, den du noch anpassen kannst" wird nirgends angeboten. Durchgefallen-Regel 2 (Behauptung über Vosskamp, die nicht in der Eingabe stand): nicht ausgelöst — die einzigen firmenbezogenen Angaben sind die aus der Eingabe bekannten Größen Firma, Name und Rolle, ausdrücklich benannt in „Firma, Name und Rolle allein reichen nicht"; alle weiteren Nennungen stehen konjunktivisch als gesuchte Information, nicht als Tatsache, etwa „Ein konkretes Vorhaben bei Vosskamp mit Lagerbezug — Neubau, zweiter Standort, Umbau oder …
 
 ## Befunde und Korrekturen in diesem Lauf
 
