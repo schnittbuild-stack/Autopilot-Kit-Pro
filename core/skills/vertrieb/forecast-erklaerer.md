@@ -34,6 +34,16 @@ der Vergangenheit, bekannte Sondereffekte.
 3. **Zweimal rechnen: ungewichtet und gewichtet.** Beide Zahlen werden
    ausgegeben. Eine einzelne gewichtete Summe verdeckt, wie viel Streuung
    dahintersteckt.
+
+   **Gerechnet wird über die gelieferte Liste — vollständig.** Fällt ein
+   Vorgang auf, weil sein Abschlussdatum außerhalb des Zeitraums liegt oder
+   überfällig ist, wird er **markiert, nicht entfernt**. Die Hauptzahl bleibt
+   die Summe über alles, was geliefert wurde; die bereinigte Variante steht
+   als **Nebenrechnung** daneben, mit einem Satz, was sie unterstellt. Wer die
+   Basis eigenmächtig ändert, liefert eine Zahl, die {{rolle}} im CRM nicht
+   wiederfindet — und im Meeting nicht erklären kann, warum die genannte Zahl
+   von der Pipeline abweicht. Welche Variante gilt, entscheidet {{rolle}}, nicht
+   dieser Skill.
 4. **Die drei entscheidenden Vorgänge benennen** — die, bei denen ein Kippen
    das Ergebnis am stärksten verändert. Wenn drei Vorgänge über die Hälfte des
    Forecasts tragen, ist das ein Klumpenrisiko und wird so genannt.
@@ -51,10 +61,14 @@ DATENLAGE
   Vorgänge gesamt:   <n>, davon rechenbar <m>
   Nicht rechenbar:   <je Zeile: Vorgang — was fehlt>
 
-RECHNUNG
+RECHNUNG (über die gelieferte Liste, vollständig)
   Ungewichtet:       <Summe>
   Gewichtet:         <Summe>
   | Vorgang | Wert | Wahrscheinlichkeit oder Stufe | Bedingung dafür |
+  Nebenrechnung:     <nur wenn ein Vorgang auffällt — etwa Abschlussdatum
+                     außerhalb des Zeitraums: die bereinigte Summe plus
+                     1 Satz, was sie unterstellt. Sie ersetzt die Hauptzahl
+                     nicht.> | —
 
 ZIEL
   Ziel:              <Betrag> | nicht angegeben
@@ -100,7 +114,12 @@ Checkliste für Schritt 8:
 - [ ] Liegt zu einem Vorgang nur eine Stufe aus {{tools}} vor, steht die Stufe
       in der Spalte `Wahrscheinlichkeit oder Stufe` — keine daraus erfundene
       Prozentzahl.
-- [ ] Ungewichtete und gewichtete Summe stehen beide da.
+- [ ] Ungewichtete und gewichtete Summe stehen beide da — **gerechnet über
+      die vollständige gelieferte Liste**. Kein auffälliger Vorgang ist aus
+      der Hauptzahl entfernt; eine Bereinigung steht nur als `Nebenrechnung`.
+- [ ] **Jede genannte Summe ist gegen ihre Einzelposten nachgerechnet** —
+      auch Zwischensummen im Fließtext und in `RISIKEN`. Eine Zahl, die zu
+      ihren eigenen Posten nicht passt, macht die ganze Ausgabe wertlos.
 - [ ] Keine Scheingenauigkeit — auf Hunderter runden, keine Nachkommastellen
       bei Schätzungen.
 - [ ] Die Lücke zum Ziel steht als Betrag da, auch wenn sie negativ ist.
@@ -143,6 +162,13 @@ er in den nächsten Zeitraum rutscht.
 **Beispiel 3 — Stufen statt Prozente.** {{tools}} liefert nur „Angebot
 abgegeben". → Die Stufe wird genannt und die Bedingung dazu, keine erfundenen
 60 %.
+
+**Beispiel 4a — ein Vorgang passt nicht in den Zeitraum.** Im Q4-Export steht
+ein Vorgang mit Abschluss 30.09. → Er bleibt in der Hauptzahl und wird als
+auffällig markiert („Abschlussdatum liegt vor dem Zeitraum, überfällig"). Die
+Summe ohne ihn steht als `Nebenrechnung` daneben. Nicht: die bereinigte Summe
+oben als Forecast setzen — dann weicht die Zahl vom CRM ab, ohne dass es
+jemandem auffällt.
 
 **Beispiel 4 — halbe Pipeline unvollständig.** 14 Vorgänge, 6 ohne
 Abschlussdatum. → Gerechnet wird mit 8, die 6 stehen als nicht rechenbar da,
