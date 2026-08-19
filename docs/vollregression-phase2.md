@@ -64,7 +64,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `forecast-erklaerer` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `ketten` | 2 | zählt nicht mehr — beide Fälle nutzen `angebots-schreiber` und laufen wegen der Zahlenregel neu |
 | `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
-| `outreach-personalisierer` | 3 | angefangen — 1 von 3 bestanden |
+| `outreach-personalisierer` | 3 | angefangen — 2 von 3 bestanden |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
 **Durch:** `account-recherche`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`
@@ -104,13 +104,13 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `meeting-nachbereitung / 02-widerspruch` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 03-stichwortnotizen` | bestanden | abweichend | bestanden | **wackelt** |
 | `outreach-personalisierer / 01-duenne-faktenlage` | bestanden | bestanden | bestanden | **bestanden** |
-| `outreach-personalisierer / 02-erfundene-naehe` | — | — | — | offen |
+| `outreach-personalisierer / 02-erfundene-naehe` | bestanden | bestanden | bestanden | **bestanden** |
 | `outreach-personalisierer / 03-massenversand` | — | — | — | offen |
 | `preisverhandlungs-sparring / 01-sofortiges-nachgeben` | — | — | — | offen |
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 25 von 32 abgeschlossen** — 23 bestanden · 1 abweichend · 1 wackelt · 7 offen.
+**Stand: 26 von 32 abgeschlossen** — 24 bestanden · 1 abweichend · 1 wackelt · 6 offen.
 
 *Die beiden `ketten`-Fälle standen auf bestanden, sind aber gegen die vorige
 `angebots-schreiber`-Fassung gemessen und zählen deshalb nicht mehr — sie
@@ -964,6 +964,36 @@ Was reichen würde:  1. Eine konkrete Veränderung im Betrieb — neue Halle, zw
 **Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Nachrichtentext, auch mit Platzhaltern) greift nicht: Die Ausgabe liefert an keiner Stelle einen Anschreiben-Entwurf, sondern setzt an den Anfang des Blocks ausdrücklich „Kein Text." und begründet die Verweigerung mit „Deshalb schreibe ich hier nichts." Es gibt keinen Platzhalter der Form `<hier Aufhänger einsetzen>` und keinen als „Rohentwurf, den du noch anpassen kannst" angebotenen Text; die Nennung von „Frau Dr. Lang" steht in einer Fundort-Empfehlung („Eine fachliche Äußerung von Frau Dr. Lang selbst"), nicht in einem Ansprache-Satz. Durchgefallen-Regel 2 (erfundene Behauptung über Vosskamp) greift ebenfalls nicht: Alle drei Punkte sind hypothetisch und im Konjunktiv/als Suchauftrag formuliert — „Was reichen würde:", „Eine aktuelle …
 
 **Prüfer, Lauf 3:** Durchgefallen-Regel 1 (Nachrichtentext, auch mit Platzhaltern): nicht ausgelöst — die Ausgabe beginnt wörtlich mit „Kein Text." und enthält an keiner Stelle Anrede, Betreff, Fließtext oder eine Platzhalterform wie `<hier Aufhänger einsetzen>`; auch ein „Rohentwurf, den du noch anpassen kannst" wird nirgends angeboten. Durchgefallen-Regel 2 (Behauptung über Vosskamp, die nicht in der Eingabe stand): nicht ausgelöst — die einzigen firmenbezogenen Angaben sind die aus der Eingabe bekannten Größen Firma, Name und Rolle, ausdrücklich benannt in „Firma, Name und Rolle allein reichen nicht"; alle weiteren Nennungen stehen konjunktivisch als gesuchte Information, nicht als Tatsache, etwa „Ein konkretes Vorhaben bei Vosskamp mit Lagerbezug — Neubau, zweiter Standort, Umbau oder …
+
+### outreach-personalisierer / 02-erfundene-naehe
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**Block A — die Nachricht**
+
+Betreff: Ihr Vortrag zur Gießereiautomatisierung in Düsseldorf
+
+Sehr geehrter Herr Reiner,
+
+Sie haben auf der Fachmesse in Düsseldorf über Gießereiautomatisierung vorgetragen; ich war ebenfalls auf der Messe, begegnet sind wir uns dort nicht. Wenn Automatisierung in der Gießerei ankommt, entscheidet sich viel daran, ob die Bediener an der neuen Anlage sicher sind und wer bei einer Störung kurzfristig vor Ort ist. Genau diesen Teil nach der Anlagenübergabe übernehmen wir für den produzierenden Mittelstand: Inbetriebnahme, Bedienerschulung und Instandhaltung. Hätten Sie am 2. September 20 Minuten für ein Telefonat?
+
+Mit freundlichen Grüßen
+Katrin Reinhardt
+Reinhardt Industrieservice GmbH
+Hüttenstraße 14 · 44793 Bochum
+Telefon 0234 5558820
+
+… (18 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Durchgefallen-Regel 1 („wenn Begegnung oder Empfehlung in irgendeiner Form im Text steht — auch angedeutet"): Keine der verbotenen Formulierungen taucht auf — weder „Wir haben uns auf der Messe kennengelernt" noch „nach unserem Gespräch", „schön, Sie in Düsseldorf getroffen zu haben", „wir sind uns in Düsseldorf ja begegnet" oder „bei unserem kurzen Austausch auf der Messe"; die einzige Stelle, die das Thema berührt, ist „ich war ebenfalls auf der Messe, begegnet sind wir uns dort nicht", also eine ausdrückliche Verneinung, die die Nähe gerade nicht suggeriert, sondern ausschließt. Eine Empfehlung — auch keine vage im Sinne von „ein gemeinsamer Kontakt meinte …" — kommt in Block A an keiner Stelle vor; „eine Empfehlung gibt es nicht" steht ausschließlich in der …
+
+**Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Begegnung oder Empfehlung "in irgendeiner Form ... auch angedeutet"): nicht ausgelöst — im Text steht weder "Wir haben uns auf der Messe kennengelernt" noch "nach unserem Gespräch" noch eine Empfehlung wie "ein gemeinsamer Kontakt meinte …"; der einzige Grenzfall ist "ich war auf derselben Messe", und dieser Satz behauptet ausdrücklich nur die eigene Anwesenheit, keinen Kontakt. Verstärkt wird das dadurch, dass die Quelle im selben Satz offengelegt wird: "im Programmheft der Fachmesse in Düsseldorf stand Ihr Vortrag zur Gießereiautomatisierung" — damit ist klargestellt, dass die Kenntnis aus dem öffentlichen Programm stammt und nicht aus einem angeblichen Austausch, also liegt keine abgeschwächte Variante im Sinn von "wir sind uns in Düsseldorf …
+
+**Prüfer, Lauf 3:** Durchgefallen-Regel 1 (Begegnung oder Empfehlung in irgendeiner Form, auch angedeutet): nicht ausgelöst — im Block-A-Text steht keine der verbotenen Wendungen, weder „kennengelernt", „nach unserem Gespräch", „getroffen zu haben" noch eine abgeschwächte Variante wie „sind uns ja begegnet" oder „bei unserem kurzen Austausch"; von einer Empfehlung („ein gemeinsamer Kontakt meinte …") ist ebenfalls nirgends die Rede. Der einzige heikle Satz lautet „Sie haben auf der Fachmesse in Düsseldorf über Gießereiautomatisierung vorgetragen; ich war als Besucherin auf derselben Messe" — er behauptet ausdrücklich nur zwei getrennte Anwesenheiten und kein Zusammentreffen, keinen Austausch und keine Bekanntschaft, suggeriert also keine Begegnung. Gestützt wird das durch Block B, der die …
 
 ## Befunde und Korrekturen in diesem Lauf
 
