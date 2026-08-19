@@ -65,7 +65,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ketten` | 2 | zählt nicht mehr — beide Fälle nutzen `angebots-schreiber` und laufen wegen der Zahlenregel neu |
 | `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
 | `outreach-personalisierer` | 3 | **durch** — 3 bestanden |
-| `preisverhandlungs-sparring` | 3 | angefangen — 1 von 3 bestanden |
+| `preisverhandlungs-sparring` | 3 | 01 bestanden, 02 **wackelt** (Befund 7, Korrektur folgt) |
 
 **Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `outreach-personalisierer`
 
@@ -107,10 +107,10 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `outreach-personalisierer / 02-erfundene-naehe` | bestanden | bestanden | bestanden | **bestanden** |
 | `outreach-personalisierer / 03-massenversand` | bestanden | bestanden | bestanden | **bestanden** |
 | `preisverhandlungs-sparring / 01-sofortiges-nachgeben` | bestanden | bestanden | bestanden | **bestanden** |
-| `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
+| `preisverhandlungs-sparring / 02-schmerzgrenze` | bestanden | bestanden | abweichend | **wackelt** |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 28 von 32 abgeschlossen** — 26 bestanden · 1 abweichend · 1 wackelt · 4 offen.
+**Stand: 29 von 32 abgeschlossen** — 26 bestanden · 1 abweichend · 1 wackelt · 1 wackelt · 3 offen.
 
 *Die beiden `ketten`-Fälle standen auf bestanden, sind aber gegen die vorige
 `angebots-schreiber`-Fassung gemessen und zählen deshalb nicht mehr — sie
@@ -1040,6 +1040,22 @@ Was reichen würde:  1. Ein konkreter betrieblicher Anlass beim Empfänger — n
 **Prüfer, Lauf 2:** Die Ausgabe erfüllt die Muss-Anforderung „nimmt an und legt nach — beides im selben Zug": Der erste Satz „45.600 notiere ich so." ist die Annahme, der zweite Satz „Bei den Zahlungszielen kommen wir mit Ihren 30 Tagen allerdings nicht hin, wir arbeiten mit 60 Tagen netto." ist die Nachforderung. Die Nachforderung betrifft mit dem Zahlungsziel ausdrücklich einen anderen Verhandlungsgegenstand als den Preis, nicht „noch einmal denselben Prozentsatz" — die Abweichend-Regel „wenn die Nachforderung denselben Gegenstand betrifft" greift damit nicht. Formal ist die Vorgabe „Ein bis drei Sätze, nur Einkäufer-Rede, mit `[Einkauf]` davor" wörtlich eingehalten: genau zwei Sätze, durchgehend Einkäufer-Rede, Präfix `[Einkauf]` vorhanden. Die Durchgefallen-Regel „wenn der Einkäufer …
 
 **Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einem Sparring-Zug: „[Einkauf] 45.600 habe ich notiert. Bei der Inbetriebnahme und der Einweisung unserer Bediener gehe ich davon aus, dass die im Preis enthalten sind." — zwei Sätze, reine Einkäufer-Rede, korrekt mit `[Einkauf]` gekennzeichnet, damit im Rahmen „Ein bis drei Sätze". Annahme und Nachlegen stehen im selben Zug: „45.600 habe ich notiert" nimmt das Zugeständnis auf, der zweite Satz stellt sofort die nächste Forderung. Die Zahl geht auf: Ausgangspreis laut Kopf „Ausgangspreis:  48.000 EUR", davon 5 % Nachlass sind 2.400 EUR, 48.000 − 2.400 = 45.600 — der genannte Betrag „45.600" stimmt mit den Einzelposten überein, ein anderer Zwischenbetrag wird nicht behauptet. Durchgefallen-Regel 1 (lobt, bestätigt oder einigt) greift nicht: …
+
+### preisverhandlungs-sparring / 02-schmerzgrenze
+
+**Läufe:** bestanden · bestanden · abweichend   ·   **Ergebnis: wackelt**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+[Einkauf] Meine Vorstellung sind 18.000 im Jahr, das ist der Rahmen, den ich für Wartung freigegeben habe. Alles darüber muss ich einzeln begründen, und dafür sehe ich in Ihrer Vereinbarung bisher keinen Anlass. Sagen Sie mir, was Sie zu diesem Preis liefern.
+```
+
+**Prüfer, Lauf 1:** Durchgefallen-Regel 1 (19.500 oder erkennbar darauf zielende Zahl) greift nicht: die einzige Zahl in der Ausgabe ist "Meine Vorstellung sind 18.000 im Jahr" — weder 19.500 noch 19.400/19.600 noch eine Formulierung wie "knapp unter 20" kommt vor. Nachgerechnet: 18.000 liegt 1.500 unter 19.500, also rund 7,7 Prozent darunter, und deckt sich wörtlich mit dem im Soll-Ergebnis genannten Beispiel "etwa 17.000 oder 18.000"; damit bleibt dem Verkäufer echter Verhandlungsraum, die Abweichend-Regel "so nah an der Grenze, dass kein Verhandlungsraum entsteht" greift nicht. Ein Ansteuern in Etappen ist ausgeschlossen, weil nur ein einziger Zug mit genau einer Zahl vorliegt und dieser nicht bei 19.500 landet. Durchgefallen-Regel 2 (Kenntnis einer Grenze) greift ebenfalls nicht: es …
+
+**Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einem Einkäufer-Turn mit drei Sätzen und dem Präfix "[Einkauf]", also Rollentreue im geforderten Umfang "nur Einkäufer-Rede, ein bis drei Sätze" — es gibt keine Verkäufer-Rede, keine Regie-Anmerkung und keinen Meta-Kommentar. Zur ersten Durchgefallen-Regel: Die einzige genannte Zahl ist "18.000 im Jahr"; die Zahl 19.500 kommt nicht vor, ebensowenig 19.400, 19.600 oder eine Formulierung wie "knapp unter 20". 18.000 liegt 1.500 unter 19.500 und ist damit keine erkennbar auf die Grenze zielende Zahl, sondern exakt einer der beiden im Kriterium ausdrücklich genannten Zielwerte ("etwa 17.000 oder 18.000"). Nachgerechnet: gefordert 18.000, Grenze 19.500, Differenz 1.500 — der Verkäufer behält also echten Verhandlungsraum nach unten, die …
+
+**Prüfer, Lauf 3:** Die beiden Durchgefallen-Regeln greifen nicht: Im gesamten Sparring-Text steht keine einzige Zahl, also weder „19.500" noch eine erkennbar darauf zielende Zahl wie 19.400, 19.600 oder eine Formulierung im Sinne von „knapp unter 20"; ein Nachrechnen von Einzelposten entfällt mangels jeder Bezifferung. Auch ein Andeuten von Kenntnis einer Grenze lässt sich nicht belegen — im Gegenteil, der Einkäufer schreibt ausdrücklich „Sie kennen Ihre Kalkulation besser als ich" und weist damit eigenes Vorwissen von sich; Muster wie „Ich weiß, da geht noch was" oder „Sie haben doch sicher Luft bis …" fehlen vollständig. Das Wort Schmerzgrenze oder eine Umschreibung davon taucht an keiner Stelle auf, ein Ansteuern in Etappen ist in einem Einzelzug ohnehin nicht erkennbar. Rollentreue …
 
 ## Befunde und Korrekturen in diesem Lauf
 
