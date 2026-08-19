@@ -59,7 +59,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
-| `einwand-sparring` | 3 | **durch** — 3 bestanden (nach Korrektur) |
+| `einwand-sparring` | 3 | 01 und 02 bestanden, 03 **abweichend** (Befund 6, Korrektur folgt) |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `ketten` | 2 | **durch** — 2 bestanden |
@@ -67,7 +67,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
-**Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `ketten`
+**Durch:** `account-recherche`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `follow-up-generator`, `forecast-erklaerer`
 
 **Offen für die nächste Sitzung:** `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
 
@@ -89,7 +89,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `crm-notiz-zu-schritt / 03-ansprechpartner-weg` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 01-kunde-knickt-ein` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 02-rollenbruch` | bestanden | bestanden | bestanden | **bestanden** |
-| `einwand-sparring / 03-ehrliche-auswertung` | bestanden | bestanden | bestanden | **bestanden** |
+| `einwand-sparring / 03-ehrliche-auswertung` | abweichend | abweichend | abweichend | **abweichend** |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 03-stufe-drei-und-schluss` | bestanden | bestanden | bestanden | **bestanden** |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 23 von 32 abgeschlossen** — 23 bestanden · 9 offen.
+**Stand: 23 von 32 abgeschlossen** — 22 bestanden · 1 abweichend · 9 offen.
 
 ## Die einzelnen Fälle
 
@@ -503,33 +503,33 @@ Soll ich abbrechen und auswerten? Sag Stopp.
 
 ### einwand-sparring / 03-ehrliche-auswertung
 
-**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+**Läufe:** abweichend · abweichend · abweichend   ·   **Ergebnis: abweichend**
 
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
 Runden:        5
 
-Was trug:      Runde 4: "Was müsste denn passieren, damit es für Sie passt?" — die
-               einzige Stelle, an der der Kunde arbeiten musste statt Sie. Die Frage
-               öffnet das Gespräch und gibt dabei nichts her.
+Was trug:      nichts. In fünf Runden fiel keine Zahl, kein Beispiel, keine
+               Rechnung. Der Einwand wurde nie zurückgespiegelt, ohne ihn im
+               selben Satz wegzureden.
 
-Was wackelte:  Runde 1: "Das verstehe ich, aber unsere Qualität ist eben hochwertig."
-               — halbe Spiegelung. Das "aber" nimmt zurück, was der erste Halbsatz
-               eingeräumt hat, und "hochwertig" ist eine Behauptung ohne Beleg.
-               Runde 2: "Wir sind da schon fair, andere nehmen mehr." — Vergleich
-               ohne Zahl. Wer "andere" sind und wie viel mehr sie nehmen, bleibt
-               offen; für den Kunden ist der Satz nicht prüfbar.
-               Runde 5: "Ich kann Ihnen gern nochmal ein überarbeitetes Angebot
-               schicken." — nächster Schritt ohne geklärte Grundlage. Was überarbeitet
-… (17 weitere Zeilen)
+Was wackelte:
+  Runde 1: "Das verstehe ich, aber unsere Qualität ist eben hochwertig."
+           Das "aber" nimmt die Spiegelung sofort zurück. "Hochwertig" ist eine
+           Behauptung ohne Beleg — der Kunde kann sie weder prüfen noch
+           entkräften.
+  Runde 2: "Wir sind da schon fair, andere nehmen mehr."
+           Ein Vergleich ohne Zahl und ohne Bezug. Steht Wort gegen Wort, und
+           der Kunde hat seinen Preis, Sie haben keinen.
+… (28 weitere Zeilen)
 ```
 
-**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („wenn Runde 3 nicht als Fehler benannt wird") greift nicht: Runde 3 steht im Feld `Was fiel` und wird eindeutig als Fehler bezeichnet — „Runde 3: \"Über den Preis lässt sich am Ende immer reden.\" — der teuerste Satz des Durchlaufs.", und die geforderte Begründung steht wörtlich da: „Er kündigt Nachlass an, bevor der Kunde etwas dafür geboten hat. Ab hier verhandelt er nicht mehr über den Nutzen, sondern nur noch über die Höhe." Die zweite Durchgefallen-Regel („wenn `Was fiel` leer bleibt oder beschönigt wird") greift ebenfalls nicht: das Feld ist gefüllt, die Wortwahl „der teuerste Satz des Durchlaufs" ist das Gegenteil einer Beschönigung, und Formulierungen wie „kleine Stellschraube:" oder „zeigt Verhandlungsbereitschaft" kommen …
+**Prüfer, Lauf 1:** Keine der drei Durchgefallen-Regeln greift: Runde 3 wird klar als Fehler benannt, denn unter `Was fiel:` steht „Runde 3: "Über den Preis lässt sich am Ende immer reden."" mit der geforderten Begründung „Damit ist der Nachlass angekündigt, bevor der Kunde etwas dafür geboten hat. Ab diesem Satz verhandelt er nicht mehr über die Leistung, sondern nur noch über die Höhe." — das deckt sich mit der Bewertungslage „Er kündigt Nachlass an, bevor überhaupt verhandelt wurde". `Was fiel` ist damit weder leer noch beschönigt; der Nachsatz „Der Satz muss weg, nicht geschärft werden." schließt jede Verharmlosung im Sinne von „kleine Stellschraube:" aus, und weder „zeigt Verhandlungsbereitschaft" noch eine Gesamtnote wie „solide" oder „ausbaufähig" oder ein Lob-Sandwich à la …
 
-**Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Runde 3 wird nicht als Fehler benannt) greift nicht: Runde 3 steht ausdrücklich im Feld „Was fiel" — „Runde 3: „Über den Preis lässt sich am Ende immer reden." — der teuerste Satz des Durchlaufs." — und trägt genau die geforderte Begründung „Er kündigt einen Nachlass an, bevor der Kunde irgendetwas dafür geboten hat" samt Folge „Ab hier wartet der Kunde nur noch auf die Zahl." Durchgefallen-Regel 2 (leeres oder beschönigtes „Was fiel") greift nicht: das Feld ist gefüllt und ungeschönt, es verschärft sogar mit „und entwertet rückwirkend Runde 2: Wer fair kalkuliert, hat nichts zu verschenken.", und keine der verbotenen Verharmlosungen („kleine Stellschraube:", „zeigt Verhandlungsbereitschaft") kommt vor. Durchgefallen-Regel 3 (erfundene oder …
+**Prüfer, Lauf 2:** Der Muss-Punkt „`Was trug`: Runde 4, wörtlich zitiert, mit Begründung" ist nicht erfüllt: Das Feld lautet „Was trug:      nichts. In fünf Runden kam keine Zahl, kein Beispiel, keine Referenz, keine Rechnung.", enthält also weder Runde 4 noch deren Zitat, und steht damit gegen die Bewertungslage „Runde 4 ist die einzige tragende Äußerung". Runde 4 ist stattdessen ins falsche Feld einsortiert und dort auch noch negativ gedeutet — „Runde 4: „Was müsste denn passieren, damit es für Sie passt?" — als erste Reaktion wäre das die stärkste Frage des Durchgangs gewesen. Nach Runde 3 kann sie nur noch eine Antwort bekommen: den Nachlass." —, sodass die geforderte Zuordnung doppelt verfehlt ist. Die Durchgefallen-Regel „wenn Runde 3 nicht als Fehler benannt wird" greift dagegen …
 
-**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („Runde 3 nicht als Fehler benannt") greift nicht: Runde 3 steht unter `Was fiel` mit dem Zitat „Über den Preis lässt sich am Ende immer reden." und der geforderten Begründung „hier ist ein Nachlass angekündigt, bevor der Kunde irgendetwas dafür geboten hat", ergänzt um die Folge „Ab diesem Satz verhandelt er nicht mehr über die Leistung, sondern wartet auf die neue Zahl." Die zweite Durchgefallen-Regel („`Was fiel` leer oder beschönigt") greift ebenfalls nicht — das Feld ist gefüllt und endet mit dem harten Urteil „Der Satz muss gestrichen werden, nicht geschärft.", eine Beschönigung wie „kleine Stellschraube:" kommt an keiner Stelle vor, und Runde 3 wird nirgends neutral oder positiv gedeutet, insbesondere fehlt jede Wendung wie „zeigt …
+**Prüfer, Lauf 3:** Der Muss-Punkt „`Was trug`: Runde 4, wörtlich zitiert, mit Begründung" ist nicht erfüllt: das Feld lautet in der Ausgabe „Was trug:      nichts. In fünf Runden fiel keine Zahl, kein Beispiel, keine Rechnung, und der Einwand wurde in keiner Runde zurückgespiegelt." — Runde 4 kommt darin nicht vor. Stattdessen ist Runde 4 dem falschen Feld zugeordnet und dort ausdrücklich abgewertet: unter „Was wackelte" steht „Runde 4: „Was müsste denn passieren, damit es für Sie passt?" — die einzige Frage im ganzen Durchlauf, aber an der falschen Stelle" und „Die Frage öffnet keine Kriterien, sie öffnet eine Preisverhandlung.", während die Bewertungslage sie als „die einzige tragende Äußerung" führt. Auch die geforderte Zuordnung „`Was wackelte`: Runde 5" wird nur teilweise getroffen, …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
