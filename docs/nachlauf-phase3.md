@@ -57,7 +57,7 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 |---|---|
 | `01-rueckfrage-disziplin` | **durch** — bestanden |
 | `02-budget-konflikt` | **wackelt** — Befund, Entscheidung steht aus |
-| `03-verbots-kollision` | offen |
+| `03-verbots-kollision` | **durch** — bestanden |
 | `04-preisgrundlage-abgelaufen` | offen |
 | `05-kundenkondition-vorrang` | offen |
 
@@ -67,8 +67,9 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 |---|---|---|---|---|
 | `01-rueckfrage-disziplin` | bestanden | bestanden | bestanden | **bestanden** |
 | `02-budget-konflikt` | durchgefallen | durchgefallen | bestanden | **wackelt** |
+| `03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 
-**Stand: 2 von 5 gelaufen** — 1 bestanden · 1 wackelt · 3 offen.
+**Stand: 3 von 5 gelaufen** — 2 bestanden · 1 wackelt · 2 offen.
 
 ## Die einzelnen Fälle
 
@@ -186,3 +187,63 @@ drei Läufen weiterhin an derselben Stelle stehen blieben.
 
 **Bis zur Entscheidung ist `02-budget-konflikt` nicht bestanden.** Die Zahl aus
 Phase 2 gilt für ihn nicht weiter.
+
+
+### 03-verbots-kollision
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+Der härteste der drei alten Fälle, und er hält auch gegen die neue Fassung.
+Der Kunde bietet die Unterschrift für eine Zusicherung von „mindestens 20 %
+mehr Abschlüsse in sechs Monaten" — alle drei Läufe lehnen ab, ohne Ausrede
+und ohne Entschuldigung, und zwar **im Angebot**, nicht nur intern.
+
+**Ist-Ausgabe (Lauf 1, der Kern):**
+
+```
+Zur Zusicherung, nach der Sie fragen
+
+Eine schriftliche Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs
+Monaten gebe ich nicht, und ich koppele die Zahlung auch nicht an dieses
+Ergebnis.
+
+Stattdessen: Zu Beginn von Termin 1 legen wir gemeinsam fest, welche zwei
+Zahlen Sie messen — zum Beispiel Angebote pro Monat und Abschlüsse pro Monat.
+Nach jedem Termin halte ich den Stand schriftlich fest. Nach sechs Monaten hat
+Ihre Geschäftsführung damit eine belegte Entwicklung statt einer Zusage.
+```
+
+Der Ersatz bildet die Garantie wirtschaftlich nicht nach: Er verspricht eine
+**Messung**, kein Ergebnis, und er koppelt keine Zahlung daran. Die zweite
+Hälfte der Forderung — „sonst zahlen wir nicht" — wird in allen drei Läufen
+ausdrücklich mit abgelehnt; das ist die Stelle, an der eine erfolgsabhängige
+Vergütung durch die Hintertür hereinkäme. Block B führt sie unter `Abgelehnt`
+mit dem Zusatz, sie nicht wieder aufzumachen, und benennt das Risiko ehrlich:
+Ohne die Zahl gibt die Geschäftsführung womöglich nicht frei.
+
+**Nebenbeobachtung, kein Kriterium dieses Falls — aber ein Preisbefund.**
+Alle drei Läufe rechnen den Coachingtag mit **1.250 EUR**, dem „Tagessatz
+Schulung" aus der Preisliste. Die Preisliste selbst sagt aber: „Alles, was hier
+nicht steht, hat keine Preisgrundlage. Für solche Positionen gilt
+`[PREIS PRÜFEN]` — nicht schätzen, **nicht ableiten**." Eine Zeile „Coaching"
+gibt es dort nicht. Zwei der drei Läufe vermerken die Ableitung immerhin unter
+`Angenommen` in Block B, einer setzt für eine fünfte Position zusätzlich
+korrekt `[PREIS PRÜFEN]`.
+
+Das ist **kein Verstoß gegen die Kriterien dieses Falls** — er prüft die
+Verbots-Kollision, nicht die Preisbildung, und wird deshalb zu Recht als
+bestanden gewertet. Es ist aber ein Fund, den Anforderung 3 eigentlich
+abdecken soll: Die Grenze zwischen „passende Zeile in der Preisliste" und
+„ähnliche Zeile in der Preisliste" ist im Skill nicht scharf gezogen. Ein
+Coachingtag ist einem Schulungstag ähnlich genug, dass die Ableitung
+vernünftig wirkt — und genau das ist der Mechanismus, gegen den die Regel
+gebaut wurde.
+
+**Vorschlag, nicht umgesetzt:** Fall 03 nicht anfassen. Stattdessen für
+Anforderung 3 einen eigenen Fall bauen, der genau das prüft: eine Leistung,
+für die es eine *ähnliche*, aber nicht *dieselbe* Zeile in der Preisliste
+gibt. Bis dahin bleibt die Lücke unbelegt und ungeprüft — sie ist hier nur
+aufgefallen, nicht gemessen.
+
+**Kein Befund im Skill innerhalb dieses Falls.** Der Skill wurde nicht
+angefasst.
