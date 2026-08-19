@@ -59,14 +59,15 @@ Fehlt der Einwand, wird gefragt — nicht der wahrscheinlichste geraten.
    - **Ja — der Satz hat etwas hergegeben**, das vorher nicht verloren war:
      ein angekündigter Nachlass, ein Zugeständnis ohne Gegenwert, ein
      Widerspruch zur eigenen Leistung. Das gehört unter **`Was fiel`**.
-   - **Nein, aber besser steht sie auch nicht da** — der Satz hat nichts
+   - **Nein — aber besser auch nicht** — der Satz hat nichts
      gewonnen: eine halbe Spiegelung, eine Behauptung ohne Beleg, ein
      nächster Schritt ohne geklärte Grundlage, der nur eine weitere Runde
      erzeugt. Das gehört unter **`Was wackelte`**.
 
    Die Trennung ist kein Formalismus: Was fiel, muss abgestellt werden, was
    wackelte, muss geschärft werden. Wer beides in einen Topf wirft, lässt
-   {{rolle}} an der falschen Stelle üben.
+   {{rolle}} an der falschen Stelle üben. Ein folgenloser nächster Schritt
+   gehört deshalb unter `Was wackelte`, nicht unter `Was fiel`.
 
 ## Ausgabeformat
 
