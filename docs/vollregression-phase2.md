@@ -57,7 +57,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 |---|---|---|
 | `account-recherche` | 3 | **durch** — 3 bestanden |
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
-| `ausschreibungs-analyse` | 3 | angefangen — 01 und 02 nach Korrektur je 3 von 3 |
+| `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
@@ -67,9 +67,9 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
-**Durch:** `account-recherche`, `angebots-schreiber`, `follow-up-generator`, `ketten`
+**Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `follow-up-generator`, `ketten`
 
-**Offen für die nächste Sitzung:** `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `forecast-erklaerer`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
+**Offen für die nächste Sitzung:** `crm-notiz-zu-schritt`, `einwand-sparring`, `forecast-erklaerer`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
 
 ## Ergebnis
 
@@ -83,7 +83,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 | `ausschreibungs-analyse / 01-hartes-ko` | bestanden | bestanden | bestanden | **bestanden** |
 | `ausschreibungs-analyse / 02-frist-abgelaufen` | bestanden | bestanden | bestanden | **bestanden** |
-| `ausschreibungs-analyse / 03-unvollstaendige-unterlage` | — | — | — | offen |
+| `ausschreibungs-analyse / 03-unvollstaendige-unterlage` | bestanden | bestanden | bestanden | **bestanden** |
 | `crm-notiz-zu-schritt / 01-verlorene-opportunity` | — | — | — | offen |
 | `crm-notiz-zu-schritt / 02-leere-notiz` | — | — | — | offen |
 | `crm-notiz-zu-schritt / 03-ansprechpartner-weg` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 13 von 32 abgeschlossen** — 13 bestanden · 19 offen.
+**Stand: 14 von 32 abgeschlossen** — 14 bestanden · 18 offen.
 
 ## Die einzelnen Fälle
 
@@ -348,6 +348,36 @@ Die Abgabe ist morgen, 18.08.2026, 10:00 Uhr — davon bleiben rund 3,5 Stunden 
 **Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („wenn die Frist nicht im ersten Satz steht") greift nicht: Der erste Satz der Ausgabe lautet „Die Abgabefrist endet morgen, 18.08.2026 um 10:00 Uhr — das sind ab jetzt rund 0,5 Arbeitstage (heute Nachmittag ab 16:30 plus morgen früh bis 10:00; die Nacht zählt nicht), und die Frist für Bieterfragen ist seit 12 Tagen vorbei, sie lief am 05.08.2026 ab." — damit stehen Abgabetermin, Restspanne, der ausdrücklich benannte Nachtabschnitt („die Nacht zählt nicht") und die abgelaufene Bieterfragenfrist alle im ersten Satz; nachgerechnet trägt das auch: 16:30 heute bis 10:00 morgen sind rund 17,5 Stunden, und vom 05.08. bis zum Vortag der Abgabe (17.08.) sind es genau 12 Tage. Die zweite Durchgefallen-Regel („wenn eine Bieterfrage vorgeschlagen …
 
 **Prüfer, Lauf 3:** Durchgefallen-Regel 1 („Frist nicht im ersten Satz") greift nicht: der erste Satz der Ausgabe lautet „Die Abgabefrist läuft morgen, 18.08.2026 um 10:00 Uhr ab — das sind rund 0,5 Arbeitstage (heute noch etwa 1,5 Stunden, morgen früh etwa 1 Stunde; die Nacht dazwischen ist keine Bearbeitungszeit), und die Frist für Bieterfragen ist seit dem 05.08.2026 abgelaufen, also seit 12 Tagen" — beide Fristen, der Nachtabschnitt und die Restzeit stehen also im ersten Satz, und die 12 Tage rechnen sich vom 05.08.2026 auf den Stichtag 17.08.2026 korrekt nach (die Kalenderspanne bis morgen 10:00 Uhr entspricht den geforderten rund 17 Stunden, hier konservativer als reine Bearbeitungszeit beziffert). Durchgefallen-Regel 2 („eine Bieterfrage wird vorgeschlagen") greift ebenfalls nicht: …
+
+### ausschreibungs-analyse / 03-unvollstaendige-unterlage
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+FRISTEN
+
+Es steht keine Abgabefrist im Dokument — damit ist auch die verbleibende Arbeitszeit nicht berechenbar, und abgelaufene Nebenfristen gibt es keine, weil überhaupt keine Fristen genannt sind. Nachweise, die von Dritten kommen, werden nicht gefordert. Das ist kein Grund, sich Zeit zu lassen: Bei einer privaten Anfrage bedeutet "keine Frist" nicht "unbegrenzt", sondern "nicht gesagt" — der Einkauf hat in der Regel längst einen Termin im Kopf. Frag ihn ab.
+
+  Nachweise Dritter: keine gefordert
+  Vergabeart:      private Anfrage
+  Abgabe:          nicht gefunden
+  Bieterfragen:    nicht gefunden
+  Bindefrist:      nicht gefunden
+  Verbleibend:     nicht berechenbar — keine Frist im Dokument
+  Analyseumfang:   vollständig
+
+Konsequenz der Vergabeart: Fristen und Formalien sind hier nicht gesetzt, sondern verhandelbar. Eine fehlende Angabe ist kein Ausschluss, sondern ein Gespräch. Für die Punkte unten ist ein Anruf bei Herrn Weiland schneller als jede schriftliche Rückfrage.
+
+… (116 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („eine nicht im Dokument stehende Angabe wird als gegeben behandelt") greift nicht: Die Ausgabe setzt die drei Fristen ausdrücklich als Lücke — „Abgabe:          nicht gefunden", „Bieterfragen:    nicht gefunden", „Bindefrist:      nicht gefunden" — und ergänzt keine der verbotenen Standardannahmen; zu Laufzeit, Ersatzteilen und Verfügbarkeit heißt es nur „Nicht geregelt und deshalb nicht bewertet: Vertragslaufzeit, Kündigung, Verfügbarkeit außerhalb der Arbeitszeit, Wartungsumfang je Anlagentyp, Zutrittsregelungen, Haftung, Bestandsdokumentation." Auch die Nebenpunkte bleiben als offen markiert statt gefüllt zu werden („Nebenangebote:   nicht geregelt — bei einer privaten Anfrage heißt das nicht \"verboten\", sondern \"ungeklärt\""), und …
+
+**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („eine nicht im Dokument stehende Angabe wird als gegeben behandelt") greift nicht: die drei Fristen stehen gleich im ersten Abschnitt ausdrücklich als Lücke — „**Abgabe:** nicht gefunden", „**Bieterfragen:** nicht gefunden", „**Bindefrist:** nicht gefunden" — und statt einer Standardannahme steht „**Verbleibend:** nicht bestimmbar — ohne Abgabefrist im Dokument wird sie nicht geschätzt"; keine der verbotenen Ergänzungen (24-Monats-Laufzeit, Ersatzteile gesondert, 30 Tage Bindefrist) taucht auf, im Gegenteil wird ausdrücklich vermerkt „Ebenfalls nicht im Dokument: Vertragslaufzeit, Haftungsregelungen, Zutrittsregelungen, ob eine Bestandsdokumentation der Anlagen vorliegt." Die zweite Durchgefallen-Regel („`bieten` ohne Vorbehalt") greift …
+
+**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („eine nicht im Dokument stehende Angabe wird als gegeben behandelt") greift nicht: die Ausgabe kennzeichnet jede fehlende Angabe ausdrücklich als Lücke statt sie zu ergänzen — „Vertragsform:    nicht im Dokument — weder Laufzeit noch Kündigungsfrist noch Haftungsregelung", „Lose:            nicht im Dokument.", „Ersatzteilregelung. Ob Teile beigestellt, verrechnet oder vorgehalten werden, steht nicht da." und „Wo Werk Nord liegt, steht nicht da."; nirgends steht eine Standardannahme wie eine 24-Monats-Laufzeit, eine Regel-Ersatzteilverrechnung oder eine 30-Tage-Bindefrist. Die zweite Durchgefallen-Regel („`bieten` ohne Vorbehalt") greift ebenfalls nicht, denn die Empfehlung lautet wörtlich „bieten mit Vorbehalt" und wird mit den …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
