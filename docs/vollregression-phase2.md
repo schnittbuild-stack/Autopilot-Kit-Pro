@@ -56,7 +56,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | Skill | Fälle | Stand |
 |---|---|---|
 | `account-recherche` | 3 | **durch** — 3 bestanden |
-| `angebots-schreiber` | 3 | **durch** — 3 bestanden |
+| `angebots-schreiber` | 3 | 01 nach der Zahlenregel 3 von 3, 02 und 03 laufen neu |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
 | `einwand-sparring` | 3 | **durch** — 3 bestanden (nach Korrektur, gegen den geschärften Testfall) |
@@ -68,6 +68,8 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
 **Durch:** `account-recherche`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`
+
+**Neu zu laufen wegen der Zahlenregel (19.08.):** `angebots-schreiber` (3 Fälle) und beide `ketten`-Fälle, weil sie `angebots-schreiber` verwenden.
 
 **Offen für die nächste Sitzung:** `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
 
@@ -209,23 +211,20 @@ Belegte Fakten:   Sitz Rendsburg — Impressum nordwind-anlagenbau.de
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
-Für das Angebot an Bernd Keßler fehlen zwei Pflicht-Angaben. Ich halte hier an, bis sie da sind.
+Bevor an Herrn Keßler etwas rausgeht, fehlen zwei Angaben. Beide stehen nicht in der Mail, und beide würde ich sonst raten.
 
-1. **Ziel:** Woran will Keßler nach den zwei Tagen erkennen, dass die Schulung gewirkt hat? In der Anfrage steht nur der Schmerz — die Kollegen können den Wert nicht erklären, es endet in Feature- und Preisdiskussion. Das ist das Symptom, nicht das Ergebnis. Ohne ein benanntes Ergebnis lässt sich keine Position mit Ergebnis formulieren.
+1. Woran will Keßler nach den zwei Tagen erkennen, dass die Schulung gewirkt hat? In der Mail steht nur das Problem: Feature-Diskussion, danach Preisgespräch. Das ist der Schmerz, nicht das Ziel. Ohne das Ziel lässt sich keine Position formulieren, die dem Kunden am Ende ein greifbares Ergebnis liefert.
 
-2. **Termin:** Bis wann soll die Schulung laufen? Genannt sind zwei Tage als Umfang, aber kein Wunschtermin, keine Frist und kein Zeitraum.
+2. Bis wann soll die Schulung stattfinden? Die Mail nennt weder Termin noch Zeitraum, nur „ich komme jetzt darauf zurück". Ich brauche ein Datum oder ein Zeitfenster, sonst steht im Angebot kein belastbarer Zeitrahmen.
 
-Nicht nachzufragen, weil es in der Anfrage steht: 11 Teilnehmer (6 Außendienst, 5 Innendienst), Durchführung beim Kunden im Haus, Schulungsraum mit Beamer für 15 Personen, Verpflegung durch den Kunden, Rollenspiele erwünscht, keine Hochglanz-Folien, Verhältnis Neukunde (Messekontakt Hannover im Frühjahr).
-
-Sobald die beiden Punkte beantwortet sind, schreibe ich das Angebot.
+Alles Weitere steht in der Anfrage: 11 Teilnehmer aus dem Vertrieb, zwei Tage, beim Kunden im eigenen Schulungsraum, Verpflegung durch den Kunden, Rollenspiele ausdrücklich erwünscht, Hochglanz-Folien nicht. Sobald die zwei Punkte geklärt sind, schreibe ich das Angebot.
 ```
 
-**Prüfer, Lauf 1:** Die Ausgabe ist eine reine Rückfrage-Nachricht und kein Entwurf: Sie beginnt mit „Für das Angebot an Bernd Keßler fehlen zwei Pflicht-Angaben. Ich halte hier an, bis sie da sind." und endet mit „Sobald die beiden Punkte beantwortet sind, schreibe ich das Angebot." — nirgends steht ein Angebotstext, weder „vorab" noch „zur ersten Orientierung". Damit greift die Durchgefallen-Regel „wenn ein Angebot erzeugt wurde (egal wie gut)" nicht. Es stehen genau zwei nummerierte Punkte da, und beide enthalten je genau eine Frage: „1. **Ziel:** Woran will Keßler nach den zwei Tagen erkennen, dass die Schulung gewirkt hat?" und „2. **Termin:** Bis wann soll die Schulung laufen?" — im gesamten Text finden …
+**Prüfer, Lauf 1:** Die Ausgabe ist durchgehend eine Rückfrage-Nachricht und kein Entwurf: sie beginnt mit „Bevor an Herrn Keßler etwas rausgeht, fehlen zwei Angaben" und endet mit „Sobald die zwei Punkte geklärt sind, schreibe ich das Angebot" — die Durchgefallen-Regel („wenn ein Angebot erzeugt wurde") greift damit nicht, weder als Volltext noch als Vorab-Skizze „zur ersten Orientierung". Es stehen genau zwei nummerierte Fragen da, Punkt 1 und Punkt 2, und keine weitere Frage versteckt sich im Fließtext; der Schlussabsatz ist reine Aufzählung des bereits Bekannten und endet auf einem Aussagesatz. Frage 1 trifft das Zielbild wörtlich: „Woran will Keßler nach den zwei Tagen erkennen, dass die Schulung gewirkt hat?", und sie begründet die Lücke korrekt mit „Das ist der Schmerz, nicht das …
 
-**Prüfer, Lauf 2:** Die Durchgefallen-Regel („wenn ein Angebot erzeugt wurde") greift nicht: Die Ausgabe enthält keinen Entwurf, sondern benennt ausdrücklich „Für das Angebot fehlen zwei Punkte." und schließt mit „Sobald beide Antworten vorliegen, entsteht das Angebot. Vorher nicht." — es gibt weder Leistungsbeschreibung noch Terminfeld mit Platzhalter noch eine Vorab-Orientierung. Es stehen genau zwei nummerierte Fragen da, eingeleitet mit „1. Ziel:" und „2. Termin:", und sie treffen exakt die beiden geforderten Lücken. Die Ziel-Lücke ist korrekt als Zielbild statt als Symptom gefasst: „Woran will Keßler nach den zwei Tagen erkennen, dass die Schulung gewirkt hat?" und „Was sollen die Kollegen danach anders …
+**Prüfer, Lauf 2:** Die Durchgefallen-Regel („wenn ein Angebot erzeugt wurde") greift nicht: die Ausgabe enthält keinerlei Entwurf, sondern sagt ausdrücklich „Deshalb schreibe ich noch kein Angebot, sondern brauche vorher diese zwei Antworten von ihm" und schließt mit „Vorher gibt es keinen Entwurf und keine Zahl" — es gibt keine Positionen, keine Leistungsbeschreibung, kein Terminfeld mit Platzhalter wie `<Termin>` oder `TBD`. Die erste Abweichend-Regel („nur eine der beiden Lücken erkannt") greift nicht: beide Pflicht-Lücken sind getroffen. Das Zielbild deckt Frage 1 ab — „Woran will Herr Keßler nach den zwei Tagen erkennen, dass die Schulung gewirkt hat?" mit der korrekten Begründung „In der Mail steht nur, was heute schiefläuft: Feature-Diskussion, danach Preisgespräch. Das ist der …
 
-**Prüfer, Lauf 3:** Die Ausgabe ist eine reine Rückfrage-Nachricht und kein Angebotsentwurf; sie sagt das ausdrücklich: „Zwei Pflichtangaben fehlen. Bis die geklärt sind, entsteht kein Angebot." und schließt mit „Sobald beide Antworten vorliegen, geht das Angebot in einem Zug raus." Damit greift die Durchgefallen-Regel („wenn ein Angebot erzeugt wurde") nicht — es gibt weder einen Vorab-Entwurf noch ein Gerüst mit Platzhaltern wie `<Termin>` oder `TBD`. Es stehen genau zwei nummerierte Punkte da, und der Text enthält genau zwei Fragezeichen, beide innerhalb dieser Punkte: „1. Ziel: Woran will Keßler nach den zwei Tagen erkennen, dass die Schulung gewirkt hat?" und „2. Termin: Bis wann oder in welchem Zeitraum …
-
+**Prüfer, Lauf 3:** Die Ausgabe ist eindeutig eine Rückfrage-Nachricht und kein Entwurf: Sie beginnt mit „Für die Anfrage von Bernd Keßler fehlen zwei Angaben. Ohne die schreibe ich kein Angebot." und schließt die Vorab-Variante ausdrücklich aus mit „Vorher nicht — auch keinen Entwurf zum Drüberschauen." Damit greift die Durchgefallen-Regel („durchgefallen, wenn ein Angebot erzeugt wurde") nicht; es gibt weder Angebotstext noch ein Terminfeld mit Platzhaltern wie `<Termin>` oder `TBD`. Es stehen genau zwei nummerierte Fragen da, und sie treffen exakt die beiden geforderten Lücken: Nr. 1 zielt auf das Zielbild — „Woran will Herr Keßler nach den zwei Tagen erkennen, dass die Schulung gewirkt hat? … Was sollen die 11 nach der Schulung anders machen, und woran misst er das" — und benennt das …
 
 ### angebots-schreiber / 02-budget-konflikt
 
