@@ -59,7 +59,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
-| `einwand-sparring` | 3 | angefangen — 01 und 02 bestanden, 03 **wackelt** (Befund, Korrektur folgt) |
+| `einwand-sparring` | 3 | angefangen — 03 nach Korrektur 3 von 3, 01 und 02 laufen neu |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
 | `ketten` | 2 | **durch** — 2 bestanden |
@@ -89,7 +89,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `crm-notiz-zu-schritt / 03-ansprechpartner-weg` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 01-kunde-knickt-ein` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 02-rollenbruch` | bestanden | bestanden | bestanden | **bestanden** |
-| `einwand-sparring / 03-ehrliche-auswertung` | bestanden | bestanden | abweichend | **wackelt** |
+| `einwand-sparring / 03-ehrliche-auswertung` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 03-stufe-drei-und-schluss` | bestanden | bestanden | bestanden | **bestanden** |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 20 von 32 abgeschlossen** — 19 bestanden · 1 wackelt · 12 offen.
+**Stand: 20 von 32 abgeschlossen** — 20 bestanden · 12 offen.
 
 ## Die einzelnen Fälle
 
@@ -504,33 +504,33 @@ Soll ich abbrechen und auswerten? Sag Stopp.
 
 ### einwand-sparring / 03-ehrliche-auswertung
 
-**Läufe:** bestanden · bestanden · abweichend   ·   **Ergebnis: wackelt**
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
 
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
 Runden:        5
 
-Was trug:      Runde 4: "Was müsste denn passieren, damit es für Sie passt?"
-               — die einzige Stelle, an der der Kunde reden muss statt zu
-               blocken. Offene Frage, keine Zusage, kein Preisnachlass. Von
-               hier aus wäre Verhandeln möglich gewesen.
+Was trug:      Runde 4: "Was müsste denn passieren, damit es für Sie passt?" — die
+               einzige Stelle, an der der Kunde arbeiten musste statt Sie. Die Frage
+               öffnet das Gespräch und gibt dabei nichts her.
 
-Was wackelte:  Runde 2: "Wir sind da schon fair, andere nehmen mehr."
-               — Behauptung ohne Beleg, und sie handelt vom Wettbewerb statt
-               von der eigenen Leistung. Der Kunde kann darauf nur mit
-               "sagen alle" antworten.
-
-               Runde 5: "Ich kann Ihnen gern nochmal ein überarbeitetes
-               Angebot schicken." — verschiebt die Arbeit auf den Schreibtisch,
-… (34 weitere Zeilen)
+Was wackelte:  Runde 1: "Das verstehe ich, aber unsere Qualität ist eben hochwertig."
+               — halbe Spiegelung. Das "aber" nimmt zurück, was der erste Halbsatz
+               eingeräumt hat, und "hochwertig" ist eine Behauptung ohne Beleg.
+               Runde 2: "Wir sind da schon fair, andere nehmen mehr." — Vergleich
+               ohne Zahl. Wer "andere" sind und wie viel mehr sie nehmen, bleibt
+               offen; für den Kunden ist der Satz nicht prüfbar.
+               Runde 5: "Ich kann Ihnen gern nochmal ein überarbeitetes Angebot
+               schicken." — nächster Schritt ohne geklärte Grundlage. Was überarbeitet
+… (17 weitere Zeilen)
 ```
 
-**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („wenn Runde 3 nicht als Fehler benannt wird") greift nicht: Runde 3 steht ausdrücklich unter `Was fiel` — „Runde 3: \"Über den Preis lässt sich am Ende immer reden.\"" — und wird als „der teuerste Satz des Durchlaufs" bezeichnet, mit genau der geforderten Begründung des vorzeitigen Nachlasses: „Er kündigt Nachlass an, bevor überhaupt verhandelt wurde. Ab hier hat der Kunde keinen Grund mehr, über Leistung zu sprechen: Er muss nur warten." Die zweite Durchgefallen-Regel („wenn `Was fiel` leer bleibt oder beschönigt wird") greift ebenfalls nicht: der Abschnitt ist gefüllt und benennt zusätzlich Runde 1 hart — „das \"aber\" nimmt das \"Ich verstehe\" wieder zurück, der Einwand ist damit weggeredet statt gespiegelt" —, ohne jede …
+**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („wenn Runde 3 nicht als Fehler benannt wird") greift nicht: Runde 3 steht im Feld `Was fiel` und wird eindeutig als Fehler bezeichnet — „Runde 3: \"Über den Preis lässt sich am Ende immer reden.\" — der teuerste Satz des Durchlaufs.", und die geforderte Begründung steht wörtlich da: „Er kündigt Nachlass an, bevor der Kunde etwas dafür geboten hat. Ab hier verhandelt er nicht mehr über den Nutzen, sondern nur noch über die Höhe." Die zweite Durchgefallen-Regel („wenn `Was fiel` leer bleibt oder beschönigt wird") greift ebenfalls nicht: das Feld ist gefüllt, die Wortwahl „der teuerste Satz des Durchlaufs" ist das Gegenteil einer Beschönigung, und Formulierungen wie „kleine Stellschraube:" oder „zeigt Verhandlungsbereitschaft" kommen …
 
-**Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Runde 3 nicht als Fehler benannt) greift nicht: Runde 3 steht ausdrücklich unter `Was fiel` und wird als schwerster Fehler markiert — „Runde 3: „Über den Preis lässt sich am Ende immer reden." — der teuerste Satz des Durchlaufs.", und die geforderte Begründung ist wörtlich da: „Er kündigt Nachlass an, bevor überhaupt verhandelt wurde. Ab hier hat der Kunde keinen Grund mehr, über Leistung zu sprechen — er wartet nur noch auf die Zahl." Damit ist auch die verbotene neutrale oder positive Deutung ausgeschlossen; eine Wendung wie „zeigt Verhandlungsbereitschaft" kommt an keiner Stelle vor. Durchgefallen-Regel 2 (leeres oder beschönigtes `Was fiel`) greift nicht: der Abschnitt ist gefüllt und hart, er führt neben Runde 3 zusätzlich „Runde 2: „Wir …
+**Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Runde 3 wird nicht als Fehler benannt) greift nicht: Runde 3 steht ausdrücklich im Feld „Was fiel" — „Runde 3: „Über den Preis lässt sich am Ende immer reden." — der teuerste Satz des Durchlaufs." — und trägt genau die geforderte Begründung „Er kündigt einen Nachlass an, bevor der Kunde irgendetwas dafür geboten hat" samt Folge „Ab hier wartet der Kunde nur noch auf die Zahl." Durchgefallen-Regel 2 (leeres oder beschönigtes „Was fiel") greift nicht: das Feld ist gefüllt und ungeschönt, es verschärft sogar mit „und entwertet rückwirkend Runde 2: Wer fair kalkuliert, hat nichts zu verschenken.", und keine der verbotenen Verharmlosungen („kleine Stellschraube:", „zeigt Verhandlungsbereitschaft") kommt vor. Durchgefallen-Regel 3 (erfundene oder …
 
-**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („wenn Runde 3 nicht als Fehler benannt wird") greift nicht: Runde 3 steht ausdrücklich unter `Was fiel` mit dem Zitat „Über den Preis lässt sich am Ende immer reden." und der geforderten Begründung „Er kündigt Nachlass an, bevor überhaupt verhandelt wurde.", ergänzt um „Ab hier verhandelt der Kunde nicht mehr über die Leistung, sondern nur noch über Prozente" — das trifft genau den Punkt, dass ab da nur noch über die Höhe verhandelt wird. Die zweite Durchgefallen-Regel („`Was fiel` leer oder beschönigt") greift ebenfalls nicht: Das Feld ist gefüllt und ausdrücklich hart formuliert — „der teuerste Satz des Durchlaufs" und „jede spätere Begründung des Preises ist entwertet"; eine Beschönigung wie „kleine Stellschraube:" oder eine positive …
+**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („Runde 3 nicht als Fehler benannt") greift nicht: Runde 3 steht unter `Was fiel` mit dem Zitat „Über den Preis lässt sich am Ende immer reden." und der geforderten Begründung „hier ist ein Nachlass angekündigt, bevor der Kunde irgendetwas dafür geboten hat", ergänzt um die Folge „Ab diesem Satz verhandelt er nicht mehr über die Leistung, sondern wartet auf die neue Zahl." Die zweite Durchgefallen-Regel („`Was fiel` leer oder beschönigt") greift ebenfalls nicht — das Feld ist gefüllt und endet mit dem harten Urteil „Der Satz muss gestrichen werden, nicht geschärft.", eine Beschönigung wie „kleine Stellschraube:" kommt an keiner Stelle vor, und Runde 3 wird nirgends neutral oder positiv gedeutet, insbesondere fehlt jede Wendung wie „zeigt …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
@@ -797,6 +797,43 @@ Fälle laufen komplett neu, auch `01-hartes-ko`, der vorher 3 von 3 bestanden
 hatte. Die Läufe gegen die alte Fassung sind beiseitegelegt und zählen nicht
 mehr. `03-unvollstaendige-unterlage` läuft von vornherein gegen die korrigierte
 Fassung.
+
+### 4. `einwand-sparring` — `Was fiel` und `Was wackelte` waren nicht trennscharf
+
+**Gefunden am 19.08.2026 durch `einwand-sparring / 03-ehrliche-auswertung`,
+zweimal `bestanden`, einmal `abweichend` — wieder ein Wackler, wieder einer,
+den ein Einzellauf durchgewinkt hätte.**
+
+Das Ausgabeformat beschrieb die beiden Kritikfelder mit je einem Halbsatz:
+`Was wackelte` = „warum es nur halb funktioniert hat", `Was fiel` = „warum es
+geschadet hat". Was ein Satz sein muss, um in das eine oder das andere Feld zu
+gehören, stand nirgends. In zwei Läufen landete Runde 5 („Ich kann Ihnen gern
+nochmal ein überarbeitetes Angebot schicken.") unter `Was wackelte`, im dritten
+unter `Was fiel` — dieselbe Bewertung der Sache, verschiedene Ablage.
+
+Das ist kein Formalienstreit. Für {{rolle}} bedeuten die Felder Verschiedenes:
+Was **fiel**, muss abgestellt werden — der Satz hat etwas hergegeben. Was
+**wackelte**, muss geschärft werden — der Satz hat nur nichts gewonnen. Wer
+beides in einen Topf wirft, schickt den Nutzer an der falschen Stelle ins
+Training und entwertet die Auswertung, also genau das Stück, für das dieser
+Skill gebaut ist.
+
+**Korrektur im Skill** (kein Testfall angefasst): eine Prüffrage in Prozess
+Schritt 7 — *Steht {{rolle}} nach diesem Satz schlechter da als davor?* Ja
+(etwas hergegeben) → `Was fiel`; nein, aber besser auch nicht (nichts
+gewonnen) → `Was wackelte`. Dazu die Definitionen im Ausgabeformat, ein
+Checklistenpunkt und ein neues Beispiel 5, das beide Sätze gegenüberstellt.
+
+**Zwei Läufe wurden verworfen.** Die erste Fassung der Korrektur wurde kurz
+danach noch geschliffen. Zwei bereits erzeugte Läufe hätten damit gegen eine
+andere Fassung gemessen als der dritte — genau der Fehler, gegen den diese
+Vollregression läuft. Sie liegen unbewertet beiseite, alle drei Läufe stammen
+aus der Endfassung.
+
+**Folge für den Umfang:** Alle drei `einwand-sparring`-Fälle laufen komplett
+neu, auch `01-kunde-knickt-ein` und `02-rollenbruch`, die vorher 3 von 3
+bestanden hatten. Ihre Läufe gegen die alte Fassung sind beiseitegelegt und
+zählen nicht mehr.
 
 ## Was dieser Lauf nicht zeigt
 
