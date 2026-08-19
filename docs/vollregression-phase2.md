@@ -59,7 +59,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
-| `einwand-sparring` | 3 | angefangen — 03 nach Korrektur 3 von 3, 01 und 02 laufen neu |
+| `einwand-sparring` | 3 | angefangen — 01 und 03 nach Korrektur je 3 von 3, 02 läuft neu |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
 | `ketten` | 2 | **durch** — 2 bestanden |
@@ -474,17 +474,16 @@ Begründung:    Frau Sedlmayr führt die Objektleitung laut Notiz kommissarisch,
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
-[Kunde] Rundum-Service und lange am Markt schreibt mir jeder in sein Angebot,
-        da steht bei Ihnen nichts drin, was ich vergleichen kann. Ich habe zwei
-        weitere Angebote auf dem Tisch, das günstigste liegt spürbar unter
-        Ihrem. Was rechtfertigt die Differenz konkret?
+[Kunde] Rundum-Service schreiben die anderen auch in ihr Angebot. Ich habe
+        hier zwei Vergleichsangebote liegen, beide liegen unter Ihrem. Woran
+        genau liegt der Unterschied?
 ```
 
-**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („wenn der Kunde nachgibt oder zustimmt") greift nicht: die Ausgabe enthält an keiner Stelle eine zustimmende oder teilzustimmende Wendung, sondern hält die Position hart mit „da steht bei Ihnen nichts drin, was ich vergleichen kann" und fordert mit „Was rechtfertigt die Differenz konkret?" weiterhin eine Rechtfertigung ein. Die zweite Durchgefallen-Regel („wenn im Sparring etwas außerhalb der Kundenrede steht") greift ebenfalls nicht: der gesamte Text besteht aus einem einzigen mit `[Kunde]` markierten Redeblock, beginnend mit „[Kunde] Rundum-Service und lange am Markt schreibt mir jeder in sein Angebot" — es gibt keine Bewertung, keinen „(Tipp: …)"-Einschub, keinen Zwischenstand und keinen Hinweis auf die Qualität der Verkäuferantwort. …
+**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („wenn der Kunde nachgibt oder zustimmt") greift nicht: die Ausgabe enthält kein zustimmendes oder abschwächendes Signal, sondern hält die Preisposition unverändert hart mit „Ich habe hier zwei Vergleichsangebote liegen, beide liegen unter Ihrem." — das Argument des Verkäufers wird sogar entwertet („Rundum-Service schreiben die anderen auch in ihr Angebot."), statt es gelten zu lassen. Die zweite Durchgefallen-Regel („wenn im Sparring etwas außerhalb der Kundenrede steht") greift ebenfalls nicht: die gesamte Ausgabe besteht aus einem einzigen mit `[Kunde]` markierten Block, es gibt keinen Klammerhinweis, keine Bewertung der Verkäuferantwort und keinen Zwischenstand; nach „Woran genau liegt der Unterschied?" endet der Text ohne Zusatz. Die …
 
-**Prüfer, Lauf 2:** Ich habe zuerst die erste Durchgefallen-Regel geprüft — „durchgefallen, wenn der Kunde nachgibt oder zustimmt" —, und sie greift nicht: die Ausgabe enthält an keiner Stelle eine Zustimmung, sondern hält die Ablehnung wörtlich aufrecht mit „Was davon in meiner Kalkulation ankommt, haben Sie mir gerade nicht gesagt." Auch eine Teilzustimmung oder ein weichmachendes Signal ist nicht belegbar; der Satzanfang „Zwanzig Jahre am Markt haben die anderen auch" entwertet das Argument des Verkäufers, statt es anzuerkennen. Die zweite Durchgefallen-Regel — „wenn im Sparring etwas außerhalb der Kundenrede steht" — greift ebenfalls nicht: die gesamte Ausgabe besteht aus der Marke `[Kunde]` und zwei Sätzen wörtlicher Rede, es gibt keinen Zwischenstand, keine Bewertung und kein …
+**Prüfer, Lauf 2:** Erste Durchgefallen-Regel („der Kunde gibt nach oder stimmt zu"): Sie greift nicht — die Ausgabe enthält keine Zustimmungsformel, sondern entwertet das Gegenargument sofort mit „Rundum-Service schreiben die anderen auch in ihr Angebot" und hält die Position unverändert mit „Für mich zählt die Zahl unten rechts". Zweite Durchgefallen-Regel („im Sparring steht etwas außerhalb der Kundenrede"): Sie greift ebenfalls nicht — die gesamte Ausgabe besteht aus einer einzigen Zeile, die mit „[Kunde]" beginnt, und danach folgt kein Zwischenstand, keine Bewertung und kein Klammerhinweis wie „(Tipp: …)". Erste Abweichend-Regel („der Einwand wird nur wiederholt statt verschärft"): Sie greift nicht, weil eine der in den Kriterien ausdrücklich genannten neuen Facetten geliefert wird, …
 
-**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („der Kunde gibt nach oder stimmt zu") greift nicht: die Ausgabe enthält keinerlei Zustimmung, sondern entwertet das Argument der Gegenseite mit „Rundum-Service steht bei den anderen auch im Angebot." — das ist das Gegenteil eines Nachgebens, und ein „das klingt schon besser" oder eine Teilzustimmung findet sich an keiner Stelle. Die zweite Durchgefallen-Regel („etwas außerhalb der Kundenrede") greift ebenfalls nicht: die gesamte Ausgabe besteht aus einer einzigen mit `[Kunde]` markierten Replik, es gibt keine Bewertung, keinen Zwischenstand, keinen „(Tipp: …)"-Einschub und keinen Hinweis darauf, dass die Verkäuferantwort schwach gewesen sei. Die Abweichend-Regel „der Einwand wird nur wiederholt statt verschärft" greift nicht, weil eine …
+**Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einer Zeile reiner Kundenrede, eingeleitet mit dem geforderten Präfix: „[Kunde] Zwanzig Jahre am Markt haben Ihre Wettbewerber auch, und Rundum-Service steht bei allen im Prospekt." Zur ersten Durchgefallen-Regel (Kunde gibt nach oder stimmt zu): Es findet sich keine Zustimmung und keine Teilzustimmung — die einzige Stelle, die eine Tatsache des Verkäufers aufgreift, „Zwanzig Jahre am Markt haben Ihre Wettbewerber auch", entwertet dieses Argument, statt es gelten zu lassen, und der zweite Satz „Ich werde am Jahresergebnis gemessen, nicht daran, was sich langfristig auszahlt" hält die Position unverändert hart. Zur zweiten Durchgefallen-Regel (etwas außerhalb der Kundenrede): Die Datei enthält ausschließlich diese eine mit „[Kunde]" …
 
 ### einwand-sparring / 02-rollenbruch
 
