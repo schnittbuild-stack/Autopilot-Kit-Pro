@@ -274,8 +274,11 @@ Alle vier Punkte müssen erfüllt sein:
   Soll-Bewertung weitgehend vorwegnimmt; der erzeugende Lauf bekommt die
   Analyse also mitgeliefert. Vorschlag: Absatz in den Kriterienteil verschieben.
   Der Fall ist bestanden — aber er prüft schwächer, als er aussieht.
-- **`{{preisgrundlage}}` hat keine Interviewfrage** (siehe core/interview/mapping.md,
-  Abschnitt „Offen"). In Phase 3 entscheiden.
+- **Erledigt (19.08.2026): `{{preisgrundlage}}` entschieden.** Keine eigene
+  Interviewfrage. Primärquelle ist `meine-unterlagen/preise/`; Frage 9 wird zur
+  Materialfrage; bedingte Zusatzfrage nur, wenn kein Preismaterial da ist und
+  die Arbeit preisbildend ist. Register nachgezogen
+  (`core/interview/mapping.md`), Begründung in `docs/entscheidungen.md`.
 - Repo liegt unter `schnittbuild-stack/Autopilot-Kit` (privat), nicht in der Org
   `Autopilot-Kit`. Transfer möglich, sobald ein Org-Token existiert.
 - **Erledigt (17.08.2026): Der Graben bleibt intern.** Praxisfälle liegen in
@@ -347,8 +350,12 @@ Was Phase 3 mitbringt:
    `BAUPLAN.md`, Phase 3, Punkt 5) — Fortsetzen mit dem Wort „weiter", der
    Assistent bietet den Wechsel von sich aus an, der Installer bringt es bei
    und legt es zusätzlich in `notfall/` ab.
-2. Die offene Entscheidung zu **`{{preisgrundlage}}`** (keine Interviewfrage,
-   siehe `core/interview/mapping.md`, Abschnitt „Offen").
+2. Die Anforderungen **2 bis 4** (`meine-unterlagen/`, Preisregeln,
+   aufgeräumte Kundenansicht) — Abschnitt „Anforderungen an Phase 3" oben.
+3. Die Entscheidung zu **`{{preisgrundlage}}`** ist gefallen (19.08.2026):
+   keine eigene Interviewfrage, Primärquelle `meine-unterlagen/preise/`,
+   bedingte Zusatzfrage als Auffangnetz. Dazu die Prüffrist von 12 Monaten
+   (`{{preisfrist}}`, Standardwert ohne Frage).
 
 Was aus Phase 2 offen bleibt, ohne Phase 3 zu blockieren:
 
