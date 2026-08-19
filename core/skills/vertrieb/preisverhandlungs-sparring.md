@@ -86,9 +86,13 @@ Stopp:          „Stopp" beendet das Sparring sofort und startet die Auswertung
 
 ```
 Runden:              <Anzahl, höchstens 8>
-Ausgangspreis:       <Betrag>
+Ausgangspreis:       <Betrag — der aus dem Rahmen, unverändert>
 Endstand:            <Betrag oder "keine Einigung">
 Verschenkt:          <Betrag> — <die Sätze, mit denen es wegging, wörtlich>
+                     Nachgerechnet: `Verschenkt` ist die Summe der einzeln
+                     belegten Zugeständnisse, und `Ausgangspreis` minus
+                     `Verschenkt` ergibt den `Endstand`. Stimmt das nicht,
+                     stimmt die Auswertung nicht.
 Ohne Gegenleistung:  <welche Zugeständnisse nichts eingebracht haben>
 Gegenleistungen gefordert: ja / nein — <welche>
 Taktiken des Einkäufers:   <welche vorkamen, damit du sie wiedererkennst>
@@ -123,6 +127,15 @@ Checkliste vor jeder Ausgabe:
 - [ ] Eine geforderte Gegenleistung wurde ernsthaft beantwortet.
 - [ ] **Die Auswertung beziffert.** „Du warst zu schnell mit dem Nachlass" ist
       wertlos; „3.200 EUR in Runde 2, ohne Gegenwert" sitzt.
+- [ ] **Jede Zahl der Auswertung ist gegen ihre Einzelposten nachgerechnet**,
+      auch Zwischenbeträge im Fließtext: `Verschenkt` ist die Summe der
+      einzeln belegten Zugeständnisse, `Ausgangspreis` minus `Verschenkt`
+      ergibt den `Endstand`. Eine Zahl, die zu ihren Posten nicht passt, macht
+      die Auswertung wertlos — und genau die Bezifferung ist ihr Zweck.
+- [ ] Ausgangspreis und Endstand stammen aus dem Verlauf, nicht aus einer
+      eigenen Bereinigung. Rechnet der Skill eine Variante (etwa ohne ein
+      strittiges Zugeständnis), steht sie als ausgewiesene Nebenrechnung
+      daneben, nie an der Stelle des Endstands.
 - [ ] Der Skill hat keinen eigenen Rabattvorschlag gemacht.
 - [ ] Zitate wörtlich, kein Lob-Sandwich.
 - [ ] Jede im Sparring benutzte Technik ist in `Taktiken des Einkäufers`

@@ -129,6 +129,12 @@ Leistung:     3–7 Positionen aus Prozess Schritt 3. Jede Position hat genau
               Deckt das genannte Budget den Umfang nicht, steht hier trotzdem
               der **volle** Umfang; hier wird nichts gekürzt.
 Preis:        Positionen + Summe, Währung, Steuerangabe, Gültigkeit
+              Die Summe ist die Summe der Einzelpositionen — nachgerechnet,
+              bevor sie im Text steht. Das gilt für **jede** Zahl der Ausgabe,
+              auch für Beträge im Notizblock B: keine Zahl ohne ihre Posten.
+              Deckt das Budget den Umfang nicht, bleibt die Summe die des
+              vollen Umfangs; der gekürzte Betrag erscheint nur als
+              ausgewiesener Vorschlag in Block B, nie an ihrer Stelle.
 Zeitrahmen:   Start, Dauer, Liefertermin
 Ablehnung:    <nur falls eine Kundenforderung an {{verbote}} scheitert>
               kurz und klar abgelehnt, ohne Ausrede und ohne Entschuldigung,
@@ -196,7 +202,12 @@ Dazu die Checkliste für Prozess Schritt 9 — jeder Punkt einzeln mit ja/nein:
 - [ ] Keine erfundenen Referenzen, Kundennamen, Zertifikate, Auszeichnungen
       oder Projektbeispiele. Auch keine „typischerweise"-Formulierungen, die
       wie Erfahrung klingen.
-- [ ] Summe nachgerechnet und stimmt.
+- [ ] Summe nachgerechnet und stimmt — und mit ihr **jede weitere Zahl der
+      Ausgabe**, auch Beträge im Notizblock B und Zwischensummen im Fließtext.
+      Eine Zahl, die zu ihren eigenen Posten nicht passt, entwertet das ganze
+      Angebot.
+- [ ] Die Summe im Angebot ist die des vollen Umfangs. Ein gekürzter Betrag
+      steht nur als ausgewiesener Vorschlag in Block B, nie an ihrer Stelle.
 - [ ] Keine Superlative ohne Beleg („führend", „einzigartig", „beste").
 - [ ] Genau ein nächster Schritt — nicht drei Optionen — und er nennt ein Datum.
 - [ ] Jede Position trägt genau drei Angaben (Was, Umfang, Ergebnis) — keine
