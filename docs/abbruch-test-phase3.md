@@ -58,7 +58,7 @@ Stelle fortsetzt — dann hat „weiter" nicht getragen. Alles andere ist
 
 | Phase | Abbruchstelle | Fortsetzung | Wusste er von „weiter"? |
 |---|---|---|---|
-| 1 — Ist alles startklar | offen | — | — |
+| 1 — Ist alles startklar | mitten im Umräumen | **bestanden** | ja, aber nur aus `START_HIER.md` |
 | 2 — Kennenlernen | offen | — | — |
 | 3 — Einrichten | offen | — | — |
 | 4 — Erste echte Aufgabe | offen | — | — |
@@ -67,3 +67,82 @@ Stelle fortsetzt — dann hat „weiter" nicht getragen. Alles andere ist
 ## Die fünf Fälle
 
 <!-- Ein Fall, ein Block. Wird nach jedem Fall ergänzt. -->
+
+
+### Phase 1 — Abbruch mitten im Umräumen
+
+**Ergebnis: bestanden.** Alle sieben Prüfpunkte erfüllt.
+
+**Die Abbruchstelle.** Der bösartigste Punkt, den Phase 1 hergibt, und die
+Anleitung beschreibt ihn selbst: Der Stand wird geschrieben („Ordner werden
+gerade umgeräumt, noch ist nichts verschoben"), dann wird verschoben — und
+mittendrin stirbt die Sitzung. Auf der Platte lag danach:
+
+- `CLAUDE.md` und `system/STATUS.md` angelegt, alle neuen Ordner angelegt
+- `core/` **bereits** nach `system/` verschoben
+- `adapter-claude/` und `notfall/` **noch nicht** verschoben
+- ein Stand, der behauptet, es sei **noch nichts** verschoben
+
+Der Stand war also im Moment des Abbruchs nachweislich **falsch**. Das ist
+kein konstruierter Sonderfall, sondern der Normalfall eines harten Abbruchs:
+Zwischen „ich schreibe auf, was ich vorhabe" und „ich habe es getan" liegt
+immer eine Lücke.
+
+**Was der Nutzer gesehen hat.** Genau einen Satz: „Ich schau kurz, ob bei dir
+alles bereitsteht. Dauert eine Minute, du musst nichts tun." Danach lief alles
+still — so, wie die Anleitung es verlangt. Dann war das Fenster weg.
+
+**Was auf „weiter" passiert ist.** Die frische Sitzung hat sich wörtlich mit
+dem Satz aus dem Stand gemeldet: „Ich war gerade beim Aufräumen der Ordner —
+ich mach da einfach weiter, du musst nichts tun." Sie hat **nicht** dem Stand
+geglaubt, sondern nachgesehen, was tatsächlich schon unter `system/` liegt,
+`core/` in Ruhe gelassen und nur `adapter-claude/` und `notfall/` verschoben.
+Danach Phase 1 zu Ende gebracht, Stand fortgeschrieben, frisches Gespräch
+angeboten.
+
+**Das ist der eigentliche Nachweis dieses Falls:** Die Fortsetzung hat einen
+falschen Stand überlebt, weil die Anleitung an dieser Stelle „prüfen, was
+schon verschoben ist" vorschreibt und die Sitzung das auch getan hat. Ein
+Fortsetzungsmechanismus, der nur mit korrekten Ständen funktioniert, hätte
+hier `core/` ein zweites Mal verschoben oder wäre steckengeblieben.
+
+**Hätte der Nutzer gewusst, dass „weiter" das Zauberwort ist?**
+
+**Ja — aber nur aus `START_HIER.md`, nicht vom Installer.** Der Installer
+hatte es an dieser Stelle noch nicht gesagt: Er bietet den frischen Start nach
+**jeder abgeschlossenen Phase** an (eiserne Regel 5), und Phase 1 war nicht
+abgeschlossen. Die einzige Quelle war die Datei, aus der der Nutzer wenige
+Minuten zuvor abgelesen hat, wie er überhaupt startet — sie nennt „weiter"
+ausdrücklich, mit der Beruhigung dazu. Zusätzlich liegt `notfall/01-weiter-machen.md`
+im Ordner, aber dorthin muss er von selbst kommen.
+
+**Bewertung dieses Risikos:** vertretbar, aber es ist das dünnste Glied der
+ganzen Kette. Zwischen dem Lesen von `START_HIER.md` und dem Abbruch liegen
+im schlechtesten Fall zwei Minuten — dafür spricht, dass er sich erinnert.
+Dagegen spricht, dass er in diesen zwei Minuten nichts getan hat, was das Wort
+verankert: Der Installer hat es weder wiederholt noch geübt. **In Phase 1 gibt
+es keinen zweiten Halt.** Wer `START_HIER.md` überflogen hat, um schnell an
+den Satz zum Kopieren zu kommen, hat „weiter" nicht gelesen.
+
+**Randbeobachtung ohne Notenwirkung:** Die frische Sitzung kündigt die zehn
+Fragen an und vermerkt als nächsten Schritt Frage 1 — stellt sie im sichtbaren
+Text aber nicht. Der Nutzer bekommt „zehn kurze Fragen" angesagt und dann das
+Angebot eines frischen Gesprächs, ohne dass eine Frage dasteht. Das kostet
+keinen Prüfpunkt, ist aber eine unnötige Leerstelle an einer Phasengrenze.
+
+**Zwei Korrekturen an den Prüfpunkten, beide vor diesem Urteil.**
+Prüfpunkt 5 war in seiner ersten Fassung sachlich falsch: Er verbot, dem
+Nutzer das frische Gespräch anzubieten — also genau die Handlung, die
+Anforderung 1 Punkt 2 zwingend verlangt. Die zweite Fassung zählte „Ordner",
+„Datei" und „Gedächtnis" zu den verbotenen Fachbegriffen; die Anleitung nennt
+genau diese Wörter als die **erlaubten** Alltagswörter (eiserne Regel 2). Beide
+Fassungen hätten eine Pflichthandlung als Fehler gezählt. Die dritte Fassung
+erfindet keine Liste mehr, sondern übernimmt die Wortlisten der Anleitung.
+
+Beide verworfenen Urteile liegen im Testaufbau unter
+`urteil-p1-VOR-KORREKTUR.md` und `urteil-p1-VOR-KORREKTUR-2.md`. **In beiden
+waren die Prüfpunkte 1, 2, 3, 4, 6 und 7 unverändert erfüllt** — die
+Korrekturen haben nur den Prüfpunkt bewegt, der falsch formuliert war, nicht
+das Ergebnis der Fortsetzung. Der Vorgang steht hier, weil eine stille
+Korrektur an einem Bewertungsmaßstab von Weichspülen nicht zu unterscheiden
+wäre.
