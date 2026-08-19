@@ -59,7 +59,7 @@ Stelle fortsetzt — dann hat „weiter" nicht getragen. Alles andere ist
 | Phase | Abbruchstelle | Fortsetzung | Wusste er von „weiter"? |
 |---|---|---|---|
 | 1 — Ist alles startklar | mitten im Umräumen | **bestanden** | ja, aber nur aus `START_HIER.md` |
-| 2 — Kennenlernen | offen | — | — |
+| 2 — Kennenlernen | nach Frage 7, ohne Antwort | **bestanden** | ja — Installer hat es am Ende von Phase 1 gesagt |
 | 3 — Einrichten | offen | — | — |
 | 4 — Erste echte Aufgabe | offen | — | — |
 | 5 — Wächter und Übergabe | offen | — | — |
@@ -146,3 +146,60 @@ Korrekturen haben nur den Prüfpunkt bewegt, der falsch formuliert war, nicht
 das Ergebnis der Fortsetzung. Der Vorgang steht hier, weil eine stille
 Korrektur an einem Bewertungsmaßstab von Weichspülen nicht zu unterscheiden
 wäre.
+
+
+### Phase 2 — Abbruch unmittelbar nach Frage 7
+
+**Ergebnis: bestanden.** Alle sieben Prüfpunkte erfüllt.
+
+**Die Abbruchstelle.** Die Fragen 1 bis 6 sind beantwortet und in
+`mein-profil.md` gesichert. Frage 7 (Signatur) steht als letzte Nachricht auf
+dem Bildschirm — dann ist die Sitzung weg. Der Nutzer hat sie gelesen und nie
+beantwortet.
+
+**Wieder klafft eine Lücke zwischen Stand und Wirklichkeit**, diesmal in die
+andere Richtung als in Phase 1: Der Stand sagt „Frage 7 ist noch **nicht**
+gestellt", obwohl sie auf dem Bildschirm stand. Der Stand wird nämlich
+geschrieben, **bevor** die Frage rausgeht — so schreibt es die Anleitung vor,
+und so ist es auch richtig. Die Alternative wäre gefährlicher: Stünde dort
+„Frage gestellt, warte auf Antwort", könnte die nächste Sitzung sie für
+erledigt halten und nicht wiederholen — und im frischen Gespräch sieht der
+Nutzer die alte Frage nicht mehr.
+
+**Was auf „weiter" passiert ist.** Die frische Sitzung hat den Satz aus dem
+Stand Zeichen für Zeichen übernommen:
+
+```
+Wir sind beim Kennenlernen — sechs von zehn Fragen sind durch. Weiter mit
+Nummer sieben: Wie sieht deine E-Mail-Signatur aus? Einfach hier reinkopieren,
+so wie sie in deinen Mails steht. (Zum Beispiel: „Mit freundlichen Grüßen /
+Katrin Reinhardt / Reinhardt Industrieservice GmbH / Telefon 0234 5558820")
+```
+
+Mehr nicht. Keine zweite Nachricht, keine Rückfrage, keine Zusammenfassung des
+Bisherigen. Sie hat vorher in `mein-profil.md` nachgesehen, ob die sechs
+Antworten wirklich drinstehen und das Signaturfeld leer ist — und dann nichts
+geschrieben, weil es nichts zu sichern gab.
+
+**Ein Prüfpunkt war strittig, und die Begründung dagegen ist die bessere.**
+Prüfpunkt 6 verlangt, dass der Stand fortgeschrieben wird. Die Sitzung hat
+nichts geschrieben. Die strenge Lesart wäre: Die Frage zu stellen ist ein
+Schritt, also gehört er in den Stand. Die Bewertung hat dagegen entschieden,
+und die Begründung trägt: Es gab kein Arbeitsergebnis, das verlorengehen
+könnte, und die unveränderte Datei führt die nächste Sitzung verlustfrei an
+dieselbe Stelle. Ein Eintrag „warte auf Antwort" wäre das schlechtere Verhalten.
+
+**Hätte der Nutzer gewusst, dass „weiter" das Zauberwort ist?**
+
+**Ja, und diesmal aus zwei Quellen.** Am Ende von Phase 1 — also eine Nachricht
+vor dem Beginn des Interviews — hat der Assistent es ihm selbst gesagt: „Das
+war's für diesen Teil. Wenn du magst, fang gleich ein frisches Gespräch an und
+schreib einfach **weiter** — dein Stand ist gesichert." Dazu weiterhin
+`START_HIER.md`.
+
+Damit ist die Lage in Phase 2 deutlich besser als in Phase 1: Der Hinweis kam
+vom Assistenten, im Fluss der Unterhaltung, wenige Minuten vor dem Abbruch.
+**Innerhalb** von Phase 2 fällt das Wort allerdings kein einziges Mal mehr —
+geprüft an der Mitschrift, kein Treffer über zehn Fragen hinweg. Wer zwischen
+Frage 1 und Frage 10 abbricht, verlässt sich auf die Erinnerung an eine
+Nachricht am Phasenende. Das trägt, ist aber kein Netz mit zwei Böden.
