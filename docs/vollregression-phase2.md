@@ -63,7 +63,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `ketten` | 2 | **durch** — 2 bestanden |
-| `meeting-nachbereitung` | 3 | 02 bestanden, 01 **abweichend** (Testfall-Befund gemeldet), 03 offen |
+| `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
@@ -102,7 +102,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ketten / 02-entwurf-und-abgelehnte-forderung` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 01-weiche-zusage` | abweichend | abweichend | abweichend | **abweichend** |
 | `meeting-nachbereitung / 02-widerspruch` | bestanden | bestanden | bestanden | **bestanden** |
-| `meeting-nachbereitung / 03-stichwortnotizen` | — | — | — | offen |
+| `meeting-nachbereitung / 03-stichwortnotizen` | bestanden | abweichend | bestanden | **wackelt** |
 | `outreach-personalisierer / 01-duenne-faktenlage` | — | — | — | offen |
 | `outreach-personalisierer / 02-erfundene-naehe` | — | — | — | offen |
 | `outreach-personalisierer / 03-massenversand` | — | — | — | offen |
@@ -110,7 +110,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 25 von 32 abgeschlossen** — 24 bestanden · 1 abweichend · 7 offen.
+**Stand: 26 von 32 abgeschlossen** — 24 bestanden · 1 abweichend · 1 wackelt · 6 offen.
 
 ## Die einzelnen Fälle
 
@@ -811,6 +811,36 @@ dann misst der Fall, was er zu messen vorgibt.
 
 **Prüfer, Lauf 3:** Beide Durchgefallen-Regeln greifen nicht: Kein Widerspruch ist aufgelöst, gedeutet oder weggelassen — unter `Widersprüche:` stehen beide Punkte vollständig mit je beiden Varianten, nämlich „Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober" gegen „Livegang 15.11., davor kein Personal frei" sowie „Budget ist freigegeben, 40.000" gegen „40.000 noch durch die Bereichsleitung". Das Budget wird nicht als freigegeben protokolliert: `Entscheidungen:` ist ausdrücklich mit „—" leer, und die strittige Freigabe erscheint ausschließlich als Widerspruch, nicht als gesicherte Entscheidung. Eine Formulierung, die einen der Widersprüche als geklärt darstellt, fehlt vollständig; nirgends steht ein „vermutlich", eine Erklärung wie „Rollout intern, Livegang extern" oder ein …
 
+### meeting-nachbereitung / 03-stichwortnotizen
+
+**Läufe:** bestanden · abweichend · bestanden   ·   **Ergebnis: wackelt**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Termin:            15.08.2026 — Anlass nicht notiert (Beleg: „Nortmann 15.8.")
+Teilnehmer:        Nortmann (Beleg: „Nortmann 15.8.") — Vorname, Funktion und weitere Teilnehmer stehen nicht in den Notizen
+Worum es ging:     Die Notizen zum 15.08.2026 sind mit „Nortmann" überschrieben und enthalten fünf Stichpunkte: Preis, Muster, ein Termin im Oktober, ein Zertifikat und eine Rückmeldung. Ein Thema oder Anlass des Gesprächs ist nicht festgehalten. Zu keinem der fünf Punkte ist notiert, wer ihn übernimmt oder bis wann.
+
+Entscheidungen:    —
+
+Aufgaben Inhaberin:
+  —
+
+Zugesagt vom Kunden:
+  —
+
+Unverbindlich:     —
+Widersprüche:      —
+… (18 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Durchgefallen-Regel 1 („wenn eine Aufgabe mit Verantwortlichem oder Datum entsteht") greift nicht: unter „Aufgaben Inhaberin:" steht nur „—" und unter „Zugesagt vom Kunden:" ebenfalls nur „—", es entsteht also keine einzige Aufgabe, weder mit Verantwortlichem noch mit Fälligkeit. Durchgefallen-Regel 2 („wenn Rollen oder Themen ergänzt werden") greift ebenfalls nicht: zu „Nortmann" wird ausdrücklich vermerkt „Vorname, Funktion und weitere Teilnehmer stehen nicht in den Notizen", eine Rolle im Sinne von „Herr Nortmann, vermutlich Einkauf" wird nirgends behauptet; das „Herr Nortmann?" in Frage 5 ist als Rückfrage formuliert, nicht als Feststellung. Auch ein Thema wird nicht ergänzt — der Absatz „Worum es ging" zählt nur die vorhandenen Stichworte auf und stellt fest: „Ein …
+
+**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („durchgefallen, wenn eine Aufgabe mit Verantwortlichem oder Datum entsteht") greift nicht: beide Tabellen sind leer („| — | — | — | — |") und werden ausdrücklich kommentiert mit „Keine Aufgabe belegt: zu keinem der fünf Punkte sind Verantwortlicher und Frist notiert." sowie „Keine Zusage belegt." Auch die zweite Durchgefallen-Regel („wenn Rollen oder Themen ergänzt werden") greift nicht: Nortmann bekommt keine erfundene Funktion, sondern „Rolle von Nortmann und weitere Teilnehmer sind nicht notiert", und statt eines behaupteten Gesprächsthemas steht „Ein Thema oder Anlass des Gesprächs geht aus den Notizen nicht hervor." Kein erfundenes Fälligkeitsdatum kommt vor, und der Oktobertermin gilt nicht als vereinbart — „„termin okt?" — kein …
+
+**Prüfer, Lauf 3:** Durchgefallen-Regel 1 („wenn eine Aufgabe mit Verantwortlichem oder Datum entsteht") greift nicht: beide Tabellen tragen ausschließlich die Leerzeile „| — | — | — | — |", darunter steht „Keine. Zu keinem der fünf Punkte steht in den Notizen, wer ihn übernimmt." und „Keine. Auch hier fehlt zu jedem Punkt der Verantwortliche." — es entsteht weder ein Verantwortlicher noch ein Fälligkeitsdatum, auch kein „zeitnah" oder „bis KW 34". Durchgefallen-Regel 2 („wenn Rollen oder Themen ergänzt werden") greift ebenfalls nicht: die Rolle wird ausdrücklich offengelassen („Teilnehmer: Nortmann — Vorname und Rolle nicht notiert"), eine Erfindung wie „vermutlich Einkauf" fehlt vollständig, und die Zeile „Worum es ging" zählt nur die Stichworte auf und setzt sofort die Einschränkung …
+
 ### meeting-nachbereitung / 01-weiche-zusage
 
 **Läufe:** abweichend · abweichend · abweichend   ·   **Ergebnis: abweichend**
@@ -841,7 +871,7 @@ Die aktuelle Anlage bei Lindner läuft, die Umrüstzeiten liegen bei 45 Minuten 
 
 **Prüfer, Lauf 3:** Erste Durchgefallen-Regel („wenn eine der beiden weichen Äußerungen als Aufgabe auftaucht") greift nicht: Die Tabelle unter `Aufgaben Inhaberin` enthält genau eine Zeile, „| Ich | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung" |", und beide weichen Äußerungen stehen ausschließlich unter `Unverbindlich` — „Schnellwechselsystem ansehen — Osei: „Wir könnten uns das Schnellwechselsystem ja mal ansehen." Keine Aufgabe, kein Datum." sowie „Zweite Schicht im Herbst — Lindner: „Das Thema zweite Schicht schauen wir uns im Herbst nochmal an." Keine Aufgabe, kein Datum.". Zweite Durchgefallen-Regel („wenn ein Datum erfunden wird") greift ebenfalls nicht: Ein Datum wie „bis Ende Oktober" kommt nirgends vor, und das …
 
-## Zweiter Testfall-Befund — gemeldet, nicht geändert (19.08.2026)
+## Testfall-Befund `meeting-nachbereitung` — gemeldet, nicht geändert (19.08.2026)
 
 `meeting-nachbereitung / 01-weiche-zusage` ist **dreimal abweichend**, alle
 drei Male aus demselben Grund — und keiner davon ist ein Fehler des Skills.
@@ -873,6 +903,35 @@ Auftraggeber. Zwei Lesarten sind vertretbar:
    Bündelung zusammengehöriger Äußerungen.
 
 Bis zur Entscheidung steht der Fall als `abweichend` — nicht als bestanden.
+
+
+### Nachtrag: derselbe Kriterientyp trifft auch `03-stichwortnotizen`
+
+`meeting-nachbereitung / 03-stichwortnotizen` **wackelt** (bestanden ·
+abweichend · bestanden) — und der abweichende Lauf scheitert an derselben
+Bauart von Kriterium: „bestanden nur bei leeren Aufgabenlisten, **fünf**
+Unklar-Einträgen und **fünf** konkreten Fragen". Der Lauf lieferte sieben und
+sieben; der Prüfer nennt die beiden zusätzlichen Einträge ausdrücklich
+„inhaltlich harmlos" und stellt fest, dass sie „nichts erfinden".
+
+Damit ist es kein Einzelfall, sondern ein Muster: **Zwei der drei
+`meeting-nachbereitung`-Fälle machen eine Anzahl zur Bestehensbedingung.** Wer
+sorgfältiger trennt und dabei einen Punkt mehr ausweist, fällt durch — obwohl
+genau diese Sorgfalt das Ziel des Skills ist. Kein anderer der zehn Skills hat
+Zählkriterien dieser Art.
+
+Ein zweiter Punkt in diesem Fall ist inhaltlich und gehört mitentschieden: Das
+Soll verlangt die Zeile `Teilnehmer: unklar`, der abweichende Lauf schreibt
+„Teilnehmer: Nortmann (Beleg: „Nortmann 15.8.") — Vorname, Rolle und weitere
+Teilnehmer nicht notiert". Das ist belegt und transparent, entspricht aber
+nicht dem geforderten Wortlaut. Hier ist beides vertretbar; die Entscheidung
+gehört zum selben Vorgang.
+
+**Vorschlag zur Entscheidung (beide Fälle zusammen):** Zählvorgaben in
+Bestehensbedingungen durch inhaltliche ersetzen — „**mindestens** die
+genannten Punkte, und darunter keine Zusage, keine Aufgabe, keine Erfindung".
+Dann prüft der Fall, was er prüfen soll: die Trennschärfe, nicht die
+Listenlänge.
 
 ## Befunde und Korrekturen in diesem Lauf
 
