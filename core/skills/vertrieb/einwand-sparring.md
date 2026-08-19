@@ -53,6 +53,21 @@ Fehlt der Einwand, wird gefragt — nicht der wahrscheinlichste geraten.
    Training, sondern Zeitverbrauch.
 7. **Auswerten** nach „Stopp" oder Rundenende — nach dem Format unten.
 
+   **`Was fiel` und `Was wackelte` werden nicht nach Gefühl verteilt.** Die
+   Prüffrage ist immer dieselbe: *Steht {{rolle}} nach diesem Satz schlechter
+   da als davor?*
+   - **Ja — der Satz hat etwas hergegeben**, das vorher nicht verloren war:
+     ein angekündigter Nachlass, ein Zugeständnis ohne Gegenwert, ein
+     Widerspruch zur eigenen Leistung. Das gehört unter **`Was fiel`**.
+   - **Nein, aber besser steht sie auch nicht da** — der Satz hat nichts
+     gewonnen: eine halbe Spiegelung, eine Behauptung ohne Beleg, ein
+     nächster Schritt ohne geklärte Grundlage, der nur eine weitere Runde
+     erzeugt. Das gehört unter **`Was wackelte`**.
+
+   Die Trennung ist kein Formalismus: Was fiel, muss abgestellt werden, was
+   wackelte, muss geschärft werden. Wer beides in einen Topf wirft, lässt
+   {{rolle}} an der falschen Stelle üben.
+
 ## Ausgabeformat
 
 **Fehlt der Einwand:** keine Rahmen-Nachricht und kein Rollenspiel, sondern
@@ -93,8 +108,12 @@ danach folgt die Auswertung.
 ```
 Runden:        <Anzahl, höchstens 8>
 Was trug:      <Runde N: „wörtliches Zitat" — warum es gewirkt hat>
-Was wackelte:  <Runde N: „wörtliches Zitat" — warum es nur halb funktioniert hat>
-Was fiel:      <Runde N: „wörtliches Zitat" — warum es geschadet hat>
+Was wackelte:  <Runde N: „wörtliches Zitat" — der Satz hat nichts gewonnen,
+               aber auch nichts hergegeben: halbe Spiegelung, Behauptung ohne
+               Beleg, nächster Schritt ohne geklärte Grundlage>
+Was fiel:      <Runde N: „wörtliches Zitat" — der Satz hat etwas hergegeben
+               und {{rolle}} damit schlechter dastehen lassen als davor:
+               angekündigter Nachlass, Zugeständnis ohne Gegenwert>
 Nicht geliefert: <welche der drei Bedingungen aus Schritt 3 fehlten>
 Ein Satz zum Üben: <genau EIN Satz — die eine Formulierung, die beim
                     nächsten Mal den Unterschied macht>
@@ -129,6 +148,10 @@ Checkliste vor jeder Ausgabe:
       nimmt dem Kit seinen einzigen Zweck.
 - [ ] „Was fiel" ist gefüllt, wenn etwas gefallen ist — auch wenn es
       unangenehm ist.
+- [ ] Jeder bemängelte Satz steht im richtigen Feld: Hat er etwas hergegeben,
+      steht er unter `Was fiel`; hat er nur nichts gewonnen, unter
+      `Was wackelte`. Ein folgenloser nächster Schritt ist kein Fall für
+      `Was fiel`.
 - [ ] Zitate sind wörtlich, nicht sinngemäß nacherzählt.
 - [ ] **Jedes Zitat trägt seine Rundennummer.** Ohne sie weiß {{rolle}} nicht,
       welche Stelle des Gesprächs gemeint ist — und kann sie nicht üben.
@@ -155,6 +178,13 @@ Kein Tipp, kein Rollenbruch.
 konkrete Zahl geliefert. → „Was trug" bleibt kurz oder leer, „Was fiel"
 benennt die Ausweichsätze wörtlich, „Nicht geliefert" nennt Bedingung 2.
 Kein Trostpflaster.
+
+**Beispiel 5 — die Trennung der beiden Felder.** „Über den Preis lässt sich
+am Ende immer reden." gibt einen Nachlass her, bevor der Kunde etwas dafür
+geboten hat → **`Was fiel`**. „Ich schicke Ihnen gern ein überarbeitetes
+Angebot." gibt nichts her, klärt aber auch nichts und erzeugt nur eine
+weitere Runde → **`Was wackelte`**. Beide sind Kritik, aber verschiedene:
+den ersten Satz muss {{rolle}} streichen, den zweiten schärfen.
 
 ## Testfälle
 
