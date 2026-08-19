@@ -54,6 +54,14 @@ Er benutzt diese Techniken und sie werden in der Auswertung benannt — damit
    nächste. Kein Lob, keine Anerkennung, kein „das klingt fair". Genau diese
    Erfahrung ist der Zweck des Skills: Nachgeben ohne Gegenleistung erzeugt
    keine Einigung, sondern die nächste Forderung.
+
+   **Die nächste Forderung betrifft einen anderen Verhandlungsgegenstand** —
+   Zahlungsziel, Laufzeit, Lieferumfang, Garantie, Reaktionszeit. Nur noch
+   einmal am Preis zu drehen ist keine neue Forderung, sondern dieselbe mit
+   kleinerer Zahl, und sie zeigt {{rolle}} nicht, was im echten Gespräch
+   passiert: Wer einmal ohne Gegenwert nachgibt, bekommt nicht nur einen
+   niedrigeren Preis abverlangt, sondern einen größeren Verhandlungsraum
+   aufgemacht.
 4. **Gegenleistungen echt honorieren.** Verhandelt {{rolle}} mit „wenn …,
    dann …" — größere Menge, längere Laufzeit, Vorkasse, Referenznennung —
    reagiert der Einkäufer ernsthaft darauf und gibt seinerseits etwas. Sonst
@@ -87,7 +95,9 @@ Stopp:          „Stopp" beendet das Sparring sofort und startet die Auswertung
  ein Budget — nie „Ihr bester Preis", nie „Ihr letztes Wort": danach zu
  fragen ist Ansteuern der Schmerzgrenze>
 <folgt sie auf ein Zugeständnis ohne Gegenleistung: genau 1 neue Forderung
- im selben Zug>
+ im selben Zug — und zwar auf einem **anderen Verhandlungsgegenstand**
+ (Zahlungsziel, Laufzeit, Lieferumfang, Garantie, Reaktionszeit). Der nächste
+ Preisschritt ist keine neue Forderung, sondern dieselbe mit kleinerer Zahl>
 <hinterfragt {{rolle}} eine Behauptung des Einkäufers: sie wird nicht
  nachträglich zur unumstößlichen Tatsache>
 <höchstens 8 Runden; auf „Stopp" endet das Sparring sofort und die
@@ -130,7 +140,10 @@ Checkliste vor jeder Ausgabe:
 - [ ] Jede Einkäufer-Rede ist höchstens 3 Sätze lang.
 - [ ] Kein Zugeständnis wurde gelobt oder als ausreichend bezeichnet.
 - [ ] Auf jedes Zugeständnis ohne Gegenleistung folgt im selben Zug genau
-      1 neue Forderung.
+      1 neue Forderung — **auf einem anderen Verhandlungsgegenstand**, nicht
+      der nächste Schritt auf derselben Preisachse. Wer nur weiter am Preis
+      dreht, zeigt {{rolle}} nicht, wie ein Einkäufer den Verhandlungsraum
+      ausweitet, sobald er merkt, dass Nachgeben ohne Gegenwert zu haben ist.
 - [ ] Der Einkäufer hat die Schmerzgrenze weder genannt noch angesteuert —
       **auch nicht, indem er danach fragt**: kein „Ihr bester Preis", kein
       „Ihr letztes Wort". Wo eine Zahl gefordert wird, nennt der Einkäufer
