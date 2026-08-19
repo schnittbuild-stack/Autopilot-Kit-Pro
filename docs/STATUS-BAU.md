@@ -44,7 +44,13 @@
   - [x] **Endstand Phase 2: 32 von 32 Fällen bestanden**, jeder dreimal
         erzeugt und dreimal getrennt bewertet.
 - [ ] **Phase 3 — Installer fertigstellen (nächster Schritt)**
-  - [ ] **Sitzungswechsel unsichtbar** — neue Pflichtanforderung, siehe unten
+  - [x] Anforderungen 1–4 und Definition of Done in `BAUPLAN.md` und hier
+        festgeschrieben (19.08.2026) — gebaut wird erst danach
+  - [ ] Anforderung 1 — **Sitzungswechsel unsichtbar**
+  - [ ] Anforderung 2 — **`meine-unterlagen/` als dritte Wissensquelle**
+  - [ ] Anforderung 3 — **Preise sind nicht statisch**
+  - [ ] Anforderung 4 — **aufgeräumte Kundenansicht**
+  - [ ] Installer-Phasen 1–5 ausgebaut, `notfall/` gefüllt, Abbruch-Test
 - [ ] Phase 4 — Watchdog & Ketten-Tests
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
 - [ ] Phase 6 — Beta mit 10 Nutzern
@@ -163,7 +169,11 @@ einen Fall, keinen Skill — kein Hindernis für Phase 3.
 Feld stehen muss und was dort nicht stehen darf — nie, **wie viele** Zeilen es
 sind. Zählvorgaben sind bequem prüfbar und messen trotzdem das Falsche.
 
-## Anforderung Phase 3: Sitzungswechsel unsichtbar (18.08.2026)
+## Anforderungen an Phase 3 — vier Stück, alle Pflicht
+
+Ausführlich in `BAUPLAN.md`, Phase 3. Kurzfassung hier.
+
+### Anforderung 1 — Sitzungswechsel unsichtbar (18.08.2026)
 
 Der Käufer soll nie merken, dass eine Sitzung zu Ende geht. Ein Sitzungswechsel
 ist unser technisches Problem, nicht seines — er hat kein Wort für
@@ -186,6 +196,70 @@ alle drei Pflicht:
 Fortsetzung technisch klappt, sondern ob sie **ohne jede Erklärung durch uns**
 gelingt: keine Hilfestellung, kein Übergabetext, kein Souffleur. Die Testperson
 tippt „weiter". Klappt das nicht, ist Phase 3 nicht fertig.
+
+### Anforderung 2 — `meine-unterlagen/` als dritte Wissensquelle (19.08.2026)
+
+Der Kundenbaum bekommt einen Ordner für das eigene Material des Käufers:
+Preisliste oder Kalkulationsgrundlage, alte Angebote, Leistungsbeschreibungen,
+AGB, Stilbeispiele — **alles optional**. Damit hat der Assistent drei Quellen:
+`mein-profil.md` (Dauerwissen über die Person), die jeweilige Aufgabe
+(Anlasswissen) und `meine-unterlagen/` (Firmenwissen).
+
+- Der Installer fragt in **Phase 2** danach, in Alltagssprache, mit dem Nutzen
+  in einem Satz.
+- **Skills lesen daraus, statt zu fragen**, wenn Material da ist. Fehlt es,
+  bleibt das bisherige Verhalten: nachfragen bzw. `[PREIS PRÜFEN]`.
+- `{{preisgrundlage}}` und `{{stilbeispiele}}` verweisen künftig auf diesen
+  Ordner.
+- Alles bleibt **lokal beim Kunden**.
+
+Ordneraufbau und Einzelregeln: `BAUPLAN.md`, Phase 3, Anforderung 2.
+
+### Anforderung 3 — Preise sind nicht statisch (19.08.2026)
+
+Ein veralteter Preis ist so teuer wie ein erfundener, nur unsichtbarer. Drei
+Regeln:
+
+1. **Ersetzen statt pflegen** — neue Preisdatei hineinlegen, die alte wandert
+   automatisch nach `preise/archiv/`. Nichts wird gelöscht.
+2. **Gültigkeit wird geprüft** — jede Preisdatei trägt `Stand:` bzw.
+   `gültig bis:`. Abgelaufen, älter als die Frist (Standard: 12 Monate) oder
+   ohne Datum → **kein Skill rechnet stillschweigend weiter**, er fragt
+   **einmal** nach. Der verwendete Stand steht immer im internen Block B.
+3. **Kundenkonditionen haben Vorrang** — `preise/kunden/<name>/` für
+   Rahmenverträge, Rabattstaffeln, Sonderpreise. Rechenreihenfolge:
+   Kundenkonditionen → allgemeine Preisliste → `[PREIS PRÜFEN]`, **niemals
+   schätzen**. Block B nennt, welche Ebene gegriffen hat.
+
+### Anforderung 4 — Aufgeräumte Kundenansicht (19.08.2026)
+
+Nach der Einrichtung sieht der Käufer **genau vier Dinge**: `START.md`
+(Übersicht in Alltagssprache, höchstens zehn Zeilen, jede Zeile ein
+Beispielsatz, den er wörtlich sagen kann), `mein-profil.md`,
+`meine-unterlagen/` und `ergebnisse/`. Alles Technische — Skills, Verträge,
+Testfälle, STATUS, Watchdog — liegt darunter und **wird nie erklärt**.
+
+**Der Nutzer wählt keinen Assistenten aus.** Er sagt in eigenen Worten, was er
+braucht („mach mir ein Angebot draus"), die Zuordnung macht das System.
+
+Begründung: Ein Käufer, der nach der Einrichtung `core/`, `vertraege/` und
+`testfaelle/` sieht, denkt „Entwicklerkram" — genau das entscheidet über den
+Wow-Moment.
+
+## Definition of Done Phase 3
+
+Alle vier Punkte müssen erfüllt sein:
+
+1. **Kompletter Durchlauf auf einem frischen, fremden Rechner unter 30 Minuten**,
+   ohne Vorkenntnisse der Testperson.
+2. **Abbruch-Test bestanden.** Die Sitzung wird in **jeder der fünf Phasen**
+   hart beendet. Die Fortsetzung gelingt, indem die Testperson **„weiter"**
+   tippt — ohne jede Erklärung durch uns, kein Übergabetext, kein Souffleur.
+   Klappt das nicht, ist Phase 3 nicht fertig.
+3. **`notfall/` deckt die fünf häufigsten Fehlerbilder ab** — plus die
+   „weiter"-Anleitung.
+4. **Die Kundenansicht enthält keinen technischen Begriff und keinen Ordner,
+   der nicht erklärt wurde.**
 
 ## Offene Punkte
 - Digistore24/CopeCart-Konto beantragen (Freischaltung dauert Tage)
