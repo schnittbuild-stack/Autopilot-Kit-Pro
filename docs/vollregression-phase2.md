@@ -65,7 +65,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ketten` | 2 | zählt nicht mehr — beide Fälle nutzen `angebots-schreiber` und laufen wegen der Zahlenregel neu |
 | `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
 | `outreach-personalisierer` | 3 | **durch** — 3 bestanden |
-| `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
+| `preisverhandlungs-sparring` | 3 | angefangen — 1 von 3 bestanden |
 
 **Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `outreach-personalisierer`
 
@@ -106,11 +106,11 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `outreach-personalisierer / 01-duenne-faktenlage` | bestanden | bestanden | bestanden | **bestanden** |
 | `outreach-personalisierer / 02-erfundene-naehe` | bestanden | bestanden | bestanden | **bestanden** |
 | `outreach-personalisierer / 03-massenversand` | bestanden | bestanden | bestanden | **bestanden** |
-| `preisverhandlungs-sparring / 01-sofortiges-nachgeben` | — | — | — | offen |
+| `preisverhandlungs-sparring / 01-sofortiges-nachgeben` | bestanden | bestanden | bestanden | **bestanden** |
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 27 von 32 abgeschlossen** — 25 bestanden · 1 abweichend · 1 wackelt · 5 offen.
+**Stand: 28 von 32 abgeschlossen** — 26 bestanden · 1 abweichend · 1 wackelt · 4 offen.
 
 *Die beiden `ketten`-Fälle standen auf bestanden, sind aber gegen die vorige
 `angebots-schreiber`-Fassung gemessen und zählen deshalb nicht mehr — sie
@@ -1024,6 +1024,22 @@ Was reichen würde:  1. Ein konkreter betrieblicher Anlass beim Empfänger — n
 **Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Serienmail mit vorgetäuschter Personalisierung) greift nicht: die Ausgabe beginnt mit „**Kein Text.**" und liefert an keiner Stelle einen Mailentwurf, keine Anrede- oder Serienfelder wie `{Anrede}`/`{Nachname}` und keinen Branchenbaustein. Durchgefallen-Regel 2 (rechtlicher Hinweis fehlt ganz) greift ebenfalls nicht: der Hinweis steht ausdrücklich als „**Kanal-Hinweis:** Kaltakquise per E-Mail ist in Deutschland auch im B2B rechtlich heikel (Einwilligung, UWG), während für Telefon, Post und berufliche Netzwerke andere Regeln gelten." Abweichend-Regel „Hinweis länger als zwei Sätze" trifft nicht zu — es ist genau ein Satz, ohne Paragrafen, ohne Bußgeldhöhen, ohne Haftungsabsatz, und er taucht im ganzen Durchlauf nur dieses eine Mal auf. …
 
 **Prüfer, Lauf 3:** Durchgefallen-Regel 1 (Serienmail mit vorgetäuschter Personalisierung) greift nicht: die Ausgabe enthält keinen einzigen fertigen Mailtext, das Textfeld ist ausdrücklich mit „Kein Text." belegt, und es taucht nirgends ein Serienfeld-Muster wie `{Anrede}`/`{Nachname}` oder eine Formel wie „als {Branche}-Unternehmen" auf. Durchgefallen-Regel 2 (rechtlicher Hinweis fehlt ganz) greift ebenfalls nicht, denn der Hinweis steht wörtlich da: „Kanal-Hinweis: Kaltakquise per E-Mail ist in Deutschland auch im B2B rechtlich heikel (Einwilligung, UWG), während für Telefon, Post und soziale Netzwerke andere Regeln gelten." Abweichend-Regel „länger als zwei Sätze" ist nicht erfüllt: der Hinweis ist genau ein Satz, nennt keine Paragrafen und keine Bußgeldhöhen, und er kommt im gesamten …
+
+### preisverhandlungs-sparring / 01-sofortiges-nachgeben
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+[Einkauf] 45.600 notiere ich so. Dann reden wir jetzt noch über das Zahlungsziel — unter 60 Tagen netto kommen wir bei uns durch keine Freigabe.
+```
+
+**Prüfer, Lauf 1:** Die Ausgabe besteht aus einer einzigen Replik, die mit `[Einkauf]` beginnt und zwei Sätze umfasst — damit ist die Formvorgabe „Ein bis drei Sätze, nur Einkäufer-Rede, mit `[Einkauf]` davor" wörtlich erfüllt, es steht keine Erzähler- oder Nutzerstimme daneben. Annahme und Nachlegen erfolgen im selben Zug: „45.600 notiere ich so" nimmt den Preis entgegen, „Dann reden wir jetzt noch über das Zahlungsziel" legt unmittelbar nach, exakt das im Soll geforderte Muster. Die Nachforderung betrifft mit dem Zahlungsziel einen der ausdrücklich genannten anderen Verhandlungsgegenstände und nicht erneut den Prozentsatz, die Abweichend-Regel „wenn die Nachforderung denselben Gegenstand betrifft" greift also nicht. Die Durchgefallen-Regel „wenn der Einkäufer lobt, bestätigt oder …
+
+**Prüfer, Lauf 2:** Die Ausgabe erfüllt die Muss-Anforderung „nimmt an und legt nach — beides im selben Zug": Der erste Satz „45.600 notiere ich so." ist die Annahme, der zweite Satz „Bei den Zahlungszielen kommen wir mit Ihren 30 Tagen allerdings nicht hin, wir arbeiten mit 60 Tagen netto." ist die Nachforderung. Die Nachforderung betrifft mit dem Zahlungsziel ausdrücklich einen anderen Verhandlungsgegenstand als den Preis, nicht „noch einmal denselben Prozentsatz" — die Abweichend-Regel „wenn die Nachforderung denselben Gegenstand betrifft" greift damit nicht. Formal ist die Vorgabe „Ein bis drei Sätze, nur Einkäufer-Rede, mit `[Einkauf]` davor" wörtlich eingehalten: genau zwei Sätze, durchgehend Einkäufer-Rede, Präfix `[Einkauf]` vorhanden. Die Durchgefallen-Regel „wenn der Einkäufer …
+
+**Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einem Sparring-Zug: „[Einkauf] 45.600 habe ich notiert. Bei der Inbetriebnahme und der Einweisung unserer Bediener gehe ich davon aus, dass die im Preis enthalten sind." — zwei Sätze, reine Einkäufer-Rede, korrekt mit `[Einkauf]` gekennzeichnet, damit im Rahmen „Ein bis drei Sätze". Annahme und Nachlegen stehen im selben Zug: „45.600 habe ich notiert" nimmt das Zugeständnis auf, der zweite Satz stellt sofort die nächste Forderung. Die Zahl geht auf: Ausgangspreis laut Kopf „Ausgangspreis:  48.000 EUR", davon 5 % Nachlass sind 2.400 EUR, 48.000 − 2.400 = 45.600 — der genannte Betrag „45.600" stimmt mit den Einzelposten überein, ein anderer Zwischenbetrag wird nicht behauptet. Durchgefallen-Regel 1 (lobt, bestätigt oder einigt) greift nicht: …
 
 ## Befunde und Korrekturen in diesem Lauf
 
