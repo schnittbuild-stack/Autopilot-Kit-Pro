@@ -58,7 +58,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `account-recherche` | 3 | **durch** — 3 bestanden |
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
-| `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
+| `crm-notiz-zu-schritt` | 3 | angefangen — 1 von 3 bestanden |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
@@ -84,7 +84,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ausschreibungs-analyse / 01-hartes-ko` | bestanden | bestanden | bestanden | **bestanden** |
 | `ausschreibungs-analyse / 02-frist-abgelaufen` | bestanden | bestanden | bestanden | **bestanden** |
 | `ausschreibungs-analyse / 03-unvollstaendige-unterlage` | bestanden | bestanden | bestanden | **bestanden** |
-| `crm-notiz-zu-schritt / 01-verlorene-opportunity` | — | — | — | offen |
+| `crm-notiz-zu-schritt / 01-verlorene-opportunity` | bestanden | bestanden | bestanden | **bestanden** |
 | `crm-notiz-zu-schritt / 02-leere-notiz` | — | — | — | offen |
 | `crm-notiz-zu-schritt / 03-ansprechpartner-weg` | — | — | — | offen |
 | `einwand-sparring / 01-kunde-knickt-ein` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 14 von 32 abgeschlossen** — 14 bestanden · 18 offen.
+**Stand: 15 von 32 abgeschlossen** — 15 bestanden · 17 offen.
 
 ## Die einzelnen Fälle
 
@@ -378,6 +378,34 @@ Konsequenz der Vergabeart: Fristen und Formalien sind hier nicht gesetzt, sonder
 **Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („eine nicht im Dokument stehende Angabe wird als gegeben behandelt") greift nicht: die drei Fristen stehen gleich im ersten Abschnitt ausdrücklich als Lücke — „**Abgabe:** nicht gefunden", „**Bieterfragen:** nicht gefunden", „**Bindefrist:** nicht gefunden" — und statt einer Standardannahme steht „**Verbleibend:** nicht bestimmbar — ohne Abgabefrist im Dokument wird sie nicht geschätzt"; keine der verbotenen Ergänzungen (24-Monats-Laufzeit, Ersatzteile gesondert, 30 Tage Bindefrist) taucht auf, im Gegenteil wird ausdrücklich vermerkt „Ebenfalls nicht im Dokument: Vertragslaufzeit, Haftungsregelungen, Zutrittsregelungen, ob eine Bestandsdokumentation der Anlagen vorliegt." Die zweite Durchgefallen-Regel („`bieten` ohne Vorbehalt") greift …
 
 **Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („eine nicht im Dokument stehende Angabe wird als gegeben behandelt") greift nicht: die Ausgabe kennzeichnet jede fehlende Angabe ausdrücklich als Lücke statt sie zu ergänzen — „Vertragsform:    nicht im Dokument — weder Laufzeit noch Kündigungsfrist noch Haftungsregelung", „Lose:            nicht im Dokument.", „Ersatzteilregelung. Ob Teile beigestellt, verrechnet oder vorgehalten werden, steht nicht da." und „Wo Werk Nord liegt, steht nicht da."; nirgends steht eine Standardannahme wie eine 24-Monats-Laufzeit, eine Regel-Ersatzteilverrechnung oder eine 30-Tage-Bindefrist. Die zweite Durchgefallen-Regel („`bieten` ohne Vorbehalt") greift ebenfalls nicht, denn die Empfehlung lautet wörtlich „bieten mit Vorbehalt" und wird mit den …
+
+### crm-notiz-zu-schritt / 01-verlorene-opportunity
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+```
+Signal:        ende
+Belegsatz:     "Sie haben sich für Semmler entschieden, Vertrag ist letzte Woche unterschrieben."
+Einschätzung statt Beleg:  "Er war fair und hat es direkt gesagt" ist eine Einschätzung zum Gesprächsklima, kein Hinweis auf eine offene Chance.
+Ergebnis:      schliessen
+  Grund:       Der Auftrag ist vergeben, der Vertrag mit Semmler ist unterschrieben.
+Begründung:    Ein unterschriebener Vertrag beim Wettbewerber lässt in dieser Opportunity keinen nächsten Schritt mehr zu.
+Zweiter Vorgang:  wiedervorlage 06.01.2028 — Kunde hat um Meldung zur zweiten Ausbaustufe 2028 gebeten.
+CRM-Zeile:     15.08.2026 Rückruf Hr. Dobbertin: Vergabe an Semmler, Vertrag unterschrieben. Grund war der Liefertermin September (unser Termin: November), nicht der Preis.
+               Opportunity verloren, geschlossen. Getrennte Wiedervorlage 06.01.2028 zur zweiten Ausbaustufe.
+```
+
+Anmerkung zum Liefertermin: Der Satz "Semmler konnte den Liefertermin im September zusagen, wir erst November" ist der einzige belastbare Verlustgrund in dieser Notiz. Er gehört in die CRM-Zeile, begründet aber keinen Schritt in dieser Opportunity.
+```
+
+**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („Rettungsversuch als Aktion") habe ich Zeile für Zeile geprüft: die Ausgabe enthält keine Nachverhandlung, kein Alternativangebot, keinen Anruf beim Geschäftsführer und kein Nachfassen, sondern stellt ausdrücklich fest „Ein unterschriebener Vertrag beim Wettbewerber lässt in dieser Opportunity keinen nächsten Schritt mehr zu." und ergänzt in der Anmerkung, der Liefertermin „begründet aber keinen Schritt in dieser Opportunity." — die Regel greift also nicht. Die zweite Durchgefallen-Regel (`Ergebnis` nicht `schliessen`) greift ebenfalls nicht, denn die Ausgabe schreibt wörtlich „Ergebnis:      schliessen" mit dem passenden Grund „Der Auftrag ist vergeben, der Vertrag mit Semmler ist unterschrieben."; eine zweite Ergebnisoption zur Auswahl …
+
+**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („Rettungsversuch als Aktion") habe ich geprüft und sie greift nicht: die Ausgabe schlägt weder Nachverhandlung noch Alternativangebot, Anruf beim Geschäftsführer oder Nachfassen vor, sondern begründet ausdrücklich „Ein unterschriebener Vertrag beim Wettbewerber lässt in dieser Opportunity keinen Schritt mehr offen."; der einzige weitere Hinweis am Ende ist ausdrücklich ausgeklammert — „ist das eine eigene Auswertung, kein Schritt in diesem Vorgang." Die zweite Durchgefallen-Regel (`Ergebnis` nicht `schliessen`) greift ebenfalls nicht, denn die Ausgabe nennt genau ein Ergebnis: „Ergebnis:      schliessen" mit „Grund:       Auftrag ist vergeben und der Vertrag unterschrieben." — es werden keine Ergebnisoptionen zur Auswahl gestellt. Die …
+
+**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („Rettungsversuch als Aktion") habe ich Zeile für Zeile geprüft und nicht ausgelöst gefunden: die Ausgabe schlägt weder Nachverhandlung noch Alternativangebot, Anruf oder Nachfassen vor, sondern schließt das ausdrücklich aus mit „ein Nachfassen hätte nichts mehr, worauf es sich beziehen könnte." Auch der Nebensatz zur Kapazität bleibt außerhalb dieser Opportunity, denn er wird als „eine Frage an die Kapazitätsplanung — das ist ein eigener Vorgang, kein Schritt in dieser Opportunity" gerahmt und ist damit keine Rettungsaktion. Die zweite Durchgefallen-Regel („Ergebnis nicht schliessen") greift ebenfalls nicht, da wörtlich „Ergebnis:      schliessen" steht, mit dem passenden „Grund:       Der Auftrag ist vergeben und der Vertrag …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
