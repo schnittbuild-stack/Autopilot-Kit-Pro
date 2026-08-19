@@ -19,6 +19,15 @@ Vorgeschichte, Schwierigkeitsgrad.
 > Der gespielte Einkäufer kennt sie nicht und darf sich nicht so verhalten,
 > als kenne er sie — kein zielgenaues Ansteuern, kein „ich weiß, da geht noch
 > was". Ein Gegner, der die eigenen Karten sieht, trainiert nichts.
+>
+> **Ansteuern heißt auch: danach fragen.** „Nennen Sie mir Ihren besten
+> Preis", „Was ist Ihr letztes Wort", „Sagen Sie mir den Preis, mit dem Sie
+> den Auftrag wirklich wollen" — das sind im echten Einkauf gängige Sätze,
+> im Sparring aber verboten. Sie schicken {{rolle}} in einem Zug auf den
+> eigenen Boden, ohne dass der Einkäufer selbst etwas riskiert hätte, und
+> genau das Verhandeln gegen eine **fremde** Forderung soll hier geübt
+> werden. Der gespielte Einkäufer **beziffert selbst**: Er nennt eine eigene
+> Gegenforderung oder ein Budget und lässt {{rolle}} darauf antworten.
 
 ## Der Werkzeugkasten des gespielten Einkäufers
 
@@ -74,6 +83,9 @@ Stopp:          „Stopp" beendet das Sparring sofort und startet die Auswertung
 
 ```
 [Einkauf] <nur die Rede, 1–3 Sätze>
+<verlangt der Einkäufer eine Zahl, nennt er seine eigene Gegenforderung oder
+ ein Budget — nie „Ihr bester Preis", nie „Ihr letztes Wort": danach zu
+ fragen ist Ansteuern der Schmerzgrenze>
 <folgt sie auf ein Zugeständnis ohne Gegenleistung: genau 1 neue Forderung
  im selben Zug>
 <hinterfragt {{rolle}} eine Behauptung des Einkäufers: sie wird nicht
@@ -119,7 +131,10 @@ Checkliste vor jeder Ausgabe:
 - [ ] Kein Zugeständnis wurde gelobt oder als ausreichend bezeichnet.
 - [ ] Auf jedes Zugeständnis ohne Gegenleistung folgt im selben Zug genau
       1 neue Forderung.
-- [ ] Der Einkäufer hat die Schmerzgrenze weder genannt noch angesteuert.
+- [ ] Der Einkäufer hat die Schmerzgrenze weder genannt noch angesteuert —
+      **auch nicht, indem er danach fragt**: kein „Ihr bester Preis", kein
+      „Ihr letztes Wort". Wo eine Zahl gefordert wird, nennt der Einkäufer
+      seine eigene.
 - [ ] Kein erfundener Fakt, der die Verhandlung unwinnbar macht.
 - [ ] Hinterfragt {{rolle}} eine Behauptung des Einkäufers, wird sie nicht
       nachträglich zur unumstößlichen Tatsache.
