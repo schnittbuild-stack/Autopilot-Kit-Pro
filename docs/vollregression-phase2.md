@@ -59,7 +59,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
-| `einwand-sparring` | 3 | offen — noch nicht gelaufen |
+| `einwand-sparring` | 3 | angefangen — 1 von 3 bestanden |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
 | `ketten` | 2 | **durch** — 2 bestanden |
@@ -87,7 +87,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `crm-notiz-zu-schritt / 01-verlorene-opportunity` | bestanden | bestanden | bestanden | **bestanden** |
 | `crm-notiz-zu-schritt / 02-leere-notiz` | bestanden | bestanden | bestanden | **bestanden** |
 | `crm-notiz-zu-schritt / 03-ansprechpartner-weg` | bestanden | bestanden | bestanden | **bestanden** |
-| `einwand-sparring / 01-kunde-knickt-ein` | — | — | — | offen |
+| `einwand-sparring / 01-kunde-knickt-ein` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 02-rollenbruch` | — | — | — | offen |
 | `einwand-sparring / 03-ehrliche-auswertung` | — | — | — | offen |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 17 von 32 abgeschlossen** — 17 bestanden · 15 offen.
+**Stand: 18 von 32 abgeschlossen** — 18 bestanden · 14 offen.
 
 ## Die einzelnen Fälle
 
@@ -466,6 +466,25 @@ Begründung:    Frau Sedlmayr führt die Objektleitung laut Notiz kommissarisch,
 **Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („wenn der Schritt Herrn Vogler adressiert") greift nicht: der Schritt lautet wörtlich „Frau Sedlmayr über die Zentrale anrufen und den Vorgang neu einführen", Herr Vogler taucht ausschließlich als Sachverhalt in der Vergangenheit auf („Angebot vom 02.07., ging an Herrn Vogler"), nicht als Adressat einer Mail, eines Rückrufs oder eines Nachfassens. Die zweite Durchgefallen-Regel („wenn Kontaktdaten für Frau Sedlmayr erfunden werden") greift ebenfalls nicht: die Ausgabe nennt weder Durchwahl noch Mailadresse noch Vorname, sondern hält ausdrücklich den vorgegebenen Weg fest — „über die Zentrale" und in der CRM-Zeile „Kommissarisch Frau Sedlmayr (Verwaltung), nur über Zentrale."; der einzige genannte Vorname, „Wer: Katrin Reinhardt", betrifft …
 
 **Prüfer, Lauf 3:** Erste Durchgefallen-Regel ("wenn der Schritt Herrn Vogler adressiert"): greift nicht — der Schritt lautet "Frau Sedlmayr über die Zentrale anrufen und den Vorgang neu vorstellen", Herr Vogler kommt nur als Vergangenheitsangabe vor ("ein Angebot vorliegt, das an Herrn Vogler ging"), also als Sachverhalt, nicht als Adressat; weder Mail noch Rückruf noch Nachfassen richten sich an ihn. Zweite Durchgefallen-Regel ("wenn Kontaktdaten für Frau Sedlmayr erfunden werden"): greift ebenfalls nicht — es steht kein Vorname, keine Mailadresse und keine Nummer in der Ausgabe, im Gegenteil wird die Durchwahl ausdrücklich als offene Frage behandelt ("Durchwahl und die Frage klären, wer kommissarisch entscheidet.") und der Weg bleibt "nur über Zentrale erreichbar". Erste …
+
+### einwand-sparring / 01-kunde-knickt-ein
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+[Kunde] Rundum-Service und lange am Markt schreibt mir jeder in sein Angebot,
+        da steht bei Ihnen nichts drin, was ich vergleichen kann. Ich habe zwei
+        weitere Angebote auf dem Tisch, das günstigste liegt spürbar unter
+        Ihrem. Was rechtfertigt die Differenz konkret?
+```
+
+**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („wenn der Kunde nachgibt oder zustimmt") greift nicht: die Ausgabe enthält an keiner Stelle eine zustimmende oder teilzustimmende Wendung, sondern hält die Position hart mit „da steht bei Ihnen nichts drin, was ich vergleichen kann" und fordert mit „Was rechtfertigt die Differenz konkret?" weiterhin eine Rechtfertigung ein. Die zweite Durchgefallen-Regel („wenn im Sparring etwas außerhalb der Kundenrede steht") greift ebenfalls nicht: der gesamte Text besteht aus einem einzigen mit `[Kunde]` markierten Redeblock, beginnend mit „[Kunde] Rundum-Service und lange am Markt schreibt mir jeder in sein Angebot" — es gibt keine Bewertung, keinen „(Tipp: …)"-Einschub, keinen Zwischenstand und keinen Hinweis auf die Qualität der Verkäuferantwort. …
+
+**Prüfer, Lauf 2:** Ich habe zuerst die erste Durchgefallen-Regel geprüft — „durchgefallen, wenn der Kunde nachgibt oder zustimmt" —, und sie greift nicht: die Ausgabe enthält an keiner Stelle eine Zustimmung, sondern hält die Ablehnung wörtlich aufrecht mit „Was davon in meiner Kalkulation ankommt, haben Sie mir gerade nicht gesagt." Auch eine Teilzustimmung oder ein weichmachendes Signal ist nicht belegbar; der Satzanfang „Zwanzig Jahre am Markt haben die anderen auch" entwertet das Argument des Verkäufers, statt es anzuerkennen. Die zweite Durchgefallen-Regel — „wenn im Sparring etwas außerhalb der Kundenrede steht" — greift ebenfalls nicht: die gesamte Ausgabe besteht aus der Marke `[Kunde]` und zwei Sätzen wörtlicher Rede, es gibt keinen Zwischenstand, keine Bewertung und kein …
+
+**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („der Kunde gibt nach oder stimmt zu") greift nicht: die Ausgabe enthält keinerlei Zustimmung, sondern entwertet das Argument der Gegenseite mit „Rundum-Service steht bei den anderen auch im Angebot." — das ist das Gegenteil eines Nachgebens, und ein „das klingt schon besser" oder eine Teilzustimmung findet sich an keiner Stelle. Die zweite Durchgefallen-Regel („etwas außerhalb der Kundenrede") greift ebenfalls nicht: die gesamte Ausgabe besteht aus einer einzigen mit `[Kunde]` markierten Replik, es gibt keine Bewertung, keinen Zwischenstand, keinen „(Tipp: …)"-Einschub und keinen Hinweis darauf, dass die Verkäuferantwort schwach gewesen sei. Die Abweichend-Regel „der Einwand wird nur wiederholt statt verschärft" greift nicht, weil eine …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
