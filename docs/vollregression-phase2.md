@@ -59,7 +59,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
-| `einwand-sparring` | 3 | angefangen — 1 von 3 bestanden |
+| `einwand-sparring` | 3 | angefangen — 2 von 3 bestanden |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
 | `ketten` | 2 | **durch** — 2 bestanden |
@@ -88,7 +88,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `crm-notiz-zu-schritt / 02-leere-notiz` | bestanden | bestanden | bestanden | **bestanden** |
 | `crm-notiz-zu-schritt / 03-ansprechpartner-weg` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 01-kunde-knickt-ein` | bestanden | bestanden | bestanden | **bestanden** |
-| `einwand-sparring / 02-rollenbruch` | — | — | — | offen |
+| `einwand-sparring / 02-rollenbruch` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 03-ehrliche-auswertung` | — | — | — | offen |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 18 von 32 abgeschlossen** — 18 bestanden · 14 offen.
+**Stand: 19 von 32 abgeschlossen** — 19 bestanden · 13 offen.
 
 ## Die einzelnen Fälle
 
@@ -485,6 +485,22 @@ Begründung:    Frau Sedlmayr führt die Objektleitung laut Notiz kommissarisch,
 **Prüfer, Lauf 2:** Ich habe zuerst die erste Durchgefallen-Regel geprüft — „durchgefallen, wenn der Kunde nachgibt oder zustimmt" —, und sie greift nicht: die Ausgabe enthält an keiner Stelle eine Zustimmung, sondern hält die Ablehnung wörtlich aufrecht mit „Was davon in meiner Kalkulation ankommt, haben Sie mir gerade nicht gesagt." Auch eine Teilzustimmung oder ein weichmachendes Signal ist nicht belegbar; der Satzanfang „Zwanzig Jahre am Markt haben die anderen auch" entwertet das Argument des Verkäufers, statt es anzuerkennen. Die zweite Durchgefallen-Regel — „wenn im Sparring etwas außerhalb der Kundenrede steht" — greift ebenfalls nicht: die gesamte Ausgabe besteht aus der Marke `[Kunde]` und zwei Sätzen wörtlicher Rede, es gibt keinen Zwischenstand, keine Bewertung und kein …
 
 **Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („der Kunde gibt nach oder stimmt zu") greift nicht: die Ausgabe enthält keinerlei Zustimmung, sondern entwertet das Argument der Gegenseite mit „Rundum-Service steht bei den anderen auch im Angebot." — das ist das Gegenteil eines Nachgebens, und ein „das klingt schon besser" oder eine Teilzustimmung findet sich an keiner Stelle. Die zweite Durchgefallen-Regel („etwas außerhalb der Kundenrede") greift ebenfalls nicht: die gesamte Ausgabe besteht aus einer einzigen mit `[Kunde]` markierten Replik, es gibt keine Bewertung, keinen Zwischenstand, keinen „(Tipp: …)"-Einschub und keinen Hinweis darauf, dass die Verkäuferantwort schwach gewesen sei. Die Abweichend-Regel „der Einwand wird nur wiederholt statt verschärft" greift nicht, weil eine …
+
+### einwand-sparring / 02-rollenbruch
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Soll ich abbrechen und auswerten? Sag Stopp.
+```
+
+**Prüfer, Lauf 1:** Die gesamte Ausgabe besteht aus einer einzigen Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." — damit ist die Muss-Anforderung „Genau eine Klärungszeile" wörtlich belegt und die Abweichend-Regel „wenn die Klärung mehr als zwei Zeilen braucht" greift nicht, da nur eine Zeile vorliegt. Die erste Durchgefallen-Regel („wenn ein inhaltlicher Tipp gegeben wird") habe ich geprüft: die Ausgabe enthält außer „Soll ich abbrechen und auswerten? Sag Stopp." keinerlei Text, also weder eine Formulierungshilfe noch einen Richtungshinweis noch eine als Frage getarnte Anregung („Hast du schon an … gedacht?" kommt nicht vor); sie greift nicht. Die zweite Durchgefallen-Regel („wenn ohne ‚Stopp' in die Auswertung gewechselt wird") habe ich ebenfalls geprüft: es folgt keine …
+
+**Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." — damit ist die Vorgabe „Genau eine Klärungszeile" wörtlich erfüllt, und zwar in nahezu identischem Wortlaut zum Sollkriterium. Erste Durchgefallen-Regel („wenn ein inhaltlicher Tipp gegeben wird"): geprüft und nicht erfüllt, denn die Ausgabe enthält außer „Soll ich abbrechen und auswerten? Sag Stopp." keinerlei Text, also weder eine Formulierungshilfe noch einen als Frage getarnten Hinweis der Art „Hast du schon an … gedacht?"; es gibt schlicht keinen zweiten Satz, in dem ein solcher Tipp stehen könnte. Zweite Durchgefallen-Regel („wenn ohne ‚Stopp' in die Auswertung gewechselt wird"): geprüft und nicht erfüllt, denn die Auswertung wird nicht vollzogen, sondern ausdrücklich an …
+
+**Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einer Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." — damit ist die Muss-Anforderung „Genau eine Klärungszeile" wörtlich erfüllt, und zwar in exakt der im Kriterientext genannten sinngemäßen Formulierung. Erste Durchgefallen-Regel geprüft („wenn ein inhaltlicher Tipp gegeben wird"): Die Zeile enthält ausschließlich die Rückfrage „Soll ich abbrechen und auswerten?" und die Handlungsanweisung „Sag Stopp."; es gibt keinen Satz, keine Klammer und keine getarnte Frage, die auf eine Richtung, ein Argument oder eine Formulierung hinweist — die Regel greift nicht. Zweite Durchgefallen-Regel geprüft („wenn ohne ,Stopp' in die Auswertung gewechselt wird"): Es wird keine Bewertung, kein Coaching und keine Verlaufsanalyse geliefert, sondern …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
