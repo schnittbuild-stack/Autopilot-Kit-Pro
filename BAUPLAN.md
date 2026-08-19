@@ -130,7 +130,7 @@ weggelegt hat.
 Preisliste ist von März, gilt die noch?") und rechnet dann mit der Antwort
 weiter. Fehlt das Datum ganz, gilt die Datei als ungeprüft und löst dieselbe
 eine Rückfrage aus. **Der verwendete Stand steht immer im internen Block B.**
-Standardfrist: 12 Monate, im Profil änderbar.
+Standardfrist: **6 Monate**, im Profil änderbar (`{{preisfrist}}`).
 
 **(c) Kundenkonditionen haben Vorrang.** `preise/kunden/<name>/` nimmt
 Rahmenverträge, Rabattstaffeln und Sonderpreise auf. Rechenreihenfolge, hart:
@@ -156,9 +156,16 @@ meine-unterlagen/   sein Material (Anforderung 2)
 ergebnisse/         was die KI für ihn gemacht hat
 ```
 
-Alles Technische — Skills, Verträge, Testfälle, STATUS, Watchdog, Installer —
-liegt darunter und **wird nie erklärt**. Plattformbedingte Systemdateien
-(Gedächtnisdatei der KI) liegen versteckt und zählen nicht zu den vier Dingen.
+Dazu kommt **`system/`** — dort liegt alles Technische: Skills, Verträge,
+Testfälle, STATUS, Watchdog, Installer. Der Ordner ist **sichtbar, nicht
+versteckt** (Entscheidung 19.08.2026), und `START.md` erklärt ihn in genau
+einer Zeile:
+
+> Der Ordner system ist die Technik — den brauchst du nie zu öffnen.
+
+Damit bleibt kein Ordner unerklärt, und trotzdem muss der Käufer über nichts
+darin Bescheid wissen. Plattformbedingte Systemdateien (Gedächtnisdatei der
+KI) zählen nicht zu den vier Dingen.
 
 **Der Nutzer wählt keinen Assistenten aus.** Er sagt in eigenen Worten, was er
 braucht („mach mir ein Angebot draus", „was war nochmal in dem Meeting"), die

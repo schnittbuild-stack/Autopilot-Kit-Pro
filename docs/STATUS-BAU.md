@@ -223,7 +223,7 @@ Regeln:
 1. **Ersetzen statt pflegen** — neue Preisdatei hineinlegen, die alte wandert
    automatisch nach `preise/archiv/`. Nichts wird gelöscht.
 2. **Gültigkeit wird geprüft** — jede Preisdatei trägt `Stand:` bzw.
-   `gültig bis:`. Abgelaufen, älter als die Frist (Standard: 12 Monate) oder
+   `gültig bis:`. Abgelaufen, älter als die Frist (Standard: **6 Monate**) oder
    ohne Datum → **kein Skill rechnet stillschweigend weiter**, er fragt
    **einmal** nach. Der verwendete Stand steht immer im internen Block B.
 3. **Kundenkonditionen haben Vorrang** — `preise/kunden/<name>/` für
@@ -237,7 +237,9 @@ Nach der Einrichtung sieht der Käufer **genau vier Dinge**: `START.md`
 (Übersicht in Alltagssprache, höchstens zehn Zeilen, jede Zeile ein
 Beispielsatz, den er wörtlich sagen kann), `mein-profil.md`,
 `meine-unterlagen/` und `ergebnisse/`. Alles Technische — Skills, Verträge,
-Testfälle, STATUS, Watchdog — liegt darunter und **wird nie erklärt**.
+Testfälle, STATUS, Watchdog — liegt in **`system/`** und **wird nie erklärt**;
+der Ordner ist sichtbar und bekommt in `START.md` genau eine Zeile
+(„Der Ordner system ist die Technik — den brauchst du nie zu öffnen").
 
 **Der Nutzer wählt keinen Assistenten aus.** Er sagt in eigenen Worten, was er
 braucht („mach mir ein Angebot draus"), die Zuordnung macht das System.
@@ -354,7 +356,7 @@ Was Phase 3 mitbringt:
    aufgeräumte Kundenansicht) — Abschnitt „Anforderungen an Phase 3" oben.
 3. Die Entscheidung zu **`{{preisgrundlage}}`** ist gefallen (19.08.2026):
    keine eigene Interviewfrage, Primärquelle `meine-unterlagen/preise/`,
-   bedingte Zusatzfrage als Auffangnetz. Dazu die Prüffrist von 12 Monaten
+   bedingte Zusatzfrage als Auffangnetz. Dazu die Prüffrist von 6 Monaten
    (`{{preisfrist}}`, Standardwert ohne Frage).
 
 Was aus Phase 2 offen bleibt, ohne Phase 3 zu blockieren:

@@ -23,7 +23,7 @@ Es gibt drei Quellen (Entscheidung 19.08.2026):
 | {{stilbeispiele}} | **Unterlagen**, angestoßen von Frage 9 | Verweis auf `meine-unterlagen/stilbeispiele/` und `meine-unterlagen/angebote/` |
 | {{erfolgsmoment}} | Profil, Frage 10 | Woran der Nutzer Erfolg misst (für Phase Beweis) |
 | {{preisgrundlage}} | **Unterlagen**, angestoßen von Frage 9; ersatzweise bedingte Zusatzfrage | Verweis auf `meine-unterlagen/preise/` — Preisliste, Kalkulationsgrundlage, Kundenkonditionen. Ist dort nichts und wird auch die Zusatzfrage nicht beantwortet, bleibt der Wert leer und preisbildende Skills markieren `[PREIS PRÜFEN]` statt zu raten |
-| {{preisfrist}} | **Standardwert** — 12 Monate, keine Frage | Wie lange ein Preisstand ohne Rückfrage gilt. Danach fragt der Skill **einmal** nach, statt stillschweigend weiterzurechnen (`core/unterlagen/preisregeln.md`) |
+| {{preisfrist}} | **Standardwert** — 6 Monate, keine Frage | Wie lange ein Preisstand ohne Rückfrage gilt. Danach fragt der Skill **einmal** nach, statt stillschweigend weiterzurechnen (`core/unterlagen/preisregeln.md`) |
 
 ## Frage 9 ist die Materialfrage
 
