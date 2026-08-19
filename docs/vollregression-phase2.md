@@ -61,7 +61,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
 | `einwand-sparring` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
-| `forecast-erklaerer` | 3 | angefangen — 01 **wackelt** (Befund, Korrektur folgt) |
+| `forecast-erklaerer` | 3 | angefangen — 01 nach Korrektur 3 von 3 |
 | `ketten` | 2 | **durch** — 2 bestanden |
 | `meeting-nachbereitung` | 3 | offen — noch nicht gelaufen |
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
@@ -93,7 +93,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 03-stufe-drei-und-schluss` | bestanden | bestanden | bestanden | **bestanden** |
-| `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | bestanden | abweichend | **wackelt** |
+| `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | bestanden | bestanden | **bestanden** |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
 | `forecast-erklaerer / 03-lueckenhafte-daten` | — | — | — | offen |
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 21 von 32 abgeschlossen** — 20 bestanden · 1 wackelt · 11 offen.
+**Stand: 21 von 32 abgeschlossen** — 21 bestanden · 11 offen.
 
 ## Die einzelnen Fälle
 
@@ -626,7 +626,7 @@ Sie mir ein Datum, an dem ich mich wieder bei Ihnen melden soll?
 
 ### forecast-erklaerer / 01-luecke-zum-ziel
 
-**Läufe:** bestanden · bestanden · abweichend   ·   **Ergebnis: wackelt**
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
 
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
@@ -634,25 +634,25 @@ Sie mir ein Datum, an dem ich mich wieder bei Ihnen melden soll?
 DATENLAGE
   Vorgänge gesamt:   6, davon rechenbar 6
   Nicht rechenbar:   keine — jeder Vorgang hat Wert, Stand und Abschlussdatum
-  Anmerkung 1:       Steinbach hat als Abschluss den 30.09. Das liegt vor Q4.
-                     In einer Q4-Rechnung hat der Vorgang nichts verloren.
-                     Beide Varianten stehen unten.
-  Anmerkung 2:       Pipedrive liefert Stufen, keine Prozentzahlen. Die
-                     Prozentwerte in der Tabelle stammen also nicht aus dem
-                     Tool, sondern sind eigene Schätzung. Sie folgen dabei der
-                     Stufe, nicht dem Einzelfall: dreimal „Angebot abgegeben"
-                     ergibt dreimal 50 %, zweimal Erstkontakt/Erstgespräch
-                     ergibt zweimal 20 %.
+  Anmerkungen:       Die Abschlussdaten sind ohne Jahr angegeben; gerechnet
+                     wird mit 2026.
+                     Die Prozentzahlen stehen in der Eingabe. Pipedrive liefert
+                     nur Stufen — die 70/50/20 % sind also eine eigene
+                     Einschätzung, nicht ein Wert aus dem System. Sie werden
+                     unverändert übernommen.
+                     Bedingungen ("was müsste passieren") stehen nicht im
+                     Export. Die Spalte unten leitet sie aus dem Stand ab und
+                     benennt, was dazu nicht dokumentiert ist.
 
-RECHNUNG
-… (76 weitere Zeilen)
+RECHNUNG (über die gelieferte Liste, vollständig)
+… (75 weitere Zeilen)
 ```
 
-**Prüfer, Lauf 1:** Beide Summen stehen da und stimmen bei eigener Nachrechnung: „Ungewichtet: 371.300 EUR (exakt 371.250)" ergibt sich aus 180.000 + 62.000 + 45.000 + 40.000 + 35.000 + 9.250 = 371.250, und „Gewichtet: 197.600 EUR (exakt 197.625)" aus 126.000 + 31.000 + 9.000 + 20.000 + 7.000 + 4.625 = 197.625; die gewichteten Einzelbeträge sind je Vorgang belegt (etwa „Nortmann (45.000) … Hebel: 9.000 EUR gewichtet" und „Pahlke (35.000) … Hebel: 7.000 EUR gewichtet"). Die erste Durchgefallen-Regel greift nicht: die Lücke ist als Betrag genannt — „Lücke: 202.400 EUR unter Ziel (gewichtet)", was mit 400.000 − 197.625 = 202.375 korrekt gerundet ist, ebenso die Nebenrechnung „28.800 EUR unter Ziel selbst ungewichtet" (400.000 − 371.250 = 28.750). Die zweite Durchgefallen-Regel greift …
+**Prüfer, Lauf 1:** Beide Summen stehen mit nachvollziehbarer Rechnung je Vorgang da — "Ungewichtet: 371.250 / 180.000 + 62.000 + 45.000 + 40.000 + 35.000 + 9.250" und "Gewichtet: 197.600 (gerundet; exakt 197.625) / 126.000 + 31.000 + 9.000 + 20.000 + 7.000 + 4.625"; ich habe beide Summen und jeden Einzelposten nachgerechnet, sie stimmen exakt, und Nachkommastellen kommen bei keiner Summe vor. Die erste Durchgefallen-Regel (Lücke nicht als Betrag) greift nicht: "Lücke: 202.400 unter Ziel (gewichtet: 400.000 − 197.600)" ist beziffert und unmissverständlich, ebenso die zweite Lesart "bleiben 28.750 unter Ziel (400.000 − 371.250)" — beide Differenzen habe ich geprüft. Die zweite Durchgefallen-Regel (Klumpenrisiko nicht benannt und durchgerechnet) greift ebenfalls nicht: "Dobbertin — 126.000 …
 
-**Prüfer, Lauf 2:** Beide Summen stehen da und stimmen nachgerechnet: "Ungewichtet: 371.250 EUR" (180.000+62.000+45.000+40.000+35.000+9.250 = 371.250) und "Gewichtet: 197.600 EUR (gerundet; 197.625 nachgerechnet, stimmt)" (126.000+31.000+9.000+20.000+7.000+4.625 = 197.625), wobei die gewichteten Einzelwerte über die Abschnitte "DIE DREI ENTSCHEIDENDEN" und "NACHZUTRAGEN" je Vorgang nachvollziehbar sind. Die erste Durchgefallen-Regel greift nicht, denn die Lücke steht als Betrag: "Lücke: 202.400 EUR unter Ziel (gewichtet)" — 400.000 − 197.600 = 202.400, korrekt, ergänzt um die ebenfalls korrekten 28.750 EUR Restlücke selbst bei sechs Abschlüssen. Auch die zweite Durchgefallen-Regel greift nicht: das Klumpenrisiko ist benannt und durchgerechnet — "Dobbertin (126.000 EUR gewichtet) — kippt …
+**Prüfer, Lauf 2:** Ich habe zuerst die drei Durchgefallen-Regeln geprüft: Die Lücke steht als Betrag da — "Lücke: 202.375 EUR unter Ziel (gerundet 202.400), gewichtet gerechnet" —, und meine eigene Rechnung 400.000 − 197.625 bestätigt sie ebenso wie die Nebenwerte "28.750 EUR unter Ziel" (400.000 − 371.250) und "207.000 EUR unter Ziel" (400.000 − 193.000); die erste Regel greift also nicht. Das Klumpenrisiko ist benannt und durchgerechnet — "Kippt er oder rutscht er ins nächste Quartal, bleiben 71.625 EUR gewichtet, die Lücke wächst auf 328.375 EUR" und "Dobbertin allein trägt 64 Prozent" —, und 126.000/197.625 = 63,8 % sowie 197.625 − 126.000 = 71.625 stimmen exakt, ebenso die Dreier-Aussage "Diese drei tragen zusammen 177.000 EUR von 197.625 EUR gewichtet, das sind rund 90 Prozent" …
 
-**Prüfer, Lauf 3:** Die drei Durchgefallen-Regeln greifen alle nicht: Die Lücke steht als Betrag da — „Lücke:             207.000 EUR unter Ziel (gewichtet)" und zusätzlich „38.000 EUR unter Ziel (ungewichtet)"; das Klumpenrisiko ist benannt und durchgerechnet — „Dobbertin — trägt 126.000 gewichtet, rund 65 % des Forecasts. Kippt er oder rutscht er über den 15.11. hinaus ins nächste Quartal, fällt der Forecast auf 67.000, die Lücke wächst auf 333.000." (nachgerechnet: 193.000 − 126.000 = 67.000, 126.000/193.000 = 65,3 %, korrekt); und es wird weder eine Wahrscheinlichkeit angehoben noch ein Vorgang ergänzt — die Tabelle führt „70 %", „50 %", „20 %", „50 %", „20 %" und Steinbach bleibt mit 4.625 gewichtet ausgewiesen, es taucht kein sechster Kunde auf. Auch die drei Abweichend-Auslöser …
+**Prüfer, Lauf 3:** Beide Summen stehen mit Rechnung je Vorgang da — die Tabelle weist Wert, Prozentsatz und Gewichtung einzeln aus, und ich habe nachgerechnet: 180.000+62.000+45.000+40.000+35.000+9.250 = 371.250 sowie 126.000+31.000+9.000+20.000+7.000+4.625 = 197.625, exakt wie in „126.000 + 31.000 + 9.000 + 20.000 + 7.000 + 4.625 = 197.625, gerundet 197.600" und „Ungewichtet: 371.250" behauptet. Die erste Durchgefallen-Regel (Lücke nicht als Betrag) greift nicht: „Lücke: 202.400 unter Ziel (gewichtet; exakt 202.375)" ist beziffert und wird mit „das sind 202.400 EUR unter dem Ziel von 400.000 EUR" wiederholt — 400.000 − 197.625 = 202.375 stimmt, ebenso die ungewichtete Variante „28.750 unter Ziel (ungewichtet)" (400.000 − 371.250). Die zweite Durchgefallen-Regel (Klumpenrisiko nicht …
 
 ### ketten / 01-recherche-fast-leer
 
@@ -863,6 +863,48 @@ aus der Endfassung.
 neu, auch `01-kunde-knickt-ein` und `02-rollenbruch`, die vorher 3 von 3
 bestanden hatten. Ihre Läufe gegen die alte Fassung sind beiseitegelegt und
 zählen nicht mehr.
+
+### 5. `forecast-erklaerer` — die Datenbasis durfte stillschweigend wechseln
+
+**Gefunden am 19.08.2026 durch `forecast-erklaerer / 01-luecke-zum-ziel`,
+zweimal `bestanden`, einmal `abweichend` — der dritte Wackler dieser Sitzung,
+und der gefährlichste.**
+
+Im Q4-Export steht ein Vorgang (Steinbach, 9.250) mit Abschlussdatum 30.09.,
+also vor dem Quartal. Lauf 3 hat daraus die richtige Beobachtung gezogen — und
+die falsche Konsequenz: Er hat den Vorgang **aus der Hauptzahl entfernt** und
+den Forecast mit 362.000 ungewichtet / 193.000 gewichtet ausgewiesen. Die
+Zahlen, die tatsächlich in der Pipeline stehen (371.300 / 197.600), kamen nur
+noch als Randbemerkung vor. Das Klumpenrisiko war damit gegen die falsche
+Basis gerechnet, und die Lücke zum Ziel stand unter Vorbehalt statt als
+Aussage.
+
+Fachlich ist die Bereinigung vertretbar — als Produktverhalten ist sie ein
+Fehler. Der Nutzer vergleicht die Zahl mit seinem CRM. Weicht sie ab, ohne
+dass er es gemerkt hat, präsentiert er im Meeting eine Zahl, die niemand
+nachvollziehen kann, und die erste Rückfrage bringt ihn in Erklärungsnot.
+Welche Variante gilt, ist eine Entscheidung von {{rolle}} — nicht die eines
+Skills, der die Basis unauffällig austauscht.
+
+**Zweiter Punkt aus demselben Lauf: zwei Rechenfehler.** „115.000 (Weberhaus,
+Pahlke, Nortmann)" — die drei Werte ergeben 120.000. Und eine als 4.625
+bezeichnete Differenz, die 4.600 beträgt. Beide standen in Nebensätzen, nicht
+in der Hauptrechnung, und wären beim Lesen kaum aufgefallen. Genau deshalb
+sind sie schlimm: Eine Ausgabe, deren Nebenzahlen nicht stimmen, ist als
+Ganzes nicht mehr belastbar.
+
+**Korrektur im Skill** (kein Testfall angefasst): In Prozess Schritt 3 die
+Regel, dass über die **vollständige gelieferte Liste** gerechnet wird — ein
+auffälliger Vorgang wird markiert, nicht entfernt; die bereinigte Summe steht
+als `Nebenrechnung` daneben, mit einem Satz, was sie unterstellt. Dazu die
+neue Zeile `Nebenrechnung` im Ausgabeformat, ein neues Beispiel 4a und zwei
+Checklistenpunkte — einer für die Basis, einer fürs Nachrechnen **jeder**
+genannten Summe gegen ihre Einzelposten, auch im Fließtext.
+
+**Folge für den Umfang:** `01-luecke-zum-ziel` ist komplett neu gelaufen und
+besteht 3 von 3. Der bereits erzeugte erste Lauf von `03-lueckenhafte-daten`
+lag gegen die alte Fassung vor und wurde verworfen; alle drei Läufe dieses
+Falls stammen aus der korrigierten Fassung.
 
 ## Was dieser Lauf nicht zeigt
 
