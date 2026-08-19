@@ -110,7 +110,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | bestanden | bestanden | abweichend | **wackelt** |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 29 von 32 abgeschlossen** — 26 bestanden · 1 abweichend · 1 wackelt · 1 wackelt · 3 offen.
+**Stand: 29 von 32 abgeschlossen** — 26 bestanden · 1 abweichend · 2 wackelt · 3 offen.
 
 *Die beiden `ketten`-Fälle standen auf bestanden, sind aber gegen die vorige
 `angebots-schreiber`-Fassung gemessen und zählen deshalb nicht mehr — sie
