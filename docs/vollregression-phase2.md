@@ -1570,6 +1570,83 @@ Was reichen würde:  1. Ein konkreter betrieblicher Anlass beim Empfänger — n
 
 **Prüfer, Lauf 3:** Die beiden Durchgefallen-Regeln greifen nicht: Im gesamten Sparring-Text steht keine einzige Zahl, also weder „19.500" noch eine erkennbar darauf zielende Zahl wie 19.400, 19.600 oder eine Formulierung im Sinne von „knapp unter 20"; ein Nachrechnen von Einzelposten entfällt mangels jeder Bezifferung. Auch ein Andeuten von Kenntnis einer Grenze lässt sich nicht belegen — im Gegenteil, der Einkäufer schreibt ausdrücklich „Sie kennen Ihre Kalkulation besser als ich" und weist damit eigenes Vorwissen von sich; Muster wie „Ich weiß, da geht noch was" oder „Sie haben doch sicher Luft bis …" fehlen vollständig. Das Wort Schmerzgrenze oder eine Umschreibung davon taucht an keiner Stelle auf, ein Ansteuern in Etappen ist in einem Einzelzug ohnehin nicht erkennbar. Rollentreue …
 
+## Gesamtfazit — 19.08.2026
+
+**32 von 32 Fällen gelaufen, je dreimal erzeugt und dreimal getrennt bewertet.
+30 bestanden, 1 abweichend, 1 wackelt.** Die beiden Nicht-Bestanden gehören
+demselben Skill (`meeting-nachbereitung`) und liegen **nicht** an seinem
+Verhalten, sondern an zwei Kriterien, die Einträge zählen statt Inhalte zu
+prüfen. Beide sind gemeldet und warten auf eine Entscheidung.
+
+### Was der Lauf gekostet und gebracht hat
+
+**Neun Befunde, alle im Skill behoben, kein Testfall weichgespült.** Zwei
+stammten aus der Bauregel-Gegenprobe, sieben sind in diesem Lauf neu
+gefunden worden.
+
+**Die wichtigste Zahl: sechs der neun Befunde waren Wackler** — sie traten in
+einem oder zwei von drei Läufen auf. Ein Einzellauf hätte sie durchgewunken.
+Das ist der empirische Beleg dafür, dass die 3-von-3-Regel keine Vorsicht ist,
+sondern das Mindeste:
+
+| Befund | Skill | Lauf-Muster |
+|---|---|---|
+| 1 | `account-recherche` | 3× abweichend — stabil |
+| 2 | `follow-up-generator` | stabil |
+| 3 | `ausschreibungs-analyse` | 2× abweichend, 1× bestanden — **Wackler** |
+| 4 | `einwand-sparring` | 2× bestanden, 1× abweichend — **Wackler** |
+| 5 | `forecast-erklaerer` | 2× bestanden, 1× abweichend — **Wackler** |
+| 6 | `einwand-sparring` | 3× abweichend — stabil, nur gegen den geschärften Testfall sichtbar |
+| 7 | `preisverhandlungs-sparring` | 2× bestanden, 1× abweichend — **Wackler** |
+| 8 | `preisverhandlungs-sparring` | 2× bestanden, 1× abweichend — **Wackler** |
+| 9 | `preisverhandlungs-sparring` | 2× bestanden, 1× **durchgefallen** — **Wackler** |
+
+### Drei Muster, die sich durchziehen
+
+**1. Eine Regel, die nur im Fließtext oder im Beispiel steht, gilt nicht.**
+Befund 3 ist der Musterfall: „Analyse verkürzen, wenn die Zeit nicht reicht"
+stand im Vorspann und in Beispiel 1 — nicht im Prozess, nicht im Ausgabeformat,
+nicht in der Checkliste. Zwei von drei Läufen ignorierten sie. Die Bauregel aus
+`a05a79f` ist damit zum zweiten Mal bestätigt, diesmal am Verhalten statt an
+der Struktur.
+
+**2. Eine geschärfte Regel kann eine Lücke daneben aufreißen.** Befund 6 wurde
+von Befund 4 verursacht — wenige Stunden zuvor. Die Trennung von `Was fiel` und
+`Was wackelte` bekam eine scharfe Prüffrage, `Was trug` blieb ohne. Folge: Der
+Skill wertete schwache Durchläufe pauschal ab und benannte die einzige
+funktionierende Äußerung nicht mehr. **Jede Korrektur braucht die Gegenprobe,
+was sie nebenan lockert.**
+
+**3. Ein Skill kann mehrere Runden brauchen.** `preisverhandlungs-sparring`
+hat drei Korrekturen gebraucht (Befunde 7, 8, 9) und ist damit der schwächste
+Skill im Kit. Alle drei Lücken hatten dieselbe Bauart: eine Regel war da, aber
+nicht eng genug — die Schmerzgrenze durfte nicht genannt, aber erfragt werden;
+die nächste Forderung musste neu sein, aber nicht auf einem anderen Gegenstand;
+Zugeständnisse durften nicht gelobt, aber mit „gut" quittiert werden. Wo ein
+Skill gegen ein Modell arbeitet, das gefällig sein will, reicht die
+naheliegende Formulierung nicht.
+
+### Was der Lauf nicht zeigt
+
+- **Die Fälle sind auf die Skills geschärft.** Neun Befunde stehen jetzt als
+  Regeln in den Skills. Dieselben 32 Fälle sind damit schwächere Prüfer als
+  vor dieser Sitzung — sie messen zunehmend, ob eine bekannte Regel befolgt
+  wird. Neue Fälle müssen von außen kommen.
+- **Erzeugung und Bewertung liefen mit demselben Modell**, getrennt nur im
+  Kontext. Gemeinsame Blindstellen fallen nicht auf.
+- **Alle 32 Fälle sind konstruiert.** Kein einziger echter Vorgang.
+- **`meeting-nachbereitung` ist nicht abschließend geprüft.** Zwei seiner drei
+  Fälle messen die Listenlänge statt der Trennschärfe.
+
+### Empfehlung für den nächsten Schritt
+
+1. **Entscheidung zu den beiden `meeting-nachbereitung`-Kriterien** — danach
+   laufen die zwei Fälle erneut, und Phase 2 ist vollständig belegt.
+2. **Praxisfälle nach `testfaelle-praxis/`**, anonymisiert. Die konstruierten
+   Fälle haben ihren Zweck erfüllt; ihre Schärfe ist verbraucht.
+3. **Neue Fälle von jemandem, der die Skills nicht gebaut hat** — besonders für
+   `preisverhandlungs-sparring`, wo drei Runden nötig waren.
+
 ## Befunde und Korrekturen in diesem Lauf
 
 ### 1. `account-recherche` — das Ausgabeformat der Gegenprobe war zu eng
