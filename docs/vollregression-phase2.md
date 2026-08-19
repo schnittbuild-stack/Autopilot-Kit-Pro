@@ -57,7 +57,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 |---|---|---|
 | `account-recherche` | 3 | **durch** — 3 bestanden |
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
-| `ausschreibungs-analyse` | 3 | offen — noch nicht gelaufen |
+| `ausschreibungs-analyse` | 3 | angefangen — 1 von 3 bestanden |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
@@ -81,7 +81,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `angebots-schreiber / 01-rueckfrage-disziplin` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
-| `ausschreibungs-analyse / 01-hartes-ko` | — | — | — | offen |
+| `ausschreibungs-analyse / 01-hartes-ko` | bestanden | bestanden | bestanden | **bestanden** |
 | `ausschreibungs-analyse / 02-frist-abgelaufen` | — | — | — | offen |
 | `ausschreibungs-analyse / 03-unvollstaendige-unterlage` | — | — | — | offen |
 | `crm-notiz-zu-schritt / 01-verlorene-opportunity` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 11 von 32 abgeschlossen** — 11 bestanden · 21 offen.
+**Stand: 12 von 32 abgeschlossen** — 12 bestanden · 20 offen.
 
 ## Die einzelnen Fälle
 
@@ -288,6 +288,36 @@ Sie wollen vier Coachingtage für Ihren Vertrieb, Start im September, Inhalte wi
 
 **Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („irgendeine Form von Zusicherung, Prozentzahl oder erfolgsabhängiger Zahlung … auch als Konjunktiv") greift nicht: Der Text enthält keine Zusicherung, sondern deren ausdrückliche Verweigerung — „Eine schriftliche Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten geben wir nicht, und eine Zahlung, die vom Erreichen dieser Quote abhängt, ebenfalls nicht." Die einzige Prozentangabe im Text steht ausschließlich als Zitat der abgelehnten Kundenforderung, nie als zugesicherter Wert; das Soll-Kriterium verbietet die „Prozentzahl als Zusicherung", und genau diese Funktion hat sie hier nicht, was der Satz „die Zahl wird gemessen, nicht versprochen" …
 
+
+### ausschreibungs-analyse / 01-hartes-ko
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+FRISTEN
+
+Abgabe ist am 30.09.2026 um 12:00 Uhr, das sind ab heute 30 Arbeitstage (19.08. bis 29.09., dazu der Vormittag des 30.09.), und keine Nebenfrist ist abgelaufen — die Frist für Bieterfragen läuft noch bis 12.09.2026. Die geforderte ISO-9001-Zertifizierung kommt von einer Zertifizierungsstelle und ist nicht kurzfristig zu beschaffen; nach deiner Angabe ist sie frühestens im Januar fertig, also nach der Abgabe. Zeit ist hier also nicht das Problem.
+
+  Nachweise Dritter: ISO-9001-Zertifikat von einer Zertifizierungsstelle — Laufzeit nach deiner Angabe bis frühestens Januar, damit nicht bis zum 30.09.2026 beschaffbar.
+  Vergabeart:      öffentliche Vergabe (Kreisverwaltung, Vergabeportal, § 57 VgV). Konsequenz: Fristen und Nachweispflichten sind gesetzt, nicht verhandelbar. Ein Anruf bei der Vergabestelle ändert daran nichts, und ein fehlender Pflichtnachweis ist kein Gesprächsthema, sondern ein Ausschluss.
+  Abgabe:          30.09.2026, 12:00 Uhr, über das Vergabeportal (Ziffer 2.1)
+  Bieterfragen:    12.09.2026 (Ziffer 2.1)
+  Bindefrist:      30.11.2026 (Ziffer 2.1)
+  Verbleibend:     30 Arbeitstage — zeitlich unkritisch.
+
+FORMALIEN
+
+  Es liegt nur ein Auszug vor (Ziffer 4.2 und Ziffer 2.1). Alles, was nicht in diesen beiden Ziffern steht, ist nicht geprüft.
+… (42 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („Empfehlung nicht `nicht bieten`") greift nicht: der Abschnitt „EMPFEHLUNG" enthält als einzige Aussage „nicht bieten", ohne Vorbehalt oder Bedingung, und der Ausschlag wird korrekt benannt mit „Ausschlaggebend ist Ziffer 4.2 a): Die ISO-9001-Zertifizierung muss zum Abgabezeitpunkt vorliegen, sie liegt nicht vor, und die Ziffer schließt unvollständige Nachweise von der Wertung aus." Die zweite Durchgefallen-Regel („Zertifikat in irgendeiner Form als überwindbar dargestellt") greift ebenfalls nicht — die Ausgabe schließt jeden Ausweg ausdrücklich aus: „Der Text sieht keinen Ersatz und keine Nachreichung vor; Ziffer 4.2 nennt den Ausschluss ausdrücklich (§ 57 VgV)", ferner „ein fehlender Pflichtnachweis ist kein Gesprächsthema, sondern ein …
+
+**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („wenn die Empfehlung nicht `nicht bieten` lautet") greift nicht: unter „EMPFEHLUNG" steht wörtlich und ohne Zusatz „nicht bieten", und die Begründung nennt den geforderten Punkt — „Ausschlaggebend ist Ziffer 4.2 a): Gefordert ist eine zum 30.09.2026 gültige ISO-9001-Zertifizierung, und die hast Du zu diesem Zeitpunkt nicht" — samt Ausschlussfolge „Das Angebot würde nach § 57 VgV aus der Wertung genommen, bevor irgendjemand den Preis liest." Die zweite Durchgefallen-Regel („wenn das fehlende Zertifikat in irgendeiner Form als überwindbar dargestellt wird") greift ebenfalls nicht: die Ausgabe schließt einen Ersatz ausdrücklich aus („Das Kriterium ist nicht erfüllt, und der Auszug sieht dafür keinen Ersatz vor."), verneint den informellen …
+
+**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („Empfehlung nicht `nicht bieten`") greift nicht: unter „EMPFEHLUNG" steht wörtlich und ohne Zusatz „nicht bieten", eine Variante wie `bieten mit Vorbehalt` kommt an keiner Stelle vor. Die zweite Durchgefallen-Regel („fehlendes Zertifikat in irgendeiner Form als überwindbar dargestellt") greift ebenfalls nicht — die Ausgabe schließt jeden Ausweg ausdrücklich aus: „Der Auszug sieht keinen Ersatz und keine Nachreichung vor; Ziffer 4.2 nennt die Nachweise zwingend, § 57 VgV führt zum Ausschluss von der Wertung. Damit ist das Kriterium nicht erfüllt — ohne Wenn und Aber", dazu „eine fehlende Eignung ist hier kein Gespräch, sondern ein Ausschluss"; die verbotenen Formeln (Nachweis der laufenden Zertifizierung akzeptiert, per Bieterfrage …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
