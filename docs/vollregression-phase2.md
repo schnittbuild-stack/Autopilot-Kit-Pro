@@ -57,7 +57,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 |---|---|---|
 | `account-recherche` | 3 | **durch** — 3 bestanden |
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
-| `ausschreibungs-analyse` | 3 | angefangen — 01 bestanden, 02 **wackelt** (Befund, Korrektur folgt) |
+| `ausschreibungs-analyse` | 3 | angefangen — 02 nach Korrektur 3 von 3, 01 läuft neu |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
@@ -82,7 +82,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 | `ausschreibungs-analyse / 01-hartes-ko` | bestanden | bestanden | bestanden | **bestanden** |
-| `ausschreibungs-analyse / 02-frist-abgelaufen` | abweichend | abweichend | bestanden | **wackelt** |
+| `ausschreibungs-analyse / 02-frist-abgelaufen` | bestanden | bestanden | bestanden | **bestanden** |
 | `ausschreibungs-analyse / 03-unvollstaendige-unterlage` | — | — | — | offen |
 | `crm-notiz-zu-schritt / 01-verlorene-opportunity` | — | — | — | offen |
 | `crm-notiz-zu-schritt / 02-leere-notiz` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 13 von 32 abgeschlossen** — 12 bestanden · 1 wackelt · 19 offen.
+**Stand: 13 von 32 abgeschlossen** — 13 bestanden · 19 offen.
 
 ## Die einzelnen Fälle
 
@@ -321,33 +321,33 @@ FORMALIEN
 
 ### ausschreibungs-analyse / 02-frist-abgelaufen
 
-**Läufe:** abweichend · abweichend · bestanden   ·   **Ergebnis: wackelt**
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
 
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
 **FRISTEN**
 
-Abgabe ist morgen früh, 18.08.2026, 10:00 Uhr — das sind ab jetzt (17.08., 16:30 Uhr) weniger als 0,5 Arbeitstage, nämlich der Rest von heute und zwei Stunden morgen früh, dazwischen eine Nacht; die Frist für Bieterfragen ist am 05.08.2026 abgelaufen, seit 12 Tagen. Dazu kommt: Unbedenklichkeitsbescheinigung Finanzamt, Unbedenklichkeitsbescheinigung Krankenkasse und der Fachkundenachweis VDI 6022 kommen von Dritten (S. 4, Ziffer 7). Solche Papiere werden ausgestellt, nicht geschrieben — über Nacht sind sie nicht zu beschaffen. Wer sie nicht heute schon aktuell im Ordner hat, kann die Mappe bis 10:00 Uhr nicht vollständig einreichen.
+Die Abgabe ist morgen, 18.08.2026, 10:00 Uhr — davon bleiben rund 3,5 Stunden echte Arbeitszeit (heute ab 16:30 bis Feierabend, morgen früh bis 10:00), also weniger als ein halber Arbeitstag; die Nacht ist keine Bearbeitungszeit. Die Frist für Bieterfragen ist am 05.08.2026 abgelaufen, seit 12 Tagen vorbei. Drei der geforderten Nachweise kommen von Dritten: Unbedenklichkeitsbescheinigung Finanzamt, Unbedenklichkeitsbescheinigung Krankenkasse und der Fachkundenachweis VDI 6022. Solche Papiere stellt keine Behörde, Krankenkasse oder Zertifizierungsstelle über Nacht aus — wenn sie nicht schon im Ordner liegen, sind sie bis 10:00 Uhr nicht zu beschaffen.
 
-- **Vergabeart:** öffentliche Vergabe (Vergabeportal, Losaufteilung, gesetzte Bieterfragenfrist, S. 1 und S. 3, Ziffer 6). Konsequenz: Fristen und Formalien sind nicht verhandelbar. Ein Anruf bei der Vergabestelle verlängert nichts, und eine fehlende Unterlage ist kein Gespräch, sondern ein Ausschluss.
-- **Abgabe:** 18.08.2026, 10:00 Uhr (S. 3, Ziffer 6)
-- **Bieterfragen:** 05.08.2026 — abgelaufen (S. 3, Ziffer 6)
+- **Nachweise Dritter:** Finanzamt, Krankenkasse, VDI-6022-Stelle — Ausstellung dauert in der Regel Tage bis Wochen, nicht Stunden.
+- **Vergabeart:** öffentliche Vergabe (Vergabeportal, gesetzte Bieterfragenfrist, Losaufteilung). Konsequenz: Fristen und Formalien sind nicht verhandelbar. Ein Anruf bei der Stelle ändert daran nichts, Nachreichen ist nicht vorgesehen.
+- **Abgabe:** 18.08.2026, 10:00 Uhr (Seite 3, Ziffer 6)
+- **Bieterfragen:** 05.08.2026 (Seite 3, Ziffer 6) — abgelaufen
 - **Bindefrist:** nicht gefunden
-- **Verbleibend:** unter 0,5 Arbeitstage — reicht nicht für 42 Leistungspositionen plus vier Nachweise, von denen zwei von Behörde und Krankenkasse kommen
+- **Verbleibend:** rund 3,5 Arbeitsstunden, weniger als ein halber Arbeitstag — für ein Angebot über 42 LV-Positionen samt Nachweismappe und Portalabgabe nicht ausreichend.
+- **Analyseumfang:** **verkürzt — nur K.o. und Abgaberealismus**
 
 **FORMALIEN**
 
-- **Abgabeweg:** ausschließlich über das Vergabeportal (S. 3, Ziffer 6). Papier und Mail sind nicht vorgesehen.
-- **Nachweise:** Fachkundenachweis VDI 6022, Referenzen, Unbedenklichkeitsbescheinigung Finanzamt, Unbedenklichkeitsbescheinigung Krankenkasse (S. 4, Ziffer 7)
-… (44 weitere Zeilen)
+… (43 weitere Zeilen)
 ```
 
-**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („Frist nicht im ersten Satz") greift nicht: der erste Satz der Ausgabe lautet „Abgabe ist morgen früh, 18.08.2026, 10:00 Uhr — das sind ab jetzt (17.08., 16:30 Uhr) weniger als 0,5 Arbeitstage, nämlich der Rest von heute und zwei Stunden morgen früh, dazwischen eine Nacht; die Frist für Bieterfragen ist am 05.08.2026 abgelaufen, seit 12 Tagen." — er nennt Abgabetermin, Restspanne, Nachtabschnitt und die abgelaufene Bieterfragenfrist, und die Zahlen stimmen nachgerechnet (05.08. bis 17.08. = 12 Tage; 16:30 bis 10:00 = 17,5 Stunden Kalenderzeit, davon nur Reststunden heute plus „zwei Stunden morgen früh" als Arbeitszeit, also unter 0,5 Arbeitstage). Die zweite Durchgefallen-Regel („Bieterfrage wird vorgeschlagen") greift ebenfalls nicht: …
+**Prüfer, Lauf 1:** Durchgefallen-Regel 1 („Frist nicht im ersten Satz") greift nicht: der erste Satz der Ausgabe lautet „Die Abgabe ist morgen, 18.08.2026, 10:00 Uhr — davon bleiben rund 3,5 Stunden echte Arbeitszeit (heute ab 16:30 bis Feierabend, morgen früh bis 10:00), also weniger als ein halber Arbeitstag; die Nacht ist keine Bearbeitungszeit." — Abgabetermin, Uhrzeit und der Nachtabschnitt stehen damit an erster Stelle, und die Bieterfragen-Frist folgt unmittelbar im zweiten Satz mit „Die Frist für Bieterfragen ist am 05.08.2026 abgelaufen, seit 12 Tagen vorbei." (05.08. bis 17.08.2026 sind nachgerechnet genau 12 Tage). Statt der im Soll genannten „rund 17 Stunden" nennt die Ausgabe „rund 3,5 Stunden echte Arbeitszeit"; die Rechnung 16:30 bis Feierabend plus morgen früh bis 10:00 …
 
-**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („Frist nicht im ersten Satz") greift nicht: der erste Satz der Ausgabe lautet „Abgabe ist morgen, 18.08.2026, 10:00 Uhr — das sind ab jetzt rund 0,5 Arbeitstage (der Rest von heute plus knapp zwei Stunden morgen früh), und die Frist für Bieterfragen ist seit dem 05.08.2026 abgelaufen, seit 12 Tagen", nennt also beide Fristen sofort; die Nachrechnung stimmt (05.08. bis 17.08. sind 12 Tage, von heute bis morgen 10:00 Uhr rund 17 Kalenderstunden mit Nachtabschnitt, den die Ausgabe mit „Solche Bescheinigungen sind über Nacht nicht zu beschaffen" auch anspricht). Die zweite Durchgefallen-Regel („Bieterfrage wird vorgeschlagen") greift ebenfalls nicht, denn der Abschnitt lautet ausdrücklich „entfällt — die Frist für Bieterfragen ist am …
+**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („wenn die Frist nicht im ersten Satz steht") greift nicht: Der erste Satz der Ausgabe lautet „Die Abgabefrist endet morgen, 18.08.2026 um 10:00 Uhr — das sind ab jetzt rund 0,5 Arbeitstage (heute Nachmittag ab 16:30 plus morgen früh bis 10:00; die Nacht zählt nicht), und die Frist für Bieterfragen ist seit 12 Tagen vorbei, sie lief am 05.08.2026 ab." — damit stehen Abgabetermin, Restspanne, der ausdrücklich benannte Nachtabschnitt („die Nacht zählt nicht") und die abgelaufene Bieterfragenfrist alle im ersten Satz; nachgerechnet trägt das auch: 16:30 heute bis 10:00 morgen sind rund 17,5 Stunden, und vom 05.08. bis zum Vortag der Abgabe (17.08.) sind es genau 12 Tage. Die zweite Durchgefallen-Regel („wenn eine Bieterfrage vorgeschlagen …
 
-**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („Frist nicht im ersten Satz") greift nicht: Der allererste Satz der Ausgabe lautet „Abgabe ist morgen, 18.08.2026, 10:00 Uhr — dafür bleiben rund 3 bis 4 Arbeitsstunden (der Rest von heute Nachmittag plus zwei Stunden morgen früh; die Nacht ist keine Bearbeitungszeit), und die Frist für Bieterfragen ist am 05.08.2026 abgelaufen, seit 12 Tagen vorbei" und nennt damit Abgabetermin, Uhrzeit, Restzeit, den Nachtabschnitt und die abgelaufene Bieterfragen-Frist in einem Zug; die Zwölf-Tage-Rechnung stimmt (05.08. bis heute, 17.08., sind 12 Tage), und statt der im Soll genannten rund 17 Kalenderstunden rechnet die Ausgabe konservativer in Arbeitsstunden, was den geforderten Nachtabschnitt ausdrücklich einschließt statt ihn zu verschweigen. Die …
+**Prüfer, Lauf 3:** Durchgefallen-Regel 1 („Frist nicht im ersten Satz") greift nicht: der erste Satz der Ausgabe lautet „Die Abgabefrist läuft morgen, 18.08.2026 um 10:00 Uhr ab — das sind rund 0,5 Arbeitstage (heute noch etwa 1,5 Stunden, morgen früh etwa 1 Stunde; die Nacht dazwischen ist keine Bearbeitungszeit), und die Frist für Bieterfragen ist seit dem 05.08.2026 abgelaufen, also seit 12 Tagen" — beide Fristen, der Nachtabschnitt und die Restzeit stehen also im ersten Satz, und die 12 Tage rechnen sich vom 05.08.2026 auf den Stichtag 17.08.2026 korrekt nach (die Kalenderspanne bis morgen 10:00 Uhr entspricht den geforderten rund 17 Stunden, hier konservativer als reine Bearbeitungszeit beziffert). Durchgefallen-Regel 2 („eine Bieterfrage wird vorgeschlagen") greift ebenfalls nicht: …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
@@ -571,6 +571,49 @@ Gegenfrage.
 **Folge für den Umfang:** Alle drei `follow-up-generator`-Fälle laufen komplett
 neu, auch `01` und `02`, die vorher 3 von 3 hatten. Ihre Läufe gegen die alte
 Fassung sind beiseitegelegt und zählen nicht mehr.
+
+### 3. `ausschreibungs-analyse` — zwei Muss-Regeln standen nur im Beispiel
+
+**Gefunden am 19.08.2026 durch `ausschreibungs-analyse / 02-frist-abgelaufen`,
+zweimal `abweichend`, einmal `bestanden` — also ein Wackler, kein stabiler
+Fehler. Genau die Sorte, die ein Einzellauf durchgewinkt hätte.**
+
+Zwei Lücken, beide vom selben Typ:
+
+**a) Die Verkürzung bei Zeitmangel war nirgends verbindlich.** Der Skill sagt
+im Vorspann zum Prozess, eine gründliche Analyse zu einer morgen schließenden
+Ausschreibung sei verschwendete Zeit — und in Beispiel 1 steht „Analyse wird
+auf K.o. und Aufwand verkürzt". Im Prozess selbst, im Ausgabeformat und in der
+Checkliste stand die Regel **nicht**. Folge: zwei von drei Läufen lieferten bei
+17 Stunden Restzeit den vollen Durchgang samt Formalien, Auffälligkeiten im
+Leistungsumfang und strategischem Ausblick.
+
+**b) Die Fragenliste kannte nur K.o.-Kriterien.** Das Ausgabeformat schrieb für
+`OFFENE FRAGEN AN DICH` vor: „welche Angabe fehlt — welches Kriterium sie auf
+`unklar` hält". Ob {{rolle}} im Vergabeportal registriert ist, ist kein
+Eignungskriterium — die Frage hatte damit keinen Platz und fiel in zwei von
+drei Läufen ersatzlos weg. Dabei ist sie die einzige, die eine Ablehnung wegen
+Zeitmangel umdrehen kann. Auch der Satz, dass die Empfehlung kippt, wenn
+Nachweise und Portalzugang vorliegen, fehlte.
+
+Beides ist derselbe Befund wie in der Bauregel von `a05a79f`: Eine Muss-Regel,
+die nur im Fließtext oder im Beispiel steht, wird befolgt, wenn das Modell gut
+gelaunt ist — und sonst nicht. Der dritte Lauf hat beides richtig gemacht, was
+den Fehler ohne Dreifachlauf unsichtbar gemacht hätte.
+
+**Korrektur im Skill** (kein Testfall angefasst): Verkürzung als Pflicht in
+Prozess Schritt 1, neues Feld `Analyseumfang: vollständig | verkürzt` im
+Ausgabeformat, Checklistenpunkt dazu. In Schritt 6 die Regel, dass eine auf
+Zeit gestützte Empfehlung nennen muss, was sie kippt (`Ändert sich, wenn:` im
+Ausgabeformat), und dass Nachweise und Zugang zum Abgabeweg als
+**empfehlungsrelevante** Fragen in die Liste gehören. Zeilenformat der
+Fragenliste erweitert, Beispiel 1 nachgezogen, drei Checklistenpunkte ergänzt.
+
+**Folge für den Umfang:** Beide bereits gelaufenen `ausschreibungs-analyse`-
+Fälle laufen komplett neu, auch `01-hartes-ko`, der vorher 3 von 3 bestanden
+hatte. Die Läufe gegen die alte Fassung sind beiseitegelegt und zählen nicht
+mehr. `03-unvollstaendige-unterlage` läuft von vornherein gegen die korrigierte
+Fassung.
 
 ## Was dieser Lauf nicht zeigt
 
