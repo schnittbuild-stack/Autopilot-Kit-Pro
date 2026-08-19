@@ -62,7 +62,36 @@ Stelle fortsetzt — dann hat „weiter" nicht getragen. Alles andere ist
 | 2 — Kennenlernen | nach Frage 7, ohne Antwort | **bestanden** | ja — Installer hat es am Ende von Phase 1 gesagt |
 | 3 — Einrichten | drei von sechs Assistenten gefüllt | **bestanden** | ja — eine Nachricht vorher gesagt |
 | 4 — Erste echte Aufgabe | Rückfrage raus, keine Antwort | **bestanden** | ja — Ende Phase 3 gesagt |
-| 5 — Wächter und Übergabe | offen | — | — |
+| 5 — Wächter und Übergabe | vor dem Beibringen des Zauberworts | **bestanden** | ja — aus `START.md`, nicht vom Installer |
+
+## Ergebnis
+
+**Fünf Phasen, fünf harte Abbrüche, fünfmal nur das Wort „weiter" — fünfmal
+bestanden.** In keinem Fall wurde nach dem Stand gefragt, in keinem Fall an der
+falschen Stelle fortgesetzt. Anforderung 1 aus der Definition of Done ist damit
+belegt, nicht mehr nur gebaut.
+
+| Phase | Fortsetzung |
+|---|---|
+| 1 — mitten im Umräumen | bestanden |
+| 2 — nach Frage 7, ohne Antwort | bestanden |
+| 3 — drei von sechs Assistenten gefüllt | bestanden |
+| 4 — Rückfrage raus, keine Antwort | bestanden |
+| 5 — vor dem Beibringen des Zauberworts | bestanden |
+
+**Drei der fünf Fälle waren keine sauberen Schnitte.** In Phase 1, 2 und 3 war
+der Stand auf der Platte im Moment des Abbruchs **nachweislich falsch**. Die
+Fortsetzung hat das jedes Mal überlebt, weil die Sitzung nachgesehen hat, statt
+der Datei zu glauben. Das ist die eigentliche Nachricht dieses Tests: Nicht die
+Standsdatei allein trägt, sondern die Regel, sie gegen die Wirklichkeit zu
+prüfen.
+
+**Und der Nutzer wusste in allen fünf Fällen, dass „weiter" das Zauberwort
+ist** — aber nie, weil der Installer es ihm beigebracht hätte. Der Schritt, der
+das tut, liegt ganz am Ende (Phase 5, Schritt 2) und wurde in keinem einzigen
+Abbruchfall erreicht. Getragen haben ihn andere: `START_HIER.md` vor der
+Einrichtung, die Phasenabschlüsse zwischendurch, `START.md` ab Ende Phase 3.
+Das Netz hält, weil es vierfach gespannt ist — nicht wegen der Lehrstunde.
 
 ## Die fünf Fälle
 
@@ -344,3 +373,86 @@ Zu beachten: **`START_HIER.md` ist am Ende von Phase 3 nach `system/`
 gewandert.** Die Quelle, die in den Phasen 1 und 2 das Netz war, ist ab hier
 weg — ersetzt durch `START.md`. Der Wechsel ist lückenlos, aber er ist ein
 Wechsel, und er passiert ohne dass jemand es merkt.
+
+### Phase 5 — Abbruch, bevor „weiter" beigebracht wurde
+
+**Ergebnis: bestanden.** Alle sieben Prüfpunkte erfüllt.
+
+**Die Abbruchstelle, und warum genau diese.** Phase 5 hat fünf Schritte.
+Schritt 1 richtet den Wochencheck ein, **Schritt 2 bringt dem Nutzer „weiter"
+bei und lässt ihn einmal üben**. Der Abbruch liegt genau dazwischen. Das ist
+der einzige Punkt im ganzen Durchlauf, an dem die Einrichtung an der Stelle
+stirbt, die für die Fortsetzung zuständig ist — der Test, der sich selbst
+prüft.
+
+Vorher fertig: alle vier Phasen, das Angebot für Keßler samt eingearbeiteter
+Korrektur in `ergebnisse/`, der Wochencheck. Nicht gemacht: „weiter"
+beibringen, üben lassen, „hilfe" zeigen, verabschieden, den Stand abschließen.
+
+**Was auf „weiter" passiert ist.** Die frische Sitzung hat sich mit dem Satz
+aus dem Stand gemeldet und Schritt 2 begonnen — und dann etwas getan, das die
+Anleitung nicht vorsieht und das trotzdem richtiger ist als das Vorgesehene:
+
+```
+Üben musst du das nicht mehr: Du hast es eben selbst gemacht. Deine Nachricht
+war weiter — und du siehst, was passiert ist. Ich mache da weiter, wo wir
+stehen geblieben sind, ohne dass du mir irgendetwas noch mal erzählen musstest.
+Mehr ist es nicht.
+```
+
+Die Anleitung verlangt „Probier's gleich aus — schreib mal weiter." Der Nutzer
+hatte es gerade getan. Ihn dasselbe Wort unmittelbar noch einmal tippen zu
+lassen, wäre die Wiederholung gewesen, die Prüfpunkt 3 verbietet. Die Bewertung
+hat erwogen, das als falsche Stelle zu werten, und sich dagegen entschieden;
+die Begründung steht im Urteil, der Rest ist dort als offen vermerkt.
+
+Danach hat sie Schritt 3 bis 5 abgearbeitet, einen offenen Punkt aus dem Stand
+nachgezogen und die Einrichtung abgeschlossen.
+
+**Hätte der Nutzer gewusst, dass „weiter" das Zauberwort ist?**
+
+**Ja — aber ausgerechnet hier nicht vom Installer.** Das ist die Pointe dieses
+Falls: Der Abbruch liegt **vor** dem Schritt, der es beibringt. Getragen hat es
+**`START.md`**, seit Ende Phase 3 im Wurzelordner, mit der Zeile „**weiter** —
+wir machen da weiter, wo wir aufgehört haben. Dein Stand ist gesichert, auch
+wenn du das Fenster zugemacht hast."
+
+**Die Anforderung ist also erfüllt, aber nicht durch den Mechanismus, der dafür
+gebaut wurde.** Phase 5, Schritt 2 ist die einzige Stelle, an der „weiter"
+ausdrücklich gelehrt und geübt wird — und sie wird in keinem der fünf
+Abbruchfälle erreicht. Wer das für ein Detail hält, sollte es andersherum
+lesen: Die Lehrstunde ist der **letzte** Faden des Netzes, nicht der erste.
+Fiele `START.md` weg oder überflöge der Käufer `START_HIER.md`, stünde die
+Anforderung auf einem einzigen Satz am Ende jeder Phase.
+
+**Zwei Befunde am Kit, aufgefallen beim Bauen dieses Falls, beide am Repo
+nachgeprüft:**
+
+**1. Es gibt keinen Wächter zum Einrichten.** Phase 5, Schritt 1 sagt „Richte
+den Wächter ein". Eine Vorlage dafür existiert weder in `core/` noch in
+`adapter-claude/vorlagen/` — mechanisch geprüft: Treffer auf „Wochencheck",
+„Wächter" oder „Watchdog" nur in zwei READMEs, in `STATUS.vorlage.md` und in
+`INSTALLER.md` selbst, nirgends eine Quelle. Der Installer muss ihn **frei
+erfinden**, und die Testsitzung hat genau das getan: `system/wochencheck.md`
+mit sieben selbst ausgedachten Prüfpunkten. **Jeder Käufer bekommt damit einen
+anderen Wächter.** Der Punkt stand als Risiko in `docs/STATUS-BAU.md` — jetzt
+ist er belegt, nicht mehr vermutet.
+
+**2. Die Verbotsliste wird zur Installationszeit vervielfältigt.** Sie steht
+danach in `mein-profil.md`, in `CLAUDE.md` und in **jeder** eingerichteten
+Skill-Datei — im Testordner siebenmal. Ursache ist Phase 3, Schritt 2:
+„Ersetze in den ausgewählten Dateien jeden Platzhalter durch die Angaben aus
+`mein-profil.md`." Im Repo ist Prinzip 1 sauber — überall steht `{{verbote}}`,
+nirgends der Inhalt. **Beim Kunden ist es gebrochen.**
+
+Die Folge zeigte sich sofort und ungeplant: Die Stilkorrektur aus Phase 4
+(„kein ‚gerne'") konnte nicht an einer Stelle greifen. Eine Sitzung zog Profil
+und Gedächtnis nach und vermerkte die fünf veralteten Skill-Dateien als offenen
+Punkt; erst die nächste Sitzung räumte sie hinterher. Das ging nur gut, weil es
+im Stand stand. Eine Abweichung, die niemand notiert, bleibt liegen — und der
+Käufer merkt sie erst, wenn ein Assistent etwas schreibt, das er abgestellt zu
+haben glaubte.
+
+**Beide Befunde sind nicht behoben.** Der Wächter ist Phase-4-Arbeit
+(BAUPLAN), und die Vervielfältigung der Profildaten ist eine
+Architekturentscheidung, keine Korrektur nebenbei.
