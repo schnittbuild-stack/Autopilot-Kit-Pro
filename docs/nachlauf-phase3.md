@@ -56,7 +56,7 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 | Fall | Stand |
 |---|---|
 | `01-rueckfrage-disziplin` | **durch** — bestanden |
-| `02-budget-konflikt` | offen |
+| `02-budget-konflikt` | **wackelt** — Befund, Entscheidung steht aus |
 | `03-verbots-kollision` | offen |
 | `04-preisgrundlage-abgelaufen` | offen |
 | `05-kundenkondition-vorrang` | offen |
@@ -66,8 +66,9 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 | Fall | Lauf 1 | Lauf 2 | Lauf 3 | Ergebnis |
 |---|---|---|---|---|
 | `01-rueckfrage-disziplin` | bestanden | bestanden | bestanden | **bestanden** |
+| `02-budget-konflikt` | durchgefallen | durchgefallen | bestanden | **wackelt** |
 
-**Stand: 1 von 5 abgeschlossen** — 1 bestanden · 4 offen.
+**Stand: 2 von 5 gelaufen** — 1 bestanden · 1 wackelt · 3 offen.
 
 ## Die einzelnen Fälle
 
@@ -118,3 +119,70 @@ ein Hinweis darauf, dass die Kriterien „genau zwei Fragen" und „keine
 Preisangabe" an ihren Rändern Auslegung verlangen.
 
 **Kein Befund.** Der Skill wurde nicht angefasst.
+
+
+### 02-budget-konflikt
+
+**Läufe:** durchgefallen · durchgefallen · bestanden   ·   **Ergebnis: wackelt**
+
+Der Fall hat in der Vollregression 3 von 3 bestanden. Jetzt nicht mehr.
+
+**Was passiert ist.** Zwei von drei Läufen schreiben **kein Angebot**, sondern
+stellen eine einzige Rückfrage:
+
+```
+Ich kann das Angebot noch nicht schreiben. Ein Pflicht-Punkt fehlt:
+
+1. Ist die anfragende Firma (A. Vogt, Einkauf) Neukunde oder Bestandskunde?
+   In der Mail steht dazu nur "nach unserem Telefonat vom Dienstag". Ob ihr
+   vorher schon zusammengearbeitet habt, geht daraus nicht hervor. In deinen
+   Unterlagen finde ich zu der Firma nichts: kein früheres Angebot, keinen
+   Kundenordner in den Preisen.
+```
+
+Der dritte Lauf schreibt das Angebot — vollständig, mit allen fünf Positionen,
+19.000 EUR Summe, beziffertem Budget-Konflikt und Kürzungsvorschlag in Block B.
+Er löst das fehlende Verhältnis anders: Er **setzt `neukunde`** und vermerkt
+das in Block B unter `Angenommen` („zu [kunde] liegt in deinen Unterlagen
+nichts: kein Ordner in preise/kunden/, kein früheres Angebot. Ist es doch ein
+Bestandskunde, sag Bescheid.").
+
+**Der Befund, und er liegt nicht im Skill.**
+
+Die Anfrage in `## Eingabe` nennt das Empfänger-Verhältnis nicht. Es ist der
+**sechste Pflicht-Fakt** des Skills, und der Skill schreibt für einen leeren
+Pflicht-Fakt zwingend vor: nachfragen, anhalten, kein Angebot. Die beiden
+Läufe, die durchgefallen sind, haben also **die Regel befolgt**. Der Lauf, der
+bestanden hat, hat sie **gebrochen** — er hat einen Pflicht-Fakt geraten, was
+der Skill an drei Stellen ausdrücklich verbietet („wird nachgefragt, nie
+geraten").
+
+**Der Testfall belohnt damit genau das Verhalten, das der Skill verbietet, und
+bestraft das, was er verlangt.** Ein Skill, der diesen Fall zuverlässig
+besteht, wäre schlechter als einer, der durchfällt.
+
+**Warum das vorher nicht auffiel.** Anforderung 2 hat den Ordner
+`meine-unterlagen/` eingeführt, und der Skill liest jetzt daraus. Beide
+durchgefallenen Läufe haben dort **nachgesehen** — in `preise/kunden/` und in
+`angebote/` — und nichts zu diesem Kunden gefunden. Genau dieser Blick macht
+die Lücke bei Fakt 6 sichtbar; vorher gab es nichts nachzusehen, und die Frage
+stellte sich nicht so scharf. Die neue Wissensquelle hat den Fall also nicht
+kaputt gemacht, sondern einen Mangel freigelegt, den er von Anfang an hatte.
+
+**Nicht angefasst.** Weder Testfall noch Skill. Nach der Änderungsregel vom
+18.08.2026 gilt: melden, begründen, Vorschlag machen — entscheiden tut der
+Auftraggeber.
+
+**Vorschlag zur Entscheidung.** Den Eingabeteil um eine Angabe ergänzen, die
+Fakt 6 klärt — ein Halbsatz genügt, etwa „Wir arbeiten ja seit drei Jahren
+zusammen" oder umgekehrt „Wir würden gern erstmals mit Ihnen arbeiten" —, mit
+Änderungsvermerk, und den Fall danach dreimal neu laufen lassen. Damit prüft er
+wieder das, wofür er gebaut wurde: den Umgang mit einem zu kleinen Budget.
+
+**Die Gegenrichtung wäre teuer:** Fakt 6 im Skill zu entschärfen, damit der
+Fall besteht, würde eine harte Regel gegen ein bequemes Testergebnis tauschen —
+und der Fall prüft den Budget-Konflikt danach immer noch nicht, weil zwei von
+drei Läufen weiterhin an derselben Stelle stehen blieben.
+
+**Bis zur Entscheidung ist `02-budget-konflikt` nicht bestanden.** Die Zahl aus
+Phase 2 gilt für ihn nicht weiter.
