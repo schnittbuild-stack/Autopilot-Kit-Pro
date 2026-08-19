@@ -61,7 +61,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
 | `einwand-sparring` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
-| `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
+| `forecast-erklaerer` | 3 | angefangen — 01 **wackelt** (Befund, Korrektur folgt) |
 | `ketten` | 2 | **durch** — 2 bestanden |
 | `meeting-nachbereitung` | 3 | offen — noch nicht gelaufen |
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
@@ -93,7 +93,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 03-stufe-drei-und-schluss` | bestanden | bestanden | bestanden | **bestanden** |
-| `forecast-erklaerer / 01-luecke-zum-ziel` | — | — | — | offen |
+| `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | bestanden | abweichend | **wackelt** |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
 | `forecast-erklaerer / 03-lueckenhafte-daten` | — | — | — | offen |
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 20 von 32 abgeschlossen** — 20 bestanden · 12 offen.
+**Stand: 21 von 32 abgeschlossen** — 20 bestanden · 1 wackelt · 11 offen.
 
 ## Die einzelnen Fälle
 
@@ -623,6 +623,36 @@ Sie mir ein Datum, an dem ich mich wieder bei Ihnen melden soll?
 
 **Prüfer, Lauf 3:** Teil 1 ordnet den Fall ausdrücklich als dritte Stufe ein („Stufe:            3") und schließt sie ab („Nächste Stufe:    keine — hier ist Schluss."); die Abweichend-Regel „Stufe 3 nicht als solche erkannt" greift damit nicht. Als Anlass dient der echte Ablauf der Gültigkeit — „das Angebot ist bis zum 30.09.2026 gültig, also noch vier Tage." —, und Block B benennt ihn als „der einzige Anlass, der aus dem Angebot selbst kommt". Der geforderte Ausweg steht wörtlich da: „Wenn Sie sich anders entschieden haben oder das Projekt später kommt, reicht mir eine kurze Zeile, dann lege ich den Vorgang zu." Die Nachricht enthält genau eine, mit ja/nein beantwortbare Frage: „Soll ich das Angebot über den …
 
+
+### forecast-erklaerer / 01-luecke-zum-ziel
+
+**Läufe:** bestanden · bestanden · abweichend   ·   **Ergebnis: wackelt**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+DATENLAGE
+  Vorgänge gesamt:   6, davon rechenbar 6
+  Nicht rechenbar:   keine — jeder Vorgang hat Wert, Stand und Abschlussdatum
+  Anmerkung 1:       Steinbach hat als Abschluss den 30.09. Das liegt vor Q4.
+                     In einer Q4-Rechnung hat der Vorgang nichts verloren.
+                     Beide Varianten stehen unten.
+  Anmerkung 2:       Pipedrive liefert Stufen, keine Prozentzahlen. Die
+                     Prozentwerte in der Tabelle stammen also nicht aus dem
+                     Tool, sondern sind eigene Schätzung. Sie folgen dabei der
+                     Stufe, nicht dem Einzelfall: dreimal „Angebot abgegeben"
+                     ergibt dreimal 50 %, zweimal Erstkontakt/Erstgespräch
+                     ergibt zweimal 20 %.
+
+RECHNUNG
+… (76 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Beide Summen stehen da und stimmen bei eigener Nachrechnung: „Ungewichtet: 371.300 EUR (exakt 371.250)" ergibt sich aus 180.000 + 62.000 + 45.000 + 40.000 + 35.000 + 9.250 = 371.250, und „Gewichtet: 197.600 EUR (exakt 197.625)" aus 126.000 + 31.000 + 9.000 + 20.000 + 7.000 + 4.625 = 197.625; die gewichteten Einzelbeträge sind je Vorgang belegt (etwa „Nortmann (45.000) … Hebel: 9.000 EUR gewichtet" und „Pahlke (35.000) … Hebel: 7.000 EUR gewichtet"). Die erste Durchgefallen-Regel greift nicht: die Lücke ist als Betrag genannt — „Lücke: 202.400 EUR unter Ziel (gewichtet)", was mit 400.000 − 197.625 = 202.375 korrekt gerundet ist, ebenso die Nebenrechnung „28.800 EUR unter Ziel selbst ungewichtet" (400.000 − 371.250 = 28.750). Die zweite Durchgefallen-Regel greift …
+
+**Prüfer, Lauf 2:** Beide Summen stehen da und stimmen nachgerechnet: "Ungewichtet: 371.250 EUR" (180.000+62.000+45.000+40.000+35.000+9.250 = 371.250) und "Gewichtet: 197.600 EUR (gerundet; 197.625 nachgerechnet, stimmt)" (126.000+31.000+9.000+20.000+7.000+4.625 = 197.625), wobei die gewichteten Einzelwerte über die Abschnitte "DIE DREI ENTSCHEIDENDEN" und "NACHZUTRAGEN" je Vorgang nachvollziehbar sind. Die erste Durchgefallen-Regel greift nicht, denn die Lücke steht als Betrag: "Lücke: 202.400 EUR unter Ziel (gewichtet)" — 400.000 − 197.600 = 202.400, korrekt, ergänzt um die ebenfalls korrekten 28.750 EUR Restlücke selbst bei sechs Abschlüssen. Auch die zweite Durchgefallen-Regel greift nicht: das Klumpenrisiko ist benannt und durchgerechnet — "Dobbertin (126.000 EUR gewichtet) — kippt …
+
+**Prüfer, Lauf 3:** Die drei Durchgefallen-Regeln greifen alle nicht: Die Lücke steht als Betrag da — „Lücke:             207.000 EUR unter Ziel (gewichtet)" und zusätzlich „38.000 EUR unter Ziel (ungewichtet)"; das Klumpenrisiko ist benannt und durchgerechnet — „Dobbertin — trägt 126.000 gewichtet, rund 65 % des Forecasts. Kippt er oder rutscht er über den 15.11. hinaus ins nächste Quartal, fällt der Forecast auf 67.000, die Lücke wächst auf 333.000." (nachgerechnet: 193.000 − 126.000 = 67.000, 126.000/193.000 = 65,3 %, korrekt); und es wird weder eine Wahrscheinlichkeit angehoben noch ein Vorgang ergänzt — die Tabelle führt „70 %", „50 %", „20 %", „50 %", „20 %" und Steinbach bleibt mit 4.625 gewichtet ausgewiesen, es taucht kein sechster Kunde auf. Auch die drei Abweichend-Auslöser …
 
 ### ketten / 01-recherche-fast-leer
 
