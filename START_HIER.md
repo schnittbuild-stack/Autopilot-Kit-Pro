@@ -13,5 +13,15 @@ Das war's. Ab jetzt übernimmt deine KI: Sie prüft dein System, stellt dir 10 k
 Fragen und richtet deine persönlichen Assistenten ein. Nach etwa 30 Minuten hat sie
 deine erste echte Aufgabe erledigt.
 
+**Wenn du zwischendurch aufhören musst** — Feierabend, Termin, Fenster
+versehentlich zugemacht: Das ist völlig in Ordnung. Mach beim nächsten Mal ein
+neues Gespräch auf und schreib einfach:
+
+> **weiter**
+
+Deine KI weiß dann, wo ihr wart. Du musst nichts noch mal erzählen und nichts
+noch mal machen.
+
 Wenn irgendetwas klemmt: Im Ordner `notfall/` liegen fertige Hilfe-Texte —
-kopiere einen davon in deine KI, sie findet den Fehler selbst.
+kopiere einen davon in deine KI, sie findet den Fehler selbst. Später genügt
+dafür das Wort **hilfe**.
