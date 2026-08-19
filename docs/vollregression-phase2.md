@@ -62,7 +62,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `einwand-sparring` | 3 | **durch** — 3 bestanden (nach Korrektur, gegen den geschärften Testfall) |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | **durch** — 3 bestanden (nach Korrektur) |
-| `ketten` | 2 | **durch** — 2 bestanden |
+| `ketten` | 2 | zählt nicht mehr — beide Fälle nutzen `angebots-schreiber` und laufen wegen der Zahlenregel neu |
 | `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
@@ -110,7 +110,11 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 26 von 32 abgeschlossen** — 24 bestanden · 1 abweichend · 1 wackelt · 6 offen.
+**Stand: 24 von 32 abgeschlossen** — 22 bestanden · 1 abweichend · 1 wackelt · 8 offen.
+
+*Die beiden `ketten`-Fälle standen auf bestanden, sind aber gegen die vorige
+`angebots-schreiber`-Fassung gemessen und zählen deshalb nicht mehr — sie
+laufen in dieser Sitzung neu.*
 
 ## Die einzelnen Fälle
 
