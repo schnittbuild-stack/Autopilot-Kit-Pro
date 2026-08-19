@@ -57,7 +57,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 |---|---|---|
 | `account-recherche` | 3 | **durch** — 3 bestanden |
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
-| `ausschreibungs-analyse` | 3 | angefangen — 02 nach Korrektur 3 von 3, 01 läuft neu |
+| `ausschreibungs-analyse` | 3 | angefangen — 01 und 02 nach Korrektur je 3 von 3 |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
@@ -298,26 +298,26 @@ Sie wollen vier Coachingtage für Ihren Vertrieb, Start im September, Inhalte wi
 ```
 FRISTEN
 
-Abgabe ist am 30.09.2026 um 12:00 Uhr, das sind ab heute 30 Arbeitstage (19.08. bis 29.09., dazu der Vormittag des 30.09.), und keine Nebenfrist ist abgelaufen — die Frist für Bieterfragen läuft noch bis 12.09.2026. Die geforderte ISO-9001-Zertifizierung kommt von einer Zertifizierungsstelle und ist nicht kurzfristig zu beschaffen; nach deiner Angabe ist sie frühestens im Januar fertig, also nach der Abgabe. Zeit ist hier also nicht das Problem.
+Abgabe ist am 30.09.2026 um 12:00 Uhr, bis dahin bleiben rund 30 Arbeitstage; keine Nebenfrist ist abgelaufen, die Frist für Bieterfragen läuft noch bis 12.09.2026. Die unter Ziffer 4.2 a geforderte ISO-9001-Zertifizierung kommt von einer Zertifizierungsstelle und ist nicht kurzfristig zu beschaffen — nach deiner Angabe frühestens im Januar, also nach der Abgabe.
 
-  Nachweise Dritter: ISO-9001-Zertifikat von einer Zertifizierungsstelle — Laufzeit nach deiner Angabe bis frühestens Januar, damit nicht bis zum 30.09.2026 beschaffbar.
-  Vergabeart:      öffentliche Vergabe (Kreisverwaltung, Vergabeportal, § 57 VgV). Konsequenz: Fristen und Nachweispflichten sind gesetzt, nicht verhandelbar. Ein Anruf bei der Vergabestelle ändert daran nichts, und ein fehlender Pflichtnachweis ist kein Gesprächsthema, sondern ein Ausschluss.
-  Abgabe:          30.09.2026, 12:00 Uhr, über das Vergabeportal (Ziffer 2.1)
+  Vergabeart:      öffentliche Vergabe (Kreisverwaltung, Ausschluss nach § 57 VgV,
+                   Abgabe über Vergabeportal) — Fristen und Nachweispflichten
+                   sind gesetzt, nicht verhandelbar
+  Abgabe:          30.09.2026, 12:00 Uhr (Ziffer 2.1)
   Bieterfragen:    12.09.2026 (Ziffer 2.1)
   Bindefrist:      30.11.2026 (Ziffer 2.1)
-  Verbleibend:     30 Arbeitstage — zeitlich unkritisch.
+  Verbleibend:     rund 30 Arbeitstage — zeitlich unkritisch
+  Analyseumfang:   vollständig, soweit der Auszug reicht (es liegen nur die
+                   Ziffern 2.1 und 4.2 vor)
 
-FORMALIEN
-
-  Es liegt nur ein Auszug vor (Ziffer 4.2 und Ziffer 2.1). Alles, was nicht in diesen beiden Ziffern steht, ist nicht geprüft.
-… (42 weitere Zeilen)
+… (62 weitere Zeilen)
 ```
 
-**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („Empfehlung nicht `nicht bieten`") greift nicht: der Abschnitt „EMPFEHLUNG" enthält als einzige Aussage „nicht bieten", ohne Vorbehalt oder Bedingung, und der Ausschlag wird korrekt benannt mit „Ausschlaggebend ist Ziffer 4.2 a): Die ISO-9001-Zertifizierung muss zum Abgabezeitpunkt vorliegen, sie liegt nicht vor, und die Ziffer schließt unvollständige Nachweise von der Wertung aus." Die zweite Durchgefallen-Regel („Zertifikat in irgendeiner Form als überwindbar dargestellt") greift ebenfalls nicht — die Ausgabe schließt jeden Ausweg ausdrücklich aus: „Der Text sieht keinen Ersatz und keine Nachreichung vor; Ziffer 4.2 nennt den Ausschluss ausdrücklich (§ 57 VgV)", ferner „ein fehlender Pflichtnachweis ist kein Gesprächsthema, sondern ein …
+**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („wenn die Empfehlung nicht `nicht bieten` lautet") greift nicht: unter „EMPFEHLUNG" steht wörtlich „nicht bieten", eine Formulierung wie „bieten mit Vorbehalt" kommt an keiner Stelle vor. Die zweite Durchgefallen-Regel („wenn das fehlende Zertifikat in irgendeiner Form als überwindbar dargestellt wird") greift ebenfalls nicht: die Ausgabe schließt jede Öffnung ausdrücklich aus mit „Eine Ersatz- oder Nachreichmöglichkeit steht nicht im vorliegenden Text.", mit „am Ergebnis ändert das nichts, weil das Ausschlusskriterium im vorliegenden Teil steht" und mit „Nicht empfehlungsrelevant: das K.o. aus Ziffer 4.2 a bleibt so oder so."; keine der verbotenen Relativierungen („per Bieterfrage klärbar", „über einen Nachunternehmer lösbar", „in der …
 
-**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („wenn die Empfehlung nicht `nicht bieten` lautet") greift nicht: unter „EMPFEHLUNG" steht wörtlich und ohne Zusatz „nicht bieten", und die Begründung nennt den geforderten Punkt — „Ausschlaggebend ist Ziffer 4.2 a): Gefordert ist eine zum 30.09.2026 gültige ISO-9001-Zertifizierung, und die hast Du zu diesem Zeitpunkt nicht" — samt Ausschlussfolge „Das Angebot würde nach § 57 VgV aus der Wertung genommen, bevor irgendjemand den Preis liest." Die zweite Durchgefallen-Regel („wenn das fehlende Zertifikat in irgendeiner Form als überwindbar dargestellt wird") greift ebenfalls nicht: die Ausgabe schließt einen Ersatz ausdrücklich aus („Das Kriterium ist nicht erfüllt, und der Auszug sieht dafür keinen Ersatz vor."), verneint den informellen …
+**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („Empfehlung nicht `nicht bieten`") greift nicht: Der Abschnitt „EMPFEHLUNG" enthält als einzige Aussage „nicht bieten", und es findet sich an keiner Stelle eine Variante wie „bieten mit Vorbehalt". Die zweite Durchgefallen-Regel („fehlendes Zertifikat als überwindbar dargestellt") greift ebenfalls nicht — die Ausgabe schließt jede Umgehung ausdrücklich aus: „Die Unterlage sieht an dieser Stelle keinen Ersatz und keine Nachreichung vor; Ziffer 4.2 ordnet den Ausschluss von der Wertung an", ergänzt um „Ein Anruf bei der Vergabestelle ändert an einem fehlenden Pflichtnachweis nichts"; auch die Bieterfragen werden abgeräumt statt zur Ausnahme genutzt: „entfällt — Empfehlung lautet nicht bieten. Wer nicht bietet, fragt nicht." Die …
 
-**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („Empfehlung nicht `nicht bieten`") greift nicht: unter „EMPFEHLUNG" steht wörtlich und ohne Zusatz „nicht bieten", eine Variante wie `bieten mit Vorbehalt` kommt an keiner Stelle vor. Die zweite Durchgefallen-Regel („fehlendes Zertifikat in irgendeiner Form als überwindbar dargestellt") greift ebenfalls nicht — die Ausgabe schließt jeden Ausweg ausdrücklich aus: „Der Auszug sieht keinen Ersatz und keine Nachreichung vor; Ziffer 4.2 nennt die Nachweise zwingend, § 57 VgV führt zum Ausschluss von der Wertung. Damit ist das Kriterium nicht erfüllt — ohne Wenn und Aber", dazu „eine fehlende Eignung ist hier kein Gespräch, sondern ein Ausschluss"; die verbotenen Formeln (Nachweis der laufenden Zertifizierung akzeptiert, per Bieterfrage …
+**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („Empfehlung nicht `nicht bieten`") greift nicht: Der Abschnitt „EMPFEHLUNG" enthält als einzige Aussage „nicht bieten", ohne Vorbehalt, Bedingung oder Alternativvorschlag. Die zweite Durchgefallen-Regel („fehlendes Zertifikat wird in irgendeiner Form als überwindbar dargestellt") greift ebenfalls nicht — die Ausgabe verschließt jeden Ausweg ausdrücklich: „kurzfristig zu beschaffen ist so ein Zertifikat nicht", „eine fehlende Angabe ist kein Gespräch, sondern ein Ausschluss", „Am Ausschlusskriterium ändert das nichts" und „Ändert sich, wenn:  — (die Empfehlung beruht auf der Eignung, nicht auf der Zeit)"; keine der verbotenen Formeln (Nachweis über laufende Zertifizierung, Bieterfrage, Nachunternehmer, großzügige Praxis) kommt vor, und der …
 
 ### ausschreibungs-analyse / 02-frist-abgelaufen
 
