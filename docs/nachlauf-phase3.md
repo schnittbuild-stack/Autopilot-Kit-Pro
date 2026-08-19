@@ -59,7 +59,7 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 | `02-budget-konflikt` | **wackelt** — Befund, Entscheidung steht aus |
 | `03-verbots-kollision` | **durch** — bestanden |
 | `04-preisgrundlage-abgelaufen` | **durch** — bestanden |
-| `05-kundenkondition-vorrang` | offen |
+| `05-kundenkondition-vorrang` | **durch** — bestanden (4 Läufe) |
 
 ## Ergebnis
 
@@ -69,8 +69,9 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 | `02-budget-konflikt` | durchgefallen | durchgefallen | bestanden | **wackelt** |
 | `03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 | `04-preisgrundlage-abgelaufen` | bestanden | bestanden | bestanden | **bestanden** |
+| `05-kundenkondition-vorrang` | bestanden | bestanden | bestanden | **bestanden** (dazu ein vierter Lauf: bestanden) |
 
-**Stand: 4 von 5 gelaufen** — 3 bestanden · 1 wackelt · 1 offen.
+**Stand: 5 von 5 gelaufen** — 4 bestanden · 1 wackelt · 0 offen.
 
 ## Die einzelnen Fälle
 
@@ -297,3 +298,99 @@ ungültig") und über den zurückliegenden Stand. Kein Lauf hat den ersten Weg
 genommen. Die Regel „ein fehlendes Datum ist kein Freibrief" hält.
 
 **Kein Befund.** Der Skill wurde nicht angefasst.
+
+
+### 05-kundenkondition-vorrang — neu, prüft Preisregel 3
+
+**Läufe:** bestanden · bestanden · bestanden · bestanden
+·   **Ergebnis: bestanden (4 von 4)**
+
+**Warum vier Läufe.** Ein Erzeugungslauf meldete Erfolg, ohne dass die Datei
+auf der Platte lag; ich habe ihn wiederholt. Danach tauchte die erste Fassung
+doch noch auf — zwei vollständige, unabhängige Erzeugungen desselben Laufs.
+Statt eine davon wegzuwerfen, sind **beide bewertet** worden. Bestanden hieß
+für diesen Fall damit **4 von 4** statt 3 von 3 — strenger als das Protokoll,
+und es schließt aus, dass im Nachhinein die bequemere Fassung ausgewählt wurde.
+Beide liegen im Testaufbau als `05-lauf1a.md` und `05-lauf1b.md`.
+
+**Der Aufbau.** Zwei echte Preisdateien im Ordner: die allgemeine Preisliste
+(Monteurstunde **78 EUR**) und
+`preise/kunden/nordwerk-armaturen/rahmenvertrag-2026.md` (Monteurstunde
+**82 EUR**, Anfahrt als Pauschale, Schulung und Rufbereitschaft ungeregelt).
+Der Rahmenvertrag ist also **teurer**. Der Reflex, dem Kunden den günstigeren
+Satz zu geben, ist freundlich gemeint und bricht einen Vertrag.
+
+**Alle vier Läufe halten die Rangfolge je Position ein:**
+
+| | Pos. 1+2 Monteurstunden | Anfahrt | Pos. 3 Schulung | Pos. 4 Rufbereitschaft |
+|---|---|---|---|---|
+| Lauf 1a | 82,00 EUR | Pauschale 95 EUR | 1.250 EUR aus der Liste | `[PREIS PRÜFEN]` |
+| Lauf 1b | 82,00 EUR | Pauschale 95 EUR | 1.250 EUR aus der Liste | `[PREIS PRÜFEN]` |
+| Lauf 2 | 82,00 EUR | 6 × 95 EUR | 1.250 EUR aus der Liste | `[PREIS PRÜFEN]` |
+| Lauf 3 | 82,00 EUR | Pauschale 95 EUR | 1.250 EUR aus der Liste | `[PREIS PRÜFEN]` |
+
+**Kein Lauf hat 78 EUR gerechnet.** Drei von vier begründen den teureren Satz
+sogar ausdrücklich im internen Block — Lauf 1a: „Der Rahmenvertrag geht vor,
+auch wo er teurer ist — 82,00 EUR Monteurstunde statt 78,00 EUR aus der
+Preisliste." Die 78 EUR tauchen nur dort auf, als Begründung, nie als
+Rechengrundlage.
+
+**Das `Preisstand`-Feld trägt in allen vier Läufen alle drei Ebenen** mit
+Datei, Stand und Positionszuordnung — Kundenkondition für 1, 2 und Anfahrt,
+Preisliste für 3, „keine" für 4. Für die Rufbereitschaft hat kein Lauf eine
+Zahl erfunden, keine Spanne genannt und keinen Erfahrungswert angesetzt.
+
+**Wo die Läufe auseinandergehen, und warum es nichts ändert.** Die Anfrage
+sagt „zwei Monteure, geschätzt 16 Stunden". Lauf 1a liest das als 16
+Gesamtstunden, die Läufe 2 und 3 als 2 × 16 = 32. Beide Lesarten sind aus dem
+Text belegbar, **beide werden in Block B offengelegt** („bei ‚je Monteur'
+verdoppeln sich Pos. 1 und 2"), und die Summen sind in allen vier Läufen
+korrekt nachgerechnet. Die Kriterien prüfen den Stundensatz und die Ebene,
+nicht die Stundenzahl — zu Recht: Die Mehrdeutigkeit steckt in der Anfrage,
+und der Skill tut genau das Richtige, indem er sie benennt statt sie zu
+entscheiden.
+
+**Ein festgehaltener Vorbehalt aus Lauf 1a.** Block B führt unter `Offen` den
+Punkt „Stundenansätze bestätigen lassen". Streng gelesen ist der Umfang belegt
+und müsste nicht bestätigt werden. Es ist aber keine Rückfrage an den Kunden
+und hält das Angebot nicht auf — es ist ein Hinweis an die Inhaberin in einem
+Block, den nur sie sieht. Die Bewertungsregel des Falls sieht dafür keine
+Abstufung vor; der Vorbehalt steht im Urteil.
+
+**Kein Befund.** Der Skill wurde nicht angefasst.
+
+---
+
+## Gesamtergebnis des Nachlaufs
+
+**5 Fälle gelaufen, 16 Erzeugungen, 16 getrennte Bewertungen.**
+**4 bestanden, 1 wackelt.**
+
+| Fall | Ergebnis |
+|---|---|
+| `01-rueckfrage-disziplin` | bestanden |
+| `02-budget-konflikt` | **wackelt — Entscheidung des Auftraggebers nötig** |
+| `03-verbots-kollision` | bestanden |
+| `04-preisgrundlage-abgelaufen` | bestanden |
+| `05-kundenkondition-vorrang` | bestanden |
+
+**Die beiden neuen Fälle zu den Preisregeln bestehen auf Anhieb**, ohne dass
+am Skill etwas geändert werden musste — und zwar gegen echte Dateien, nicht
+gegen eine Beschreibung. Regel 2 (Gültigkeit) und Regel 3 (Rangfolge) halten.
+Das ist der erste Nachweis, dass Anforderung 3 nicht nur gebaut, sondern
+wirksam ist.
+
+**Ein Befund, und er liegt im Testfall, nicht im Skill.** `02-budget-konflikt`
+verlangt ein Angebot, obwohl seine Eingabe einen Pflicht-Fakt nicht hergibt.
+Der Fall belohnt damit das Raten und bestraft das Nachfragen. Er braucht eine
+Entscheidung, bevor er wieder zählt.
+
+**Zwei Vorfälle im Testaufbau, beide festgehalten:** Zweimal meldete ein Agent
+das Schreiben einer Datei, die nicht auf der Platte lag — einmal eine Ausgabe,
+einmal ein Urteil. Beide wurden wiederholt. Seitdem verlangt der Auftrag eine
+Lesebestätigung nach dem Schreiben. Kein Ergebnis ist dadurch verlorengegangen;
+im Gegenteil, ein Fall hat dadurch einen vierten Lauf bekommen.
+
+**Was der Nachlauf nicht abdeckt.** Die beiden `ketten`-Fälle und die drei
+`follow-up-generator`-Fälle aus `docs/STATUS-BAU.md` sind **nicht** gelaufen.
+Für sie gilt unverändert: Die Zahl aus Phase 2 ist für sie nicht mehr belegt.
