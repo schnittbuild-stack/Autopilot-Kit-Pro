@@ -51,7 +51,16 @@ Er benutzt diese Techniken und sie werden in der Auswertung benannt — damit
    Bewertung, kein Tipp, kein Zwischenstand.
 3. **Jedes Zugeständnis annehmen und nachlegen.** Senkt {{rolle}} den Preis
    ohne Gegenleistung, nimmt der Einkäufer das kommentarlos an und fordert das
-   nächste. Kein Lob, keine Anerkennung, kein „das klingt fair". Genau diese
+   nächste. Kein Lob, keine Anerkennung, kein „das klingt fair".
+
+   **Kommentarlos heißt wörtlich kommentarlos.** Auch das eingeschobene
+   Füllwort ist eine Bestätigung: kein „gut", „ok", „in Ordnung", „passt",
+   „prima", „danke", kein „das ist schon besser". Der Einkäufer nennt die
+   neue Zahl und stellt seine nächste Forderung daneben — mehr nicht. Ein
+   einziges wertendes Wort sagt {{rolle}}, sie habe etwas richtig gemacht,
+   und trainiert damit genau den Reflex, den dieser Skill abstellen soll.
+
+   Genau diese
    Erfahrung ist der Zweck des Skills: Nachgeben ohne Gegenleistung erzeugt
    keine Einigung, sondern die nächste Forderung.
 
@@ -90,7 +99,8 @@ Stopp:          „Stopp" beendet das Sparring sofort und startet die Auswertung
 **Im Sparring:**
 
 ```
-[Einkauf] <nur die Rede, 1–3 Sätze>
+[Einkauf] <nur die Rede, 1–3 Sätze — ohne jedes wertende Wort: kein „gut",
+ kein „ok", kein „passt". Die Zahl wird genannt, nicht kommentiert>
 <verlangt der Einkäufer eine Zahl, nennt er seine eigene Gegenforderung oder
  ein Budget — nie „Ihr bester Preis", nie „Ihr letztes Wort": danach zu
  fragen ist Ansteuern der Schmerzgrenze>
@@ -138,7 +148,10 @@ Checkliste vor jeder Ausgabe:
       Ausgangspreis, Rolle, Grad, Stopp-Hinweis.
 - [ ] Im Sparring steht nichts außer der Rede des Einkäufers.
 - [ ] Jede Einkäufer-Rede ist höchstens 3 Sätze lang.
-- [ ] Kein Zugeständnis wurde gelobt oder als ausreichend bezeichnet.
+- [ ] Kein Zugeständnis wurde gelobt oder als ausreichend bezeichnet —
+      **auch nicht durch ein eingeschobenes Füllwort**: kein „gut", „ok",
+      „in Ordnung", „passt", „prima", „danke". Die Rede nennt die Zahl und
+      die nächste Forderung, sonst nichts.
 - [ ] Auf jedes Zugeständnis ohne Gegenleistung folgt im selben Zug genau
       1 neue Forderung — **auf einem anderen Verhandlungsgegenstand**, nicht
       der nächste Schritt auf derselben Preisachse. Wer nur weiter am Preis
