@@ -61,7 +61,7 @@ Stelle fortsetzt — dann hat „weiter" nicht getragen. Alles andere ist
 | 1 — Ist alles startklar | mitten im Umräumen | **bestanden** | ja, aber nur aus `START_HIER.md` |
 | 2 — Kennenlernen | nach Frage 7, ohne Antwort | **bestanden** | ja — Installer hat es am Ende von Phase 1 gesagt |
 | 3 — Einrichten | drei von sechs Assistenten gefüllt | **bestanden** | ja — eine Nachricht vorher gesagt |
-| 4 — Erste echte Aufgabe | offen | — | — |
+| 4 — Erste echte Aufgabe | Rückfrage raus, keine Antwort | **bestanden** | ja — Ende Phase 3 gesagt |
 | 5 — Wächter und Übergabe | offen | — | — |
 
 ## Die fünf Fälle
@@ -284,3 +284,63 @@ schweigt er, wie es die Anleitung für Phase 3 vorschreibt („Ab hier redest du
 **nicht** über das, was du tust"). Der Nutzer sitzt also vor einem stillen
 Fenster, und das letzte, was er gelesen hat, war der Hinweis auf „weiter". Das
 ist die beste Ausgangslage aller fünf Fälle.
+
+
+### Phase 4 — Abbruch mitten in der ersten echten Aufgabe
+
+**Ergebnis: bestanden.** Alle sieben Prüfpunkte erfüllt.
+
+**Die Abbruchstelle.** Der Nutzer hat eine echte Anfrage hereingegeben (Bernd
+Keßler, zwei Tage Schulung fürs Vertriebsteam) mit den Worten „Die kam heute
+Morgen rein, mach mir was draus." Der Assistent hat die Fakten gezogen, zwei
+Lücken gefunden — Termin und Zielbild — und die Rückfrage rausgeschickt.
+Antwort: keine. Fenster zu. `ergebnisse/` ist leer.
+
+**Das ist der Abbruch, der am meisten weh tut.** Nicht weil viel Arbeit
+verlorenginge, sondern weil es der Moment ist, für den der Käufer bezahlt hat.
+Bricht es hier ab und der Neustart misslingt, ist das Produkt für ihn
+gescheitert — egal wie sauber die Einrichtung lief.
+
+**Zum ersten Mal decken sich Stand und Wirklichkeit vollständig.** Der Stand
+führt die laufende Aufgabe mit der Anfrage im Wortlaut, mit dem, was schon
+feststeht, was fehlt, dass die Rückfrage raus ist — und er regelt sogar den
+Fall einer **Teilantwort** vor („Antwortet er nur auf eine der beiden Fragen,
+wird die andere noch einmal gestellt — nichts geraten"). Das ist die
+ausführlichste Standsdatei der ganzen Reihe, und sie entsteht, weil die
+Anleitung für Phase 4 einen Abschnitt „Laufende Aufgabe" vorsieht.
+
+**Was auf „weiter" passiert ist.** Die frische Sitzung hat sich mit dem Satz
+aus dem Stand gemeldet und die zwei unbeantworteten Fragen erneut gestellt:
+
+```
+Wir sind bei der Anfrage von Herrn Keßler — zwei Tage Schulung für sein
+Vertriebsteam. Zwei Sachen brauche ich noch, dann ist das Angebot fertig:
+
+1. Wann soll die Schulung laufen?
+2. Woran will er nach der Schulung merken, dass sie gewirkt hat?
+```
+
+Kein Angebot vor der Zeit, nichts aus den Phasen 1 bis 3 wiederholt, kein Wort
+über Technik.
+
+**Sie hat mehr getan als nötig, und das war der einzige Wackelpunkt.** Weil
+beide Fragen nur der Kunde beantworten kann, hat sie zusätzlich eine
+versandfertige Mail an Keßler geschrieben und nach `ergebnisse/` gelegt —
+mit genau diesen zwei Fragen, ohne Preis und ohne Umfang. Die Bewertung hat
+das geprüft und als unschädlich gewertet: Es verschiebt den Fortsetzungspunkt
+nicht, es rät nichts, und es nimmt der Inhaberin Arbeit ab. Der Punkt steht
+trotzdem im Urteil, weil die Anleitung diesen Zwischenschritt nicht vorsieht.
+
+**Hätte der Nutzer gewusst, dass „weiter" das Zauberwort ist?**
+
+**Ja.** Am Ende von Phase 3 hat der Assistent es gesagt. Danach kam die Frage
+nach der echten Aufgabe, seine Anfrage, die Rückfrage — drei, vier Nachrichten
+Abstand. Dazu steht es seit dem Ende von Phase 3 in **`START.md`**, die er
+gerade eben bekommen hat und die dafür gebaut ist, aufgeschlagen zu werden.
+Ab hier trägt die Kundenansicht den Hinweis selbst, nicht mehr nur die
+Erinnerung an eine Nachricht.
+
+Zu beachten: **`START_HIER.md` ist am Ende von Phase 3 nach `system/`
+gewandert.** Die Quelle, die in den Phasen 1 und 2 das Netz war, ist ab hier
+weg — ersetzt durch `START.md`. Der Wechsel ist lückenlos, aber er ist ein
+Wechsel, und er passiert ohne dass jemand es merkt.
