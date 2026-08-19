@@ -539,15 +539,22 @@ weil eine stille Korrektur an einem Bewertungsmaßstab von Weichspülen nicht zu
 unterscheiden wäre.
 
 ## Offene Punkte
-- **`CLAUDE.md` liegt sichtbar im Wurzelordner.** Die Plattform verlangt die
-  Gedächtnisdatei dort; sie ist damit ein siebter Eintrag neben den vier
-  Dingen und `system/`. Aufgefangen ist das über `START.md`, das `system/`
-  und die Datei in einer Zeile abtut. **Zu prüfen:** ob Claude Code die Datei
-  auch aus einem versteckten Ordner lädt — dann verschwindet sie ganz.
-  Adapter-Frage, kein Blocker.
-- **Installer-Phase 5 setzt den Wächter voraus**, den es noch nicht gibt
-  (BAUPLAN Phase 4). Bis dahin läuft Phase 5 auf einen Skill zu, der fehlt —
-  vor dem ersten echten Durchlauf zu schließen.
+- **`CLAUDE.md` liegt sichtbar im Wurzelordner — und ist NICHT aufgefangen.**
+  Hier stand bis zum 20.08.2026, das sei „über `START.md` aufgefangen, das
+  `system/` und die Datei in einer Zeile abtut". **Das war falsch.** Mechanisch
+  geprüft: `START.vorlage.md` erwähnt `CLAUDE.md` mit keinem Wort, und die im
+  Abbruch-Test erzeugte `START.md` auch nicht. `system/` wird erklärt, die
+  Gedächtnisdatei nicht. Damit ist Punkt 4 der Definition of Done verletzt.
+  Behebung: eine Zeile in `START.vorlage.md`. Sie zieht einen neuen
+  Phase-3-Durchlauf nach sich, deshalb hier notiert statt nebenbei erledigt.
+  **Zu prüfen bleibt** außerdem, ob Claude Code die Datei auch aus einem
+  versteckten Ordner lädt — dann verschwindet sie ganz.
+- **Installer-Phase 5 setzt den Wächter voraus, den es nicht gibt — belegt am
+  20.08.2026.** Das war eine Vermutung; der Abbruch-Test hat sie bestätigt. Es
+  gibt keine Vorlage in `core/` und keine in `adapter-claude/vorlagen/`
+  (mechanisch geprüft). Die Testsitzung hat deshalb `system/wochencheck.md` mit
+  sieben **selbst ausgedachten** Prüfpunkten gebaut. Jeder Käufer bekäme einen
+  anderen Wächter. Vor dem ersten echten Durchlauf zu schließen.
 - Digistore24/CopeCart-Konto beantragen (Freischaltung dauert Tage)
 - Produktname + Domain final
 - START_HIER später zusätzlich als PDF (Markdown reicht für Beta)
@@ -555,6 +562,23 @@ unterscheiden wäre.
   `angebots-schreiber` sind ehrlich hart, aber erfunden. Vor Beta gegen
   anonymisierte Realfälle tauschen — bis dahin taugen sie zur Entwicklung,
   nicht als Erfolgsquote nach außen.
+- **Testfall-Befund `angebots-schreiber/02-budget-konflikt` — Entscheidung
+  steht aus (20.08.2026).** Der Fall verlangt ein Angebot, obwohl seine Eingabe
+  den sechsten Pflicht-Fakt (Empfänger-Verhältnis) nicht hergibt. Er belohnt
+  damit das Raten und bestraft das regelkonforme Nachfragen. Zwei von drei
+  Läufen fielen durch, weil sie sich an den Skill hielten. Vorschlag und
+  Begründung im Abschnitt „Nachlauf Phase 3" oben. **Blockiert den Abschluss
+  von Phase 3.**
+- **Befund `outreach-personalisierer`: falscher Platzhalter (20.08.2026).** An
+  einer Stelle steht `{{firma}}`, wo die Firma des **Empfängers** gemeint ist —
+  eingesetzt stünde dort die eigene. Aufgefallen beim Abbruch-Test. Nicht
+  behoben: Nach der Arbeitsregel vom 19.08.2026 zieht die Änderung die drei
+  Testfälle dieses Skills nach sich.
+- **Prinzip 1 ist beim Kunden gebrochen (20.08.2026).** Die Verbotsliste wird
+  zur Installationszeit in jede eingerichtete Skill-Datei, in `CLAUDE.md` und
+  in `mein-profil.md` kopiert. Im Repo ist alles sauber, beim Kunden steht
+  dasselbe siebenmal. Eine Stilkorrektur greift dadurch nicht an einer Stelle.
+  Architekturentscheidung nötig.
 - **Testfall-Befund `einwand-sparring/03` — Entscheidung steht aus.** Der
   Abschnitt `## Eingabe` enthält einen Absatz „Bewertungslage", der die
   Soll-Bewertung weitgehend vorwegnimmt; der erzeugende Lauf bekommt die
