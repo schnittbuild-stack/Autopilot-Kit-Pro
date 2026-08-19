@@ -46,18 +46,27 @@
 - [ ] **Phase 3 — Installer fertigstellen (nächster Schritt)**
   - [x] Anforderungen 1–4 und Definition of Done in `BAUPLAN.md` und hier
         festgeschrieben (19.08.2026) — gebaut wird erst danach
-  - [ ] Anforderung 1 — **Sitzungswechsel unsichtbar**
-  - [ ] Anforderung 2 — **`meine-unterlagen/` als dritte Wissensquelle**
+  - [x] Anforderung 1 — **Sitzungswechsel unsichtbar** (gebaut, ungetestet)
+    - [x] „weiter" als Startsignal in `CLAUDE.vorlage.md` und im Installer
+    - [x] STATUS-Vorlage trägt „Der erste Satz an den Nutzer" wörtlich
+    - [x] Installer bietet nach **jeder** Phase den frischen Start an
+    - [x] Phase 5 übt „weiter" einmal mit dem Nutzer
+    - [x] Anleitung zusätzlich in `notfall/01-weiter-machen.md`
+    - [ ] **Abbruch-Test in allen fünf Phasen — steht aus**
+  - [x] Anforderung 2 — **`meine-unterlagen/` als dritte Wissensquelle**
     - [x] Aufbau festgeschrieben: `core/unterlagen/aufbau.md`
-    - [ ] Installer legt den Ordner an und fragt in Phase 2 danach
-  - [ ] Anforderung 3 — **Preise sind nicht statisch**
+    - [x] Installer legt den Ordner in Phase 1 an, fragt in Phase 2 danach
+          (Frage 9, blockiert nie)
+  - [x] Anforderung 3 — **Preise sind nicht statisch** (gebaut, ungeprüft)
     - [x] Regeln festgeschrieben: `core/unterlagen/preisregeln.md`
     - [x] `angebots-schreiber` nachgezogen, Vertrag um `Preisstand` erweitert,
           zwei neue Testfälle (`04`, `05`) — **Läufe stehen aus**, siehe
           „Nachlauf Phase 3"
-    - [ ] Installer erklärt das Ersetzen in Phase 2/5
-  - [ ] Anforderung 4 — **aufgeräumte Kundenansicht**
-  - [ ] Installer-Phasen 1–5 ausgebaut, `notfall/` gefüllt, Abbruch-Test
+  - [x] Anforderung 4 — **aufgeräumte Kundenansicht**
+    - [x] Zielbaum im Installer, `START.vorlage.md`, Umräumen nach `system/`
+          in Phase 1, Zuordnung Alltagssatz → Assistent statt Skill-Auswahl
+  - [x] Installer-Phasen 1–5 ausgebaut, `notfall/` mit fünf Fehlerbildern
+  - [ ] **Durchlauf auf einem fremden Rechner unter 30 Minuten — steht aus**
 - [ ] Phase 4 — Watchdog & Ketten-Tests
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
 - [ ] Phase 6 — Beta mit 10 Nutzern
@@ -270,6 +279,41 @@ Alle vier Punkte müssen erfüllt sein:
 4. **Die Kundenansicht enthält keinen technischen Begriff und keinen Ordner,
    der nicht erklärt wurde.**
 
+## Stand Phase 3 (19.08.2026) — gebaut, aber noch nicht bewiesen
+
+**Gebaut und committet:**
+
+- `core/unterlagen/aufbau.md` und `core/unterlagen/preisregeln.md` — die
+  dritte Wissensquelle und die drei Preisregeln, plattformneutral.
+- `core/interview/fragen.md` — die zehn Fragen im Wortlaut, mit Beispielen,
+  Nachhak-Regeln und Checkliste. Frage 9 ist die Materialfrage.
+- Vier Vorlagen: `profil.vorlage.md` (→ `mein-profil.md`),
+  `STATUS.vorlage.md` (trägt die Fortsetzung), `CLAUDE.vorlage.md` (weiter,
+  drei Quellen, Zuordnungstabelle), `START.vorlage.md` (neu).
+- `adapter-claude/INSTALLER.md` — fünf Phasen, je mit Schritten, dem
+  wörtlichen Text an den Nutzer und einer Checkliste.
+- `notfall/` — fünf Fehlerbilder plus die „weiter"-Anleitung, README als
+  Zuordnungstabelle.
+
+**Ein Fund beim Bauen, der die Anforderung gerettet hat.** Der ursprüngliche
+Plan hätte `CLAUDE.md` erst in Phase 3 erzeugt. Dann hätte eine neue Sitzung
+in Phase 1 und 2 **nichts** gehabt, was sie zu `STATUS.md` führt — „weiter"
+wäre ins Leere gelaufen, und der Abbruch-Test wäre in zwei von fünf Phasen
+unbestehbar gewesen. Jetzt legt Phase 1 als allererste Handlung `STATUS.md`
+und eine Startfassung von `CLAUDE.md` an, noch vor jeder Prüfung; das Anlegen
+ist zugleich die Probe auf das Schreibrecht.
+
+**Noch nicht bewiesen — das ist die Definition of Done, nicht Beiwerk:**
+
+1. **Kein Durchlauf auf einem fremden Rechner.** Die 30-Minuten-Grenze ist
+   geschätzt, nicht gemessen.
+2. **Kein Abbruch-Test.** Fünf Phasen, fünf harte Abbrüche, jedes Mal nur
+   „weiter" — ungetestet. Bis dahin ist Anforderung 1 gebaut, nicht erfüllt.
+3. **Die sieben Testfälle aus dem Nachlauf sind nicht gelaufen** (unten).
+
+Solange diese drei offen sind, ist Phase 3 **nicht** abgeschlossen, egal wie
+vollständig die Dateien aussehen.
+
 ## Nachlauf Phase 3 — Testfälle, die neu laufen müssen (19.08.2026)
 
 Anforderung 2 und 3 haben **genau einen** Skill geändert: `angebots-schreiber`
@@ -309,6 +353,15 @@ betroffenen Fälle nicht mehr gültig.** Sie wird nicht fortgeschrieben, solange
 sie nicht neu belegt ist.
 
 ## Offene Punkte
+- **`CLAUDE.md` liegt sichtbar im Wurzelordner.** Die Plattform verlangt die
+  Gedächtnisdatei dort; sie ist damit ein siebter Eintrag neben den vier
+  Dingen und `system/`. Aufgefangen ist das über `START.md`, das `system/`
+  und die Datei in einer Zeile abtut. **Zu prüfen:** ob Claude Code die Datei
+  auch aus einem versteckten Ordner lädt — dann verschwindet sie ganz.
+  Adapter-Frage, kein Blocker.
+- **Installer-Phase 5 setzt den Wächter voraus**, den es noch nicht gibt
+  (BAUPLAN Phase 4). Bis dahin läuft Phase 5 auf einen Skill zu, der fehlt —
+  vor dem ersten echten Durchlauf zu schließen.
 - Digistore24/CopeCart-Konto beantragen (Freischaltung dauert Tage)
 - Produktname + Domain final
 - START_HIER später zusätzlich als PDF (Markdown reicht für Beta)
@@ -388,8 +441,22 @@ Entscheidung des Auftraggebers, weil er den Nachlauf über alle Fälle erzwingt.
 Protokolliert in `docs/entscheidungen.md`.
 
 ## Nächster Schritt
-**Phase 3 — Installer.** Phase 2 ist abgeschlossen und belegt: zehn Skills, 32
-Fälle, jeder dreimal erzeugt und dreimal getrennt bewertet, 32 bestanden.
+
+**Phase 3 ist gebaut, aber nicht bewiesen.** Als Nächstes, in dieser
+Reihenfolge:
+
+1. **Den Wächter-Platzhalter in Installer-Phase 5 schließen** — oder Phase 5
+   so schreiben, dass sie ohne ihn trägt.
+2. **Die sieben Testfälle aus dem Nachlauf laufen lassen**, je dreimal,
+   Erzeugung und Bewertung getrennt.
+3. **Abbruch-Test in allen fünf Phasen.**
+4. **Durchlauf auf einem fremden Rechner**, gestoppt.
+
+---
+
+**Was Phase 3 mitgebracht hat (Stand bei Beginn):** Phase 2 ist abgeschlossen
+und belegt — zehn Skills, 32 Fälle, jeder dreimal erzeugt und dreimal getrennt
+bewertet, 32 bestanden.
 
 Was Phase 3 mitbringt:
 

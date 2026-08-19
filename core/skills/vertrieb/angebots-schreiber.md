@@ -3,7 +3,7 @@
 <!-- Agent Nr. 1 — Qualitätsmaßstab für alle weiteren Skills.
      Struktur nach _TEMPLATE_SKILL.md (verbindlich).
      Enthält bewusst KEIN Stil- oder Firmenwissen — das kommt ausschließlich
-     über Platzhalter aus profil.md (Prinzip 1). -->
+     über Platzhalter aus dem Profil des Nutzers (Prinzip 1). -->
 
 ## Zweck (ein Satz)
 Macht aus einer Kundenanfrage ein versandfertiges Angebot im Hausstil von
