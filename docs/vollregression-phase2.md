@@ -59,7 +59,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
-| `einwand-sparring` | 3 | angefangen — 01 und 03 nach Korrektur je 3 von 3, 02 läuft neu |
+| `einwand-sparring` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
 | `ketten` | 2 | **durch** — 2 bestanden |
@@ -67,9 +67,9 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
-**Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `follow-up-generator`, `ketten`
+**Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `ketten`
 
-**Offen für die nächste Sitzung:** `einwand-sparring`, `forecast-erklaerer`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
+**Offen für die nächste Sitzung:** `forecast-erklaerer`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
 
 ## Ergebnis
 
@@ -495,11 +495,11 @@ Begründung:    Frau Sedlmayr führt die Objektleitung laut Notiz kommissarisch,
 Soll ich abbrechen und auswerten? Sag Stopp.
 ```
 
-**Prüfer, Lauf 1:** Die gesamte Ausgabe besteht aus einer einzigen Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." — damit ist die Muss-Anforderung „Genau eine Klärungszeile" wörtlich belegt und die Abweichend-Regel „wenn die Klärung mehr als zwei Zeilen braucht" greift nicht, da nur eine Zeile vorliegt. Die erste Durchgefallen-Regel („wenn ein inhaltlicher Tipp gegeben wird") habe ich geprüft: die Ausgabe enthält außer „Soll ich abbrechen und auswerten? Sag Stopp." keinerlei Text, also weder eine Formulierungshilfe noch einen Richtungshinweis noch eine als Frage getarnte Anregung („Hast du schon an … gedacht?" kommt nicht vor); sie greift nicht. Die zweite Durchgefallen-Regel („wenn ohne ‚Stopp' in die Auswertung gewechselt wird") habe ich ebenfalls geprüft: es folgt keine …
+**Prüfer, Lauf 1:** Die Ausgabe besteht wörtlich und vollständig aus der einen Zeile „Soll ich abbrechen und auswerten? Sag Stopp." — mehr steht nicht da. Damit ist die Bedingung der Stufe bestanden, „genau eine Klärungszeile ohne jeden inhaltlichen Hinweis", buchstäblich erfüllt: eine Zeile, die exakt der geforderten Formulierung „Soll ich abbrechen und auswerten? Sag Stopp." entspricht. Erste Durchgefallen-Regel („wenn ein inhaltlicher Tipp gegeben wird"): greift nicht, denn die Ausgabe enthält außer „Soll ich abbrechen und auswerten? Sag Stopp." keinen einzigen weiteren Satz, also weder eine Formulierungshilfe noch eine als Frage getarnte Richtungsangabe noch einen eingeklammerten Vorschlag. Zweite Durchgefallen-Regel („wenn ohne ‚Stopp' in die Auswertung gewechselt wird"): greift …
 
-**Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." — damit ist die Vorgabe „Genau eine Klärungszeile" wörtlich erfüllt, und zwar in nahezu identischem Wortlaut zum Sollkriterium. Erste Durchgefallen-Regel („wenn ein inhaltlicher Tipp gegeben wird"): geprüft und nicht erfüllt, denn die Ausgabe enthält außer „Soll ich abbrechen und auswerten? Sag Stopp." keinerlei Text, also weder eine Formulierungshilfe noch einen als Frage getarnten Hinweis der Art „Hast du schon an … gedacht?"; es gibt schlicht keinen zweiten Satz, in dem ein solcher Tipp stehen könnte. Zweite Durchgefallen-Regel („wenn ohne ‚Stopp' in die Auswertung gewechselt wird"): geprüft und nicht erfüllt, denn die Auswertung wird nicht vollzogen, sondern ausdrücklich an …
+**Prüfer, Lauf 2:** Die gesamte Ausgabe besteht aus einer einzigen Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." — damit ist die Forderung nach genau einer Klärungszeile wörtlich und ohne Zusatz erfüllt. Die erste Durchgefallen-Regel („wenn ein inhaltlicher Tipp gegeben wird") greift nicht: die Ausgabe enthält außer „Soll ich abbrechen und auswerten? Sag Stopp." keinen weiteren Text, also weder eine Formulierungshilfe noch einen Richtungshinweis noch eine als Frage getarnte Anregung — es gibt schlicht keine Stelle, an der ein Tipp stehen könnte. Die zweite Durchgefallen-Regel („wenn ohne ‚Stopp' in die Auswertung gewechselt wird") greift ebenfalls nicht: die Ausgabe wechselt nicht in den Auswertungsmodus, sondern fragt konditional nach („Soll ich abbrechen und auswerten?") und …
 
-**Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einer Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." — damit ist die Muss-Anforderung „Genau eine Klärungszeile" wörtlich erfüllt, und zwar in exakt der im Kriterientext genannten sinngemäßen Formulierung. Erste Durchgefallen-Regel geprüft („wenn ein inhaltlicher Tipp gegeben wird"): Die Zeile enthält ausschließlich die Rückfrage „Soll ich abbrechen und auswerten?" und die Handlungsanweisung „Sag Stopp."; es gibt keinen Satz, keine Klammer und keine getarnte Frage, die auf eine Richtung, ein Argument oder eine Formulierung hinweist — die Regel greift nicht. Zweite Durchgefallen-Regel geprüft („wenn ohne ,Stopp' in die Auswertung gewechselt wird"): Es wird keine Bewertung, kein Coaching und keine Verlaufsanalyse geliefert, sondern …
+**Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einer Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." — damit ist die Muss-Anforderung „Genau eine Klärungszeile" wörtlich und deckungsgleich mit der im Kriterientext genannten Sollformulierung erfüllt. Die erste Durchgefallen-Regel („wenn ein inhaltlicher Tipp gegeben wird") habe ich geprüft: die Ausgabe enthält außer „Soll ich abbrechen und auswerten? Sag Stopp." keinerlei weiteren Text, also keine Formulierungshilfe, keinen Richtungshinweis und auch keine als Frage getarnte Anregung — es gibt schlicht keine zweite Aussage, in der so etwas stehen könnte. Die zweite Durchgefallen-Regel („wenn ohne ‚Stopp' in die Auswertung gewechselt wird") greift ebenfalls nicht: die Ausgabe bewertet nichts, sondern stellt die Auswertung mit „Soll …
 
 ### einwand-sparring / 03-ehrliche-auswertung
 
