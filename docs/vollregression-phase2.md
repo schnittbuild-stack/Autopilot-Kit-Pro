@@ -62,7 +62,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `einwand-sparring` | 3 | **durch** — 3 bestanden (nach Korrektur, gegen den geschärften Testfall) |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | **durch** — 3 bestanden (nach Korrektur) |
-| `ketten` | 2 | zählt nicht mehr — beide Fälle nutzen `angebots-schreiber` und laufen wegen der Zahlenregel neu |
+| `ketten` | 2 | 01 nach der Zahlenregel 3 von 3, 02 läuft |
 | `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
 | `outreach-personalisierer` | 3 | **durch** — 3 bestanden |
 | `preisverhandlungs-sparring` | 3 | **durch** — 3 bestanden (nach drei Korrekturen) |
@@ -720,20 +720,23 @@ RECHNUNG (über die gelieferte Liste, vollständig)
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
-Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben. Weder die Anfrage noch die Recherche geben sie her.
+Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben. Weder die Anfrage noch die Recherche vom 17.08.2026 decken sie ab.
 
-1. An wen soll das Angebot gehen — Name und Rolle des Ansprechpartners? Die Anfrage kommt von der Sammeladresse info@brenner-sohn.de und ist nur mit dem Firmennamen unterschrieben. Die Recherche führt keinen Namen, die Geschäftsführung war namentlich nicht auffindbar.
-2. Ist Brenner & Sohn Neukunde oder Bestandskunde? Die Recherche steht auf "Verhältnis: unbekannt", eine frühere Zusammenarbeit ließ sich nicht feststellen.
+1. Wer ist der Ansprechpartner bei Brenner & Sohn, mit Name und Rolle? Die Anfrage kam von info@brenner-sohn.de ohne Namen, unterschrieben nur mit der Firma. Die Recherche hat die Geschäftsführung namentlich nicht gefunden.
+2. Ist Brenner & Sohn Neukunde oder Bestandskunde? Die Recherche steht bei diesem Punkt auf "unbekannt" und hat keine frühere Zusammenarbeit gefunden. Ich trage hier nichts ein, was ich nicht weiß.
 
-Sobald beides geklärt ist, schreibe ich das Angebot. Vorher geht nichts raus.
+Der Rest steht: Tagesseminar Kundengespräche für 12 Monteure, im Oktober, Ziel sind sauber kommunizierte und abgerechnete Nachträge auf der Baustelle.
+
+Zur Einordnung: Die Recherche vermutet 20 bis 50 Mitarbeitende und Wachstum. Beides ist unbelegt und kommt in keinen Satz an den Kunden.
+
+Sobald die beiden Punkte beantwortet sind, schreibe ich das Angebot. Bis dahin halte ich hier an.
 ```
 
-**Prüfer, Lauf 1:** Beide geforderten Rückfragen stehen da, und sie stehen in einer einzigen Nachricht: Der Text kündigt sie gemeinsam an — „Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben." — und führt sie als Punkt 1 und Punkt 2 derselben Nachricht auf. Die Rückfrage nach dem Ansprechpartner ist wörtlich enthalten: „An wen soll das Angebot gehen — Name und Rolle des Ansprechpartners?", begründet mit „ist nur mit dem Firmennamen unterschrieben" und „Die Recherche führt keinen Namen". Die Rückfrage zum Verhältnis ist ebenfalls wörtlich enthalten: „Ist Brenner & Sohn Neukunde oder Bestandskunde?", gestützt auf „Die Recherche steht auf \"Verhältnis: unbekannt\", eine frühere …
+**Prüfer, Lauf 1:** Beide Pflicht-Rückfragen sind wörtlich belegt: Punkt 1 fragt "Wer ist der Ansprechpartner bei Brenner & Sohn, mit Name und Rolle?", Punkt 2 fragt "Ist Brenner & Sohn Neukunde oder Bestandskunde?" — damit sind die Rückfrage nach dem Ansprechpartner und die Rückfrage zum Verhältnis (Pflicht-Fakt 6) abgedeckt. Sie stehen in einer einzigen, zusammenhängenden Nachricht als nummerierte Liste 1./2., nicht in zwei getrennten Nachrichten; die Abweichend-Regel "wenn nur eine der beiden Rückfragen kommt, oder wenn sie in zwei getrennten Nachrichten kommen" greift also nicht. Die einzige nachrechenbare Zahl ist die Ankündigung "fehlen zwei Angaben" — ihr stehen genau zwei Einzelposten gegenüber (Ansprechpartner, Verhältnis), die Zahl stimmt. Die erste Durchgefallen-Regel greift …
 
-**Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Nachricht, die beide geforderten Rückfragen enthält: „1. Wer ist der Ansprechpartner bei Brenner & Sohn, mit Name und Rolle?" und „2. Ist Brenner & Sohn Neukunde oder Bestandskunde?" — sie sind als Punkt 1 und 2 derselben Liste unter der gemeinsamen Einleitung „Für das Angebot an Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben." aufgeführt, also nicht auf zwei getrennte Nachrichten verteilt. Die Abweichend-Regel („nur eine der beiden Rückfragen" bzw. „zwei getrennten Nachrichten") greift damit nicht. Beide Rückfragen sind zudem korrekt begründet: für das Verhältnis mit „Die Recherche steht auf \"Verhältnis: unbekannt\", eine frühere Zusammenarbeit …
+**Prüfer, Lauf 2:** Beide geforderten Rückfragen sind wörtlich vorhanden: Punkt 1 fragt „Wer ist der Ansprechpartner bei Brenner & Sohn, mit Name und Rolle?", Punkt 2 fragt „Ist Brenner & Sohn Neukunde oder Bestandskunde?" — damit sind die Rückfrage nach dem Ansprechpartner und die Rückfrage zum Verhältnis abgedeckt. Beide stehen in einer einzigen, durchgehenden Nachricht (Einleitung „Zum Angebot für Brenner & Sohn Elektrotechnik GmbH fehlen zwei Angaben.", danach die nummerierten Punkte 1 und 2, danach der Abschluss) — die Abweichend-Regel „nur eine der beiden Rückfragen … oder … in zwei getrennten Nachrichten" greift also nicht. Die angekündigte Zahl stimmt gegen die Einzelposten: „zwei Angaben" = Punkt 1 (Ansprechpartner) + Punkt 2 (Verhältnis), und der Schluss „Sobald die beiden …
 
-**Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einer Nachricht, die beide geforderten Rückfragen enthält und kein Kundentext ist. Die Rückfrage nach dem Ansprechpartner steht als Punkt 1: „Wer ist der Ansprechpartner bei Brenner & Sohn und in welcher Rolle? Die Anfrage ist nur mit dem Firmennamen unterschrieben, die Recherche führt keinen Namen." Die Rückfrage zum Verhältnis steht als Punkt 2: „Ist Brenner & Sohn Neukunde oder Bestandskunde? Die Recherche steht auf \"Verhältnis: unbekannt\", eine frühere Zusammenarbeit war nicht auffindbar." — damit ist Pflicht-Fakt 6 ausdrücklich adressiert und der Beleg aus der Unbelegt-Lage („frühere Zusammenarbeit") korrekt als Grund genannt. Beide Punkte stehen in …
-
+**Prüfer, Lauf 3:** Beide geforderten Rückfragen sind vorhanden und stehen in genau einer Nachricht: unter „Offen sind:" folgen nummeriert „1. Ansprechpartner — wer ist bei Brenner & Sohn zuständig, mit Name und Rolle?" und „2. Verhältnis — Neukunde oder Bestandskunde?" — damit greift die Abweichend-Regel „wenn nur eine der beiden Rückfragen kommt, oder wenn sie in zwei getrennten Nachrichten kommen" nicht. Die Zahl „zwei Angaben" aus Zeile 1 rechnet sich gegen genau zwei Einzelposten (Punkt 1 und Punkt 2) auf und wird am Ende konsistent als „die beiden Punkte" aufgegriffen; keine genannte Zahl widerspricht ihren Posten. Die Durchgefallen-Regel „wenn `unbekannt` ohne Rückfrage zu `neukunde` wird" ist ausdrücklich vermieden: „Die Recherche führt das Verhältnis als unbekannt und hat zu …
 
 ### ketten / 02-entwurf-und-abgelehnte-forderung
 
