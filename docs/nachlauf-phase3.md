@@ -55,7 +55,7 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 
 | Fall | Stand |
 |---|---|
-| `01-rueckfrage-disziplin` | offen |
+| `01-rueckfrage-disziplin` | **durch** — bestanden |
 | `02-budget-konflikt` | offen |
 | `03-verbots-kollision` | offen |
 | `04-preisgrundlage-abgelaufen` | offen |
@@ -65,8 +65,56 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 
 | Fall | Lauf 1 | Lauf 2 | Lauf 3 | Ergebnis |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| `01-rueckfrage-disziplin` | bestanden | bestanden | bestanden | **bestanden** |
+
+**Stand: 1 von 5 abgeschlossen** — 1 bestanden · 4 offen.
 
 ## Die einzelnen Fälle
 
 <!-- Ein Fall, ein Block. Wird nach jedem Fall ergänzt. -->
+
+
+### 01-rueckfrage-disziplin
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, vollständig):**
+
+```
+An: Katrin Reinhardt — nicht an den Kunden
+
+Für das Angebot an Bernd Keßler fehlen zwei Angaben. Beide stehen nicht in der
+Anfrage:
+
+1. Ziel: Keßler nennt bisher nur das Problem — die Kollegen können den Wert der
+   Lösungen nicht erklären, das Gespräch endet in Features und danach beim
+   Preis. Woran will er nach den zwei Tagen erkennen, dass die Schulung
+   gewirkt hat?
+
+2. Termin: Die Anfrage nennt weder einen Zeitpunkt noch einen Zeitraum für die
+   zwei Tage. Welcher Termin oder welches Zeitfenster ist vorgesehen?
+
+Sobald beides steht, schreibe ich das Angebot.
+```
+
+**Was die drei Bewertungen sagen:** Alle drei Läufe stellen genau zwei
+nummerierte Fragen in einer Nachricht, treffen beide Lücken (Termin und
+Zielbild) und fragen nichts ab, was in der Mail steht — Ort, Teilnehmerzahl,
+Raum, Verpflegung, Stil und Bestandsverhältnis bleiben unangetastet. Kein Lauf
+erzeugt einen Entwurf, keiner nennt einen Preis, keiner setzt Kundenanrede oder
+Signatur unter eine Nachricht an die Inhaberin.
+
+**Bemerkenswert:** Alle drei Läufe begründen die Ziel-Frage ausdrücklich damit,
+dass „Wert erklären können" das Symptom ist und nicht das Ergebnis. Die
+Symptom-Regel aus Prozess-Schritt 1 hält also nicht nur im Ergebnis, sondern
+sichtbar in der Begründung.
+
+**Alle drei Bewerter haben geschwankt**, an drei verschiedenen Stellen: das Wort
+„Preis" in der Problembeschreibung (Lauf 1 und 2), die Aufzählung
+„Wunschtermin, Frist oder Zeitraum" als mögliche Mehrfachfrage (Lauf 2), ein
+zweites Fragezeichen innerhalb von Frage 1 (Lauf 3). Alle drei blieben auch in
+der strengeren Lesart bei `bestanden`. Das ist kein Wackeln des Skills, aber
+ein Hinweis darauf, dass die Kriterien „genau zwei Fragen" und „keine
+Preisangabe" an ihren Rändern Auslegung verlangen.
+
+**Kein Befund.** Der Skill wurde nicht angefasst.
