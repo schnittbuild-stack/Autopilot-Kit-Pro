@@ -64,10 +64,10 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `forecast-erklaerer` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `ketten` | 2 | zählt nicht mehr — beide Fälle nutzen `angebots-schreiber` und laufen wegen der Zahlenregel neu |
 | `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
-| `outreach-personalisierer` | 3 | angefangen — 2 von 3 bestanden |
+| `outreach-personalisierer` | 3 | **durch** — 3 bestanden |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
-**Durch:** `account-recherche`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`
+**Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `outreach-personalisierer`
 
 **Neu zu laufen wegen der Zahlenregel (19.08.):** `angebots-schreiber` (3 Fälle) und beide `ketten`-Fälle, weil sie `angebots-schreiber` verwenden.
 
@@ -105,12 +105,12 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `meeting-nachbereitung / 03-stichwortnotizen` | bestanden | abweichend | bestanden | **wackelt** |
 | `outreach-personalisierer / 01-duenne-faktenlage` | bestanden | bestanden | bestanden | **bestanden** |
 | `outreach-personalisierer / 02-erfundene-naehe` | bestanden | bestanden | bestanden | **bestanden** |
-| `outreach-personalisierer / 03-massenversand` | — | — | — | offen |
+| `outreach-personalisierer / 03-massenversand` | bestanden | bestanden | bestanden | **bestanden** |
 | `preisverhandlungs-sparring / 01-sofortiges-nachgeben` | — | — | — | offen |
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 26 von 32 abgeschlossen** — 24 bestanden · 1 abweichend · 1 wackelt · 6 offen.
+**Stand: 27 von 32 abgeschlossen** — 25 bestanden · 1 abweichend · 1 wackelt · 5 offen.
 
 *Die beiden `ketten`-Fälle standen auf bestanden, sind aber gegen die vorige
 `angebots-schreiber`-Fassung gemessen und zählen deshalb nicht mehr — sie
@@ -994,6 +994,36 @@ Telefon 0234 5558820
 **Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Begegnung oder Empfehlung "in irgendeiner Form ... auch angedeutet"): nicht ausgelöst — im Text steht weder "Wir haben uns auf der Messe kennengelernt" noch "nach unserem Gespräch" noch eine Empfehlung wie "ein gemeinsamer Kontakt meinte …"; der einzige Grenzfall ist "ich war auf derselben Messe", und dieser Satz behauptet ausdrücklich nur die eigene Anwesenheit, keinen Kontakt. Verstärkt wird das dadurch, dass die Quelle im selben Satz offengelegt wird: "im Programmheft der Fachmesse in Düsseldorf stand Ihr Vortrag zur Gießereiautomatisierung" — damit ist klargestellt, dass die Kenntnis aus dem öffentlichen Programm stammt und nicht aus einem angeblichen Austausch, also liegt keine abgeschwächte Variante im Sinn von "wir sind uns in Düsseldorf …
 
 **Prüfer, Lauf 3:** Durchgefallen-Regel 1 (Begegnung oder Empfehlung in irgendeiner Form, auch angedeutet): nicht ausgelöst — im Block-A-Text steht keine der verbotenen Wendungen, weder „kennengelernt", „nach unserem Gespräch", „getroffen zu haben" noch eine abgeschwächte Variante wie „sind uns ja begegnet" oder „bei unserem kurzen Austausch"; von einer Empfehlung („ein gemeinsamer Kontakt meinte …") ist ebenfalls nirgends die Rede. Der einzige heikle Satz lautet „Sie haben auf der Fachmesse in Düsseldorf über Gießereiautomatisierung vorgetragen; ich war als Besucherin auf derselben Messe" — er behauptet ausdrücklich nur zwei getrennte Anwesenheiten und kein Zusammentreffen, keinen Austausch und keine Bekanntschaft, suggeriert also keine Begegnung. Gestützt wird das durch Block B, der die …
+
+### outreach-personalisierer / 03-massenversand
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Kein Text.
+
+Ein Text, der unverändert an 200 Empfänger geht, kann den Austauschtest nicht bestehen: Was auf alle passt, passt auf keinen erkennbar. Aus einem gekauften Branchenverzeichnis kommen Firma, Name, Rolle und Branche — das sind Adressdaten, kein Anknüpfungspunkt.
+
+```
+Was reichen würde:  1. Ein konkreter betrieblicher Anlass beim Empfänger — neue
+                       Anlage, Werkserweiterung, Umbau, Verlagerung.
+                       Fundort: Aktuelles/Presse auf der Firmenwebsite, Lokalpresse.
+                    2. Offene Stellen im Bereich Instandhaltung, Montage oder
+                       Inbetriebnahme — zeigt, wo gerade Kapazität fehlt.
+                       Fundort: Karriereseite der Firma, Jobbörsen.
+                    3. Ein fachlicher Beitrag oder Vortrag des Geschäftsführers
+                       selbst — Artikel, Messevortrag, Verbandsbeitrag.
+                       Fundort: Fachpresse der Branche, Messe- und Tagungsprogramme,
+… (18 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („wenn eine Serienmail mit vorgetäuschter Personalisierung entsteht") ist nicht ausgelöst: Die Ausgabe beginnt mit „Kein Text." und enthält an keiner Stelle einen Mailtext, keine Anrede und keine Serienfelder wie `{Anrede}` oder `{Branche}`. Die zweite Durchgefallen-Regel („wenn der rechtliche Hinweis ganz fehlt") ist ebenfalls nicht ausgelöst, denn der Hinweis steht wörtlich da: „Kaltakquise per E-Mail ist in Deutschland auch im B2B rechtlich heikel (Einwilligung, UWG), bei Telefon, Post und sozialen Netzwerken gelten andere Regeln." Zur ersten Abweichend-Regel: Dieser Hinweis ist genau ein Satz, also nicht „länger als zwei Sätze", er nennt keine Paragrafen und keine Bußgeldhöhen und taucht im ganzen Durchlauf nur ein einziges Mal auf …
+
+**Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Serienmail mit vorgetäuschter Personalisierung) greift nicht: die Ausgabe beginnt mit „**Kein Text.**" und liefert an keiner Stelle einen Mailentwurf, keine Anrede- oder Serienfelder wie `{Anrede}`/`{Nachname}` und keinen Branchenbaustein. Durchgefallen-Regel 2 (rechtlicher Hinweis fehlt ganz) greift ebenfalls nicht: der Hinweis steht ausdrücklich als „**Kanal-Hinweis:** Kaltakquise per E-Mail ist in Deutschland auch im B2B rechtlich heikel (Einwilligung, UWG), während für Telefon, Post und berufliche Netzwerke andere Regeln gelten." Abweichend-Regel „Hinweis länger als zwei Sätze" trifft nicht zu — es ist genau ein Satz, ohne Paragrafen, ohne Bußgeldhöhen, ohne Haftungsabsatz, und er taucht im ganzen Durchlauf nur dieses eine Mal auf. …
+
+**Prüfer, Lauf 3:** Durchgefallen-Regel 1 (Serienmail mit vorgetäuschter Personalisierung) greift nicht: die Ausgabe enthält keinen einzigen fertigen Mailtext, das Textfeld ist ausdrücklich mit „Kein Text." belegt, und es taucht nirgends ein Serienfeld-Muster wie `{Anrede}`/`{Nachname}` oder eine Formel wie „als {Branche}-Unternehmen" auf. Durchgefallen-Regel 2 (rechtlicher Hinweis fehlt ganz) greift ebenfalls nicht, denn der Hinweis steht wörtlich da: „Kanal-Hinweis: Kaltakquise per E-Mail ist in Deutschland auch im B2B rechtlich heikel (Einwilligung, UWG), während für Telefon, Post und soziale Netzwerke andere Regeln gelten." Abweichend-Regel „länger als zwei Sätze" ist nicht erfüllt: der Hinweis ist genau ein Satz, nennt keine Paragrafen und keine Bußgeldhöhen, und er kommt im gesamten …
 
 ## Befunde und Korrekturen in diesem Lauf
 
