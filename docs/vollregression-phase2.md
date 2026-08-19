@@ -63,7 +63,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `ketten` | 2 | **durch** — 2 bestanden |
-| `meeting-nachbereitung` | 3 | offen — noch nicht gelaufen |
+| `meeting-nachbereitung` | 3 | 01 **abweichend** — Testfall-Befund gemeldet, Entscheidung offen |
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
@@ -100,7 +100,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `forecast-erklaerer / 03-lueckenhafte-daten` | bestanden | bestanden | bestanden | **bestanden** |
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
 | `ketten / 02-entwurf-und-abgelehnte-forderung` | bestanden | bestanden | bestanden | **bestanden** |
-| `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
+| `meeting-nachbereitung / 01-weiche-zusage` | abweichend | abweichend | abweichend | **abweichend** |
 | `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
 | `meeting-nachbereitung / 03-stichwortnotizen` | — | — | — | offen |
 | `outreach-personalisierer / 01-duenne-faktenlage` | — | — | — | offen |
@@ -110,7 +110,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 23 von 32 abgeschlossen** — 23 bestanden · 9 offen.
+**Stand: 24 von 32 abgeschlossen** — 23 bestanden · 1 abweichend · 8 offen.
 
 ## Die einzelnen Fälle
 
@@ -780,6 +780,69 @@ erst nach Entscheidung des Auftraggebers angefasst, mit Änderungsvermerk. Der
 Lauf ist hier gegen den Fall gelaufen, wie er ist. Vorschlag zur Entscheidung:
 den Absatz „Bewertungslage" aus `## Eingabe` in den Kriterienteil verschieben —
 dann misst der Fall, was er zu messen vorgibt.
+
+### meeting-nachbereitung / 01-weiche-zusage
+
+**Läufe:** abweichend · abweichend · abweichend   ·   **Ergebnis: abweichend**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**Termin:** 12.08.2026, Termin bei Lindner Verpackung
+
+**Teilnehmer:** Frau Lindner (GF), Herr Osei (Produktion), ich (Katrin Reinhardt)
+
+**Worum es ging:**
+Die aktuelle Anlage bei Lindner läuft, die Umrüstzeiten liegen bei 45 Minuten und sind zu lang. Im Raum stand ein Schnellwechselsystem als möglicher Ansatz. Außerdem kamen das Thema zweite Schicht und die Frage nach Referenzen zur Sprache.
+
+**Entscheidungen:** —
+
+**Aufgaben Inhaberin:**
+
+| Wer | Was | Bis wann | Beleg (wörtlich) |
+|---|---|---|---|
+| ich (Katrin Reinhardt) | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung" |
+… (25 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Beide Durchgefallen-Regeln greifen nicht: Unter `Aufgaben Inhaberin` steht genau eine Zeile („ich (Katrin Reinhardt) | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung""), und weder „Schnellwechselsystem" noch „zweite Schicht" tauchen in einer Aufgabenliste auf — beide stehen ausschließlich unter `Unverbindlich`. Ein Datum wird nirgends erfunden: die zweite Schicht bleibt mit „Das Thema zweite Schicht schauen wir uns im Herbst nochmal an." ohne Datum und ausdrücklich mit dem Zusatz „Keine Aufgabe, kein Datum.", ein „Ende Oktober" o. Ä. kommt nicht vor. Auch die beiden Abweichend-Regeln sind für sich genommen nicht verletzt: Die Referenzanfrage steht unter `Unklar` („Referenzen aus der Lebensmittelbranche: Es …
+
+**Prüfer, Lauf 2:** Durchgefallen-Regel 1 („wenn eine der beiden weichen Äußerungen als Aufgabe auftaucht") greift nicht: Unter `Aufgaben Inhaberin` steht genau eine Zeile, „Katrin Reinhardt | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung"", und weder Schnellwechselsystem noch zweite Schicht erscheinen in einer Aufgaben- oder Zusagen-Tabelle. Durchgefallen-Regel 2 („wenn ein Datum erfunden wird") greift ebenfalls nicht: Die zweite Schicht bleibt beim Original „Das Thema zweite Schicht schauen wir uns im Herbst nochmal an.", ein abgeleitetes Datum wie „bis Ende Oktober" fehlt vollständig, und das einzige genannte Datum 19.08.2026 ist durch das wörtliche Zitat gedeckt. Abweichend-Regel 1 („wenn die Referenzanfrage nicht in …
+
+**Prüfer, Lauf 3:** Erste Durchgefallen-Regel („wenn eine der beiden weichen Äußerungen als Aufgabe auftaucht") greift nicht: Die Tabelle unter `Aufgaben Inhaberin` enthält genau eine Zeile, „| Ich | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung" |", und beide weichen Äußerungen stehen ausschließlich unter `Unverbindlich` — „Schnellwechselsystem ansehen — Osei: „Wir könnten uns das Schnellwechselsystem ja mal ansehen." Keine Aufgabe, kein Datum." sowie „Zweite Schicht im Herbst — Lindner: „Das Thema zweite Schicht schauen wir uns im Herbst nochmal an." Keine Aufgabe, kein Datum.". Zweite Durchgefallen-Regel („wenn ein Datum erfunden wird") greift ebenfalls nicht: Ein Datum wie „bis Ende Oktober" kommt nirgends vor, und das …
+
+## Zweiter Testfall-Befund — gemeldet, nicht geändert (19.08.2026)
+
+`meeting-nachbereitung / 01-weiche-zusage` ist **dreimal abweichend**, alle
+drei Male aus demselben Grund — und keiner davon ist ein Fehler des Skills.
+
+Die Bestanden-Regel des Falls lautet: „**bestanden** nur bei genau einer
+eigenen Aufgabe, leerer Kundenliste, **zwei Einträgen unter `Unverbindlich`**
+und passenden Fragen." Alle drei Läufe haben die beiden geforderten weichen
+Äußerungen korrekt dort abgelegt — und zusätzlich einen dritten Eintrag:
+Lindners bedingte Interessensbekundung „Wenn das die Umrüstung halbiert, ist
+das interessant." Beide Prüfer nannten diesen Eintrag ausdrücklich
+„inhaltlich harmlos und zitatgestützt" bzw. „sauber als Bedingung statt als
+Zusage eingeordnet" — und mussten trotzdem auf `abweichend` erkennen, weil das
+Kriterium **Einträge zählt**, statt zu prüfen, was in ihnen steht.
+
+Damit bestraft der Fall genau das Verhalten, das er belohnen sollte: eine
+weitere weiche Äußerung nicht zur Aufgabe zu machen, sondern als unverbindlich
+zu kennzeichnen. Ein Skill, der diesen Satz weglässt oder — schlimmer — unter
+`Zugesagt vom Kunden` einsortiert, käme durch.
+
+**Nicht geändert.** Nach der Änderungsregel vom 18.08.2026 entscheidet das der
+Auftraggeber. Zwei Lesarten sind vertretbar:
+
+1. **Kriterium ist zu eng gefasst.** Vorschlag: „…, beide weichen Äußerungen
+   unter `Unverbindlich` und dort keine Zusage oder Aufgabe" — dann zählt der
+   Inhalt, nicht die Anzahl.
+2. **Der Skill splittet zu fein.** Lindners Bedingung gehört zum
+   Schnellwechselsystem und könnte als Teil desselben Eintrags geführt werden.
+   Dann wäre es doch ein Skill-Befund, und der Skill bekäme eine Regel zur
+   Bündelung zusammengehöriger Äußerungen.
+
+Bis zur Entscheidung steht der Fall als `abweichend` — nicht als bestanden.
 
 ## Befunde und Korrekturen in diesem Lauf
 
