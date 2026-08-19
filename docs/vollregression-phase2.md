@@ -766,6 +766,24 @@ Danke — damit ist `Stand: gesendet am 12.08. per Mail`. Das ist Stufe 1.
 
 **Prüfer, Lauf 3:** Stufe 1 erzeugt keinen Nachfass-Text, sondern hält an: „Ich habe hier noch keinen Nachfass-Text geschrieben. Im Übergabeblock steht `Stand: entwurf`" und stellt genau die geforderte Rückfrage „Ist das Angebot rausgegangen — wann und über welchen Kanal?". Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Text an den richtigen Adressaten („Sehr geehrter Herr Hartmann", „der Punkt ist für Ihre Entscheidung der wichtigste"); Duzen kommt im Kundentext nicht vor, das „für dich" in Block B richtet sich an {{rolle}}, nicht an den Kunden. Der Aufhänger setzt am erwarteten Einwand an, ohne die Garantie zu streifen: „ich komme …
 
+## Anmerkung zu einem Testfall — gemeldet, nicht geändert
+
+`einwand-sparring / 03-ehrliche-auswertung` trägt im Abschnitt `## Eingabe`
+einen Absatz „Bewertungslage", der die Soll-Bewertung weitgehend vorwegnimmt:
+welche Runde trug, welche der teuerste Satz war, welche Bedingung fehlte. Nach
+der Methode dieses Laufs geht der Eingabeteil vollständig an den erzeugenden
+Lauf — er bekommt damit die Analyse mitgeliefert und muss sie nur noch
+formatieren. Der Fall prüft also schwächer, als er aussieht: nicht, ob der
+Skill einen schwachen Durchlauf **erkennt**, sondern ob er eine vorgegebene
+Einschätzung sauber einsortiert. Genau daran ist er in dieser Sitzung dennoch
+gescheitert (Befund 4), was den Fall nicht wertlos macht.
+
+**Nicht geändert.** Nach der Änderungsregel vom 18.08.2026 wird ein Testfall
+erst nach Entscheidung des Auftraggebers angefasst, mit Änderungsvermerk. Der
+Lauf ist hier gegen den Fall gelaufen, wie er ist. Vorschlag zur Entscheidung:
+den Absatz „Bewertungslage" aus `## Eingabe` in den Kriterienteil verschieben —
+dann misst der Fall, was er zu messen vorgibt.
+
 ## Befunde und Korrekturen in diesem Lauf
 
 ### 1. `account-recherche` — das Ausgabeformat der Gegenprobe war zu eng
