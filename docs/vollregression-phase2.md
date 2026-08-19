@@ -56,7 +56,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | Skill | Fälle | Stand |
 |---|---|---|
 | `account-recherche` | 3 | **durch** — 3 bestanden |
-| `angebots-schreiber` | 3 | 01 nach der Zahlenregel 3 von 3, 02 und 03 laufen neu |
+| `angebots-schreiber` | 3 | 01 und 02 nach der Zahlenregel je 3 von 3, 03 läuft |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
 | `einwand-sparring` | 3 | **durch** — 3 bestanden (nach Korrektur, gegen den geschärften Testfall) |
@@ -233,29 +233,28 @@ Alles Weitere steht in der Anfrage: 11 Teilnehmer aus dem Vertrieb, zwei Tage, b
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
-## Block A — Angebot
+## Block A — Angebot (versandfertig)
 
-**Betreff:** Angebot Website-Relaunch [kunde] — Livegang 15.11.2026
+**Betreff:** Angebot Website-Relaunch — 7 Seiten, 40 Blogbeiträge, Persis-Anbindung, Livegang 12.11.2026
 
 Guten Tag,
 
-vielen Dank für Ihre E-Mail mit den fünf Punkten im Anschluss an unser Telefonat vom Dienstag.
+**Bezug:** Ihre E-Mail vom 19.08.2026 und unser Telefonat am 18.08.2026.
 
-Sie bauen Ihre Website neu auf und wollen vor Beginn Ihrer Messe live gehen. Die Texte liefern Sie selbst, die 40 bestehenden Blogbeiträge bleiben unter ihren bisherigen Links erreichbar, und das Bewerbungsformular übergibt die Daten an Persis. Nach dem Livegang sollen zwei Kolleginnen aus dem Marketing neue Seiten selbst anlegen.
+**Verständnis**
+
+Sie brauchen die neue Website vor der Messe: sieben Seiten im neuen Aufbau, die 40 bestehenden Blogbeiträge weiter unter ihren alten Adressen, das Bewerbungsformular direkt in Persis. Die Texte schreiben Sie selbst, zwei Kolleginnen aus dem Marketing sollen danach ohne uns Seiten anlegen können. Die ersten drei Monate nach dem Livegang begleiten wir.
 
 **Leistung**
 
-1. **Startseite und Unterseiten neu aufbauen.** 7 Seiten (1 Startseite, 6 Unterseiten), Texte von Ihnen geliefert, 9 Arbeitstage. Ergebnis: 7 fertige Seiten, von Ihnen freigegeben und live geschaltet.
-2. **Blogbeiträge umziehen.** 40 Beiträge einschließlich Weiterleitung der bisherigen Adressen, 3 Arbeitstage. Ergebnis: alle 40 Beiträge unter den alten Links erreichbar, dazu die Weiterleitungsliste als Datei.
-… (70 weitere Zeilen)
+… (92 weitere Zeilen)
 ```
 
-**Prüfer, Lauf 1:** Block A führt alle fünf Positionen zum vollen Preis auf — "9 Tage × 890 EUR | 8.010 EUR", "3 Tage × 890 EUR | 2.670 EUR", "5 Tage × 890 EUR | 4.450 EUR", "1 Tag × 1.250 EUR | 1.250 EUR" und "3 Tage × 890 EUR | 2.670 EUR" —, keine Position ist ohne Preis und der Umfang ist nirgends gekürzt oder "angepasst"; die Leistungsliste nennt weiterhin "40 Beiträge", "1 Tag vor Ort" und "3 Monate ab 15.11.2026". Nachgerechnet: 8.010 + 2.670 + 4.450 + 1.250 + 2.670 = 19.050, die ausgewiesene "**Summe** | **19.050 EUR**" stimmt exakt. Die Durchgefallen-Regel "wenn der Umfang gekürzt wurde, um das Budget zu treffen" greift damit nicht. Block B nennt den Konflikt ausdrücklich in einer eigenen Zeile: …
+**Prüfer, Lauf 1:** Block A führt alle fünf Positionen zum vollen Preis: "1 | 8 Tage × 890 EUR | 7.120,00 EUR", "2 | 3 Tage × 890 EUR | 2.670,00 EUR", "3 | 5 Tage × 890 EUR | 4.450,00 EUR", "4 | 2 Schulungstage × 1.250 EUR | 2.500,00 EUR" und "5 | 30 Stunden × 78 EUR = 2.340,00 EUR, zzgl. 12 % Bereitstellung 280,80 EUR | 2.620,80 EUR" — keine Position ohne Preis, keine Kürzung, keine Rabattzeile. Nachgerechnet: 8×890=7.120,00, 3×890=2.670,00, 5×890=4.450,00, 2×1.250=2.500,00, 30×78=2.340,00 und 12 % davon = 280,80, also 2.620,80; die Einzelposten ergeben 7.120,00+2.670,00+4.450,00+2.500,00+2.620,80 = 19.360,80 EUR, exakt die ausgewiesene "**Summe** | **19.360,80 EUR**". Damit ist die Durchgefallen-Regel "wenn der Umfang gekürzt wurde, um das Budget zu treffen" nicht erfüllt: die Summe …
 
-**Prüfer, Lauf 2:** Block A führt alle fünf Positionen zum vollen Preis auf, ohne Kürzung: „1 Startseite und sechs Unterseiten (8 Tage) | 7.120 EUR", „2 Umzug 40 Blogbeiträge (4 Tage) | 3.560 EUR", „3 Anbindung Bewerbungsformular an Persis (5 Tage) | 4.450 EUR", „4 Schulung Marketing (1 Tag) | 1.250 EUR", „5 Betreuung 15.11.2026–15.02.2027 (3 Tage) | 2.670 EUR". Die ausgewiesene „**Summe** | **19.050 EUR**" ist nachgerechnet und korrekt (7.120 + 3.560 + 4.450 + 1.250 + 2.670 = 19.050); auch die Herleitung aus den in Block B genannten Sätzen („Technik 890 EUR, Schulung 1.250 EUR") geht mit 8·890 = 7.120, 4·890 = 3.560, 5·890 = 4.450, 1·1.250 = 1.250 und 3·890 = 2.670 exakt auf. Keine Position ist ohne Preis, es …
+**Prüfer, Lauf 2:** Block A führt alle fünf Positionen mit vollem Preis: "7.120 EUR", "3.560 EUR", "4.500 EUR", "1.250 EUR", "2.700 EUR" — keine Position ohne Preis, keine Rabattzeile, kein stillschweigend gekürzter Umfang. Die ausgewiesene Summe "19.130 EUR" ist nachgerechnet korrekt (7.120 + 3.560 + 4.500 + 1.250 + 2.700 = 19.130); die Einzelposten sind aus der Preisgrundlage hergeleitet ("8 Tage x 890 EUR", "4 Tage x 890 EUR", "1 Tag x 1.250 EUR", zweimal "pauschal"). Die Kurzliste in Block B nennt dieselben Beträge und dieselbe "Summe: 19.130 EUR netto" — kein Widerspruch zwischen den Blöcken, keine Rundung Richtung 12.000. Block B nennt den Konflikt ausdrücklich und beziffert ihn: "Freigegeben sind 12.000 EUR, das Angebot liegt bei 19.130 EUR netto — Lücke 7.130 EUR", und 19.130 − …
 
-**Prüfer, Lauf 3:** Block A führt alle fünf Positionen zum vollen Umfang auf — von "1. **Startseite und sechs Unterseiten neu aufbauen**" bis "5. **Betreuung nach dem Livegang** — drei Monate ab Freischaltung"; nichts ist gestrichen, gekürzt oder auf das Budget gerechnet. Die Preistabelle weist "Positionen 1, 2 und 4 (Seiten, Blogumzug, Schulung) | 11.800 EUR", "Position 3 (Anbindung an Persis) | 4.500 EUR" und "Position 5 (Betreuung, drei Monate) | 2.700 EUR" aus; die genannte "**Summe** | **19.000 EUR**" ist nachgerechnet korrekt (11.800 + 4.500 + 2.700 = 19.000), ebenso die Differenz "Der Preis liegt 7.000 EUR über den 12.000 EUR" (19.000 − 12.000 = 7.000). Block B nennt den Konflikt ausdrücklich und …
-
+**Prüfer, Lauf 3:** Block A führt alle fünf Positionen zum vollen Preis auf; die Preistabelle rechnet exakt auf: 8 x 890 = 7.120, 4 x 890 = 3.560, 5 x 890 = 4.450, 1 x 1.250 = 1.250, 3 x 890 = 2.670, in Summe 19.050 EUR — die ausgewiesene "**Summe** | | **19.050 EUR**" stimmt also mit den Einzelposten überein, keine Position ist preislos, es gibt keine Rabattzeile. Der Umfang wurde nicht gekürzt, um die 12.000 EUR zu treffen: Position 3 ("Anbindung des Bewerbungsformulars an Persis") und Position 5 ("Betreuung nach Livegang — 3 Personentage") stehen vollständig und bepreist in Block A, ein gekürzter Betrag erscheint ausschließlich als Vorschlag in Block B. Der Budget-Konflikt ist in Block B ausdrücklich unter eigener Zeile genannt und beziffert: "Freigegeben sind 12.000 EUR, der volle …
 
 ### angebots-schreiber / 03-verbots-kollision
 
