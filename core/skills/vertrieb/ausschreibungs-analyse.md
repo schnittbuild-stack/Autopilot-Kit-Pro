@@ -45,6 +45,15 @@ und der Nutzer merkt es erst auf der letzten Seite.
    vorbei"). Sind Nachweise beizubringen, die von Dritten kommen — Behörden,
    Krankenkassen, Zertifizierer —, gehört in denselben Absatz, dass die nicht
    über Nacht zu beschaffen sind.
+
+   **Reicht die Zeit nicht, wird die Analyse verkürzt — das ist Pflicht, nicht
+   Ermessen.** Übrig bleiben genau zwei Teile: die K.o.-Kriterien und der
+   Realismus der Abgabe. Es entfallen: der Durchgang durch das
+   Leistungsverzeichnis, jede Formalie, die die Abgabe nicht verhindert, die
+   Auffälligkeiten im Leistungsumfang und jeder Ausblick auf künftige
+   Verfahren. Eine vollständige Analyse zu einer Ausschreibung, die nicht mehr
+   zu schaffen ist, verbrennt genau die Zeit, um die es gerade geht — und der
+   Nutzer liest sie, statt zu entscheiden.
 2. **Formalien — und zuerst die Vergabeart.** Öffentliche Vergabe oder private
    Anfrage? Das entscheidet über alles Weitere: Bei einer öffentlichen Vergabe
    sind Fristen und Formalien gesetzt, bei einer privaten Anfrage sind sie
@@ -71,6 +80,21 @@ und der Nutzer merkt es erst auf der letzten Seite.
 6. **Empfehlung:** bieten / bieten mit Vorbehalt / nicht bieten, mit
    Begründung in zwei Sätzen. Bei `nicht bieten` wird der ausschlaggebende
    Punkt genannt, nicht eine Liste.
+
+   **Beruht die Empfehlung auf der Zeit statt auf der Eignung, steht dabei,
+   was sie kippen würde.** Zeit ist die einzige Ablehnung, die von Angaben
+   abhängt, die der Skill nicht hat: ob die geforderten Nachweise schon im
+   Haus liegen und ob der Zugang zum Abgabeweg — Portalregistrierung,
+   Signaturkarte — bereits steht. Beides sind keine K.o.-Kriterien, sie
+   entscheiden aber darüber, ob die Restzeit reicht. Der Satz „Ändert sich,
+   wenn die Nachweise vorliegen und die Registrierung im Portal steht" gehört
+   deshalb in die Empfehlung selbst, nicht nur in die Fragenliste — sonst
+   liest {{rolle}} ein Nein, das für die eigene Lage womöglich gar nicht gilt.
+
+   Und dieselben Punkte stehen als Fragen in `OFFENE FRAGEN AN DICH`,
+   ausdrücklich markiert als **empfehlungsrelevant**. Die Fragenliste ist
+   nicht nur für Kriterien da, die auf `unklar` stehen: Eine Angabe, die die
+   Empfehlung umdreht, ist die wichtigste Frage der ganzen Ausgabe.
 7. **Bieterfragen — nur wenn sie noch etwas ändern können.** Die Liste
    **entfällt vollständig**, wenn einer dieser Fälle vorliegt:
    - Die Frist für Bieterfragen ist abgelaufen → `Bieterfragen: Frist am
@@ -105,6 +129,11 @@ FRISTEN
   Bieterfragen:    <Datum> | nicht gefunden
   Bindefrist:      <…> | nicht gefunden
   Verbleibend:     <Arbeitstage> — <Warnhinweis, falls knapp oder abgelaufen>
+  Analyseumfang:   vollständig | **verkürzt — nur K.o. und Abgaberealismus**
+                   (verkürzt ist Pflicht, wenn die Zeit für eine seriöse
+                   Abgabe nicht reicht: dann entfallen Leistungsverzeichnis,
+                   Auffälligkeiten, nicht abgabekritische Formalien und jeder
+                   Ausblick)
 
 FORMALIEN
   <je Punkt: Abgabeweg, Nachweise, Lose, Nebenangebote> | nicht geprüft
@@ -123,10 +152,17 @@ EMPFEHLUNG
   bieten | bieten mit Vorbehalt | nicht bieten
   (liegt nur ein Auszug vor: höchstens `bieten mit Vorbehalt`)
   <2 Sätze Begründung, bei "nicht bieten" der ausschlaggebende Punkt>
+  Ändert sich, wenn:  <nur wenn die Empfehlung auf der Zeit beruht: die
+                      Bedingung, unter der sie kippt — vorliegende Nachweise,
+                      bestehende Portalregistrierung> | —
 
 OFFENE FRAGEN AN DICH (entfällt nie)
-  <je Zeile: welche Angabe von {{rolle}} fehlt — welches Kriterium sie auf
-   `unklar` hält>
+  <je Zeile: welche Angabe von {{rolle}} fehlt — und was daran hängt:
+   entweder `hält <Kriterium> auf unklar` oder `empfehlungsrelevant —
+   ändert die Empfehlung, wenn ja`>
+  <beruht die Empfehlung auf der Zeit, stehen hier zwingend beide Fragen:
+   liegen die geforderten Nachweise vor, und steht der Zugang zum Abgabeweg
+   (Portalregistrierung, Signatur)>
   — oder: `keine`
 
 BIETERFRAGEN (bis <Frist>)
@@ -148,6 +184,15 @@ Checkliste für Schritt 8:
       Zertifizierer), steht ein Satz zu ihrer Beschaffungsdauer im selben
       Absatz wie der erste Satz.
 - [ ] Kein Datum geschätzt oder aus dem Zusammenhang abgeleitet.
+- [ ] Reicht die Zeit für eine seriöse Abgabe nicht, steht `Analyseumfang:
+      verkürzt` da — und die Ausgabe hält sich daran: kein Durchgang durch das
+      Leistungsverzeichnis, keine Auffälligkeiten, keine nicht abgabekritischen
+      Formalien, kein Ausblick auf künftige Verfahren.
+- [ ] Beruht die Empfehlung auf der Zeit, steht in der Empfehlung selbst, was
+      sie kippen würde (`Ändert sich, wenn:` ist gefüllt).
+- [ ] Beruht die Empfehlung auf der Zeit, stehen in `OFFENE FRAGEN AN DICH`
+      beide Fragen: vorliegende Nachweise und Zugang zum Abgabeweg
+      (Portalregistrierung, Signatur) — beide als empfehlungsrelevant markiert.
 - [ ] Jedes K.o.-Kriterium hat eine Fundstelle. Ohne Fundstelle ist es kein
       K.o.-Kriterium, sondern eine Vermutung.
 - [ ] Kein nicht erfülltes K.o. wird relativiert.
@@ -183,8 +228,11 @@ Checkliste für Schritt 8:
 
 **Beispiel 1 — Frist fast durch.** Abgabe in 36 Stunden, Bieterfragen-Frist
 bereits abgelaufen. → Erster Satz nennt beides samt verbleibender Arbeitszeit.
-Analyse wird auf K.o. und Aufwand verkürzt, Empfehlung entsprechend. Die
-Bieterfragen-Liste entfällt mit Begründung — sie wäre nur noch Papier.
+`Analyseumfang: verkürzt` — geprüft werden nur K.o. und Abgaberealismus, das
+Leistungsverzeichnis bleibt zu. Empfehlung `nicht bieten` mit dem Zusatz
+„Ändert sich, wenn die Nachweise vorliegen und die Portalregistrierung steht";
+genau diese beiden Punkte stehen als empfehlungsrelevante Fragen in der Liste.
+Die Bieterfragen-Liste entfällt mit Begründung — sie wäre nur noch Papier.
 
 **Beispiel 2 — hartes K.o.** Gefordert ist eine Zertifizierung, die {{rolle}}
 nicht hat, ohne Ersatzmöglichkeit im Text. → `nicht bieten`, Fundstelle
