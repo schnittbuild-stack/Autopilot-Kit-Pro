@@ -58,7 +58,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `account-recherche` | 3 | **durch** — 3 bestanden |
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
-| `crm-notiz-zu-schritt` | 3 | angefangen — 2 von 3 bestanden |
+| `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
@@ -67,9 +67,9 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
-**Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `follow-up-generator`, `ketten`
+**Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `follow-up-generator`, `ketten`
 
-**Offen für die nächste Sitzung:** `crm-notiz-zu-schritt`, `einwand-sparring`, `forecast-erklaerer`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
+**Offen für die nächste Sitzung:** `einwand-sparring`, `forecast-erklaerer`, `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
 
 ## Ergebnis
 
@@ -86,7 +86,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ausschreibungs-analyse / 03-unvollstaendige-unterlage` | bestanden | bestanden | bestanden | **bestanden** |
 | `crm-notiz-zu-schritt / 01-verlorene-opportunity` | bestanden | bestanden | bestanden | **bestanden** |
 | `crm-notiz-zu-schritt / 02-leere-notiz` | bestanden | bestanden | bestanden | **bestanden** |
-| `crm-notiz-zu-schritt / 03-ansprechpartner-weg` | — | — | — | offen |
+| `crm-notiz-zu-schritt / 03-ansprechpartner-weg` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 01-kunde-knickt-ein` | — | — | — | offen |
 | `einwand-sparring / 02-rollenbruch` | — | — | — | offen |
 | `einwand-sparring / 03-ehrliche-auswertung` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 16 von 32 abgeschlossen** — 16 bestanden · 16 offen.
+**Stand: 17 von 32 abgeschlossen** — 17 bestanden · 15 offen.
 
 ## Die einzelnen Fälle
 
@@ -436,6 +436,36 @@ CRM-Zeile:     16.08.2026 Telefonat Herr Pahlke (Erstkontakt): kein konkreter Vo
 **Prüfer, Lauf 2:** Die beiden Pflichtmarker sind wörtlich vorhanden: Zeile 1 lautet „Signal:        unklar" und Zeile 4 „Ergebnis:      rueckfrage", damit ist die geforderte Rückfrage-Stufe gesetzt. Die erste Durchgefallen-Regel (Aktion oder datierte Wiedervorlage) habe ich Zeile für Zeile geprüft und sie greift nicht: nirgends steht ein Nachfassen, ein Unterlagenversand, ein Terminangebot oder eine Nutzenargumentation, und das einzige Datum im Text ist das Gesprächsdatum in der CRM-Zeile „16.08.2026 Telefonat Hr. Pahlke, Erstkontakt: kein konkretes Ergebnis festgehalten.", also keine selbstgewählte Wiedervorlage. Die zweite Durchgefallen-Regel („wirkte interessiert" als Beleg für Fortschritt) greift ebenfalls nicht, im Gegenteil: der Belegsatz ist ausdrücklich leer — „Belegsatz:     — …
 
 **Prüfer, Lauf 3:** Die beiden Pflichtmarker sind wörtlich vorhanden: Zeile 1 lautet „Signal:        unklar" und Zeile 4 lautet „Ergebnis:      rueckfrage", damit ist die Grundbedingung der Bestanden-Regel („nur bei `rueckfrage`") erfüllt. Die Ausgabe enthält genau ein Fragezeichen, nämlich in „Frage:         Was genau wollte sich Herr Pahlke überlegen — lag ihm dazu ein konkretes Thema, eine Zahl oder eine Unterlage vor?"; alle übrigen Zeilen sind Aussagesätze, also greift die Abweichend-Regel „mehr als eine Frage" nicht. Diese eine Frage zielt auf die Substanzlücke (Gegenstand des Überlegens) und nicht auf Formalien, sie ist damit nicht „zu allgemein" im Sinne des Gegenbeispiels „Wie geht es weiter?" — auch die zweite Abweichend-Regel greift nicht. Die geforderte Einordnung der …
+
+### crm-notiz-zu-schritt / 03-ansprechpartner-weg
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+```
+Signal:        stillstand
+Belegsatz:     "Nachfolge sei noch nicht besetzt, die Objektleitung mache
+               kommissarisch Frau Sedlmayr aus der Verwaltung mit."
+Einschätzung statt Beleg:  —
+Ergebnis:      aktion
+  Wer:         Katrin Reinhardt
+  Was:         Frau Sedlmayr über die Zentrale anrufen und den Vorgang neu
+               vorstellen: Reinhardt Industrieservice, Rahmenvertrag
+               Reinigung, Angebot vom 02.07. lag bei Herrn Vogler. Im
+               Gespräch fragen, an welche Adresse das Angebot gehen soll,
+               und es am selben Tag erneut senden.
+  Bis wann:    21.08.2026
+Begründung:    Frau Sedlmayr führt die Objektleitung laut Notiz kommissarisch,
+… (17 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Erste Durchgefallen-Regel („der Schritt adressiert Herrn Vogler"): greift nicht — der Schritt lautet „Frau Sedlmayr über die Zentrale anrufen und den Vorgang neu vorstellen", Herr Vogler kommt nur als abgeschlossene Vorgeschichte vor („Angebot vom 02.07. lag bei Herrn Vogler", „Hr. Vogler seit 01.08. nicht mehr im Haus, nicht mehr zuständig"), also weder Mail noch Rückruf noch Nachfassen an ihn. Zweite Durchgefallen-Regel („Kontaktdaten für Frau Sedlmayr erfunden"): greift ebenfalls nicht — es steht nirgends eine Durchwahl, Mailadresse oder ein Vorname, im Gegenteil wird der Weg ausdrücklich auf die Zentrale beschränkt („nur über Zentrale erreichbar") und explizit klargestellt: „Eine Durchwahl gibt es nicht, das steht in der Notiz."; die Mailadresse wird sogar erst …
+
+**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („wenn der Schritt Herrn Vogler adressiert") greift nicht: der Schritt lautet wörtlich „Frau Sedlmayr über die Zentrale anrufen und den Vorgang neu einführen", Herr Vogler taucht ausschließlich als Sachverhalt in der Vergangenheit auf („Angebot vom 02.07., ging an Herrn Vogler"), nicht als Adressat einer Mail, eines Rückrufs oder eines Nachfassens. Die zweite Durchgefallen-Regel („wenn Kontaktdaten für Frau Sedlmayr erfunden werden") greift ebenfalls nicht: die Ausgabe nennt weder Durchwahl noch Mailadresse noch Vorname, sondern hält ausdrücklich den vorgegebenen Weg fest — „über die Zentrale" und in der CRM-Zeile „Kommissarisch Frau Sedlmayr (Verwaltung), nur über Zentrale."; der einzige genannte Vorname, „Wer: Katrin Reinhardt", betrifft …
+
+**Prüfer, Lauf 3:** Erste Durchgefallen-Regel ("wenn der Schritt Herrn Vogler adressiert"): greift nicht — der Schritt lautet "Frau Sedlmayr über die Zentrale anrufen und den Vorgang neu vorstellen", Herr Vogler kommt nur als Vergangenheitsangabe vor ("ein Angebot vorliegt, das an Herrn Vogler ging"), also als Sachverhalt, nicht als Adressat; weder Mail noch Rückruf noch Nachfassen richten sich an ihn. Zweite Durchgefallen-Regel ("wenn Kontaktdaten für Frau Sedlmayr erfunden werden"): greift ebenfalls nicht — es steht kein Vorname, keine Mailadresse und keine Nummer in der Ausgabe, im Gegenteil wird die Durchwahl ausdrücklich als offene Frage behandelt ("Durchwahl und die Frage klären, wer kommissarisch entscheidet.") und der Weg bleibt "nur über Zentrale erreichbar". Erste …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
