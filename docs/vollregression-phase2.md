@@ -59,7 +59,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
-| `einwand-sparring` | 3 | angefangen — 2 von 3 bestanden |
+| `einwand-sparring` | 3 | angefangen — 01 und 02 bestanden, 03 **wackelt** (Befund, Korrektur folgt) |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
 | `ketten` | 2 | **durch** — 2 bestanden |
@@ -89,7 +89,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `crm-notiz-zu-schritt / 03-ansprechpartner-weg` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 01-kunde-knickt-ein` | bestanden | bestanden | bestanden | **bestanden** |
 | `einwand-sparring / 02-rollenbruch` | bestanden | bestanden | bestanden | **bestanden** |
-| `einwand-sparring / 03-ehrliche-auswertung` | — | — | — | offen |
+| `einwand-sparring / 03-ehrliche-auswertung` | bestanden | bestanden | abweichend | **wackelt** |
 | `follow-up-generator / 01-unvollstaendiger-uebergabeblock` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 02-kein-anlass` | bestanden | bestanden | bestanden | **bestanden** |
 | `follow-up-generator / 03-stufe-drei-und-schluss` | bestanden | bestanden | bestanden | **bestanden** |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 19 von 32 abgeschlossen** — 19 bestanden · 13 offen.
+**Stand: 20 von 32 abgeschlossen** — 19 bestanden · 1 wackelt · 12 offen.
 
 ## Die einzelnen Fälle
 
@@ -501,6 +501,36 @@ Soll ich abbrechen und auswerten? Sag Stopp.
 **Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einer Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." — damit ist die Vorgabe „Genau eine Klärungszeile" wörtlich erfüllt, und zwar in nahezu identischem Wortlaut zum Sollkriterium. Erste Durchgefallen-Regel („wenn ein inhaltlicher Tipp gegeben wird"): geprüft und nicht erfüllt, denn die Ausgabe enthält außer „Soll ich abbrechen und auswerten? Sag Stopp." keinerlei Text, also weder eine Formulierungshilfe noch einen als Frage getarnten Hinweis der Art „Hast du schon an … gedacht?"; es gibt schlicht keinen zweiten Satz, in dem ein solcher Tipp stehen könnte. Zweite Durchgefallen-Regel („wenn ohne ‚Stopp' in die Auswertung gewechselt wird"): geprüft und nicht erfüllt, denn die Auswertung wird nicht vollzogen, sondern ausdrücklich an …
 
 **Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einer Zeile: „Soll ich abbrechen und auswerten? Sag Stopp." — damit ist die Muss-Anforderung „Genau eine Klärungszeile" wörtlich erfüllt, und zwar in exakt der im Kriterientext genannten sinngemäßen Formulierung. Erste Durchgefallen-Regel geprüft („wenn ein inhaltlicher Tipp gegeben wird"): Die Zeile enthält ausschließlich die Rückfrage „Soll ich abbrechen und auswerten?" und die Handlungsanweisung „Sag Stopp."; es gibt keinen Satz, keine Klammer und keine getarnte Frage, die auf eine Richtung, ein Argument oder eine Formulierung hinweist — die Regel greift nicht. Zweite Durchgefallen-Regel geprüft („wenn ohne ,Stopp' in die Auswertung gewechselt wird"): Es wird keine Bewertung, kein Coaching und keine Verlaufsanalyse geliefert, sondern …
+
+### einwand-sparring / 03-ehrliche-auswertung
+
+**Läufe:** bestanden · bestanden · abweichend   ·   **Ergebnis: wackelt**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Runden:        5
+
+Was trug:      Runde 4: "Was müsste denn passieren, damit es für Sie passt?"
+               — die einzige Stelle, an der der Kunde reden muss statt zu
+               blocken. Offene Frage, keine Zusage, kein Preisnachlass. Von
+               hier aus wäre Verhandeln möglich gewesen.
+
+Was wackelte:  Runde 2: "Wir sind da schon fair, andere nehmen mehr."
+               — Behauptung ohne Beleg, und sie handelt vom Wettbewerb statt
+               von der eigenen Leistung. Der Kunde kann darauf nur mit
+               "sagen alle" antworten.
+
+               Runde 5: "Ich kann Ihnen gern nochmal ein überarbeitetes
+               Angebot schicken." — verschiebt die Arbeit auf den Schreibtisch,
+… (34 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („wenn Runde 3 nicht als Fehler benannt wird") greift nicht: Runde 3 steht ausdrücklich unter `Was fiel` — „Runde 3: \"Über den Preis lässt sich am Ende immer reden.\"" — und wird als „der teuerste Satz des Durchlaufs" bezeichnet, mit genau der geforderten Begründung des vorzeitigen Nachlasses: „Er kündigt Nachlass an, bevor überhaupt verhandelt wurde. Ab hier hat der Kunde keinen Grund mehr, über Leistung zu sprechen: Er muss nur warten." Die zweite Durchgefallen-Regel („wenn `Was fiel` leer bleibt oder beschönigt wird") greift ebenfalls nicht: der Abschnitt ist gefüllt und benennt zusätzlich Runde 1 hart — „das \"aber\" nimmt das \"Ich verstehe\" wieder zurück, der Einwand ist damit weggeredet statt gespiegelt" —, ohne jede …
+
+**Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Runde 3 nicht als Fehler benannt) greift nicht: Runde 3 steht ausdrücklich unter `Was fiel` und wird als schwerster Fehler markiert — „Runde 3: „Über den Preis lässt sich am Ende immer reden." — der teuerste Satz des Durchlaufs.", und die geforderte Begründung ist wörtlich da: „Er kündigt Nachlass an, bevor überhaupt verhandelt wurde. Ab hier hat der Kunde keinen Grund mehr, über Leistung zu sprechen — er wartet nur noch auf die Zahl." Damit ist auch die verbotene neutrale oder positive Deutung ausgeschlossen; eine Wendung wie „zeigt Verhandlungsbereitschaft" kommt an keiner Stelle vor. Durchgefallen-Regel 2 (leeres oder beschönigtes `Was fiel`) greift nicht: der Abschnitt ist gefüllt und hart, er führt neben Runde 3 zusätzlich „Runde 2: „Wir …
+
+**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („wenn Runde 3 nicht als Fehler benannt wird") greift nicht: Runde 3 steht ausdrücklich unter `Was fiel` mit dem Zitat „Über den Preis lässt sich am Ende immer reden." und der geforderten Begründung „Er kündigt Nachlass an, bevor überhaupt verhandelt wurde.", ergänzt um „Ab hier verhandelt der Kunde nicht mehr über die Leistung, sondern nur noch über Prozente" — das trifft genau den Punkt, dass ab da nur noch über die Höhe verhandelt wird. Die zweite Durchgefallen-Regel („`Was fiel` leer oder beschönigt") greift ebenfalls nicht: Das Feld ist gefüllt und ausdrücklich hart formuliert — „der teuerste Satz des Durchlaufs" und „jede spätere Begründung des Preises ist entwertet"; eine Beschönigung wie „kleine Stellschraube:" oder eine positive …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
