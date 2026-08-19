@@ -60,7 +60,7 @@ Stelle fortsetzt — dann hat „weiter" nicht getragen. Alles andere ist
 |---|---|---|---|
 | 1 — Ist alles startklar | mitten im Umräumen | **bestanden** | ja, aber nur aus `START_HIER.md` |
 | 2 — Kennenlernen | nach Frage 7, ohne Antwort | **bestanden** | ja — Installer hat es am Ende von Phase 1 gesagt |
-| 3 — Einrichten | offen | — | — |
+| 3 — Einrichten | drei von sechs Assistenten gefüllt | **bestanden** | ja — eine Nachricht vorher gesagt |
 | 4 — Erste echte Aufgabe | offen | — | — |
 | 5 — Wächter und Übergabe | offen | — | — |
 
@@ -203,3 +203,84 @@ vom Assistenten, im Fluss der Unterhaltung, wenige Minuten vor dem Abbruch.
 geprüft an der Mitschrift, kein Treffer über zehn Fragen hinweg. Wer zwischen
 Frage 1 und Frage 10 abbricht, verlässt sich auf die Erinnerung an eine
 Nachricht am Phasenende. Das trägt, ist aber kein Netz mit zwei Böden.
+
+
+### Phase 3 — Abbruch mitten im Bauen
+
+**Ergebnis: bestanden.** Alle sieben Prüfpunkte erfüllt — aber dieser Fall hat
+die schwerste Lücke der ganzen Reihe freigelegt.
+
+**Die Abbruchstelle.** Sechs Assistenten sind ausgewählt, drei davon sind
+fertig gebaut (`angebots-schreiber`, `follow-up-generator`,
+`meeting-nachbereitung` — mechanisch geprüft, kein `{{` mehr darin). Das
+Gedächtnis steht noch auf der Kurzfassung aus Phase 1, `START.md` gibt es
+nicht, aufgeräumt ist nichts.
+
+**Der Stand sagt: „Phase 3 (Einrichten) hat noch nicht begonnen."**
+
+Das ist die größte Lücke zwischen Stand und Wirklichkeit in allen fünf Fällen —
+und anders als in Phase 1 und 2 ist sie **kein Zeitfenster von Sekunden,
+sondern ein Konstruktionsfehler**:
+
+> Die Anleitung verlangt für Phase 3 **keinen** Zwischenstand. Sie schreibt
+> STATUS erst als Schritt 6, ganz am Ende der Phase.
+
+Damit verstößt Phase 3 gegen Bauprinzip 2 („Jeder mehrstufige Prozess schreibt
+seinen Fortschritt **nach jedem Schritt**") und gegen die eigene eiserne Regel
+3 („Ein Schritt ohne STATUS-Eintrag gilt als nicht gemacht"). Für Phase 2 ist
+die Ausnahme ausdrücklich geregelt — „innerhalb von Phase 2 schreibst du nach
+**jeder** Antwort" —, für Phase 3 fehlt die entsprechende Zeile. Dabei ist
+Phase 3 die Phase mit der meisten unsichtbaren Arbeit: Auswahl treffen, zehn
+Dateien durchgehen, Lücken füllen.
+
+**Was auf „weiter" passiert ist.** Die frische Sitzung ist nicht in die Falle
+gelaufen. Sie hat sich nicht auf den Stand verlassen, sondern nachgesehen:
+Platzhaltersuche über die Skill-Dateien plus Änderungszeiten (Dateien 23:12,
+letzter Stand 23:08). Die drei fertigen Dateien hat sie erkannt, geprüft und
+**nicht** neu gebaut. Dann hat sie zwei weitere gefüllt, das Gedächtnis und
+`START.md` erzeugt, aufgeräumt und den Stand dreimal fortgeschrieben.
+
+**Was sie nicht retten konnte:** Welche sechs Assistenten ausgewählt waren,
+stand nirgends. Sie hat deshalb **neu ausgewählt und kam auf fünf** — jeder
+davon aus den Antworten des Nutzers begründbar, und „fünf bis sechs" ist
+erlaubt. Die Bewertung hat das als zulässig gewertet und das Schwanken
+vermerkt. Für den Nutzer ist der Unterschied unsichtbar. **Trotzdem ist eine
+Auswahl verlorengegangen, und niemand hat es gemerkt** — nur weil die neue
+Auswahl die drei fertigen Dateien zufällig enthielt, gibt es keinen Schaden.
+Hätte sie anders gewählt, lägen jetzt bis zu neun gefüllte Dateien im Ordner,
+von denen die Zuordnungstabelle nur fünf kennt.
+
+**Befund 1 — Phase 3 braucht einen Zwischenstand.** Nach der Auswahl gehört
+sie in den Stand („diese sechs, in dieser Reihenfolge"), und nach jeder
+gefüllten Datei gehört sie abgehakt. Das ist dieselbe Regel, die Phase 2 schon
+hat. Nicht umgesetzt — es ist eine Änderung am Installer, und sie zieht einen
+neuen Durchlauf durch die Phasen 3 bis 5 nach sich.
+
+**Befund 2 — das erzeugte Gedächtnis verliert den Weg zur Anleitung.** Die
+Kurzfassung aus Phase 1 nennt `system/adapter-claude/INSTALLER.md`
+ausdrücklich. Die vollständige Fassung aus `CLAUDE.vorlage.md`, die sie in
+Phase 3 ersetzt, nennt sie **nicht mehr**. Ab dem Ende von Phase 3 hängt die
+Fortsetzung der Phasen 4 und 5 allein daran, dass der Stand den Weg selbst
+beschreibt. Die frische Sitzung hat das bemerkt und sich im Lauf einen Halbsatz
+ergänzt.
+
+**Dieser Halbsatz wurde für die weiteren Fälle wieder entfernt.** Die Phasen 4
+und 5 sind gegen das gebaute Produkt zu prüfen, nicht gegen eine Reparatur, die
+im Testlauf entstanden ist. Die `CLAUDE.md` im Testordner entspricht jetzt
+wieder genau dem, was `CLAUDE.vorlage.md` hergibt.
+
+**Befund 3 — ein Baufehler im Repo, außerhalb dieses Tests.** Beim Füllen fiel
+auf: In `core/skills/vertrieb/outreach-personalisierer.md` steht an einer
+Stelle `{{firma}}`, wo die Firma des **Empfängers** gemeint ist, nicht die des
+Nutzers. Eingesetzt würde dort die eigene Firma stehen. Nicht behoben — es ist
+ein anderer Skill, und nach der Arbeitsregel vom 19.08.2026 zieht seine
+Änderung seine drei Testfälle nach sich.
+
+**Hätte der Nutzer gewusst, dass „weiter" das Zauberwort ist?**
+
+**Ja, denkbar knapp davor.** Der Assistent hat es am Ende von Phase 2 gesagt —
+in der Nachricht unmittelbar vor „Jetzt baue ich dir deine Assistenten". Danach
+schweigt er, wie es die Anleitung für Phase 3 vorschreibt („Ab hier redest du
+**nicht** über das, was du tust"). Der Nutzer sitzt also vor einem stillen
+Fenster, und das letzte, was er gelesen hat, war der Hinweis auf „weiter". Das
+ist die beste Ausgangslage aller fünf Fälle.
