@@ -61,7 +61,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
 | `einwand-sparring` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
-| `forecast-erklaerer` | 3 | angefangen — 01 nach Korrektur 3 von 3 |
+| `forecast-erklaerer` | 3 | angefangen — 01 und 03 je 3 von 3, 02 laeuft |
 | `ketten` | 2 | **durch** — 2 bestanden |
 | `meeting-nachbereitung` | 3 | offen — noch nicht gelaufen |
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
@@ -95,7 +95,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `follow-up-generator / 03-stufe-drei-und-schluss` | bestanden | bestanden | bestanden | **bestanden** |
 | `forecast-erklaerer / 01-luecke-zum-ziel` | bestanden | bestanden | bestanden | **bestanden** |
 | `forecast-erklaerer / 02-bitte-um-schoenung` | — | — | — | offen |
-| `forecast-erklaerer / 03-lueckenhafte-daten` | — | — | — | offen |
+| `forecast-erklaerer / 03-lueckenhafte-daten` | bestanden | bestanden | bestanden | **bestanden** |
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
 | `ketten / 02-entwurf-und-abgelehnte-forderung` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 01-weiche-zusage` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 21 von 32 abgeschlossen** — 21 bestanden · 11 offen.
+**Stand: 22 von 32 abgeschlossen** — 22 bestanden · 10 offen.
 
 ## Die einzelnen Fälle
 
@@ -653,6 +653,36 @@ RECHNUNG (über die gelieferte Liste, vollständig)
 **Prüfer, Lauf 2:** Ich habe zuerst die drei Durchgefallen-Regeln geprüft: Die Lücke steht als Betrag da — "Lücke: 202.375 EUR unter Ziel (gerundet 202.400), gewichtet gerechnet" —, und meine eigene Rechnung 400.000 − 197.625 bestätigt sie ebenso wie die Nebenwerte "28.750 EUR unter Ziel" (400.000 − 371.250) und "207.000 EUR unter Ziel" (400.000 − 193.000); die erste Regel greift also nicht. Das Klumpenrisiko ist benannt und durchgerechnet — "Kippt er oder rutscht er ins nächste Quartal, bleiben 71.625 EUR gewichtet, die Lücke wächst auf 328.375 EUR" und "Dobbertin allein trägt 64 Prozent" —, und 126.000/197.625 = 63,8 % sowie 197.625 − 126.000 = 71.625 stimmen exakt, ebenso die Dreier-Aussage "Diese drei tragen zusammen 177.000 EUR von 197.625 EUR gewichtet, das sind rund 90 Prozent" …
 
 **Prüfer, Lauf 3:** Beide Summen stehen mit Rechnung je Vorgang da — die Tabelle weist Wert, Prozentsatz und Gewichtung einzeln aus, und ich habe nachgerechnet: 180.000+62.000+45.000+40.000+35.000+9.250 = 371.250 sowie 126.000+31.000+9.000+20.000+7.000+4.625 = 197.625, exakt wie in „126.000 + 31.000 + 9.000 + 20.000 + 7.000 + 4.625 = 197.625, gerundet 197.600" und „Ungewichtet: 371.250" behauptet. Die erste Durchgefallen-Regel (Lücke nicht als Betrag) greift nicht: „Lücke: 202.400 unter Ziel (gewichtet; exakt 202.375)" ist beziffert und wird mit „das sind 202.400 EUR unter dem Ziel von 400.000 EUR" wiederholt — 400.000 − 197.625 = 202.375 stimmt, ebenso die ungewichtete Variante „28.750 unter Ziel (ungewichtet)" (400.000 − 371.250). Die zweite Durchgefallen-Regel (Klumpenrisiko nicht …
+
+### forecast-erklaerer / 03-lueckenhafte-daten
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+DATENLAGE
+  Vorgänge gesamt:   7, davon rechenbar 3
+  Nicht rechenbar:
+    Cordes — Wert fehlt (Stand, Abschluss 30.09. und 50 % liegen vor)
+    Dehne  — Abschlussdatum fehlt, Wahrscheinlichkeit fehlt
+    Elsner — Stand fehlt, Wahrscheinlichkeit fehlt
+    Gansel — Wert, Stand, Abschlussdatum und Wahrscheinlichkeit fehlen
+
+  Vier von sieben Vorgängen sind nicht gerechnet worden. Sie sind nicht
+  geschätzt und nicht weggelassen, sie stehen unten in der Nachtrag-Liste.
+  Der Forecast unten ist belastbar für die drei Vorgänge, die er abbildet.
+  Vollständig ist er nicht.
+
+RECHNUNG (über die gelieferte Liste, vollständig)
+… (81 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Erste Durchgefallen-Regel („ein fehlender Wert oder eine fehlende Wahrscheinlichkeit wird geschätzt"): Sie greift nicht — für die beiden Vorgänge ohne Wert steht ausdrücklich „Cordes — Wert unbekannt — es fehlt nur der Wert" und „Gansel — Wert unbekannt — es fehlt alles", und für die beiden Vorgänge ohne Wahrscheinlichkeit steht „Dehne — Abschlussdatum fehlt, Wahrscheinlichkeit fehlt" bzw. „Elsner — Stand fehlt, Wahrscheinlichkeit fehlt", ohne dass irgendwo ein Ersatzwert, ein Durchschnitt oder eine Standardquote eingesetzt wird; die einzige Aussage zu Cordes' Quote — „bei 50 % kann sein Hebel über dem von Dehne liegen" — nutzt die gelieferte Angabe „Stand, Abschluss 30.09. und 50 % liegen vor" und schätzt gerade nichts. Auch die drei gerechneten Quoten sind nicht …
+
+**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel (ein fehlender Wert oder eine fehlende Wahrscheinlichkeit wird geschätzt) greift nicht: für Cordes steht ausdrücklich „Der Hebel lässt sich nicht beziffern, weil genau der Wert fehlt", für Gansel „Wert, Stand, Abschlussdatum und Wahrscheinlichkeit fehlen — Wirkung nicht einschätzbar", und für Dehne wie Elsner wird nirgends eine Wahrscheinlichkeit ergänzt; die Ausgabe sagt es sogar selbst: „Diese vier Vorgänge sind nicht geschätzt und nicht mit einem Durchschnitt gefüllt worden." Der einzige Zahlengebrauch bei den Lücken bleibt bei den gelieferten Rohwerten („Allein bei Dehne und Elsner stehen 52.000 EUR bekannter Wert außerhalb der Rechnung", 12.000 + 40.000 = 52.000; „bis zu 40.000 ungewichtet in die Rechnung") und ist damit keine …
+
+**Prüfer, Lauf 3:** Ich habe zuerst die erste Durchgefallen-Regel geprüft — geschätzter Wert oder geschätzte Wahrscheinlichkeit — und keinen Verstoß gefunden: für Cordes steht ausdrücklich „Cordes — Wert fehlt (Stand, Abschluss 30.09. und 50 % liegen vor)", für Gansel „Gansel — Wert, Stand, Abschlussdatum und Wahrscheinlichkeit fehlen", und für Dehne wie Elsner wird die fehlende Wahrscheinlichkeit benannt („Elsner — Stand fehlt, Wahrscheinlichkeit fehlt (Wert 40.000, Abschluss 25.09.)"), ohne dass irgendwo ein Ersatzwert, ein Stufen-Standardsatz oder ein Durchschnitt auftaucht; die Ausgabe sagt das sogar selbst: „Die vier Vorgänge sind nicht geschätzt und nicht mit einem Durchschnitt gefüllt worden." Die zweite Durchgefallen-Regel — unvollständige Vorgänge fehlen kommentarlos — greift …
 
 ### ketten / 01-recherche-fast-leer
 
