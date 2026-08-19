@@ -6,7 +6,7 @@
 ## Stand
 - [x] Phase 0 — Fundament: Entscheidungen getroffen (siehe docs/entscheidungen.md)
 - [x] Phase 1 — Architektur & Repo-Skelett: Struktur, Vorlagen, Regeln, Action
-- [ ] Phase 2 — Vertriebs-Skills & Verträge (BAUPLAN.md)
+- [x] **Phase 2 — Vertriebs-Skills & Verträge — abgeschlossen am 19.08.2026**
   - [x] Agent 1 `angebots-schreiber` gebaut, 3 Testfälle
   - [x] Hauptkette V1 festgelegt, 2 Verträge geschrieben, 2 Ketten-Testfälle
   - [x] `angebots-schreiber` auf Vertrag 2 nachgezogen (Block B = ÜBERGABE ANGEBOT)
@@ -25,25 +25,32 @@
         alle verankert (`docs/gegenprobe-bauregel.md`)
   - [x] **Vollregression abgeschlossen** (`docs/vollregression-phase2.md`)
         — **32 von 32 Fällen gelaufen**, je dreimal erzeugt und dreimal
-        getrennt bewertet: **30 bestanden, 1 abweichend, 1 wackelt.**
-        Neun Skills und beide Ketten sind durch. **Neun Befunde gefunden und
-        im Skill behoben**, kein Testfall weichgespült — **sechs davon waren
-        Wackler**, die ein Einzellauf durchgewunken hätte.
-  - [ ] **Zwei Fälle hängen an einer Entscheidung, nicht am Skill.**
-        `meeting-nachbereitung / 01` (abweichend) und `/ 03` (wackelt)
-        scheitern an Kriterien, die Einträge zählen statt Inhalte zu prüfen.
-        Beide Läufe legten korrekt zusätzliche Punkte ab und fielen dafür
-        durch. Vorschlag und Begründung stehen im Vollregressions-Dokument
-        unter „Testfall-Befund `meeting-nachbereitung`" — **Entscheidung
-        durch den Auftraggeber steht aus.**
-- [ ] Phase 3 — Installer fertigstellen
+        getrennt bewertet: **32 bestanden.** Alle zehn Skills und beide Ketten
+        sind durch. **Neun Befunde gefunden und im Skill behoben**, kein
+        Testfall weichgespült — **sechs davon waren Wackler**, die ein
+        Einzellauf durchgewunken hätte. Ein zehnter Befund lag im Testfall,
+        nicht im Skill (siehe nächster Punkt).
+  - [x] **Testfall-Befund `meeting-nachbereitung` entschieden (19.08.2026).**
+        Der Auftraggeber hat **Lesart 1** gewählt: Die Zählkriterien in
+        `01-weiche-zusage` und `03-stichwortnotizen` waren zu eng gefasst.
+        Beide sind inhaltlich neu gefasst — geprüft wird, dass die weichen
+        Äußerungen unter `Unverbindlich` stehen und dort weder Zusage noch
+        Aufgabe auftaucht, und dass alle fünf Stichpunkte in `Unklar` stehen
+        mit je einer gezielten Frage. Die Anzahl entscheidet nicht mehr. Beim
+        Teilnehmer-Punkt in Fall 03 ist die belegte, ausführlichere Variante
+        zulässig, solange nichts erfunden wird. Änderungsvermerk in beiden
+        Testfällen, danach je dreimal neu gelaufen: **3 von 3.** Der Skill
+        wurde dafür nicht angefasst.
+  - [x] **Endstand Phase 2: 32 von 32 Fällen bestanden**, jeder dreimal
+        erzeugt und dreimal getrennt bewertet.
+- [ ] **Phase 3 — Installer fertigstellen (nächster Schritt)**
   - [ ] **Sitzungswechsel unsichtbar** — neue Pflichtanforderung, siehe unten
 - [ ] Phase 4 — Watchdog & Ketten-Tests
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
 - [ ] Phase 6 — Beta mit 10 Nutzern
 - [ ] Phase 7 — Launch
 
-## Definition of Done Phase 2 — Stand 18.08.2026
+## Definition of Done Phase 2 — erfüllt am 19.08.2026
 
 BAUPLAN verlangt: „Alle 10 Skills laufen einzeln gegen ihre Testfälle; die
 Hauptkette läuft einmal Ende-zu-Ende durch."
@@ -96,8 +103,21 @@ Hauptkette läuft einmal Ende-zu-Ende durch."
       Läufen auf und wären in einem Einzellauf durchgegangen. Das ist der
       empirische Beleg dafür, dass die 3-von-3-Regel nötig ist.
       `preisverhandlungs-sparring` brauchte allein drei Korrekturrunden und ist
-      damit der schwächste Skill im Kit. Gesamtfazit, alle neun Befunde und die
-      offene Entscheidung: `docs/vollregression-phase2.md`.
+      damit der schwächste Skill im Kit. Gesamtfazit und alle neun Befunde:
+      `docs/vollregression-phase2.md`.
+
+**Abschluss (19.08.2026):**
+
+- [x] **32 von 32 Fällen bestanden.** Die beiden letzten Fälle —
+      `meeting-nachbereitung / 01` und `/ 03` — hingen an Zählkriterien, nicht
+      am Skill. Nach der Entscheidung des Auftraggebers sind die Kriterien
+      inhaltlich neu gefasst, mit Änderungsvermerk, und beide Fälle sind je
+      dreimal neu gelaufen: **3 von 3.**
+- [x] **Phase 2 ist abgeschlossen.** Zehn Skills, 32 Fälle, jeder dreimal
+      erzeugt und dreimal getrennt bewertet; beide Ketten Ende-zu-Ende.
+      Bekannte Grenze: Alle Fälle sind konstruiert, und `einwand-sparring / 03`
+      liefert die Bewertungslage im Eingabeteil mit — er prüft schwächer, als
+      er aussieht. Beides steht in `docs/vollregression-phase2.md`.
 
 Die vollständige kritische Bewertung — wo die Fälle zu schwach sind, was sie
 nicht prüfen — steht in `docs/testlauf-phase2.md` unter „Wie belastbar ist das".
@@ -122,10 +142,26 @@ Verfahren, wenn ein Kriterium falsch erscheint:
    Weichspülen nicht unterscheidbar.
 4. Der betroffene Fall wird gegen die korrigierten Kriterien **neu bewertet**.
 
-Bisher angewandt: einmal, `angebots-schreiber/01-rueckfrage-disziplin` —
-das Kriterium verlangte Kundenanrede und Signatur für eine Rückfrage, die an
-den Nutzer selbst geht. Eine Prüfung aller 32 Fälle auf dieselbe Verwechslung
-(Kundentext gegen interne Ausgabe) ergab keine weiteren Treffer.
+Bisher angewandt: **dreimal.**
+
+1. `angebots-schreiber/01-rueckfrage-disziplin` (18.08.) — das Kriterium
+   verlangte Kundenanrede und Signatur für eine Rückfrage, die an den Nutzer
+   selbst geht. Eine Prüfung aller 32 Fälle auf dieselbe Verwechslung
+   (Kundentext gegen interne Ausgabe) ergab keine weiteren Treffer.
+2. und 3. `meeting-nachbereitung/01-weiche-zusage` und `/03-stichwortnotizen`
+   (19.08.) — beide machten eine **Anzahl** zur Bestehensbedingung und
+   bestraften damit die Sorgfalt, die der Skill leisten soll. Jetzt inhaltlich
+   gefasst; zusätzlich ist in Fall 03 die belegte, ausführlichere
+   Teilnehmerzeile zulässig. Beide Fälle danach je 3 von 3.
+
+**Offener Vorschlag, noch nicht entschieden:** `einwand-sparring/03` liefert im
+Abschnitt `## Eingabe` die Bewertungslage mit und prüft deshalb schwächer, als
+er aussieht. Vorschlag: den Absatz in den Kriterienteil verschieben. Betrifft
+einen Fall, keinen Skill — kein Hindernis für Phase 3.
+
+**Lehre aus 2. und 3.:** Eine Bestehensbedingung beschreibt, **was** in einem
+Feld stehen muss und was dort nicht stehen darf — nie, **wie viele** Zeilen es
+sind. Zählvorgaben sind bequem prüfbar und messen trotzdem das Falsche.
 
 ## Anforderung Phase 3: Sitzungswechsel unsichtbar (18.08.2026)
 
@@ -159,6 +195,11 @@ tippt „weiter". Klappt das nicht, ist Phase 3 nicht fertig.
   `angebots-schreiber` sind ehrlich hart, aber erfunden. Vor Beta gegen
   anonymisierte Realfälle tauschen — bis dahin taugen sie zur Entwicklung,
   nicht als Erfolgsquote nach außen.
+- **Testfall-Befund `einwand-sparring/03` — Entscheidung steht aus.** Der
+  Abschnitt `## Eingabe` enthält einen Absatz „Bewertungslage", der die
+  Soll-Bewertung weitgehend vorwegnimmt; der erzeugende Lauf bekommt die
+  Analyse also mitgeliefert. Vorschlag: Absatz in den Kriterienteil verschieben.
+  Der Fall ist bestanden — aber er prüft schwächer, als er aussieht.
 - **`{{preisgrundlage}}` hat keine Interviewfrage** (siehe core/interview/mapping.md,
   Abschnitt „Offen"). In Phase 3 entscheiden.
 - Repo liegt unter `schnittbuild-stack/Autopilot-Kit` (privat), nicht in der Org
@@ -172,57 +213,80 @@ tippt „weiter". Klappt das nicht, ist Phase 3 nicht fertig.
   dass er beim Kunden eigene Testfälle aus dessen Material erzeugt — sonst prüft
   der Käufer nur gegen unsere neutralen Fälle und nie gegen seinen echten Alltag.
 
-## Vollregression — Stand 19.08.2026
+## Vollregression — abgeschlossen am 19.08.2026
 
-Der Dreifachlauf über alle 32 Fälle läuft **portioniert über mehrere Sitzungen**,
-um Nutzungskontingent nicht in einem Stück zu verbrennen. Bericht und
-Fortschritt: `docs/vollregression-phase2.md`. Die Fortschrittstabelle dort
-schreibt sich aus den Urteilsdateien selbst — sie ist die Quelle der Wahrheit
-dafür, welcher Skill durch ist, nicht diese Datei.
+Der Dreifachlauf über alle 32 Fälle ist **portioniert über mehrere Sitzungen**
+gefahren worden, um Nutzungskontingent nicht in einem Stück zu verbrennen.
+Bericht, Fortschritt und alle Einzelurteile: `docs/vollregression-phase2.md`.
+Dort steht die Quelle der Wahrheit, nicht hier.
 
-**Erledigt (11 von 32 Fällen, alle bestanden, je dreimal):**
-`angebots-schreiber` (3), `account-recherche` (3), `follow-up-generator` (3),
-`ketten` (2).
+**Endstand: 32 von 32 Fällen bestanden**, jeder dreimal erzeugt und dreimal
+getrennt bewertet — Erzeuger ohne Kriterien, Bewerter ohne Skill-Text. Alle
+zehn Skills und beide Ketten sind durch.
 
-**Zwei Befunde, beide im Skill behoben, kein Testfall angefasst:**
+**Zehn Befunde insgesamt:**
 
-1. **`account-recherche`, 3× abweichend** — also stabil, kein Wackler. Das in
-   der Gegenprobe verankerte Ausgabeformat für gleichlautende Firmennamen gab
-   „genau 1 Unterscheidungsmerkmal" vor und hatte keine Zeile für einen Fund
-   ohne Zuordnung. Die Zählvorgabe war als Zahl korrekt gebaut und inhaltlich
-   falsch gewählt: Eine Rückfrage, die nur den Sitz nennt, entscheidet nichts.
-   Korrigiert auf Sitz **und** Geschäftsfeld, plus Zeilen `Nicht zuordenbar`
-   und `Vermutung`. Danach 3 von 3.
-2. **`follow-up-generator`, `wackelt`** (bestanden · bestanden · abweichend).
-   Zwei Punkte derselben Checkliste widersprachen sich, sobald beide im selben
-   Fall greifen: „Rang 1–4 leer → kein Text" gegen „auf ausdrücklichen Wunsch
-   entsteht der Text". Lauf 3 verweigerte, als Rückfrage getarnt. Vorrang jetzt
-   an beiden Stellen geregelt. Danach 3 von 3 — und `02-kein-anlass` hält
-   weiterhin, die Ausnahme hat die Kein-Anlass-Regel nicht aufgeweicht.
+- **Neun im Skill**, alle dort behoben, kein Testfall weichgespült. Zwei
+  stammten aus der Bauregel-Gegenprobe, sieben sind eigenständige Lücken.
+  **Sechs der neun waren Wackler** — sie traten in einem oder zwei von drei
+  Läufen auf und wären in einem Einzellauf durchgegangen. Das ist der
+  empirische Beleg für die 3-von-3-Regel.
+  `preisverhandlungs-sparring` brauchte allein drei Korrekturrunden und ist
+  damit der schwächste Skill im Kit.
+- **Einer im Testfall:** Zwei der drei `meeting-nachbereitung`-Fälle machten
+  eine Anzahl zur Bestehensbedingung — zwei Einträge unter `Unverbindlich`,
+  fünf Unklar-Punkte, fünf Fragen. Beide Fälle bestraften damit genau die
+  Sorgfalt, die der Skill leisten soll. Entscheidung des Auftraggebers vom
+  19.08.2026: Kriterien inhaltlich neu fassen (Lesart 1). Beide Fälle danach
+  je dreimal neu: **3 von 3.** Der Skill wurde nicht angefasst, sein Verhalten
+  ist unverändert — verändert hat sich nur, was gemessen wird.
 
-**Was die beiden Befunde über die Gegenprobe sagen:** Beide entstanden *durch*
+**Was die Gegenprobe-Befunde zeigen:** Zwei der neun Befunde entstanden *durch*
 sie. Sie hat die Regeln an die richtige Stelle geschrieben und dabei in einem
 Fall den Inhalt beschädigt, im anderen einen Widerspruch erzeugt, der nur im
 Zusammentreffen sichtbar wird. Eine Strukturprüfung kann das nicht sehen — sie
-sieht saubere Regeln an sauberen Stellen. Das ist der Beleg dafür, dass der
-Dreifachlauf nach der Gegenprobe kein Formalismus ist.
+sieht saubere Regeln an sauberen Stellen. Deshalb war der Dreifachlauf nach der
+Gegenprobe kein Formalismus.
 
 **Regel bestätigt:** Nach jeder Skill-Korrektur laufen **alle** Fälle dieses
-Skills neu, auch die bereits bestandenen. So sind `account-recherche / 01` und
-`follow-up-generator / 01` und `02` ein zweites Mal gelaufen. Mechanisch
-geprüft: keine der 33 Ausgaben ist älter als die Skill-Datei, gegen die sie
-gemessen wurde.
+Skills neu, auch die bereits bestandenen. Mechanisch geprüft: keine Ausgabe ist
+älter als die Skill-Datei, gegen die sie gemessen wurde, und keine Bewertung
+älter als der Testfall, gegen den sie geurteilt hat.
+
+## Arbeitsregel ab 19.08.2026: keine allgemeinen Regel-Sweeps mehr
+
+Die Bauregel-Gegenprobe hat alle zehn Skills gleichzeitig angefasst und damit
+sämtliche 32 Testfälle entwertet — der Dreifachlauf über 32 Fälle war die
+Rechnung dafür. **Verbleibende Befunde werden ab jetzt nur noch lokal im
+betroffenen Skill behoben.** Neu laufen dann die Fälle dieses einen Skills,
+dreimal, nicht das ganze Kit. Ein Sweep über alle Skills braucht eine eigene
+Entscheidung des Auftraggebers, weil er den Nachlauf über alle Fälle erzwingt.
+Protokolliert in `docs/entscheidungen.md`.
 
 ## Nächster Schritt
-**Vollregression fortsetzen — 21 Fälle, sieben Skills:**
-`ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`,
-`forecast-erklaerer`, `meeting-nachbereitung`, `outreach-personalisierer`,
-`preisverhandlungs-sparring`.
+**Phase 3 — Installer.** Phase 2 ist abgeschlossen und belegt: zehn Skills, 32
+Fälle, jeder dreimal erzeugt und dreimal getrennt bewertet, 32 bestanden.
 
-Der Aufbau steht und ist wiederverwendbar: Zerlegung, getrennte Anweisungen für
-Erzeugung und Bewertung, Statusskript, Berichtsgenerator. Ablauf je Fall:
-dreimal erzeugen, dreimal bewerten, Bericht schreiben, committen, pushen.
-Bestanden nur bei 3 von 3.
+Was Phase 3 mitbringt:
 
-Erst danach Phase 3 (Installer). Ein Installer, der ungeprüfte Skills ausrollt,
-verlagert jeden Fehler in die Beta.
+1. Die Pflichtanforderung **„Sitzungswechsel unsichtbar"** (Abschnitt oben und
+   `BAUPLAN.md`, Phase 3, Punkt 5) — Fortsetzen mit dem Wort „weiter", der
+   Assistent bietet den Wechsel von sich aus an, der Installer bringt es bei
+   und legt es zusätzlich in `notfall/` ab.
+2. Die offene Entscheidung zu **`{{preisgrundlage}}`** (keine Interviewfrage,
+   siehe `core/interview/mapping.md`, Abschnitt „Offen").
+
+Was aus Phase 2 offen bleibt, ohne Phase 3 zu blockieren:
+
+- **Testfall-Vorschlag `einwand-sparring/03`** — Absatz „Bewertungslage" aus
+  `## Eingabe` in den Kriterienteil verschieben. Entscheidung steht aus.
+- **Praxisfälle nach `testfaelle-praxis/`**, anonymisiert. Die konstruierten
+  Fälle haben ihren Zweck erfüllt; ihre Schärfe ist verbraucht. Vor der Beta.
+- **Neue Fälle von jemandem, der die Skills nicht gebaut hat** — besonders für
+  `preisverhandlungs-sparring`.
+
+Der Eval-Aufbau bleibt stehen und ist wiederverwendbar: Zerlegung in Eingabe-
+und Kriterienteil, getrennte Anweisungen für Erzeugung und Bewertung,
+Statusskript, Berichtsgenerator. Ablauf je Fall unverändert: dreimal erzeugen,
+dreimal bewerten, Bericht schreiben, committen, pushen. Bestanden nur bei
+3 von 3.

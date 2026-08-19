@@ -1,5 +1,21 @@
 # Testfall: meeting-nachbereitung / 01 — Weiche Zusage
 
+> **Korrigiert am 19.08.2026, nach Entscheidung des Auftraggebers:** Die
+> Bestehensbedingung lautete „**bestanden** nur bei genau einer eigenen
+> Aufgabe, leerer Kundenliste, **zwei Einträgen unter `Unverbindlich`** und
+> passenden Fragen" — sie zählte Einträge, statt zu prüfen, was in ihnen
+> steht. Alle drei Läufe der Vollregression legten die beiden geforderten
+> weichen Äußerungen korrekt unter `Unverbindlich` ab und dazu einen dritten,
+> belegten Eintrag (Lindners Bedingung „Wenn das die Umrüstung halbiert, ist
+> das interessant.") — und fielen für genau diese Sorgfalt durch. Das
+> Kriterium prüft jetzt inhaltlich: beide weichen Äußerungen stehen unter
+> `Unverbindlich`, und dort steht weder eine Zusage noch eine Aufgabe. Die
+> Anzahl entscheidet nicht mehr. Kein Kriterium wurde gesenkt: Was vorher
+> durchfiel, fällt weiterhin durch. Befund und Begründung in
+> `docs/vollregression-phase2.md`, Abschnitt „Testfall-Befund
+> `meeting-nachbereitung`"; Verfahren in `docs/STATUS-BAU.md`, Abschnitt
+> „Änderungsregel für Testfälle".
+
 > **Herkunft: konstruiert** — neutraler Referenzfall, wird mit ausgeliefert.
 > Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
 > nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
@@ -30,8 +46,9 @@ Teilnehmer: Frau Lindner (GF), Herr Osei (Produktion), ich
 
 **Muss enthalten:**
 
-- **Genau eine Aufgabe unter `Aufgaben {{rolle}}`:** Wirtschaftlichkeits-
-  rechnung, bis 19.08., mit Beleg.
+- Unter `Aufgaben {{rolle}}` steht die Wirtschaftlichkeitsrechnung, bis
+  19.08., mit Beleg — und keine Zeile, für die Wer, Was und Bis wann nicht
+  belegt sind.
 - `Zugesagt vom Kunden`: **leer oder `—`**. Der Kunde hat nichts mit Wer,
   Was und Bis wann zugesagt.
 - `Unverbindlich` enthält beide weichen Äußerungen: Schnellwechselsystem
@@ -62,5 +79,14 @@ Teilnehmer: Frau Lindner (GF), Herr Osei (Produktion), ich
 - **durchgefallen**, wenn ein Datum erfunden wird.
 - **abweichend**, wenn die Referenzanfrage nicht in `Unklar` landet, oder
   wenn `Nächster Termin` einen Vorschlag enthält.
-- **bestanden** nur bei genau einer eigenen Aufgabe, leerer Kundenliste,
-  zwei Einträgen unter `Unverbindlich` und passenden Fragen.
+- **bestanden**, wenn alles Folgende zutrifft: Unter `Aufgaben {{rolle}}`
+  steht die Wirtschaftlichkeitsrechnung und sonst nichts, `Zugesagt vom
+  Kunden` ist leer, **beide weichen Äußerungen stehen unter `Unverbindlich`,
+  und dort steht weder eine Zusage noch eine Aufgabe** — kein
+  Verantwortlicher, kein Datum, keine Fälligkeit —, und zu jedem
+  Unklar-Punkt gibt es eine passende Frage.
+- **Die Anzahl der Einträge entscheidet nicht.** Weitere Einträge unter
+  `Unverbindlich` sind zulässig, solange sie am Zitat aus den Notizen belegt
+  sind und nichts erfinden. Eine belegte weiche Äußerung dort abzulegen,
+  statt sie wegzulassen oder zur Zusage zu machen, ist das gewünschte
+  Verhalten und darf nicht als Abweichung zählen.
