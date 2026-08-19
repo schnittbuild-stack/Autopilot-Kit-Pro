@@ -62,16 +62,16 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `einwand-sparring` | 3 | **durch** — 3 bestanden (nach Korrektur, gegen den geschärften Testfall) |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | **durch** — 3 bestanden (nach Korrektur) |
-| `ketten` | 2 | 01 nach der Zahlenregel 3 von 3, 02 läuft |
+| `ketten` | 2 | **durch** — 2 bestanden (nach der Zahlenregel) |
 | `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
 | `outreach-personalisierer` | 3 | **durch** — 3 bestanden |
 | `preisverhandlungs-sparring` | 3 | **durch** — 3 bestanden (nach drei Korrekturen) |
 
-**Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `outreach-personalisierer`, `preisverhandlungs-sparring`
+**Durch:** neun von zehn Skills plus beide Ketten — `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `ketten`, `outreach-personalisierer`, `preisverhandlungs-sparring`
 
 **Neu zu laufen wegen der Zahlenregel (19.08.):** `angebots-schreiber` (3 Fälle) und beide `ketten`-Fälle, weil sie `angebots-schreiber` verwenden.
 
-**Offen:** beide `ketten`-Fälle (laufen wegen der Zahlenregel neu) · `meeting-nachbereitung` 01 und 03 warten auf die Testfall-Entscheidung
+**Nicht durch:** `meeting-nachbereitung` — 02 bestanden, 01 und 03 hängen an der Testfall-Entscheidung, nicht am Skill.
 
 ## Ergebnis
 
@@ -110,7 +110,11 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | bestanden | bestanden | bestanden | **bestanden** |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | bestanden | bestanden | bestanden | **bestanden** |
 
-**Stand: 30 von 32 abgeschlossen** — 28 bestanden · 1 abweichend · 1 wackelt · 2 offen.
+**Stand: 32 von 32 abgeschlossen** — 30 bestanden · 1 abweichend · 1 wackelt · 0 offen.
+
+*Die beiden verbleibenden Nicht-Bestanden sind `meeting-nachbereitung / 01`
+und `/ 03`. Beide scheitern an Zählkriterien, nicht am Verhalten des Skills —
+sie warten auf die Entscheidung des Auftraggebers (siehe Testfall-Befund).*
 
 *Die beiden `ketten`-Fälle standen auf bestanden, sind aber gegen die vorige
 `angebots-schreiber`-Fassung gemessen und zählen deshalb nicht mehr — sie
@@ -745,136 +749,28 @@ Sobald die beiden Punkte beantwortet sind, schreibe ich das Angebot. Bis dahin h
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
-## Stufe 1 — der Nutzer bittet: „Fass mal zum Hartmann-Angebot nach."
+Danke — damit steht der Stand: gesendet am 12.08.2026 per Mail. Fünf Werktage
+später ist heute, der 19.08.2026. Stufe 1 ist also fällig, und der Aufhänger
+kommt bindend aus dem Feld `Nachfassen`: das Zwischenreview nach Termin 2.
 
-Im Übergabeblock steht `Stand: entwurf`. Solange das Angebot nur als Entwurf
-geführt wird, schreibe ich kein Nachfassen — ein Nachfassen zu einem Angebot,
-das Herr Hartmann nie bekommen hat, lässt sich ihm gegenüber nicht mehr
-geradebiegen.
+---
 
-Ist das Angebot rausgegangen — wann und über welchen Kanal?
-
-Sobald das geklärt ist, schreibe ich das erste Nachfassen.
-
-## Stufe 2 — der Nutzer antwortet: „Ja, ist am 12.08. per Mail rausgegangen."
-
-Danke — damit ist `Stand: gesendet am 12.08. per Mail`. Das ist Stufe 1.
-… (64 weitere Zeilen)
-```
-
-**Prüfer, Lauf 1:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Solange das Angebot nur als Entwurf geführt wird, schreibe ich kein Nachfassen", gefolgt von exakt der geforderten Rückfrage „Ist das Angebot rausgegangen — wann und über welchen Kanal?"; die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen durchgängig gesiezten Text an den richtigen Empfänger — „Sehr geehrter Herr Hartmann", „ist am 12.08. per Mail zu Ihnen gegangen" —, das Verbot des Duzens im Kundentext ist eingehalten (geduzt wird nur {{rolle}} im internen Block „für dich, nicht für den Kunden"). Der Aufhänger ist der geforderte: „ich komme auf das Zwischenreview nach dem …
-
-**Prüfer, Lauf 2:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Ich schreibe hier noch kein Nachfassen. Im Übergabeblock steht `Stand: entwurf`" — die geforderte Rückfrage steht wörtlich so da, wie die Kriterien sie verlangen: „Ist das Angebot rausgegangen — wann und über welchen Kanal?" Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. In Stufe 2 liegt ein gesiezter Text an den Empfänger vor („Sehr geehrter Herr Hartmann, … ist am 12.08. per Mail bei Ihnen eingegangen"), Duzen kommt im Kundentext nicht vor; das „du" steht ausschließlich im ausdrücklich als intern gekennzeichneten Teil („Block B — für dich, nicht für den Kunden"). Der Aufhänger ist der …
-
-**Prüfer, Lauf 3:** Stufe 1 erzeugt keinen Nachfass-Text, sondern hält an: „Ich habe hier noch keinen Nachfass-Text geschrieben. Im Übergabeblock steht `Stand: entwurf`" und stellt genau die geforderte Rückfrage „Ist das Angebot rausgegangen — wann und über welchen Kanal?". Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Text an den richtigen Adressaten („Sehr geehrter Herr Hartmann", „der Punkt ist für Ihre Entscheidung der wichtigste"); Duzen kommt im Kundentext nicht vor, das „für dich" in Block B richtet sich an {{rolle}}, nicht an den Kunden. Der Aufhänger setzt am erwarteten Einwand an, ohne die Garantie zu streifen: „ich komme …
-
-### preisverhandlungs-sparring / 03-auswertung-beziffert
-
-**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
-
-**Ist-Ausgabe (Lauf 1, gekürzt):**
+**Block A — die Nachricht (versandfertig)**
 
 ```
-```
-Runden:              6
-Ausgangspreis:       48.000 EUR
-Endstand:            42.500 EUR — dazu Einweisung und Anlieferung ohne Berechnung
-Verschenkt:          5.500 EUR am Preis, in drei Schritten:
-                     2.400 EUR — „Ich kann Ihnen 5 % entgegenkommen, dann sind
-                                 wir bei 45.600."
-                     1.600 EUR — „Gut, machen wir 44.000, aber dann ist wirklich
-                                 Schluss."
-                     1.500 EUR — „42.500 kann ich noch darstellen."
-                     Nachgerechnet: 2.400 + 1.600 + 1.500 = 5.500.
-                     48.000 − 5.500 = 42.500.
+Betreff: Re: Angebot Vertriebscoaching, 4 Termine ab September
 
-                     Nebenrechnung, nicht im Endstand enthalten — zwei Leistungen
-… (51 weitere Zeilen)
+Sehr geehrter Herr Hartmann,
+
+ich melde mich zu dem Zwischenreview, das im Angebot nach Termin 2 vorgesehen
+… (49 weitere Zeilen)
 ```
 
-**Prüfer, Lauf 1:** Die Pflichtzahlen stehen wörtlich da: „Ausgangspreis:       48.000 EUR" und „Endstand:            42.500 EUR — dazu Einweisung und Anlieferung ohne Berechnung". Die Durchgefallen-Regel „wenn `Verschenkt` keinen Betrag nennt" greift nicht — das Feld beziffert jeden Einzelschritt („2.400 EUR", „1.600 EUR", „1.500 EUR") und rechnet vor: „Nachgerechnet: 2.400 + 1.600 + 1.500 = 5.500" und „48.000 − 5.500 = 42.500", beides stimmt. Auch die zweite Durchgefallen-Regel greift nicht: Einweisung und Anlieferung werden nicht nur erwähnt, sondern eingerechnet — „1.200 + 800 = 2.000. Zusammen mit dem Preis: 5.500 + 2.000 = 7.500 EUR abgegeben", ergänzt um die ebenfalls korrekte Gegenprobe „42.500 − 2.000 = 40.500 EUR, das sind 48.000 − 7.500"; die Aufzählung „Für 2.400, 1.600, …
+**Prüfer, Lauf 1:** Stufe 1 erfüllt die Anforderung „Kein Nachfass-Text" wörtlich: die Ausgabe beginnt mit „Hier entsteht noch kein Nachfass-Text." und begründet das mit „Im Übergabeblock steht `Stand: entwurf`." — es folgt kein einziger versandfertiger Satz an den Kunden. Die geforderte Rückfrage steht hervorgehoben und inhaltsgleich da: „**Ist das Angebot rausgegangen — wann und über welchen Kanal?**", und die Ausgabe hält danach ausdrücklich an („deshalb halte ich hier an, statt zu schreiben"). Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Nachfass-Text an den richtigen Empfänger: „Sehr geehrter Herr Hartmann," mit durchgehender Sie-Form („bei Ihnen eingegangen", „Wann passt Ihnen dafür ein Telefonat von 15 …
 
-**Prüfer, Lauf 2:** Die Pflichtzahlen stehen wörtlich da: `Ausgangspreis:       48.000 EUR` und `Endstand:            42.500 EUR auf der Rechnung`, ergänzt um „als Gegenwert 40.500 EUR, weil Einweisung und Anlieferung ohne Berechnung mitgehen" — der geforderte Endstand 42.500 wird dadurch nicht ersetzt, sondern nur um eine korrekte zweite Größe erweitert. Die Durchgefallen-Regel „wenn `Verschenkt` keinen Betrag nennt" greift nicht: `Verschenkt:          7.500 EUR` ist beziffert. Die zweite Durchgefallen-Regel greift ebenfalls nicht, denn Sachleistungen gehen ausdrücklich in die Summe ein („1.200 EUR — „Die Einweisung nehmen wir mit rein…"", „800 EUR — „Und die Anlieferung übernehmen wir auch…""), und die Rechnung stimmt: 2.400 + 1.600 + 1.500 + 1.200 + 800 = 7.500, Preisachse allein …
+**Prüfer, Lauf 2:** Stufe 1 hält an: Die Antwort beginnt mit "Ich schreibe hier noch keinen Nachfass-Text" und begründet das mit "Im Übergabeblock steht `Stand: entwurf`"; sie stellt genau die geforderte Rückfrage in der verlangten Form — "**Ist das Angebot rausgegangen — wann und über welchen Kanal?**" — und endet mit "Danach mache ich weiter", also ohne jeden Kundentext. Die Durchgefallen-Regel "wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Nachfass-Text an den richtigen Empfänger: "Sehr geehrter Herr Hartmann", durchgehend "bei Ihnen", "Ihren Leuten", "Wann passt Ihnen ein kurzes Telefonat dazu?" — kein Duzen im Kundentext; das "für dich" in Block B richtet sich ausdrücklich an {{rolle}} und ist als "nicht für den Kunden" …
 
-**Prüfer, Lauf 3:** Die Pflichtwerte stehen wörtlich da: „Ausgangspreis:       48.000 EUR" und „Endstand:            42.500 EUR — dazu Einweisung und Anlieferung ohne Berechnung". Die Durchgefallen-Regel „wenn `Verschenkt` keinen Betrag nennt" greift nicht — der Block beziffert ab der ersten Zeile („Verschenkt:          5.500 EUR am Preis") und führt die Rechnung bis „Insgesamt weg: 5.500 + 2.000 = 7.500 EUR, 15,6 % vom Ausgangspreis". Auch die zweite Durchgefallen-Regel greift nicht: Einweisung und Anlieferung werden nicht nur erwähnt, sondern als „1.200 EUR, Runde 5" und „800 EUR, Runde 6" addiert und in die Gesamtsumme eingerechnet. Nachgerechnet stimmt jede Zahl: 48.000 × 5 % = 2.400 → 45.600; 45.600 − 44.000 = 1.600; 44.000 − 42.500 = 1.500; 2.400 + 1.600 + 1.500 = 5.500; 48.000 − …
-
-## Anmerkung zu einem Testfall — gemeldet, nicht geändert
-
-`einwand-sparring / 03-ehrliche-auswertung` trägt im Abschnitt `## Eingabe`
-einen Absatz „Bewertungslage", der die Soll-Bewertung weitgehend vorwegnimmt:
-welche Runde trug, welche der teuerste Satz war, welche Bedingung fehlte. Nach
-der Methode dieses Laufs geht der Eingabeteil vollständig an den erzeugenden
-Lauf — er bekommt damit die Analyse mitgeliefert und muss sie nur noch
-formatieren. Der Fall prüft also schwächer, als er aussieht: nicht, ob der
-Skill einen schwachen Durchlauf **erkennt**, sondern ob er eine vorgegebene
-Einschätzung sauber einsortiert. Genau daran ist er in dieser Sitzung dennoch
-gescheitert (Befund 4), was den Fall nicht wertlos macht.
-
-**Nicht geändert.** Nach der Änderungsregel vom 18.08.2026 wird ein Testfall
-erst nach Entscheidung des Auftraggebers angefasst, mit Änderungsvermerk. Der
-Lauf ist hier gegen den Fall gelaufen, wie er ist. Vorschlag zur Entscheidung:
-den Absatz „Bewertungslage" aus `## Eingabe` in den Kriterienteil verschieben —
-dann misst der Fall, was er zu messen vorgibt.
-
-### meeting-nachbereitung / 02-widerspruch
-
-**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
-
-**Ist-Ausgabe (Lauf 1, gekürzt):**
-
-```
-**Termin:** 14.08.2026, Jour fixe Weberhaus GmbH
-
-**Teilnehmer:** Herr Weber, Frau Kranz (Einkauf), ich
-
-**Worum es ging:** Stand des Projekts bei Weberhaus. Besprochen wurden Zeitplan, Budget und die Abnahme durch die IT. Bei Zeitplan und Budget gibt es zwei sich widersprechende Aussagen aus dem Termin.
-
-**Entscheidungen:** —
-
-**Aufgaben Inhaberin:**
-
-| Wer | Was | Bis wann | Beleg (wörtlich) |
-|---|---|---|---|
-| Ich | Projektplan liefern | 22.08.2026 | „Ich liefere den Projektplan bis 22.08." |
-
-… (21 weitere Zeilen)
-```
-
-**Prüfer, Lauf 1:** Beide Widersprüche stehen unter `Widersprüche` und tragen jeweils beide Varianten: Zeitplan mit „Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober" gegen „Livegang 15.11., davor kein Personal frei", Budget mit „Budget ist freigegeben, 40.000" gegen „40.000 noch durch die Bereichsleitung müssen". Zu jeder Variante ist eine Fundstelle angegeben — Sprecher und Stelle im Gespräch, etwa „(Weber, Anfang des Gesprächs)" bzw. „(Kranz, später im Gespräch)" —, dazu das wörtliche Zitat selbst, damit ist die Anforderung „mit beiden Varianten und der Fundstelle" wörtlich belegt. Die Durchgefallen-Regel „einer der beiden Widersprüche aufgelöst, gedeutet oder weggelassen" greift nicht: beide Einträge enden ausdrücklich mit „Nicht aufgelöst.", es fehlt jede Wendung wie …
-
-**Prüfer, Lauf 2:** Erste Durchgefallen-Regel („wenn einer der beiden Widersprüche aufgelöst, gedeutet oder weggelassen wird"): nicht ausgelöst — beide Punkte stehen unter `Widersprüche`, der Zieltermin als „Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober" gegen „Livegang 15.11., davor kein Personal frei" und das Budget als „Budget ist freigegeben, 40.000" gegen „40.000 noch durch die Bereichsleitung müssen"; beide Varianten sind wörtlich vorhanden, keine wird stillschweigend weggelassen. Eine Auswahl oder erklärende Auflösung („vermutlich ist der 15.11. gemeint", „wahrscheinlich Rollout intern, Livegang extern") kommt an keiner Stelle vor, stattdessen steht zweimal ausdrücklich „Beide Angaben stehen so in den Notizen, keine ist gestrichen." Die Angabe „später im Gespräch" …
-
-**Prüfer, Lauf 3:** Beide Durchgefallen-Regeln greifen nicht: Kein Widerspruch ist aufgelöst, gedeutet oder weggelassen — unter `Widersprüche:` stehen beide Punkte vollständig mit je beiden Varianten, nämlich „Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober" gegen „Livegang 15.11., davor kein Personal frei" sowie „Budget ist freigegeben, 40.000" gegen „40.000 noch durch die Bereichsleitung". Das Budget wird nicht als freigegeben protokolliert: `Entscheidungen:` ist ausdrücklich mit „—" leer, und die strittige Freigabe erscheint ausschließlich als Widerspruch, nicht als gesicherte Entscheidung. Eine Formulierung, die einen der Widersprüche als geklärt darstellt, fehlt vollständig; nirgends steht ein „vermutlich", eine Erklärung wie „Rollout intern, Livegang extern" oder ein …
-
-### meeting-nachbereitung / 03-stichwortnotizen
-
-**Läufe:** bestanden · abweichend · bestanden   ·   **Ergebnis: wackelt**
-
-**Ist-Ausgabe (Lauf 1, gekürzt):**
-
-```
-Termin:            15.08.2026 — Anlass nicht notiert (Beleg: „Nortmann 15.8.")
-Teilnehmer:        Nortmann (Beleg: „Nortmann 15.8.") — Vorname, Funktion und weitere Teilnehmer stehen nicht in den Notizen
-Worum es ging:     Die Notizen zum 15.08.2026 sind mit „Nortmann" überschrieben und enthalten fünf Stichpunkte: Preis, Muster, ein Termin im Oktober, ein Zertifikat und eine Rückmeldung. Ein Thema oder Anlass des Gesprächs ist nicht festgehalten. Zu keinem der fünf Punkte ist notiert, wer ihn übernimmt oder bis wann.
-
-Entscheidungen:    —
-
-Aufgaben Inhaberin:
-  —
-
-Zugesagt vom Kunden:
-  —
-
-Unverbindlich:     —
-Widersprüche:      —
-… (18 weitere Zeilen)
-```
-
-**Prüfer, Lauf 1:** Durchgefallen-Regel 1 („wenn eine Aufgabe mit Verantwortlichem oder Datum entsteht") greift nicht: unter „Aufgaben Inhaberin:" steht nur „—" und unter „Zugesagt vom Kunden:" ebenfalls nur „—", es entsteht also keine einzige Aufgabe, weder mit Verantwortlichem noch mit Fälligkeit. Durchgefallen-Regel 2 („wenn Rollen oder Themen ergänzt werden") greift ebenfalls nicht: zu „Nortmann" wird ausdrücklich vermerkt „Vorname, Funktion und weitere Teilnehmer stehen nicht in den Notizen", eine Rolle im Sinne von „Herr Nortmann, vermutlich Einkauf" wird nirgends behauptet; das „Herr Nortmann?" in Frage 5 ist als Rückfrage formuliert, nicht als Feststellung. Auch ein Thema wird nicht ergänzt — der Absatz „Worum es ging" zählt nur die vorhandenen Stichworte auf und stellt fest: „Ein …
-
-**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („durchgefallen, wenn eine Aufgabe mit Verantwortlichem oder Datum entsteht") greift nicht: beide Tabellen sind leer („| — | — | — | — |") und werden ausdrücklich kommentiert mit „Keine Aufgabe belegt: zu keinem der fünf Punkte sind Verantwortlicher und Frist notiert." sowie „Keine Zusage belegt." Auch die zweite Durchgefallen-Regel („wenn Rollen oder Themen ergänzt werden") greift nicht: Nortmann bekommt keine erfundene Funktion, sondern „Rolle von Nortmann und weitere Teilnehmer sind nicht notiert", und statt eines behaupteten Gesprächsthemas steht „Ein Thema oder Anlass des Gesprächs geht aus den Notizen nicht hervor." Kein erfundenes Fälligkeitsdatum kommt vor, und der Oktobertermin gilt nicht als vereinbart — „„termin okt?" — kein …
-
-**Prüfer, Lauf 3:** Durchgefallen-Regel 1 („wenn eine Aufgabe mit Verantwortlichem oder Datum entsteht") greift nicht: beide Tabellen tragen ausschließlich die Leerzeile „| — | — | — | — |", darunter steht „Keine. Zu keinem der fünf Punkte steht in den Notizen, wer ihn übernimmt." und „Keine. Auch hier fehlt zu jedem Punkt der Verantwortliche." — es entsteht weder ein Verantwortlicher noch ein Fälligkeitsdatum, auch kein „zeitnah" oder „bis KW 34". Durchgefallen-Regel 2 („wenn Rollen oder Themen ergänzt werden") greift ebenfalls nicht: die Rolle wird ausdrücklich offengelassen („Teilnehmer: Nortmann — Vorname und Rolle nicht notiert"), eine Erfindung wie „vermutlich Einkauf" fehlt vollständig, und die Zeile „Worum es ging" zählt nur die Stichworte auf und setzt sofort die Einschränkung …
+**Prüfer, Lauf 3:** Stufe 1 hält an: Die Ausgabe beginnt mit „Hier entsteht kein Nachfass-Text.", begründet das über „Im Übergabeblock steht `Stand: entwurf`." und stellt exakt die geforderte Rückfrage „**Ist das Angebot rausgegangen — wann und über welchen Kanal?**" — kein Kundentext, kein Entwurf, kein Vorgriff, damit greift die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" nicht. Stufe 2 liefert einen Nachfass-Text an Martin Hartmann, durchgehend gesiezt („Sehr geehrter Herr Hartmann", „Passt Ihnen dazu ein kurzes Telefonat"), also kein Duzen. Der Aufhänger setzt am erwarteten Einwand an und ist genau der geforderte: „ich melde mich wegen des Zwischenreviews, den mein Angebot nach Termin 2 vorsieht", ausgeführt als „Nach den ersten beiden Terminen setzen wir uns …
 
 ### meeting-nachbereitung / 01-weiche-zusage
 
