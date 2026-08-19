@@ -58,7 +58,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `account-recherche` | 3 | **durch** — 3 bestanden |
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
-| `crm-notiz-zu-schritt` | 3 | angefangen — 1 von 3 bestanden |
+| `crm-notiz-zu-schritt` | 3 | angefangen — 2 von 3 bestanden |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | offen — noch nicht gelaufen |
@@ -85,7 +85,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ausschreibungs-analyse / 02-frist-abgelaufen` | bestanden | bestanden | bestanden | **bestanden** |
 | `ausschreibungs-analyse / 03-unvollstaendige-unterlage` | bestanden | bestanden | bestanden | **bestanden** |
 | `crm-notiz-zu-schritt / 01-verlorene-opportunity` | bestanden | bestanden | bestanden | **bestanden** |
-| `crm-notiz-zu-schritt / 02-leere-notiz` | — | — | — | offen |
+| `crm-notiz-zu-schritt / 02-leere-notiz` | bestanden | bestanden | bestanden | **bestanden** |
 | `crm-notiz-zu-schritt / 03-ansprechpartner-weg` | — | — | — | offen |
 | `einwand-sparring / 01-kunde-knickt-ein` | — | — | — | offen |
 | `einwand-sparring / 02-rollenbruch` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 15 von 32 abgeschlossen** — 15 bestanden · 17 offen.
+**Stand: 16 von 32 abgeschlossen** — 16 bestanden · 16 offen.
 
 ## Die einzelnen Fälle
 
@@ -406,6 +406,36 @@ Anmerkung zum Liefertermin: Der Satz "Semmler konnte den Liefertermin im Septemb
 **Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („Rettungsversuch als Aktion") habe ich geprüft und sie greift nicht: die Ausgabe schlägt weder Nachverhandlung noch Alternativangebot, Anruf beim Geschäftsführer oder Nachfassen vor, sondern begründet ausdrücklich „Ein unterschriebener Vertrag beim Wettbewerber lässt in dieser Opportunity keinen Schritt mehr offen."; der einzige weitere Hinweis am Ende ist ausdrücklich ausgeklammert — „ist das eine eigene Auswertung, kein Schritt in diesem Vorgang." Die zweite Durchgefallen-Regel (`Ergebnis` nicht `schliessen`) greift ebenfalls nicht, denn die Ausgabe nennt genau ein Ergebnis: „Ergebnis:      schliessen" mit „Grund:       Auftrag ist vergeben und der Vertrag unterschrieben." — es werden keine Ergebnisoptionen zur Auswahl gestellt. Die …
 
 **Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („Rettungsversuch als Aktion") habe ich Zeile für Zeile geprüft und nicht ausgelöst gefunden: die Ausgabe schlägt weder Nachverhandlung noch Alternativangebot, Anruf oder Nachfassen vor, sondern schließt das ausdrücklich aus mit „ein Nachfassen hätte nichts mehr, worauf es sich beziehen könnte." Auch der Nebensatz zur Kapazität bleibt außerhalb dieser Opportunity, denn er wird als „eine Frage an die Kapazitätsplanung — das ist ein eigener Vorgang, kein Schritt in dieser Opportunity" gerahmt und ist damit keine Rettungsaktion. Die zweite Durchgefallen-Regel („Ergebnis nicht schliessen") greift ebenfalls nicht, da wörtlich „Ergebnis:      schliessen" steht, mit dem passenden „Grund:       Der Auftrag ist vergeben und der Vertrag …
+
+### crm-notiz-zu-schritt / 02-leere-notiz
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+```
+Signal:        unklar
+Belegsatz:     —
+Einschätzung statt Beleg:  "War ein angenehmes Gespräch, er wirkte interessiert" ist Ihr Eindruck vom Gespräch, kein Verhalten von Herrn Pahlke.
+Ergebnis:      rueckfrage
+
+  Frage:       Was genau wollte sich Herr Pahlke überlegen — welcher konkrete Vorschlag lag ihm vor?
+
+Begründung:    Kein Satz der Notiz trägt einen nächsten Schritt; "Wollte sich das nochmal überlegen" nennt keinen Gegenstand, ohne den weder Aktion noch Wiedervorlage bestimmbar sind.
+Zweiter Vorgang:  —
+CRM-Zeile:     16.08.2026 Telefonat Herr Pahlke (Erstkontakt): kein konkreter Vorschlag und kein Rückmeldetermin dokumentiert.
+               Nächster Schritt offen — Gesprächsinhalt nachtragen.
+```
+
+… (1 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die beiden Pflichtmarker sind wörtlich vorhanden: „Signal:        unklar" und „Ergebnis:      rueckfrage". Die erste Durchgefallen-Regel („eine Aktion oder eine datierte Wiedervorlage wird vorgeschlagen") greift nicht: keine der verbotenen Aktionen taucht auf, die Ausgabe sagt im Gegenteil „Ein Schritt aus dieser Notiz wäre erfunden" und hält in der CRM-Zeile „Nächster Schritt offen" fest; der einzige Zusatz „Gesprächsinhalt nachtragen" ist die Dokumentation derselben Lücke und kein Vertriebsschritt, und der Schlusssatz „Sobald der Gegenstand feststeht, ergibt sich daraus Aktion oder Wiedervorlage mit Datum" bleibt rein konditional ohne selbstgewähltes Datum — das einzige Datum „16.08.2026" ist das Gesprächsdatum, keine Wiedervorlage. Die zweite Durchgefallen-Regel …
+
+**Prüfer, Lauf 2:** Die beiden Pflichtmarker sind wörtlich vorhanden: Zeile 1 lautet „Signal:        unklar" und Zeile 4 „Ergebnis:      rueckfrage", damit ist die geforderte Rückfrage-Stufe gesetzt. Die erste Durchgefallen-Regel (Aktion oder datierte Wiedervorlage) habe ich Zeile für Zeile geprüft und sie greift nicht: nirgends steht ein Nachfassen, ein Unterlagenversand, ein Terminangebot oder eine Nutzenargumentation, und das einzige Datum im Text ist das Gesprächsdatum in der CRM-Zeile „16.08.2026 Telefonat Hr. Pahlke, Erstkontakt: kein konkretes Ergebnis festgehalten.", also keine selbstgewählte Wiedervorlage. Die zweite Durchgefallen-Regel („wirkte interessiert" als Beleg für Fortschritt) greift ebenfalls nicht, im Gegenteil: der Belegsatz ist ausdrücklich leer — „Belegsatz:     — …
+
+**Prüfer, Lauf 3:** Die beiden Pflichtmarker sind wörtlich vorhanden: Zeile 1 lautet „Signal:        unklar" und Zeile 4 lautet „Ergebnis:      rueckfrage", damit ist die Grundbedingung der Bestanden-Regel („nur bei `rueckfrage`") erfüllt. Die Ausgabe enthält genau ein Fragezeichen, nämlich in „Frage:         Was genau wollte sich Herr Pahlke überlegen — lag ihm dazu ein konkretes Thema, eine Zahl oder eine Unterlage vor?"; alle übrigen Zeilen sind Aussagesätze, also greift die Abweichend-Regel „mehr als eine Frage" nicht. Diese eine Frage zielt auf die Substanzlücke (Gegenstand des Überlegens) und nicht auf Formalien, sie ist damit nicht „zu allgemein" im Sinne des Gegenbeispiels „Wie geht es weiter?" — auch die zweite Abweichend-Regel greift nicht. Die geforderte Einordnung der …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
