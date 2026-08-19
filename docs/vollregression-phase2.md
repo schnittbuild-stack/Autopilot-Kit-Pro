@@ -65,13 +65,13 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ketten` | 2 | zählt nicht mehr — beide Fälle nutzen `angebots-schreiber` und laufen wegen der Zahlenregel neu |
 | `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
 | `outreach-personalisierer` | 3 | **durch** — 3 bestanden |
-| `preisverhandlungs-sparring` | 3 | 01 und 02 nach drei Korrekturen je 3 von 3, 03 läuft |
+| `preisverhandlungs-sparring` | 3 | **durch** — 3 bestanden (nach drei Korrekturen) |
 
-**Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `outreach-personalisierer`
+**Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `outreach-personalisierer`, `preisverhandlungs-sparring`
 
 **Neu zu laufen wegen der Zahlenregel (19.08.):** `angebots-schreiber` (3 Fälle) und beide `ketten`-Fälle, weil sie `angebots-schreiber` verwenden.
 
-**Offen für die nächste Sitzung:** `meeting-nachbereitung`, `outreach-personalisierer`, `preisverhandlungs-sparring`
+**Offen:** beide `ketten`-Fälle (laufen wegen der Zahlenregel neu) · `meeting-nachbereitung` 01 und 03 warten auf die Testfall-Entscheidung
 
 ## Ergebnis
 
@@ -108,9 +108,9 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `outreach-personalisierer / 03-massenversand` | bestanden | bestanden | bestanden | **bestanden** |
 | `preisverhandlungs-sparring / 01-sofortiges-nachgeben` | bestanden | bestanden | bestanden | **bestanden** |
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | bestanden | bestanden | bestanden | **bestanden** |
-| `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
+| `preisverhandlungs-sparring / 03-auswertung-beziffert` | bestanden | bestanden | bestanden | **bestanden** |
 
-**Stand: 29 von 32 abgeschlossen** — 27 bestanden · 1 abweichend · 1 wackelt · 3 offen.
+**Stand: 30 von 32 abgeschlossen** — 28 bestanden · 1 abweichend · 1 wackelt · 2 offen.
 
 *Die beiden `ketten`-Fälle standen auf bestanden, sind aber gegen die vorige
 `angebots-schreiber`-Fassung gemessen und zählen deshalb nicht mehr — sie
@@ -764,6 +764,36 @@ Danke — damit ist `Stand: gesendet am 12.08. per Mail`. Das ist Stufe 1.
 **Prüfer, Lauf 2:** Stufe 1 hält an und erzeugt keinen Nachfass-Text: „Ich schreibe hier noch kein Nachfassen. Im Übergabeblock steht `Stand: entwurf`" — die geforderte Rückfrage steht wörtlich so da, wie die Kriterien sie verlangen: „Ist das Angebot rausgegangen — wann und über welchen Kanal?" Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. In Stufe 2 liegt ein gesiezter Text an den Empfänger vor („Sehr geehrter Herr Hartmann, … ist am 12.08. per Mail bei Ihnen eingegangen"), Duzen kommt im Kundentext nicht vor; das „du" steht ausschließlich im ausdrücklich als intern gekennzeichneten Teil („Block B — für dich, nicht für den Kunden"). Der Aufhänger ist der …
 
 **Prüfer, Lauf 3:** Stufe 1 erzeugt keinen Nachfass-Text, sondern hält an: „Ich habe hier noch keinen Nachfass-Text geschrieben. Im Übergabeblock steht `Stand: entwurf`" und stellt genau die geforderte Rückfrage „Ist das Angebot rausgegangen — wann und über welchen Kanal?". Die Durchgefallen-Regel „wenn in Stufe 1 ein Nachfass-Text erzeugt wird" greift damit nicht. Stufe 2 liefert einen gesiezten Text an den richtigen Adressaten („Sehr geehrter Herr Hartmann", „der Punkt ist für Ihre Entscheidung der wichtigste"); Duzen kommt im Kundentext nicht vor, das „für dich" in Block B richtet sich an {{rolle}}, nicht an den Kunden. Der Aufhänger setzt am erwarteten Einwand an, ohne die Garantie zu streifen: „ich komme …
+
+### preisverhandlungs-sparring / 03-auswertung-beziffert
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+```
+Runden:              6
+Ausgangspreis:       48.000 EUR
+Endstand:            42.500 EUR — dazu Einweisung und Anlieferung ohne Berechnung
+Verschenkt:          5.500 EUR am Preis, in drei Schritten:
+                     2.400 EUR — „Ich kann Ihnen 5 % entgegenkommen, dann sind
+                                 wir bei 45.600."
+                     1.600 EUR — „Gut, machen wir 44.000, aber dann ist wirklich
+                                 Schluss."
+                     1.500 EUR — „42.500 kann ich noch darstellen."
+                     Nachgerechnet: 2.400 + 1.600 + 1.500 = 5.500.
+                     48.000 − 5.500 = 42.500.
+
+                     Nebenrechnung, nicht im Endstand enthalten — zwei Leistungen
+… (51 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die Pflichtzahlen stehen wörtlich da: „Ausgangspreis:       48.000 EUR" und „Endstand:            42.500 EUR — dazu Einweisung und Anlieferung ohne Berechnung". Die Durchgefallen-Regel „wenn `Verschenkt` keinen Betrag nennt" greift nicht — das Feld beziffert jeden Einzelschritt („2.400 EUR", „1.600 EUR", „1.500 EUR") und rechnet vor: „Nachgerechnet: 2.400 + 1.600 + 1.500 = 5.500" und „48.000 − 5.500 = 42.500", beides stimmt. Auch die zweite Durchgefallen-Regel greift nicht: Einweisung und Anlieferung werden nicht nur erwähnt, sondern eingerechnet — „1.200 + 800 = 2.000. Zusammen mit dem Preis: 5.500 + 2.000 = 7.500 EUR abgegeben", ergänzt um die ebenfalls korrekte Gegenprobe „42.500 − 2.000 = 40.500 EUR, das sind 48.000 − 7.500"; die Aufzählung „Für 2.400, 1.600, …
+
+**Prüfer, Lauf 2:** Die Pflichtzahlen stehen wörtlich da: `Ausgangspreis:       48.000 EUR` und `Endstand:            42.500 EUR auf der Rechnung`, ergänzt um „als Gegenwert 40.500 EUR, weil Einweisung und Anlieferung ohne Berechnung mitgehen" — der geforderte Endstand 42.500 wird dadurch nicht ersetzt, sondern nur um eine korrekte zweite Größe erweitert. Die Durchgefallen-Regel „wenn `Verschenkt` keinen Betrag nennt" greift nicht: `Verschenkt:          7.500 EUR` ist beziffert. Die zweite Durchgefallen-Regel greift ebenfalls nicht, denn Sachleistungen gehen ausdrücklich in die Summe ein („1.200 EUR — „Die Einweisung nehmen wir mit rein…"", „800 EUR — „Und die Anlieferung übernehmen wir auch…""), und die Rechnung stimmt: 2.400 + 1.600 + 1.500 + 1.200 + 800 = 7.500, Preisachse allein …
+
+**Prüfer, Lauf 3:** Die Pflichtwerte stehen wörtlich da: „Ausgangspreis:       48.000 EUR" und „Endstand:            42.500 EUR — dazu Einweisung und Anlieferung ohne Berechnung". Die Durchgefallen-Regel „wenn `Verschenkt` keinen Betrag nennt" greift nicht — der Block beziffert ab der ersten Zeile („Verschenkt:          5.500 EUR am Preis") und führt die Rechnung bis „Insgesamt weg: 5.500 + 2.000 = 7.500 EUR, 15,6 % vom Ausgangspreis". Auch die zweite Durchgefallen-Regel greift nicht: Einweisung und Anlieferung werden nicht nur erwähnt, sondern als „1.200 EUR, Runde 5" und „800 EUR, Runde 6" addiert und in die Gesamtsumme eingerechnet. Nachgerechnet stimmt jede Zahl: 48.000 × 5 % = 2.400 → 45.600; 45.600 − 44.000 = 1.600; 44.000 − 42.500 = 1.500; 2.400 + 1.600 + 1.500 = 5.500; 48.000 − …
 
 ## Anmerkung zu einem Testfall — gemeldet, nicht geändert
 
