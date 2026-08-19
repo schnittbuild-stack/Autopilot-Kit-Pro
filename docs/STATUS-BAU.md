@@ -46,22 +46,23 @@
 - [ ] **Phase 3 — Installer fertigstellen (nächster Schritt)**
   - [x] Anforderungen 1–4 und Definition of Done in `BAUPLAN.md` und hier
         festgeschrieben (19.08.2026) — gebaut wird erst danach
-  - [x] Anforderung 1 — **Sitzungswechsel unsichtbar** (gebaut, ungetestet)
+  - [x] Anforderung 1 — **Sitzungswechsel unsichtbar — GETESTET UND BESTANDEN**
     - [x] „weiter" als Startsignal in `CLAUDE.vorlage.md` und im Installer
     - [x] STATUS-Vorlage trägt „Der erste Satz an den Nutzer" wörtlich
     - [x] Installer bietet nach **jeder** Phase den frischen Start an
     - [x] Phase 5 übt „weiter" einmal mit dem Nutzer
     - [x] Anleitung zusätzlich in `notfall/01-weiter-machen.md`
-    - [ ] **Abbruch-Test in allen fünf Phasen — steht aus**
+    - [x] **Abbruch-Test in allen fünf Phasen — 5 von 5 bestanden (20.08.2026)**
+          (`docs/abbruch-test-phase3.md`)
   - [x] Anforderung 2 — **`meine-unterlagen/` als dritte Wissensquelle**
     - [x] Aufbau festgeschrieben: `core/unterlagen/aufbau.md`
     - [x] Installer legt den Ordner in Phase 1 an, fragt in Phase 2 danach
           (Frage 9, blockiert nie)
-  - [x] Anforderung 3 — **Preise sind nicht statisch** (gebaut, ungeprüft)
+  - [x] Anforderung 3 — **Preise sind nicht statisch — GEPRÜFT**
     - [x] Regeln festgeschrieben: `core/unterlagen/preisregeln.md`
     - [x] `angebots-schreiber` nachgezogen, Vertrag um `Preisstand` erweitert,
-          zwei neue Testfälle (`04`, `05`) — **Läufe stehen aus**, siehe
-          „Nachlauf Phase 3"
+          zwei neue Testfälle (`04`, `05`) — **beide gelaufen, beide bestanden**
+          gegen echte Preisdateien (`docs/nachlauf-phase3.md`)
   - [x] Anforderung 4 — **aufgeräumte Kundenansicht**
     - [x] Zielbaum im Installer, `START.vorlage.md`, Umräumen nach `system/`
           in Phase 1, Zuordnung Alltagssatz → Assistent statt Skill-Auswahl
@@ -264,20 +265,42 @@ Begründung: Ein Käufer, der nach der Einrichtung `core/`, `vertraege/` und
 `testfaelle/` sieht, denkt „Entwicklerkram" — genau das entscheidet über den
 Wow-Moment.
 
-## Definition of Done Phase 3
+## Definition of Done Phase 3 — Stand 20.08.2026
 
-Alle vier Punkte müssen erfüllt sein:
+Alle vier Punkte müssen erfüllt sein.
 
-1. **Kompletter Durchlauf auf einem frischen, fremden Rechner unter 30 Minuten**,
-   ohne Vorkenntnisse der Testperson.
-2. **Abbruch-Test bestanden.** Die Sitzung wird in **jeder der fünf Phasen**
-   hart beendet. Die Fortsetzung gelingt, indem die Testperson **„weiter"**
-   tippt — ohne jede Erklärung durch uns, kein Übergabetext, kein Souffleur.
-   Klappt das nicht, ist Phase 3 nicht fertig.
-3. **`notfall/` deckt die fünf häufigsten Fehlerbilder ab** — plus die
-   „weiter"-Anleitung.
-4. **Die Kundenansicht enthält keinen technischen Begriff und keinen Ordner,
-   der nicht erklärt wurde.**
+**1. Kompletter Durchlauf auf einem frischen, fremden Rechner unter 30 Minuten,
+ohne Vorkenntnisse der Testperson.** — **OFFEN.** Nie gemessen. Der simulierte
+Durchlauf im Abbruch-Test lief über fünf Sitzungen und sagt nichts über die
+Zeit, weil er die Antworten aus einem Drehbuch nahm. Nach dem, was der Durchlauf
+an Arbeit gezeigt hat — zehn Interviewfragen, fünf bis sechs Dateien füllen,
+eine echte Aufgabe samt Korrekturschleife —, ist die 30-Minuten-Grenze knapp,
+aber nicht offensichtlich verfehlt.
+
+**2. Abbruch-Test bestanden.** — **ERFÜLLT.** Fünf Phasen, fünf harte Abbrüche,
+fünfmal nur das Wort „weiter", fünfmal bestanden. Ohne Übergabetext, ohne
+Erklärung, ohne Souffleur. Einzelheiten oben und in
+`docs/abbruch-test-phase3.md`.
+
+**3. `notfall/` deckt die fünf häufigsten Fehlerbilder ab — plus die
+„weiter"-Anleitung.** — **ERFÜLLT, aber nur formal geprüft.** Die sechs Dateien
+existieren und die README ordnet sie zu. Der Abbruch-Test hat sie nicht
+gebraucht: In keinem der fünf Fälle war ein Notfalltext nötig, weil „weiter"
+jedes Mal trug. Damit ist belegt, dass sie **da** sind — nicht, dass sie
+**wirken**. Ob ein Käufer mit `03-zahl-oder-fakt-stimmt-nicht.md` sein Problem
+löst, weiß erst die Beta. Die Liste der fünf Fehlerbilder ist außerdem aus
+Annahmen entstanden, nicht aus Support-Fällen.
+
+**4. Die Kundenansicht enthält keinen technischen Begriff und keinen Ordner,
+der nicht erklärt wurde.** — **NICHT ERFÜLLT.** Der Wurzelordner enthält nach
+der Einrichtung sechs Einträge: `START.md`, `mein-profil.md`,
+`meine-unterlagen/`, `ergebnisse/`, `system/` und **`CLAUDE.md`**. `START.md`
+erklärt die ersten fünf. **`CLAUDE.md` kommt darin nicht vor** — mechanisch
+geprüft, weder in der erzeugten Datei noch in `START.vorlage.md`. Diese Datei
+steht in `docs/STATUS-BAU.md` unter „Offene Punkte" als „aufgefangen über
+`START.md`, das die Datei in einer Zeile abtut" — **diese Zeile gibt es nicht.**
+Der Text der Kundenansicht selbst ist sauber: kein Fachbegriff in `START.md`,
+und in den fünf geprüften Abbruchfällen fiel dem Nutzer gegenüber keiner.
 
 ## Stand Phase 3 (19.08.2026) — gebaut, aber noch nicht bewiesen
 
@@ -303,54 +326,217 @@ unbestehbar gewesen. Jetzt legt Phase 1 als allererste Handlung `STATUS.md`
 und eine Startfassung von `CLAUDE.md` an, noch vor jeder Prüfung; das Anlegen
 ist zugleich die Probe auf das Schreibrecht.
 
-**Noch nicht bewiesen — das ist die Definition of Done, nicht Beiwerk:**
+**Stand der drei Nachweise (20.08.2026):**
 
-1. **Kein Durchlauf auf einem fremden Rechner.** Die 30-Minuten-Grenze ist
-   geschätzt, nicht gemessen.
-2. **Kein Abbruch-Test.** Fünf Phasen, fünf harte Abbrüche, jedes Mal nur
-   „weiter" — ungetestet. Bis dahin ist Anforderung 1 gebaut, nicht erfüllt.
-3. **Die sieben Testfälle aus dem Nachlauf sind nicht gelaufen** (unten).
+1. **Kein Durchlauf auf einem fremden Rechner — weiter offen.** Die
+   30-Minuten-Grenze ist geschätzt, nicht gemessen.
+2. **Abbruch-Test — erledigt, 5 von 5 bestanden.** Anforderung 1 ist damit
+   erfüllt, nicht mehr nur gebaut (`docs/abbruch-test-phase3.md`).
+3. **Nachlauf — zum größeren Teil erledigt.** Die fünf
+   `angebots-schreiber`-Fälle sind gelaufen: vier bestanden, einer wackelt und
+   braucht eine Entscheidung. Die zwei `ketten`- und drei
+   `follow-up-generator`-Fälle stehen weiter aus
+   (`docs/nachlauf-phase3.md`).
 
-Solange diese drei offen sind, ist Phase 3 **nicht** abgeschlossen, egal wie
-vollständig die Dateien aussehen.
+Phase 3 ist damit **nicht** abgeschlossen — aber der Grund ist nicht mehr, dass
+nichts geprüft wäre.
 
-## Nachlauf Phase 3 — Testfälle, die neu laufen müssen (19.08.2026)
+## Nachlauf Phase 3 — erledigt am 20.08.2026
 
-Anforderung 2 und 3 haben **genau einen** Skill geändert: `angebots-schreiber`
-(Unterlagen als Quelle, Preisregeln in Prozess-Schritt 4, Feld `Preisstand` in
-Block B, neun neue Checklistenpunkte). Dazu **eine Vertragsänderung**:
-`angebots-schreiber-zu-follow-up-generator` hat das Feld `Preisstand`
-bekommen, ausdrücklich als **Innenangabe** — `follow-up-generator` liest es
-nicht, erfragt es nicht und sein Fehlen löst keine Rückfrage aus. Der Skill
-`follow-up-generator` selbst wurde **nicht** angefasst (Arbeitsregel „keine
-allgemeinen Regel-Sweeps").
+Bericht: `docs/nachlauf-phase3.md`. Dort steht die Quelle der Wahrheit, nicht
+hier.
 
-**Müssen laufen — noch nicht gelaufen:**
+**Gelaufen: die fünf `angebots-schreiber`-Fälle, je dreimal** — Erzeugung und
+Bewertung strikt getrennt, Erzeuger ohne Kriterien, Bewerter ohne Skill-Text.
+16 Erzeugungen, 16 getrennte Bewertungen (Fall 05 bekam durch einen Vorfall im
+Testaufbau einen vierten Lauf und wurde mit **4 von 4** gemessen).
 
-| Fall | Warum | Läufe |
+| Fall | Ergebnis |
+|---|---|
+| `01-rueckfrage-disziplin` | **bestanden** (3/3) |
+| `02-budget-konflikt` | **wackelt** — Befund, Entscheidung nötig |
+| `03-verbots-kollision` | **bestanden** (3/3) |
+| `04-preisgrundlage-abgelaufen` | **bestanden** (3/3) — neu |
+| `05-kundenkondition-vorrang` | **bestanden** (4/4) — neu |
+
+**Neu gegenüber Phase 2: die Preisunterlagen lagen als echte Dateien vor**,
+nicht als Beschreibung im Auftrag. Fall 04 bekam einen `preise/`-Ordner mit
+`preisliste-2025-10.md` (`Stand: 15.10.2025`, kein `gültig bis`), Fall 05 die
+gültige Liste plus einen Kundenordner mit Rahmenvertrag. Der Skill musste den
+Stand also selbst ermitteln, statt ihn vorgesagt zu bekommen.
+
+**Anforderung 3 ist damit wirksam, nicht nur gebaut.** Beide neuen Fälle
+bestehen auf Anhieb, ohne Skill-Änderung. Regel 2 (Gültigkeit) hält auch gegen
+eine Datei ohne `gültig bis`; Regel 3 (Rangfolge) hält auch dort, wo der
+Rahmenvertrag **teurer** ist als die Preisliste — kein Lauf hat den günstigeren
+Listensatz genommen.
+
+### Der eine Befund: `02-budget-konflikt` — Entscheidung steht aus
+
+Der Fall hat in der Vollregression 3 von 3 bestanden. Jetzt: zwei von drei
+Läufen schreiben **kein** Angebot, sondern fragen nach dem Empfänger-Verhältnis
+(Neukunde oder Bestandskunde). Der dritte schreibt das Angebot und **setzt**
+`neukunde`, vermerkt in Block B unter `Angenommen`.
+
+**Der Befund liegt im Testfall, nicht im Skill.** Die Anfrage in `## Eingabe`
+nennt das Verhältnis nicht. Es ist der **sechste Pflicht-Fakt**, und der Skill
+schreibt für einen leeren Pflicht-Fakt zwingend vor: nachfragen, anhalten, kein
+Angebot. Die zwei durchgefallenen Läufe haben die Regel **befolgt**; der
+bestandene hat sie **gebrochen**.
+
+**Der Testfall belohnt damit das Raten und bestraft das Nachfragen.** Ein Skill,
+der ihn zuverlässig besteht, wäre schlechter als einer, der durchfällt.
+
+Warum es vorher nicht auffiel: Anforderung 2 hat `meine-unterlagen/` eingeführt.
+Beide durchgefallenen Läufe haben dort nachgesehen — in `preise/kunden/` und in
+`angebote/` — und nichts zu diesem Kunden gefunden. Genau dieser Blick macht die
+Lücke sichtbar. Die neue Wissensquelle hat den Fall nicht kaputt gemacht,
+sondern einen Mangel freigelegt, den er von Anfang an hatte.
+
+**Nach der Änderungsregel vom 18.08.2026 wurde nichts angefasst** — weder
+Testfall noch Skill. Vorschlag zur Entscheidung: den Eingabeteil um einen
+Halbsatz ergänzen, der Fakt 6 klärt, mit Änderungsvermerk, danach dreimal neu.
+Die Gegenrichtung — Fakt 6 im Skill entschärfen — würde eine harte Regel gegen
+ein bequemes Testergebnis tauschen, und der Fall prüft den Budget-Konflikt
+danach immer noch nicht.
+
+**Bis zur Entscheidung ist `02-budget-konflikt` nicht bestanden.**
+
+### Nicht gelaufen, weiter offen
+
+Der Auftrag umfasste die fünf `angebots-schreiber`-Fälle. **Nicht** gelaufen
+sind:
+
+| Fall | Warum er laufen muss | Läufe |
 |---|---|---|
-| `angebots-schreiber/01-rueckfrage-disziplin` | Skill geändert | 3 |
-| `angebots-schreiber/02-budget-konflikt` | Skill geändert, rechnet mit {{preisgrundlage}} | 3 |
-| `angebots-schreiber/03-verbots-kollision` | Skill geändert | 3 |
-| `angebots-schreiber/04-preisgrundlage-abgelaufen` | **neu** — prüft Regel 2 der Preisregeln | 3 |
-| `angebots-schreiber/05-kundenkondition-vorrang` | **neu** — prüft Regel 3 der Preisregeln | 3 |
 | `ketten/01-recherche-fast-leer` | Skill geändert, Testprofil geändert | 3 |
 | `ketten/02-entwurf-und-abgelehnte-forderung` | Vertrag geändert | 3 |
+| `follow-up-generator/01-unvollstaendiger-uebergabeblock` | Vertrag hat ein Pflichtfeld mehr | 3 |
+| `follow-up-generator/02-kein-anlass` | dito | 3 |
+| `follow-up-generator/03-stufe-drei-und-schluss` | dito | 3 |
 
-**7 Fälle, 21 Erzeugungen, 21 getrennte Bewertungen.** Bestanden nur bei
-3 von 3.
+Bei den drei `follow-up-generator`-Fällen ist der Skill unverändert, aber ihre
+**Eingabe** ist vertraglich definiert, und der Vertrag hat mit `Preisstand` ein
+Feld mehr. Die Testfall-Blöcke enthalten es nicht — genau der Fall, für den die
+Ausnahme im Vertrag steht („Innenangabe", wird nicht gelesen, löst keine
+Rückfrage aus). Ob die Ausnahme trägt, weiß man erst nach dem Lauf.
 
-**Sollten mitlaufen — Entscheidung des Auftraggebers:** die drei Fälle von
-`follow-up-generator`. Ihr Skill ist unverändert, aber ihre **Eingabe** ist
-vertraglich definiert, und der Vertrag hat ein Pflichtfeld mehr. Die
-Testfall-Blöcke enthalten `Preisstand` nicht — genau der Fall, für den die
-Ausnahme im Vertrag steht. Ob die Ausnahme trägt oder ob der Skill stattdessen
-abbricht oder nachfragt, weiß man erst nach dem Lauf. Kosten: 3 Fälle, 9
-Erzeugungen, 9 Bewertungen.
+**Für diese fünf Fälle gilt die Zahl aus Phase 2 unverändert nicht.**
 
-**Bis diese Läufe erfolgt sind, ist die Zahl aus Phase 2 (32 von 32) für die
-betroffenen Fälle nicht mehr gültig.** Sie wird nicht fortgeschrieben, solange
-sie nicht neu belegt ist.
+## Abbruch-Test Phase 3 — bestanden am 20.08.2026
+
+Bericht: `docs/abbruch-test-phase3.md`, mit allen fünf Fällen einzeln.
+
+**Fünf Phasen, fünf harte Abbrüche, fünfmal nur das Wort „weiter" — fünfmal
+bestanden.** In keinem Fall wurde nach dem Stand gefragt, in keinem Fall an der
+falschen Stelle fortgesetzt.
+
+| Phase | Abbruchstelle | Fortsetzung |
+|---|---|---|
+| 1 — Ist alles startklar | mitten im Umräumen | bestanden |
+| 2 — Kennenlernen | nach Frage 7, ohne Antwort | bestanden |
+| 3 — Einrichten | drei von sechs Assistenten gefüllt | bestanden |
+| 4 — Erste echte Aufgabe | Rückfrage raus, keine Antwort | bestanden |
+| 5 — Wächter und Übergabe | vor dem Beibringen des Zauberworts | bestanden |
+
+**Aufbau:** ein einziger Durchlauf durch alle fünf Phasen, fünfmal unterbrochen
+— nicht fünf frische Durchläufe. Je Fall drei getrennte Sitzungen, die nichts
+voneinander wissen: die Einrichtungssitzung (hält mitten im Schritt an, schreibt
+**keinen** Übergabetext), die frische Sitzung (bekommt Ordner, Gedächtnisdatei
+und als einzige Nachricht `weiter`), die Bewertung (sieht Stand, Tatsachen und
+Mitschrift — **nicht** die Anleitung).
+
+**Der eigentliche Nachweis: In Phase 1, 2 und 3 war der Stand auf der Platte im
+Moment des Abbruchs nachweislich falsch.** In Phase 1 behauptete er, es sei noch
+nichts verschoben, während `core/` schon verschoben war. In Phase 2 behauptete
+er, Frage 7 sei noch nicht gestellt, während sie auf dem Bildschirm stand. In
+Phase 3 behauptete er, die Phase habe noch nicht begonnen, während drei
+Assistenten fertig gebaut waren. Die Fortsetzung hat das jedes Mal überlebt,
+weil die Sitzung **nachgesehen hat, statt der Datei zu glauben**. Ein
+Fortsetzungsmechanismus, der nur mit korrekten Ständen funktioniert, wäre hier
+dreimal gescheitert.
+
+### Die zweite Frage: Wusste der Nutzer, dass „weiter" das Zauberwort ist?
+
+**In allen fünf Fällen ja — aber nie, weil der Installer es ihm beigebracht
+hätte.**
+
+| Phase | Woher er es wusste |
+|---|---|
+| 1 | nur aus `START_HIER.md` — der Installer hatte erst **einen** Satz gesagt |
+| 2 | Assistent am Ende von Phase 1, dazu `START_HIER.md` |
+| 3 | Assistent am Ende von Phase 2, eine Nachricht davor |
+| 4 | Assistent am Ende von Phase 3, dazu **`START.md`** |
+| 5 | **`START.md`** |
+
+Der Schritt, der „weiter" ausdrücklich lehrt und üben lässt, ist Phase 5,
+Schritt 2 — und er wurde in **keinem** der fünf Abbruchfälle erreicht. Das Netz
+hält, weil es vierfach gespannt ist: `START_HIER.md` vor der Einrichtung, die
+Phasenabschlüsse zwischendurch, `START.md` ab Ende Phase 3, `notfall/01` als
+Rückfallebene.
+
+**Das dünnste Glied ist Phase 1.** Dort gibt es genau eine Quelle:
+`START_HIER.md`, wenige Minuten zuvor gelesen, vom Installer nie wiederholt.
+Wer die Datei überflogen hat, um schnell an den Satz zum Kopieren zu kommen,
+hat „weiter" nicht gelesen. Kein Blocker, aber die Stelle, an der zuerst etwas
+reißen würde.
+
+**Ein Wechsel, den niemand bemerkt:** `START_HIER.md` wandert am Ende von
+Phase 3 nach `system/`. Die Quelle, die in den Phasen 1 und 2 das Netz war, ist
+ab da weg — ersetzt durch `START.md`. Lückenlos, aber es ist ein Wechsel.
+
+### Vier Befunde aus dem Abbruch-Test, keiner behoben
+
+1. **Phase 3 des Installers schreibt keinen Zwischenstand.** Sie schreibt STATUS
+   erst als Schritt 6, am Ende. Das verstößt gegen Bauprinzip 2 („nach jedem
+   Schritt") und gegen die eigene eiserne Regel 3 („Ein Schritt ohne
+   STATUS-Eintrag gilt als nicht gemacht"). Für Phase 2 ist die Ausnahme
+   ausdrücklich geregelt, für Phase 3 fehlt sie — dabei ist Phase 3 die Phase
+   mit der meisten unsichtbaren Arbeit. Folge im Test: Die Auswahl der sechs
+   Assistenten ging verloren, die frische Sitzung wählte neu und kam auf fünf.
+   Schaden entstand nur deshalb keiner, weil die neue Auswahl die drei fertigen
+   Dateien zufällig enthielt.
+2. **Das erzeugte Gedächtnis verliert den Weg zur Anleitung.** Die Kurzfassung
+   aus Phase 1 nennt `INSTALLER.md` ausdrücklich; die vollständige Fassung aus
+   `CLAUDE.vorlage.md`, die sie in Phase 3 ersetzt, nennt sie **nicht mehr**. Ab
+   Ende Phase 3 hängt die Fortsetzung der Phasen 4 und 5 allein daran, dass der
+   Stand den Weg selbst beschreibt. Eine Testsitzung hat sich das im Lauf
+   ergänzt — der Zusatz wurde für die weiteren Fälle **wieder entfernt**, damit
+   gegen das gebaute Produkt geprüft wird.
+3. **Es gibt keinen Wächter zum Einrichten.** Phase 5, Schritt 1 sagt „Richte
+   den Wächter ein". Eine Vorlage existiert weder in `core/` noch in
+   `adapter-claude/vorlagen/` — mechanisch geprüft. Der Installer muss ihn frei
+   erfinden; die Testsitzung baute `system/wochencheck.md` mit sieben selbst
+   ausgedachten Prüfpunkten. **Jeder Käufer bekäme einen anderen Wächter.**
+   Das stand als Risiko schon hier — jetzt ist es belegt.
+4. **Die Verbotsliste wird zur Installationszeit vervielfältigt.** Sie steht
+   danach in `mein-profil.md`, in `CLAUDE.md` und in **jeder** eingerichteten
+   Skill-Datei. Ursache ist Phase 3, Schritt 2 („Ersetze in den ausgewählten
+   Dateien jeden Platzhalter"). Im Repo ist Prinzip 1 sauber, **beim Kunden ist
+   es gebrochen**. Die Folge zeigte sich sofort: Die Stilkorrektur aus Phase 4
+   („kein ‚gerne'") griff nur an einer Stelle; die fünf Skill-Dateien blieben
+   veraltet und wurden erst von der nächsten Sitzung nachgezogen — und das nur,
+   weil es im Stand vermerkt war.
+
+Dazu ein Befund aus einem anderen Skill, aufgefallen beim Füllen der
+Platzhalter: In `core/skills/vertrieb/outreach-personalisierer.md` steht an
+einer Stelle `{{firma}}`, wo die Firma des **Empfängers** gemeint ist. Eingesetzt
+stünde dort die eigene Firma. Nicht behoben — nach der Arbeitsregel vom
+19.08.2026 zieht seine Änderung seine drei Testfälle nach sich.
+
+### Anmerkung zur Redlichkeit des Tests
+
+Der Prüfpunkt 5 der Bewertung („kein Blick hinter die Kulissen") war in seinen
+ersten beiden Fassungen **sachlich falsch** und wurde zweimal korrigiert, beide
+Male vor dem ersten festgeschriebenen Urteil. Fassung 1 verbot das Angebot des
+frischen Gesprächs — also eine Pflichthandlung aus Anforderung 1. Fassung 2
+zählte „Ordner", „Datei" und „Gedächtnis" zu den verbotenen Fachbegriffen,
+obwohl die Anleitung genau diese Wörter als die **erlaubten** benennt. Die
+dritte Fassung übernimmt die Wortlisten der Anleitung, statt eine eigene zu
+erfinden. Beide verworfenen Urteile liegen im Testaufbau; in beiden waren die
+Prüfpunkte 1, 2, 3, 4, 6 und 7 unverändert erfüllt. Der Vorgang steht hier,
+weil eine stille Korrektur an einem Bewertungsmaßstab von Weichspülen nicht zu
+unterscheiden wäre.
 
 ## Offene Punkte
 - **`CLAUDE.md` liegt sichtbar im Wurzelordner.** Die Plattform verlangt die
@@ -442,15 +628,29 @@ Protokolliert in `docs/entscheidungen.md`.
 
 ## Nächster Schritt
 
-**Phase 3 ist gebaut, aber nicht bewiesen.** Als Nächstes, in dieser
-Reihenfolge:
+**Phase 3 ist zur Hälfte bewiesen.** Was für die Definition of Done noch fehlt,
+in dieser Reihenfolge:
 
-1. **Den Wächter-Platzhalter in Installer-Phase 5 schließen** — oder Phase 5
-   so schreiben, dass sie ohne ihn trägt.
-2. **Die sieben Testfälle aus dem Nachlauf laufen lassen**, je dreimal,
-   Erzeugung und Bewertung getrennt.
-3. **Abbruch-Test in allen fünf Phasen.**
-4. **Durchlauf auf einem fremden Rechner**, gestoppt.
+1. **Entscheidung zu `angebots-schreiber/02-budget-konflikt`** — der Testfall
+   verlangt ein Angebot, obwohl seine Eingabe einen Pflicht-Fakt nicht hergibt.
+   Vorschlag oben. Ein Satz Entscheidung, dann drei Läufe.
+2. **Die fünf offenen Nachlauf-Fälle laufen lassen** — zwei `ketten`, drei
+   `follow-up-generator`, je dreimal.
+3. **Den Wächter bauen** (Befund 3 des Abbruch-Tests). Er ist formal
+   Phase-4-Arbeit, blockiert aber Installer-Phase 5: Ohne Vorlage erfindet
+   jeder Durchlauf einen anderen.
+4. **Zwischenstand in Installer-Phase 3** (Befund 1) und **Weg zur Anleitung im
+   erzeugten Gedächtnis** (Befund 2). Beides kleine Änderungen am Installer bzw.
+   an `CLAUDE.vorlage.md` — beide ziehen einen neuen Durchlauf durch die
+   Phasen 3 bis 5 nach sich.
+5. **Entscheidung zur vervielfältigten Verbotsliste** (Befund 4) — Prinzip 1
+   ist beim Kunden gebrochen. Architekturfrage, kein Handgriff.
+6. **`START.md` erklärt `CLAUDE.md` nicht** — die Datei liegt sichtbar im
+   Wurzelordner und kommt in `START.vorlage.md` nicht vor (mechanisch geprüft:
+   kein Treffer). Definition of Done Punkt 4 verlangt, dass kein Eintrag
+   unerklärt bleibt. Einzeiler in der Vorlage, aber er zieht einen neuen
+   Phase-3-Durchlauf nach sich.
+7. **Durchlauf auf einem fremden Rechner**, gestoppt.
 
 ---
 
