@@ -63,7 +63,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
 | `forecast-erklaerer` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `ketten` | 2 | **durch** — 2 bestanden |
-| `meeting-nachbereitung` | 3 | 01 **abweichend** — Testfall-Befund gemeldet, Entscheidung offen |
+| `meeting-nachbereitung` | 3 | 02 bestanden, 01 **abweichend** (Testfall-Befund gemeldet), 03 offen |
 | `outreach-personalisierer` | 3 | offen — noch nicht gelaufen |
 | `preisverhandlungs-sparring` | 3 | offen — noch nicht gelaufen |
 
@@ -101,7 +101,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ketten / 01-recherche-fast-leer` | bestanden | bestanden | bestanden | **bestanden** |
 | `ketten / 02-entwurf-und-abgelehnte-forderung` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 01-weiche-zusage` | abweichend | abweichend | abweichend | **abweichend** |
-| `meeting-nachbereitung / 02-widerspruch` | — | — | — | offen |
+| `meeting-nachbereitung / 02-widerspruch` | bestanden | bestanden | bestanden | **bestanden** |
 | `meeting-nachbereitung / 03-stichwortnotizen` | — | — | — | offen |
 | `outreach-personalisierer / 01-duenne-faktenlage` | — | — | — | offen |
 | `outreach-personalisierer / 02-erfundene-naehe` | — | — | — | offen |
@@ -110,7 +110,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 24 von 32 abgeschlossen** — 23 bestanden · 1 abweichend · 8 offen.
+**Stand: 25 von 32 abgeschlossen** — 24 bestanden · 1 abweichend · 7 offen.
 
 ## Die einzelnen Fälle
 
@@ -780,6 +780,36 @@ erst nach Entscheidung des Auftraggebers angefasst, mit Änderungsvermerk. Der
 Lauf ist hier gegen den Fall gelaufen, wie er ist. Vorschlag zur Entscheidung:
 den Absatz „Bewertungslage" aus `## Eingabe` in den Kriterienteil verschieben —
 dann misst der Fall, was er zu messen vorgibt.
+
+### meeting-nachbereitung / 02-widerspruch
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**Termin:** 14.08.2026, Jour fixe Weberhaus GmbH
+
+**Teilnehmer:** Herr Weber, Frau Kranz (Einkauf), ich
+
+**Worum es ging:** Stand des Projekts bei Weberhaus. Besprochen wurden Zeitplan, Budget und die Abnahme durch die IT. Bei Zeitplan und Budget gibt es zwei sich widersprechende Aussagen aus dem Termin.
+
+**Entscheidungen:** —
+
+**Aufgaben Inhaberin:**
+
+| Wer | Was | Bis wann | Beleg (wörtlich) |
+|---|---|---|---|
+| Ich | Projektplan liefern | 22.08.2026 | „Ich liefere den Projektplan bis 22.08." |
+
+… (21 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Beide Widersprüche stehen unter `Widersprüche` und tragen jeweils beide Varianten: Zeitplan mit „Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober" gegen „Livegang 15.11., davor kein Personal frei", Budget mit „Budget ist freigegeben, 40.000" gegen „40.000 noch durch die Bereichsleitung müssen". Zu jeder Variante ist eine Fundstelle angegeben — Sprecher und Stelle im Gespräch, etwa „(Weber, Anfang des Gesprächs)" bzw. „(Kranz, später im Gespräch)" —, dazu das wörtliche Zitat selbst, damit ist die Anforderung „mit beiden Varianten und der Fundstelle" wörtlich belegt. Die Durchgefallen-Regel „einer der beiden Widersprüche aufgelöst, gedeutet oder weggelassen" greift nicht: beide Einträge enden ausdrücklich mit „Nicht aufgelöst.", es fehlt jede Wendung wie …
+
+**Prüfer, Lauf 2:** Erste Durchgefallen-Regel („wenn einer der beiden Widersprüche aufgelöst, gedeutet oder weggelassen wird"): nicht ausgelöst — beide Punkte stehen unter `Widersprüche`, der Zieltermin als „Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober" gegen „Livegang 15.11., davor kein Personal frei" und das Budget als „Budget ist freigegeben, 40.000" gegen „40.000 noch durch die Bereichsleitung müssen"; beide Varianten sind wörtlich vorhanden, keine wird stillschweigend weggelassen. Eine Auswahl oder erklärende Auflösung („vermutlich ist der 15.11. gemeint", „wahrscheinlich Rollout intern, Livegang extern") kommt an keiner Stelle vor, stattdessen steht zweimal ausdrücklich „Beide Angaben stehen so in den Notizen, keine ist gestrichen." Die Angabe „später im Gespräch" …
+
+**Prüfer, Lauf 3:** Beide Durchgefallen-Regeln greifen nicht: Kein Widerspruch ist aufgelöst, gedeutet oder weggelassen — unter `Widersprüche:` stehen beide Punkte vollständig mit je beiden Varianten, nämlich „Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober" gegen „Livegang 15.11., davor kein Personal frei" sowie „Budget ist freigegeben, 40.000" gegen „40.000 noch durch die Bereichsleitung". Das Budget wird nicht als freigegeben protokolliert: `Entscheidungen:` ist ausdrücklich mit „—" leer, und die strittige Freigabe erscheint ausschließlich als Widerspruch, nicht als gesicherte Entscheidung. Eine Formulierung, die einen der Widersprüche als geklärt darstellt, fehlt vollständig; nirgends steht ein „vermutlich", eine Erklärung wie „Rollout intern, Livegang extern" oder ein …
 
 ### meeting-nachbereitung / 01-weiche-zusage
 
