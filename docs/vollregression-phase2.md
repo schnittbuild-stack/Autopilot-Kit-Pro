@@ -57,7 +57,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 |---|---|---|
 | `account-recherche` | 3 | **durch** — 3 bestanden |
 | `angebots-schreiber` | 3 | **durch** — 3 bestanden |
-| `ausschreibungs-analyse` | 3 | angefangen — 1 von 3 bestanden |
+| `ausschreibungs-analyse` | 3 | angefangen — 01 bestanden, 02 **wackelt** (Befund, Korrektur folgt) |
 | `crm-notiz-zu-schritt` | 3 | offen — noch nicht gelaufen |
 | `einwand-sparring` | 3 | offen — noch nicht gelaufen |
 | `follow-up-generator` | 3 | **durch** — 3 bestanden |
@@ -82,7 +82,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `angebots-schreiber / 02-budget-konflikt` | bestanden | bestanden | bestanden | **bestanden** |
 | `angebots-schreiber / 03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 | `ausschreibungs-analyse / 01-hartes-ko` | bestanden | bestanden | bestanden | **bestanden** |
-| `ausschreibungs-analyse / 02-frist-abgelaufen` | — | — | — | offen |
+| `ausschreibungs-analyse / 02-frist-abgelaufen` | abweichend | abweichend | bestanden | **wackelt** |
 | `ausschreibungs-analyse / 03-unvollstaendige-unterlage` | — | — | — | offen |
 | `crm-notiz-zu-schritt / 01-verlorene-opportunity` | — | — | — | offen |
 | `crm-notiz-zu-schritt / 02-leere-notiz` | — | — | — | offen |
@@ -108,7 +108,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | — | — | — | offen |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 12 von 32 abgeschlossen** — 12 bestanden · 20 offen.
+**Stand: 13 von 32 abgeschlossen** — 12 bestanden · 1 wackelt · 19 offen.
 
 ## Die einzelnen Fälle
 
@@ -318,6 +318,36 @@ FORMALIEN
 **Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („wenn die Empfehlung nicht `nicht bieten` lautet") greift nicht: unter „EMPFEHLUNG" steht wörtlich und ohne Zusatz „nicht bieten", und die Begründung nennt den geforderten Punkt — „Ausschlaggebend ist Ziffer 4.2 a): Gefordert ist eine zum 30.09.2026 gültige ISO-9001-Zertifizierung, und die hast Du zu diesem Zeitpunkt nicht" — samt Ausschlussfolge „Das Angebot würde nach § 57 VgV aus der Wertung genommen, bevor irgendjemand den Preis liest." Die zweite Durchgefallen-Regel („wenn das fehlende Zertifikat in irgendeiner Form als überwindbar dargestellt wird") greift ebenfalls nicht: die Ausgabe schließt einen Ersatz ausdrücklich aus („Das Kriterium ist nicht erfüllt, und der Auszug sieht dafür keinen Ersatz vor."), verneint den informellen …
 
 **Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („Empfehlung nicht `nicht bieten`") greift nicht: unter „EMPFEHLUNG" steht wörtlich und ohne Zusatz „nicht bieten", eine Variante wie `bieten mit Vorbehalt` kommt an keiner Stelle vor. Die zweite Durchgefallen-Regel („fehlendes Zertifikat in irgendeiner Form als überwindbar dargestellt") greift ebenfalls nicht — die Ausgabe schließt jeden Ausweg ausdrücklich aus: „Der Auszug sieht keinen Ersatz und keine Nachreichung vor; Ziffer 4.2 nennt die Nachweise zwingend, § 57 VgV führt zum Ausschluss von der Wertung. Damit ist das Kriterium nicht erfüllt — ohne Wenn und Aber", dazu „eine fehlende Eignung ist hier kein Gespräch, sondern ein Ausschluss"; die verbotenen Formeln (Nachweis der laufenden Zertifizierung akzeptiert, per Bieterfrage …
+
+### ausschreibungs-analyse / 02-frist-abgelaufen
+
+**Läufe:** abweichend · abweichend · bestanden   ·   **Ergebnis: wackelt**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**FRISTEN**
+
+Abgabe ist morgen früh, 18.08.2026, 10:00 Uhr — das sind ab jetzt (17.08., 16:30 Uhr) weniger als 0,5 Arbeitstage, nämlich der Rest von heute und zwei Stunden morgen früh, dazwischen eine Nacht; die Frist für Bieterfragen ist am 05.08.2026 abgelaufen, seit 12 Tagen. Dazu kommt: Unbedenklichkeitsbescheinigung Finanzamt, Unbedenklichkeitsbescheinigung Krankenkasse und der Fachkundenachweis VDI 6022 kommen von Dritten (S. 4, Ziffer 7). Solche Papiere werden ausgestellt, nicht geschrieben — über Nacht sind sie nicht zu beschaffen. Wer sie nicht heute schon aktuell im Ordner hat, kann die Mappe bis 10:00 Uhr nicht vollständig einreichen.
+
+- **Vergabeart:** öffentliche Vergabe (Vergabeportal, Losaufteilung, gesetzte Bieterfragenfrist, S. 1 und S. 3, Ziffer 6). Konsequenz: Fristen und Formalien sind nicht verhandelbar. Ein Anruf bei der Vergabestelle verlängert nichts, und eine fehlende Unterlage ist kein Gespräch, sondern ein Ausschluss.
+- **Abgabe:** 18.08.2026, 10:00 Uhr (S. 3, Ziffer 6)
+- **Bieterfragen:** 05.08.2026 — abgelaufen (S. 3, Ziffer 6)
+- **Bindefrist:** nicht gefunden
+- **Verbleibend:** unter 0,5 Arbeitstage — reicht nicht für 42 Leistungspositionen plus vier Nachweise, von denen zwei von Behörde und Krankenkasse kommen
+
+**FORMALIEN**
+
+- **Abgabeweg:** ausschließlich über das Vergabeportal (S. 3, Ziffer 6). Papier und Mail sind nicht vorgesehen.
+- **Nachweise:** Fachkundenachweis VDI 6022, Referenzen, Unbedenklichkeitsbescheinigung Finanzamt, Unbedenklichkeitsbescheinigung Krankenkasse (S. 4, Ziffer 7)
+… (44 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („Frist nicht im ersten Satz") greift nicht: der erste Satz der Ausgabe lautet „Abgabe ist morgen früh, 18.08.2026, 10:00 Uhr — das sind ab jetzt (17.08., 16:30 Uhr) weniger als 0,5 Arbeitstage, nämlich der Rest von heute und zwei Stunden morgen früh, dazwischen eine Nacht; die Frist für Bieterfragen ist am 05.08.2026 abgelaufen, seit 12 Tagen." — er nennt Abgabetermin, Restspanne, Nachtabschnitt und die abgelaufene Bieterfragenfrist, und die Zahlen stimmen nachgerechnet (05.08. bis 17.08. = 12 Tage; 16:30 bis 10:00 = 17,5 Stunden Kalenderzeit, davon nur Reststunden heute plus „zwei Stunden morgen früh" als Arbeitszeit, also unter 0,5 Arbeitstage). Die zweite Durchgefallen-Regel („Bieterfrage wird vorgeschlagen") greift ebenfalls nicht: …
+
+**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („Frist nicht im ersten Satz") greift nicht: der erste Satz der Ausgabe lautet „Abgabe ist morgen, 18.08.2026, 10:00 Uhr — das sind ab jetzt rund 0,5 Arbeitstage (der Rest von heute plus knapp zwei Stunden morgen früh), und die Frist für Bieterfragen ist seit dem 05.08.2026 abgelaufen, seit 12 Tagen", nennt also beide Fristen sofort; die Nachrechnung stimmt (05.08. bis 17.08. sind 12 Tage, von heute bis morgen 10:00 Uhr rund 17 Kalenderstunden mit Nachtabschnitt, den die Ausgabe mit „Solche Bescheinigungen sind über Nacht nicht zu beschaffen" auch anspricht). Die zweite Durchgefallen-Regel („Bieterfrage wird vorgeschlagen") greift ebenfalls nicht, denn der Abschnitt lautet ausdrücklich „entfällt — die Frist für Bieterfragen ist am …
+
+**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („Frist nicht im ersten Satz") greift nicht: Der allererste Satz der Ausgabe lautet „Abgabe ist morgen, 18.08.2026, 10:00 Uhr — dafür bleiben rund 3 bis 4 Arbeitsstunden (der Rest von heute Nachmittag plus zwei Stunden morgen früh; die Nacht ist keine Bearbeitungszeit), und die Frist für Bieterfragen ist am 05.08.2026 abgelaufen, seit 12 Tagen vorbei" und nennt damit Abgabetermin, Uhrzeit, Restzeit, den Nachtabschnitt und die abgelaufene Bieterfragen-Frist in einem Zug; die Zwölf-Tage-Rechnung stimmt (05.08. bis heute, 17.08., sind 12 Tage), und statt der im Soll genannten rund 17 Kalenderstunden rechnet die Ausgabe konservativer in Arbeitsstunden, was den geforderten Nachtabschnitt ausdrücklich einschließt statt ihn zu verschweigen. Die …
 
 ### follow-up-generator / 01-unvollstaendiger-uebergabeblock
 
