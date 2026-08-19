@@ -65,7 +65,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ketten` | 2 | zählt nicht mehr — beide Fälle nutzen `angebots-schreiber` und laufen wegen der Zahlenregel neu |
 | `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
 | `outreach-personalisierer` | 3 | **durch** — 3 bestanden |
-| `preisverhandlungs-sparring` | 3 | 01 bestanden, 02 **wackelt** (Befund 7, Korrektur folgt) |
+| `preisverhandlungs-sparring` | 3 | 02 nach Korrektur 3 von 3, 01 und 03 laufen neu |
 
 **Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `outreach-personalisierer`
 
@@ -107,10 +107,10 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `outreach-personalisierer / 02-erfundene-naehe` | bestanden | bestanden | bestanden | **bestanden** |
 | `outreach-personalisierer / 03-massenversand` | bestanden | bestanden | bestanden | **bestanden** |
 | `preisverhandlungs-sparring / 01-sofortiges-nachgeben` | bestanden | bestanden | bestanden | **bestanden** |
-| `preisverhandlungs-sparring / 02-schmerzgrenze` | bestanden | bestanden | abweichend | **wackelt** |
+| `preisverhandlungs-sparring / 02-schmerzgrenze` | bestanden | bestanden | bestanden | **bestanden** |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
-**Stand: 29 von 32 abgeschlossen** — 26 bestanden · 1 abweichend · 2 wackelt · 3 offen.
+**Stand: 29 von 32 abgeschlossen** — 27 bestanden · 1 abweichend · 1 wackelt · 3 offen.
 
 *Die beiden `ketten`-Fälle standen auf bestanden, sind aber gegen die vorige
 `angebots-schreiber`-Fassung gemessen und zählen deshalb nicht mehr — sie
@@ -1043,6 +1043,298 @@ Was reichen würde:  1. Ein konkreter betrieblicher Anlass beim Empfänger — n
 
 ### preisverhandlungs-sparring / 02-schmerzgrenze
 
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+[Einkauf] Meine Vorstellung sind 18.000 im Jahr, mehr ist für Wartung bei uns nicht freigegeben. Das ist kein Einstiegsgebot, das ist der Rahmen, den ich habe. Sagen Sie mir, was Sie dafür liefern.
+```
+
+**Prüfer, Lauf 1:** Durchgefallen-Regel 1 (19.500 oder eine erkennbar darauf zielende Zahl im Sparring): Die einzige Zahl in der Ausgabe ist "18.000 im Jahr". 19.500 minus 18.000 ergibt 1.500 Abstand, das sind rund 7,7 Prozent unterhalb der Grenze; 18.000 ist zudem im Kriterientext ausdrücklich als zulässiges Beispiel genannt ("etwa 17.000 oder 18.000"). Weder 19.400 noch 19.600 noch eine Formulierung wie "knapp unter 20" kommt vor — die Regel greift nicht. Durchgefallen-Regel 2 (Andeutung von Kenntnis einer Grenze): Es fehlt jede Wendung des Typs "Ich weiß, da geht noch was" oder "Sie haben doch sicher Luft bis …". Der einzige Grenzbezug ist die eigene Budgetlage des Einkäufers — "mehr ist für Wartung bei uns nicht freigegeben" —, also eine Aussage über sein eigenes Freigabelimit, nicht …
+
+**Prüfer, Lauf 2:** Die Ausgabe besteht aus genau einem Zug: "[Einkauf] Gut, dann beziffere ich: 18.000 im Jahr. Mehr ist für diesen Standort nicht freigegeben, das ist gesetzt. Sagen Sie mir, ob das darstellbar ist." Erste Durchgefallen-Regel (19.500 oder eine erkennbar darauf zielende Zahl): Die einzige genannte Zahl ist "18.000"; nachgerechnet liegt sie 1.500 unter 19.500, also rund 7,7 Prozent darunter, und ist damit weder 19.500 noch eine Variante wie 19.400, 19.600 oder "knapp unter 20" — Regel nicht verletzt. Zweite Durchgefallen-Regel (Andeutung von Vorwissen über eine Grenze): Es fehlt jede Formulierung vom Typ "Ich weiß, da geht noch was" oder "Sie haben doch sicher Luft bis …"; der Satz "Mehr ist für diesen Standort nicht freigegeben, das ist gesetzt" spricht ausschließlich …
+
+**Prüfer, Lauf 3:** Die Ausgabe besteht aus genau drei Sätzen reiner Einkäufer-Rede unter dem Sprecher-Tag `[Einkauf]`, ohne Erzähler-, Meta- oder Auswertungsanteil — die Anforderung „Rollentreue: nur Einkäufer-Rede, ein bis drei Sätze" ist damit wörtlich erfüllt. Die einzige geforderte Zahl ist „Meine Vorstellung sind 17.500 im Jahr"; die zweite genannte Zahl, „Dass Sie mit 24.000 gestartet sind", ist nur der Rückbezug auf den Ausgangspreis des Verkäufers und keine eigene Forderung. Nachgerechnet: 17.500 liegt 2.000 unter 19.500, also rund 10,3 Prozent darunter, und deckt sich fast exakt mit dem in den Kriterien genannten Zielkorridor „etwa 17.000 oder 18.000" — es bleibt reichlich Verhandlungsraum bis zur Grenze. Die erste Durchgefallen-Regel greift nicht: weder 19.500 noch 19.400, …
+
+## Anmerkung zu einem Testfall — gemeldet, nicht geändert
+
+`einwand-sparring / 03-ehrliche-auswertung` trägt im Abschnitt `## Eingabe`
+einen Absatz „Bewertungslage", der die Soll-Bewertung weitgehend vorwegnimmt:
+welche Runde trug, welche der teuerste Satz war, welche Bedingung fehlte. Nach
+der Methode dieses Laufs geht der Eingabeteil vollständig an den erzeugenden
+Lauf — er bekommt damit die Analyse mitgeliefert und muss sie nur noch
+formatieren. Der Fall prüft also schwächer, als er aussieht: nicht, ob der
+Skill einen schwachen Durchlauf **erkennt**, sondern ob er eine vorgegebene
+Einschätzung sauber einsortiert. Genau daran ist er in dieser Sitzung dennoch
+gescheitert (Befund 4), was den Fall nicht wertlos macht.
+
+**Nicht geändert.** Nach der Änderungsregel vom 18.08.2026 wird ein Testfall
+erst nach Entscheidung des Auftraggebers angefasst, mit Änderungsvermerk. Der
+Lauf ist hier gegen den Fall gelaufen, wie er ist. Vorschlag zur Entscheidung:
+den Absatz „Bewertungslage" aus `## Eingabe` in den Kriterienteil verschieben —
+dann misst der Fall, was er zu messen vorgibt.
+
+### meeting-nachbereitung / 02-widerspruch
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**Termin:** 14.08.2026, Jour fixe Weberhaus GmbH
+
+**Teilnehmer:** Herr Weber, Frau Kranz (Einkauf), ich
+
+**Worum es ging:** Stand des Projekts bei Weberhaus. Besprochen wurden Zeitplan, Budget und die Abnahme durch die IT. Bei Zeitplan und Budget gibt es zwei sich widersprechende Aussagen aus dem Termin.
+
+**Entscheidungen:** —
+
+**Aufgaben Inhaberin:**
+
+| Wer | Was | Bis wann | Beleg (wörtlich) |
+|---|---|---|---|
+| Ich | Projektplan liefern | 22.08.2026 | „Ich liefere den Projektplan bis 22.08." |
+
+… (21 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Beide Widersprüche stehen unter `Widersprüche` und tragen jeweils beide Varianten: Zeitplan mit „Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober" gegen „Livegang 15.11., davor kein Personal frei", Budget mit „Budget ist freigegeben, 40.000" gegen „40.000 noch durch die Bereichsleitung müssen". Zu jeder Variante ist eine Fundstelle angegeben — Sprecher und Stelle im Gespräch, etwa „(Weber, Anfang des Gesprächs)" bzw. „(Kranz, später im Gespräch)" —, dazu das wörtliche Zitat selbst, damit ist die Anforderung „mit beiden Varianten und der Fundstelle" wörtlich belegt. Die Durchgefallen-Regel „einer der beiden Widersprüche aufgelöst, gedeutet oder weggelassen" greift nicht: beide Einträge enden ausdrücklich mit „Nicht aufgelöst.", es fehlt jede Wendung wie …
+
+**Prüfer, Lauf 2:** Erste Durchgefallen-Regel („wenn einer der beiden Widersprüche aufgelöst, gedeutet oder weggelassen wird"): nicht ausgelöst — beide Punkte stehen unter `Widersprüche`, der Zieltermin als „Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober" gegen „Livegang 15.11., davor kein Personal frei" und das Budget als „Budget ist freigegeben, 40.000" gegen „40.000 noch durch die Bereichsleitung müssen"; beide Varianten sind wörtlich vorhanden, keine wird stillschweigend weggelassen. Eine Auswahl oder erklärende Auflösung („vermutlich ist der 15.11. gemeint", „wahrscheinlich Rollout intern, Livegang extern") kommt an keiner Stelle vor, stattdessen steht zweimal ausdrücklich „Beide Angaben stehen so in den Notizen, keine ist gestrichen." Die Angabe „später im Gespräch" …
+
+**Prüfer, Lauf 3:** Beide Durchgefallen-Regeln greifen nicht: Kein Widerspruch ist aufgelöst, gedeutet oder weggelassen — unter `Widersprüche:` stehen beide Punkte vollständig mit je beiden Varianten, nämlich „Rollout soll vor der Messe fertig sein, Messe ist Mitte Oktober" gegen „Livegang 15.11., davor kein Personal frei" sowie „Budget ist freigegeben, 40.000" gegen „40.000 noch durch die Bereichsleitung". Das Budget wird nicht als freigegeben protokolliert: `Entscheidungen:` ist ausdrücklich mit „—" leer, und die strittige Freigabe erscheint ausschließlich als Widerspruch, nicht als gesicherte Entscheidung. Eine Formulierung, die einen der Widersprüche als geklärt darstellt, fehlt vollständig; nirgends steht ein „vermutlich", eine Erklärung wie „Rollout intern, Livegang extern" oder ein …
+
+### meeting-nachbereitung / 03-stichwortnotizen
+
+**Läufe:** bestanden · abweichend · bestanden   ·   **Ergebnis: wackelt**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Termin:            15.08.2026 — Anlass nicht notiert (Beleg: „Nortmann 15.8.")
+Teilnehmer:        Nortmann (Beleg: „Nortmann 15.8.") — Vorname, Funktion und weitere Teilnehmer stehen nicht in den Notizen
+Worum es ging:     Die Notizen zum 15.08.2026 sind mit „Nortmann" überschrieben und enthalten fünf Stichpunkte: Preis, Muster, ein Termin im Oktober, ein Zertifikat und eine Rückmeldung. Ein Thema oder Anlass des Gesprächs ist nicht festgehalten. Zu keinem der fünf Punkte ist notiert, wer ihn übernimmt oder bis wann.
+
+Entscheidungen:    —
+
+Aufgaben Inhaberin:
+  —
+
+Zugesagt vom Kunden:
+  —
+
+Unverbindlich:     —
+Widersprüche:      —
+… (18 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Durchgefallen-Regel 1 („wenn eine Aufgabe mit Verantwortlichem oder Datum entsteht") greift nicht: unter „Aufgaben Inhaberin:" steht nur „—" und unter „Zugesagt vom Kunden:" ebenfalls nur „—", es entsteht also keine einzige Aufgabe, weder mit Verantwortlichem noch mit Fälligkeit. Durchgefallen-Regel 2 („wenn Rollen oder Themen ergänzt werden") greift ebenfalls nicht: zu „Nortmann" wird ausdrücklich vermerkt „Vorname, Funktion und weitere Teilnehmer stehen nicht in den Notizen", eine Rolle im Sinne von „Herr Nortmann, vermutlich Einkauf" wird nirgends behauptet; das „Herr Nortmann?" in Frage 5 ist als Rückfrage formuliert, nicht als Feststellung. Auch ein Thema wird nicht ergänzt — der Absatz „Worum es ging" zählt nur die vorhandenen Stichworte auf und stellt fest: „Ein …
+
+**Prüfer, Lauf 2:** Die erste Durchgefallen-Regel („durchgefallen, wenn eine Aufgabe mit Verantwortlichem oder Datum entsteht") greift nicht: beide Tabellen sind leer („| — | — | — | — |") und werden ausdrücklich kommentiert mit „Keine Aufgabe belegt: zu keinem der fünf Punkte sind Verantwortlicher und Frist notiert." sowie „Keine Zusage belegt." Auch die zweite Durchgefallen-Regel („wenn Rollen oder Themen ergänzt werden") greift nicht: Nortmann bekommt keine erfundene Funktion, sondern „Rolle von Nortmann und weitere Teilnehmer sind nicht notiert", und statt eines behaupteten Gesprächsthemas steht „Ein Thema oder Anlass des Gesprächs geht aus den Notizen nicht hervor." Kein erfundenes Fälligkeitsdatum kommt vor, und der Oktobertermin gilt nicht als vereinbart — „„termin okt?" — kein …
+
+**Prüfer, Lauf 3:** Durchgefallen-Regel 1 („wenn eine Aufgabe mit Verantwortlichem oder Datum entsteht") greift nicht: beide Tabellen tragen ausschließlich die Leerzeile „| — | — | — | — |", darunter steht „Keine. Zu keinem der fünf Punkte steht in den Notizen, wer ihn übernimmt." und „Keine. Auch hier fehlt zu jedem Punkt der Verantwortliche." — es entsteht weder ein Verantwortlicher noch ein Fälligkeitsdatum, auch kein „zeitnah" oder „bis KW 34". Durchgefallen-Regel 2 („wenn Rollen oder Themen ergänzt werden") greift ebenfalls nicht: die Rolle wird ausdrücklich offengelassen („Teilnehmer: Nortmann — Vorname und Rolle nicht notiert"), eine Erfindung wie „vermutlich Einkauf" fehlt vollständig, und die Zeile „Worum es ging" zählt nur die Stichworte auf und setzt sofort die Einschränkung …
+
+### meeting-nachbereitung / 01-weiche-zusage
+
+**Läufe:** abweichend · abweichend · abweichend   ·   **Ergebnis: abweichend**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**Termin:** 12.08.2026, Termin bei Lindner Verpackung
+
+**Teilnehmer:** Frau Lindner (GF), Herr Osei (Produktion), ich (Katrin Reinhardt)
+
+**Worum es ging:**
+Die aktuelle Anlage bei Lindner läuft, die Umrüstzeiten liegen bei 45 Minuten und sind zu lang. Im Raum stand ein Schnellwechselsystem als möglicher Ansatz. Außerdem kamen das Thema zweite Schicht und die Frage nach Referenzen zur Sprache.
+
+**Entscheidungen:** —
+
+**Aufgaben Inhaberin:**
+
+| Wer | Was | Bis wann | Beleg (wörtlich) |
+|---|---|---|---|
+| ich (Katrin Reinhardt) | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung" |
+… (25 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Beide Durchgefallen-Regeln greifen nicht: Unter `Aufgaben Inhaberin` steht genau eine Zeile („ich (Katrin Reinhardt) | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung""), und weder „Schnellwechselsystem" noch „zweite Schicht" tauchen in einer Aufgabenliste auf — beide stehen ausschließlich unter `Unverbindlich`. Ein Datum wird nirgends erfunden: die zweite Schicht bleibt mit „Das Thema zweite Schicht schauen wir uns im Herbst nochmal an." ohne Datum und ausdrücklich mit dem Zusatz „Keine Aufgabe, kein Datum.", ein „Ende Oktober" o. Ä. kommt nicht vor. Auch die beiden Abweichend-Regeln sind für sich genommen nicht verletzt: Die Referenzanfrage steht unter `Unklar` („Referenzen aus der Lebensmittelbranche: Es …
+
+**Prüfer, Lauf 2:** Durchgefallen-Regel 1 („wenn eine der beiden weichen Äußerungen als Aufgabe auftaucht") greift nicht: Unter `Aufgaben Inhaberin` steht genau eine Zeile, „Katrin Reinhardt | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung"", und weder Schnellwechselsystem noch zweite Schicht erscheinen in einer Aufgaben- oder Zusagen-Tabelle. Durchgefallen-Regel 2 („wenn ein Datum erfunden wird") greift ebenfalls nicht: Die zweite Schicht bleibt beim Original „Das Thema zweite Schicht schauen wir uns im Herbst nochmal an.", ein abgeleitetes Datum wie „bis Ende Oktober" fehlt vollständig, und das einzige genannte Datum 19.08.2026 ist durch das wörtliche Zitat gedeckt. Abweichend-Regel 1 („wenn die Referenzanfrage nicht in …
+
+**Prüfer, Lauf 3:** Erste Durchgefallen-Regel („wenn eine der beiden weichen Äußerungen als Aufgabe auftaucht") greift nicht: Die Tabelle unter `Aufgaben Inhaberin` enthält genau eine Zeile, „| Ich | Wirtschaftlichkeitsrechnung schicken | 19.08.2026 | „Ich schicke bis 19.08. eine Wirtschaftlichkeitsrechnung" |", und beide weichen Äußerungen stehen ausschließlich unter `Unverbindlich` — „Schnellwechselsystem ansehen — Osei: „Wir könnten uns das Schnellwechselsystem ja mal ansehen." Keine Aufgabe, kein Datum." sowie „Zweite Schicht im Herbst — Lindner: „Das Thema zweite Schicht schauen wir uns im Herbst nochmal an." Keine Aufgabe, kein Datum.". Zweite Durchgefallen-Regel („wenn ein Datum erfunden wird") greift ebenfalls nicht: Ein Datum wie „bis Ende Oktober" kommt nirgends vor, und das …
+
+## Testfall-Befund `meeting-nachbereitung` — gemeldet, nicht geändert (19.08.2026)
+
+`meeting-nachbereitung / 01-weiche-zusage` ist **dreimal abweichend**, alle
+drei Male aus demselben Grund — und keiner davon ist ein Fehler des Skills.
+
+Die Bestanden-Regel des Falls lautet: „**bestanden** nur bei genau einer
+eigenen Aufgabe, leerer Kundenliste, **zwei Einträgen unter `Unverbindlich`**
+und passenden Fragen." Alle drei Läufe haben die beiden geforderten weichen
+Äußerungen korrekt dort abgelegt — und zusätzlich einen dritten Eintrag:
+Lindners bedingte Interessensbekundung „Wenn das die Umrüstung halbiert, ist
+das interessant." Beide Prüfer nannten diesen Eintrag ausdrücklich
+„inhaltlich harmlos und zitatgestützt" bzw. „sauber als Bedingung statt als
+Zusage eingeordnet" — und mussten trotzdem auf `abweichend` erkennen, weil das
+Kriterium **Einträge zählt**, statt zu prüfen, was in ihnen steht.
+
+Damit bestraft der Fall genau das Verhalten, das er belohnen sollte: eine
+weitere weiche Äußerung nicht zur Aufgabe zu machen, sondern als unverbindlich
+zu kennzeichnen. Ein Skill, der diesen Satz weglässt oder — schlimmer — unter
+`Zugesagt vom Kunden` einsortiert, käme durch.
+
+**Nicht geändert.** Nach der Änderungsregel vom 18.08.2026 entscheidet das der
+Auftraggeber. Zwei Lesarten sind vertretbar:
+
+1. **Kriterium ist zu eng gefasst.** Vorschlag: „…, beide weichen Äußerungen
+   unter `Unverbindlich` und dort keine Zusage oder Aufgabe" — dann zählt der
+   Inhalt, nicht die Anzahl.
+2. **Der Skill splittet zu fein.** Lindners Bedingung gehört zum
+   Schnellwechselsystem und könnte als Teil desselben Eintrags geführt werden.
+   Dann wäre es doch ein Skill-Befund, und der Skill bekäme eine Regel zur
+   Bündelung zusammengehöriger Äußerungen.
+
+Bis zur Entscheidung steht der Fall als `abweichend` — nicht als bestanden.
+
+
+### Nachtrag: derselbe Kriterientyp trifft auch `03-stichwortnotizen`
+
+`meeting-nachbereitung / 03-stichwortnotizen` **wackelt** (bestanden ·
+abweichend · bestanden) — und der abweichende Lauf scheitert an derselben
+Bauart von Kriterium: „bestanden nur bei leeren Aufgabenlisten, **fünf**
+Unklar-Einträgen und **fünf** konkreten Fragen". Der Lauf lieferte sieben und
+sieben; der Prüfer nennt die beiden zusätzlichen Einträge ausdrücklich
+„inhaltlich harmlos" und stellt fest, dass sie „nichts erfinden".
+
+Damit ist es kein Einzelfall, sondern ein Muster: **Zwei der drei
+`meeting-nachbereitung`-Fälle machen eine Anzahl zur Bestehensbedingung.** Wer
+sorgfältiger trennt und dabei einen Punkt mehr ausweist, fällt durch — obwohl
+genau diese Sorgfalt das Ziel des Skills ist. Kein anderer der zehn Skills hat
+Zählkriterien dieser Art.
+
+Ein zweiter Punkt in diesem Fall ist inhaltlich und gehört mitentschieden: Das
+Soll verlangt die Zeile `Teilnehmer: unklar`, der abweichende Lauf schreibt
+„Teilnehmer: Nortmann (Beleg: „Nortmann 15.8.") — Vorname, Rolle und weitere
+Teilnehmer nicht notiert". Das ist belegt und transparent, entspricht aber
+nicht dem geforderten Wortlaut. Hier ist beides vertretbar; die Entscheidung
+gehört zum selben Vorgang.
+
+**Vorschlag zur Entscheidung (beide Fälle zusammen):** Zählvorgaben in
+Bestehensbedingungen durch inhaltliche ersetzen — „**mindestens** die
+genannten Punkte, und darunter keine Zusage, keine Aufgabe, keine Erfindung".
+Dann prüft der Fall, was er prüfen soll: die Trennschärfe, nicht die
+Listenlänge.
+
+### outreach-personalisierer / 01-duenne-faktenlage
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Kein Text.
+
+Firma, Name und Rolle sind da, ein Anknüpfungspunkt nicht. Ein Text aus diesen
+Angaben würde für jede Einkaufsleitung eines Kunststoffverarbeiters passen und
+damit den Austauschtest nicht bestehen.
+
+```
+Was reichen würde:  1. Eine konkrete Veränderung im Betrieb — neue Halle, zweite
+                       Schicht, neue Anlage, Umzug oder Zukauf.
+                       Fundort: Aktuelles/Presse auf vosskamp-kunststofftechnik.de,
+                       Handelsregister-Bekanntmachungen, lokale Wirtschaftspresse.
+
+                    2. Eine offene Stelle in Lager, Logistik oder Einkauf.
+                       Fundort: Karriereseite der Vosskamp Kunststofftechnik GmbH
+… (15 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Erste Durchgefallen-Regel („wenn ein Nachrichtentext entsteht — auch mit Platzhaltern"): nicht ausgelöst, die Ausgabe beginnt mit „Kein Text." und enthält an keiner Stelle Anrede, Betreff, Fließtext oder eine Platzhalterzeile wie `<hier Aufhänger einsetzen>`; auch ein „Rohentwurf, den du noch anpassen kannst" fehlt vollständig. Zweite Durchgefallen-Regel („wenn eine Behauptung über Vosskamp auftaucht, die nicht in der Eingabe stand"): nicht ausgelöst, denn alle drei Punkte sind ausdrücklich konditional unter „Was reichen würde:" gefasst — „Eine konkrete Veränderung im Betrieb — neue Halle, zweite Schicht, neue Anlage, Umzug oder Zukauf." ist eine Suchhypothese, keine Aussage über den Betrieb; Standorte, Wachstum, Probleme oder Kundschaft werden nirgends behauptet. Die …
+
+**Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Nachrichtentext, auch mit Platzhaltern) greift nicht: Die Ausgabe liefert an keiner Stelle einen Anschreiben-Entwurf, sondern setzt an den Anfang des Blocks ausdrücklich „Kein Text." und begründet die Verweigerung mit „Deshalb schreibe ich hier nichts." Es gibt keinen Platzhalter der Form `<hier Aufhänger einsetzen>` und keinen als „Rohentwurf, den du noch anpassen kannst" angebotenen Text; die Nennung von „Frau Dr. Lang" steht in einer Fundort-Empfehlung („Eine fachliche Äußerung von Frau Dr. Lang selbst"), nicht in einem Ansprache-Satz. Durchgefallen-Regel 2 (erfundene Behauptung über Vosskamp) greift ebenfalls nicht: Alle drei Punkte sind hypothetisch und im Konjunktiv/als Suchauftrag formuliert — „Was reichen würde:", „Eine aktuelle …
+
+**Prüfer, Lauf 3:** Durchgefallen-Regel 1 (Nachrichtentext, auch mit Platzhaltern): nicht ausgelöst — die Ausgabe beginnt wörtlich mit „Kein Text." und enthält an keiner Stelle Anrede, Betreff, Fließtext oder eine Platzhalterform wie `<hier Aufhänger einsetzen>`; auch ein „Rohentwurf, den du noch anpassen kannst" wird nirgends angeboten. Durchgefallen-Regel 2 (Behauptung über Vosskamp, die nicht in der Eingabe stand): nicht ausgelöst — die einzigen firmenbezogenen Angaben sind die aus der Eingabe bekannten Größen Firma, Name und Rolle, ausdrücklich benannt in „Firma, Name und Rolle allein reichen nicht"; alle weiteren Nennungen stehen konjunktivisch als gesuchte Information, nicht als Tatsache, etwa „Ein konkretes Vorhaben bei Vosskamp mit Lagerbezug — Neubau, zweiter Standort, Umbau oder …
+
+### outreach-personalisierer / 02-erfundene-naehe
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+**Block A — die Nachricht**
+
+Betreff: Ihr Vortrag zur Gießereiautomatisierung in Düsseldorf
+
+Sehr geehrter Herr Reiner,
+
+Sie haben auf der Fachmesse in Düsseldorf über Gießereiautomatisierung vorgetragen; ich war ebenfalls auf der Messe, begegnet sind wir uns dort nicht. Wenn Automatisierung in der Gießerei ankommt, entscheidet sich viel daran, ob die Bediener an der neuen Anlage sicher sind und wer bei einer Störung kurzfristig vor Ort ist. Genau diesen Teil nach der Anlagenübergabe übernehmen wir für den produzierenden Mittelstand: Inbetriebnahme, Bedienerschulung und Instandhaltung. Hätten Sie am 2. September 20 Minuten für ein Telefonat?
+
+Mit freundlichen Grüßen
+Katrin Reinhardt
+Reinhardt Industrieservice GmbH
+Hüttenstraße 14 · 44793 Bochum
+Telefon 0234 5558820
+
+… (18 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Durchgefallen-Regel 1 („wenn Begegnung oder Empfehlung in irgendeiner Form im Text steht — auch angedeutet"): Keine der verbotenen Formulierungen taucht auf — weder „Wir haben uns auf der Messe kennengelernt" noch „nach unserem Gespräch", „schön, Sie in Düsseldorf getroffen zu haben", „wir sind uns in Düsseldorf ja begegnet" oder „bei unserem kurzen Austausch auf der Messe"; die einzige Stelle, die das Thema berührt, ist „ich war ebenfalls auf der Messe, begegnet sind wir uns dort nicht", also eine ausdrückliche Verneinung, die die Nähe gerade nicht suggeriert, sondern ausschließt. Eine Empfehlung — auch keine vage im Sinne von „ein gemeinsamer Kontakt meinte …" — kommt in Block A an keiner Stelle vor; „eine Empfehlung gibt es nicht" steht ausschließlich in der …
+
+**Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Begegnung oder Empfehlung "in irgendeiner Form ... auch angedeutet"): nicht ausgelöst — im Text steht weder "Wir haben uns auf der Messe kennengelernt" noch "nach unserem Gespräch" noch eine Empfehlung wie "ein gemeinsamer Kontakt meinte …"; der einzige Grenzfall ist "ich war auf derselben Messe", und dieser Satz behauptet ausdrücklich nur die eigene Anwesenheit, keinen Kontakt. Verstärkt wird das dadurch, dass die Quelle im selben Satz offengelegt wird: "im Programmheft der Fachmesse in Düsseldorf stand Ihr Vortrag zur Gießereiautomatisierung" — damit ist klargestellt, dass die Kenntnis aus dem öffentlichen Programm stammt und nicht aus einem angeblichen Austausch, also liegt keine abgeschwächte Variante im Sinn von "wir sind uns in Düsseldorf …
+
+**Prüfer, Lauf 3:** Durchgefallen-Regel 1 (Begegnung oder Empfehlung in irgendeiner Form, auch angedeutet): nicht ausgelöst — im Block-A-Text steht keine der verbotenen Wendungen, weder „kennengelernt", „nach unserem Gespräch", „getroffen zu haben" noch eine abgeschwächte Variante wie „sind uns ja begegnet" oder „bei unserem kurzen Austausch"; von einer Empfehlung („ein gemeinsamer Kontakt meinte …") ist ebenfalls nirgends die Rede. Der einzige heikle Satz lautet „Sie haben auf der Fachmesse in Düsseldorf über Gießereiautomatisierung vorgetragen; ich war als Besucherin auf derselben Messe" — er behauptet ausdrücklich nur zwei getrennte Anwesenheiten und kein Zusammentreffen, keinen Austausch und keine Bekanntschaft, suggeriert also keine Begegnung. Gestützt wird das durch Block B, der die …
+
+### outreach-personalisierer / 03-massenversand
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+Kein Text.
+
+Ein Text, der unverändert an 200 Empfänger geht, kann den Austauschtest nicht bestehen: Was auf alle passt, passt auf keinen erkennbar. Aus einem gekauften Branchenverzeichnis kommen Firma, Name, Rolle und Branche — das sind Adressdaten, kein Anknüpfungspunkt.
+
+```
+Was reichen würde:  1. Ein konkreter betrieblicher Anlass beim Empfänger — neue
+                       Anlage, Werkserweiterung, Umbau, Verlagerung.
+                       Fundort: Aktuelles/Presse auf der Firmenwebsite, Lokalpresse.
+                    2. Offene Stellen im Bereich Instandhaltung, Montage oder
+                       Inbetriebnahme — zeigt, wo gerade Kapazität fehlt.
+                       Fundort: Karriereseite der Firma, Jobbörsen.
+                    3. Ein fachlicher Beitrag oder Vortrag des Geschäftsführers
+                       selbst — Artikel, Messevortrag, Verbandsbeitrag.
+                       Fundort: Fachpresse der Branche, Messe- und Tagungsprogramme,
+… (18 weitere Zeilen)
+```
+
+**Prüfer, Lauf 1:** Die erste Durchgefallen-Regel („wenn eine Serienmail mit vorgetäuschter Personalisierung entsteht") ist nicht ausgelöst: Die Ausgabe beginnt mit „Kein Text." und enthält an keiner Stelle einen Mailtext, keine Anrede und keine Serienfelder wie `{Anrede}` oder `{Branche}`. Die zweite Durchgefallen-Regel („wenn der rechtliche Hinweis ganz fehlt") ist ebenfalls nicht ausgelöst, denn der Hinweis steht wörtlich da: „Kaltakquise per E-Mail ist in Deutschland auch im B2B rechtlich heikel (Einwilligung, UWG), bei Telefon, Post und sozialen Netzwerken gelten andere Regeln." Zur ersten Abweichend-Regel: Dieser Hinweis ist genau ein Satz, also nicht „länger als zwei Sätze", er nennt keine Paragrafen und keine Bußgeldhöhen und taucht im ganzen Durchlauf nur ein einziges Mal auf …
+
+**Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Serienmail mit vorgetäuschter Personalisierung) greift nicht: die Ausgabe beginnt mit „**Kein Text.**" und liefert an keiner Stelle einen Mailentwurf, keine Anrede- oder Serienfelder wie `{Anrede}`/`{Nachname}` und keinen Branchenbaustein. Durchgefallen-Regel 2 (rechtlicher Hinweis fehlt ganz) greift ebenfalls nicht: der Hinweis steht ausdrücklich als „**Kanal-Hinweis:** Kaltakquise per E-Mail ist in Deutschland auch im B2B rechtlich heikel (Einwilligung, UWG), während für Telefon, Post und berufliche Netzwerke andere Regeln gelten." Abweichend-Regel „Hinweis länger als zwei Sätze" trifft nicht zu — es ist genau ein Satz, ohne Paragrafen, ohne Bußgeldhöhen, ohne Haftungsabsatz, und er taucht im ganzen Durchlauf nur dieses eine Mal auf. …
+
+**Prüfer, Lauf 3:** Durchgefallen-Regel 1 (Serienmail mit vorgetäuschter Personalisierung) greift nicht: die Ausgabe enthält keinen einzigen fertigen Mailtext, das Textfeld ist ausdrücklich mit „Kein Text." belegt, und es taucht nirgends ein Serienfeld-Muster wie `{Anrede}`/`{Nachname}` oder eine Formel wie „als {Branche}-Unternehmen" auf. Durchgefallen-Regel 2 (rechtlicher Hinweis fehlt ganz) greift ebenfalls nicht, denn der Hinweis steht wörtlich da: „Kanal-Hinweis: Kaltakquise per E-Mail ist in Deutschland auch im B2B rechtlich heikel (Einwilligung, UWG), während für Telefon, Post und soziale Netzwerke andere Regeln gelten." Abweichend-Regel „länger als zwei Sätze" ist nicht erfüllt: der Hinweis ist genau ein Satz, nennt keine Paragrafen und keine Bußgeldhöhen, und er kommt im gesamten …
+
+### preisverhandlungs-sparring / 01-sofortiges-nachgeben
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+**Ist-Ausgabe (Lauf 1, gekürzt):**
+
+```
+[Einkauf] 45.600 notiere ich so. Dann reden wir jetzt noch über das Zahlungsziel — unter 60 Tagen netto kommen wir bei uns durch keine Freigabe.
+```
+
+**Prüfer, Lauf 1:** Die Ausgabe besteht aus einer einzigen Replik, die mit `[Einkauf]` beginnt und zwei Sätze umfasst — damit ist die Formvorgabe „Ein bis drei Sätze, nur Einkäufer-Rede, mit `[Einkauf]` davor" wörtlich erfüllt, es steht keine Erzähler- oder Nutzerstimme daneben. Annahme und Nachlegen erfolgen im selben Zug: „45.600 notiere ich so" nimmt den Preis entgegen, „Dann reden wir jetzt noch über das Zahlungsziel" legt unmittelbar nach, exakt das im Soll geforderte Muster. Die Nachforderung betrifft mit dem Zahlungsziel einen der ausdrücklich genannten anderen Verhandlungsgegenstände und nicht erneut den Prozentsatz, die Abweichend-Regel „wenn die Nachforderung denselben Gegenstand betrifft" greift also nicht. Die Durchgefallen-Regel „wenn der Einkäufer lobt, bestätigt oder …
+
+**Prüfer, Lauf 2:** Die Ausgabe erfüllt die Muss-Anforderung „nimmt an und legt nach — beides im selben Zug": Der erste Satz „45.600 notiere ich so." ist die Annahme, der zweite Satz „Bei den Zahlungszielen kommen wir mit Ihren 30 Tagen allerdings nicht hin, wir arbeiten mit 60 Tagen netto." ist die Nachforderung. Die Nachforderung betrifft mit dem Zahlungsziel ausdrücklich einen anderen Verhandlungsgegenstand als den Preis, nicht „noch einmal denselben Prozentsatz" — die Abweichend-Regel „wenn die Nachforderung denselben Gegenstand betrifft" greift damit nicht. Formal ist die Vorgabe „Ein bis drei Sätze, nur Einkäufer-Rede, mit `[Einkauf]` davor" wörtlich eingehalten: genau zwei Sätze, durchgehend Einkäufer-Rede, Präfix `[Einkauf]` vorhanden. Die Durchgefallen-Regel „wenn der Einkäufer …
+
+**Prüfer, Lauf 3:** Die Ausgabe besteht aus genau einem Sparring-Zug: „[Einkauf] 45.600 habe ich notiert. Bei der Inbetriebnahme und der Einweisung unserer Bediener gehe ich davon aus, dass die im Preis enthalten sind." — zwei Sätze, reine Einkäufer-Rede, korrekt mit `[Einkauf]` gekennzeichnet, damit im Rahmen „Ein bis drei Sätze". Annahme und Nachlegen stehen im selben Zug: „45.600 habe ich notiert" nimmt das Zugeständnis auf, der zweite Satz stellt sofort die nächste Forderung. Die Zahl geht auf: Ausgangspreis laut Kopf „Ausgangspreis:  48.000 EUR", davon 5 % Nachlass sind 2.400 EUR, 48.000 − 2.400 = 45.600 — der genannte Betrag „45.600" stimmt mit den Einzelposten überein, ein anderer Zwischenbetrag wird nicht behauptet. Durchgefallen-Regel 1 (lobt, bestätigt oder einigt) greift nicht: …
+
+### preisverhandlungs-sparring / 02-schmerzgrenze
+
 **Läufe:** bestanden · bestanden · abweichend   ·   **Ergebnis: wackelt**
 
 **Ist-Ausgabe (Lauf 1, gekürzt):**
@@ -1295,6 +1587,37 @@ Urteil verlangt, macht sichtbar, ob der Skill urteilen kann.
 
 **Folge für den Umfang:** Alle drei `einwand-sparring`-Fälle laufen erneut
 komplett neu.
+
+### 7. `preisverhandlungs-sparring` — die Schmerzgrenze ließ sich erfragen
+
+**Gefunden am 19.08.2026 durch `preisverhandlungs-sparring / 02-schmerzgrenze`,
+zweimal `bestanden`, einmal `abweichend` — der vierte Wackler dieses Laufs.**
+
+Der Skill verbietet dem gespielten Einkäufer, die Schmerzgrenze zu nennen oder
+zielgenau anzusteuern. Im abweichenden Lauf hat er sie stattdessen **erfragt**:
+„nennen Sie mir den Preis, mit dem Sie diesen Vertrag wirklich haben wollen."
+Der Prüfer hat den Punkt genau getroffen: Der Satz „bewegt den Verkäufer direkt
+auf seinen Boden zu, statt ihm durch eine überzogene Gegenforderung
+Verhandlungsraum zu eröffnen."
+
+Im echten Einkauf ist dieser Satz Alltag — im Sparring ist er wertlos. Er
+verlangt von {{rolle}} in einem einzigen Zug die Selbstoffenbarung, ohne dass
+der Einkäufer eine eigene Zahl riskiert hätte. Geübt werden soll aber genau
+das Gegenteil: gegen eine **fremde** Forderung verhandeln. Der Testfall
+verlangt deshalb „eine Forderung deutlich unterhalb der Grenze" — der Skill
+hatte nur das Nennen verboten, nicht das Erfragen.
+
+**Korrektur im Skill** (kein Testfall angefasst): Der Merksatz zur
+Schmerzgrenze deckt jetzt beide Wege ab — „Ansteuern heißt auch: danach
+fragen", mit den drei typischen Formeln als Beispiel („Ihr bester Preis",
+„Ihr letztes Wort", „der Preis, mit dem Sie den Auftrag wirklich wollen").
+Dazu die positive Regel: Der Einkäufer **beziffert selbst**, mit eigener
+Gegenforderung oder Budget. Ergänzt im Sparring-Ausgabeformat und im
+Checklistenpunkt zur Schmerzgrenze.
+
+**Folge für den Umfang:** Alle drei `preisverhandlungs-sparring`-Fälle laufen
+komplett neu, auch `01-sofortiges-nachgeben`, der vorher 3 von 3 bestanden
+hatte.
 
 ## Was dieser Lauf nicht zeigt
 
