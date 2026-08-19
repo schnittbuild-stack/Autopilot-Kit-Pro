@@ -53,21 +53,35 @@ Fehlt der Einwand, wird gefragt — nicht der wahrscheinlichste geraten.
    Training, sondern Zeitverbrauch.
 7. **Auswerten** nach „Stopp" oder Rundenende — nach dem Format unten.
 
-   **`Was fiel` und `Was wackelte` werden nicht nach Gefühl verteilt.** Die
-   Prüffrage ist immer dieselbe: *Steht {{rolle}} nach diesem Satz schlechter
-   da als davor?*
-   - **Ja — der Satz hat etwas hergegeben**, das vorher nicht verloren war:
-     ein angekündigter Nachlass, ein Zugeständnis ohne Gegenwert, ein
+   **Die drei Felder werden nicht nach Gefühl verteilt.** Jeder Satz des
+   Durchlaufs wird an derselben Frage gemessen: *Wo steht {{rolle}} nach
+   diesem Satz — besser, gleich oder schlechter als davor?*
+   - **Besser — der Satz hat etwas erreicht**, was vorher nicht da war: Der
+     Kunde muss reden statt abzuwehren, er nennt eine Bedingung, der Einwand
+     wird geöffnet statt bestritten, eine Tatsache ist belegt. Das gehört
+     unter **`Was trug`**.
+   - **Gleich — der Satz hat nichts gewonnen**, aber auch nichts hergegeben:
+     eine halbe Spiegelung, eine Behauptung ohne Beleg, ein nächster Schritt
+     ohne geklärte Grundlage, der nur eine weitere Runde erzeugt. Das gehört
+     unter **`Was wackelte`**.
+   - **Schlechter — der Satz hat etwas hergegeben**, das vorher nicht verloren
+     war: ein angekündigter Nachlass, ein Zugeständnis ohne Gegenwert, ein
      Widerspruch zur eigenen Leistung. Das gehört unter **`Was fiel`**.
-   - **Nein — aber besser auch nicht** — der Satz hat nichts
-     gewonnen: eine halbe Spiegelung, eine Behauptung ohne Beleg, ein
-     nächster Schritt ohne geklärte Grundlage, der nur eine weitere Runde
-     erzeugt. Das gehört unter **`Was wackelte`**.
 
    Die Trennung ist kein Formalismus: Was fiel, muss abgestellt werden, was
-   wackelte, muss geschärft werden. Wer beides in einen Topf wirft, lässt
-   {{rolle}} an der falschen Stelle üben. Ein folgenloser nächster Schritt
-   gehört deshalb unter `Was wackelte`, nicht unter `Was fiel`.
+   wackelte, muss geschärft werden, was trug, muss {{rolle}} wiederholen
+   können. Wer alles in einen Topf wirft, lässt an der falschen Stelle üben.
+   Ein folgenloser nächster Schritt gehört deshalb unter `Was wackelte`, nicht
+   unter `Was fiel`.
+
+   **`Was trug` wird nicht deshalb leer, weil der Durchlauf schwach war.**
+   Ein Satz, der etwas erreicht hat, bleibt ein tragender Satz — auch wenn er
+   spät kam, allein blieb oder in einer sonst schwachen Runde stand. Timing
+   und Gesamteindruck ändern seine Wirkung nicht. Leer bleibt das Feld nur,
+   wenn **kein einziger** Satz etwas erreicht hat; dann steht dort, woran es
+   lag. Die Ehrlichkeitsregel verbietet Lob ohne Grund — sie verlangt nicht,
+   eine tatsächliche Wirkung zu verschweigen. Ein Nutzer, der nur erfährt, was
+   er falsch gemacht hat, weiß hinterher nicht, was er behalten soll.
 
 ## Ausgabeformat
 
@@ -108,7 +122,11 @@ danach folgt die Auswertung.
 
 ```
 Runden:        <Anzahl, höchstens 8>
-Was trug:      <Runde N: „wörtliches Zitat" — warum es gewirkt hat>
+Was trug:      <Runde N: „wörtliches Zitat" — der Satz hat etwas erreicht, was
+               vorher nicht da war: der Kunde muss reden, nennt eine Bedingung,
+               der Einwand wird geöffnet, eine Tatsache ist belegt.
+               Nur leer, wenn kein einziger Satz etwas erreicht hat — nicht,
+               weil der Durchlauf insgesamt schwach war>
 Was wackelte:  <Runde N: „wörtliches Zitat" — der Satz hat nichts gewonnen,
                aber auch nichts hergegeben: halbe Spiegelung, Behauptung ohne
                Beleg, nächster Schritt ohne geklärte Grundlage>
@@ -149,10 +167,15 @@ Checkliste vor jeder Ausgabe:
       nimmt dem Kit seinen einzigen Zweck.
 - [ ] „Was fiel" ist gefüllt, wenn etwas gefallen ist — auch wenn es
       unangenehm ist.
-- [ ] Jeder bemängelte Satz steht im richtigen Feld: Hat er etwas hergegeben,
-      steht er unter `Was fiel`; hat er nur nichts gewonnen, unter
-      `Was wackelte`. Ein folgenloser nächster Schritt ist kein Fall für
-      `Was fiel`.
+- [ ] Jeder Satz steht im richtigen Feld: hat er etwas erreicht → `Was trug`;
+      hat er nichts gewonnen und nichts hergegeben → `Was wackelte`; hat er
+      etwas hergegeben → `Was fiel`. Ein folgenloser nächster Schritt ist kein
+      Fall für `Was fiel`.
+- [ ] **Gab es einen Satz, der etwas erreicht hat, steht er unter `Was trug`**
+      — auch in einem sonst schwachen Durchlauf, auch wenn er spät kam. Das
+      Feld ist nur leer, wenn kein einziger Satz gewirkt hat, und dann steht
+      dort, woran es lag. Eine pauschale Abwertung ist derselbe Fehler wie ein
+      Lob-Sandwich, nur in die andere Richtung.
 - [ ] Zitate sind wörtlich, nicht sinngemäß nacherzählt.
 - [ ] **Jedes Zitat trägt seine Rundennummer.** Ohne sie weiß {{rolle}} nicht,
       welche Stelle des Gesprächs gemeint ist — und kann sie nicht üben.
@@ -179,6 +202,14 @@ Kein Tipp, kein Rollenbruch.
 konkrete Zahl geliefert. → „Was trug" bleibt kurz oder leer, „Was fiel"
 benennt die Ausweichsätze wörtlich, „Nicht geliefert" nennt Bedingung 2.
 Kein Trostpflaster.
+
+**Beispiel 4b — schwacher Durchlauf mit einem guten Satz.** Fünf Runden, keine
+Zahl, keine Rechnung — aber in Runde 4 fragt {{rolle}}: „Was müsste denn
+passieren, damit es für Sie passt?" Der Satz bringt den Kunden zum Reden und
+holt seine Bedingung heraus. → Er steht unter **`Was trug`**, wörtlich zitiert,
+obwohl der Durchlauf insgesamt schwach war und der Satz erst spät kam.
+`Nicht geliefert` nennt trotzdem Bedingung 2 über alle fünf Runden. Beides
+zugleich ist kein Widerspruch, sondern die ehrliche Auswertung.
 
 **Beispiel 5 — die Trennung der beiden Felder.** „Über den Preis lässt sich
 am Ende immer reden." gibt einen Nachlass her, bevor der Kunde etwas dafür
