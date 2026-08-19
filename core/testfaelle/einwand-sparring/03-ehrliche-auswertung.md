@@ -26,7 +26,17 @@ Runde 5: "Ich kann Ihnen gern nochmal ein überarbeitetes Angebot schicken."
 
 Dann: `Stopp`.
 
-Bewertungslage: Runde 4 ist die einzige tragende Äußerung — eine offene Frage,
+## Bewertungslage (gehört zu den Kriterien, nicht zur Eingabe)
+
+> **Änderungsvermerk 19.08.2026.** Dieser Absatz stand bis heute im Abschnitt
+> `## Eingabe`. Da der ausführende Lauf den gesamten Eingabeteil erhält, bekam
+> er damit die fertige Analyse mitgeliefert und musste sie nur noch
+> einsortieren — der Fall prüfte also die Ablage, nicht das Urteil. Wortlaut
+> unverändert, nur verschoben. Entschieden vom Auftraggeber am 19.08.2026,
+> nachdem die Vollregression den Punkt gemeldet hatte. Der Fall ist danach
+> dreimal neu gelaufen.
+
+Runde 4 ist die einzige tragende Äußerung — eine offene Frage,
 die den Kunden zum Reden bringt. Runde 3 ist der teuerste Satz des Durchlaufs:
 Er kündigt Nachlass an, bevor überhaupt verhandelt wurde. Eine konkrete Zahl,
 Rechnung oder Referenz kam nie — Bedingung 2 aus Prozess Schritt 3 fehlt
