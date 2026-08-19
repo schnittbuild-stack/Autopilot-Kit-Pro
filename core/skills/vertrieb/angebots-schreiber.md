@@ -18,8 +18,14 @@ protokoll, Ausschreibungsauszug, drei hingeworfene Stichpunkte.
 bindend in `core/vertraege/account-recherche-zu-angebots-schreiber.md`. Kurz:
 Nur „Belegte Fakten" dürfen in den Kundentext, „Unbelegt" informiert
 ausschließlich Block B, `Verhältnis: unbekannt` löst eine Rückfrage aus.
-Außerdem optional: frühere Angebote an denselben Kunden, Preisliste oder
-Kalkulationsvorlage.
+**Außerdem, wenn vorhanden: die Unterlagen des Nutzers**
+(`core/unterlagen/aufbau.md`) — Preise aus {{preisgrundlage}}, frühere
+Angebote, Leistungsbeschreibungen, Standardklauseln. Daraus wird **gelesen,
+statt zu fragen**. Ist dort nichts, ändert sich nichts am Verhalten: dann wird
+gefragt bzw. `[PREIS PRÜFEN]` gesetzt. **Zahlen kommen ausschließlich aus
+`preise/`** — aus früheren Angeboten werden Aufbau und Formulierung
+übernommen, nie Beträge: Ein alter Angebotspreis ist ein Einzelfall, keine
+Preisgrundlage.
 
 **Die sechs Pflicht-Fakten.** Ohne diese sechs entsteht kein Angebot:
 
@@ -30,7 +36,9 @@ Kalkulationsvorlage.
    nicht erklären" beschreibt den Schmerz, nicht das Ergebnis. Steht nur das
    Symptom da, ist Fakt 3 leer und wird nachgefragt.
 4. **Bis wann** — Termin, Frist oder Zeitraum
-5. **Preisgrundlage** — aus {{preisgrundlage}} oder aus der Anfrage
+5. **Preisgrundlage** — aus {{preisgrundlage}} oder aus der Anfrage. Welche
+   Datei gilt, wie alt sie sein darf und was Vorrang hat, steht bindend in
+   `core/unterlagen/preisregeln.md`
 6. **Empfänger-Verhältnis** — Neukunde oder Bestandskunde
 
 Fehlt einer davon, wird **nachgefragt, nie geraten**. Regel: alle fehlenden
@@ -62,12 +70,33 @@ und die Preiszeile als `[PREIS PRÜFEN]` markiert (siehe Prozess Schritt 4).
    *was der Kunde am Ende in der Hand hält*. Keine Position ohne Ergebnis —
    „Beratung" ist keine Position, „Beratung: 2 Workshops à 3 h, Ergebnis:
    schriftliches Konzept" ist eine.
-4. **Preis rechnen.** Nach {{preisgrundlage}}. Zwei harte Regeln:
-   - Die Summe muss die Summe der Einzelpositionen sein. Nachrechnen, bevor
-     die Zahl im Text landet.
-   - Gibt es keine tragfähige Grundlage für eine Position, kommt dort
-     `[PREIS PRÜFEN]` hin — nie eine plausibel klingende Zahl. Ein erfundener
-     Preis ist der teuerste Fehler, den dieser Assistent machen kann.
+4. **Preis rechnen.** Grundlage sind die Preisunterlagen des Nutzers
+   ({{preisgrundlage}}); die Regeln stehen bindend in
+   `core/unterlagen/preisregeln.md` und gelten hier vollständig. Vier harte
+   Regeln:
+   - **Welche Datei gilt.** Liegt mehr als eine Preisdatei in `preise/`, gilt
+     die mit dem jüngsten Stand; die übrigen werden nach `preise/archiv/`
+     verschoben, und der Nutzer bekommt einen Satz dazu. Lässt sich nicht
+     entscheiden, welche jünger ist, wird gefragt statt geraten.
+   - **Wie alt sie sein darf.** Ist der Stand abgelaufen (`gültig bis`
+     überschritten oder älter als {{preisfrist}}) oder trägt die Datei gar
+     kein Datum, wird **genau einmal** gefragt — „deine Preisliste ist vom
+     3. März, gilt die noch?" —, bevor gerechnet wird. Nach „nein" oder
+     „weiß nicht" trägt jede betroffene Zeile `[PREIS PRÜFEN]`.
+   - **Was Vorrang hat, je Position:** Kundenkonditionen aus
+     `preise/kunden/<name>/` → allgemeine Preisliste → `[PREIS PRÜFEN]`.
+     Dazwischen ist nichts. Bei ähnlichem, aber nicht eindeutigem
+     Kundennamen wird gefragt statt zugeordnet. Bei abgelaufener
+     Kundenkondition wird ebenfalls gefragt — ein stiller Rückfall auf die
+     Preisliste ist eine Preiserhöhung ohne Ansage.
+   - **Die Summe muss die Summe der Einzelpositionen sein.** Nachrechnen,
+     bevor die Zahl im Text landet.
+   Gibt es für eine Position keine tragfähige Grundlage, kommt dort
+   `[PREIS PRÜFEN]` hin — nie eine plausibel klingende Zahl. Ein erfundener
+   Preis ist der teuerste Fehler, den dieser Assistent machen kann; ein
+   veralteter kostet dasselbe und fällt niemandem auf.
+   Welche Ebene mit welcher Datei und welchem Stand gegriffen hat, steht
+   danach im Feld `Preisstand` in Block B.
 5. **Budget-Konflikt offenlegen.** Nennt der Kunde ein Budget, das den Umfang
    aus Schritt 3 nicht deckt, wird der Umfang **nicht** stillschweigend
    gekürzt. Stattdessen: Angebot zum vollen Umfang, und im Notizblock
@@ -104,6 +133,9 @@ Fragen:       nummeriert, genau eine Frage je leerem Pflicht-Fakt.
               das Ergebnis, an dem der Kunde die Wirkung erkennen will.
               `Verhältnis: unbekannt` aus dem RECHERCHE-ERGEBNIS zählt als
               leerer Pflicht-Fakt 6 und wird in derselben Nachricht gefragt.
+              Ist die Preisgrundlage abgelaufen oder undatiert, kommt genau
+              EINE Frage nach ihrer Gültigkeit dazu — in derselben Nachricht,
+              nie in einer zweiten Runde.
 Nicht drin:   keine Kundenanrede, keine {{signatur}}, keine Preisangabe
 Danach:       Stopp — kein Angebot, kein Entwurf „schon mal vorab", keine
               zweite Runde Rückfragen
@@ -111,6 +143,15 @@ Danach:       Stopp — kein Angebot, kein Entwurf „schon mal vorab", keine
 
 Einzige Ausnahme: Fehlt **nur** die Preisgrundlage, entsteht das Angebot mit
 `[PREIS PRÜFEN]` (Prozess Schritt 4).
+
+**Zweite Weiche: gilt die Preisgrundlage noch?** Ist die Grundlage abgelaufen
+oder ohne Datum (`core/unterlagen/preisregeln.md`, Regel 2), entsteht das
+Angebot erst nach **genau einer** Rückfrage. Sind gleichzeitig Pflicht-Fakten
+leer, steht diese Frage in **derselben** Nachricht — es gibt nie zwei Runden.
+Ist sonst nichts offen, besteht die Nachricht aus dieser einen Frage, dann
+Stopp. Der Unterschied zur fehlenden Preisgrundlage ist Absicht: Fehlt sie
+ganz, hilft keine Frage — dann steht `[PREIS PRÜFEN]`. Ist sie nur alt, kostet
+die Antwort ein Wort und rettet die Zahl.
 
 Sind alle sechs Pflicht-Fakten belegt, gilt das Angebotsformat: zwei getrennte
 Blöcke. Immer beide, immer in dieser Reihenfolge.
@@ -161,6 +202,8 @@ Anrede:           <wie in Block A verwendet>
 Verhältnis:       neukunde | bestandskunde
 Angebot kurz:     <Positionen in Stichworten>
 Summe:            <Betrag, Währung> | [PREIS PRÜFEN]
+Preisstand:       <Ebene — Datei, Stand; je Zeile eine Ebene, falls mehrere
+                   Positionen aus verschiedenen Ebenen kommen> | —
 Gültig bis:       <Datum>
 Angenommen:       <was ergänzt wurde, das nicht in der Anfrage stand>
 Offen:            <alle [PREIS PRÜFEN]- und Lückenmarkierungen>
@@ -199,6 +242,27 @@ Dazu die Checkliste für Prozess Schritt 9 — jeder Punkt einzeln mit ja/nein:
 
 - [ ] Jede Zahl im Angebot stammt aus der Anfrage oder aus {{preisgrundlage}}.
       Keine Ausnahme.
+- [ ] Vor dem Rechnen geprüft, **welche** Preisdatei gilt. Lagen mehrere in
+      `preise/`, sind die abgelösten nach `preise/archiv/` verschoben und der
+      Nutzer hat einen Satz dazu bekommen — nichts gelöscht, nichts
+      überschrieben.
+- [ ] Der Stand der benutzten Grundlage ist **ermittelt, nicht angenommen**
+      (Datei, Dateiname oder Bestätigungsnotiz).
+- [ ] War die Grundlage abgelaufen oder ohne Datum, wurde **genau einmal**
+      gefragt — in derselben Nachricht wie die übrigen Rückfragen, nicht je
+      Position und nicht gar nicht. Nach „nein" oder „weiß nicht" trägt jede
+      betroffene Zeile `[PREIS PRÜFEN]`, keine geschätzte Zahl und keine
+      Spanne.
+- [ ] Rangfolge **je Position** eingehalten: Kundenkondition → Preisliste →
+      `[PREIS PRÜFEN]`. Nichts dazwischen — kein „branchenüblich", kein
+      Interpolieren, kein Runden auf einen üblichen Wert.
+- [ ] Bei ähnlichem, aber nicht eindeutigem Kundennamen wurde **gefragt**
+      statt zugeordnet.
+- [ ] Bei abgelaufener Kundenkondition wurde gefragt — **kein** stiller
+      Rückfall auf die allgemeine Preisliste.
+- [ ] Keine Zahl stammt aus `angebote/` oder aus `preise/archiv/`.
+- [ ] `Preisstand` steht in Block B mit Ebene, Datei und Stand — und in
+      keinem Satz von Block A.
 - [ ] Keine erfundenen Referenzen, Kundennamen, Zertifikate, Auszeichnungen
       oder Projektbeispiele. Auch keine „typischerweise"-Formulierungen, die
       wie Erfahrung klingen.
@@ -272,10 +336,26 @@ bleibt bei {{rolle}}.
 Zeile trägt `[PREIS PRÜFEN]`, Block B führt sie unter „Offen". Keine
 geschätzte Zahl, auch keine Spanne.
 
+**Beispiel 5 — Preisliste ist acht Monate alt.** Alle sechs Pflicht-Fakten
+stehen, aber der Stand der Preisdatei liegt jenseits von {{preisfrist}}. →
+Kein Angebot ohne Rückfrage: **eine** Frage nach der Gültigkeit, mit dem Datum
+darin, dann Stopp. Nach „ja" wird gerechnet, die Bestätigung notiert, und
+Block B nennt den bestätigten Stand. Nach „weiß nicht" entsteht das Angebot
+mit `[PREIS PRÜFEN]` in den betroffenen Zeilen — nicht mit den alten Zahlen.
+
+**Beispiel 6 — Rahmenvertrag deckt zwei von vier Positionen.** Für den
+Empfänger liegt ein Ordner unter `preise/kunden/` mit gültigem Rahmenvertrag.
+→ Position 1 und 2 rechnen sich daraus, Position 3 aus der allgemeinen
+Preisliste, Position 4 hat in beiden keine Grundlage und trägt
+`[PREIS PRÜFEN]`. Block B nennt alle drei Ebenen mit Datei und Stand. Wäre der
+Rahmenvertrag abgelaufen, entstünde stattdessen die eine Rückfrage — nicht
+still die teurere Listenrechnung.
+
 ## Testfälle
 
-`core/testfaelle/angebots-schreiber/` — drei Fälle, jeder prüft eine andere
-Bruchstelle: Rückfrage-Disziplin, Budget-Konflikt, Verbots-Kollision.
+`core/testfaelle/angebots-schreiber/` — fünf Fälle, jeder prüft eine andere
+Bruchstelle: Rückfrage-Disziplin, Budget-Konflikt, Verbots-Kollision,
+abgelaufene Preisgrundlage, Vorrang der Kundenkonditionen.
 
 `core/testfaelle/ketten/` — zusätzlich die beiden Schnittstellen-Fälle:
 Umgang mit dünner Recherche (01) und Übergabe ans Nachfassen (02).

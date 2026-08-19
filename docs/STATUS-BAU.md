@@ -48,7 +48,14 @@
         festgeschrieben (19.08.2026) — gebaut wird erst danach
   - [ ] Anforderung 1 — **Sitzungswechsel unsichtbar**
   - [ ] Anforderung 2 — **`meine-unterlagen/` als dritte Wissensquelle**
+    - [x] Aufbau festgeschrieben: `core/unterlagen/aufbau.md`
+    - [ ] Installer legt den Ordner an und fragt in Phase 2 danach
   - [ ] Anforderung 3 — **Preise sind nicht statisch**
+    - [x] Regeln festgeschrieben: `core/unterlagen/preisregeln.md`
+    - [x] `angebots-schreiber` nachgezogen, Vertrag um `Preisstand` erweitert,
+          zwei neue Testfälle (`04`, `05`) — **Läufe stehen aus**, siehe
+          „Nachlauf Phase 3"
+    - [ ] Installer erklärt das Ersetzen in Phase 2/5
   - [ ] Anforderung 4 — **aufgeräumte Kundenansicht**
   - [ ] Installer-Phasen 1–5 ausgebaut, `notfall/` gefüllt, Abbruch-Test
 - [ ] Phase 4 — Watchdog & Ketten-Tests
@@ -262,6 +269,44 @@ Alle vier Punkte müssen erfüllt sein:
    „weiter"-Anleitung.
 4. **Die Kundenansicht enthält keinen technischen Begriff und keinen Ordner,
    der nicht erklärt wurde.**
+
+## Nachlauf Phase 3 — Testfälle, die neu laufen müssen (19.08.2026)
+
+Anforderung 2 und 3 haben **genau einen** Skill geändert: `angebots-schreiber`
+(Unterlagen als Quelle, Preisregeln in Prozess-Schritt 4, Feld `Preisstand` in
+Block B, neun neue Checklistenpunkte). Dazu **eine Vertragsänderung**:
+`angebots-schreiber-zu-follow-up-generator` hat das Feld `Preisstand`
+bekommen, ausdrücklich als **Innenangabe** — `follow-up-generator` liest es
+nicht, erfragt es nicht und sein Fehlen löst keine Rückfrage aus. Der Skill
+`follow-up-generator` selbst wurde **nicht** angefasst (Arbeitsregel „keine
+allgemeinen Regel-Sweeps").
+
+**Müssen laufen — noch nicht gelaufen:**
+
+| Fall | Warum | Läufe |
+|---|---|---|
+| `angebots-schreiber/01-rueckfrage-disziplin` | Skill geändert | 3 |
+| `angebots-schreiber/02-budget-konflikt` | Skill geändert, rechnet mit {{preisgrundlage}} | 3 |
+| `angebots-schreiber/03-verbots-kollision` | Skill geändert | 3 |
+| `angebots-schreiber/04-preisgrundlage-abgelaufen` | **neu** — prüft Regel 2 der Preisregeln | 3 |
+| `angebots-schreiber/05-kundenkondition-vorrang` | **neu** — prüft Regel 3 der Preisregeln | 3 |
+| `ketten/01-recherche-fast-leer` | Skill geändert, Testprofil geändert | 3 |
+| `ketten/02-entwurf-und-abgelehnte-forderung` | Vertrag geändert | 3 |
+
+**7 Fälle, 21 Erzeugungen, 21 getrennte Bewertungen.** Bestanden nur bei
+3 von 3.
+
+**Sollten mitlaufen — Entscheidung des Auftraggebers:** die drei Fälle von
+`follow-up-generator`. Ihr Skill ist unverändert, aber ihre **Eingabe** ist
+vertraglich definiert, und der Vertrag hat ein Pflichtfeld mehr. Die
+Testfall-Blöcke enthalten `Preisstand` nicht — genau der Fall, für den die
+Ausnahme im Vertrag steht. Ob die Ausnahme trägt oder ob der Skill stattdessen
+abbricht oder nachfragt, weiß man erst nach dem Lauf. Kosten: 3 Fälle, 9
+Erzeugungen, 9 Bewertungen.
+
+**Bis diese Läufe erfolgt sind, ist die Zahl aus Phase 2 (32 von 32) für die
+betroffenen Fälle nicht mehr gültig.** Sie wird nicht fortgeschrieben, solange
+sie nicht neu belegt ist.
 
 ## Offene Punkte
 - Digistore24/CopeCart-Konto beantragen (Freischaltung dauert Tage)

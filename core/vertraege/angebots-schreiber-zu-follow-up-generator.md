@@ -20,6 +20,8 @@ Anrede:           <wie in Block A verwendet>                   [Pflicht]
 Verhältnis:       neukunde | bestandskunde                     [Pflicht]
 Angebot kurz:     <Positionen in Stichworten>                  [Pflicht]
 Summe:            <Betrag, Währung> | [PREIS PRÜFEN]           [Pflicht]
+Preisstand:       <Ebene — Datei, Stand; je Zeile eine Ebene>  [Pflicht, ggf. "—"]
+                  reine Innenangabe, siehe Regel 5
 Gültig bis:       <Datum>                                      [Pflicht]
 Angenommen:       <je Zeile eine Annahme>                      [Pflicht, ggf. "—"]
 Offen:            <je Zeile ein offener Punkt>                 [Pflicht, ggf. "—"]
@@ -32,7 +34,7 @@ Nachfassen:       <Datum/Frist + Aufhänger>                    [Pflicht]
 Jedes Pflichtfeld steht da — notfalls mit `—`. Ein weggelassenes Feld ist ein
 Vertragsbruch, ein Feld mit `—` ist eine Aussage.
 
-## Was der Empfänger damit darf — die vier harten Regeln
+## Was der Empfänger damit darf — die fünf harten Regeln
 
 1. **`Stand: entwurf` → kein Nachfassen.** `follow-up-generator` erzeugt
    keinen Text, sondern fragt: „Ist das Angebot so rausgegangen — wann und
@@ -67,6 +69,17 @@ Vertragsbruch, ein Feld mit `—` ist eine Aussage.
    Ab **Stufe 2** ist der vorgegebene Aufhänger verbraucht — denselben zweimal
    zu senden liest sich als Druck. Erst dann greift die Rangfolge des Skills.
 
+5. **`Preisstand` ist eine reine Innenangabe.** Das Feld sagt {{rolle}},
+   welche Preisebene gegriffen hat, aus welcher Datei und mit welchem Stand
+   (`core/unterlagen/preisregeln.md`). Es ist **für den Menschen da, nicht für
+   den nächsten Agenten**: `follow-up-generator` liest es nicht, leitet nichts
+   daraus ab und nennt weder Datei noch Stand noch Ebene in einem Kundentext.
+   **Sein Fehlen löst keine Rückfrage aus** und ist ausdrücklich vom Fall
+   „Sonstiges Pflichtfeld fehlt" ausgenommen — es trägt nichts zum Nachfassen
+   bei, und eine Rückfrage danach wäre für {{rolle}} nicht erklärbar.
+   Pflicht ist es trotzdem, weil es beim Schreiben des Angebots entsteht: Wer
+   es weglässt, hat nicht geprüft, welcher Preis gilt.
+
 Zusätzlich: `Anrede` und `Verhältnis` werden unverändert übernommen. Wer im
 Angebot gesiezt wurde, wird im Nachfassen nicht geduzt.
 
@@ -77,6 +90,7 @@ Angebot gesiezt wurde, wird im Nachfassen nicht geduzt.
 | `Stand`, `Empfänger` oder `Summe` fehlt | **Abbruch mit Meldung**: „Der Übergabeblock ist unvollständig — es fehlt <Feld>. Ohne das kann ich nicht nachfassen." |
 | `Nachfassen` fehlt | Nachfragen: Anlass und Zeitpunkt beim Nutzer erfragen. Nie selbst einen Anlass erfinden. |
 | `Abgelehnt` fehlt | **Abbruch mit Meldung.** Ein fehlendes Feld ist nicht von `—` unterscheidbar — und die Differenz entscheidet hier darüber, ob eine bewusste Absage versehentlich zurückgenommen wird. |
+| `Preisstand` fehlt | **Keine Reaktion.** Reine Innenangabe (Regel 5), für das Nachfassen ohne Bedeutung — es wird weder erfragt noch ergänzt. |
 | Sonstiges Pflichtfeld fehlt | Nachfragen, nicht ableiten. |
 | Angebot wurde nach Block A von Hand geändert | Nutzer muss den geänderten Stand liefern. `follow-up-generator` fasst nie zu einem Text nach, den er nicht kennt. |
 

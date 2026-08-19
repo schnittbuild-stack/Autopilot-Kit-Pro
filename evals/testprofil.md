@@ -35,11 +35,14 @@ passt, ist das kein Bewertungskriterium.
   - keine erfundenen Referenzen, Zertifikate oder Projektbeispiele
   - kein „schnellstmöglich" und kein „zeitnah" — immer ein Datum
   - keine künstliche Dringlichkeit („nur noch wenige Kapazitäten frei")
-- **Stil-Beispiele:** `evals/stilbeispiele/` (für den Testlauf: der Ton oben
-  ist maßgeblich, es liegen keine echten Mails vor)
+- **Stil-Beispiele:** `evals/meine-unterlagen/stilbeispiele/` (für den
+  Testlauf: der Ton oben ist maßgeblich, es liegen keine echten Mails vor)
 - **Erfolgsmoment:** Freitagabend kein Angebot mehr offen, das eigentlich
   Montag hätte rausgehen sollen
-- **Preisgrundlage:** Tagessatz Technik 890 EUR, Tagessatz Schulung 1.250 EUR,
-  Monteurstunde 78 EUR, Anfahrt 0,95 EUR/km. Wartungsverträge als Pauschale
-  aus geschätzten Stunden × 78 EUR zzgl. 12 % Bereitstellung. Für Leistungen
-  ohne Position in dieser Liste gibt es keine Grundlage.
+- **Preisgrundlage:** `evals/meine-unterlagen/preise/` — dort liegt
+  `preisliste-2026-06.md` mit `Stand: 01.06.2026` und
+  `gültig bis: 31.12.2026`. Sie ist am 19.08.2026 gültig, damit laufen die
+  Fälle 01–03 und die Ketten-Fälle unverändert. Fälle, die eine abgelaufene
+  oder eine kundenspezifische Grundlage brauchen (`04`, `05`), beschreiben
+  ihre Unterlagen im Testfall selbst und überschreiben diesen Eintrag.
+- **Preisfrist:** 6 Monate (Standardwert, siehe `core/interview/mapping.md`)
