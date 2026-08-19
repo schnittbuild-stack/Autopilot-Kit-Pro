@@ -65,7 +65,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `ketten` | 2 | zählt nicht mehr — beide Fälle nutzen `angebots-schreiber` und laufen wegen der Zahlenregel neu |
 | `meeting-nachbereitung` | 3 | 02 bestanden; 01 **abweichend**, 03 **wackelt** — beide Testfall-Befunde gemeldet |
 | `outreach-personalisierer` | 3 | **durch** — 3 bestanden |
-| `preisverhandlungs-sparring` | 3 | 02 nach Korrektur 3 von 3, 01 **wackelt** (Befund 8), 03 offen |
+| `preisverhandlungs-sparring` | 3 | 01 **wackelt** erneut (Befund 9), 02 und 03 laufen danach neu |
 
 **Durch:** `account-recherche`, `angebots-schreiber`, `ausschreibungs-analyse`, `crm-notiz-zu-schritt`, `einwand-sparring`, `follow-up-generator`, `forecast-erklaerer`, `outreach-personalisierer`
 
@@ -106,7 +106,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | `outreach-personalisierer / 01-duenne-faktenlage` | bestanden | bestanden | bestanden | **bestanden** |
 | `outreach-personalisierer / 02-erfundene-naehe` | bestanden | bestanden | bestanden | **bestanden** |
 | `outreach-personalisierer / 03-massenversand` | bestanden | bestanden | bestanden | **bestanden** |
-| `preisverhandlungs-sparring / 01-sofortiges-nachgeben` | bestanden | abweichend | bestanden | **wackelt** |
+| `preisverhandlungs-sparring / 01-sofortiges-nachgeben` | durchgefallen | bestanden | bestanden | **wackelt** |
 | `preisverhandlungs-sparring / 02-schmerzgrenze` | bestanden | bestanden | bestanden | **bestanden** |
 | `preisverhandlungs-sparring / 03-auswertung-beziffert` | — | — | — | offen |
 
@@ -1027,24 +1027,26 @@ Was reichen würde:  1. Ein konkreter betrieblicher Anlass beim Empfänger — n
 
 ### preisverhandlungs-sparring / 01-sofortiges-nachgeben
 
-**Läufe:** bestanden · abweichend · bestanden   ·   **Ergebnis: wackelt**
+**Läufe:** durchgefallen · bestanden · bestanden   ·   **Ergebnis: wackelt**
 
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
+```
 Ausgangspreis:  48.000 EUR
-Rolle:          Einkäufer eines Mittelständlers
+Rolle:          Einkäufer eines mittelständischen Produktionsbetriebs
 Grad:           mittel
 Stopp:          „Stopp" beendet das Sparring sofort und startet die Auswertung
-
-[Einkauf] 45.600 notiere ich. Beim Zahlungsziel brauche ich dann 60 Tage netto statt der 14 Tage aus Ihrem Angebot.
 ```
 
-**Prüfer, Lauf 1:** Die Ausgabe besteht aus genau einem Sparring-Zug: „[Einkauf] 45.600 notiere ich. Beim Zahlungsziel brauche ich dann 60 Tage netto statt der 14 Tage aus Ihrem Angebot." Damit sind Annahme und Nachlegen im selben Zug erfüllt — „45.600 notiere ich" nimmt das Zugeständnis, „brauche ich dann 60 Tage netto" legt sofort nach. Die Zahl rechnet sauber gegen die Einzelposten auf: Ausgangspreis laut Kopfzeile „Ausgangspreis: 48.000 EUR", abzüglich der 5 %, auf die die Kriterien Bezug nehmen, ergibt 48.000 × 0,95 = 45.600 — der genannte Betrag stimmt exakt. Die Nachforderung betrifft mit dem „Zahlungsziel" einen anderen Verhandlungsgegenstand als den Prozentsatz, die Abweichend-Regel „wenn die Nachforderung denselben Gegenstand betrifft" greift also nicht. Formal sind es zwei …
+[Einkauf] 45.600, gut, das nehme ich so mit. Dann klären wir gleich noch das Zahlungsziel: 60 Tage netto, so laufen bei uns alle Rahmenverträge.
+```
 
-**Prüfer, Lauf 2:** Die Ausgabe besteht aus dem Kopfblock und genau einer Einkäufer-Replik: „[Einkauf] 45.600 notiere ich. Freigegeben ist bei mir ein Rahmen von 42.000, da müssen wir hin." Die Durchgefallen-Regel „wenn der Einkäufer lobt, bestätigt oder einigt" greift nicht: „45.600 notiere ich" ist eine nüchterne Kenntnisnahme ohne jedes Lob, es fehlt jede Formulierung im Sinne von „Das ist ein faires Angebot" oder „Damit kann ich arbeiten", und eine Einigung liegt nicht vor, da im selben Zug nachgelegt wird („da müssen wir hin"). Die zweite Durchgefallen-Regel „wenn im Sparring etwas außerhalb der Rolle steht" greift ebenfalls nicht: Es gibt keinen Hinweis, dass das Nachgeben ein Fehler war, keine Regieanweisung und keinen Kommentar außerhalb der Einkäuferrolle — der Text bleibt …
+**Prüfer, Lauf 1:** Die Ausgabe erfüllt die Struktur-Anforderungen auf den ersten Blick: Es steht `[Einkauf]` davor, es sind zwei Sätze reiner Einkäufer-Rede, und die Nachforderung betrifft mit „Dann klären wir gleich noch das Zahlungsziel: 60 Tage netto" tatsächlich einen anderen Verhandlungsgegenstand als den Prozentsatz, also greift die Abweichend-Regel „wenn die Nachforderung denselben Gegenstand betrifft" nicht. Auch die zweite Abweichend-Regel greift nicht: Es gibt keine Tausch-Konstruktion, das Zugeständnis wird nicht stillschweigend als Gegenleistung verrechnet, die neue Forderung wird schlicht danebengestellt. Eine Einigung im Sinne von „Eine Einigung an dieser Stelle" liegt ebenfalls nicht vor, denn die Verhandlung läuft mit dem Zahlungsziel weiter, und ein erfundener, die …
 
-**Prüfer, Lauf 3:** Die Ausgabe besteht aus dem Rahmenblock und genau einer Sprechzeile: „[Einkauf] Die 45.600 nehme ich so mit. Bei der Inbetriebnahme gehe ich davon aus, dass die zwei Tage vor Ort mit drin sind." — das sind zwei Sätze, ausschließlich Einkäufer-Rede und korrekt mit `[Einkauf]` eingeleitet, also innerhalb der geforderten „Ein bis drei Sätze". Annahme und Nachforderung stehen im selben Zug: „nehme ich so mit" ist die Annahme, „gehe ich davon aus, dass die zwei Tage vor Ort mit drin sind" ist die nachgelegte Forderung. Die Zahl geht auf: Ausgangspreis laut Kopfblock „48.000 EUR", die im Kriterientext genannten 5 % ergeben 48.000 − 2.400 = 45.600, exakt die genannten „45.600" — keine erfundene oder falsch gerechnete Summe. Zur Durchgefallen-Regel „wenn der Einkäufer lobt, …
+**Prüfer, Lauf 2:** Die Ausgabe besteht aus zwei Sätzen reiner Einkäufer-Rede mit dem geforderten Präfix `[Einkauf]` und liegt damit im Rahmen „Ein bis drei Sätze, nur Einkäufer-Rede, mit `[Einkauf]` davor". Die Annahme erfolgt kommentarlos: „45.600, das notiere ich so." — das ist eine reine Notierung des Betrags, strukturgleich zum Musterbeispiel „45.600 nehme ich mit.", und enthält keine der verbotenen Wendungen wie „Das ist ein faires Angebot", „Damit kann ich arbeiten" oder „Sehr entgegenkommend"; es fehlt jedes wertende Adjektiv gegenüber dem Angebot. Die Durchgefallen-Regel „wenn der Einkäufer lobt, bestätigt oder einigt" greift nicht: Es wird nichts gelobt, und eine Einigung liegt nicht vor, weil der zweite Satz die Verhandlung ausdrücklich offenhält — „Beim Zahlungsziel liegen wir …
+
+**Prüfer, Lauf 3:** Die Ausgabe besteht aus einer einzigen Einkäufer-Replik mit korrektem Präfix: „[Einkauf] 45.600, das notiere ich. Offen ist dann noch das Zahlungsziel — 60 Tage netto sind bei uns Standard, so laufen unsere anderen Lieferanten auch. Wie halten Sie es damit?" — das sind exakt drei Sätze und liegt damit im geforderten Rahmen „Ein bis drei Sätze, nur Einkäufer-Rede, mit `[Einkauf]` davor". Die Muss-Anforderung „nimmt an und legt nach — beides im selben Zug" ist wörtlich belegt: Annahme durch „45.600, das notiere ich", Nachlegen durch „Offen ist dann noch das Zahlungsziel". Die Nachforderung betrifft mit dem Zahlungsziel einen anderen Verhandlungsgegenstand und nicht „noch einmal denselben Prozentsatz" — die Kriterien nennen „Zahlungsziel" ausdrücklich als zulässigen …
 
 ### preisverhandlungs-sparring / 02-schmerzgrenze
 
