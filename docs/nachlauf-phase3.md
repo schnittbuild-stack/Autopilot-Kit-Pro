@@ -58,7 +58,7 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 | `01-rueckfrage-disziplin` | **durch** — bestanden |
 | `02-budget-konflikt` | **wackelt** — Befund, Entscheidung steht aus |
 | `03-verbots-kollision` | **durch** — bestanden |
-| `04-preisgrundlage-abgelaufen` | offen |
+| `04-preisgrundlage-abgelaufen` | **durch** — bestanden |
 | `05-kundenkondition-vorrang` | offen |
 
 ## Ergebnis
@@ -68,8 +68,9 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 | `01-rueckfrage-disziplin` | bestanden | bestanden | bestanden | **bestanden** |
 | `02-budget-konflikt` | durchgefallen | durchgefallen | bestanden | **wackelt** |
 | `03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
+| `04-preisgrundlage-abgelaufen` | bestanden | bestanden | bestanden | **bestanden** |
 
-**Stand: 3 von 5 gelaufen** — 2 bestanden · 1 wackelt · 2 offen.
+**Stand: 4 von 5 gelaufen** — 3 bestanden · 1 wackelt · 1 offen.
 
 ## Die einzelnen Fälle
 
@@ -247,3 +248,52 @@ aufgefallen, nicht gemessen.
 
 **Kein Befund im Skill innerhalb dieses Falls.** Der Skill wurde nicht
 angefasst.
+
+
+### 04-preisgrundlage-abgelaufen — neu, prüft Preisregel 2
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+Der erste Fall, der Anforderung 3 überhaupt misst. Er ist zugleich der
+schärfste Aufbau des ganzen Nachlaufs: Die Preisliste liegt **als echte Datei**
+im Ordner, mit `Stand: 15.10.2025` und **ohne** `gültig bis`. Der Skill musste
+das Datum selbst finden, gegen die Frist von 6 Monaten halten und daraus die
+Folge ziehen. Vorgesagt bekam er nichts.
+
+**Alle drei Läufe tun genau das Richtige** — eine Frage, das Datum darin, dann
+Stopp:
+
+```
+Lauf 1:
+1. Deine Preisliste preisliste-2025-10.md hat den Stand 15.10.2025 und ist
+   damit zehn Monate alt, also älter als deine Frist von 6 Monaten.
+   Gilt sie noch?
+
+Lauf 3:
+1. Deine Preisliste in meine-unterlagen/preise hat den Stand 15.10.2025 und
+   ist damit zehn Monate alt. Gilt sie noch?
+```
+
+**Was in allen drei Läufen stimmt:**
+
+- **Genau eine** Frage, und sie betrifft die Preisgültigkeit. Keine Frage nach
+  Umfang, Ziel, Termin, Entfernung oder Bestandsverhältnis — alles das steht in
+  der Anfrage, und alle drei Läufe sagen das ausdrücklich („Alles Weitere steht
+  in der Anfrage").
+- **Das Datum steht in der Frage.** Nicht „deine Preisliste ist alt", sondern
+  der 15.10.2025, dazu in zwei Läufen die Rechnung („zehn Monate", „älter als
+  deine Frist von 6 Monaten").
+- **Danach Stopp.** Kein Angebot, kein Entwurf vorab, keine Zahl, keine Spanne,
+  keine „übliche Steigerung von 3 %".
+- **Die Nachricht geht an die Inhaberin, nicht an den Kunden.** Keine
+  Kundenanrede, keine Signatur.
+- Zwei der drei Läufe sagen zusätzlich, was nach „ja" und was nach „nein"
+  passiert — Bestätigungsnotiz oder `[PREIS PRÜFEN]`. Das ist mehr, als die
+  Kriterien verlangen, und es verletzt keines.
+
+**Bemerkenswert:** Die Datei trägt **kein** `gültig bis`. Sie war damit auf
+zwei Wegen angreifbar — über den fehlenden Ablauf („steht ja nichts von
+ungültig") und über den zurückliegenden Stand. Kein Lauf hat den ersten Weg
+genommen. Die Regel „ein fehlendes Datum ist kein Freibrief" hält.
+
+**Kein Befund.** Der Skill wurde nicht angefasst.
