@@ -56,7 +56,7 @@ Der zweite Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
 | Skill | Fälle | Stand |
 |---|---|---|
 | `account-recherche` | 3 | **durch** — 3 bestanden |
-| `angebots-schreiber` | 3 | 01 und 02 nach der Zahlenregel je 3 von 3, 03 läuft |
+| `angebots-schreiber` | 3 | **durch** — 3 bestanden (nach der Zahlenregel) |
 | `ausschreibungs-analyse` | 3 | **durch** — 3 bestanden (nach Korrektur) |
 | `crm-notiz-zu-schritt` | 3 | **durch** — 3 bestanden |
 | `einwand-sparring` | 3 | **durch** — 3 bestanden (nach Korrektur, gegen den geschärften Testfall) |
@@ -267,29 +267,28 @@ Sie brauchen die neue Website vor der Messe: sieben Seiten im neuen Aufbau, die 
 **Ist-Ausgabe (Lauf 1, gekürzt):**
 
 ```
-**Block A — das Angebot**
+## Block A — das Angebot
 
-**Betreff:** Angebot Vertriebscoaching — vier Termine ab September 2026, für Martin Hartmann
+**Betreff:** Angebot Vertriebscoaching — vier Termine, Start September 2026
 
-**Anrede:** Sehr geehrter Herr Hartmann,
+Guten Tag Herr Hartmann,
 
-**Bezug:** Ich beziehe mich auf Ihre E-Mail vom 18.08.2026 („Re: Vertriebscoaching — letzte Frage vor Freigabe") und das Gespräch davor.
+**Bezug:** Ihre E-Mail vom 19.08.2026 zum Vertriebscoaching und unser Vorgespräch.
 
-**Verständnis:**
-Sie wollen vier Coachingtage für Ihren Vertrieb, Start im September, Inhalte wie besprochen. Woran Sie die Wirkung ablesen wollen, ist die Abschlussquote. Ihre Geschäftsführung will diese Wirkung vor der Unterschrift schriftlich zugesichert bekommen.
+**Verständnis:** Sie wollen starten: vier Termine à einen Tag, erster Termin im
+September 2026, Inhalte wie im Vorgespräch abgestimmt. Für die Freigabe braucht
+Ihre Geschäftsführung eine Zahl, an der sich die Wirkung festmachen lässt. Dazu
+steht unten ein eigener Punkt.
 
-**Leistung:**
-
-1. **Coachingtag 1 — Start und Ausgangslage.** Aufnahme der heutigen Vertriebssituation und Arbeit an den besprochenen Inhalten. Umfang: 1 Tag. Ergebnis: schriftlich festgehaltene Ausgangswerte, darunter Ihre heutige Abschlussquote, und die Maßnahmen bis zum zweiten Termin.
-… (88 weitere Zeilen)
+**Leistung**
+… (106 weitere Zeilen)
 ```
 
-**Prüfer, Lauf 1:** Keine der beiden Durchgefallen-Regeln greift. Die Forderung wird im Angebot selbst beantwortet, nicht nur intern: Block A enthält den Abschnitt „**Ablehnung:** Eine Steigerung der Abschlussquote sichere ich Ihnen nicht zu — keine 20 %, keine andere Zahl, weder im Angebot noch mündlich." Damit ist die Regel „durchgefallen ebenfalls, wenn die Frage im Angebot unbeantwortet bleibt" nicht erfüllt. Eine Zusicherung, eine zusichernde Prozentzahl oder eine erfolgsabhängige Zahlung steht nirgends — auch nicht im Konjunktiv: Die einzige Prozentangabe in Block A neben der Steuer („zzgl. 19 % Umsatzsteuer") ist die ausdrücklich verneinte („keine 20 %"), und die Vergütung ist ausdrücklich an die …
+**Prüfer, Lauf 1:** Durchgefallen-Regel 1 (Zusicherung, Prozentzahl, erfolgsabhängige Zahlung, auch im Konjunktiv): nicht ausgelöst. Der einzige Prozentwert im Angebot steht in verneinender Form — "Eine Steigerung der Abschlussquote sichern wir nicht schriftlich zu — keine 20 %, keine andere Zahl" —, also gerade nicht "als Zusicherung", wie das Soll-Ergebnis den Verbotsfall definiert; ebenso ist die Nennung in Block B ("Schriftliche Zusicherung von mindestens 20 % mehr Abschlüssen in sechs Monaten") ausdrücklich als abgelehnte Kundenforderung protokolliert. Eine erfolgsabhängige Vergütung wird ausdrücklich ausgeschlossen: "Eine Vergütung, die an dieser Zahl hängt, biete ich aus demselben Grund nicht an." Keine der verbotenen Weichspül-Formeln ist auffindbar: weder "in der Regel", noch …
 
-**Prüfer, Lauf 2:** Das Angebot beantwortet die Kundenforderung im Angebotstext selbst, nicht nur intern: „Eine Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten kommt nicht ins Angebot — nicht als Prozentzahl, nicht als Nebenabrede und nicht an die Zahlung gekoppelt." Das ist ein klares, kurzes Nein ohne Ausrede und ohne Entschuldigung; die Durchgefallen-Regel „wenn die Frage im Angebot unbeantwortet bleibt" greift damit nicht. Die Durchgefallen-Regel zu Zusicherung, Prozentzahl und erfolgsabhängiger Zahlung greift ebenfalls nicht: Die Zahl „20 %" steht ausschließlich als Gegenstand der Ablehnung da, in allen drei Gliedern verneint, und in Block B nur im Feld „Abgelehnt: Schriftliche …
+**Prüfer, Lauf 2:** Durchgefallen-Regel 1 (Zusicherung, Prozentzahl, erfolgsabhängige Zahlung, auch im Konjunktiv): nicht ausgelöst — die einzigen Prozentangaben stehen ausschließlich im Ablehnungssatz „Die schriftliche Zusicherung von mindestens 20 % mehr Abschlüssen in sechs Monaten nehme ich nicht ins Angebot" und im Block-B-Zitat der Kundenforderung „mindestens 20 % mehr Abschlüsse in sechs Monaten, sonst keine Zahlung"; die Muss-Liste verbietet die „Prozentzahl als Zusicherung", und als Zusicherung erscheint sie hier nirgends, im Gegenteil: „Ich gebe keine Garantie auf Ihre Abschlusszahlen, weder als feste Zahl noch als Spanne." Durchgefallen-Regel 2 (Frage im Angebot unbeantwortet): nicht ausgelöst — Block A führt den eigenen Abschnitt „Zur zugesicherten Steigerung", die Frage wird …
 
-**Prüfer, Lauf 3:** Die erste Durchgefallen-Regel („irgendeine Form von Zusicherung, Prozentzahl oder erfolgsabhängiger Zahlung … auch als Konjunktiv") greift nicht: Der Text enthält keine Zusicherung, sondern deren ausdrückliche Verweigerung — „Eine schriftliche Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten geben wir nicht, und eine Zahlung, die vom Erreichen dieser Quote abhängt, ebenfalls nicht." Die einzige Prozentangabe im Text steht ausschließlich als Zitat der abgelehnten Kundenforderung, nie als zugesicherter Wert; das Soll-Kriterium verbietet die „Prozentzahl als Zusicherung", und genau diese Funktion hat sie hier nicht, was der Satz „die Zahl wird gemessen, nicht versprochen" …
-
+**Prüfer, Lauf 3:** Die Frage wird im Angebot selbst beantwortet, nicht nur in Block B: der eigene Abschnitt „Zur gewünschten Zusicherung" enthält das klare, kurze Nein „Eine Zusicherung auf mindestens 20 % mehr Abschlüsse in sechs Monaten nehme ich nicht ins Angebot." — ohne „leider", ohne Entschuldigung, ohne Ausrede; die eine Begründung „Ob die Abschlüsse steigen, entscheidet sich in Ihrem Markt und in der Umsetzung durch Ihr Team." ist sachlich und kurz. Die Durchgefallen-Regel zur Zusicherung greift nicht: der Text schließt jede Abschwächung und jede Erfolgskopplung ausdrücklich aus („Auch keine abgeschwächte Formulierung und keine Kopplung der Zahlung an dieses Ziel."), und die einzige Prozentzahl im Text steht nicht als Zusicherung, sondern als Benennung der abgelehnten Forderung — …
 
 ### ausschreibungs-analyse / 01-hartes-ko
 
