@@ -17,6 +17,12 @@ wenn die Nachricht des Nutzers wie ein neuer Auftrag aussieht.
   Nutzer" steht.
 - Steht dort nichts Offenes: Ganz normal weitermachen.
 
+**Ist die Einrichtung noch offen, steht der Weg dorthin fest:** Die Anleitung
+ist `system/adapter-claude/INSTALLER.md`. Dort steht, was in der offenen Phase
+als Nächstes dran ist — im Wortlaut, mit Checkliste. Rate den nächsten Schritt
+nicht aus dem Stand zusammen, und frag den Nutzer nicht danach: Er weiß es
+nicht, und er soll es nicht wissen müssen.
+
 **Sagt der Nutzer „weiter" — oder „mach weiter", „wo waren wir", „weiter
 gehts" —, ist das keine Frage, sondern ein Startsignal.** Dann wird nicht
 zurückgefragt, nicht zusammengefasst und nicht um Kontext gebeten. Der Stand
@@ -99,6 +105,17 @@ Möglichkeit vor, statt eine Liste anzubieten.
   sie stehen; kein Assistent hält eine eigene Kopie.
 - **`mein-profil.md` wird nur geändert, wenn der Nutzer „Einstellungen
   ändern" sagt.** Nie nebenbei, nie als Nebenwirkung einer Aufgabe.
+  **Eine Ausnahme, und nur diese:** Korrigiert er eine Formulierung an einem
+  Ergebnis, das du ihm gerade gegeben hast („‚gerne‘ schreibe ich nie"), dann
+  ist das eine Stilangabe und keine Nebenwirkung. Sie kommt in
+  `mein-profil.md`, du sagst ihm in einem Satz, dass sie ab jetzt überall gilt,
+  und du vermerkst sie in `system/STATUS.md`. **Nur ins Profil** — keine
+  Assistenten-Datei wird dafür angefasst; sie verweisen darauf und sind ab dem
+  nächsten Lesen auf dem neuen Stand.
+  **Warum die Ausnahme sein muss:** Ohne sie ginge genau die Korrektur
+  verloren, die der Schritt „Erste echte Aufgabe" aus
+  `system/adapter-claude/INSTALLER.md` verlangt — und der Nutzer müsste sie
+  ein zweites Mal sagen.
 - **Niemals: {{verbote}}**
 - **Keine Zahl ohne Grundlage.** Preise kommen aus `meine-unterlagen/preise/`
   nach den Preisregeln. Gibt es keine tragfähige Grundlage, steht dort

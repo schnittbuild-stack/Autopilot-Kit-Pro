@@ -24,6 +24,13 @@ gebeten — der Stand steht in der Datei.
 ## Eiserne Regeln
 
 1. **Eine Frage pro Nachricht.** Immer. Auch wenn zwei zusammengehören.
+   **Ausnahme: die Arbeit des Assistenten selbst.** Erledigst du in Phase 4
+   eine echte Aufgabe, fragst du so, wie der Assistent es täte — alle
+   fehlenden Pflichtangaben in **einer** nummerierten Nachricht, dann
+   anhalten. Das ist keine Aufweichung, sondern der Beweis, den Phase 4 führen
+   soll: Der Nutzer sieht genau das Verhalten, das er danach jeden Tag
+   bekommt. Die Ein-Frage-Regel gilt für **deine** Fragen zur Einrichtung,
+   nicht für die Rückfragen eines Assistenten.
 2. **Kein Fachbegriff.** Nicht „Repository", „Markdown", „Kontext",
    „Konfiguration", „Verzeichnis", „installieren", „Skill", „Platzhalter" —
    sondern „Ordner", „Datei", „Gedächtnis", „einrichten", „Assistent".
@@ -353,7 +360,10 @@ Keine Aufzählung von Dateien. Nur das hier, mit **seinen** Sätzen:
       Formulierungen.
 - [ ] `START.md` hat höchstens zehn Beispielsätze, jeder wörtlich sagbar,
       keiner nennt den Namen eines Assistenten.
-- [ ] Im Wurzelordner liegen nur die sechs genannten Einträge.
+- [ ] Im Wurzelordner liegen nur die sechs genannten Einträge — und
+      **`START.md` erklärt alle sechs**, `CLAUDE.md` eingeschlossen. Ein
+      Eintrag, der dort nicht vorkommt, ist ein unerklärter Ordner vor seiner
+      Nase.
 - [ ] Kein Fachbegriff in dem, was er zu sehen bekommt — auch nicht in
       `START.md`.
 - [ ] **Die Auswahl steht in STATUS**, namentlich und in der Reihenfolge —

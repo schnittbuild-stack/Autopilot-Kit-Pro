@@ -77,15 +77,25 @@ Skill funktioniert dann wie bisher, nur mit mehr Rückfragen.
 
 ## Bedingte Zusatzfrage zur Preisgrundlage
 
-Wird **nur dann** gestellt, wenn beides zutrifft:
+Wird **nur dann** gestellt, wenn alle drei zutreffen:
 
 1. In `meine-unterlagen/preise/` liegt nichts, **und**
 2. die Antworten auf Frage 1 und 3 zeigen preisbildende Arbeit (Angebote,
-   Kalkulation, Verhandlung).
+   Kalkulation, Verhandlung), **und**
+3. der Nutzer hat **nicht** angekündigt, dass Preismaterial nachkommt.
 
 Dann eine einzige Zusatzfrage, in Alltagssprache: „Wie kommst du normalerweise
 auf deinen Preis — Stundensatz, Tagessatz, Pauschale? Oder ist das jedes Mal
 anders?" Die Antwort landet im Profilfeld `Wie du Preise bildest`.
+
+**Zu Bedingung 3:** Der leere Ordner ist kein Beweis. Hat er eine Nachricht
+vorher „Preisliste hab ich, die leg ich gleich rein" gesagt, ist die Frage
+schon beantwortet — sie noch einmal zu stellen heißt, ihm zu zeigen, dass nicht
+zugehört wurde. Dann wird **nicht** gefragt: Der Punkt kommt in STATUS unter
+„Was der Nutzer noch nachliefern wollte", und der Wochencheck erinnert später
+**einmal** daran (`core/waechter/wochencheck.md`, Prüfpunkt 3). Bis das
+Material da ist, verhalten sich die Skills wie immer: `[PREIS PRÜFEN]` statt
+einer erfundenen Zahl.
 
 Bleibt auch sie leer, ist das ein **funktionierender Zustand**, kein Fehler:
 Die Skills markieren `[PREIS PRÜFEN]`, statt eine Zahl zu erfinden.

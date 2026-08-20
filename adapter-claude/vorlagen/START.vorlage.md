@@ -39,4 +39,6 @@ Was hier sonst liegt:
   Preisliste, alte Angebote, Leistungsbeschreibungen, AGB. Neue Preisliste
   einfach reinlegen, um die alte kümmere ich mich.
 - **ergebnisse/** — was ich für dich gemacht habe.
+- **CLAUDE.md** — mein Gedächtnis. Da steht, was ich über deine Arbeit weiß.
+  Brauchst du nie zu öffnen.
 - **system/** ist die Technik — den brauchst du nie zu öffnen.

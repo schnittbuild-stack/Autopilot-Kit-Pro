@@ -150,11 +150,19 @@ Aufgabe in Phase 4 (Beweis) vorgeschlagen wird.
 
 ## Die bedingte Zusatzfrage
 
-Wird **nur** gestellt, wenn **beides** zutrifft:
+Wird **nur** gestellt, wenn **alle drei** zutreffen:
 
 1. In `meine-unterlagen/preise/` liegt nichts, **und**
 2. die Antworten auf Frage 1 und 3 zeigen preisbildende Arbeit — Angebote,
-   Kalkulation, Verhandlung.
+   Kalkulation, Verhandlung, **und**
+3. er hat **nicht** gesagt, dass Preismaterial nachkommt.
+
+**Bedingung 3 ist die wichtigste.** Sagt er bei Frage 9 „Preisliste hab ich,
+die leg ich gleich rein", ist die Frage beantwortet — der Ordner ist nur noch
+leer, nicht mehr unbekannt. Frag dann nicht: Schreib es in STATUS unter „Was
+der Nutzer noch nachliefern wollte" und sag höchstens einen Satz dazu („Gut —
+leg sie rein, wenn du dazu kommst, ich sehe von allein nach."). Eine Frage, auf
+die er gerade geantwortet hat, kostet mehr Vertrauen als eine fehlende Zahl.
 
 Dann genau eine zusätzliche Frage, direkt nach Frage 9:
 
@@ -182,8 +190,9 @@ Zahl zu erfinden.
 ## Checkliste — vor dem Weitergehen zur nächsten Phase
 
 - [ ] Genau zehn Fragen gestellt, jede einzeln, jede mit Beispiel.
-- [ ] Die Zusatzfrage nur gestellt, wenn beide Bedingungen zutrafen — sonst
-      gar nicht.
+- [ ] Die Zusatzfrage nur gestellt, wenn **alle drei** Bedingungen zutrafen —
+      sonst gar nicht. Angekündigtes Material steht in STATUS unter „Was der
+      Nutzer noch nachliefern wollte", statt noch einmal erfragt zu werden.
 - [ ] Höchstens eine Nachfrage je Frage, und nur wo oben erlaubt.
 - [ ] Jede Antwort steht im Profil, wörtlich bei Signatur und No-Gos.
 - [ ] Übersprungene Fragen stehen als leer im Profil — nichts ergänzt,

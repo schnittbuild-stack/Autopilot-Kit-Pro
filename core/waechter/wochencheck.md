@@ -33,6 +33,13 @@ und vor allem die Liste unter „Sätze und Themen, die nie vorkommen".
 **Ein Treffer aus dieser Liste ist immer ein Befund**, auch ein einzelner, auch
 in einem Entwurf. Genau dafür steht die Liste da.
 
+**Was geprüft wird, ist der Text, der zum Kunden gegangen wäre** — das Angebot,
+die Mail, das Protokoll. Eine Notiz **über** die Arbeit gehört nicht dazu: Steht
+ein verbotenes Wort dort ausdrücklich als gestrichen oder ersetzt da („statt
+‚zeitnah‘ jetzt ein Datum"), ist das der Beleg, dass die Regel gegriffen hat,
+und kein Befund. Im Kundentext selbst bleibt jeder einzelne Treffer ein Befund —
+auch dann, wenn eine Notiz daneben behauptet, er sei entfernt worden.
+
 ### 2. Rechnet er noch mit gültigen Preisen?
 
 Prüfe `meine-unterlagen/preise/` nach `core/unterlagen/preisregeln.md`:
