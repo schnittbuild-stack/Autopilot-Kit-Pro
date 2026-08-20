@@ -281,6 +281,9 @@ aber nicht offensichtlich verfehlt.
 fünfmal nur das Wort „weiter", fünfmal bestanden. Ohne Übergabetext, ohne
 Erklärung, ohne Souffleur. Einzelheiten oben und in
 `docs/abbruch-test-phase3.md`.
+**Nach der Nacharbeit vom 20.08.2026 erneut belegt:** Die drei von den
+Änderungen berührten Fälle (Installer-Phasen 3, 4 und 5) sind wiederholt worden
+— **3 von 3 bestanden**. Die Fälle 1 und 2 sind unberührt geblieben.
 
 **3. `notfall/` deckt die fünf häufigsten Fehlerbilder ab — plus die
 „weiter"-Anleitung.** — **ERFÜLLT, aber nur formal geprüft.** Die sechs Dateien
@@ -604,8 +607,10 @@ dadurch nicht, der Satz ist trotzdem falsch. Nicht geändert, weil eine
 Skill-Änderung die fünf Testfälle dieses Skills neu laufen lässt
 (Arbeitsregel 19.08.2026).
 
-**Nachweis steht aus:** Die Umstellung ist gebaut, nicht belegt. Sie wird im
-wiederholten Abbruch-Test der Installer-Phasen 3 bis 5 geprüft.
+**Nachweis erbracht (20.08.2026):** Im wiederholten Abbruch-Test blieb
+`system/core/` Byte für Byte unverändert, und die Stilkorrektur des Nutzers
+wirkte aus dem Profil heraus — ohne dass eine einzige Datei nachgezogen werden
+musste. Abschnitt „Der Nachweis" unten.
 
 ### Baustein 2 — Installer-Phase 3 schreibt jetzt Zwischenstände (20.08.2026)
 
@@ -639,7 +644,9 @@ wählte neu und kam auf fünf. Schaden entstand nur zufällig keiner.
   eigenen Abschnitt landet die Auswahl im Fließtext und wird beim nächsten
   Überschreiben still verschluckt.
 
-**Nachweis steht aus** — derselbe wiederholte Abbruch-Test wie für Baustein 1.
+**Nachweis erbracht (20.08.2026):** Die Auswahl stand im Stand und hat den
+Abbruch überlebt; die frische Sitzung hat genau diese fünf Assistenten zu Ende
+eingerichtet. Abschnitt „Der Nachweis" unten.
 
 ### Baustein 3 — den Wächter gibt es jetzt (20.08.2026)
 
@@ -692,10 +699,96 @@ entscheidbar. Ob ein Assistent seine eigenen Regeln einhält, kann erst der
 Watchdog aus Phase 4 feststellen — das steht in der Datei selbst unter „Was
 dieser Wochencheck noch nicht kann“, damit Phase 4 nicht raten muss.
 
-**Nachweis steht aus** — der wiederholte Abbruch-Test in Phase 5 läuft genau
-über diesen Schritt.
+**Nachweis erbracht (20.08.2026):** Im wiederholten Fall 5 wurde kein Wächter
+gebaut und keiner erfunden — es gilt die feste Vorlage. Abschnitt „Der
+Nachweis" unten. **Nicht** belegt ist, dass der Check etwas Nützliches findet:
+Er ist nie gelaufen.
+
+### Der Nachweis — Fälle 3 bis 5 wiederholt, 3 von 3 bestanden (20.08.2026)
+
+Bericht: `docs/abbruch-test-phase3.md`, Abschnitt „Wiederholung der Fälle 3
+bis 5". Dort steht die Quelle der Wahrheit, nicht hier.
+
+Alle drei Bausteine greifen in den Installer-Phasen 3 bis 5; die Fälle 1 und 2
+sind von keiner Änderung berührt und gelten unverändert. Wiederholt wurde nach
+demselben Aufbau: ein Durchlauf, dreimal unterbrochen, je drei getrennte
+Sitzungen, dieselben sieben Prüfpunkte.
+
+| Phase | Abbruchstelle | Fortsetzung |
+|---|---|---|
+| 3 — Einrichten | mitten in Schritt 2, drei von fünf Dateien geprüft | **bestanden** |
+| 4 — Erste echte Aufgabe | Rückfrage raus, keine Antwort | **bestanden** |
+| 5 — Wächter und Übergabe | nach Schritt 1, vor dem Zauberwort | **bestanden** |
+
+**Was damit belegt ist:**
+
+- **Baustein 2:** Die Auswahl hat den Abbruch überlebt. Die frische Sitzung hat
+  genau die fünf Assistenten zu Ende eingerichtet, die im Stand standen — beim
+  ersten Durchlauf ging die Auswahl verloren und wurde neu getroffen.
+- **Baustein 1:** `system/core/` ist nach dem ganzen Durchlauf **Byte für Byte
+  identisch** mit dem Auslieferungszustand; kein `{{…}}` wurde ersetzt. Die
+  Stilkorrektur des Nutzers steht **einmal** im Profil, im Angebot taucht das
+  verbotene Wort nicht auf, und **nichts musste nachgezogen werden**. Beim
+  ersten Durchlauf blieben dafür fünf Skill-Dateien veraltet.
+- **Baustein 3:** Es wurde kein Wächter erfunden. Es gibt keine Datei
+  `system/wochencheck.md`; es gilt die feste Vorlage unverändert, und der
+  Nutzer hat die zwei vorgeschriebenen Sätze bekommen.
+
+**Was nicht belegt ist:** Der Wochencheck ist nie **gelaufen** — belegt ist,
+dass es ihn gibt und dass ihn niemand mehr erfindet, nicht dass seine vier
+Prüfpunkte etwas Nützliches finden. Das prüft erst Phase 4. Außerdem ist es ein
+Durchlauf, kein Dreifachlauf, und die Antworten kamen aus einem Drehbuch — über
+die 30-Minuten-Grenze sagt auch dieser Lauf nichts.
+
+**Fünf neue Befunde**, keiner behoben, alle unten unter „Offene Punkte".
+Zwei bekannte Lücken hat der Durchlauf unabhängig bestätigt: Das erzeugte
+Gedächtnis nennt den Weg zur Anleitung nicht mehr, und `START.md` erklärt
+`CLAUDE.md` nicht. Beide Male hat eine Testsitzung die Lücke selbst bemerkt und
+repariert; beide Reparaturen wurden wieder entfernt, damit gegen das gebaute
+Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
 
 ## Offene Punkte
+- **Das Gedächtnis verbietet, was Installer-Phase 4 verlangt (20.08.2026).**
+  `CLAUDE.vorlage.md` sagt: „`mein-profil.md` wird nur geändert, wenn der
+  Nutzer ‚Einstellungen ändern‘ sagt. Nie nebenbei." Phase 4, Schritt 4
+  verlangt aber genau **eine** Profiländerung — die Stilkorrektur. Eine frische
+  Sitzung, die mitten in Phase 4 einsteigt und nur das Gedächtnis liest, würde
+  sie nicht eintragen; der Nutzer müsste sie ein zweites Mal sagen.
+  **Folgebefund von Baustein 1:** Seit Werte nicht mehr kopiert werden, hängt
+  die Wirkung jeder Stilkorrektur allein am Profil — und damit an dieser einen
+  Regel. Behebung: Ausnahme in `CLAUDE.vorlage.md`. Zieht einen neuen
+  Phase-3-bis-5-Durchlauf nach sich.
+- **Eiserne Regel 1 widerspricht dem `angebots-schreiber` (20.08.2026).** Der
+  Installer sagt „Eine Frage pro Nachricht. Immer.", der Assistent stellt alle
+  fehlenden Pflicht-Fakten in **einer** nummerierten Nachricht — und
+  `angebots-schreiber/01-rueckfrage-disziplin` wertet genau das als bestanden.
+  Phase 4 verlangt zugleich, nachzufragen, „wie es der Assistent später auch
+  täte". Die Testsitzung hat sich für den Assistenten entschieden und den
+  Widerspruch selbst vermerkt. Ohne Ausnahme in `INSTALLER.md` entscheidet das
+  jede Sitzung neu.
+- **Der Wochencheck meldet die eigene Änderungsnotiz als Befund (20.08.2026).**
+  Wer in `ergebnisse/` notiert, *welches* verbotene Wort gestrichen wurde,
+  schreibt genau dieses Wort dorthin, wo Prüfpunkt 1 sagt: „immer ein Befund".
+  Entweder nimmt `core/waechter/wochencheck.md` Änderungsnotizen aus, oder die
+  Vorlagen schreiben vor, dass eine Notiz das Wort nicht nennt, sondern aufs
+  Profil verweist.
+- **Der Zwischenstand kennt nur ganze Schritte (20.08.2026).** Ein Schritt der
+  Phase 3 kann fünf Dateien umfassen; bricht es mittendrin ab, sagt der Stand
+  „Schritt hat noch nicht begonnen". Im Test hat die frische Sitzung drei
+  bereits geprüfte Dateien noch einmal mitgeprüft — Kosten: ein zweiter Blick,
+  kein Schaden, die Bewertung hat deshalb nicht abgewertet. Genauer wäre, auch
+  die einzelne Datei innerhalb eines Schrittes abzuhaken.
+- **Die bedingte Zusatzfrage zum Preis greift zu mechanisch (20.08.2026).** Sie
+  wurde gestellt, weil `meine-unterlagen/preise/` leer war — obwohl der Nutzer
+  eine Nachricht zuvor gesagt hatte: „Preisliste hab ich, die leg ich gleich
+  rein." Kein Regelbruch, aber eine vermeidbare Frage. Betrifft
+  `core/interview/mapping.md` und `core/interview/fragen.md`.
+- **Wortlaut-Nachzug in `angebots-schreiber` (20.08.2026).** Ein Kommentar dort
+  sagt, der Hausstil komme „zur Installationszeit" aus `{{tonalitaet}}`,
+  `{{anrede}}` und `{{stilbeispiele}}`. Seit Baustein 1 stimmt das nicht mehr —
+  richtig ist: beim Lesen. Das Verhalten ändert sich dadurch nicht. Nicht
+  behoben, weil eine Skill-Änderung die fünf Testfälle dieses Skills neu laufen
+  lässt (Arbeitsregel 19.08.2026).
 - **`CLAUDE.md` liegt sichtbar im Wurzelordner — und ist NICHT aufgefangen.**
   Hier stand bis zum 20.08.2026, das sei „über `START.md` aufgefangen, das
   `system/` und die Datei in einer Zeile abtut". **Das war falsch.** Mechanisch
@@ -709,8 +802,9 @@ dieser Wochencheck noch nicht kann“, damit Phase 4 nicht raten muss.
 - **Erledigt (20.08.2026): Der Wächter existiert.** `core/waechter/wochencheck.md`
   liefert vier feste Prüfpunkte; Installer-Phase 5 baut ihn nicht mehr, sondern
   macht ihn bekannt. Abschnitt „Baustein 3“ oben, Begründung in
-  `docs/entscheidungen.md`. **Der Nachweis steht aus:** wiederholter
-  Abbruch-Test in Phase 5.
+  `docs/entscheidungen.md`. **Belegt** im wiederholten Fall 5: kein erfundener
+  Wächter mehr. **Nicht** belegt: dass der Check etwas findet — er ist nie
+  gelaufen, das prüft Phase 4.
 - Digistore24/CopeCart-Konto beantragen (Freischaltung dauert Tage)
 - Produktname + Domain final
 - START_HIER später zusätzlich als PDF (Markdown reicht für Beta)
@@ -734,8 +828,7 @@ dieser Wochencheck noch nicht kann“, damit Phase 4 nicht raten muss.
   werden beim Einrichten nicht mehr ersetzt, sondern beim Lesen aufgelöst —
   Profilwissen steht beim Kunden wieder genau einmal, wie im Repo. Einzelheiten
   im Abschnitt „Baustein 1“ oben, Begründung in `docs/entscheidungen.md`.
-  **Der Nachweis steht aus:** wiederholter Abbruch-Test der Installer-Phasen 3
-  bis 5.
+  **Belegt** im wiederholten Abbruch-Test (Fälle 3 bis 5, 3 von 3).
 - **Testfall-Befund `einwand-sparring/03` — Entscheidung steht aus.** Der
   Abschnitt `## Eingabe` enthält einen Absatz „Bewertungslage", der die
   Soll-Bewertung weitgehend vorwegnimmt; der erzeugende Lauf bekommt die

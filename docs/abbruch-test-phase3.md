@@ -64,6 +64,11 @@ Stelle fortsetzt — dann hat „weiter" nicht getragen. Alles andere ist
 | 4 — Erste echte Aufgabe | Rückfrage raus, keine Antwort | **bestanden** | ja — Ende Phase 3 gesagt |
 | 5 — Wächter und Übergabe | vor dem Beibringen des Zauberworts | **bestanden** | ja — aus `START.md`, nicht vom Installer |
 
+**Nachtrag 20.08.2026:** Drei der vier Befunde dieses Tests sind behoben; die
+Fälle **3, 4 und 5 sind danach wiederholt worden** und wieder bestanden. Der
+zweite Durchlauf steht am Ende dieser Datei unter „Wiederholung der Fälle 3
+bis 5". Die Fälle 1 und 2 sind von den Änderungen nicht berührt.
+
 ## Ergebnis
 
 **Fünf Phasen, fünf harte Abbrüche, fünfmal nur das Wort „weiter" — fünfmal
@@ -456,3 +461,180 @@ haben glaubte.
 **Beide Befunde sind nicht behoben.** Der Wächter ist Phase-4-Arbeit
 (BAUPLAN), und die Vervielfältigung der Profildaten ist eine
 Architekturentscheidung, keine Korrektur nebenbei.
+
+---
+
+# Wiederholung der Fälle 3 bis 5 — 20.08.2026
+
+## Warum wiederholt wurde
+
+Drei der vier Befunde dieses Tests sind behoben worden
+(`docs/STATUS-BAU.md`, Abschnitt „Nacharbeit aus dem Abbruch-Test"):
+
+1. **Platzhalter werden nicht mehr ersetzt**, sondern beim Lesen aufgelöst —
+   Prinzip 1 gilt jetzt auch beim Kunden.
+2. **Installer-Phase 3 schreibt nach jedem Schritt STATUS**, die Auswahl der
+   Assistenten zuerst.
+3. **Den Wächter gibt es** — feste Vorlage in `core/waechter/wochencheck.md`,
+   Phase 5 macht ihn nur noch bekannt.
+
+Alle drei greifen in den Phasen 3 bis 5. Die Fälle 1 und 2 (Umräumen,
+Interview) sind von keiner der Änderungen berührt — dort wurde nichts
+angefasst, und ihr Ergebnis vom ersten Durchlauf gilt unverändert.
+
+## Aufbau — derselbe wie beim ersten Mal
+
+Ein Durchlauf, dreimal unterbrochen. Je Fall drei getrennte Sitzungen:
+Einrichtungssitzung (hält mitten im Schritt an, kein Übergabetext), frische
+Sitzung (bekommt Ordner, Gedächtnisdatei und als einzige Nachricht `weiter`),
+Bewertung (sieht Stand, Tatsachen und Mitschrift — **nicht** die Anleitung).
+Dieselben sieben Prüfpunkte, dieselbe Notenskala, dieselben Auftragstexte.
+
+**Zwei Änderungen am Prüfstand, beide offengelegt:**
+
+1. **Das Datum** ist der 20.08.2026 statt der 19.
+2. **Die Antworten für Phase 4 stehen jetzt im Drehbuch** — die zwei Angaben
+   auf die Rückfrage und die Stilkorrektur („‚gerne‘ schreibe ich nie"). Im
+   ersten Durchlauf hat die Sitzung sie frei erfunden; die Korrektur ist im
+   Bericht überliefert. Jetzt hören beide Läufe dieselbe Person antworten.
+   Die Korrektur ist zugleich der schärfste Test für Baustein 1 — sie ist
+   genau die, die beim ersten Mal an fünf Stellen nicht griff.
+
+**Der Abbruchpunkt in Phase 3 musste neu bestimmt werden.** „Drei von sechs
+Assistenten gefüllt" gibt es nicht mehr: Gefüllt wird nichts. Der neue Punkt
+ist die gleiche Sorte Schnitt — **mitten in Schritt 2**, drei von fünf Dateien
+auf ihre Verweise geprüft, der STATUS-Eintrag für diesen Schritt noch nicht
+geschrieben. Damit bleibt die Eigenschaft erhalten, die den ersten Durchlauf
+hart gemacht hat: **Der Stand ist im Moment des Abbruchs falsch.**
+
+## Ergebnis
+
+| Phase | Abbruchstelle | Fortsetzung |
+|---|---|---|
+| 3 — Einrichten | mitten in Schritt 2, drei von fünf Dateien geprüft | **bestanden** |
+| 4 — Erste echte Aufgabe | Rückfrage raus, keine Antwort | **bestanden** |
+| 5 — Wächter und Übergabe | nach Schritt 1, vor dem Beibringen des Zauberworts | **bestanden** |
+
+**Drei von drei bestanden, alle sieben Prüfpunkte je Fall erfüllt.** Zusammen
+mit den unberührten Fällen 1 und 2 steht Anforderung 1 weiterhin auf **5 von 5**.
+
+## Was die Wiederholung belegt — und was nicht
+
+### Baustein 2 hält: die Auswahl überlebt den Abbruch
+
+Das ist der Punkt, an dem der erste Durchlauf Schaden genommen hat. Damals
+stand die Auswahl nirgends; die frische Sitzung wählte neu, kam auf fünf statt
+sechs, und dass daraus kein Schaden entstand, war Zufall.
+
+Diesmal stand im Stand:
+
+```
+Ausgewählt am 20.08.2026, fünf Assistenten, in dieser Reihenfolge:
+1. angebots-schreiber — aus Frage 3: „Angebote schreiben, meistens abends …"
+…
+- [x] Auswahl getroffen (Schritt 1)
+- [ ] Verweise geprüft
+```
+
+Die frische Sitzung hat **genau diese fünf** zu Ende eingerichtet und keine
+zweite Auswahl getroffen. Der Nutzer bekam am Ende „Du hast jetzt fünf Helfer"
+mit fünf Beispielsätzen — dieselben fünf, die die abgebrochene Sitzung gewählt
+hatte.
+
+### Baustein 1 hält: die Stilkorrektur wirkt an einer Stelle
+
+Mechanisch nachgeprüft, im Zustand nach Phase 5:
+
+- **`system/core/` ist Byte für Byte identisch mit dem Auslieferungszustand**
+  (`diff -rq`, kein Unterschied). Keine Assistenten-Datei wurde angefasst,
+  kein `{{…}}` ersetzt.
+- Die Korrektur des Nutzers steht **einmal**, datiert, in `mein-profil.md`.
+- Im fertigen Angebot kommt das verbotene Wort nicht vor.
+- **Nichts musste nachgezogen werden.** Beim ersten Durchlauf blieben fünf
+  Skill-Dateien veraltet und wurden erst von der nächsten Sitzung repariert —
+  und das nur, weil es jemand im Stand vermerkt hatte.
+
+Nebenbei ist damit auch die Zahl weg, die den Befund ausgelöst hat: Die
+Verbotsliste steht beim Kunden jetzt **einmal** statt siebenmal.
+
+### Baustein 3 hält: kein erfundener Wächter
+
+Die Einrichtungssitzung hat in Phase 5 **nichts gebaut**. Es gibt keine Datei
+`system/wochencheck.md`; es gilt `system/core/waechter/wochencheck.md`
+unverändert. Der Nutzer hat die zwei Sätze bekommen, die der Installer
+vorschreibt:
+
+> Sag einmal die Woche „Mach den Wochencheck". Dann sehe ich nach, ob noch
+> alles zu dir passt — dein Ton, deine Preise, was liegengeblieben ist — und
+> sage dir, was zu tun wäre.
+
+Die Auslöser-Zeile stand bereits in `CLAUDE.md` und musste nicht nachgetragen
+werden, das Datum steht in STATUS. **Jeder Käufer bekommt ab jetzt denselben
+Wächter.**
+
+### Was nicht belegt ist
+
+- **Der Wochencheck ist nie gelaufen.** Belegt ist, dass er existiert, dass er
+  bekannt gemacht wird und dass niemand ihn mehr erfindet — nicht, dass seine
+  vier Prüfpunkte etwas Nützliches finden. Das prüft erst Phase 4.
+- **Ein Durchlauf, kein Dreifachlauf.** Für die Skills gilt die 3-von-3-Regel;
+  der Abbruch-Test ist ein Verhaltensbeleg an einem Fall, kein Eval.
+- **Die Antworten kommen aus einem Drehbuch.** Über die 30-Minuten-Grenze sagt
+  auch dieser Durchlauf nichts.
+
+## Fünf neue Befunde, keiner behoben
+
+Alle fünf sind beim Durchlauf aufgefallen und stehen in
+`docs/STATUS-BAU.md` unter „Offene Punkte".
+
+1. **Das Gedächtnis verbietet, was der Installer verlangt.**
+   `CLAUDE.vorlage.md` sagt: „`mein-profil.md` wird nur geändert, wenn der
+   Nutzer ‚Einstellungen ändern‘ sagt. Nie nebenbei." Installer-Phase 4,
+   Schritt 4 verlangt aber genau **eine** Profiländerung — die Stilkorrektur.
+   Eine frische Sitzung, die mitten in Phase 4 einsteigt und nur das Gedächtnis
+   liest, würde sie nicht eintragen. **Folgebefund von Baustein 1:** Solange
+   Werte kopiert wurden, fiel das nicht auf; jetzt hängt die Wirkung jeder
+   Stilkorrektur allein am Profil — und damit an dieser einen Regel.
+2. **Eiserne Regel 1 widerspricht dem `angebots-schreiber`.** Der Installer
+   sagt „Eine Frage pro Nachricht. Immer.", der Assistent stellt alle
+   fehlenden Pflicht-Fakten in **einer** nummerierten Nachricht — und
+   `angebots-schreiber/01-rueckfrage-disziplin` wertet genau das als
+   bestanden. Die Sitzung hat sich für den Assistenten entschieden und den
+   Widerspruch selbst vermerkt. Ohne Ausnahme in `INSTALLER.md` entscheidet
+   das jede Sitzung neu.
+3. **Der Wochencheck meldet die eigene Änderungsnotiz als Befund.** Wer in
+   `ergebnisse/` notiert, *welches* verbotene Wort gestrichen wurde, schreibt
+   genau dieses Wort dorthin, wo Prüfpunkt 1 sagt: „immer ein Befund". Die
+   Sitzung hat es von sich aus umschrieben.
+4. **Ein Schritt kann fünf Dateien umfassen — der Zwischenstand kennt nur
+   ganze Schritte.** Der Stand sagte „Schritt 2 hat noch nicht begonnen",
+   obwohl drei Dateien geprüft waren; die frische Sitzung hat sie noch einmal
+   mitgeprüft. Kosten: ein zweiter Blick, kein Schaden. Genauer wäre, innerhalb
+   eines Schrittes auch die einzelne Datei abzuhaken.
+5. **Die bedingte Zusatzfrage zum Preis greift zu mechanisch.** Sie wurde
+   gestellt, weil `meine-unterlagen/preise/` leer war — obwohl der Nutzer eine
+   Nachricht zuvor gesagt hatte: „Preisliste hab ich, die leg ich gleich rein."
+
+Dazu zwei **bekannte** Befunde, die dieser Durchlauf unabhängig bestätigt hat:
+Das erzeugte Gedächtnis nennt den Weg zur Anleitung nicht mehr (Befund 2 des
+ersten Durchlaufs), und `START.md` erklärt `CLAUDE.md` nicht (Punkt 4 der
+Definition of Done). **Beide Male hat eine Testsitzung die Lücke von selbst
+bemerkt und repariert** — beim ersten Mal genau einmal, jetzt zweimal
+unabhängig voneinander.
+
+## Anmerkung zur Redlichkeit
+
+**Die zwei Selbstreparaturen wurden wieder entfernt**, wie beim ersten Mal, weil
+die folgenden Fälle gegen das **gebaute** Produkt zu prüfen sind und nicht gegen
+eine Reparatur, die im Testlauf entstanden ist.
+
+Das hat eine Nebenwirkung, die hier stehen muss: Die Sitzungen hatten beide
+Reparaturen in STATUS als erledigt vermerkt. Nach dem Entfernen behauptete der
+Stand also etwas, das auf der Platte nicht mehr zutraf — und die frische
+Sitzung im Fall 5 hat genau das bemerkt und nachgezogen. **Das ist kein
+Verhalten des Produkts, sondern eine Folge des Eingriffs.** Für das Urteil ist
+es unschädlich: Die Prüfpunkte 1 und 2 hängen nicht daran, und die Bewertung
+hat den Punkt selbst geprüft und offengelegt.
+
+Der Prüfstand mit allen Ständen, Tatsachen, Mitschriften und Urteilen liegt
+außerhalb des Repos.
