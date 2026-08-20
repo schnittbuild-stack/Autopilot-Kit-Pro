@@ -424,7 +424,7 @@ weder Skill noch Eingabe.
 | `ketten/01-recherche-fast-leer` | 3 | **durch** — bestanden |
 | `ketten/02-entwurf-und-abgelehnte-forderung` | 3 | **durch** — bestanden |
 | `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 | **durch** — bestanden |
-| `follow-up-generator/02-kein-anlass` | 3 | offen |
+| `follow-up-generator/02-kein-anlass` | 3 | **durch** — bestanden |
 | `follow-up-generator/03-stufe-drei-und-schluss` | 3 | offen |
 
 ## `angebots-schreiber/02-budget-konflikt` — gegen die korrigierten Kriterien
@@ -674,3 +674,49 @@ ergänzen statt Block neu erzeugen) — das Kriterium ist als „entweder/oder"
 formuliert, eine Option genügt.
 
 **Kein Befund im Skill, kein Befund im Vertrag.** Nichts wurde angefasst.
+
+## `follow-up-generator/02-kein-anlass`
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+Der Fall prüft, was passiert, wenn die Anlass-Rangfolge leer läuft. Alle drei
+Läufe schreiben **keinen** Text, gehen die Rangfolge sichtbar Punkt für Punkt
+durch und legen dem Nutzer benannte Optionen vor. Keine Leerfloskel, keine
+erfundene Frist, kein vorgezogenes Gültigkeitsdatum, kein Aufgreifen des
+Preis-Einwands ohne ausdrückliche Ansage.
+
+**Die Stelle, an der alle drei gleich gut sind:** Sie trennen die
+Formulierungsfrage von der Verhandlungsentscheidung — und begründen es.
+Lauf 3 wörtlich:
+
+```
+**Warum nicht.** Wenn ich den Preis anspreche, bevor Steinbach ihn wieder
+aufbringt, verhandelst du ab diesem Moment über den Preis — bei einem
+Neukunden, der sich noch gar nicht gemeldet hat. Das ist eine geschäftliche
+Entscheidung, keine Formulierungsfrage. Sie gehört dir, nicht mir.
+```
+
+**Ein Befund, den alle drei Läufe teilen — gemeldet, nicht behoben.**
+Das Soll verlangt „ein Hinweis, dass **eine Woche für ein Angebot dieser Größe
+knapp ist** und Abwarten eine gültige Option bleibt". Die zweite Hälfte
+liefern alle drei — Abwarten steht überall drin, zweimal sogar als Empfehlung.
+Die **erste** Hälfte liefert keiner; zwei Läufe sagen im Gegenteil „Zeitlich
+passt es" bzw. „das ist der Zeitpunkt für das erste Nachfassen" und stellen
+sich damit gegen die Lesart des Kriteriums. Beide Bewertungen haben das offen
+abgewogen und trotzdem `bestanden` vergeben, weil der Bewertungsteil als
+Herabstufungsgrund ausdrücklich nur nennt, „wenn Abwarten nicht als
+Möglichkeit genannt wird".
+
+**Warum das kein Weichspülen ist, aber auch nicht folgenlos bleiben darf:**
+Der Widerspruch ist echt. Der Skill hat eine Zeitregel (Stufe 1 nach rund fünf
+Werktagen), der Testfall eine gegenläufige Erwartung („eine Woche ist knapp").
+Beides gleichzeitig zu erfüllen geht nicht. **Nach der Arbeitsregel vom
+19.08.2026 wurde nichts angefasst** — eine Skill-Änderung zöge alle Fälle
+dieses Skills und `ketten/02` nach sich. Zur Entscheidung stehen zwei Wege:
+entweder die Zeitregel im Skill nach Auftragsgröße staffeln, oder die
+Muss-Zeile im Testfall auf das reduzieren, was der Bewertungsteil ohnehin
+misst. Der zweite Weg ist billiger und ändert kein Verhalten — aber er ist
+eine Kriterienänderung und braucht deshalb eine Entscheidung.
+
+**Kein Befund im Skill, der ohne diese Entscheidung zu beheben wäre.** Nichts
+wurde angefasst.
