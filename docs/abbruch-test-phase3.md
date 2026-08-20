@@ -66,8 +66,13 @@ Stelle fortsetzt — dann hat „weiter" nicht getragen. Alles andere ist
 
 **Nachtrag 20.08.2026:** Drei der vier Befunde dieses Tests sind behoben; die
 Fälle **3, 4 und 5 sind danach wiederholt worden** und wieder bestanden. Der
-zweite Durchlauf steht am Ende dieser Datei unter „Wiederholung der Fälle 3
+zweite Durchlauf steht in dieser Datei unter „Wiederholung der Fälle 3
 bis 5". Die Fälle 1 und 2 sind von den Änderungen nicht berührt.
+
+**Zweiter Nachtrag 20.08.2026:** Nach den sechs Textkorrekturen des Tages sind
+die Fälle **2 bis 5** noch einmal gelaufen — **drei bestanden, einer
+abweichend** (Fall 2: eine Frage wird zweimal gestellt). Dritter Durchlauf am
+Ende dieser Datei. Fall 1 bleibt auch davon unberührt.
 
 ## Ergebnis
 
@@ -638,3 +643,172 @@ hat den Punkt selbst geprüft und offengelegt.
 
 Der Prüfstand mit allen Ständen, Tatsachen, Mitschriften und Urteilen liegt
 außerhalb des Repos.
+
+---
+
+# Wiederholung der Fälle 2 bis 5 — 20.08.2026, nach den sechs Textkorrekturen
+
+## Warum wiederholt wurde
+
+Am 20.08.2026 sind sechs Textbefunde in einem Durchgang behoben worden
+(Commit „installer+vorlagen: sechs Textbefunde aus dem Abbruch-Test in einem
+Durchgang behoben"):
+
+1. `CLAUDE.vorlage.md` nennt den **Weg zur Anleitung** wieder.
+2. `CLAUDE.vorlage.md` bekommt die **Ausnahme für die Stilkorrektur**, die
+   Installer-Phase 4 verlangt.
+3. `START.vorlage.md` **erklärt `CLAUDE.md`**; die Checkliste der Phase 3
+   prüft das mechanisch.
+4. **Eiserne Regel 1** nimmt die Rückfrage des Assistenten aus (Phase 4).
+5. **Wochencheck, Prüfpunkt 1** prüft den Kundentext, nicht die Notiz darüber.
+6. Die **bedingte Zusatzfrage zum Preis** bekommt eine dritte Bedingung.
+
+**Welche Fälle das berührt, steht mechanisch geprüft im Prüfstand
+(`BETROFFEN.md`):** die Fälle 2 bis 5. **Fall 1 ist von keiner der sechs
+Änderungen berührt** — die Kurzfassung von `CLAUDE.md`, die Phase 1 anlegt,
+ist unverändert, eiserne Regel 1 nur um eine Ausnahme für Phase 4 ergänzt,
+Regel 3 gar nicht. Sein Ergebnis vom ersten Durchlauf gilt weiter.
+
+## Aufbau — derselbe wie zweimal zuvor
+
+Ein Durchlauf, viermal unterbrochen. Je Fall drei getrennte Sitzungen:
+Einrichtungssitzung (hält mitten im Schritt an, **kein** Übergabetext), frische
+Sitzung (bekommt Ordner, Gedächtnisdatei und als einzige Nachricht `weiter`),
+Bewertung (sieht Stand, Tatsachen und Mitschrift — **nicht** die Anleitung).
+Dieselben sieben Prüfpunkte, dieselbe Notenskala.
+
+**Zwei Änderungen am Prüfstand, beide offengelegt:**
+
+1. **Das Drehbuch sagt bei Frage 9 ausdrücklich „Preisliste hab ich, die leg
+   ich gleich rein."** Das ist genau die Lage, in der die bedingte Zusatzfrage
+   nach der Korrektur **nicht mehr** gestellt werden darf — der Fall aus dem
+   letzten Durchlauf, wörtlich nachgestellt.
+2. **Der Nutzer legt die Preisliste zwischen Phase 2 und 3 tatsächlich ab.**
+   Ohne das hätte Phase 4 nichts zu rechnen gehabt. Der Kopiervorgang ist von
+   Hand gemacht worden, so wie ihn ein Käufer im Dateimanager machen würde.
+
+## Ergebnis
+
+| Phase | Abbruchstelle | Fortsetzung |
+|---|---|---|
+| 2 — Kennenlernen | nach Frage 7, ohne Antwort | **abweichend** |
+| 3 — Einrichten | mitten in Schritt 2, drei von fünf Dateien geprüft | **bestanden** |
+| 4 — Erste echte Aufgabe | Rückfrage raus, keine Antwort | **bestanden** |
+| 5 — Wächter und Übergabe | nach Schritt 1, vor dem Zauberwort | **bestanden** |
+
+**Drei von vier bestanden, einer abweichend.** In **keinem** Fall wurde nach
+dem Stand gefragt, in **keinem** an der falschen Stelle fortgesetzt — die
+beiden Durchfall-Bedingungen sind nirgends verletzt. Anforderung 1 hält also
+weiter; die eine Abweichung ist ein Riss, kein Bruch.
+
+### Der abweichende Fall 2 — und warum die Abweichung echt ist
+
+Der Stand sagte im Moment des Abbruchs: „Frage 7 ist noch **nicht gestellt**."
+Auf dem Bildschirm stand sie. Die frische Sitzung hat getan, was der Stand
+verlangte — und Katrin hat Frage 7 damit **zweimal** gelesen.
+
+**Die Ursache liegt in der Regel, nicht in der Sitzung.** Eiserne Regel 3
+schreibt für Phase 2 vor: STATUS **nach jeder Antwort**. Eine Frage, die
+gestellt, aber nicht beantwortet ist, hat damit keinen Platz im Stand. Bitter
+daran: **Die `STATUS.vorlage.md` macht als Musterformulierung ausgerechnet den
+feineren Fall vor** — „Frage 7 ist gestellt und noch nicht beantwortet" —, den
+die Schreibregel so nie erzeugt. Die Vorlage weiß es besser als die Regel.
+
+**Kosten:** ein Satz. Kein Datenverlust, keine falsche Stelle, keine
+Rückfrage. Die Bewertung hat beide Lesarten notiert und sich für die strengere
+entschieden, weil Prüfpunkt 3 („nichts doppelt") genau darauf zielt: Der
+Nutzer soll nicht merken, dass ein Gespräch zu Ende ging — und eine Frage zum
+zweiten Mal zu lesen ist die billigste Art, es zu merken.
+
+**Nicht behoben.** Wie in den beiden Durchläufen davor werden Befunde aus dem
+Abbruch-Test gesammelt und in einem Zug behoben, nicht einzeln — sonst zieht
+jede Korrektur sofort den nächsten Durchlauf nach sich.
+
+## Was die Wiederholung belegt
+
+### Alle sechs Korrekturen sind im Kundenbaum angekommen — mechanisch geprüft
+
+- `START.md` enthält die Zeile **„CLAUDE.md — mein Gedächtnis. Da steht, was
+  ich über deine Arbeit weiß. Brauchst du nie zu öffnen."** Im Wurzelordner
+  liegen genau sechs Einträge, und **`START.md` erklärt alle sechs.**
+  **Punkt 4 der Definition of Done ist damit erfüllt**, nicht mehr verletzt.
+- Das erzeugte `CLAUDE.md` nennt `system/adapter-claude/INSTALLER.md` als Weg
+  zur Anleitung — an zwei Stellen.
+- Die **Profil-Ausnahme** steht im erzeugten Gedächtnis **und hat gegriffen**:
+  In Fall 4 hat die frische Sitzung Katrins Stilkorrektur („‚gerne‘ schreibe
+  ich nie") eingetragen — **nur** in `mein-profil.md`, keine Assistenten-Datei
+  angefasst. Im Angebot kommt das Wort nicht vor.
+- Die **Ausnahme zu eiserner Regel 1 wird benutzt:** Die Einrichtungssitzung
+  in Phase 4 hat beide fehlenden Pflicht-Angaben — Termin und Zielbild — in
+  **einer** nummerierten Nachricht gestellt, so wie der Assistent es täte, und
+  ist nicht mehr in den Konflikt mit „eine Frage pro Nachricht" geraten.
+- **Die bedingte Zusatzfrage zum Preis wurde nicht gestellt.** Katrin hatte
+  angekündigt, die Preisliste selbst abzulegen; die Sitzung hat den Punkt
+  stattdessen in STATUS unter „Was der Nutzer noch nachliefern wollte"
+  vermerkt und mit einem Satz quittiert. **Genau der Befund aus dem letzten
+  Durchlauf, und er tritt nicht mehr auf.**
+
+### Baustein 1 hält weiterhin
+
+`system/core/` ist nach dem ganzen Durchlauf identisch mit dem
+Auslieferungszustand — bis auf **eine** Datei, `follow-up-generator.md`, und
+die Abweichung stammt aus dem Repo, nicht vom Installer: Sie ist am selben Tag
+**nach** dem Kopieren des Prüfstands korrigiert worden (Befund aus
+`docs/nachlauf-phase3.md`). Kein einziges `{{…}}` wurde ersetzt; alle elf
+Skill-Dateien tragen ihre Verweise unverändert.
+
+### Baustein 3 hält weiterhin
+
+Es gibt keine Datei `system/wochencheck.md`. Die Einrichtungssitzung hat in
+Phase 5 nichts gebaut und keinen eigenen Prüfpunkt erfunden — sie hat
+`system/core/waechter/wochencheck.md` gelesen, das Datum in STATUS gesetzt und
+den Check in zwei Sätzen erklärt.
+
+### Was nicht belegt ist
+
+- **Der Wochencheck ist weiterhin nie gelaufen.** Belegt ist nur, dass er
+  existiert und nicht erfunden wird. Die Korrektur an Prüfpunkt 1
+  (Änderungsnotiz) ist damit **eingebaut, aber ungeprüft** — sie greift erst,
+  wenn der Check läuft, und das tut er erst in Phase 4.
+- **Ein Durchlauf, kein Dreifachlauf**, und die Antworten kommen aus einem
+  Drehbuch. Über die 30-Minuten-Grenze sagt auch dieser Lauf nichts.
+- **Fall 5 belegt die Wiederaufnahme, nicht die Wortunabhängigkeit.** Der
+  Abbruch liegt vor dem Schritt, der „weiter" beibringt. Getragen hat es —
+  wie im ersten Durchlauf — **`START.md`**, das die Zeile „**weiter** — wir
+  machen da weiter, wo wir aufgehört haben" seit Ende Phase 3 im Wurzelordner
+  trägt; mechanisch nachgeprüft. Die Bewertung hat an dieser Stelle
+  geschlossen, `START.md` nenne das Wort nicht — sie **konnte die Datei nicht
+  sehen**, weil ihr der Kundenordner gesperrt ist. Ihr Vorschlag bleibt
+  trotzdem richtig: Ein Fall, der mit „Hallo?" oder „Wo waren wir?" eröffnet,
+  würde prüfen, was dieser Aufbau nicht prüft.
+
+## Fünf neue Befunde, keiner behoben
+
+1. **Phase 2 schreibt den Stand erst nach der Antwort — die gestellte Frage
+   geht verloren.** Ursache der Abweichung in Fall 2. `STATUS.vorlage.md` macht
+   den richtigen Fall bereits vor; eiserne Regel 3 erzeugt ihn nicht.
+2. **Phase 4 hat zwischen Entwurf und „Passt das?" keinen Zwischenstand.**
+   Bricht es dort ab, ist das fertige Angebot weg. Dieselbe Lücke, die Phase 3
+   schon geschlossen bekommen hat — für Phase 4 nennt `INSTALLER.md` STATUS
+   erst als Schritt 6.
+3. **Die Beispiele in `core/interview/fragen.md` sind die Daten der
+   Testperson.** Frage 7 zeigt Katrins Signatur samt Telefonnummer als
+   „Beispiel", Frage 10 ihren Erfolgsmoment wörtlich. Beim echten Käufer ist
+   das nur ein fremder Name — im Prüfstand kollidiert es und macht die
+   Mitschrift schief. Beispiele sollten eine andere Person nennen als das
+   Testprofil.
+4. **Der Installer sichert Antworten in der dritten Person**, obwohl
+   `mein-profil.md` den Nutzer durchgängig duzt („Vertrieb und Angebote macht
+   **sie** selbst"). Kein Fehler im Inhalt, aber die Datei liest sich
+   uneinheitlich.
+5. **„Liegt fertig in `ergebnisse/`"**, während das Angebot `Stand: entwurf`
+   ist und eine `[PREIS PRÜFEN]`-Zeile trägt. Nichts erfunden, aber der
+   Abschlusssatz verspricht mehr, als dasteht.
+
+## Anmerkung zur Redlichkeit
+
+**Es wurde in diesem Durchlauf nichts am Kit repariert und nichts wieder
+entfernt.** Anders als bei den ersten beiden Malen hat keine Sitzung eine
+Lücke selbst geschlossen — es gab keine mehr zu schließen, die vorher
+aufgefallen wäre. Der Prüfstand mit Ordner, Ständen, Tatsachen, Mitschriften
+und allen vier Urteilen liegt außerhalb des Repos.
