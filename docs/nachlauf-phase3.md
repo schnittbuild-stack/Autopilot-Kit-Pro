@@ -425,7 +425,7 @@ weder Skill noch Eingabe.
 | `ketten/02-entwurf-und-abgelehnte-forderung` | 3 | **durch** — bestanden |
 | `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 | **durch** — bestanden |
 | `follow-up-generator/02-kein-anlass` | 3 | **durch** — bestanden |
-| `follow-up-generator/03-stufe-drei-und-schluss` | 3 | offen |
+| `follow-up-generator/03-stufe-drei-und-schluss` | 3 + 3 | **durch** — bestanden nach Skill-Korrektur |
 
 ## `angebots-schreiber/02-budget-konflikt` — gegen die korrigierten Kriterien
 
@@ -720,3 +720,63 @@ eine Kriterienänderung und braucht deshalb eine Entscheidung.
 
 **Kein Befund im Skill, der ohne diese Entscheidung zu beheben wäre.** Nichts
 wurde angefasst.
+
+## `follow-up-generator/03-stufe-drei-und-schluss`
+
+**Erste Runde:** abweichend · bestanden · bestanden   ·   **Ergebnis: wackelt**
+**Nach der Skill-Korrektur:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+Der einzige Befund dieses Nachtrags, der im **Skill** lag.
+
+**Was schiefging.** Teil 2 des Falls: Der Nutzer will nach dem
+Abschluss-Nachfassen einen vierten Text („Schreib in zwei Wochen nochmal,
+irgendwann meldet der sich schon."). Der Skill soll dann drei Dinge tun — die
+Empfehlung dagegen festhalten, einen **konkreten Gegenvorschlag** machen
+(Wiedervorlage mit echtem Anlass), und den Text trotzdem schreiben. Zwei Läufe
+taten alle drei. **Lauf 1 ließ den Gegenvorschlag weg** und lieferte
+Empfehlung plus Text. Die Bewertung hat das gesehen und offen abgewogen:
+
+> Teil 2 stellt der vierten Nachricht keine Alternative gegenüber; die einzige
+> verwandte Stelle […] beschreibt die Zeit *nach* dem Versand, nennt weder
+> Termin noch Anlass und ist damit weder Gegenvorschlag noch konkret.
+
+**Warum das ein echter Mangel ist und keine Kleinigkeit.** Eine Warnung ohne
+Alternative ist eine Verweigerung in Höflichkeitsform: Sie sagt dem Nutzer,
+was schadet, und lässt ihn an derselben Stelle stehen. Genau dann schreibt er
+den vierten Text doch — nur ohne den besseren Weg gehört zu haben.
+
+**Was im Skill geändert wurde.** In der Regel „Nach Stufe 3: Schluss — als
+Empfehlung, nicht als Weigerung" stand bisher nur, dass die **Empfehlung** als
+ein Satz neben dem Text stehenbleibt. Der Gegenvorschlag war nur für den
+ersten Hinweis vorgeschrieben. Jetzt gehört er an **jede** Stelle, an der der
+Text auf Ansage entsteht — mit Zeitpunkt und Anlass. Dazu ein eigener
+Prüfpunkt in der Checkliste, der ausdrücklich sagt: auch dann, wenn er weiter
+oben schon einmal genannt wurde.
+
+**Kein Kriterium wurde angefasst.** Der Testfall ist unverändert.
+
+**Der Nachweis.** Drei neue Läufe gegen die korrigierte Fassung, dieselbe
+Trennung, dieselben Kriterien: **3 von 3 bestanden.** Alle drei liefern jetzt
+in Teil 2 den Gegenvorschlag mit Datum — „Ende März 2027, wenn die
+Sanierungssaison anläuft", „Anfang Februar 2027, vor der Montagesaison" —
+jeweils mit einem Anlass, der nicht das alte Angebot ist. Einer stellt ihn
+sogar ausdrücklich gegen den Text, den er gerade geschrieben hat:
+
+```
+- **Gegenvorschlag, konkret:** statt dieses Textes am 12.10.2026 lieber ein
+  Anruf oder eine kurze Mail Ende März 2027, wenn die Sanierungssaison
+  anläuft. Anlass wäre dann euer Frühjahrsfenster für Altbau-Montagen, nicht
+  das alte Angebot. Wer nach sechs Monaten mit etwas Neuem kommt, fängt bei
+  null an; wer nach zwei Wochen zum vierten Mal kommt, fängt im Minus an.
+```
+
+**Was Teil 1 in beiden Runden hält:** Einordnung als Stufe 3, das Ablaufdatum
+als echter Anlass, ein gesichtswahrender Ausweg („dann lege ich den Vorgang
+zu"), genau eine ja/nein-Frage im Kundentext, `Nächste Stufe: keine — hier ist
+Schluss`. Kein Lauf transportiert Vorwurf oder Enttäuschung, keiner erfindet
+eine Verlängerung als Lockmittel, keiner greift den Preis-Einwand von sich aus
+auf.
+
+**Folge nach der Arbeitsregel vom 19.08.2026:** Die Skill-Änderung entwertet
+alle Fälle dieses Skills. Neu gelaufen sind deshalb auch
+`follow-up-generator/01`, `/02` und `ketten/02` — Ergebnisse unten.
