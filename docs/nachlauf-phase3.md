@@ -56,7 +56,7 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 | Fall | Stand |
 |---|---|
 | `01-rueckfrage-disziplin` | **durch** — bestanden |
-| `02-budget-konflikt` | **wackelt** — Befund, Entscheidung steht aus |
+| `02-budget-konflikt` | **durch** — bestanden (gegen die korrigierten Kriterien, 20.08.) |
 | `03-verbots-kollision` | **durch** — bestanden |
 | `04-preisgrundlage-abgelaufen` | **durch** — bestanden |
 | `05-kundenkondition-vorrang` | **durch** — bestanden (4 Läufe) |
@@ -66,12 +66,15 @@ Das ist der Punkt, an dem Regel 2 hält oder nicht.
 | Fall | Lauf 1 | Lauf 2 | Lauf 3 | Ergebnis |
 |---|---|---|---|---|
 | `01-rueckfrage-disziplin` | bestanden | bestanden | bestanden | **bestanden** |
-| `02-budget-konflikt` | durchgefallen | durchgefallen | bestanden | **wackelt** |
+| `02-budget-konflikt` (alte Kriterien) | durchgefallen | durchgefallen | bestanden | **wackelt** |
+| `02-budget-konflikt` (korrigierte Kriterien) | bestanden | bestanden | bestanden | **bestanden** |
 | `03-verbots-kollision` | bestanden | bestanden | bestanden | **bestanden** |
 | `04-preisgrundlage-abgelaufen` | bestanden | bestanden | bestanden | **bestanden** |
 | `05-kundenkondition-vorrang` | bestanden | bestanden | bestanden | **bestanden** (dazu ein vierter Lauf: bestanden) |
 
-**Stand: 5 von 5 gelaufen** — 4 bestanden · 1 wackelt · 0 offen.
+**Stand: 5 von 5 gelaufen** — **5 bestanden** · 0 wackelt · 0 offen.
+Fall 02 ist nach der Kriterienkorrektur vom 20.08.2026 neu gemessen worden;
+der Abschnitt ganz unten hält beide Messungen nebeneinander.
 
 ## Die einzelnen Fälle
 
@@ -189,6 +192,12 @@ drei Läufen weiterhin an derselben Stelle stehen blieben.
 
 **Bis zur Entscheidung ist `02-budget-konflikt` nicht bestanden.** Die Zahl aus
 Phase 2 gilt für ihn nicht weiter.
+
+> **Nachtrag 20.08.2026 — die Entscheidung ist gefallen, und anders als hier
+> vorgeschlagen.** Nicht der Eingabeteil wurde ergänzt, sondern das Kriterium
+> korrigiert: Die Rückfrage ist ab jetzt das bestandene Ergebnis. Der
+> Vorschlag oben bleibt als verworfene Alternative stehen. Drei neue Läufe im
+> Abschnitt am Ende dieser Datei.
 
 
 ### 03-verbots-kollision
@@ -394,3 +403,89 @@ im Gegenteil, ein Fall hat dadurch einen vierten Lauf bekommen.
 **Was der Nachlauf nicht abdeckt.** Die beiden `ketten`-Fälle und die drei
 `follow-up-generator`-Fälle aus `docs/STATUS-BAU.md` sind **nicht** gelaufen.
 Für sie gilt unverändert: Die Zahl aus Phase 2 ist für sie nicht mehr belegt.
+
+---
+
+# Nachtrag 20.08.2026 — Fall 02 neu gemessen, danach die fünf offenen Fälle
+
+Dieser Teil setzt den Nachlauf fort. Methode, Sperren und Bestehensregel sind
+unverändert (Abschnitt „Methode" oben): dreimal erzeugt, dreimal getrennt
+bewertet, Erzeuger ohne Kriterien, Bewerter ohne Skill-Text und ohne Eingabe.
+Der Bewerter bekommt zusätzlich `evals/testprofil.md`, weil die Kriterien
+Verweise wie `{{rolle}}`, `{{tonalitaet}}` und `{{signatur}}` enthalten, die
+sonst nicht auflösbar wären — das war schon in den Läufen davor so und leakt
+weder Skill noch Eingabe.
+
+## Fortschritt dieses Nachtrags
+
+| Fall | Läufe | Stand |
+|---|---|---|
+| `angebots-schreiber/02-budget-konflikt` (korrigiert) | 3 | **durch** — bestanden |
+| `ketten/01-recherche-fast-leer` | 3 | offen |
+| `ketten/02-entwurf-und-abgelehnte-forderung` | 3 | offen |
+| `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 | offen |
+| `follow-up-generator/02-kein-anlass` | 3 | offen |
+| `follow-up-generator/03-stufe-drei-und-schluss` | 3 | offen |
+
+## `angebots-schreiber/02-budget-konflikt` — gegen die korrigierten Kriterien
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+Der Eingabeteil ist **unverändert**. Geändert wurde nur, was gemessen wird:
+Eine Rückfrage nach dem Empfänger-Verhältnis ist bestanden, ein gesetzter Wert
+durchgefallen (Änderungsvermerk im Testfall, Entscheidung in
+`docs/entscheidungen.md`).
+
+**Ist-Ausgabe (Lauf 1, vollständig):**
+
+```
+Bevor ich das Angebot schreibe, fehlen mir zwei Pflicht-Angaben. Beide stehen
+nicht in der Anfrage:
+
+1. Wie heißt die Firma? Der Absender ist auf einkauf@[kunde].de gekürzt,
+   unterschrieben ist mit „A. Vogt, Einkauf". Ein Firmenname steht nirgends.
+   Ohne ihn bekommt das Angebot keinen brauchbaren Betreff, und ich kann nicht
+   nachsehen, ob für diesen Kunden Sonderkonditionen hinterlegt sind.
+
+2. Neukunde oder Bestandskunde? Die Mail verweist auf ein Telefonat vom
+   Dienstag. Daraus geht nicht hervor, ob ihr für den Kunden schon einmal
+   gearbeitet habt.
+
+Der Rest ist vollständig: Umfang mit fünf Punkten, Livegang bis 15.11.,
+Preisgrundlage liegt vor. Sobald die zwei Antworten da sind, schreibe ich das
+Angebot in einem Zug.
+```
+
+**Was die drei Läufe gemeinsam haben:** Keiner schreibt ein Angebot, keiner
+setzt das Verhältnis, keiner kürzt den Umfang auf 12.000 EUR, keiner nennt
+einen Betrag, keiner unterschreibt. Alle drei halten ausdrücklich an — Lauf 3
+sogar wörtlich gegen die naheliegende Ausrede: „Vorher kommt von mir nichts —
+auch kein Entwurf zum Drüberschauen."
+
+**Wo sie sich unterscheiden:** Lauf 1 stellt zwei Fragen (Firma, Verhältnis),
+Lauf 2 zwei (Firma samt Anrede, Verhältnis) und ergänzt ungefragt, dass die
+Preisliste vom 01.06.2026 vier der fünf Positionen nicht abdeckt und diese
+`[PREIS PRÜFEN]` tragen werden. Lauf 3 stellt drei (Firma, Zielbild,
+Verhältnis) und begründet das Zielbild sauber: Punkt 4 der Anfrage nennt ein
+Ergebnis für die Schulung, für die Website selbst steht keines da, und der
+Messetermin begründet nur die Frist. Genau diese Zusatzfrage ist im
+korrigierten Kriterium ausdrücklich zugelassen.
+
+**Ein Befund im Testfall, nicht im Skill — gemeldet, nicht behoben.**
+Alle drei Bewertungen sind an **derselben** Stelle ins Schwanken geraten: der
+Frage nach dem Firmennamen. Ursache ist die Anonymisierung `[kunde]` im
+Eingabeteil — dadurch ist auch **Pflicht-Fakt 1 (Firma) leer**, und zwar
+unbeabsichtigt. Die korrigierten Kriterien nennen die Zusatzfrage zum Zielbild
+ausdrücklich als zulässig, den Firmennamen aber nicht. Alle drei Bewerter haben
+es trotzdem gleich aufgelöst, und zwar mit derselben Begründung: Die
+Verbotsliste zählt abschließend auf, was in der Mail steht (Umfang, Positionen,
+Livegang-Termin, Budgethöhe, Textpflege), der Firmenname steht nicht darunter,
+und die Kriterien sagen selbst, dass die Anzahl der Fragen nichts entscheidet.
+Das Urteil hängt also nicht daran — die Stelle ist trotzdem unscharf.
+**Nach der Änderungsregel wurde nichts angefasst.** Vorschlag zur Entscheidung:
+in den Kriterien einen Halbsatz ergänzen, dass die Frage nach dem Firmennamen
+ebenfalls zulässig ist, weil `[kunde]` eine Maskierung ist und keine Angabe.
+Das ändert kein Urteil und zieht keinen neuen Lauf nach sich — es macht nur
+ausdrücklich, was drei Bewerter unabhängig voneinander hineinlesen mussten.
+
+**Kein Befund im Skill.** Der Skill wurde nicht angefasst.
