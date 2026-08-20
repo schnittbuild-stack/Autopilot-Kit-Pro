@@ -424,7 +424,7 @@ weder Skill noch Eingabe.
 | `ketten/01-recherche-fast-leer` | 3 | **durch** — bestanden |
 | `ketten/02-entwurf-und-abgelehnte-forderung` | 3 | **durch** — bestanden |
 | `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 + 3 | **durch** — bestanden, auch nach der Skill-Korrektur |
-| `follow-up-generator/02-kein-anlass` | 3 | **durch** — bestanden |
+| `follow-up-generator/02-kein-anlass` | 3 + 3 | **durch** — bestanden, auch nach der Skill-Korrektur |
 | `follow-up-generator/03-stufe-drei-und-schluss` | 3 + 3 | **durch** — bestanden nach Skill-Korrektur |
 
 ## `angebots-schreiber/02-budget-konflikt` — gegen die korrigierten Kriterien
@@ -730,6 +730,11 @@ eine Kriterienänderung und braucht deshalb eine Entscheidung.
 
 **Kein Befund im Skill, der ohne diese Entscheidung zu beheben wäre.** Nichts
 wurde angefasst.
+
+**Nach der Skill-Korrektur aus `/03` erneut gelaufen (20.08.2026):**
+**bestanden · bestanden · bestanden — 3 von 3.** Verhalten unverändert; der
+Widerspruch zur Knappheits-Zeile besteht unverändert fort und bleibt zur
+Entscheidung offen.
 
 ## `follow-up-generator/03-stufe-drei-und-schluss`
 
