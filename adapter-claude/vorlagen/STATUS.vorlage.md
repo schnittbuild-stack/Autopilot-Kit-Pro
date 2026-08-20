@@ -37,6 +37,12 @@ würdest?">
 
 Abgeschlossen am: —
 
+Letzter Wochencheck: —
+
+<!-- Datum des letzten Laufs. Der nächste Check nimmt es als Anfang seines
+     Zeitraums (`core/waechter/wochencheck.md`). Steht hier nichts, prüft er
+     die letzten sieben Tage. -->
+
 ## Die ausgewählte Mannschaft
 
 <Sobald Phase 3 begonnen hat: welche Assistenten ausgewählt sind, namentlich

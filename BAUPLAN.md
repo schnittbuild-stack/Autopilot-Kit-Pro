@@ -236,6 +236,11 @@ Ziel: Selbsttest-Modul als Skill in `adapter-claude/`.
 1. Watchdog-Skill: liest `core/testfaelle/`, führt aus, vergleicht gegen Soll,
    erzeugt einen Bericht in Alltagssprache („3 von 10 Fällen weichen ab —
    soll ich den Fix einspielen?").
+   **Er ersetzt den Wochencheck nicht, er baut ihn aus.** Seit dem 20.08.2026
+   liegt eine feste Minimalfassung in `core/waechter/wochencheck.md` mit vier
+   Prüfpunkten, die ohne Testlauf zu entscheiden sind (Ergebnisse gegen Profil,
+   Preisstand, Liegengebliebenes, fehlende Zuordnung). Phase 4 hängt den
+   Testlauf daran — kein zweiter Wächter, kein zweiter Auslöser.
 2. 5 Ketten-Testfälle Ende-zu-Ende mit Sollergebnissen.
 3. Reparatur-Flow: Vorschlag → Nutzer bestätigt → STATUS.md protokolliert.
 4. **Kundeneigene Testfälle erzeugen** (Entscheidung 17.08.2026). Der Watchdog

@@ -421,11 +421,22 @@ handlungsfähig."
 
 ## Schritte
 
-1. **Den Wochencheck einrichten.** Richte den Wächter ein und erkläre ihn in
-   zwei Sätzen:
-   > Sag einmal die Woche „Mach den Wochencheck". Dann prüfe ich deine
-   > Helfer und sage dir, wenn einer nicht mehr sauber arbeitet — mit einem
-   > Vorschlag, wie ich es repariere.
+1. **Den Wochencheck bekannt machen.** Der Wächter liegt fertig in
+   `system/core/waechter/wochencheck.md` — vier feste Prüfpunkte. **Du baust
+   ihn nicht und schreibst ihn nicht um**, du machst ihn bekannt:
+   - Eine Zeile in `system/STATUS.md`: „Letzter Wochencheck: —, erklärt am
+     <heutiges Datum>". Daran erkennt der erste Lauf seinen Zeitraum.
+   - Nachsehen, dass in `CLAUDE.md` die Zeile zum Auslöser „Mach den
+     Wochencheck" steht. Fehlt sie, trägst du sie nach — sie ist der einzige
+     Weg vom Satz des Nutzers zur Datei.
+
+   Dann erkläre ihn in zwei Sätzen:
+   > Sag einmal die Woche „Mach den Wochencheck". Dann sehe ich nach, ob noch
+   > alles zu dir passt — dein Ton, deine Preise, was liegengeblieben ist —
+   > und sage dir, was zu tun wäre.
+
+   **Nicht mehr versprechen als das.** Er prüft Ergebnisse und Unterlagen, er
+   repariert nichts von allein und ändert nichts ohne dein Ja.
 2. **Ihm „weiter" beibringen.** Das ist der wichtigste Satz der ganzen
    Einrichtung. Wörtlich so:
    > Wenn du mal mittendrin aufhören musst oder das Fenster zumachst: Nicht
@@ -451,7 +462,10 @@ handlungsfähig."
 
 ## Checkliste Phase 5
 
-- [ ] Wächter eingerichtet und in zwei Sätzen erklärt — ohne Fachbegriff.
+- [ ] Wochencheck bekannt gemacht: Datum in STATUS, Auslöser-Zeile in
+      `CLAUDE.md` vorhanden, in zwei Sätzen erklärt — ohne Fachbegriff.
+- [ ] **Nichts am Wächter gebaut oder umgeschrieben** — es gilt die feste
+      Vorlage aus `system/core/waechter/wochencheck.md`.
 - [ ] „weiter" erklärt **und einmal geübt**, mit dem Satz „dein Stand ist
       gesichert".
 - [ ] „hilfe" erklärt, ohne einen Ordnerpfad zu nennen.

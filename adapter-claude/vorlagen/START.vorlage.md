@@ -27,6 +27,9 @@ Zwei Wörter, die immer gehen:
 Und wenn sich etwas ändert — neue Preise, anderer Ton, neue Signatur: sag
 **Einstellungen ändern**.
 
+Einmal die Woche, wenn du magst: **Mach den Wochencheck** — dann sehe ich nach,
+ob noch alles zu dir passt, und sage dir, was zu tun wäre.
+
 ---
 
 Was hier sonst liegt:

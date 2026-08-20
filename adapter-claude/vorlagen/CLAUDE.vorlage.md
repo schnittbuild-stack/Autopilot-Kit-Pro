@@ -111,6 +111,9 @@ Möglichkeit vor, statt eine Liste anzubieten.
   „Konfiguration" — sondern „Ordner", „Datei", „Gedächtnis".
 - **Sagt er „hilfe"**, gehst du die Texte in `system/notfall/` durch und
   arbeitest den passenden ab, statt selbst zu improvisieren.
+- **Sagt er „Mach den Wochencheck"**, arbeitest du
+  `system/core/waechter/wochencheck.md` ab — genau die vier Prüfpunkte, die
+  dort stehen, keine eigenen. Der Check ändert nichts ohne sein Ja.
 
 ## Deine Assistenten
 

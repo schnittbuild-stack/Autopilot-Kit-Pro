@@ -641,6 +641,60 @@ wählte neu und kam auf fünf. Schaden entstand nur zufällig keiner.
 
 **Nachweis steht aus** — derselbe wiederholte Abbruch-Test wie für Baustein 1.
 
+### Baustein 3 — den Wächter gibt es jetzt (20.08.2026)
+
+**Der Befund:** Installer-Phase 5 sagte „Richte den Wächter ein“, ohne dass
+irgendwo eine Vorlage lag — mechanisch geprüft, weder in `core/` noch in
+`adapter-claude/vorlagen/`. Die Testsitzung hat sich `system/wochencheck.md`
+mit sieben selbst ausgedachten Prüfpunkten gebaut. Jeder Käufer bekäme einen
+anderen Wächter.
+
+**Die Entscheidung: feste Minimal-Vorlage statt Zurückstellen.** Begründung im
+Entscheidungsprotokoll — kurz: Das Problem war nie, dass es einen Wächter gibt,
+sondern dass ihn jede Sitzung erfindet. Eine Streichung hätte das auch
+beseitigt, aber mitsamt dem Nutzen, und ausgerechnet im Übergabemoment.
+
+**`core/waechter/wochencheck.md` — vier Prüfpunkte, keine fünf:**
+
+1. **Klingt es noch nach ihm?** Die neuesten Ergebnisse gegen `mein-profil.md`,
+   vor allem gegen die Liste „Sätze und Themen, die nie vorkommen“. Ein Treffer
+   ist immer ein Befund.
+2. **Rechnet er noch mit gültigen Preisen?** `meine-unterlagen/preise/` nach
+   `core/unterlagen/preisregeln.md` — Stand, Frist, abgelaufene
+   Kundenkonditionen.
+3. **Ist etwas liegengeblieben?** Aus STATUS: Nachlieferungen und offene
+   Punkte. Einmal erinnern, nie zweimal mahnen.
+4. **Fehlt ein Helfer?** Eine Aufgabe ohne Eintrag in der Zuordnungstabelle —
+   nachtragen anbieten, nie „nicht installiert“ sagen.
+
+Dazu die harten Grenzen: Er **ändert nichts** ohne ausdrückliches Ja, er
+erfindet keinen Befund („konnte ich nicht prüfen“ ist eine zulässige Antwort,
+„sauber“ wäre eine Lüge), er gibt höchstens fünf Zeilen aus und zählt nie auf,
+was er alles geprüft hat.
+
+**Was sich am Installer ändert:** Phase 5, Schritt 1 heißt jetzt „Den
+Wochencheck **bekannt machen**“. Gebaut wird nichts. Der Schritt setzt das
+Datum in STATUS, prüft die Auslöser-Zeile in `CLAUDE.md` und erklärt den Check
+in zwei Sätzen, die nicht mehr versprechen, als er kann. Die Checkliste verbietet
+ausdrücklich, am Wächter zu bauen.
+
+**Vier weitere Stellen, damit der Auslöser nicht ins Leere zeigt:**
+`CLAUDE.vorlage.md` (Regel: „Mach den Wochencheck“ → die Datei abarbeiten,
+keine eigenen Prüfpunkte), `STATUS.vorlage.md` (Zeile „Letzter Wochencheck“ —
+ohne sie prüft jeder Lauf denselben Zeitraum noch einmal), `START.vorlage.md`
+(eine Zeile in Alltagssprache — sonst hört der Käufer den Satz einmal in Phase 5
+und findet ihn nie wieder, genau die Lücke, die beim Wort „weiter“ schon
+aufgefallen ist) und `BAUPLAN.md` Phase 4 (der Watchdog baut den Wochencheck
+aus, statt einen zweiten daneben zu stellen).
+
+**Bewusst klein gehalten:** Alle vier Prüfpunkte sind **ohne Testlauf**
+entscheidbar. Ob ein Assistent seine eigenen Regeln einhält, kann erst der
+Watchdog aus Phase 4 feststellen — das steht in der Datei selbst unter „Was
+dieser Wochencheck noch nicht kann“, damit Phase 4 nicht raten muss.
+
+**Nachweis steht aus** — der wiederholte Abbruch-Test in Phase 5 läuft genau
+über diesen Schritt.
+
 ## Offene Punkte
 - **`CLAUDE.md` liegt sichtbar im Wurzelordner — und ist NICHT aufgefangen.**
   Hier stand bis zum 20.08.2026, das sei „über `START.md` aufgefangen, das
@@ -652,12 +706,11 @@ wählte neu und kam auf fünf. Schaden entstand nur zufällig keiner.
   Phase-3-Durchlauf nach sich, deshalb hier notiert statt nebenbei erledigt.
   **Zu prüfen bleibt** außerdem, ob Claude Code die Datei auch aus einem
   versteckten Ordner lädt — dann verschwindet sie ganz.
-- **Installer-Phase 5 setzt den Wächter voraus, den es nicht gibt — belegt am
-  20.08.2026.** Das war eine Vermutung; der Abbruch-Test hat sie bestätigt. Es
-  gibt keine Vorlage in `core/` und keine in `adapter-claude/vorlagen/`
-  (mechanisch geprüft). Die Testsitzung hat deshalb `system/wochencheck.md` mit
-  sieben **selbst ausgedachten** Prüfpunkten gebaut. Jeder Käufer bekäme einen
-  anderen Wächter. Vor dem ersten echten Durchlauf zu schließen.
+- **Erledigt (20.08.2026): Der Wächter existiert.** `core/waechter/wochencheck.md`
+  liefert vier feste Prüfpunkte; Installer-Phase 5 baut ihn nicht mehr, sondern
+  macht ihn bekannt. Abschnitt „Baustein 3“ oben, Begründung in
+  `docs/entscheidungen.md`. **Der Nachweis steht aus:** wiederholter
+  Abbruch-Test in Phase 5.
 - Digistore24/CopeCart-Konto beantragen (Freischaltung dauert Tage)
 - Produktname + Domain final
 - START_HIER später zusätzlich als PDF (Markdown reicht für Beta)
@@ -764,9 +817,9 @@ in dieser Reihenfolge:
    Vorschlag oben. Ein Satz Entscheidung, dann drei Läufe.
 2. **Die fünf offenen Nachlauf-Fälle laufen lassen** — zwei `ketten`, drei
    `follow-up-generator`, je dreimal.
-3. **Den Wächter bauen** (Befund 3 des Abbruch-Tests). Er ist formal
-   Phase-4-Arbeit, blockiert aber Installer-Phase 5: Ohne Vorlage erfindet
-   jeder Durchlauf einen anderen.
+3. ~~Den Wächter bauen (Befund 3 des Abbruch-Tests)~~ — **erledigt am
+   20.08.2026**: feste Minimalfassung in `core/waechter/wochencheck.md`,
+   Ausbau in Phase 4.
 4. **Zwischenstand in Installer-Phase 3** (Befund 1) — **erledigt am
    20.08.2026**, Abschnitt „Baustein 2“ oben. **Weg zur Anleitung im erzeugten
    Gedächtnis** (Befund 2) — **weiter offen**: Die vollständige Fassung aus
