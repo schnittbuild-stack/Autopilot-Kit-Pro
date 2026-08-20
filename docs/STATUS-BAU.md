@@ -538,6 +538,75 @@ Prüfpunkte 1, 2, 3, 4, 6 und 7 unverändert erfüllt. Der Vorgang steht hier,
 weil eine stille Korrektur an einem Bewertungsmaßstab von Weichspülen nicht zu
 unterscheiden wäre.
 
+## Nacharbeit aus dem Abbruch-Test — begonnen am 20.08.2026
+
+Drei der vier Befunde werden behoben, in dieser Reihenfolge: Prinzip-1-Bruch
+beim Kunden (Befund 4), Zwischenstand in Installer-Phase 3 (Befund 1),
+Wächter-Vorlage (Befund 3). Befund 2 (der Weg zur Anleitung im erzeugten
+Gedächtnis) bleibt vorerst offen.
+
+### Baustein 1 — Prinzip 1 beim Kunden repariert (20.08.2026)
+
+**Die Entscheidung: Platzhalter werden nicht mehr ersetzt.** `{{verbote}}`,
+`{{signatur}}`, `{{tonalitaet}}` und die übrigen bleiben in den Kundendateien
+stehen und werden **beim Lesen** aufgelöst — Profilwerte aus `mein-profil.md`,
+Material aus `meine-unterlagen/`. Damit steht Profilwissen beim Kunden genau
+einmal, so wie im Repo. Begründung im Entscheidungsprotokoll.
+
+**Warum das keine neue Mechanik ist:** `core/vertraege/`,
+`core/unterlagen/preisregeln.md`, `core/unterlagen/aufbau.md` und die
+Testfälle tragen ihre Platzhalter längst unersetzt und werden beim Lesen
+aufgelöst — der Installer hat sie nie angefasst. Ersetzt wurden **nur** die
+Skill-Dateien. Die Umstellung beseitigt also eine Ausnahme, statt eine Regel
+einzuführen.
+
+**Was geändert wurde — vier Dateien, keine davon ein Skill:**
+
+- `core/interview/mapping.md` — neuer Abschnitt „Ein Platzhalter ist ein
+  Verweis, keine Lücke“ mit den drei Folgeregeln; das Register hat eine
+  Spalte mehr: **wo der Wert beim Kunden steht** (Feldname in
+  `mein-profil.md` bzw. Ordner in `meine-unterlagen/`).
+- `adapter-claude/INSTALLER.md` — Phase 3, Schritt 2 heißt jetzt „Die
+  Verweise prüfen — und nichts ersetzen“: nachsehen, ob jeder Verweis im
+  Register steht und sein Feld im Profil existiert, sonst nichts. Schritt 3
+  zieht dieselbe Regel für `CLAUDE.md` nach. Phase 4, Schritt 4 sagt
+  ausdrücklich, dass eine Korrektur **nur** ins Profil geht. Checkliste
+  entsprechend: aus „Kein `{{` mehr in einer der Dateien“ wird „in den
+  ausgewählten Dateien wurde nichts ersetzt“.
+- `adapter-claude/vorlagen/CLAUDE.vorlage.md` — neuer Abschnitt „Was in
+  doppelten Klammern steht, ist ein Verweis“; `ge{{anrede}}t` war eine
+  Wortmitte-Ersetzung und ist zu „Anrede gegenüber Kunden: {{anrede}}“
+  aufgelöst, weil ein Verweis in der Wortmitte nicht lesbar bleibt.
+- `adapter-claude/vorlagen/profil.vorlage.md` — für den Nutzer ein Satz, dass
+  eine Änderung hier sofort überall gilt; im Kommentar die Warnung, dass
+  Feldnamen nicht stillschweigend umbenannt werden, weil Verweise darauf
+  zeigen.
+
+**Kein Skill wurde angefasst** — die Arbeitsregel vom 19.08.2026 gilt, und
+keiner der 32 Testfälle verliert dadurch seine Gültigkeit.
+
+**Zwei Stellen bleiben bewusst Kopien**, beide keine Profilwerte: die
+Zuordnungstabelle in `CLAUDE.md` (Sätze des Nutzers als Wegweiser zum
+richtigen Assistenten) und die Beispielsätze in `START.md` (die eine Datei,
+die er wirklich liest — ein Verweis stünde dort statt eines Satzes, den er
+sagen kann).
+
+**Nebeneffekt, der einen zweiten Mangel schließt:**
+`notfall/02-klingt-nicht-nach-mir.md` schickt den Nutzer ins Profil und
+ändert **nur** dort. Bisher war dieser Text wirkungslos, sobald der falsche
+Ton aus einer eingesetzten Kopie kam. Jetzt trägt er.
+
+**Ein Wortlaut ist nachzuziehen, nicht behoben:**
+`core/skills/vertrieb/angebots-schreiber.md` sagt in einem Kommentar, der
+Hausstil komme „zur Installationszeit“ aus `{{tonalitaet}}`, `{{anrede}}` und
+`{{stilbeispiele}}`. Richtig ist jetzt: beim Lesen. Das Verhalten ändert sich
+dadurch nicht, der Satz ist trotzdem falsch. Nicht geändert, weil eine
+Skill-Änderung die fünf Testfälle dieses Skills neu laufen lässt
+(Arbeitsregel 19.08.2026).
+
+**Nachweis steht aus:** Die Umstellung ist gebaut, nicht belegt. Sie wird im
+wiederholten Abbruch-Test der Installer-Phasen 3 bis 5 geprüft.
+
 ## Offene Punkte
 - **`CLAUDE.md` liegt sichtbar im Wurzelordner — und ist NICHT aufgefangen.**
   Hier stand bis zum 20.08.2026, das sei „über `START.md` aufgefangen, das
@@ -574,11 +643,12 @@ unterscheiden wäre.
   eingesetzt stünde dort die eigene. Aufgefallen beim Abbruch-Test. Nicht
   behoben: Nach der Arbeitsregel vom 19.08.2026 zieht die Änderung die drei
   Testfälle dieses Skills nach sich.
-- **Prinzip 1 ist beim Kunden gebrochen (20.08.2026).** Die Verbotsliste wird
-  zur Installationszeit in jede eingerichtete Skill-Datei, in `CLAUDE.md` und
-  in `mein-profil.md` kopiert. Im Repo ist alles sauber, beim Kunden steht
-  dasselbe siebenmal. Eine Stilkorrektur greift dadurch nicht an einer Stelle.
-  Architekturentscheidung nötig.
+- **Erledigt (20.08.2026): Prinzip 1 beim Kunden repariert.** Platzhalter
+  werden beim Einrichten nicht mehr ersetzt, sondern beim Lesen aufgelöst —
+  Profilwissen steht beim Kunden wieder genau einmal, wie im Repo. Einzelheiten
+  im Abschnitt „Baustein 1“ oben, Begründung in `docs/entscheidungen.md`.
+  **Der Nachweis steht aus:** wiederholter Abbruch-Test der Installer-Phasen 3
+  bis 5.
 - **Testfall-Befund `einwand-sparring/03` — Entscheidung steht aus.** Der
   Abschnitt `## Eingabe` enthält einen Absatz „Bewertungslage", der die
   Soll-Bewertung weitgehend vorwegnimmt; der erzeugende Lauf bekommt die
@@ -667,8 +737,9 @@ in dieser Reihenfolge:
    erzeugten Gedächtnis** (Befund 2). Beides kleine Änderungen am Installer bzw.
    an `CLAUDE.vorlage.md` — beide ziehen einen neuen Durchlauf durch die
    Phasen 3 bis 5 nach sich.
-5. **Entscheidung zur vervielfältigten Verbotsliste** (Befund 4) — Prinzip 1
-   ist beim Kunden gebrochen. Architekturfrage, kein Handgriff.
+5. ~~Entscheidung zur vervielfältigten Verbotsliste (Befund 4)~~ — **erledigt
+   am 20.08.2026**: Platzhalter bleiben stehen und werden beim Lesen
+   aufgelöst. Nachweis über den wiederholten Abbruch-Test.
 6. **`START.md` erklärt `CLAUDE.md` nicht** — die Datei liegt sichtbar im
    Wurzelordner und kommt in `START.vorlage.md` nicht vor (mechanisch geprüft:
    kein Treffer). Definition of Done Punkt 4 verlangt, dass kein Eintrag

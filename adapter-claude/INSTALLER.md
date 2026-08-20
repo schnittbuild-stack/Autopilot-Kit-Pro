@@ -252,18 +252,36 @@ ein Ergebnis, keine Bauanleitung.
    einfach und trägst ihn danach in die Zuordnung nach. Er soll nie hören,
    dass etwas „nicht installiert" ist.
 
-2. **Die Lücken füllen.** Ersetze in den ausgewählten Dateien jeden Platzhalter
-   durch die Angaben aus `mein-profil.md`. Die vollständige Zuordnung steht in
-   `system/core/interview/mapping.md`.
+2. **Die Verweise prüfen — und nichts ersetzen.** In den Assistenten-Dateien
+   stehen Angaben in doppelten geschweiften Klammern, zum Beispiel
+   `{{verbote}}`. Das sind **Verweise auf `mein-profil.md`**, keine Lücken.
+   Sie bleiben stehen. Du setzt dort **keinen Wert ein** — nirgends, in keiner
+   Datei.
+
+   **Warum:** Was du hier einsetzt, steht danach zweimal. Korrigiert der Nutzer
+   später eine Formulierung, ändert sich das Profil — die eingesetzten Kopien
+   bleiben, wie sie waren, und niemand merkt es. Ein Verweis ist immer aktuell.
+
+   Was du stattdessen tust — reines Nachsehen, kein Bearbeiten:
+   - Jeder Verweis in den ausgewählten Dateien steht im Register
+     `system/core/interview/mapping.md`. Steht einer nicht dort, ist das ein
+     Fehler in unserem Kit: in STATUS vermerken und weitermachen, nicht
+     reparieren.
+   - Zu jedem Verweis gibt es das passende Feld in `mein-profil.md`. Hat der
+     Nutzer eine Frage übersprungen, bleibt das Feld dort **leer** — nichts
+     erfinden, nichts „sinngemäß" ergänzen. Die Assistenten sind darauf
+     ausgelegt: Sie fragen dann nach bzw. schreiben `[PREIS PRÜFEN]`.
    - `{{preisgrundlage}}` und `{{stilbeispiele}}` zeigen auf
      `meine-unterlagen/` — nicht auf eine Antwort aus dem Interview.
-   - Ein Platzhalter, für den nichts da ist, wird **leer gelassen**, nicht
-     erfunden. Die Assistenten sind darauf ausgelegt: Sie fragen dann nach
-     bzw. schreiben `[PREIS PRÜFEN]`.
-   - Nach dem Ersetzen darf in keiner Datei mehr `{{` vorkommen. Prüf das.
+
+   **Am Ende dieses Schrittes ist keine Assistenten-Datei verändert.** Wenn du
+   eine bearbeitet hast, hast du den Schritt falsch verstanden.
 
 3. **Sein Gedächtnis erzeugen.** `CLAUDE.md` im Wurzelordner aus
-   `vorlagen/CLAUDE.vorlage.md`. Fülle die Zuordnungstabelle
+   `vorlagen/CLAUDE.vorlage.md`. Auch hier gilt Schritt 2: Die Verweise in der
+   Vorlage bleiben stehen, du setzt keine Werte aus dem Profil ein. Gefüllt
+   werden nur die beiden Stellen, die ausdrücklich dafür vorgesehen sind.
+   Fülle die Zuordnungstabelle
    („Wenn er so etwas sagt …") mit **seinen** Formulierungen aus Frage 3 —
    nicht mit unseren Beispielsätzen. Und fülle unten die Liste der
    Assistenten, je einer mit einem Satz: was er hineingibt, was herauskommt.
@@ -298,9 +316,12 @@ Keine Aufzählung von Dateien. Nur das hier, mit **seinen** Sätzen:
 
 - [ ] Fünf bis sechs Assistenten ausgewählt — **nicht** alle zehn — und die
       Auswahl folgt aus Frage 3, nicht aus dem Zufall.
-- [ ] Kein `{{` mehr in einer der ausgewählten Dateien.
-- [ ] Fehlende Angaben stehen **leer** — nichts erfunden, nichts „sinngemäß"
-      ergänzt.
+- [ ] In den ausgewählten Dateien wurde **nichts ersetzt** — kein Verweis
+      `{{…}}` ist verschwunden, keine Datei ist verändert.
+- [ ] Jeder Verweis aus diesen Dateien steht im Register; jeder hat sein Feld
+      in `mein-profil.md`.
+- [ ] Fehlende Angaben stehen **leer im Profil** — nichts erfunden, nichts
+      „sinngemäß" ergänzt.
 - [ ] `CLAUDE.md` existiert, die Zuordnungstabelle enthält **seine**
       Formulierungen.
 - [ ] `START.md` hat höchstens zehn Beispielsätze, jeder wörtlich sagbar,
@@ -341,6 +362,9 @@ heute? Am besten die, die sonst liegen bleibt."
    `mein-profil.md` (das ist die einzige erlaubte Profiländerung außerhalb
    von Phase 2, sie wird in STATUS vermerkt) und das Ergebnis erneut
    ausgeben. Nicht diskutieren, nicht rechtfertigen.
+   **Nur ins Profil, sonst nirgendwohin.** Die Assistenten-Dateien werden
+   dafür nicht angefasst — sie verweisen auf das Profil und sind ab dem
+   nächsten Lesen auf dem neuen Stand.
 5. **Leg das Ergebnis in `ergebnisse/` ab**, mit Datum im Dateinamen, und sag
    ihm in einem Satz, dass es dort liegt.
 6. **STATUS schreiben**, frischen Start anbieten.

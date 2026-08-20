@@ -9,6 +9,10 @@
 Diese Datei kannst du jederzeit lesen und ändern. Wenn dir etwas nicht passt,
 sag einfach **„Einstellungen ändern"** — dann gehen wir es zusammen durch.
 
+Was hier steht, steht **nur hier**. Deine Helfer schlagen es jedes Mal an
+dieser Stelle nach. Änderst du eine Zeile, gilt sie ab sofort überall — du
+musst nirgendwo sonst etwas nachtragen.
+
 ## Du
 
 - **Was du machst:**
@@ -41,6 +45,15 @@ sag einfach **„Einstellungen ändern"** — dann gehen wir es zusammen durch.
 - **Wie du Preise bildest** (falls keine Preisdatei da ist):
 - **Wie lange ein Preisstand ohne Rückfrage gilt:** 6 Monate
 
-<!-- Die letzte Zeile ist {{preisfrist}}. Ändert der Nutzer sie, gilt der neue
-     Wert sofort für alle Assistenten, die rechnen. Ändern heißt: diese eine
-     Zahl überschreiben — mehr nicht. -->
+<!-- Diese Datei ist die einzige Quelle für Profilwissen (Prinzip 1). Jedes
+     Feld hier ist das Ziel eines Verweises aus den Assistenten-Dateien:
+     `{{signatur}}` zeigt auf „Deine Signatur", `{{verbote}}` auf „Sätze und
+     Themen, die nie vorkommen", die letzte Zeile ist `{{preisfrist}}`. Die
+     vollständige Zuordnung steht in `core/interview/mapping.md`.
+
+     Zwei Folgen daraus:
+     1. Ändert der Nutzer ein Feld, gilt der neue Wert sofort für alle
+        Assistenten. Es wird nichts nachgezogen, weil nichts kopiert wurde.
+     2. Eine Überschrift oder ein Zeilenanfang hier wird nie stillschweigend
+        umbenannt — sonst zeigt der Verweis ins Leere. Erst das Register
+        ändern, dann diese Datei. -->
