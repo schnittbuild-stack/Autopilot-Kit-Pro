@@ -421,7 +421,7 @@ weder Skill noch Eingabe.
 | Fall | Läufe | Stand |
 |---|---|---|
 | `angebots-schreiber/02-budget-konflikt` (korrigiert) | 3 | **durch** — bestanden |
-| `ketten/01-recherche-fast-leer` | 3 | offen |
+| `ketten/01-recherche-fast-leer` | 3 | **durch** — bestanden |
 | `ketten/02-entwurf-und-abgelehnte-forderung` | 3 | offen |
 | `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 | offen |
 | `follow-up-generator/02-kein-anlass` | 3 | offen |
@@ -487,5 +487,70 @@ in den Kriterien einen Halbsatz ergänzen, dass die Frage nach dem Firmennamen
 ebenfalls zulässig ist, weil `[kunde]` eine Maskierung ist und keine Angabe.
 Das ändert kein Urteil und zieht keinen neuen Lauf nach sich — es macht nur
 ausdrücklich, was drei Bewerter unabhängig voneinander hineinlesen mussten.
+
+**Kein Befund im Skill.** Der Skill wurde nicht angefasst.
+
+## `ketten/01-recherche-fast-leer`
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+Warum er laufen musste: Skill und Testprofil haben sich seit der
+Vollregression geändert (Unterlagen als Quelle, Preisregeln, Feld
+`Preisstand`). Neu gegenüber Phase 2 ist außerdem, dass die Preisunterlagen
+als **echte Dateien** im Ordner liegen — der Lauf kann also nachsehen, statt
+die Preislage vorgesagt zu bekommen.
+
+**Ist-Ausgabe (Lauf 1, vollständig):**
+
+```
+Für dich, nicht für Brenner & Sohn.
+
+Das Angebot kann ich noch nicht schreiben. Zwei Punkte fehlen:
+
+1. Wer ist bei Brenner & Sohn der Ansprechpartner für dieses Angebot — Name
+   und Rolle? Die Anfrage kommt von der Sammeladresse info@brenner-sohn.de
+   ohne Absendernamen, und die Recherche führt die Geschäftsführung unter
+   „Nicht gefunden".
+
+2. Neukunde oder Bestandskunde? Die Recherche sagt „Verhältnis: unbekannt",
+   eine frühere Zusammenarbeit steht dort ebenfalls unter „Nicht gefunden".
+
+Sobald beides da ist, schreibe ich das Angebot. Vorher nicht.
+```
+
+**Was alle drei Läufe halten:** Keiner macht aus `unbekannt` ein `neukunde`.
+Keiner erfindet eine Anrede aus der Firmierung („Herr Brenner"). Keine der
+beiden Vermutungen aus der Unbelegt-Liste — 20–50 Mitarbeitende, Wachstum —
+taucht irgendwo auf, auch nicht abgeschwächt; die Läufe 1 und 3 erwähnen sie
+gar nicht, Lauf 2 ebenfalls nicht. Kein Lauf liefert ein vorgezogenes Angebot.
+Beide Pflicht-Rückfragen stehen jedes Mal in **einer** Nachricht.
+
+**Unterschied:** Lauf 3 stellt eine dritte Frage — nach dem Zielbild. Er
+begründet sie damit, dass in der Anfrage nur das Symptom stehe („Nachträge
+werden nicht sauber kommuniziert und verschenkt"), nicht das Ergebnis. Die
+Kriterien stufen Fakt 3 ausdrücklich als in der Anfrage vorhanden ein; der
+Bewertungsteil verbietet eine zusätzliche Frage aber nirgends, und die
+Bewertung hat das offen abgewogen und als unschädlich gewertet.
+
+**Zwei Befunde im Testfall, nicht im Skill — gemeldet, nicht behoben.**
+
+1. **Die Bestehensbedingung verlangt einen Block A, den es hier nicht geben
+   darf.** Sie lautet „bestanden nur bei beiden Rückfragen in einer Nachricht
+   **und einem Block A ohne jede unbelegte Aussage**" — während die
+   Nicht-Liste im selben Fall „ein Angebot, das trotz offener Pflicht-Fakten
+   schon vollständig ist" verbietet. **Alle drei** Bewertungen sind darüber
+   gestolpert und haben es gleich aufgelöst: Der Block-A-Punkt ist in der
+   Muss-Liste mit „Nach Beantwortung" konditioniert, greift also nur, wenn ein
+   Block A geliefert wird. Wörtlich gelesen wäre der Fall unbestehbar.
+   Vorschlag: den Fall wie `ketten/02` in **zwei Züge** schneiden — Zug 1 die
+   Rückfrage, Zug 2 das Angebot nach der Antwort. Dann misst er auch die
+   zweite Hälfte, die er heute nur beschreibt.
+2. **Die Zusatzfrage nach dem Zielbild ist ungeregelt.** Die Kriterien setzen
+   Fakt 3 als vorhanden voraus, sagen aber nicht, wie eine Frage danach zu
+   werten ist. Ein Lauf von dreien hat sie gestellt. Vorschlag: im
+   Kriterienteil einen Satz ergänzen, welche der beiden Lesarten gilt.
+
+Beide Punkte ändern kein Urteil dieses Laufs. **Nach der Änderungsregel wurde
+nichts angefasst.**
 
 **Kein Befund im Skill.** Der Skill wurde nicht angefasst.
