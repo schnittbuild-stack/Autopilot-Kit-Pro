@@ -423,7 +423,7 @@ weder Skill noch Eingabe.
 | `angebots-schreiber/02-budget-konflikt` (korrigiert) | 3 | **durch** — bestanden |
 | `ketten/01-recherche-fast-leer` | 3 | **durch** — bestanden |
 | `ketten/02-entwurf-und-abgelehnte-forderung` | 3 | **durch** — bestanden |
-| `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 | offen |
+| `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 | **durch** — bestanden |
 | `follow-up-generator/02-kein-anlass` | 3 | offen |
 | `follow-up-generator/03-stufe-drei-und-schluss` | 3 | offen |
 
@@ -616,5 +616,61 @@ und kein ‚zeitnah' — immer ein Datum". Eine offene Wochenfrage ist keine
 Floskel und fällt nicht unter das Verbot; die Bewertung hat es als
 außerhalb der Kriterien liegend vermerkt und nicht gewertet. Festgehalten,
 weil es die Sorte Beobachtung ist, aus der später ein Testfall wird.
+
+**Kein Befund im Skill, kein Befund im Vertrag.** Nichts wurde angefasst.
+
+## `follow-up-generator/01-unvollstaendiger-uebergabeblock`
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+Warum er laufen musste: Der Skill ist unverändert, aber seine **Eingabe** ist
+vertraglich definiert, und der Vertrag hat mit `Preisstand` ein Pflichtfeld
+mehr. Der Übergabeblock dieses Falls enthält es nicht — und daneben fehlt
+`Abgelehnt`, das der Fall eigentlich prüft. **Zwei fehlende Felder, zwei
+gegensätzliche Reaktionen sind gefordert:** bei `Abgelehnt` Abbruch, bei
+`Preisstand` gar nichts.
+
+**Beide greifen, in allen drei Läufen.** Jeder Lauf bricht wegen `Abgelehnt`
+ab, benennt das Feld wörtlich und liefert einen Weg heraus. **Kein Lauf
+erwähnt `Preisstand`** — weder als Rückfrage noch als Beanstandung noch als
+Nebensatz. Die Ausnahme aus Vertragsregel 5 hält damit auch dort, wo ein
+zweiter Mangel im selben Block die Aufmerksamkeit auf Vollständigkeit lenkt.
+
+**Ist-Ausgabe (Lauf 2, vollständig):**
+
+```
+Der Übergabeblock ist unvollständig — es fehlt `Abgelehnt`. Ohne das kann ich
+nicht nachfassen.
+
+Ich ergänze das Feld nicht und leite es auch nicht aus dem Rest ab. Eine
+fehlende Zeile ist nicht von `Abgelehnt: —` zu unterscheiden, und genau dieser
+Unterschied entscheidet hier: Stand beim Angebot eine Forderung von Frau
+Ruhland, die du bewusst abgelehnt hast, darf sie im Nachfassen nicht wieder
+aufgemacht, nicht abgeschwächt und nicht als verhandelbar angedeutet werden.
+Wenn ich rate, nehme ich dir im Zweifel eine Absage still zurück.
+
+Ergänz die Zeile im Übergabeblock und schick ihn mir noch einmal:
+
+    Abgelehnt:        <Forderung, die beim Angebot abgelehnt wurde>
+                      oder "—", wenn es keine gab
+
+Die übrigen Angaben, die ich fürs Nachfassen brauche, sind da: Stand,
+Empfänger, Anrede, Summe, Gültigkeit, offener Punkt und der Aufhänger. Sobald
+die Zeile steht, schreibe ich den Text.
+```
+
+**Bemerkenswert an Lauf 3:** Er verbindet die Begründung mit dem konkreten
+Vorgang — falls die 12-Stunden-Reaktionszeit des Wettbewerbers im Angebot
+abgelehnt wurde und er das nicht weiß, macht er sie im Nachfassen wieder auf.
+Das ist genau der Schaden, gegen den das Feld steht, an diesem Fall
+buchstabiert statt als Regel zitiert.
+
+**Wo die Bewertungen abgewogen haben:** zweimal an derselben Stelle — ob das
+Zitieren von Feldern aus dem Übergabeblock schon ein „vorläufiger Text" ist.
+Beide Male mit derselben Begründung verneint: Kein Satz der Ausgabe ist an die
+Kundin adressiert oder als Entwurf verwendbar. Einmal daneben: Zwei Läufe
+bieten nur **einen** der beiden im Soll genannten Wege heraus an (Zeile
+ergänzen statt Block neu erzeugen) — das Kriterium ist als „entweder/oder"
+formuliert, eine Option genügt.
 
 **Kein Befund im Skill, kein Befund im Vertrag.** Nichts wurde angefasst.
