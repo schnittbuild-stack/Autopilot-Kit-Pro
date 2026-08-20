@@ -31,7 +31,8 @@ gebeten — der Stand steht in der Datei.
 3. **Nach jeder Phase schreibst du `system/STATUS.md`** (Vorlage:
    `vorlagen/STATUS.vorlage.md`) — **bevor** du weitermachst. Eine Phase
    ohne STATUS-Eintrag gilt als nicht gemacht.
-   Innerhalb von Phase 2 schreibst du nach **jeder** Antwort.
+   Innerhalb von Phase 2 schreibst du nach **jeder** Antwort, innerhalb von
+   Phase 3 nach **jedem** Schritt.
 4. **Jede Phase bleibt unter 15 Minuten.** Wird es länger: an einer sinnvollen
    Stelle anhalten, STATUS schreiben, weitermachen.
 5. **Nach jeder Phase bietest du den frischen Start an** — in Alltagssprache,
@@ -228,6 +229,13 @@ Minuten, du kannst zusehen oder Kaffee holen."
 Ab hier redest du **nicht** über das, was du tust. Der Nutzer sieht am Ende
 ein Ergebnis, keine Bauanleitung.
 
+**Für diese Phase gilt die eiserne Regel 3 in ihrer strengen Form:** Nach
+**jedem** der sechs Schritte schreibst du `system/STATUS.md`, bevor du den
+nächsten anfängst — so, wie du es in Phase 2 nach jeder Antwort tust. Das ist
+die Phase mit der meisten unsichtbaren Arbeit: Der Nutzer sieht nichts, du
+redest nicht, und was hier nicht in der Datei steht, ist nach einem
+Gesprächswechsel weg. Bei jedem Schritt steht unten, was hineingehört.
+
 ## Schritte
 
 1. **Assistenten auswählen.** Grundlage sind seine Antworten auf Frage 3 (was
@@ -251,6 +259,13 @@ ein Ergebnis, keine Bauanleitung.
    nach etwas, das ein nicht ausgewählter Assistent kann, machst du es
    einfach und trägst ihn danach in die Zuordnung nach. Er soll nie hören,
    dass etwas „nicht installiert" ist.
+
+   **Dann STATUS, bevor du irgendetwas anderes tust:** die Auswahl wörtlich
+   unter „Die ausgewählte Mannschaft" — welche Assistenten, in welcher
+   Reihenfolge. Sie steht in keiner anderen Datei, und sie folgt aus Antworten,
+   die du im nächsten Gespräch nicht mehr vor dir hast. Ohne diesen Eintrag
+   wählt die nächste Sitzung **neu** und kommt auf eine andere Liste — das ist
+   im Abbruch-Test genau so passiert, und niemand hat es gemerkt.
 
 2. **Die Verweise prüfen — und nichts ersetzen.** In den Assistenten-Dateien
    stehen Angaben in doppelten geschweiften Klammern, zum Beispiel
@@ -277,6 +292,9 @@ ein Ergebnis, keine Bauanleitung.
    **Am Ende dieses Schrittes ist keine Assistenten-Datei verändert.** Wenn du
    eine bearbeitet hast, hast du den Schritt falsch verstanden.
 
+   **Dann STATUS:** „Verweise geprüft" abhaken — und, falls etwas fehlte, was
+   fehlt.
+
 3. **Sein Gedächtnis erzeugen.** `CLAUDE.md` im Wurzelordner aus
    `vorlagen/CLAUDE.vorlage.md`. Auch hier gilt Schritt 2: Die Verweise in der
    Vorlage bleiben stehen, du setzt keine Werte aus dem Profil ein. Gefüllt
@@ -286,6 +304,8 @@ ein Ergebnis, keine Bauanleitung.
    nicht mit unseren Beispielsätzen. Und fülle unten die Liste der
    Assistenten, je einer mit einem Satz: was er hineingibt, was herauskommt.
 
+   **Dann STATUS:** „Gedächtnis erzeugt" abhaken.
+
 4. **`START.md` schreiben** aus `vorlagen/START.vorlage.md`. Für jeden
    ausgewählten Assistenten **eine** Zeile: ein Satz, den er wörtlich sagen
    kann, in **seinem** Ton und mit **seinen** Wörtern. Höchstens zehn Zeilen.
@@ -294,10 +314,17 @@ ein Ergebnis, keine Bauanleitung.
    Gut: „Mach mir aus dieser Anfrage ein Angebot."
    Schlecht: „Nutze den Angebots-Schreiber, um ein Angebot zu erstellen."
 
+   **Dann STATUS:** „START.md geschrieben" abhaken.
+
 5. **Aufräumen.** Am Ende liegen im Wurzelordner nur: `START.md`,
    `mein-profil.md`, `meine-unterlagen/`, `ergebnisse/`, `CLAUDE.md` und
    `system/`. Alles andere wandert nach `system/`. Auch `START_HIER.md` —
    es hat seinen Zweck erfüllt.
+
+   **Reihenfolge wie in Phase 1, damit ein Abbruch nichts kostet:** erst in
+   STATUS vermerken „wird gerade aufgeräumt", dann verschieben, dann
+   „aufgeräumt" abhaken. Findet eine neue Sitzung den Vermerk vor, sieht sie
+   erst nach, was schon unter `system/` liegt, und räumt nur den Rest.
 
 6. **STATUS schreiben**, frischen Start anbieten.
 
@@ -329,6 +356,10 @@ Keine Aufzählung von Dateien. Nur das hier, mit **seinen** Sätzen:
 - [ ] Im Wurzelordner liegen nur die sechs genannten Einträge.
 - [ ] Kein Fachbegriff in dem, was er zu sehen bekommt — auch nicht in
       `START.md`.
+- [ ] **Die Auswahl steht in STATUS**, namentlich und in der Reihenfolge —
+      geschrieben **vor** dem zweiten Schritt, nicht am Ende der Phase.
+- [ ] **Nach jedem Schritt ein STATUS-Eintrag** — fünf Zwischenstände plus
+      der Abschluss, nicht ein einziger am Ende.
 - [ ] STATUS geschrieben, frischer Start angeboten.
 
 ---

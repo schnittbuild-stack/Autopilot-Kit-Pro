@@ -607,6 +607,40 @@ Skill-Änderung die fünf Testfälle dieses Skills neu laufen lässt
 **Nachweis steht aus:** Die Umstellung ist gebaut, nicht belegt. Sie wird im
 wiederholten Abbruch-Test der Installer-Phasen 3 bis 5 geprüft.
 
+### Baustein 2 — Installer-Phase 3 schreibt jetzt Zwischenstände (20.08.2026)
+
+**Der Befund:** Phase 3 schrieb STATUS erst als Schritt 6, ganz am Ende — ein
+Verstoß gegen Bauprinzip 2 und gegen die eigene eiserne Regel 3. Im Abbruch-Test
+ging dadurch die Auswahl der sechs Assistenten verloren; die frische Sitzung
+wählte neu und kam auf fünf. Schaden entstand nur zufällig keiner.
+
+**Was geändert wurde:**
+
+- **Eiserne Regel 3** nennt Phase 3 jetzt ausdrücklich: „Innerhalb von Phase 2
+  nach **jeder** Antwort, innerhalb von Phase 3 nach **jedem** Schritt.“ Die
+  Ausnahme, die bisher nur für Phase 2 geregelt war, gilt jetzt für beide.
+- **Phase 3 bekommt einen Vorspann**, der begründet, warum ausgerechnet hier:
+  Der Nutzer sieht nichts, der Installer redet nicht — was nicht in der Datei
+  steht, ist weg.
+- **Schritt 1 schreibt die Auswahl, bevor er irgendetwas anderes tut.**
+  Namentlich, in der Reihenfolge. Das ist der Eintrag, dessen Fehlen den
+  Testfall gekostet hat.
+- **Die Schritte 2 bis 5 haken einzeln ab** — je eine Zeile „Dann STATUS“ im
+  Schritt selbst, nicht nur im Fließtext davor. (Bauregel aus der Gegenprobe:
+  Regeln, die nur im Fließtext stehen, werden nachweislich ignoriert.)
+- **Schritt 5 räumt in derselben Reihenfolge auf wie Phase 1** — erst
+  vermerken, dann verschieben, dann abhaken. Genau dieser Ablauf hat den
+  Abbruch in Phase 1 überlebt.
+- **Die Checkliste** prüft zwei Dinge zusätzlich: dass die Auswahl **vor** dem
+  zweiten Schritt in STATUS steht, und dass es fünf Zwischenstände gibt statt
+  eines Eintrags am Ende.
+- **`STATUS.vorlage.md` bekommt den Platz dafür:** einen Abschnitt „Die
+  ausgewählte Mannschaft“ mit der Liste und den vier Häkchen der Phase. Ohne
+  eigenen Abschnitt landet die Auswahl im Fließtext und wird beim nächsten
+  Überschreiben still verschluckt.
+
+**Nachweis steht aus** — derselbe wiederholte Abbruch-Test wie für Baustein 1.
+
 ## Offene Punkte
 - **`CLAUDE.md` liegt sichtbar im Wurzelordner — und ist NICHT aufgefangen.**
   Hier stand bis zum 20.08.2026, das sei „über `START.md` aufgefangen, das
@@ -733,10 +767,12 @@ in dieser Reihenfolge:
 3. **Den Wächter bauen** (Befund 3 des Abbruch-Tests). Er ist formal
    Phase-4-Arbeit, blockiert aber Installer-Phase 5: Ohne Vorlage erfindet
    jeder Durchlauf einen anderen.
-4. **Zwischenstand in Installer-Phase 3** (Befund 1) und **Weg zur Anleitung im
-   erzeugten Gedächtnis** (Befund 2). Beides kleine Änderungen am Installer bzw.
-   an `CLAUDE.vorlage.md` — beide ziehen einen neuen Durchlauf durch die
-   Phasen 3 bis 5 nach sich.
+4. **Zwischenstand in Installer-Phase 3** (Befund 1) — **erledigt am
+   20.08.2026**, Abschnitt „Baustein 2“ oben. **Weg zur Anleitung im erzeugten
+   Gedächtnis** (Befund 2) — **weiter offen**: Die vollständige Fassung aus
+   `CLAUDE.vorlage.md` nennt `INSTALLER.md` nicht mehr, die Kurzfassung aus
+   Phase 1 tat es. Beide ziehen einen neuen Durchlauf durch die Phasen 3 bis 5
+   nach sich.
 5. ~~Entscheidung zur vervielfältigten Verbotsliste (Befund 4)~~ — **erledigt
    am 20.08.2026**: Platzhalter bleiben stehen und werden beim Lesen
    aufgelöst. Nachweis über den wiederholten Abbruch-Test.

@@ -37,6 +37,24 @@ würdest?">
 
 Abgeschlossen am: —
 
+## Die ausgewählte Mannschaft
+
+<Sobald Phase 3 begonnen hat: welche Assistenten ausgewählt sind, namentlich
+und in der Reihenfolge, in der sie drankommen — dazu, was in Phase 3 schon
+erledigt ist. Vorher: „noch nicht ausgewählt".
+
+Diese Liste ist die einzige Stelle, an der die Auswahl steht. Sie folgt aus
+den Antworten des Nutzers und lässt sich nicht rekonstruieren: Fehlt sie,
+wählt die nächste Sitzung neu und kommt auf eine andere Mannschaft.
+
+Beispiel:
+- Ausgewählt: angebots-schreiber, follow-up-generator, meeting-nachbereitung,
+  account-recherche, crm-notiz-zu-schritt, outreach-personalisierer
+- [x] Verweise geprüft
+- [ ] Gedächtnis erzeugt
+- [ ] START.md geschrieben
+- [ ] aufgeräumt>
+
 ## Laufende Aufgabe
 
 <Nur wenn gerade eine echte Aufgabe offen ist. Sonst: „keine".>
