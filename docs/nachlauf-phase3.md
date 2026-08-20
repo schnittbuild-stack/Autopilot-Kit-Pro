@@ -416,13 +416,39 @@ Verweise wie `{{rolle}}`, `{{tonalitaet}}` und `{{signatur}}` enthalten, die
 sonst nicht auflösbar wären — das war schon in den Läufen davor so und leakt
 weder Skill noch Eingabe.
 
+## Ergebnis dieses Nachtrags
+
+**Sechs Fälle, alle durch.** Ein Befund lag im Skill
+(`follow-up-generator/03`), wurde dort behoben, und danach sind **alle vier
+Fälle dieses Skills** neu gelaufen — `follow-up-generator/01`, `/02`, `/03`
+und `ketten/02`. Kein Testfall wurde weichgespült; korrigiert wurde genau ein
+Kriterium, und zwar vor dem Lauf, auf Entscheidung des Auftraggebers und mit
+Änderungsvermerk (`angebots-schreiber/02-budget-konflikt`).
+
+| Fall | Läufe | Ergebnis |
+|---|---|---|
+| `angebots-schreiber/02-budget-konflikt` (korrigierte Kriterien) | 3 | **bestanden** |
+| `ketten/01-recherche-fast-leer` | 3 | **bestanden** |
+| `ketten/02-entwurf-und-abgelehnte-forderung` | 3 + 3 | **bestanden** |
+| `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 + 3 | **bestanden** |
+| `follow-up-generator/02-kein-anlass` | 3 + 3 | **bestanden** |
+| `follow-up-generator/03-stufe-drei-und-schluss` | 3 + 3 | **bestanden** (erste Runde: wackelt) |
+
+**21 Erzeugungen, 21 getrennte Bewertungen.** Ein Lauf wurde am
+Nutzungskontingent abgebrochen und **wiederholt statt verwertet**.
+
+**Vier Befunde stehen offen und sind nicht behoben** — alle im Testfall, nicht
+im Skill, alle gemeldet und zur Entscheidung vorgelegt: der Firmenname in
+`02-budget-konflikt`, die zwei Punkte in `ketten/01`, und der Widerspruch zur
+Knappheits-Zeile in `follow-up-generator/02`.
+
 ## Fortschritt dieses Nachtrags
 
 | Fall | Läufe | Stand |
 |---|---|---|
 | `angebots-schreiber/02-budget-konflikt` (korrigiert) | 3 | **durch** — bestanden |
 | `ketten/01-recherche-fast-leer` | 3 | **durch** — bestanden |
-| `ketten/02-entwurf-und-abgelehnte-forderung` | 3 | **durch** — bestanden |
+| `ketten/02-entwurf-und-abgelehnte-forderung` | 3 + 3 | **durch** — bestanden, auch nach der Skill-Korrektur |
 | `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 + 3 | **durch** — bestanden, auch nach der Skill-Korrektur |
 | `follow-up-generator/02-kein-anlass` | 3 + 3 | **durch** — bestanden, auch nach der Skill-Korrektur |
 | `follow-up-generator/03-stufe-drei-und-schluss` | 3 + 3 | **durch** — bestanden nach Skill-Korrektur |
@@ -618,6 +644,14 @@ außerhalb der Kriterien liegend vermerkt und nicht gewertet. Festgehalten,
 weil es die Sorte Beobachtung ist, aus der später ein Testfall wird.
 
 **Kein Befund im Skill, kein Befund im Vertrag.** Nichts wurde angefasst.
+
+**Nach der Skill-Korrektur aus `follow-up-generator/03` erneut gelaufen
+(20.08.2026):** **bestanden · bestanden · bestanden — 3 von 3.** Der Fall läuft
+über `follow-up-generator` und ist deshalb von der Korrektur mitbetroffen,
+auch wenn er unter `ketten/` liegt. Alle drei Läufe halten wieder in Zug 1 an,
+übernehmen in Zug 2 den vorgegebenen Aufhänger und lassen die abgelehnte
+Zusicherung unberührt. `Preisstand` fehlt weiterhin im Übergabeblock und löst
+weiterhin nichts aus.
 
 ## `follow-up-generator/01-unvollstaendiger-uebergabeblock`
 
