@@ -168,7 +168,7 @@ Verfahren, wenn ein Kriterium falsch erscheint:
    Weichspülen nicht unterscheidbar.
 4. Der betroffene Fall wird gegen die korrigierten Kriterien **neu bewertet**.
 
-Bisher angewandt: **dreimal.**
+Bisher angewandt: **viermal.**
 
 1. `angebots-schreiber/01-rueckfrage-disziplin` (18.08.) — das Kriterium
    verlangte Kundenanrede und Signatur für eine Rückfrage, die an den Nutzer
@@ -179,6 +179,14 @@ Bisher angewandt: **dreimal.**
    bestraften damit die Sorgfalt, die der Skill leisten soll. Jetzt inhaltlich
    gefasst; zusätzlich ist in Fall 03 die belegte, ausführlichere
    Teilnehmerzeile zulässig. Beide Fälle danach je 3 von 3.
+
+4. `angebots-schreiber/02-budget-konflikt` (20.08.) — die Bestehensbedingung
+   verlangte ein Angebot, obwohl die Eingabe den sechsten Pflicht-Fakt nicht
+   hergibt. Sie belohnte damit das Raten und bestrafte das regelkonforme
+   Nachfragen: Zwei von drei Läufen fielen durch, **weil sie sich an den Skill
+   hielten**. Jetzt ist die Rückfrage das bestandene Ergebnis. Der Fall danach
+   3 von 3. **Der Eingabeteil wurde nicht angefasst** — im Unterschied zum
+   Vorschlag, der im Befund selbst stand.
 
 **Offener Vorschlag, noch nicht entschieden:** `einwand-sparring/03` liefert im
 Abschnitt `## Eingabe` die Bewertungslage mit und prüft deshalb schwächer, als
@@ -287,6 +295,19 @@ Erklärung, ohne Souffleur. Einzelheiten oben und in
 **Nach der Nacharbeit vom 20.08.2026 erneut belegt:** Die drei von den
 Änderungen berührten Fälle (Installer-Phasen 3, 4 und 5) sind wiederholt worden
 — **3 von 3 bestanden**. Die Fälle 1 und 2 sind unberührt geblieben.
+**Nach den sechs Textkorrekturen desselben Tages ein drittes Mal gemessen:**
+die Fälle 2 bis 5, **drei bestanden, einer abweichend**. Keine der beiden
+Durchfall-Bedingungen ist verletzt worden — in keinem Fall wurde nach dem Stand
+gefragt, in keinem an der falschen Stelle fortgesetzt.
+**Der Riss steckt in Fall 2 und ist echt:** Der Stand führt eine gestellte,
+unbeantwortete Frage als „noch nicht gestellt", weil Phase 2 STATUS erst nach
+der **Antwort** schreibt. Die frische Sitzung stellt Frage 7 deshalb ein
+zweites Mal. Kosten: ein Satz, kein Datenverlust. **Nach der Skala des Tests
+ist er bestanden; nach dem Wortlaut der Anforderung — „der Käufer soll nie
+merken, dass eine Sitzung zu Ende geht" — merkt er es hier.** Behebung ist eine
+Zeile in eiserner Regel 3; sie zieht einen neuen Phase-2-Durchlauf nach sich
+und braucht deshalb eine Entscheidung. Einzelheiten im dritten Durchlauf in
+`docs/abbruch-test-phase3.md`.
 
 **3. `notfall/` deckt die fünf häufigsten Fehlerbilder ab — plus die
 „weiter"-Anleitung.** — **ERFÜLLT, aber nur formal geprüft.** Die sechs Dateien
@@ -298,15 +319,21 @@ löst, weiß erst die Beta. Die Liste der fünf Fehlerbilder ist außerdem aus
 Annahmen entstanden, nicht aus Support-Fällen.
 
 **4. Die Kundenansicht enthält keinen technischen Begriff und keinen Ordner,
-der nicht erklärt wurde.** — **NICHT ERFÜLLT.** Der Wurzelordner enthält nach
-der Einrichtung sechs Einträge: `START.md`, `mein-profil.md`,
-`meine-unterlagen/`, `ergebnisse/`, `system/` und **`CLAUDE.md`**. `START.md`
-erklärt die ersten fünf. **`CLAUDE.md` kommt darin nicht vor** — mechanisch
-geprüft, weder in der erzeugten Datei noch in `START.vorlage.md`. Diese Datei
-steht in `docs/STATUS-BAU.md` unter „Offene Punkte" als „aufgefangen über
-`START.md`, das die Datei in einer Zeile abtut" — **diese Zeile gibt es nicht.**
-Der Text der Kundenansicht selbst ist sauber: kein Fachbegriff in `START.md`,
-und in den fünf geprüften Abbruchfällen fiel dem Nutzer gegenüber keiner.
+der nicht erklärt wurde.** — **ERFÜLLT seit dem 20.08.2026.** Der Wurzelordner
+enthält nach der Einrichtung sechs Einträge: `START.md`, `mein-profil.md`,
+`meine-unterlagen/`, `ergebnisse/`, `CLAUDE.md` und `system/`. **`START.md`
+erklärt jetzt alle sechs** — die fehlende Zeile zu `CLAUDE.md` steht in
+`START.vorlage.md`, und die Checkliste der Installer-Phase 3 prüft sie
+mechanisch mit.
+**Im dritten Abbruch-Durchlauf belegt, nicht nur gebaut:** Die erzeugte
+`START.md` trägt die Zeile „**CLAUDE.md** — mein Gedächtnis. Da steht, was ich
+über deine Arbeit weiß. Brauchst du nie zu öffnen.", und im Wurzelordner liegen
+genau diese sechs Einträge. Der Text der Kundenansicht ist weiterhin sauber:
+kein Fachbegriff in `START.md`, und in keinem der neun bisher geprüften
+Abbruchfälle fiel dem Nutzer gegenüber einer.
+**Bis hierher offen bleibt nur die Nebenfrage**, ob die Gedächtnisdatei auch
+aus einem versteckten Ordner geladen würde — dann verschwände sie ganz. Für
+Punkt 4 ist das nicht mehr nötig.
 
 ## Stand Phase 3 (19.08.2026) — gebaut, aber noch nicht bewiesen
 
@@ -338,14 +365,15 @@ ist zugleich die Probe auf das Schreibrecht.
    30-Minuten-Grenze ist geschätzt, nicht gemessen.
 2. **Abbruch-Test — erledigt, 5 von 5 bestanden.** Anforderung 1 ist damit
    erfüllt, nicht mehr nur gebaut (`docs/abbruch-test-phase3.md`).
-3. **Nachlauf — zum größeren Teil erledigt.** Die fünf
-   `angebots-schreiber`-Fälle sind gelaufen: vier bestanden, einer wackelt und
-   braucht eine Entscheidung. Die zwei `ketten`- und drei
-   `follow-up-generator`-Fälle stehen weiter aus
-   (`docs/nachlauf-phase3.md`).
+3. **Nachlauf — vollständig erledigt am 20.08.2026.** Erst die fünf
+   `angebots-schreiber`-Fälle (vier bestanden, einer wackelte), dann der
+   Befund entschieden und der korrigierte Fall neu gemessen, dann die fünf
+   offenen Fälle. **Endstand: sechs Fälle, alle bestanden**, 21 Erzeugungen und
+   21 getrennte Bewertungen (`docs/nachlauf-phase3.md`).
 
-Phase 3 ist damit **nicht** abgeschlossen — aber der Grund ist nicht mehr, dass
-nichts geprüft wäre.
+Phase 3 ist damit **nicht** abgeschlossen — aber es fehlt nur noch der
+Durchlauf auf einem fremden Rechner und eine Entscheidung zu Fall 2 des
+Abbruch-Tests. Der Abschnitt „Nächster Schritt" ganz unten hält den Stand.
 
 ## Nachlauf Phase 3 — erledigt am 20.08.2026
 
@@ -408,6 +436,14 @@ danach immer noch nicht.
 
 **Bis zur Entscheidung ist `02-budget-konflikt` nicht bestanden.**
 
+**Entschieden am 20.08.2026 — und anders als hier vorgeschlagen.** Nicht der
+Eingabeteil wurde ergänzt, sondern **das Kriterium korrigiert**: Eine Rückfrage
+nach dem Empfänger-Verhältnis ist bestanden, ein gesetzter Wert durchgefallen.
+Änderungsvermerk im Testfall, Begründung in `docs/entscheidungen.md`. Danach
+**3 von 3 bestanden**. Der Preis der Entscheidung steht im Testfall unter „Was
+dieser Fall nicht mehr prüft": Prozess-Schritt 5 (Budget-Konflikt offenlegen)
+wird jetzt von **keinem** Fall mehr gemessen — als offener Punkt vermerkt.
+
 ### Nicht gelaufen, weiter offen
 
 Der Auftrag umfasste die fünf `angebots-schreiber`-Fälle. **Nicht** gelaufen
@@ -428,6 +464,16 @@ Ausnahme im Vertrag steht („Innenangabe", wird nicht gelesen, löst keine
 Rückfrage aus). Ob die Ausnahme trägt, weiß man erst nach dem Lauf.
 
 **Für diese fünf Fälle gilt die Zahl aus Phase 2 unverändert nicht.**
+
+**Erledigt am 20.08.2026 — alle fünf gelaufen, alle bestanden.** Dazu der
+korrigierte Fall `02-budget-konflikt`, also sechs Fälle, 21 Erzeugungen und 21
+getrennte Bewertungen. Bericht: `docs/nachlauf-phase3.md`, Abschnitt „Nachtrag
+20.08.2026". **Ein Befund lag im Skill** (`follow-up-generator/03`: der
+Gegenvorschlag fehlte neben dem Text auf ausdrückliche Ansage), ist dort
+behoben, und danach sind **alle vier Fälle dieses Skills** neu gelaufen —
+`follow-up-generator/01`, `/02`, `/03` und `ketten/02`. Die
+`Preisstand`-Ausnahme aus Vertragsregel 5 trägt: Kein Lauf hat das fehlende
+Feld erfragt, ergänzt oder beanstandet.
 
 ## Abbruch-Test Phase 3 — bestanden am 20.08.2026
 
@@ -751,7 +797,14 @@ repariert; beide Reparaturen wurden wieder entfernt, damit gegen das gebaute
 Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
 
 ## Offene Punkte
-- **Das Gedächtnis verbietet, was Installer-Phase 4 verlangt (20.08.2026).**
+- **Erledigt (20.08.2026): Das Gedächtnis erlaubt die Profiländerung, die
+  Phase 4 verlangt.** `CLAUDE.vorlage.md` hat jetzt eine eng gefasste Ausnahme:
+  Korrigiert der Nutzer eine Formulierung an einem Ergebnis, geht sie in
+  `mein-profil.md`, wird ihm gesagt und in STATUS vermerkt — **nur ins Profil**.
+  Begründung in `docs/entscheidungen.md`. **Belegt** im dritten Abbruch-Durchlauf,
+  Fall 4: Die Stilkorrektur („kein ‚gerne‘") landete an genau einer Stelle, und
+  das Wort taucht im Angebot nicht auf. Der ursprüngliche Befund lautete:
+- ~~**Das Gedächtnis verbietet, was Installer-Phase 4 verlangt (20.08.2026).**~~
   `CLAUDE.vorlage.md` sagt: „`mein-profil.md` wird nur geändert, wenn der
   Nutzer ‚Einstellungen ändern‘ sagt. Nie nebenbei." Phase 4, Schritt 4
   verlangt aber genau **eine** Profiländerung — die Stilkorrektur. Eine frische
@@ -761,7 +814,14 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
   die Wirkung jeder Stilkorrektur allein am Profil — und damit an dieser einen
   Regel. Behebung: Ausnahme in `CLAUDE.vorlage.md`. Zieht einen neuen
   Phase-3-bis-5-Durchlauf nach sich.
-- **Eiserne Regel 1 widerspricht dem `angebots-schreiber` (20.08.2026).** Der
+- **Erledigt (20.08.2026): Eiserne Regel 1 nimmt die Rückfrage des Assistenten
+  aus.** In Phase 4 fragt der Installer so, wie der Assistent es täte — alle
+  fehlenden Pflichtangaben in **einer** nummerierten Nachricht. Die Ein-Frage-Regel
+  gilt für die Fragen zur Einrichtung, nicht für die Arbeit des Assistenten.
+  **Belegt** im dritten Abbruch-Durchlauf: Die Einrichtungssitzung hat Termin und
+  Zielbild in einer Nachricht erfragt, ohne den Widerspruch neu entscheiden zu
+  müssen. Der ursprüngliche Befund lautete:
+- ~~**Eiserne Regel 1 widerspricht dem `angebots-schreiber` (20.08.2026).**~~ Der
   Installer sagt „Eine Frage pro Nachricht. Immer.", der Assistent stellt alle
   fehlenden Pflicht-Fakten in **einer** nummerierten Nachricht — und
   `angebots-schreiber/01-rueckfrage-disziplin` wertet genau das als bestanden.
@@ -769,7 +829,15 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
   täte". Die Testsitzung hat sich für den Assistenten entschieden und den
   Widerspruch selbst vermerkt. Ohne Ausnahme in `INSTALLER.md` entscheidet das
   jede Sitzung neu.
-- **Der Wochencheck meldet die eigene Änderungsnotiz als Befund (20.08.2026).**
+- **Erledigt, aber ungeprüft (20.08.2026): Wochencheck-Prüfpunkt 1 prüft den
+  Kundentext, nicht die Notiz darüber.** Von den zwei angebotenen Wegen ist der
+  erste gewählt worden — der Fehler lag in der Reichweite des Prüfpunkts, nicht
+  in der Schreibweise der Notiz. Ein verbotenes Wort, das in einer Notiz
+  ausdrücklich als gestrichen dasteht, ist der Beleg, dass die Regel gegriffen
+  hat; im Kundentext bleibt jeder Treffer ein Befund. **Nicht belegt:** Der
+  Wochencheck ist nie gelaufen, die Korrektur greift erst dann. Prüft Phase 4.
+  Der ursprüngliche Befund lautete:
+- ~~**Der Wochencheck meldet die eigene Änderungsnotiz als Befund (20.08.2026).**~~
   Wer in `ergebnisse/` notiert, *welches* verbotene Wort gestrichen wurde,
   schreibt genau dieses Wort dorthin, wo Prüfpunkt 1 sagt: „immer ein Befund".
   Entweder nimmt `core/waechter/wochencheck.md` Änderungsnotizen aus, oder die
@@ -781,18 +849,38 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
   bereits geprüfte Dateien noch einmal mitgeprüft — Kosten: ein zweiter Blick,
   kein Schaden, die Bewertung hat deshalb nicht abgewertet. Genauer wäre, auch
   die einzelne Datei innerhalb eines Schrittes abzuhaken.
-- **Die bedingte Zusatzfrage zum Preis greift zu mechanisch (20.08.2026).** Sie
+- **Erledigt (20.08.2026): Die bedingte Zusatzfrage hat eine dritte Bedingung.**
+  Sie wird nur noch gestellt, wenn der Nutzer **nicht** angekündigt hat, dass
+  Preismaterial nachkommt. Angekündigtes Material kommt in STATUS unter „Was der
+  Nutzer noch nachliefern wollte"; der Wochencheck erinnert später einmal daran.
+  Geändert in `core/interview/fragen.md` und `core/interview/mapping.md`, samt
+  Checklistenpunkt. **Belegt** im dritten Abbruch-Durchlauf: Auf „Preisliste hab
+  ich, die leg ich gleich rein" folgte keine Frage mehr, sondern ein Vermerk.
+  Der ursprüngliche Befund lautete:
+- ~~**Die bedingte Zusatzfrage zum Preis greift zu mechanisch (20.08.2026).**~~ Sie
   wurde gestellt, weil `meine-unterlagen/preise/` leer war — obwohl der Nutzer
   eine Nachricht zuvor gesagt hatte: „Preisliste hab ich, die leg ich gleich
   rein." Kein Regelbruch, aber eine vermeidbare Frage. Betrifft
   `core/interview/mapping.md` und `core/interview/fragen.md`.
-- **Wortlaut-Nachzug in `angebots-schreiber` (20.08.2026).** Ein Kommentar dort
-  sagt, der Hausstil komme „zur Installationszeit" aus `{{tonalitaet}}`,
-  `{{anrede}}` und `{{stilbeispiele}}`. Seit Baustein 1 stimmt das nicht mehr —
-  richtig ist: beim Lesen. Das Verhalten ändert sich dadurch nicht. Nicht
-  behoben, weil eine Skill-Änderung die fünf Testfälle dieses Skills neu laufen
-  lässt (Arbeitsregel 19.08.2026).
-- **`CLAUDE.md` liegt sichtbar im Wurzelordner — und ist NICHT aufgefangen.**
+- **Wortlaut-Nachzug in `angebots-schreiber` — bewusst zurückgestellt
+  (Entscheidung 20.08.2026).** Ein Kommentar dort sagt, der Hausstil komme „zur
+  Installationszeit" aus `{{tonalitaet}}`, `{{anrede}}` und `{{stilbeispiele}}`.
+  Seit Baustein 1 stimmt das nicht mehr — richtig ist: beim Lesen. **Das
+  Verhalten ändert sich dadurch nicht**, der Satz ist trotzdem falsch. Er wird
+  **nicht jetzt** behoben, weil eine Skill-Änderung die fünf Testfälle dieses
+  Skills neu laufen ließe (Arbeitsregel 19.08.2026) — für einen Kommentar, der
+  nichts steuert, ist das der falsche Preis. **Er gehört in den
+  Prüfdurchgang vor der Beta** (eigener Abschnitt unten): Dort werden mehrere
+  Wortlaut-Korrekturen in **einem** Zug gemacht und **ein** Nachlauf dafür
+  bezahlt, statt einer je Satz.
+- **Erledigt (20.08.2026): `START.md` erklärt `CLAUDE.md`.** Eine Zeile in
+  `START.vorlage.md`, dazu ein mechanischer Prüfpunkt in der Checkliste der
+  Installer-Phase 3 („`START.md` erklärt alle sechs Einträge"). **Belegt** im
+  dritten Abbruch-Durchlauf an der erzeugten Datei. **Punkt 4 der Definition of
+  Done ist damit erfüllt.** **Zu prüfen bleibt** die Nebenfrage, ob die
+  Gedächtnisdatei auch aus einem versteckten Ordner geladen würde — für Punkt 4
+  ist das nicht mehr nötig. Der ursprüngliche Befund lautete:
+- ~~**`CLAUDE.md` liegt sichtbar im Wurzelordner — und ist NICHT aufgefangen.**~~
   Hier stand bis zum 20.08.2026, das sei „über `START.md` aufgefangen, das
   `system/` und die Datei in einer Zeile abtut". **Das war falsch.** Mechanisch
   geprüft: `START.vorlage.md` erwähnt `CLAUDE.md` mit keinem Wort, und die im
@@ -808,6 +896,45 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
   `docs/entscheidungen.md`. **Belegt** im wiederholten Fall 5: kein erfundener
   Wächter mehr. **Nicht** belegt: dass der Check etwas findet — er ist nie
   gelaufen, das prüft Phase 4.
+- **Neu (20.08.2026): Phase 2 schreibt den Stand erst nach der Antwort — die
+  gestellte Frage geht verloren.** Eiserne Regel 3 verlangt für Phase 2 „nach
+  **jeder Antwort**". Eine Frage, die auf dem Bildschirm steht und noch nicht
+  beantwortet ist, hat damit keinen Platz im Stand — die frische Sitzung stellt
+  sie ein zweites Mal. **Das ist die Ursache der einen Abweichung im dritten
+  Abbruch-Durchlauf** (Fall 2). Bitter: `STATUS.vorlage.md` macht als
+  Musterformulierung ausgerechnet den feineren Fall vor („Frage 7 ist gestellt
+  und noch nicht beantwortet"), den die Regel so nie erzeugt. Behebung: eine
+  Zeile in Regel 3. Zieht einen neuen Phase-2-Durchlauf nach sich.
+- **Neu (20.08.2026): Phase 4 hat zwischen Entwurf und „Passt das?" keinen
+  Zwischenstand.** Bricht es dort ab, ist das fertige Angebot weg — dieselbe
+  Lücke, die Phase 3 schon geschlossen bekommen hat. `INSTALLER.md` nennt STATUS
+  für Phase 4 erst als Schritt 6.
+- **Neu (20.08.2026): Die Beispiele in `core/interview/fragen.md` sind die Daten
+  der Testperson.** Frage 7 zeigt die Signatur samt Telefonnummer aus
+  `evals/testprofil.md` als „Beispiel", Frage 10 deren Erfolgsmoment wörtlich.
+  Beim echten Käufer ist das nur ein fremder Name; im Prüfstand kollidiert es und
+  macht jede Mitschrift schief. Beispiele sollten eine andere Person nennen als
+  das Testprofil.
+- **Neu (20.08.2026): Der Installer sichert Antworten in der dritten Person**,
+  obwohl `mein-profil.md` den Nutzer durchgängig duzt. Kein Fehler im Inhalt,
+  aber die Datei liest sich uneinheitlich.
+- **Neu (20.08.2026): „Liegt fertig in `ergebnisse/`"** — gesagt über ein
+  Angebot, das `Stand: entwurf` ist und eine `[PREIS PRÜFEN]`-Zeile trägt.
+  Nichts erfunden, aber der Abschlusssatz verspricht mehr, als dasteht.
+- **Neu (20.08.2026): Prozess-Schritt 5 des `angebots-schreiber` wird von keinem
+  Fall mehr gemessen.** Folge der Kriterienkorrektur an `02-budget-konflikt`:
+  Wer korrekt nachfragt, schreibt kein Angebot, und ohne Angebot gibt es keinen
+  Block B, in dem der Budget-Konflikt stünde. Vorschlag im Testfall selbst: ein
+  **zweiter Zug** wie bei `ketten/02`.
+- **Neu (20.08.2026): Vier Testfall-Befunde aus dem Nachlauf, alle gemeldet,
+  keiner angefasst** (`docs/nachlauf-phase3.md`): der Firmenname in
+  `02-budget-konflikt` (Folge der Maskierung `[kunde]`, alle drei Bewerter
+  stolperten an derselben Stelle), zwei Punkte in `ketten/01` (die
+  Bestehensbedingung verlangt einen Block A, den der Fall zugleich verbietet;
+  die Zusatzfrage zum Zielbild ist ungeregelt) und der Widerspruch in
+  `follow-up-generator/02` (die Muss-Zeile „eine Woche ist knapp" steht gegen die
+  Zeitregel des Skills). Keiner ändert ein Urteil; alle brauchen eine
+  Entscheidung.
 - Digistore24/CopeCart-Konto beantragen (Freischaltung dauert Tage)
 - Produktname + Domain final
 - START_HIER später zusätzlich als PDF (Markdown reicht für Beta)
@@ -815,8 +942,13 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
   `angebots-schreiber` sind ehrlich hart, aber erfunden. Vor Beta gegen
   anonymisierte Realfälle tauschen — bis dahin taugen sie zur Entwicklung,
   nicht als Erfolgsquote nach außen.
-- **Testfall-Befund `angebots-schreiber/02-budget-konflikt` — Entscheidung
-  steht aus (20.08.2026).** Der Fall verlangt ein Angebot, obwohl seine Eingabe
+- **Erledigt (20.08.2026): `angebots-schreiber/02-budget-konflikt` entschieden.**
+  Das Kriterium war falsch, nicht der Skill: Eine Rückfrage nach dem
+  Empfänger-Verhältnis ist bestanden, ein gesetzter Wert durchgefallen. Testfall
+  mit Änderungsvermerk korrigiert, danach 3 von 3. **Blockiert Phase 3 nicht
+  mehr.** Der ursprüngliche Befund lautete:
+- ~~**Testfall-Befund `angebots-schreiber/02-budget-konflikt` — Entscheidung
+  steht aus (20.08.2026).**~~ Der Fall verlangt ein Angebot, obwohl seine Eingabe
   den sechsten Pflicht-Fakt (Empfänger-Verhältnis) nicht hergibt. Er belohnt
   damit das Raten und bestraft das regelkonforme Nachfragen. Zwei von drei
   Läufen fielen durch, weil sie sich an den Skill hielten. Vorschlag und
@@ -826,7 +958,9 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
   einer Stelle steht `{{firma}}`, wo die Firma des **Empfängers** gemeint ist —
   eingesetzt stünde dort die eigene. Aufgefallen beim Abbruch-Test. Nicht
   behoben: Nach der Arbeitsregel vom 19.08.2026 zieht die Änderung die drei
-  Testfälle dieses Skills nach sich.
+  Testfälle dieses Skills nach sich. **Vorgemerkt für den Prüfdurchgang vor der
+  Beta** (Abschnitt unten) — dort mit Vorrang, weil er als einziger der
+  gesammelten Punkte das Verhalten wirklich ändert.
 - **Erledigt (20.08.2026): Prinzip 1 beim Kunden repariert.** Platzhalter
   werden beim Einrichten nicht mehr ersetzt, sondern beim Lesen aufgelöst —
   Profilwissen steht beim Kunden wieder genau einmal, wie im Repo. Einzelheiten
@@ -903,39 +1037,73 @@ dreimal, nicht das ganze Kit. Ein Sweep über alle Skills braucht eine eigene
 Entscheidung des Auftraggebers, weil er den Nachlauf über alle Fälle erzwingt.
 Protokolliert in `docs/entscheidungen.md`.
 
-## Nächster Schritt — Stand 20.08.2026 nach der Nacharbeit
+## Prüfdurchgang vor der Beta — gesammelte Wortlaut-Korrekturen
 
-**Erledigt an diesem Tag:** Prinzip-1-Bruch beim Kunden (Befund 4),
-Zwischenstand in Installer-Phase 3 (Befund 1), Wächter-Vorlage (Befund 3) —
-alle drei gebaut **und** im wiederholten Abbruch-Test belegt (3 von 3).
+**Warum es diesen Abschnitt gibt.** Die Arbeitsregel vom 19.08.2026 macht jede
+Skill-Änderung teuer: Danach laufen alle Fälle dieses Skills neu, dreimal. Für
+einen falschen Kommentar, der **nichts steuert**, ist das der falsche Preis —
+für zehn falsche Kommentare, in einem Zug korrigiert, ist es der richtige.
+Deshalb werden Wortlaut-Befunde ab jetzt hier gesammelt und **gemeinsam** vor
+der Beta abgearbeitet: ein Durchgang, ein Nachlauf.
 
-**Was für die Definition of Done Phase 3 noch fehlt, in dieser Reihenfolge:**
+**Was drinliegt (Stand 20.08.2026):**
 
-1. **Entscheidung zu `angebots-schreiber/02-budget-konflikt`** — der Testfall
-   verlangt ein Angebot, obwohl seine Eingabe den sechsten Pflicht-Fakt nicht
-   hergibt; er belohnt damit das Raten und bestraft das regelkonforme
-   Nachfragen. Vorschlag und Begründung im Abschnitt „Nachlauf Phase 3".
-   **Blockiert den Abschluss von Phase 3.** Ein Satz Entscheidung, dann drei
-   Läufe.
-2. **Die fünf offenen Nachlauf-Fälle laufen lassen** — zwei `ketten`, drei
-   `follow-up-generator`, je dreimal. Für sie gilt die Zahl aus Phase 2 nicht.
-3. **Die vier Textbefunde am Installer und an den Vorlagen** — sie hängen
-   zusammen und sollten in **einem** Durchgang behoben werden, weil sie
-   zusammen **einen** neuen Durchlauf durch die Phasen 3 bis 5 kosten statt
-   vier:
-   - Weg zur Anleitung im erzeugten Gedächtnis (Befund 2 des ersten
-     Abbruch-Tests)
-   - `START.md` erklärt `CLAUDE.md` nicht (Definition of Done, Punkt 4)
-   - Das Gedächtnis verbietet die Profiländerung, die Phase 4 verlangt
-   - Eiserne Regel 1 gegen die Rückfrage-Regel des `angebots-schreiber`
-4. **Die zwei kleinen Befunde ohne Durchlauf-Folge:** Änderungsnotiz gegen
-   Wochencheck-Prüfpunkt 1, und die zu mechanische Zusatzfrage zum Preis.
-5. **Durchlauf auf einem fremden Rechner**, gestoppt — der einzige Punkt der
-   Definition of Done, zu dem es bis heute **keine** Messung gibt.
+| Fundstelle | Was falsch ist | Zieht nach sich |
+|---|---|---|
+| `core/skills/vertrieb/angebots-schreiber.md` | Der Hausstil komme „zur Installationszeit" aus `{{tonalitaet}}`, `{{anrede}}`, `{{stilbeispiele}}` — richtig ist: beim Lesen (seit Baustein 1) | 5 Fälle |
+| `core/skills/vertrieb/outreach-personalisierer.md` | `{{firma}}` steht dort, wo die Firma des **Empfängers** gemeint ist — eingesetzt stünde dort die eigene | 3 Fälle |
+| `core/interview/fragen.md` | Die Beispiele bei Frage 7 und 10 sind die Daten der Testperson | kein Skill-Fall, aber ein Abbruch-Durchlauf |
+| `adapter-claude/INSTALLER.md`, Phase 5 | „Liegt fertig in `ergebnisse/`" über ein Angebot im Entwurfsstand | ein Abbruch-Durchlauf |
 
-**Nicht Phase 3, aber vorgemerkt:** Der Wochencheck ist gebaut und wird nicht
-mehr erfunden — gelaufen ist er nie. Phase 4 hängt den Testlauf daran und baut
-die kundeneigenen Testfälle (Entscheidung 17.08.2026).
+**Regel für diesen Abschnitt:** Was hier landet, muss **verhaltensneutral**
+sein — ein Satz, der falsch ist, ohne dass ein Lauf sich anders verhält. Alles
+andere gehört sofort behoben, nicht gesammelt. Der
+`outreach-personalisierer`-Befund ist der Grenzfall: Er **ist** verhaltensrelevant
+und steht hier nur, weil er ohnehin drei Fälle nach sich zieht — er hat unter
+den vieren Vorrang.
+
+## Nächster Schritt — Stand 20.08.2026, abends
+
+**Erledigt an diesem Tag, in dieser Reihenfolge:**
+
+1. Prinzip-1-Bruch beim Kunden, Zwischenstand in Installer-Phase 3,
+   Wächter-Vorlage — gebaut **und** im zweiten Abbruch-Durchlauf belegt (3 von 3).
+2. **Testfall `02-budget-konflikt` entschieden und korrigiert** — 3 von 3.
+3. **Sechs Textbefunde an Installer und Vorlagen** in einem Durchgang behoben.
+4. **Die fünf offenen Nachlauf-Fälle gelaufen** — alle bestanden. Ein Befund
+   lag im Skill, ist dort behoben, danach alle vier Fälle dieses Skills neu.
+5. **Abbruch-Test, Fälle 2 bis 5, ein drittes Mal gelaufen** — drei bestanden,
+   einer abweichend.
+
+**Was für die Definition of Done Phase 3 noch fehlt:**
+
+1. **Durchlauf auf einem fremden Rechner**, gestoppt, mit einer Testperson ohne
+   Vorkenntnisse. **Der einzige Punkt, zu dem es bis heute keine Messung gibt.**
+2. **Eine Entscheidung zu Fall 2 des Abbruch-Tests.** Nach der Skala des Tests
+   ist er bestanden — nach dem Wortlaut der Anforderung („der Käufer soll nie
+   merken, dass eine Sitzung zu Ende geht") merkt er es dort. Behebung ist eine
+   Zeile in eiserner Regel 3 und kostet einen neuen Phase-2-Durchlauf. **Ob das
+   Phase 3 blockiert oder in die Beta darf, ist eine Entscheidung, keine
+   Messung.**
+
+**Mehr ist es nicht.** Punkt 4 der Definition of Done ist seit heute erfüllt,
+Punkt 2 belegt, Punkt 3 unverändert formal erfüllt.
+
+**Was übrig bleibt, ohne Phase 3 zu blockieren** — vollständig unter „Offene
+Punkte" oben, hier nur die Überschriften:
+
+- **Sieben Befunde, keiner behoben:** fünf aus dem dritten Abbruch-Durchlauf
+  (davon zwei Wortlaut, siehe Prüfdurchgang), der Zwischenstand, der nur ganze
+  Schritte kennt, und die Deckungslücke beim Budget-Konflikt.
+- **Vier Testfall-Befunde aus dem Nachlauf**, alle gemeldet, alle unangetastet,
+  keiner urteilsrelevant — aber jeder braucht eine Entscheidung.
+- **Der Wochencheck ist nie gelaufen.** Gebaut, bekannt gemacht, nicht mehr
+  erfunden — aber nicht gemessen. Die Korrektur an Prüfpunkt 1 ist damit
+  eingebaut und ungeprüft. Prüft Phase 4.
+- **`notfall/` ist nur formal geprüft.** Die sechs Dateien existieren; dass sie
+  wirken, weiß erst die Beta.
+- **Die Testfälle sind konstruiert.** Vor der Beta gegen anonymisierte
+  Realfälle tauschen.
 
 ---
 
