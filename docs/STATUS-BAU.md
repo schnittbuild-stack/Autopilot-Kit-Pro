@@ -67,6 +67,9 @@
     - [x] Zielbaum im Installer, `START.vorlage.md`, Umräumen nach `system/`
           in Phase 1, Zuordnung Alltagssatz → Assistent statt Skill-Auswahl
   - [x] Installer-Phasen 1–5 ausgebaut, `notfall/` mit fünf Fehlerbildern
+  - [x] **Nacharbeit aus dem Abbruch-Test (20.08.2026):** Prinzip 1 beim
+        Kunden repariert, Zwischenstand in Phase 3 nachgezogen, Wächter-Vorlage
+        gebaut — die Fälle 3 bis 5 danach wiederholt, **3 von 3 bestanden**
   - [ ] **Durchlauf auf einem fremden Rechner unter 30 Minuten — steht aus**
 - [ ] Phase 4 — Watchdog & Ketten-Tests
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
@@ -900,34 +903,39 @@ dreimal, nicht das ganze Kit. Ein Sweep über alle Skills braucht eine eigene
 Entscheidung des Auftraggebers, weil er den Nachlauf über alle Fälle erzwingt.
 Protokolliert in `docs/entscheidungen.md`.
 
-## Nächster Schritt
+## Nächster Schritt — Stand 20.08.2026 nach der Nacharbeit
 
-**Phase 3 ist zur Hälfte bewiesen.** Was für die Definition of Done noch fehlt,
-in dieser Reihenfolge:
+**Erledigt an diesem Tag:** Prinzip-1-Bruch beim Kunden (Befund 4),
+Zwischenstand in Installer-Phase 3 (Befund 1), Wächter-Vorlage (Befund 3) —
+alle drei gebaut **und** im wiederholten Abbruch-Test belegt (3 von 3).
+
+**Was für die Definition of Done Phase 3 noch fehlt, in dieser Reihenfolge:**
 
 1. **Entscheidung zu `angebots-schreiber/02-budget-konflikt`** — der Testfall
-   verlangt ein Angebot, obwohl seine Eingabe einen Pflicht-Fakt nicht hergibt.
-   Vorschlag oben. Ein Satz Entscheidung, dann drei Läufe.
+   verlangt ein Angebot, obwohl seine Eingabe den sechsten Pflicht-Fakt nicht
+   hergibt; er belohnt damit das Raten und bestraft das regelkonforme
+   Nachfragen. Vorschlag und Begründung im Abschnitt „Nachlauf Phase 3".
+   **Blockiert den Abschluss von Phase 3.** Ein Satz Entscheidung, dann drei
+   Läufe.
 2. **Die fünf offenen Nachlauf-Fälle laufen lassen** — zwei `ketten`, drei
-   `follow-up-generator`, je dreimal.
-3. ~~Den Wächter bauen (Befund 3 des Abbruch-Tests)~~ — **erledigt am
-   20.08.2026**: feste Minimalfassung in `core/waechter/wochencheck.md`,
-   Ausbau in Phase 4.
-4. **Zwischenstand in Installer-Phase 3** (Befund 1) — **erledigt am
-   20.08.2026**, Abschnitt „Baustein 2“ oben. **Weg zur Anleitung im erzeugten
-   Gedächtnis** (Befund 2) — **weiter offen**: Die vollständige Fassung aus
-   `CLAUDE.vorlage.md` nennt `INSTALLER.md` nicht mehr, die Kurzfassung aus
-   Phase 1 tat es. Beide ziehen einen neuen Durchlauf durch die Phasen 3 bis 5
-   nach sich.
-5. ~~Entscheidung zur vervielfältigten Verbotsliste (Befund 4)~~ — **erledigt
-   am 20.08.2026**: Platzhalter bleiben stehen und werden beim Lesen
-   aufgelöst. Nachweis über den wiederholten Abbruch-Test.
-6. **`START.md` erklärt `CLAUDE.md` nicht** — die Datei liegt sichtbar im
-   Wurzelordner und kommt in `START.vorlage.md` nicht vor (mechanisch geprüft:
-   kein Treffer). Definition of Done Punkt 4 verlangt, dass kein Eintrag
-   unerklärt bleibt. Einzeiler in der Vorlage, aber er zieht einen neuen
-   Phase-3-Durchlauf nach sich.
-7. **Durchlauf auf einem fremden Rechner**, gestoppt.
+   `follow-up-generator`, je dreimal. Für sie gilt die Zahl aus Phase 2 nicht.
+3. **Die vier Textbefunde am Installer und an den Vorlagen** — sie hängen
+   zusammen und sollten in **einem** Durchgang behoben werden, weil sie
+   zusammen **einen** neuen Durchlauf durch die Phasen 3 bis 5 kosten statt
+   vier:
+   - Weg zur Anleitung im erzeugten Gedächtnis (Befund 2 des ersten
+     Abbruch-Tests)
+   - `START.md` erklärt `CLAUDE.md` nicht (Definition of Done, Punkt 4)
+   - Das Gedächtnis verbietet die Profiländerung, die Phase 4 verlangt
+   - Eiserne Regel 1 gegen die Rückfrage-Regel des `angebots-schreiber`
+4. **Die zwei kleinen Befunde ohne Durchlauf-Folge:** Änderungsnotiz gegen
+   Wochencheck-Prüfpunkt 1, und die zu mechanische Zusatzfrage zum Preis.
+5. **Durchlauf auf einem fremden Rechner**, gestoppt — der einzige Punkt der
+   Definition of Done, zu dem es bis heute **keine** Messung gibt.
+
+**Nicht Phase 3, aber vorgemerkt:** Der Wochencheck ist gebaut und wird nicht
+mehr erfunden — gelaufen ist er nie. Phase 4 hängt den Testlauf daran und baut
+die kundeneigenen Testfälle (Entscheidung 17.08.2026).
 
 ---
 
