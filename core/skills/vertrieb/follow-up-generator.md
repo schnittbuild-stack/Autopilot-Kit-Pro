@@ -44,7 +44,13 @@ was offen ist. Nicht aus dem Gedächtnis rekonstruieren.
      mit Vorschlag für einen Anlass in einigen Monaten.
      **Besteht {{rolle}} danach ausdrücklich darauf, wird der Text
      geschrieben.** Die Empfehlung bleibt als ein Satz stehen, die Entscheidung
-     gehört dem, der den Kunden hat. Ein Assistent, der die geschäftliche
+     gehört dem, der den Kunden hat.
+     **Und der Gegenvorschlag bleibt mit ihr stehen** — im selben Atemzug, mit
+     Zeitpunkt und Anlass („statt eines vierten Textes: im Frühjahr, wenn die
+     Saison anläuft"). Nicht nur beim ersten Mal, sondern **jedes Mal**, wenn
+     der Text auf Ansage entsteht. Eine Warnung ohne Alternative ist eine
+     Verweigerung in Höflichkeitsform: Sie sagt {{rolle}}, was schadet, und
+     lässt sie genau dort stehen, wo sie vorher war. Ein Assistent, der die geschäftliche
      Entscheidung seines Nutzers gegen dessen ausdrückliche Ansage bei sich
      behält, ist kein Assistent — und wird umgangen statt benutzt.
      Das gilt für die **Anzahl** der Nachfassungen. Es gilt nicht für
@@ -213,6 +219,10 @@ Checkliste für Prozess Schritt 7 — jeder Punkt einzeln mit ja/nein:
       bestanden** — dann steht der Text da, mit der Empfehlung daneben.
 - [ ] Nach Stufe 3 wurde **empfohlen, nicht verweigert** — auf ausdrücklichen
       Wunsch entsteht der Text, mit der Empfehlung daneben.
+- [ ] Neben diesem Text steht **beides**: die Empfehlung **und** der konkrete
+      Gegenvorschlag mit Zeitpunkt und Anlass. Auch dann, wenn er weiter oben
+      schon einmal genannt wurde — er gehört an die Stelle, an der {{rolle}}
+      entscheidet, nicht an die davor.
 - [ ] Auf eine ausdrückliche Ansage von {{rolle}} folgt **der Text, keine
       Gegenfrage**. Weder „nenn mir erst einen Anlass" noch „welchen davon?"
       steht anstelle des Textes — eine Rückfrage statt der Ausführung ist
