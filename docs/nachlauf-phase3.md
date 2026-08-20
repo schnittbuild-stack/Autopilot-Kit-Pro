@@ -423,7 +423,7 @@ weder Skill noch Eingabe.
 | `angebots-schreiber/02-budget-konflikt` (korrigiert) | 3 | **durch** — bestanden |
 | `ketten/01-recherche-fast-leer` | 3 | **durch** — bestanden |
 | `ketten/02-entwurf-und-abgelehnte-forderung` | 3 | **durch** — bestanden |
-| `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 | **durch** — bestanden |
+| `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 + 3 | **durch** — bestanden, auch nach der Skill-Korrektur |
 | `follow-up-generator/02-kein-anlass` | 3 | **durch** — bestanden |
 | `follow-up-generator/03-stufe-drei-und-schluss` | 3 + 3 | **durch** — bestanden nach Skill-Korrektur |
 
@@ -674,6 +674,16 @@ ergänzen statt Block neu erzeugen) — das Kriterium ist als „entweder/oder"
 formuliert, eine Option genügt.
 
 **Kein Befund im Skill, kein Befund im Vertrag.** Nichts wurde angefasst.
+
+**Nach der Skill-Korrektur aus `/03` erneut gelaufen (20.08.2026):**
+**bestanden · bestanden · bestanden — 3 von 3.** Die Änderung betrifft eine
+Regel, die dieser Fall nicht berührt; das Verhalten ist unverändert. Der Lauf
+steht trotzdem, weil die Arbeitsregel vom 19.08.2026 nach jeder
+Skill-Korrektur **alle** Fälle dieses Skills neu misst, auch die bestandenen.
+**Ein Lauf musste wiederholt werden:** Die erste Erzeugung von Lauf 2 brach
+mitten im Vorgang am Nutzungskontingent ab. Sie hatte ihre Datei zwar
+vollständig geschrieben, wurde aber **nicht verwertet** — ein Lauf, der als
+abgebrochen gemeldet ist, geht nicht in eine Zahl ein.
 
 ## `follow-up-generator/02-kein-anlass`
 
