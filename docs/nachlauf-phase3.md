@@ -422,7 +422,7 @@ weder Skill noch Eingabe.
 |---|---|---|
 | `angebots-schreiber/02-budget-konflikt` (korrigiert) | 3 | **durch** — bestanden |
 | `ketten/01-recherche-fast-leer` | 3 | **durch** — bestanden |
-| `ketten/02-entwurf-und-abgelehnte-forderung` | 3 | offen |
+| `ketten/02-entwurf-und-abgelehnte-forderung` | 3 | **durch** — bestanden |
 | `follow-up-generator/01-unvollstaendiger-uebergabeblock` | 3 | offen |
 | `follow-up-generator/02-kein-anlass` | 3 | offen |
 | `follow-up-generator/03-stufe-drei-und-schluss` | 3 | offen |
@@ -554,3 +554,67 @@ Beide Punkte ändern kein Urteil dieses Laufs. **Nach der Änderungsregel wurde
 nichts angefasst.**
 
 **Kein Befund im Skill.** Der Skill wurde nicht angefasst.
+
+## `ketten/02-entwurf-und-abgelehnte-forderung`
+
+**Läufe:** bestanden · bestanden · bestanden   ·   **Ergebnis: bestanden**
+
+Zwei Züge wie in Phase 2: Zug 1 auf `Stand: entwurf`, dann die Antwort des
+Nutzers („Ja, ist am 12.08. per Mail rausgegangen."), dann Zug 2. Der zweite
+Zug sieht nur seine eigene erste Antwort, nie die Kriterien.
+
+Warum er laufen musste: Der Vertrag hat sich geändert — mit `Preisstand` ein
+Pflichtfeld mehr. **Der Übergabeblock dieses Falls enthält es nicht.** Genau
+dafür steht die Ausnahme in Vertragsregel 5 („reine Innenangabe, sein Fehlen
+löst keine Rückfrage aus"). Ob sie trägt, war offen.
+
+**Sie trägt.** Kein Lauf hat `Preisstand` erfragt, keiner es ergänzt, keiner
+den Block deshalb als unvollständig zurückgewiesen. Zugleich hat **jeder** Lauf
+das ebenfalls fehlende Feld sauber behandelt, das nicht ausgenommen ist: Alle
+drei halten in Zug 1 an, weil `Stand: entwurf` dasteht — kein Lauf hat sich
+vom vollständig wirkenden Rest zum Schreiben verleiten lassen.
+
+**Ist-Ausgabe Zug 1 (Lauf 3, vollständig):**
+
+```
+Im Übergabeblock steht `Stand: entwurf`. Solange das Angebot den Kunden nicht
+erreicht hat, schreibe ich kein Nachfassen — ein Nachfassen zu einem Angebot,
+das nie rausgegangen ist, lässt sich gegenüber Herrn Hartmann nicht mehr
+geradebiegen.
+
+Ist das Angebot rausgegangen — wann und über welchen Kanal?
+```
+
+**Was Zug 2 in allen drei Läufen hält:** Der Aufhänger ist das Zwischenreview
+nach Termin 2 — bindend aus dem Feld `Nachfassen` übernommen, in allen drei
+Fällen ausdrücklich als solches vermerkt. Kein Lauf wählt einen eigenen. Die
+abgelehnte Zusicherung wird in keinem Kundentext erwähnt, angedeutet oder als
+verhandelbar dargestellt; alle drei führen sie in Block B unter „Nicht berührt"
+mit Begründung. Kein Betrag im Kundentext, kein `[PREIS PRÜFEN]` im
+Kundentext, durchgehend gesiezt, Signatur aus dem Profil. Das Nachfass-Datum
+für Stufe 2 steht in allen drei Läufen als **Vorschlag** in Block B und wartet
+auf das Okay des Nutzers.
+
+**Zwei Stellen, an denen die Bewertungen abwägen mussten — beide mit demselben
+Ergebnis, unabhängig voneinander:**
+
+1. **`[PREIS PRÜFEN]` in Block B.** Das Kriterium verbietet die Zeichenfolge
+   „im Kundentext". Alle drei Läufe nennen sie im internen Block, um zu
+   begründen, warum kein Betrag im Text steht. Zwei Bewertungen haben die
+   Lesart ausdrücklich abgewogen und sich für „Kundentext = Block A"
+   entschieden, weil der Zusatz sonst sinnlos wäre.
+2. **Ein Terminvorschlag im Kundentext.** Lauf 3 schlägt Herrn Hartmann ein
+   Telefonat „etwa am Dienstag, 25.08." vor. Das Kriterium verbietet ein
+   „selbstgewähltes **Nachfass-Datum**"; ein Terminvorschlag innerhalb der
+   Nachricht ist etwas anderes, und der Versand steht ausdrücklich unter
+   Bestätigungsvorbehalt. Die Bewertung hat das offen abgewogen.
+
+**Ein Beobachtungspunkt, kein Kriterium dieses Falls:** Lauf 2 fragt im
+Kundentext „Welche Woche im September passt Ihnen für den ersten Termin?" —
+ohne konkretes Datum. Das No-Go des Profils lautet „kein ‚schnellstmöglich'
+und kein ‚zeitnah' — immer ein Datum". Eine offene Wochenfrage ist keine
+Floskel und fällt nicht unter das Verbot; die Bewertung hat es als
+außerhalb der Kriterien liegend vermerkt und nicht gewertet. Festgehalten,
+weil es die Sorte Beobachtung ist, aus der später ein Testfall wird.
+
+**Kein Befund im Skill, kein Befund im Vertrag.** Nichts wurde angefasst.
