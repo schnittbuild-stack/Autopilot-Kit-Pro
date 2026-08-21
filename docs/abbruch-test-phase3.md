@@ -812,3 +812,93 @@ entfernt.** Anders als bei den ersten beiden Malen hat keine Sitzung eine
 Lücke selbst geschlossen — es gab keine mehr zu schließen, die vorher
 aufgefallen wäre. Der Prüfstand mit Ordner, Ständen, Tatsachen, Mitschriften
 und allen vier Urteilen liegt außerhalb des Repos.
+
+---
+
+# Vierter Durchlauf — Fall 2 nach der Korrektur (21.08.2026)
+
+## Warum überhaupt
+
+Der dritte Durchlauf ließ Fall 2 als `abweichend` stehen: Der Stand führte eine
+gestellte, unbeantwortete Frage als „noch nicht gestellt", und die frische
+Sitzung stellte Frage 7 ein zweites Mal. Der Befund wurde damals ausdrücklich
+**nicht** behoben, sondern als Entscheidung vermerkt, weil die Korrektur einen
+neuen Durchlauf nach sich zieht. Diese Entscheidung ist am 21.08.2026 gefallen.
+
+## Was geändert wurde
+
+Drei Stellen in `adapter-claude/INSTALLER.md`, alle dieselbe Lücke:
+
+- **Eiserne Regel 3** kannte nur „nach jeder Antwort". Ein Zustand *gestellt,
+  aber unbeantwortet* konnte damit nie entstehen.
+- **Phase 2, Schritt 2** sagte dasselbe und hätte der korrigierten Regel
+  widersprochen.
+- **Checkliste Phase 2** hat den Punkt jetzt als eigene Zeile.
+
+Bemerkenswert: `vorlagen/STATUS.vorlage.md` machte den feineren Fall als
+Musterformulierung **schon immer** vor — „Frage 7 ist gestellt und noch nicht
+beantwortet". Die Vorlage wusste es besser als die Regel. Geändert wurde
+deshalb die Regel, nicht die Vorlage.
+
+## Aufbau
+
+Unverändert zur Methodik der ersten drei Durchläufe: drei getrennte Sitzungen,
+die nichts voneinander wissen, jede ein eigener Prozess.
+
+Der Prüfstand wurde neu aufgebaut und enthält **genau das, was die
+Release-Action ins Kunden-ZIP legt** — `START_HIER.md`, `core/`,
+`adapter-claude/`, `notfall/`, ohne die drei `_TEMPLATE_`-Dateien. 66 Dateien.
+Das Drehbuch (`evals/testprofil.md`) lag außerhalb des Kundenordners.
+
+## Der Stand im Moment des Abbruchs
+
+Die Einrichtungssitzung hat Phase 1 vollständig abgearbeitet, die Fragen 1 bis 6
+gestellt, beantwortet und gesichert, Frage 7 gestellt — und angehalten. Kein
+Übergabetext, keine Notiz. `system/STATUS.md` sagte:
+
+> Phase 2 läuft: Fragen 1 bis 6 sind beantwortet und in mein-profil.md
+> gesichert. Frage 7 (Die Signatur) ist **gestellt und noch nicht beantwortet**.
+
+Und als nächsten Schritt: auf die Antwort warten, sie wörtlich ins Profil
+schreiben, dann Frage 8 — „Frage 7 **nicht** noch einmal stellen."
+
+**Das ist der Unterschied zum dritten Durchlauf.** Dort behauptete der Stand,
+Frage 7 sei nicht gestellt.
+
+## Was die frische Sitzung auf „weiter" tat
+
+> Wir sind beim Kennenlernen — sechs von zehn Fragen sind durch, meine siebte
+> steht noch offen: Wie sieht deine E-Mail-Signatur aus? Einfach hier
+> reinkopieren, so wie sie in deinen Mails steht.
+
+Dazu das Beispiel aus `fragen.md`. Sonst nichts: keine Begrüßung, keine
+Rückfrage nach dem Stand, kein Wort über Dateien, Phasen oder einen Abbruch.
+
+## Ergebnis: bestanden
+
+Alle sieben Prüfpunkte erfüllt. Die Bewertung hat sich an Prüfpunkt 3
+(„nichts doppelt") ausdrücklich abgearbeitet, weil dort der Riss saß, und
+gegen ein `abweichend` entschieden — mit drei Gründen:
+
+1. „Doppelt" ist, was doppelte **Arbeit** verursacht. Frage 7 wurde nie
+   beantwortet; es gibt nichts zu verdoppeln, nur eine offene Schleife.
+2. Das alte Fenster ist tot. Ohne Wiederholung müsste der Nutzer zurückscrollen
+   oder raten — beides genau das Ausfallgefühl, das der Test sucht.
+3. Die Formulierung behandelt die Frage als hängend, nicht als neu: „meine
+   siebte steht noch offen" liest sich als Weitersprechen, nicht als Neuanfang.
+
+Der Hinweis „Frage 7 nicht noch einmal stellen" im Stand zielt erkennbar auf
+die Zeit **nach** der Antwort, nicht auf den Wiedereinstieg.
+
+## Anmerkung zur Redlichkeit
+
+**Die Bewertung lief auf dem Schnappschuss des Abbruchmoments, nicht auf dem
+Ordner nach der Fortsetzung.** Sie hat das selbst als Einschränkung bei
+Prüfpunkt 6 vermerkt. Getrennt nachgeprüft: Die frische Sitzung hat **keine
+einzige Datei geändert** — korrekt, sie wartet auf die Antwort. Das
+Signaturfeld im Profil ist leer geblieben, nicht mit dem Beispiel gefüllt.
+
+**Was dieser Durchlauf nicht zeigt.** Nur Fall 2 ist gelaufen. Die Fälle 1 und
+3 bis 5 sind von der Änderung nicht berührt und wurden nicht wiederholt. Über
+die 30-Minuten-Grenze sagt auch dieser Durchlauf nichts — sie bleibt offen und
+braucht eine echte Testperson an einem fremden Rechner.

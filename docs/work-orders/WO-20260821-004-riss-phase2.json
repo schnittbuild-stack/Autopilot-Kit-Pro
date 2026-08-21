@@ -1,0 +1,54 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/6#issuecomment-5370378327",
+    "reviewed_at": "2026-08-21T13:28:28Z",
+    "reviewed_payload_sha256": "0dd9b589ec337cbf6a296bfeaf546d1d256a4a0e52d0c9a0980d3a17c492fa9b",
+    "reviewed_scope_sha256": "07e45fefe4bc7879a58d7d2c35d1920fe185ce0fd83af4c03d31562bf34a6acd",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-21T13:12:40Z",
+    "payload_sha256": "7b7feeede3c19a4c9f1fbba88b6099d8311ffeb175ee7eaa35ca0801f0c3f383",
+    "proof_ref": "owner-auftrag phase 3 abschliessen, einrichtungssitzung 21.08.2026",
+    "valid_until": "2026-08-23T13:12:40Z"
+  },
+  "business_outcome": "Den letzten inhaltlichen Befund der Definition of Done Phase 3 schliessen: Eine gestellte, unbeantwortete Frage muss im Stand stehen, sonst stellt eine frische Sitzung sie ein zweites Mal \u2014 und der Kaeufer merkt, dass ein Gespraech zu Ende ging.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "adapter-claude/INSTALLER.md",
+    "docs/STATUS-BAU.md",
+    "docs/abbruch-test-phase3.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260821-004-riss-phase2.json"
+  ],
+  "id": "WO-20260821-004",
+  "in_scope": [
+    "Eiserne Regel 3, Phase 2 Schritt 2 und Checkliste Phase 2 im INSTALLER ergaenzen; Abbruch-Test Fall 2 mit drei getrennten Sitzungen neu fahren; Ergebnis in abbruch-test-phase3.md, STATUS-BAU.md und entscheidungen.md festhalten"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an STATUS.vorlage.md, an den zehn Skills, an core/ oder an der Governance; die Faelle 1 und 3 bis 5 des Abbruch-Tests werden nicht wiederholt; die 30-Minuten-Anforderung bleibt offen"
+  ],
+  "repository_context": {
+    "base_commit": "72a7a05aacab6eb7a42706ccb9893b1bbe465c62",
+    "branch": "wo-004-riss-phase2",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-004-riss-phase2 verwerfen; auf main bleibt alles unveraendert",
+  "status": "verified",
+  "title": "Riss aus Abbruch-Test Fall 2 beheben und neu belegen",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}
