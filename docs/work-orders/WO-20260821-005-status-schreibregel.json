@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/7#issuecomment-5372108113",
+    "reviewed_at": "2026-08-21T15:48:36Z",
+    "reviewed_payload_sha256": "ce2418943e9d7c73922f197231b8e8a56ff013011bdcc60c704ef9b4e30cd683",
+    "reviewed_scope_sha256": "fb97ae2b4b670031ffcc5f87fb5bb803db0a58b093e4da86bf146ac113d5b6dd",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-21T15:43:26Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "4d8f4091b08a11222a37e0a631e3bd94efc916e520a851dbff02c2dbbfd19021",
     "proof_ref": "owner-auftrag bitte behebe alles, einrichtungssitzung 21.08.2026",
     "valid_until": "2026-08-23T15:43:26Z"
   },
@@ -49,7 +49,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch wo-005-status-schreibregel verwerfen; auf main bleibt alles unveraendert",
-  "status": "executing",
+  "status": "verified",
   "title": "Schreibregel fuer die Gedaechtnisdatei und Autorendurchlauf festhalten",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
