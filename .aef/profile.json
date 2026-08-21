@@ -1,0 +1,80 @@
+{
+  "distribution": {
+    "license_name": "Not specified by AEF",
+    "product_name": "Autopilot Kit",
+    "support_url": "https://github.com/schnittbuild-stack/Autopilot-Kit-Pro",
+    "vendor_name": "schnittbuild-stack"
+  },
+  "github_app": {
+    "callback_url": "https://github.com/schnittbuild-stack/Autopilot-Kit-Pro",
+    "homepage_url": "https://github.com/schnittbuild-stack/Autopilot-Kit-Pro",
+    "installation_scope": "selected_repository",
+    "name": "Autopilot Kit Merge App",
+    "permissions": {
+      "actions": "read",
+      "administration": "read",
+      "checks": "read",
+      "contents": "write",
+      "environments": "read",
+      "issues": "read",
+      "metadata": "read",
+      "pull_requests": "read"
+    },
+    "setup_url": "https://github.com/schnittbuild-stack/Autopilot-Kit-Pro",
+    "slug": "autopilot-kit-merge-app"
+  },
+  "governance": {
+    "builder_login": "alexanderschnittcher-gif",
+    "environment_name": "aef-merge-gateway",
+    "ordinary_paths": [
+      "core/**",
+      "adapter-claude/**",
+      "notfall/**",
+      "evals/**",
+      "docs/work-orders/**",
+      "src/**"
+    ],
+    "owner_login": "schnittbuild-stack",
+    "required_checks": [
+      "AEF Validate / validate",
+      "AEF Release Gate / release-gate"
+    ],
+    "reserved_paths": [
+      ".aef/**",
+      ".codex/**",
+      ".github/**",
+      "AGENTS.md",
+      "CLAUDE.md",
+      "docs/agentic/**",
+      "governance/**",
+      "scripts/aef_merge.py",
+      "scripts/aef_scaffold_work_order.py",
+      "scripts/aef_validate.py",
+      "tests/test_aef_governance.py"
+    ],
+    "ruleset_name": "AEF Protected Main"
+  },
+  "project": {
+    "business_goal": "Menschen, die eine KI-Schulung abgeschlossen haben, aber danach nicht ins Tun kommen, bekommen ein Download-Kit: Ihr eigenes LLM richtet sich damit selbst zu einem persoenlichen Assistenten-Setup ein und erledigt in rund 30 Minuten die erste echte Arbeitsaufgabe.",
+    "name": "Autopilot Kit",
+    "primary_users": [
+      "Teilnehmer abgeschlossener KI-Schulungen ohne Programmier- oder Terminalkenntnisse",
+      "Solo-Selbststaendige und kleine Vertriebsteams",
+      "Schulungsanbieter, die das Kit als After-Sales-Produkt weitergeben"
+    ],
+    "stack": [
+      "Markdown",
+      "Python",
+      "GitHub Actions",
+      "Claude Code"
+    ]
+  },
+  "repository": {
+    "default_branch": "main",
+    "name": "Autopilot-Kit-Pro",
+    "owner": "schnittbuild-stack",
+    "protected_features_confirmed": true,
+    "visibility": "public"
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,68 @@
+name: AEF Governance Drift Monitor
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  read-only-audit:
+    runs-on: ubuntu-latest
+    environment: "aef-merge-gateway"
+    steps:
+      - name: Check out trusted policy
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+      - name: Mint read-only App token
+        id: app-token
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2
+        with:
+          app-id: ${{ secrets.AEF_APP_ID }}
+          private-key: ${{ secrets.AEF_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+          permission-actions: read
+          permission-administration: read
+          permission-environments: read
+          permission-metadata: read
+      - name: Compare live protections without mutation
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          REPOSITORY: ${{ github.repository }}
+          ENVIRONMENT_NAME: "aef-merge-gateway"
+          RULESET_NAME: "AEF Protected Main"
+          DEFAULT_BRANCH: main
+          REQUIRED_CHECK_OBJECTS_JSON: '[{"context":"AEF Validate / validate","integration_id":15368},{"context":"AEF Release Gate / release-gate","integration_id":15368}]'
+        run: |
+          set -euo pipefail
+          gh api --method GET "/repos/$REPOSITORY/environments/$ENVIRONMENT_NAME" > environment.json
+          gh api --method GET --paginate --slurp "/repos/$REPOSITORY/environments/$ENVIRONMENT_NAME/deployment-branch-policies?per_page=100" > policy-pages.json
+          gh api --method GET --paginate --slurp "/repos/$REPOSITORY/environments/$ENVIRONMENT_NAME/secrets?per_page=100" > environment-secret-pages.json
+          gh api --method GET --paginate --slurp "/repos/$REPOSITORY/environments/$ENVIRONMENT_NAME/deployment_protection_rules?per_page=100" > custom-protection-rule-pages.json
+          gh api --method GET --paginate --slurp "/repos/$REPOSITORY/rulesets?per_page=100" > ruleset-pages.json
+          jq -e 'type == "array" and length >= 1 and all(.[]; type == "array" and all(.[]; type == "object" and (.id | type == "number" and . >= 1 and floor == .) and (.name | type == "string") and (.enforcement | type == "string")))' ruleset-pages.json
+          RULESET_ID="$(jq -er --arg n "$RULESET_NAME" '[.[][] | select(.name == $n)] | if length == 1 and .[0].enforcement == "active" then .[0].id else empty end' ruleset-pages.json)"
+          test -n "$RULESET_ID"
+          gh api --method GET "/repos/$REPOSITORY/rulesets/$RULESET_ID" > ruleset.json
+          gh api --method GET --paginate --slurp "/installation/repositories?per_page=100" > installation-repository-pages.json
+          jq -e --arg n "$ENVIRONMENT_NAME" 'type == "object" and .name == $n and .deployment_branch_policy == {"protected_branches":false,"custom_branch_policies":true} and (.protection_rules | type == "array" and length == 1 and all(.[]; type == "object" and .type == "branch_policy"))' environment.json
+          jq -e --arg b "$DEFAULT_BRANCH" 'type == "array" and length >= 1 and all(.[]; type == "object" and has("branch_policies") and (.branch_policies | type == "array") and has("total_count") and (.total_count | type == "number" and . >= 0 and floor == .)) and ([.[].branch_policies[]] as $items | all($items[]; type == "object" and (.name | type == "string")) and ([.[].total_count] | unique) == [($items | length)] and [$items[].name] == [$b])' policy-pages.json
+          jq -e 'type == "array" and length >= 1 and all(.[]; type == "object" and has("secrets") and (.secrets | type == "array") and has("total_count") and (.total_count | type == "number" and . >= 0 and floor == .)) and ([.[].secrets[]] as $items | all($items[]; type == "object" and (.name | type == "string" and length > 0)) and ([.[].total_count] | unique) == [($items | length)] and ($items | map(.name) | unique | length) == ($items | length) and (["AEF_APP_ID", "AEF_PRIVATE_KEY"] - ($items | map(.name)) | length) == 0)' environment-secret-pages.json
+          jq -e 'type == "array" and length >= 1 and all(.[]; type == "object" and has("custom_deployment_protection_rules") and (.custom_deployment_protection_rules | type == "array") and has("total_count") and (.total_count | type == "number" and . >= 0 and floor == .)) and ([.[].custom_deployment_protection_rules[]] as $items | all($items[]; type == "object") and ([.[].total_count] | unique) == [($items | length)] and $items == [])' custom-protection-rule-pages.json
+          jq -e 'type == "object" and .enforcement == "active" and .target == "branch" and .conditions == {"ref_name":{"include":["~DEFAULT_BRANCH"],"exclude":[]}} and .bypass_actors == [] and (.rules | type == "array" and all(.[]; type == "object" and (.type | type == "string" and length > 0)) and ([.[].type] as $types | ($types | map(select(. == "deletion")) | length) == 1 and ($types | map(select(. == "non_fast_forward")) | length) == 1 and ($types | map(select(. == "pull_request")) | length) == 1 and ($types | map(select(. == "required_status_checks")) | length) == 1))' ruleset.json
+          jq -e --argjson expected "$REQUIRED_CHECK_OBJECTS_JSON" '[.rules[] | select(.type == "required_status_checks")] as $rules | ($rules | length) == 1 and ($rules[0].parameters | type == "object" and has("strict_required_status_checks_policy") and has("do_not_enforce_on_create") and has("required_status_checks") and .strict_required_status_checks_policy == true and .do_not_enforce_on_create == false and (.required_status_checks | type == "array" and all(.[]; type == "object" and (keys | sort) == ["context","integration_id"] and (.context | type == "string" and length > 0) and (.integration_id | type == "number" and . >= 1 and floor == .)) and ([.[].context] | unique | length) == length and (($expected - .) | length) == 0))' ruleset.json
+          jq -e '[.rules[] | select(.type == "pull_request")] as $rules | ($rules | length) == 1 and ($rules[0].parameters | type == "object" and .dismiss_stale_reviews_on_push == true and .require_code_owner_review == true and .require_last_push_approval == false and .required_approving_review_count == 0 and .required_review_thread_resolution == true)' ruleset.json
+          jq -e --arg r "$REPOSITORY" 'type == "array" and length >= 1 and all(.[]; type == "object" and has("repositories") and (.repositories | type == "array") and has("total_count") and (.total_count | type == "number" and . >= 0 and floor == .)) and ([.[].repositories[]] as $items | all($items[]; type == "object" and (.full_name | type == "string")) and ([.[].total_count] | unique) == [($items | length)] and [$items[].full_name] == [$r])' installation-repository-pages.json
+          ADDITIONAL_SECRETS="$(jq -r '([.[].secrets[].name] - ["AEF_APP_ID", "AEF_PRIVATE_KEY"]) | unique | join(", ")' environment-secret-pages.json)"
+          ADDITIONAL_RULES="$(jq -r '([.rules[].type] - ["deletion","non_fast_forward","pull_request","required_status_checks"]) | unique | join(", ")' ruleset.json)"
+          ADDITIONAL_CHECKS="$(jq -r --argjson expected "$REQUIRED_CHECK_OBJECTS_JSON" '([.rules[] | select(.type == "required_status_checks")][0].parameters.required_status_checks - $expected) | map(.context) | unique | join(", ")' ruleset.json)"
+          ADDITIONAL_PULL_PARAMETERS="$(jq -r '[.rules[] | select(.type == "pull_request")][0].parameters | (keys - ["dismiss_stale_reviews_on_push","require_code_owner_review","require_last_push_approval","required_approving_review_count","required_review_thread_resolution"]) | join(", ")' ruleset.json)"
+          test -z "$ADDITIONAL_SECRETS" || echo "::notice::Non-blocking drift advisory: additional Environment secret names: $ADDITIONAL_SECRETS"
+          test -z "$ADDITIONAL_RULES" || echo "::notice::Non-blocking drift advisory: additional Ruleset rule types: $ADDITIONAL_RULES"
+          test -z "$ADDITIONAL_CHECKS" || echo "::notice::Non-blocking drift advisory: additional required checks: $ADDITIONAL_CHECKS"
+          test -z "$ADDITIONAL_PULL_PARAMETERS" || echo "::notice::Non-blocking drift advisory: additional pull-request parameters: $ADDITIONAL_PULL_PARAMETERS"
+          echo "Critical governance readback passed. Advisory additions do not block merging. JSON responses are ephemeral and are not uploaded."
