@@ -21,8 +21,21 @@ set -euo pipefail
 PR="${1:?Aufruf: .github/aef-review.sh <pr-nummer>}"
 REPO="${AEF_REPO:-schnittbuild-stack/Autopilot-Kit-Pro}"
 
+[[ "$PR" =~ ^[0-9]+$ ]] || { echo "PR-Nummer muss numerisch sein" >&2; exit 2; }
+
 command -v claude >/dev/null || { echo "claude CLI nicht gefunden" >&2; exit 2; }
 command -v gh >/dev/null     || { echo "gh CLI nicht gefunden" >&2; exit 2; }
+
+# Interpreter ab 3.11 ermitteln. Das System-python3 ist auf macOS zu alt; wir geben
+# dem Pruefer deshalb einen konkreten Pfad statt einer Bitte im Prompt.
+PYBIN=""
+for cand in python3.14 python3.13 python3.12 python3.11 python3; do
+  found="$(command -v "$cand" 2>/dev/null)" || continue
+  if "$found" -c 'import sys; sys.exit(0 if sys.version_info >= (3, 11) else 1)' 2>/dev/null; then
+    PYBIN="$found"; break
+  fi
+done
+[ -n "$PYBIN" ] || { echo "kein Python ab 3.11 gefunden — Pruefer koennte die Tests nicht ausfuehren" >&2; exit 2; }
 
 PROMPT=$(cat <<PROMPT_END
 Du bist ein unabhaengiger, ausschliesslich lesender Pruefer. Du hast diese Aenderung
@@ -40,11 +53,10 @@ Vier Bereiche blockieren, und nur diese:
 3. Umfang         - liegt jede geaenderte Datei im file_allowlist? Etwas aus out_of_scope passiert?
 4. Betreibbarkeit - traegt der Rollback? Bleibt der Zustand nachvollziehbar?
 
-Du darfst die Testsuite und die Validierung ausfuehren, um Behauptungen zu pruefen
-statt sie zu glauben:
-  python3 -m unittest discover -s tests -p 'test*.py'
-  python3 scripts/aef_validate.py --base-ref main
-Nutze dafuer einen Interpreter ab Python 3.11; das System-python3 ist aelter.
+Du darfst und sollst diese beiden Kommandos ausfuehren, um Behauptungen zu pruefen
+statt sie zu glauben. Nutze genau diesen Interpreter, andere sind nicht freigegeben:
+  ${PYBIN} -m unittest discover -s tests -p 'test*.py'
+  ${PYBIN} scripts/aef_validate.py --base-ref main
 
 Stil, Formulierung, Geschmack und harmlose Ergaenzungen sind NICHT blockierend.
 Sie duerfen als Hinweis auftauchen, aber niemals zu FAIL fuehren. Ein Review, der
@@ -69,4 +81,4 @@ claude -p "$PROMPT" \
     "Read" "Grep" "Glob" \
     "Bash(gh pr view:*)" "Bash(gh pr diff:*)" "Bash(gh pr comment:*)" \
     "Bash(git log:*)" "Bash(git show:*)" "Bash(git diff:*)" "Bash(git status:*)" \
-    "Bash(python3:*)" "Bash(*/.aef-tools/bin/python:*)"
+    "Bash(${PYBIN} -m unittest:*)" "Bash(${PYBIN} scripts/aef_validate.py:*)"
