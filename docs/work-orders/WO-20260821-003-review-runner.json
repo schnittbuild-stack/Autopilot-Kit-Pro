@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/5#issuecomment-5369247951",
+    "reviewed_at": "2026-08-21T11:28:36Z",
+    "reviewed_payload_sha256": "26f9ef9c5e0baa889c4300152bed242b5e6b782be43a28026f738f57f7ea3dab",
+    "reviewed_scope_sha256": "a2cdfedde3e4b346f257da962117fc9f47a065a915e2e07b6bfa22293e52843c",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-21T11:14:45Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "f385bc9e40fe873a8d4d1f2cb50992ec3ed5aae10e749465385f8b9702c01176",
     "proof_ref": "owner-auftrag in der einrichtungssitzung vom 21.08.2026",
     "valid_until": "2026-08-23T11:14:45Z"
   },
@@ -44,7 +44,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch wo-003-review-runner verwerfen; auf main bleibt alles unveraendert",
-  "status": "executing",
+  "status": "verified",
   "title": "Review-Runner ins Repository aufnehmen",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
