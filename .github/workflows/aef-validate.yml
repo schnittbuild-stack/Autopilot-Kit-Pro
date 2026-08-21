@@ -1,0 +1,33 @@
+name: AEF Validate
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: AEF Validate / validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out candidate
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - name: Validate bounded candidate
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if [ -z "$BASE_SHA" ]; then BASE_SHA="origin/main"; fi
+          python3 scripts/aef_validate.py --base-ref "$BASE_SHA"
+      - name: Run governance tests
+        run: python3 -m unittest discover -s tests -p 'test*.py'
+      - name: Check diff hygiene
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if [ -z "$BASE_SHA" ]; then BASE_SHA="origin/main"; fi
+          git diff --check "$BASE_SHA"...HEAD

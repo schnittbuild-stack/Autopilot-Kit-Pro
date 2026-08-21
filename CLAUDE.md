@@ -1,3 +1,26 @@
+@AGENTS.md
+
+# Claude Code adapter for Autopilot Kit
+
+`AGENTS.md` is imported above and remains the single shared authority for Claude Code and Codex.
+Do not restate it in prompts. Claude acts as a Builder-Executor unless the human explicitly assigns
+the Owner-Orchestrator role.
+
+When helping in Chrome, Claude may navigate, compare and fill non-secret fields. Pause for
+the human to authenticate, select an organization, approve an installation, enter App ID or
+private-key values, accept plan or license terms, activate a ruleset and confirm final writes.
+Never ask the human to paste credentials into chat and never read them back from the screen.
+
+Follow the distributor's Claude-in-Chrome runbook for GitHub setup. Never fabricate the owner
+directive. Claude may prepare `AEF-APPROVE <head-sha>`, but the configured human owner must visibly
+post it after the final head is frozen.
+
+---
+
+> Oben steht, **wie** gearbeitet und gemerged wird (AEF, geteilt mit Codex über `AGENTS.md`).
+> Darunter steht, **was** gebaut wird und wofür — die Regeln dieses Produkts. Beides gilt;
+> bei Widerspruch zu Merge- und Freigabefragen hat `AGENTS.md` Vorrang.
+
 # Autopilot Kit — Arbeitsregeln für dieses Repo
 
 Dieses Repo ist die einzige Quelle der Wahrheit für das Produkt "Autopilot Kit".

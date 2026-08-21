@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "repository": "schnittbuild-stack/Autopilot-Kit-Pro",
+  "repository_visibility": "public",
+  "default_branch": "main",
+  "human_owner": "schnittbuild-stack",
+  "builder_login": "alexanderschnittcher-gif",
+  "environment_name": "aef-merge-gateway",
+  "ruleset_name": "AEF Protected Main",
+  "github_app_slug": "autopilot-kit-merge-app",
+  "required_checks": [
+  "AEF Validate / validate",
+  "AEF Release Gate / release-gate"
+],
+  "reserved_paths": [
+  ".aef/**",
+  ".codex/**",
+  ".github/**",
+  "AGENTS.md",
+  "CLAUDE.md",
+  "docs/agentic/**",
+  "governance/**",
+  "scripts/aef_merge.py",
+  "scripts/aef_scaffold_work_order.py",
+  "scripts/aef_validate.py",
+  "tests/test_aef_governance.py"
+],
+  "ordinary_paths": [
+  "core/**",
+  "adapter-claude/**",
+  "notfall/**",
+  "evals/**",
+  "docs/work-orders/**",
+  "src/**"
+],
+  "work_order": {
+    "max_valid_hours": 72,
+    "ordinary_risk_class": "B",
+    "required_status_for_merge": "verified",
+    "required_acceptance_verdict": "PASS"
+  },
+  "protected_merge": {
+    "allowed_risk_classes": ["B"],
+    "reserved_paths_allowed": false,
+    "allowed_activation_statuses": ["configuration_verified", "active_verified"],
+    "require_exact_head_owner_comment": true,
+    "token_environment_variable": "AEF_MERGE_TOKEN",
+    "merge_method": "squash"
+  }
+}

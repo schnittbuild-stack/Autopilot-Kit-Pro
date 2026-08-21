@@ -1,0 +1,18 @@
+{
+  "put_environment": {
+    "wait_timer": 0,
+    "prevent_self_review": false,
+    "reviewers": [],
+    "deployment_branch_policy": {
+      "protected_branches": false,
+      "custom_branch_policies": true
+    }
+  },
+  "post_deployment_branch_policy": {
+    "name": "main"
+  },
+  "human_ui_only": {
+    "allow_administrators_to_bypass_configured_protection_rules": false,
+    "confirmation_required_for_readback": true
+  }
+}

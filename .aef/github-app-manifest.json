@@ -1,0 +1,21 @@
+{
+  "name": "Autopilot Kit Merge App",
+  "url": "https://github.com/schnittbuild-stack/Autopilot-Kit-Pro",
+  "hook_attributes": {
+    "active": false
+  },
+  "redirect_url": "https://github.com/schnittbuild-stack/Autopilot-Kit-Pro",
+  "setup_url": "https://github.com/schnittbuild-stack/Autopilot-Kit-Pro",
+  "public": false,
+  "default_permissions": {
+  "actions": "read",
+  "administration": "read",
+  "checks": "read",
+  "contents": "write",
+  "environments": "read",
+  "issues": "read",
+  "metadata": "read",
+  "pull_requests": "read"
+},
+  "default_events": []
+}

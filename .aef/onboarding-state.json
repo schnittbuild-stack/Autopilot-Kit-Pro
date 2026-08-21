@@ -1,0 +1,74 @@
+{
+  "activation_status": "inactive",
+  "created_at": "2026-08-21T08:07:01Z",
+  "profile_sha256": "caca9303a885de3e5b904456992fa1a2b008423f415f19d8836da8de99b9ac83",
+  "repository": "schnittbuild-stack/Autopilot-Kit-Pro",
+  "schema_version": 1,
+  "steps": [
+    {
+      "actor_type": "local_tool",
+      "completed_at": "2026-08-21T08:07:01Z",
+      "evidence_ref": "sha256:caca9303a885de3e5b904456992fa1a2b008423f415f19d8836da8de99b9ac83",
+      "human_gate": false,
+      "id": "profile_validated",
+      "status": "complete"
+    },
+    {
+      "actor_type": "local_tool",
+      "completed_at": "2026-08-21T08:07:01Z",
+      "evidence_ref": "local-render:Autopilot-Kit-Pro",
+      "human_gate": false,
+      "id": "repository_rendered",
+      "status": "complete"
+    },
+    {
+      "actor_type": "local_tool",
+      "completed_at": "2026-08-21T08:07:01Z",
+      "evidence_ref": "local-tests:generated-unittest-pass",
+      "human_gate": false,
+      "id": "local_checks_green",
+      "status": "complete"
+    },
+    {
+      "human_gate": true,
+      "id": "bootstrap_pr_merged",
+      "status": "pending"
+    },
+    {
+      "human_gate": false,
+      "id": "canary_checks_observed",
+      "status": "pending"
+    },
+    {
+      "human_gate": true,
+      "id": "github_app_registered",
+      "status": "pending"
+    },
+    {
+      "human_gate": true,
+      "id": "github_app_installed",
+      "status": "pending"
+    },
+    {
+      "human_gate": true,
+      "id": "environment_configured",
+      "status": "pending"
+    },
+    {
+      "human_gate": true,
+      "id": "ruleset_activated",
+      "status": "pending"
+    },
+    {
+      "human_gate": true,
+      "id": "activation_readback_verified",
+      "status": "pending"
+    },
+    {
+      "human_gate": true,
+      "id": "owner_canary_passed",
+      "status": "pending"
+    }
+  ],
+  "updated_at": "2026-08-21T08:07:01Z"
+}
