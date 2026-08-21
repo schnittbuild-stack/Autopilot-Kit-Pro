@@ -1,0 +1,50 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-21T08:59:16Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "onboarding-schritt canary_checks_observed, OWNER-ONBOARDING.md abschnitt 2",
+    "valid_until": "2026-08-22T08:59:16Z"
+  },
+  "business_outcome": "Nachweisen, dass AEF Validate und AEF Release Gate auf einem regulaeren Work-Order-PR gruen laufen, bevor das Ruleset sie verbindlich macht.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "small",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 2,
+    "max_parallel_readers": 1,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "docs/work-orders/WO-20260821-001-canary.json"
+  ],
+  "id": "WO-20260821-001",
+  "in_scope": [
+    "Genau eine Work Order anlegen und die beiden Pflicht-Checks beobachten"
+  ],
+  "out_of_scope": [
+    "Keine Produktdatei aendern, kein Merge, keine GitHub-Konfiguration"
+  ],
+  "repository_context": {
+    "base_commit": "a3deef04c00d36277d586094395fcaebbd419bc1",
+    "branch": "aef-canary",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch aef-canary loeschen; auf main entsteht keine Aenderung",
+  "status": "executing",
+  "title": "Canary: Pruefkette und Check-Namen verifizieren",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}
