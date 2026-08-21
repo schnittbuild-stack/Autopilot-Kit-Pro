@@ -70,6 +70,10 @@
   - [x] **Nacharbeit aus dem Abbruch-Test (20.08.2026):** Prinzip 1 beim
         Kunden repariert, Zwischenstand in Phase 3 nachgezogen, Wächter-Vorlage
         gebaut — die Fälle 3 bis 5 danach wiederholt, **3 von 3 bestanden**
+  - [x] **Riss aus Abbruch-Test Fall 2 behoben (21.08.2026)** — eiserne
+        Regel 3 hält eine gestellte, unbeantwortete Frage jetzt im Stand fest;
+        Fall 2 danach neu gelaufen, **bestanden**, alle sieben Prüfpunkte
+        (`docs/abbruch-test-phase3.md`, vierter Durchlauf)
   - [ ] **Durchlauf auf einem fremden Rechner unter 30 Minuten — steht aus**
 - [ ] Phase 4 — Watchdog & Ketten-Tests
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
@@ -308,6 +312,12 @@ merken, dass eine Sitzung zu Ende geht" — merkt er es hier.** Behebung ist ein
 Zeile in eiserner Regel 3; sie zieht einen neuen Phase-2-Durchlauf nach sich
 und braucht deshalb eine Entscheidung. Einzelheiten im dritten Durchlauf in
 `docs/abbruch-test-phase3.md`.
+**BEHOBEN am 21.08.2026.** Eiserne Regel 3, Phase 2 Schritt 2 und die
+Checkliste Phase 2 halten jetzt auch eine gestellte, unbeantwortete Frage im
+Stand fest — so, wie `STATUS.vorlage.md` es ohnehin vormachte. Fall 2 ist
+danach neu gelaufen: **bestanden, alle sieben Prüfpunkte**, mit ausdrücklicher
+Würdigung von Prüfpunkt 3. Vierter Durchlauf in
+`docs/abbruch-test-phase3.md`, Entscheidung in `docs/entscheidungen.md`.
 
 **3. `notfall/` deckt die fünf häufigsten Fehlerbilder ab — plus die
 „weiter"-Anleitung.** — **ERFÜLLT, aber nur formal geprüft.** Die sechs Dateien

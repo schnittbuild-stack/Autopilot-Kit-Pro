@@ -40,6 +40,12 @@ gebeten — der Stand steht in der Datei.
    ohne STATUS-Eintrag gilt als nicht gemacht.
    Innerhalb von Phase 2 schreibst du nach **jeder** Antwort, innerhalb von
    Phase 3 nach **jedem** Schritt.
+   **In Phase 2 zusätzlich: sobald du eine Frage gestellt hast.** Der Stand
+   hält dann fest, dass sie gestellt und noch **nicht** beantwortet ist — genau
+   so, wie `vorlagen/STATUS.vorlage.md` es vormacht. Ohne diesen Eintrag hält
+   eine frische Sitzung die Frage für ungestellt und stellt sie ein zweites
+   Mal. Daran merkt der Nutzer, dass ein Gespräch zu Ende gegangen ist — und
+   genau das soll er nie.
 4. **Jede Phase bleibt unter 15 Minuten.** Wird es länger: an einer sinnvollen
    Stelle anhalten, STATUS schreiben, weitermachen.
 5. **Nach jeder Phase bietest du den frischen Start an** — in Alltagssprache,
@@ -186,6 +192,10 @@ Antworten, und du kannst jede überspringen."
    (Vorlage: `vorlagen/profil.vorlage.md`) **und** aktualisierst
    `system/STATUS.md`. Bricht die Sitzung nach Frage 6 ab, sind sechs
    Antworten gesichert und die siebte steht als nächster Schritt.
+   **Und sobald du eine Frage gestellt hast, hältst du im Stand fest, dass sie
+   gestellt und noch nicht beantwortet ist** — bevor du auf die Antwort
+   wartest. Bricht die Sitzung ab, während Frage 7 auf dem Bildschirm steht,
+   liest die frische Sitzung genau das und stellt sie nicht ein zweites Mal.
 3. **Signatur und No-Gos wörtlich übernehmen.** Nicht glätten, nicht
    umformatieren, keine Zeile weglassen, nichts ergänzen.
 4. **Bei Frage 9 (das Material)** zeigst du ihm den Ordner
@@ -216,6 +226,8 @@ Antworten, und du kannst jede überspringen."
 - [ ] Genau zehn Fragen, einzeln, jede mit Beispiel, im Wortlaut aus
       `fragen.md`.
 - [ ] Nach **jeder** Antwort: Profil geschrieben **und** STATUS aktualisiert.
+- [ ] Jede gestellte Frage stand im Stand als „gestellt, noch nicht
+      beantwortet" — schon bevor die Antwort kam.
 - [ ] Signatur und No-Gos stehen wörtlich im Profil.
 - [ ] Frage 9 hat nicht blockiert; „später" ist in STATUS vermerkt.
 - [ ] Zusatzfrage zum Preis nur bei beiden Bedingungen gestellt.
