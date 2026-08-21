@@ -1,0 +1,51 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-21T10:37:53Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "owner-freigabe in der einrichtungssitzung vom 21.08.2026",
+    "valid_until": "2026-08-23T10:37:53Z"
+  },
+  "business_outcome": "Festlegen, wer die Abnahme-Quittung ausstellt und in welchem Format, damit jede kuenftige Work Order einen nachpruefbaren unabhaengigen Review durchlaeuft statt einer Formsache.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "small",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 2,
+    "max_parallel_readers": 1,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "docs/work-orders/REVIEW.md",
+    "docs/work-orders/WO-20260821-002-review-prozess.json"
+  ],
+  "id": "WO-20260821-002",
+  "in_scope": [
+    "docs/work-orders/REVIEW.md anlegen: Rollentrennung, Ablauf in sechs Schritten, vier Pruefbereiche, Urteilsformat"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an Skripten, Workflows, Governance-Policy oder reservierten Pfaden; keine GitHub-Konfiguration"
+  ],
+  "repository_context": {
+    "base_commit": "a3deef04c00d36277d586094395fcaebbd419bc1",
+    "branch": "wo-002-review-prozess",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-002-review-prozess verwerfen; auf main bleibt alles unveraendert",
+  "status": "executing",
+  "title": "Unabhaengigen Review-Prozess dokumentieren",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}
