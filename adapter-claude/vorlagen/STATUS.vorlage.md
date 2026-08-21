@@ -5,7 +5,10 @@
      Ein Schritt ohne STATUS-Eintrag gilt als nicht gemacht.
      Diese Datei ist die einzige Grundlage der Fortsetzung: Was hier nicht
      steht, ist nach einem Sitzungswechsel weg — auch dann, wenn es im
-     Gespräch klar war. -->
+     Gespräch klar war.
+     ÄNDERN: immer nur im betroffenen Abschnitt. Niemals ein Wort in der
+     ganzen Datei ersetzen — „keine", „—" und „noch offen" stehen hier
+     mehrfach. Nach dem Ändern die Datei einmal ganz lesen. -->
 
 Zuletzt geändert: <Datum, Uhrzeit>
 

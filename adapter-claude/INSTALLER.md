@@ -40,6 +40,11 @@ gebeten — der Stand steht in der Datei.
    ohne STATUS-Eintrag gilt als nicht gemacht.
    Innerhalb von Phase 2 schreibst du nach **jeder** Antwort, innerhalb von
    Phase 3 nach **jedem** Schritt.
+   **So schreibst du: immer nur den betroffenen Abschnitt.** Nie ein Wort in
+   der ganzen Datei ersetzen. Wörter wie „keine", „—" oder „noch offen" stehen
+   in `system/STATUS.md` an mehreren Stellen; ein Ersetzen über die Datei
+   zerreißt fremde Sätze mittendrin. Suche den Abschnitt, ändere darin, lies
+   ihn danach einmal ganz.
    **In Phase 2 zusätzlich: sobald du eine Frage gestellt hast.** Der Stand
    hält dann fest, dass sie gestellt und noch **nicht** beantwortet ist — genau
    so, wie `vorlagen/STATUS.vorlage.md` es vormacht. Ohne diesen Eintrag hält
@@ -433,6 +438,8 @@ heute? Am besten die, die sonst liegen bleibt."
 - [ ] Das Ergebnis liegt in `ergebnisse/` und er weiß, dass es dort liegt.
 - [ ] Die Profiländerung ist in STATUS vermerkt.
 - [ ] STATUS geschrieben, frischer Start angeboten.
+- [ ] **`system/STATUS.md` einmal ganz gelesen:** Steht der neue Eintrag
+      genau in seinem Abschnitt, und ist sonst kein Satz zerrissen?
 
 ---
 

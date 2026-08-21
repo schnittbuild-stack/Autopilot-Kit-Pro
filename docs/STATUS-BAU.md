@@ -1173,6 +1173,13 @@ sind Verlauf.
    neu gelaufen: **bestanden**, alle sieben Prüfpunkte. Vierter Durchlauf in
    `docs/abbruch-test-phase3.md`, Entscheidung in `docs/entscheidungen.md`.
 
+**Ebenfalls am 21.08.2026:** Der erste Durchlauf mit dem gebauten Kunden-ZIP
+(Autorendurchlauf, rund 25 Minuten) hat einen **Fehler in der Gedächtnisdatei**
+gefunden — der Text der erledigten Aufgabe stand fünfmal in `system/STATUS.md`,
+viermal mitten in fremden Sätzen. Ursache, Behebung an vier Stellen und der
+Nachweis stehen in `docs/durchlauf-autor.md`. Der Abbruch-Test hätte das nie
+gefunden: Der Schaden entsteht am **Ende** von Phase 4, nicht während der Phasen.
+
 **Was für die Definition of Done Phase 3 noch fehlt — genau ein Punkt:**
 
 **Kompletter Durchlauf auf einem frischen, fremden Rechner unter 30 Minuten,
