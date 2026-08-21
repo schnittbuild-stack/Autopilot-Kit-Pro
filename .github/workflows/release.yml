@@ -9,15 +9,64 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: ZIP bauen (ohne Interna)
+
+      - name: Kundenbaum zusammenstellen
         run: |
+          set -euo pipefail
           mkdir -p build/autopilot-kit
           cp START_HIER.md build/autopilot-kit/
           cp -r core adapter-claude notfall build/autopilot-kit/
-          rm -rf build/autopilot-kit/core/skills/vertrieb/_TEMPLATE_SKILL.md \
-                 build/autopilot-kit/core/vertraege/_TEMPLATE_VERTRAG.md \
-                 build/autopilot-kit/core/testfaelle/_TEMPLATE_TESTFALL.md
+          rm -f build/autopilot-kit/core/skills/vertrieb/_TEMPLATE_SKILL.md \
+                build/autopilot-kit/core/vertraege/_TEMPLATE_VERTRAG.md \
+                build/autopilot-kit/core/testfaelle/_TEMPLATE_TESTFALL.md
+          # testfaelle-praxis/ liegt außerhalb der kopierten Ordner und kann
+          # deshalb gar nicht erst mitkommen (Entscheidung 17.08.2026).
+
+      - name: Sicherung — kein Praxismaterial im ZIP
+        run: |
+          set -euo pipefail
+          fehler=0
+
+          # 1. Kein Fall mit Herkunft "praxis" im Kundenbaum.
+          if grep -rl 'Herkunft: praxis' build/autopilot-kit 2>/dev/null; then
+            echo "::error::Obige Dateien tragen 'Herkunft: praxis' und dürfen nicht ausgeliefert werden. Sie gehören nach testfaelle-praxis/."
+            fehler=1
+          fi
+
+          # 2. Kein Praxis-Ordner im Kundenbaum.
+          if [ -e build/autopilot-kit/testfaelle-praxis ]; then
+            echo "::error::testfaelle-praxis/ ist im Kundenbaum gelandet."
+            fehler=1
+          fi
+
+          # 3. Jeder ausgelieferte Testfall MUSS eine Herkunftszeile haben.
+          #    Unbekannte Herkunft wird wie Praxismaterial behandelt.
+          while IFS= read -r datei; do
+            case "$(basename "$datei")" in README.md) continue ;; esac
+            if ! grep -q 'Herkunft: konstruiert' "$datei"; then
+              echo "::error file=${datei#build/autopilot-kit/}::Testfall ohne Herkunftszeile 'Herkunft: konstruiert' — Herkunft unklar, wird nicht ausgeliefert."
+              fehler=1
+            fi
+          done < <(find build/autopilot-kit/core/testfaelle -type f -name '*.md')
+
+          # 4. Die Ketten-Fälle müssen mit — ohne sie kann der Watchdog die
+          #    Hauptkette beim Kunden nicht prüfen.
+          if [ -z "$(find build/autopilot-kit/core/testfaelle/ketten -name '*.md' 2>/dev/null)" ]; then
+            echo "::error::Keine Ketten-Testfälle im Build gefunden."
+            fehler=1
+          fi
+
+          if [ "$fehler" -ne 0 ]; then
+            echo "Release abgebrochen. Das wird im Repo behoben, nicht hier stillschweigend weggeräumt."
+            exit 1
+          fi
+          echo "Geprüft: nur neutrale Referenzfälle und Ketten-Fälle im ZIP."
+
+      - name: ZIP packen
+        run: |
+          set -euo pipefail
           cd build && zip -r "autopilot-kit-${GITHUB_REF_NAME}.zip" autopilot-kit
+
       - name: An Release anhängen
         uses: softprops/action-gh-release@v2
         with:
