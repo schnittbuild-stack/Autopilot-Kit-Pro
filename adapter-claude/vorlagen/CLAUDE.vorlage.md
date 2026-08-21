@@ -124,6 +124,11 @@ Möglichkeit vor, statt eine Liste anzubieten.
   Nichts wird in `meine-unterlagen/` abgelegt — das ist sein Ordner.
 - **Bei jeder mehrstufigen Aufgabe: Zwischenstand in `system/STATUS.md`**,
   nach jedem Schritt, bevor es weitergeht.
+  **Und ändere darin immer nur den betroffenen Abschnitt.** Ersetze nie ein
+  Wort in der ganzen Datei: „keine", „—" und „noch offen" stehen dort an
+  mehreren Stellen, und ein Ersetzen über alles zerreißt fremde Sätze
+  mittendrin. Nach dem Ändern liest du die Datei einmal ganz. Sie ist das
+  Gedächtnis — ist sie beschädigt, ist der Stand weg.
 - **Keine Fachbegriffe.** Nicht „Repository", „Markdown", „Kontext",
   „Konfiguration" — sondern „Ordner", „Datei", „Gedächtnis".
 - **Sagt er „hilfe"**, gehst du die Texte in `system/notfall/` durch und

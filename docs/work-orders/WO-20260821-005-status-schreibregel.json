@@ -1,0 +1,57 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/7#issuecomment-5372108113",
+    "reviewed_at": "2026-08-21T15:48:36Z",
+    "reviewed_payload_sha256": "ce2418943e9d7c73922f197231b8e8a56ff013011bdcc60c704ef9b4e30cd683",
+    "reviewed_scope_sha256": "fb97ae2b4b670031ffcc5f87fb5bb803db0a58b093e4da86bf146ac113d5b6dd",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-21T15:43:26Z",
+    "payload_sha256": "4d8f4091b08a11222a37e0a631e3bd94efc916e520a851dbff02c2dbbfd19021",
+    "proof_ref": "owner-auftrag bitte behebe alles, einrichtungssitzung 21.08.2026",
+    "valid_until": "2026-08-23T15:43:26Z"
+  },
+  "business_outcome": "Verhindern, dass die Gedaechtnisdatei des Kunden beim Eintragen einer erledigten Aufgabe zerstoert wird. STATUS.md ist die einzige Grundlage der Fortsetzung \u2014 ist sie beschaedigt, ist der Stand des Kaeufers weg.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "adapter-claude/INSTALLER.md",
+    "adapter-claude/vorlagen/CLAUDE.vorlage.md",
+    "adapter-claude/vorlagen/STATUS.vorlage.md",
+    "docs/STATUS-BAU.md",
+    "docs/durchlauf-autor.md",
+    "docs/durchlauf-protokoll.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260821-005-status-schreibregel.json"
+  ],
+  "id": "WO-20260821-005",
+  "in_scope": [
+    "Schreibregel an vier Stellen ergaenzen (eiserne Regel 3, Checkliste Phase 4, STATUS.vorlage.md, CLAUDE.vorlage.md); Autorendurchlauf samt Befund, Ursache und Nachweis dokumentieren; Durchlauf-Protokoll ins Repository aufnehmen; STATUS-BAU und Entscheidungsprotokoll nachziehen"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an den zehn Skills, an core/ oder an der Governance; keine Regel fuer den unbestaetigten zweiten Verdacht; die 30-Minuten-Anforderung bleibt offen und wird nicht als erfuellt vermerkt"
+  ],
+  "repository_context": {
+    "base_commit": "bec4e70a7da2237a7f7e8b3092bac67dc80f0f6d",
+    "branch": "wo-005-status-schreibregel",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-005-status-schreibregel verwerfen; auf main bleibt alles unveraendert",
+  "status": "verified",
+  "title": "Schreibregel fuer die Gedaechtnisdatei und Autorendurchlauf festhalten",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}
