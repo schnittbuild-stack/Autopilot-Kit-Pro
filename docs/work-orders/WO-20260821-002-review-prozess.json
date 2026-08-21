@@ -1,0 +1,51 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/4#issuecomment-5369047166",
+    "reviewed_at": "2026-08-21T11:08:11Z",
+    "reviewed_payload_sha256": "7ae4e94c09e95bc7ef863f2e6aa4acad5596a809725c3d4cff6bf82643e0a594",
+    "reviewed_scope_sha256": "6729889b431ab08eddbc51e5c67b68cc50a0096df57da1f5db4593550dc6fcb0",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-21T10:37:53Z",
+    "payload_sha256": "0e92c358c022ceb2b3f1c8e8fce08abffbaaffd36f2a4eab03015c994d3ca11a",
+    "proof_ref": "owner-freigabe in der einrichtungssitzung vom 21.08.2026",
+    "valid_until": "2026-08-23T10:37:53Z"
+  },
+  "business_outcome": "Festlegen, wer die Abnahme-Quittung ausstellt und in welchem Format, damit jede kuenftige Work Order einen nachpruefbaren unabhaengigen Review durchlaeuft statt einer Formsache.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "small",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 2,
+    "max_parallel_readers": 1,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "docs/work-orders/REVIEW.md",
+    "docs/work-orders/WO-20260821-002-review-prozess.json"
+  ],
+  "id": "WO-20260821-002",
+  "in_scope": [
+    "docs/work-orders/REVIEW.md anlegen: Rollentrennung, Ablauf in sechs Schritten, vier Pruefbereiche, Urteilsformat"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an Skripten, Workflows, Governance-Policy oder reservierten Pfaden; keine GitHub-Konfiguration"
+  ],
+  "repository_context": {
+    "base_commit": "a3deef04c00d36277d586094395fcaebbd419bc1",
+    "branch": "wo-002-review-prozess",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-002-review-prozess verwerfen; auf main bleibt alles unveraendert",
+  "status": "verified",
+  "title": "Unabhaengigen Review-Prozess dokumentieren",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}
