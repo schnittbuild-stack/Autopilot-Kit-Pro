@@ -382,8 +382,8 @@ ist zugleich die Probe auf das Schreibrecht.
    21 getrennte Bewertungen (`docs/nachlauf-phase3.md`).
 
 Phase 3 ist damit **nicht** abgeschlossen — aber es fehlt nur noch der
-Durchlauf auf einem fremden Rechner und eine Entscheidung zu Fall 2 des
-Abbruch-Tests. Der Abschnitt „Nächster Schritt" ganz unten hält den Stand.
+Durchlauf auf einem fremden Rechner. Die Entscheidung zu Fall 2 des
+Abbruch-Tests ist am 21.08.2026 gefallen, der Befund behoben und neu belegt. Der Abschnitt „Nächster Schritt" ganz unten hält den Stand.
 
 ## Nachlauf Phase 3 — erledigt am 20.08.2026
 
@@ -906,7 +906,7 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
   `docs/entscheidungen.md`. **Belegt** im wiederholten Fall 5: kein erfundener
   Wächter mehr. **Nicht** belegt: dass der Check etwas findet — er ist nie
   gelaufen, das prüft Phase 4.
-- **Neu (20.08.2026): Phase 2 schreibt den Stand erst nach der Antwort — die
+- **Erledigt (21.08.2026): Phase 2 schreibt den Stand erst nach der Antwort — die
   gestellte Frage geht verloren.** Eiserne Regel 3 verlangt für Phase 2 „nach
   **jeder Antwort**". Eine Frage, die auf dem Bildschirm steht und noch nicht
   beantwortet ist, hat damit keinen Platz im Stand — die frische Sitzung stellt
@@ -915,6 +915,10 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
   Musterformulierung ausgerechnet den feineren Fall vor („Frage 7 ist gestellt
   und noch nicht beantwortet"), den die Regel so nie erzeugt. Behebung: eine
   Zeile in Regel 3. Zieht einen neuen Phase-2-Durchlauf nach sich.
+  **Behoben am 21.08.2026** an drei Stellen im INSTALLER (Regel 3, Phase 2
+  Schritt 2, Checkliste Phase 2); die Vorlage blieb unverändert. Fall 2 danach
+  neu gelaufen: **bestanden**, alle sieben Prüfpunkte — vierter Durchlauf in
+  `docs/abbruch-test-phase3.md`.
 - **Neu (20.08.2026): Phase 4 hat zwischen Entwurf und „Passt das?" keinen
   Zwischenstand.** Bricht es dort ab, ist das fertige Angebot weg — dieselbe
   Lücke, die Phase 3 schon geschlossen bekommen hat. `INSTALLER.md` nennt STATUS
@@ -1074,6 +1078,10 @@ den vieren Vorrang.
 
 ## Nächster Schritt — Stand 20.08.2026, abends
 
+> **Überholt.** Den aktuellen Stand hält der Abschnitt „Nächster Schritt —
+> Stand 21.08.2026" am Ende dieser Datei. Dieser Abschnitt bleibt als Verlauf
+> stehen.
+
 **Erledigt an diesem Tag, in dieser Reihenfolge:**
 
 1. Prinzip-1-Bruch beim Kunden, Zwischenstand in Installer-Phase 3,
@@ -1089,7 +1097,8 @@ den vieren Vorrang.
 
 1. **Durchlauf auf einem fremden Rechner**, gestoppt, mit einer Testperson ohne
    Vorkenntnisse. **Der einzige Punkt, zu dem es bis heute keine Messung gibt.**
-2. **Eine Entscheidung zu Fall 2 des Abbruch-Tests.** Nach der Skala des Tests
+2. ~~**Eine Entscheidung zu Fall 2 des Abbruch-Tests.**~~ **Gefallen am
+   21.08.2026, Befund behoben und neu belegt.** Nach der Skala des Tests
    ist er bestanden — nach dem Wortlaut der Anforderung („der Käufer soll nie
    merken, dass eine Sitzung zu Ende geht") merkt er es dort. Behebung ist eine
    Zeile in eiserner Regel 3 und kostet einen neuen Phase-2-Durchlauf. **Ob das
@@ -1148,3 +1157,29 @@ und Kriterienteil, getrennte Anweisungen für Erzeugung und Bewertung,
 Statusskript, Berichtsgenerator. Ablauf je Fall unverändert: dreimal erzeugen,
 dreimal bewerten, Bericht schreiben, committen, pushen. Bestanden nur bei
 3 von 3.
+
+## Nächster Schritt — Stand 21.08.2026
+
+Dieser Abschnitt hält den Stand. Alle „Nächster Schritt"-Abschnitte darüber
+sind Verlauf.
+
+**Erledigt an diesem Tag:**
+
+1. **AEF-Governance eingerichtet** — die Weiterentwicklung läuft ab jetzt im
+   Repository `schnittbuild-stack/Autopilot-Kit-Pro` unter Work Orders,
+   unabhängigem Review und geschütztem `main`.
+2. **Riss aus Abbruch-Test Fall 2 behoben und neu belegt.** Eiserne Regel 3
+   hält eine gestellte, unbeantwortete Frage jetzt im Stand fest. Fall 2 danach
+   neu gelaufen: **bestanden**, alle sieben Prüfpunkte. Vierter Durchlauf in
+   `docs/abbruch-test-phase3.md`, Entscheidung in `docs/entscheidungen.md`.
+
+**Was für die Definition of Done Phase 3 noch fehlt — genau ein Punkt:**
+
+**Kompletter Durchlauf auf einem frischen, fremden Rechner unter 30 Minuten,
+mit einer Testperson ohne Vorkenntnisse.** Nie gemessen. Der einzige Punkt, den
+keine Sitzung simulieren kann: Er braucht einen echten Menschen an einem echten
+fremden Rechner. Punkte 2, 3 und 4 der Definition of Done sind erfüllt.
+
+**Was übrig bleibt, ohne Phase 3 zu blockieren:** unverändert unter „Offene
+Punkte" oben — die Testfall-Befunde aus dem Nachlauf, der nie gelaufene
+Wochencheck, die Wortlaut-Befunde aus dem dritten Abbruch-Durchlauf.
