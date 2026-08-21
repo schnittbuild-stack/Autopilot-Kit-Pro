@@ -1,0 +1,52 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/5#issuecomment-5369247951",
+    "reviewed_at": "2026-08-21T11:28:36Z",
+    "reviewed_payload_sha256": "26f9ef9c5e0baa889c4300152bed242b5e6b782be43a28026f738f57f7ea3dab",
+    "reviewed_scope_sha256": "a2cdfedde3e4b346f257da962117fc9f47a065a915e2e07b6bfa22293e52843c",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-21T11:14:45Z",
+    "payload_sha256": "f385bc9e40fe873a8d4d1f2cb50992ec3ed5aae10e749465385f8b9702c01176",
+    "proof_ref": "owner-auftrag in der einrichtungssitzung vom 21.08.2026",
+    "valid_until": "2026-08-23T11:14:45Z"
+  },
+  "business_outcome": "Den unabhaengigen Review dauerhaft und automatisiert verfuegbar machen, statt ihn bei jedem Pull Request von Hand aufzusetzen \u2014 und den Pruefer selbst gegen unbemerkte Aenderung schuetzen.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "small",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 2,
+    "max_parallel_readers": 1,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    ".github/aef-review.sh",
+    "docs/work-orders/REVIEW.md",
+    "docs/work-orders/WO-20260821-003-review-runner.json"
+  ],
+  "id": "WO-20260821-003",
+  "in_scope": [
+    "Runner als .github/aef-review.sh aufnehmen; REVIEW.md auf den automatisierten Ablauf nachziehen; Pruefer darf Tests und Validierung ausfuehren"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an policy.json, Profil, Workflows, Ruleset oder Environment; keine GitHub-Konfiguration; kein Eingriff in aef_validate.py oder aef_merge.py"
+  ],
+  "repository_context": {
+    "base_commit": "3c3194dbec6a42cb338f63986c159cf062915bcc",
+    "branch": "wo-003-review-runner",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-003-review-runner verwerfen; auf main bleibt alles unveraendert",
+  "status": "verified",
+  "title": "Review-Runner ins Repository aufnehmen",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

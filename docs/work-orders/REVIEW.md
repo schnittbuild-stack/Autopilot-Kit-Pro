@@ -19,10 +19,15 @@ Rollen — auch wenn ein Mensch am Ende alle drei anstößt.
 
 1. **Builder** legt die Work Order an, arbeitet ausschließlich innerhalb des
    `file_allowlist`, lässt die Tests laufen und öffnet den Pull Request.
-2. **Prüfende Sitzung** wird frisch gestartet. Sie erhält genau drei Angaben:
+2. **Prüfende Sitzung** wird automatisch gestartet:
+
+       .github/aef-review.sh <pr-nummer>
+
+   Sie läuft als eigener Prozess mit eigenem Kontext und erhält genau drei Angaben:
    Repository, PR-Nummer und den Prüfauftrag — **keine Begründung des Builders**.
 3. Sie arbeitet **ausschließlich lesend**: Diff, Work Order, betroffene Dateien.
-   Kein Commit, kein Push, keine Änderung.
+   Kein Commit, kein Push, keine Änderung. Testsuite und Validierung darf sie
+   ausführen — Behauptungen prüfen ist besser, als sie zu glauben.
 4. Sie postet ihr Urteil als **Kommentar am Pull Request**.
 5. Bei `PASS` bindet der Builder die Quittung:
 
@@ -60,3 +65,13 @@ Der Kommentar beginnt mit genau einer dieser Zeilen:
 Darunter die geprüften Bereiche, jeder Befund mit Datei und Zeile. Bei `PASS` ohne
 Befunde genügt ein Satz je Bereich. Unsicherheit wird benannt, nicht überspielt:
 Was die Sitzung nicht prüfen konnte, steht ausdrücklich als ungeprüft da.
+
+## Warum der Prüfer selbst postet
+
+`.github/aef-review.sh` postet das Urteil direkt an den Pull Request. Es läuft nicht
+über den Builder. Damit kann er ein `FAIL` weder abschwächen noch verschweigen — er
+erfährt es erst, wenn es öffentlich am PR steht.
+
+Aus demselben Grund liegt der Runner unter `.github/` und damit in einem reservierten
+Pfad: Änderungen daran brauchen die Freigabe des menschlichen Owners. Wer den Prüfer
+unbemerkt entschärfen könnte, macht jede Quittung wertlos.
