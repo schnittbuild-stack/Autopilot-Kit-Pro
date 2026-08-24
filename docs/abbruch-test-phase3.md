@@ -902,3 +902,68 @@ Signaturfeld im Profil ist leer geblieben, nicht mit dem Beispiel gefüllt.
 3 bis 5 sind von der Änderung nicht berührt und wurden nicht wiederholt. Über
 die 30-Minuten-Grenze sagt auch dieser Durchlauf nichts — sie bleibt offen und
 braucht eine echte Testperson an einem fremden Rechner.
+
+---
+
+# Sechster Abbruchpunkt — Phase 4, zwischen Ergebnis und Antwort (21.08.2026)
+
+## Warum es diesen Punkt braucht
+
+Die fünf ursprünglichen Fälle brechen jeweils **mitten in** einer Phase ab. Einen
+Fall gab es nie: den Moment, in dem die Arbeit **fertig** ist und der Nutzer noch
+nicht geantwortet hat.
+
+Genau dort saß eine Lücke, die im Stand seit dem 20.08.2026 notiert war: Phase 4
+erzeugte das Ergebnis in Schritt 2, legte es aber erst in Schritt 5 ab —
+dazwischen lagen die Rückfrage „Passt das?" und die Korrektur. Stirbt das
+Gespräch in diesem Fenster, ist das fertige Angebot weg, und der Käufer muss
+seine Aufgabe ein zweites Mal geben. In der Phase, für die er bezahlt hat.
+
+## Was geändert wurde
+
+Das Ablegen ist **vor** die Rückfrage gezogen. Neue Reihenfolge in Phase 4:
+
+1. Aufgabe erfragen · 2. vollständig erledigen · **3. sofort ablegen und STATUS
+schreiben** · 4. „Passt das?" fragen · 5. Korrektur einarbeiten und die Datei
+nachziehen · 6. sagen, wo es liegt — **so, wie es ist** · 7. STATUS, frischer
+Start.
+
+Schritt 6 nimmt einen zweiten Befund vom 20.08.2026 mit auf: „Liegt fertig in
+`ergebnisse/`" war über einen Entwurf gesagt worden, der `[PREIS PRÜFEN]` trug.
+
+## Der Nachweis
+
+Prüfstand aus dem korrigierten Stand (66 Dateien wie im Kunden-ZIP). Eine
+Einrichtungssitzung arbeitet die Phasen 1 bis 3 ab, dann Phase 4 mit einer
+echten Aufgabe — und hält **genau nach der Rückfrage** an, ohne sie zu
+beantworten und ohne Übergabetext.
+
+**Im Moment des Abbruchs lag auf der Platte:**
+
+- `ergebnisse/2026-08-21-crm-eintrag-…md`, 2174 Bytes — das fertige Ergebnis
+- ein Stand, der es weiß:
+
+> Phase 4 läuft: Der CRM-Eintrag ist fertig und liegt in `ergebnisse/`. Die
+> Rückfrage „Passt das? Was würdest du anders sagen?" ist **gestellt und noch
+> nicht beantwortet**.
+
+**Die frische Sitzung antwortete auf „weiter":**
+
+> Dein CRM-Eintrag ist fertig und liegt in `ergebnisse/` — mit den offenen
+> Punkten, die drinstehen. Eine Frage habe ich noch: Passt das? Was würdest du
+> anders sagen?
+
+Kein Nachfragen nach dem Stand. Keine zweite Aufgabe verlangt. Die Arbeit ist
+erhalten. Und der Satz beschreibt das Ergebnis so, wie es ist — die offenen
+Punkte werden benannt statt überspielt.
+
+**Nachgeprüft:** Die frische Sitzung hat keine einzige Datei geändert (korrekt,
+sie wartet auf die Antwort), die Ergebnisdatei ist unverändert 2174 Bytes, und
+`system/STATUS.md` ist unversehrt.
+
+## Was dieser Punkt nicht zeigt
+
+Nur der neue Abbruchpunkt ist gelaufen. Die fünf ursprünglichen Fälle sind von
+der Änderung berührt — Phase 4 hat neue Schrittnummern —, aber nicht wiederholt
+worden. Fall 4 („Rückfrage raus, keine Antwort") liegt am nächsten daran und
+wäre der erste Kandidat, wenn die Reihenfolge noch einmal angefasst wird.
