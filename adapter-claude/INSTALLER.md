@@ -414,18 +414,29 @@ heute? Am besten die, die sonst liegen bleibt."
    in seinem Ton. Keine Vorführversion, kein „so ungefähr würde das
    aussehen". Wenn Angaben fehlen, frag genauso nach, wie es der Assistent
    später auch täte — das gehört zum Beweis.
-3. **Frag danach genau das:**
+3. **Leg das Ergebnis sofort ab — bevor du fragst.** In `ergebnisse/`, mit
+   Datum im Dateinamen. Danach schreibst du `system/STATUS.md`: dass es dort
+   liegt und dass deine Rückfrage „Passt das?" gestellt und noch **nicht**
+   beantwortet ist.
+   **Erst dann fragst du.** Stirbt das Gespräch zwischen dem fertigen Ergebnis
+   und seiner Antwort, ist seine Arbeit sonst weg — und er muss die Aufgabe
+   ein zweites Mal geben. Genau in der Phase, für die er bezahlt hat.
+4. **Frag danach genau das:**
    > Passt das? Was würdest du anders sagen?
-4. **Arbeite seine Korrektur sofort ein** — die Formulierung in
+5. **Arbeite seine Korrektur sofort ein** — die Formulierung in
    `mein-profil.md` (das ist die einzige erlaubte Profiländerung außerhalb
    von Phase 2, sie wird in STATUS vermerkt) und das Ergebnis erneut
    ausgeben. Nicht diskutieren, nicht rechtfertigen.
    **Nur ins Profil, sonst nirgendwohin.** Die Assistenten-Dateien werden
    dafür nicht angefasst — sie verweisen auf das Profil und sind ab dem
    nächsten Lesen auf dem neuen Stand.
-5. **Leg das Ergebnis in `ergebnisse/` ab**, mit Datum im Dateinamen, und sag
-   ihm in einem Satz, dass es dort liegt.
-6. **STATUS schreiben**, frischen Start anbieten.
+   Die abgelegte Datei ziehst du dabei nach — sie ist der Stand, nicht der
+   Gesprächsverlauf.
+6. **Sag ihm in einem Satz, wo es liegt — und beschreib es so, wie es ist.**
+   Trägt es noch `[PREIS PRÜFEN]` oder einen offenen Punkt, sagst du das dazu.
+   „Liegt fertig in `ergebnisse/`" über einen Entwurf ist ein Versprechen, das
+   die Datei nicht hält.
+7. **STATUS schreiben**, frischen Start anbieten.
 
 ## Checkliste Phase 4
 
@@ -435,7 +446,10 @@ heute? Am besten die, die sonst liegen bleibt."
       Preisregeln, notfalls `[PREIS PRÜFEN]`.
 - [ ] Nichts aus seinen No-Gos steht im Ergebnis.
 - [ ] Seine Korrektur ist eingearbeitet **und** im Profil gelandet.
-- [ ] Das Ergebnis liegt in `ergebnisse/` und er weiß, dass es dort liegt.
+- [ ] Das Ergebnis lag **vor** der Rückfrage „Passt das?" in `ergebnisse/`,
+      und der Stand wusste davon.
+- [ ] Das Ergebnis liegt in `ergebnisse/` und er weiß, dass es dort liegt —
+      beschrieben so, wie es ist, nicht schöner.
 - [ ] Die Profiländerung ist in STATUS vermerkt.
 - [ ] STATUS geschrieben, frischer Start angeboten.
 - [ ] **`system/STATUS.md` einmal ganz gelesen:** Steht der neue Eintrag

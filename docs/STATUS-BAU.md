@@ -919,10 +919,15 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
   Schritt 2, Checkliste Phase 2); die Vorlage blieb unverändert. Fall 2 danach
   neu gelaufen: **bestanden**, alle sieben Prüfpunkte — vierter Durchlauf in
   `docs/abbruch-test-phase3.md`.
-- **Neu (20.08.2026): Phase 4 hat zwischen Entwurf und „Passt das?" keinen
+- **Erledigt (21.08.2026): Phase 4 hat zwischen Entwurf und „Passt das?" keinen
   Zwischenstand.** Bricht es dort ab, ist das fertige Angebot weg — dieselbe
   Lücke, die Phase 3 schon geschlossen bekommen hat. `INSTALLER.md` nennt STATUS
   für Phase 4 erst als Schritt 6.
+  **Behoben:** Das Ablegen ist vor die Rückfrage gezogen; der Stand hält fest,
+  dass „Passt das?" gestellt und unbeantwortet ist. **Belegt** durch einen
+  sechsten Abbruchpunkt — Abbruch genau in diesem Fenster, das Ergebnis lag auf
+  der Platte, die frische Sitzung setzte fort ohne eine zweite Aufgabe zu
+  verlangen (`docs/abbruch-test-phase3.md`).
 - **Neu (20.08.2026): Die Beispiele in `core/interview/fragen.md` sind die Daten
   der Testperson.** Frage 7 zeigt die Signatur samt Telefonnummer aus
   `evals/testprofil.md` als „Beispiel", Frage 10 deren Erfolgsmoment wörtlich.
@@ -932,9 +937,13 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
 - **Neu (20.08.2026): Der Installer sichert Antworten in der dritten Person**,
   obwohl `mein-profil.md` den Nutzer durchgängig duzt. Kein Fehler im Inhalt,
   aber die Datei liest sich uneinheitlich.
-- **Neu (20.08.2026): „Liegt fertig in `ergebnisse/`"** — gesagt über ein
+- **Erledigt (21.08.2026): „Liegt fertig in `ergebnisse/`"** — gesagt über ein
   Angebot, das `Stand: entwurf` ist und eine `[PREIS PRÜFEN]`-Zeile trägt.
   Nichts erfunden, aber der Abschlusssatz verspricht mehr, als dasteht.
+  **Behoben** im selben Zug wie der Zwischenstand: Phase 4, Schritt 6 verlangt
+  jetzt, das Ergebnis so zu beschreiben, wie es ist — offene Punkte und
+  `[PREIS PRÜFEN]` werden benannt. Die frische Sitzung im sechsten
+  Abbruchpunkt hat genau das getan.
 - **Neu (20.08.2026): Prozess-Schritt 5 des `angebots-schreiber` wird von keinem
   Fall mehr gemessen.** Folge der Kriterienkorrektur an `02-budget-konflikt`:
   Wer korrekt nachfragt, schreibt kein Angebot, und ohne Angebot gibt es keinen

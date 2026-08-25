@@ -1,0 +1,54 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/8#issuecomment-5392199123",
+    "reviewed_at": "2026-08-24T07:47:47Z",
+    "reviewed_payload_sha256": "a07062c877c3fcfb63e7f383f4264eb447514011379fa9ee4405f435156869db",
+    "reviewed_scope_sha256": "66232bb99be6504cbb5b20b8fc4dcef3526c561d3d32fa1ee794a6cb1f0c8183",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-24T06:46:12Z",
+    "payload_sha256": "db1246272b1c210ceb7694bf0c0cdedc2e80f0b32c57eb6e3cbdc5597bca48d4",
+    "proof_ref": "owner-auftrag ja machen wir so, einrichtungssitzung 21.08.2026",
+    "valid_until": "2026-08-26T06:46:12Z"
+  },
+  "business_outcome": "Verhindern, dass die fertige Arbeit des Kaeufers verloren geht, wenn das Gespraech zwischen dem Ergebnis und seiner Antwort auf 'Passt das?' endet \u2014 ausgerechnet in der Phase, fuer die er bezahlt hat.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "adapter-claude/INSTALLER.md",
+    "docs/STATUS-BAU.md",
+    "docs/abbruch-test-phase3.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260821-006-phase4-zwischenstand.json"
+  ],
+  "id": "WO-20260821-006",
+  "in_scope": [
+    "Ablegen in Phase 4 vor die Rueckfrage ziehen, Schritte neu sortieren, Zwischenstand in STATUS verlangen, Checkliste ergaenzen; Abschlusssatz beschreibt das Ergebnis wie es ist; sechsten Abbruchpunkt fahren und dokumentieren; STATUS-BAU und Entscheidungsprotokoll nachziehen"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an core/, an den Skills, an den Vorlagen oder an der Governance; die fuenf urspruenglichen Abbruch-Faelle werden nicht wiederholt; die 30-Minuten-Anforderung bleibt offen"
+  ],
+  "repository_context": {
+    "base_commit": "5947c551925c6a586b2145f0381983251ebac4e3",
+    "branch": "wo-006-phase4-zwischenstand",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-006-phase4-zwischenstand verwerfen; auf main bleibt alles unveraendert",
+  "status": "verified",
+  "title": "Phase 4 legt das Ergebnis ab, bevor sie fragt",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}
