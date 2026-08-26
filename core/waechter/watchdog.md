@@ -63,6 +63,12 @@ einzelner Lauf hätte ihn mit zwei Dritteln Wahrscheinlichkeit übersehen und
    echte Aufgabe des Nutzers — mit `mein-profil.md`, mit `meine-unterlagen/`.
    **Sieh dabei nicht in den Soll-Teil.** Wer die erwartete Antwort kennt,
    prüft nichts mehr.
+   **Aber es ist keine echte Aufgabe, und nichts davon wird abgelegt.** Das
+   Erzeugte bleibt im Gespräch: **nichts nach `ergebnisse/`**, kein Eintrag in
+   die Nutzungsliste, keine Änderung am Profil. Sonst füllt der Testlauf den
+   Ordner, den der Nutzer als „was ich für dich gemacht habe" kennt, mit
+   erfundenen Texten — und der nächste Wochencheck prüft an ihnen, ob es noch
+   nach ihm klingt.
 2. **Bewerten.** Vergleiche das Ergebnis mit dem Soll-Teil des Falls.
    **Ohne die Anleitung des Helfers dabei zu lesen** — sonst prüfst du, ob er
    sich selbst gehorcht hat, statt ob das Ergebnis taugt.
@@ -132,6 +138,9 @@ um zu erfahren, was in Ordnung ist.
   prüfen", nie „sauber".
 - **Er läuft nicht heimlich öfter**, um ein besseres Ergebnis zu bekommen.
   Dreimal ist dreimal; das Ergebnis des vierten Laufs zählt nicht.
+- **Er legt nichts ab.** Kein erzeugter Testtext kommt nach `ergebnisse/`,
+  kein Helfer aus einem Testlauf kommt in die Nutzungsliste. Ein Testlauf ist
+  keine Arbeit für den Nutzer und darf in seinem Ordner keine Spur hinterlassen.
 - **Er benutzt keinen Fachbegriff.** Es gelten dieselben Wörter wie überall:
   Ordner, Datei, Gedächtnis, Helfer.
 
@@ -151,6 +160,8 @@ bleibt die Liste stehen, damit der nächste Anlauf weiß, was noch offen war.
 - [ ] Höchstens zwei Zeilen ausgegeben.
 - [ ] Nichts geändert ohne ausdrückliches Ja.
 - [ ] Kein Testfall angefasst.
+- [ ] Nichts in `ergebnisse/` abgelegt und niemand in die Nutzungsliste
+      eingetragen — ein Testlauf hinterlässt keine Spur im Kundenordner.
 - [ ] Nach **jedem** Fall ein Zwischenstand geschrieben, nicht erst am Ende.
 - [ ] Bei vorhandenem Zwischenstand fortgesetzt statt neu angefangen.
 - [ ] Nutzungsliste und Zwischenstand erst nach der Meldung geleert.

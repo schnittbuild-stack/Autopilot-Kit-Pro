@@ -141,6 +141,29 @@ Anlauf hat die Korrektur bestätigt: Fall 02 lief 3 von 3, und der Wächter
 vermerkte selbst, dass der früher abgewertete Lauf nach dem korrigierten Maßstab
 bestanden hätte.
 
+## Ein fünfter Befund — aus dem Review, nicht aus den Läufen
+
+Der unabhängige Review hat einen Fehler gefunden, den die vier Prüfanläufe
+**nicht** gezeigt haben, weil er dort zufällig nicht eintrat.
+
+`watchdog.md` wies an, jeden Fall „wie eine echte Aufgabe des Nutzers"
+abzuarbeiten — und nahm den Testlauf nirgends von den eisernen Regeln aus.
+Damit hätte er die erzeugten Texte nach `ergebnisse/` gelegt und die geprüften
+Helfer in die Nutzungsliste eingetragen.
+
+**Die Folge wäre ein selbstgebauter Fehlalarm gewesen:** Bei drei Helfern bis
+zu 27 erfundene Kundentexte in dem Ordner, den der Nutzer als „was ich für dich
+gemacht habe" kennt. Der nächste Wochencheck liest genau diesen Ordner als
+Prüfpunkt 1 — und Fall 02 ist absichtlich so gebaut, dass er zu erfundener Nähe
+verleitet.
+
+Dieselbe Klasse wie Anlauf 3: **eine Lücke im Text, die eine Sitzung plausibel
+füllt.** In den vier Läufen ist sie nicht eingetreten; darauf verlassen kann
+man sich nicht.
+
+**Behoben** an drei Stellen: beim Erzeugen, unter „Was er nie tut" und in der
+Checkliste. Ein Testlauf hinterlässt keine Spur im Kundenordner.
+
 ## Was aussteht
 
 - **Fünf Ketten-Testfälle** statt zwei (`BAUPLAN.md` Phase 4, Punkt 2). Erst
