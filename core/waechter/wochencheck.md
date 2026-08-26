@@ -66,6 +66,19 @@ Gab es im Zeitraum eine Aufgabe, für die die Zuordnungstabelle in `CLAUDE.md`
 keinen Eintrag hat? Dann schlag vor, sie nachzutragen — nicht, etwas
 „nachzuinstallieren". Der Nutzer soll nie hören, dass ihm etwas fehlt.
 
+## Nach den vier Prüfpunkten: der Testlauf
+
+Steht in `system/STATUS.md` unter „Seit dem letzten Wochencheck benutzt"
+mindestens ein Helfer, arbeitest du anschließend
+`system/core/waechter/watchdog.md` ab. Er lässt genau diese Helfer gegen ihre
+eigenen Testfälle laufen — das ist die einzige Art, ihr **Verhalten** zu
+prüfen statt nur ihre Ergebnisse.
+
+Steht dort nichts, entfällt der Testlauf. Ohne Erwähnung.
+
+**Das ist kein fünfter Prüfpunkt und kein zweiter Wächter:** derselbe
+Auslöser, dieselbe Ausgabe, höchstens zwei Zeilen mehr.
+
 ## Was der Check nie tut
 
 - **Er ändert nichts.** Kein Profil, keine Unterlage, keine Assistenten-Datei,
@@ -111,14 +124,18 @@ einmal und meldet dasselbe zum zweiten Mal.
 - [ ] Was nicht prüfbar war, steht als „konnte ich nicht prüfen" da.
 - [ ] Höchstens fünf Zeilen, kein Fachbegriff, keine Aufzählung des Geprüften.
 - [ ] Datum und Meldung stehen in `system/STATUS.md`.
+- [ ] Stand ein Helfer in der Nutzungsliste, ist der Testlauf gelaufen —
+      und die Liste erst danach geleert.
 
 ## Was dieser Wochencheck noch nicht kann
 
-Er sieht sich **Ergebnisse und Unterlagen** an — nicht das Verhalten der
-Helfer. Ob ein Assistent seine eigenen Regeln einhält, lässt sich nur
-feststellen, indem man ihn gegen Testfälle laufen lässt. Das ist der Watchdog
-aus Phase 4 (`BAUPLAN.md`), der zusätzlich aus dem Material des Käufers eigene
-Testfälle baut (Entscheidung 17.08.2026).
+Die vier Prüfpunkte sehen sich **Ergebnisse und Unterlagen** an — nicht das
+Verhalten der Helfer. Dafür gibt es seit Phase 4 den Testlauf
+(`watchdog.md`), der im Abschnitt darüber angehängt ist.
+
+Auch mit ihm bleibt eine Lücke: Er prüft gegen die **mitgelieferten** Fälle.
+Die sind konstruiert und neutral. Eigene Fälle aus dem Material des Käufers
+sind der nächste Ausbau (Entscheidung 17.08.2026, `BAUPLAN.md` Phase 4).
 
 **Diese Fassung ist bewusst klein:** vier Prüfpunkte, die ohne Testlauf zu
 entscheiden sind. Ein Wächter, der bei jedem Käufer anders aussieht, ist

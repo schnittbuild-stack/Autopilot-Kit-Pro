@@ -64,6 +64,21 @@ Beispiel:
 - [ ] START.md geschrieben
 - [ ] aufgeräumt>
 
+## Seit dem letzten Wochencheck benutzt
+
+<Je Zeile ein Helfer und die Tage, an denen er gearbeitet hat. Der Wochencheck
+liest diese Liste, prüft genau diese Helfer und leert sie danach.
+Beispiel: `angebots-schreiber — 21.08., 23.08.`>
+
+keine
+
+## Laufender Testlauf
+
+<Nur während eines Wochenchecks gefüllt. Je Zeile ein fertiger Fall:
+`angebots-schreiber / 02-budget-konflikt — 3 von 3`. Nach der Meldung leeren.>
+
+keiner
+
 ## Laufende Aufgabe
 
 <Nur wenn gerade eine echte Aufgabe offen ist. Sonst: „keine".>

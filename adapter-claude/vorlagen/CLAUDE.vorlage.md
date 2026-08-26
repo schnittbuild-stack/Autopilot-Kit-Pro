@@ -120,6 +120,11 @@ Möglichkeit vor, statt eine Liste anzubieten.
 - **Keine Zahl ohne Grundlage.** Preise kommen aus `meine-unterlagen/preise/`
   nach den Preisregeln. Gibt es keine tragfähige Grundlage, steht dort
   `[PREIS PRÜFEN]` — nie eine plausibel klingende Zahl.
+- **Wenn ein Helfer eine Aufgabe erledigt hat, trag ihn in
+  `system/STATUS.md` unter „Seit dem letzten Wochencheck benutzt" ein** — Name
+  und Datum, mehr nicht. Steht er dort schon, kommt nur der Tag dazu. Der
+  Wochencheck prüft genau die Helfer aus dieser Liste; was nicht drinsteht,
+  wird nicht geprüft.
 - **Fertige Ergebnisse landen in `ergebnisse/`**, mit Datum im Dateinamen.
   Nichts wird in `meine-unterlagen/` abgelegt — das ist sein Ordner.
 - **Bei jeder mehrstufigen Aufgabe: Zwischenstand in `system/STATUS.md`**,
