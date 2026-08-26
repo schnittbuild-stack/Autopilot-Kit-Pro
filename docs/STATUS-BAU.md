@@ -75,7 +75,16 @@
         Fall 2 danach neu gelaufen, **bestanden**, alle sieben Prüfpunkte
         (`docs/abbruch-test-phase3.md`, vierter Durchlauf)
   - [ ] **Durchlauf auf einem fremden Rechner unter 30 Minuten — steht aus**
-- [ ] Phase 4 — Watchdog & Ketten-Tests
+- [ ] **Phase 4 — Watchdog & Ketten-Tests (begonnen 26.08.2026)**
+  - [x] Punkt 1 und 3 — Watchdog-Testlauf und Reparatur-Flow gebaut und
+        geprüft (`core/waechter/watchdog.md`, `docs/watchdog-test.md`).
+        Umfang nach Nutzung, jeder Fall dreimal. Vier Prüfanläufe, drei
+        Befunde — darunter ein erfundener Abbruch im Wächter selbst.
+        **Einschränkung:** Der Defekt wurde beim Lesen der Anleitung gefunden,
+        nicht durch den Testlauf; der war grün. Der Nachweis ist damit
+        schwächer, als die Meldung aussieht.
+  - [ ] Punkt 2 — fünf Ketten-Testfälle statt zwei
+  - [ ] Punkt 4 — kundeneigene Testfälle aus dem Material des Käufers
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
 - [ ] Phase 6 — Beta mit 10 Nutzern
 - [ ] Phase 7 — Launch

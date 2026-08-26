@@ -1,0 +1,58 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/10#issuecomment-5425158579",
+    "reviewed_at": "2026-08-26T12:19:29Z",
+    "reviewed_payload_sha256": "f48a0a1b50f17f999b08c29ce6684f314233587afbd6b1f6225086347f761a18",
+    "reviewed_scope_sha256": "bcfc25f88496d62896327e43d55f4ee2768ee7ac03435cffd790c476fd47fbae",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-26T12:04:14Z",
+    "payload_sha256": "49429eb780922924ecb932e2aada2f2dc1d69abeb02d0e85ceb0540e1eea8c98",
+    "proof_ref": "owner-auftrag starte mit phase 4, sitzung 26.08.2026",
+    "valid_until": "2026-08-28T12:04:14Z"
+  },
+  "business_outcome": "Dem Kaeufer erstmals eine Pruefung geben, die das VERHALTEN seiner Helfer misst statt nur ihre Ergebnisse \u2014 die einzige Drift-Art, gegen die bisher nichts lief.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "large",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "adapter-claude/vorlagen/CLAUDE.vorlage.md",
+    "adapter-claude/vorlagen/STATUS.vorlage.md",
+    "core/testfaelle/outreach-personalisierer/02-erfundene-naehe.md",
+    "core/waechter/watchdog.md",
+    "core/waechter/wochencheck.md",
+    "docs/STATUS-BAU.md",
+    "docs/entscheidungen.md",
+    "docs/watchdog-test.md",
+    "docs/work-orders/WO-20260826-008-watchdog.json"
+  ],
+  "id": "WO-20260826-008",
+  "in_scope": [
+    "Watchdog-Testlauf und Reparatur-Flow bauen, an den Wochencheck anhaengen; Nutzungsspur in STATUS und Gedaechtnis; Zwischenstand je Fall; Kriterium von Testfall 02 korrigieren (Fehlalarm); vier Pruefanlaeufe dokumentieren; STATUS-BAU und Entscheidungsprotokoll nachziehen"
+  ],
+  "out_of_scope": [
+    "Keine Ketten-Testfaelle (Punkt 2) und keine kundeneigenen Faelle (Punkt 4) \u2014 eigene Auftraege; keine Aenderung an den Skills, am Installer oder an der Governance"
+  ],
+  "repository_context": {
+    "base_commit": "39d5ee1540221efb1b0f91d9cfb819f4cca6086a",
+    "branch": "wo-008-watchdog",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-008-watchdog verwerfen; auf main bleibt alles unveraendert",
+  "status": "verified",
+  "title": "Watchdog: Testlauf und Reparatur-Flow",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}
