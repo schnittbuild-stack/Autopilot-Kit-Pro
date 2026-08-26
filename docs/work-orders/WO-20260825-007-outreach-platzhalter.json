@@ -1,0 +1,55 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-26T07:05:55Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "owner-auftrag outreach-personalisierer und entscheidung zu ko-praesenz, sitzung 25.08.2026",
+    "valid_until": "2026-08-28T07:05:55Z"
+  },
+  "business_outcome": "Verhindern, dass der Assistent Tatsachen ueber den Empfaenger erfindet oder die eigenen Profildaten des Nutzers auf die Gegenseite uebertraegt \u2014 genau der Fehler, gegen den dieser Skill antritt.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "core/skills/vertrieb/outreach-personalisierer.md",
+    "core/testfaelle/outreach-personalisierer/02-erfundene-naehe.md",
+    "docs/STATUS-BAU.md",
+    "docs/entscheidungen.md",
+    "docs/nachlauf-outreach.md",
+    "docs/work-orders/WO-20260825-007-outreach-platzhalter.json"
+  ],
+  "id": "WO-20260825-007",
+  "in_scope": [
+    "Falschen Platzhalter in der Checkliste korrigieren; Schritt 3 auf Angaben ueber den Empfaenger ausweiten und allgemeine Fundorte verlangen; Testfall 02 neu fassen, wo er dem Skill widersprach; alle Laeufe in einem Bericht festhalten; STATUS-BAU und Entscheidungsprotokoll nachziehen"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an den anderen neun Skills und ihren 29 Testfaellen; kein Eingriff in den Eingabeteil eines Testfalls; keine Aenderung an Installer, Vorlagen oder Governance"
+  ],
+  "repository_context": {
+    "base_commit": "703ced38e3bbfd57899717cdd66e89ce328cc6ed",
+    "branch": "wo-007-outreach-platzhalter",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-007-outreach-platzhalter verwerfen; auf main bleibt alles unveraendert",
+  "status": "executing",
+  "title": "outreach-personalisierer: falscher Platzhalter und uebertragene Eigenangaben",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}
