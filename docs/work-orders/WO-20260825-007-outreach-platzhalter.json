@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/9#issuecomment-5421867687",
+    "reviewed_at": "2026-08-26T07:13:00Z",
+    "reviewed_payload_sha256": "c3940a01656f8f97d7bbfebd43fc15b4edbe96d458c0bcecc3e515f2d26f682f",
+    "reviewed_scope_sha256": "49c4ac113b57c5c48c64bdb9e51d256c5609dd3cf90a6a1724781b0ce8d3d763",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-26T07:05:55Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "7203f91502c437aee71dcefd5fa64b035813da892155b5de848e8056a95f36da",
     "proof_ref": "owner-auftrag outreach-personalisierer und entscheidung zu ko-praesenz, sitzung 25.08.2026",
     "valid_until": "2026-08-28T07:05:55Z"
   },
@@ -47,7 +47,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch wo-007-outreach-platzhalter verwerfen; auf main bleibt alles unveraendert",
-  "status": "executing",
+  "status": "verified",
   "title": "outreach-personalisierer: falscher Platzhalter und uebertragene Eigenangaben",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
