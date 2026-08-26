@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/10#issuecomment-5425158579",
+    "reviewed_at": "2026-08-26T12:19:29Z",
+    "reviewed_payload_sha256": "f48a0a1b50f17f999b08c29ce6684f314233587afbd6b1f6225086347f761a18",
+    "reviewed_scope_sha256": "bcfc25f88496d62896327e43d55f4ee2768ee7ac03435cffd790c476fd47fbae",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-26T12:04:14Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "49429eb780922924ecb932e2aada2f2dc1d69abeb02d0e85ceb0540e1eea8c98",
     "proof_ref": "owner-auftrag starte mit phase 4, sitzung 26.08.2026",
     "valid_until": "2026-08-28T12:04:14Z"
   },
@@ -50,7 +50,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch wo-008-watchdog verwerfen; auf main bleibt alles unveraendert",
-  "status": "executing",
+  "status": "verified",
   "title": "Watchdog: Testlauf und Reparatur-Flow",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
