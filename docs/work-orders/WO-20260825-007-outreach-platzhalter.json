@@ -1,0 +1,55 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/9#issuecomment-5421867687",
+    "reviewed_at": "2026-08-26T07:13:00Z",
+    "reviewed_payload_sha256": "c3940a01656f8f97d7bbfebd43fc15b4edbe96d458c0bcecc3e515f2d26f682f",
+    "reviewed_scope_sha256": "49c4ac113b57c5c48c64bdb9e51d256c5609dd3cf90a6a1724781b0ce8d3d763",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-26T07:05:55Z",
+    "payload_sha256": "7203f91502c437aee71dcefd5fa64b035813da892155b5de848e8056a95f36da",
+    "proof_ref": "owner-auftrag outreach-personalisierer und entscheidung zu ko-praesenz, sitzung 25.08.2026",
+    "valid_until": "2026-08-28T07:05:55Z"
+  },
+  "business_outcome": "Verhindern, dass der Assistent Tatsachen ueber den Empfaenger erfindet oder die eigenen Profildaten des Nutzers auf die Gegenseite uebertraegt \u2014 genau der Fehler, gegen den dieser Skill antritt.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "core/skills/vertrieb/outreach-personalisierer.md",
+    "core/testfaelle/outreach-personalisierer/02-erfundene-naehe.md",
+    "docs/STATUS-BAU.md",
+    "docs/entscheidungen.md",
+    "docs/nachlauf-outreach.md",
+    "docs/work-orders/WO-20260825-007-outreach-platzhalter.json"
+  ],
+  "id": "WO-20260825-007",
+  "in_scope": [
+    "Falschen Platzhalter in der Checkliste korrigieren; Schritt 3 auf Angaben ueber den Empfaenger ausweiten und allgemeine Fundorte verlangen; Testfall 02 neu fassen, wo er dem Skill widersprach; alle Laeufe in einem Bericht festhalten; STATUS-BAU und Entscheidungsprotokoll nachziehen"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an den anderen neun Skills und ihren 29 Testfaellen; kein Eingriff in den Eingabeteil eines Testfalls; keine Aenderung an Installer, Vorlagen oder Governance"
+  ],
+  "repository_context": {
+    "base_commit": "703ced38e3bbfd57899717cdd66e89ce328cc6ed",
+    "branch": "wo-007-outreach-platzhalter",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-007-outreach-platzhalter verwerfen; auf main bleibt alles unveraendert",
+  "status": "verified",
+  "title": "outreach-personalisierer: falscher Platzhalter und uebertragene Eigenangaben",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

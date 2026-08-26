@@ -43,6 +43,15 @@ gerade abgeben wollte.
 3. **Wahrheitsprüfung.** Jede Behauptung über gemeinsame Geschichte —
    Treffen, Empfehlung, früherer Kontakt, gemeinsame Bekannte — muss belegt
    sein. Ist sie es nicht, wird sie gestrichen, nicht abgeschwächt.
+   **Dasselbe gilt für jede Angabe über den Empfänger selbst:** Standort,
+   Website-Adresse, Fertigungsverfahren, Messeauftritte, Kundschaft. Was weder
+   in der Anfrage noch in einem Rechercheergebnis steht, wird nicht gesagt —
+   auch nicht beiläufig beim Nennen eines Fundorts. **Fundorte werden allgemein
+   benannt** („Rubrik Aktuelles auf der Firmenwebsite", „Stellenanzeigen",
+   „Fachpresse der Branche"), nicht mit Kammerbezirk, Domain oder Messenamen.
+   **Und das Profil beschreibt {{rolle}}, nie den Empfänger.** Der eigene
+   Standort, die eigene Branche, die eigenen Werkzeuge gehören in keine Aussage
+   über die Gegenseite.
 4. **Kürzen.** Höchstens fünf Sätze. Wer bei einer Erstansprache scrollen muss,
    hat schon verloren.
 5. **Ein Ziel setzen.** Das Ziel ist das erste Gespräch, nicht der Abschluss.
@@ -107,12 +116,17 @@ weiteren Text zu demselben Kanal steht dort `—`.
 Checkliste für Schritt 7:
 
 - [ ] Der Aufhänger besteht den Austauschtest. „Ich habe gesehen, dass Sie bei
-      {{firma}} im Einkauf sind" besteht ihn nicht.
+      <Firma des Empfängers> im Einkauf sind" besteht ihn nicht.
 - [ ] **Keine erfundene Nähe.** Kein gemeinsamer Bekannter, kein „wir hatten ja
       Kontakt", kein „ich melde mich nochmal" beim Erstkontakt. Das ist keine
       Formulierungsfrage, das ist eine Lüge.
 - [ ] Keine erfundenen Zahlen über den Empfänger („Sie verlieren vermutlich
       20 % …").
+- [ ] **Keine Angabe über den Empfänger, die nicht in der Anfrage stand** —
+      auch kein Standort, keine Domain, kein Messename, kein Verfahren. Auch
+      nicht als Fundort verpackt.
+- [ ] **Nichts aus dem eigenen Profil auf den Empfänger übertragen.** Der
+      eigene Standort ist nicht seiner.
 - [ ] Nichts Privates als Aufhänger — auch nicht, wenn es öffentlich steht.
       Fachbeiträge und Vorträge sind fachlich, Hobbys sind es nicht.
 - [ ] Höchstens fünf Sätze, genau eine Frage.

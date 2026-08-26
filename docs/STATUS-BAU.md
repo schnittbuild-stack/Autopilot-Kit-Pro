@@ -977,13 +977,19 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
   Läufen fielen durch, weil sie sich an den Skill hielten. Vorschlag und
   Begründung im Abschnitt „Nachlauf Phase 3" oben. **Blockiert den Abschluss
   von Phase 3.**
-- **Befund `outreach-personalisierer`: falscher Platzhalter (20.08.2026).** An
+- **Erledigt (25.08.2026): Befund `outreach-personalisierer`: falscher Platzhalter (20.08.2026).** An
   einer Stelle steht `{{firma}}`, wo die Firma des **Empfängers** gemeint ist —
   eingesetzt stünde dort die eigene. Aufgefallen beim Abbruch-Test. Nicht
   behoben: Nach der Arbeitsregel vom 19.08.2026 zieht die Änderung die drei
   Testfälle dieses Skills nach sich. **Vorgemerkt für den Prüfdurchgang vor der
   Beta** (Abschnitt unten) — dort mit Vorrang, weil er als einziger der
   gesammelten Punkte das Verhalten wirklich ändert.
+  **Behoben am 25.08.2026** — und der Nachlauf hat einen schwereren Befund
+  hochgespült: Fall 01 fiel zwei von drei Läufen durch, weil der eigene
+  Standort des Nutzers auf den Empfänger übertragen wurde. Schritt 3 des Skills
+  deckt jetzt auch Angaben über den Empfänger ab; danach 3 von 3.
+  Testfall `02` musste dafür neu gefasst werden. Alles in
+  `docs/nachlauf-outreach.md`.
 - **Erledigt (20.08.2026): Prinzip 1 beim Kunden repariert.** Platzhalter
   werden beim Einrichten nicht mehr ersetzt, sondern beim Lesen aufgelöst —
   Profilwissen steht beim Kunden wieder genau einmal, wie im Repo. Einzelheiten
