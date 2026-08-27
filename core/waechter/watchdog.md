@@ -150,17 +150,28 @@ um zu erfahren, was in Ordnung ist.
 
 ## Wenn etwas abweicht: der Reparatur-Flow
 
-1. **Melden**, in einer Zeile, mit dem Befund — nicht mit einer Vermutung über
+1. **Zuerst den Beleg sichern — vor der Meldung.** Lege den Lauf, der abgewichen ist,
+   nach `system/befunde/<datum>-<helfer>-<fall>.md`: den erzeugten Text
+   unverändert, darunter den Punkt aus dem Soll-Teil, der nicht erfüllt war.
+   Wörtlich, ohne Deutung, ohne Kürzung.
+   **Das ist keine Ausnahme von der Regel, nichts abzulegen — sondern ihr
+   Grund:** In seinen Ordner kommt nichts, in deinen schon. Ein Gespräch kann
+   jederzeit enden — und dann ist der Lauf weg, während die Meldung stehen
+   bleibt. Ein Befund, den niemand mehr nachprüfen kann, ist keine Warnung,
+   sondern ein Verdacht, der Arbeit macht.
+2. **Melden**, in einer Zeile, mit dem Befund — nicht mit einer Vermutung über
    die Ursache.
-2. **Zeigen**, wenn er will: die Stelle im Ergebnis und der Punkt aus dem
-   Soll-Teil, der nicht erfüllt war. Nebeneinander, ohne Deutung.
-3. **Vorschlagen**, was zu ändern wäre — und ausdrücklich sagen, ob es sich um
+3. **Zeigen**, wenn er will: die Stelle im Ergebnis und der Punkt aus dem
+   Soll-Teil, der nicht erfüllt war. Nebeneinander, ohne Deutung. Willst du es
+   später noch einmal zeigen, liest du es aus der Datei — nicht aus dem
+   Gedächtnis des Gesprächs.
+4. **Vorschlagen**, was zu ändern wäre — und ausdrücklich sagen, ob es sich um
    die Anleitung des Helfers handelt oder um seine Grundlage (Profil,
    Unterlagen).
-4. **Erst nach seinem Ja ändern.** Und nur die genannte Stelle.
-5. **In `system/STATUS.md` unter „Entscheidungen" vermerken:** was abwich, was
-   geändert wurde, an welchem Tag.
-6. **Danach denselben Fall erneut**, wieder dreimal. Bleibt er abweichend,
+5. **Erst nach seinem Ja ändern.** Und nur die genannte Stelle.
+6. **In `system/STATUS.md` unter „Entscheidungen" vermerken:** was abwich, was
+   geändert wurde, an welchem Tag — **und wie die Belegdatei heißt.**
+7. **Danach denselben Fall erneut**, wieder dreimal. Bleibt er abweichend,
    sagst du das — und änderst nicht ein zweites Mal auf Verdacht.
 
 ## Was er nie tut
@@ -175,9 +186,14 @@ um zu erfahren, was in Ordnung ist.
   prüfen", nie „sauber".
 - **Er läuft nicht heimlich öfter**, um ein besseres Ergebnis zu bekommen.
   Dreimal ist dreimal; das Ergebnis des vierten Laufs zählt nicht.
-- **Er legt nichts ab.** Kein erzeugter Testtext kommt nach `ergebnisse/`,
-  kein Helfer aus einem Testlauf kommt in die Nutzungsliste. Ein Testlauf ist
-  keine Arbeit für den Nutzer und darf in seinem Ordner keine Spur hinterlassen.
+- **Er legt nichts in den Ordnern des Nutzers ab.** Kein erzeugter Testtext
+  kommt nach `ergebnisse/`, nichts nach `meine-unterlagen/`, kein Helfer aus
+  einem Testlauf kommt in die Nutzungsliste. Ein Testlauf ist keine Arbeit für
+  den Nutzer und darf in seinem Ordner keine Spur hinterlassen.
+  **Ausgenommen ist einzig `system/befunde/`** — sein eigener Ordner, nicht der
+  des Nutzers. Dort landet nur ein Lauf, der abgewichen ist, nie ein
+  bestandener. Bestandene Läufe werden gezählt, nicht aufbewahrt: Sie belegen
+  nichts, was jemand später nachlesen müsste.
 - **Er benutzt keinen Fachbegriff.** Es gelten dieselben Wörter wie überall:
   Ordner, Datei, Gedächtnis, Helfer.
 
@@ -196,6 +212,8 @@ bleibt die Liste stehen, damit der nächste Anlauf weiß, was noch offen war.
 - [ ] Beim Erzeugen nicht in den Soll-Teil gesehen, beim Bewerten nicht in die
       Anleitung.
 - [ ] Je Abweichung ein Punkt aus dem Soll-Teil und ein Beleg aus dem Ergebnis.
+- [ ] Je Abweichung eine Datei in `system/befunde/` — **vor** der Meldung
+      geschrieben, nicht danach.
 - [ ] Höchstens zwei Zeilen ausgegeben.
 - [ ] Nichts geändert ohne ausdrückliches Ja.
 - [ ] Kein Testfall angefasst.

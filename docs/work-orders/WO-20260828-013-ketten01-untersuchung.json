@@ -1,0 +1,58 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-27T13:36:54Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "owner-auftrag offener befund ketten/01, sitzung 28.08.2026",
+    "valid_until": "2026-08-29T13:36:54Z"
+  },
+  "business_outcome": "Ein Waechter, dessen Befund niemand nachpruefen kann, erzeugt Arbeit statt Sicherheit. Der Befund zu ketten/01 liess sich in drei Armen nicht reproduzieren \u2014 nachweisbar war er nicht, weil die Rohlaeufe nicht abgelegt werden.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "adapter-claude/vorlagen/STATUS.vorlage.md",
+    "core/skills/vertrieb/account-recherche.md",
+    "core/testfaelle/angebots-schreiber/03-verbots-kollision.md",
+    "core/vertraege/account-recherche-zu-angebots-schreiber.md",
+    "core/waechter/watchdog.md",
+    "docs/STATUS-BAU.md",
+    "docs/entscheidungen.md",
+    "docs/ketten01-untersuchung.md",
+    "docs/work-orders/WO-20260828-013-ketten01-untersuchung.json"
+  ],
+  "id": "WO-20260828-013",
+  "in_scope": [
+    "Der Waechter legt bei einer Abweichung den Rohlauf ab, damit der Befund die Sitzung ueberlebt; die Doppeldeutigkeit Ansprechpartner-Optional gegen Pflicht-Fakt 1 im Vertrag aufloesen; account-recherche nennt beide Empfaenger; Untersuchungsbericht; STATUS und Entscheidungen pflegen"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an den Skills ausser der Empfaengerzeile in account-recherche; kein Testfall wird angefasst, solange der Auftraggeber den Widerspruch 02 gegen 03 nicht entschieden hat; keine Aenderung an .aef/ oder der Governance"
+  ],
+  "repository_context": {
+    "base_commit": "c5585111bfd3aa16c1e3cab82ba7921aa1705295",
+    "branch": "wo-013-ketten01-untersuchung",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-013-ketten01-untersuchung verwerfen",
+  "status": "executing",
+  "title": "ketten/01 untersucht: Waechter-Beleg haltbar, Vertragsluecke geschlossen, Testfall-Widerspruch",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

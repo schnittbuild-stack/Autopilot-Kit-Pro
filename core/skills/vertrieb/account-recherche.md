@@ -1,7 +1,10 @@
 # account-recherche
 
-<!-- Agent Nr. 2. Liefert die Eingabe für angebots-schreiber.
+<!-- Agent Nr. 2. Liefert die Eingabe für zwei Empfänger:
+     angebots-schreiber und outreach-personalisierer.
      Bindend: core/vertraege/account-recherche-zu-angebots-schreiber.md
+              core/vertraege/account-recherche-zu-outreach-personalisierer.md
+     Dasselbe Ausgabeformat für beide — der Sender ändert sich nicht.
      Kein Profil-/Stilwissen hier — nur Platzhalter (Prinzip 1). -->
 
 ## Zweck (ein Satz)
@@ -84,7 +87,11 @@ sie so aussehen zu lassen wie eine mit Quellen schon.
 
 ## Ausgabeformat
 
-Bindend: `core/vertraege/account-recherche-zu-angebots-schreiber.md`.
+Bindend, und für beide Empfänger **dasselbe Format**:
+`core/vertraege/account-recherche-zu-angebots-schreiber.md` und
+`core/vertraege/account-recherche-zu-outreach-personalisierer.md`.
+Du schreibst nicht zwei Varianten und fragst auch nicht, wohin es geht — der
+Block ist derselbe, und der Empfänger entscheidet selbst, was er daraus darf.
 
 **Bevor überhaupt ein Ergebnis entsteht — zwei Weichen:**
 
