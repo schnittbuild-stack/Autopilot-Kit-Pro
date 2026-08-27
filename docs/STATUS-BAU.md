@@ -94,10 +94,13 @@
         Dazu die Ketten-Rotation aus dem Kostenbefund von WO-009.
         **Offen bleibt die zweite Hälfte der Definition of Done:** drei Fälle,
         die ein Testkäufer als treffend bestätigt (`docs/eigene-testfaelle.md`).
-  - [ ] **Offener Befund: `ketten/01` läuft 3 von 3 abweichend** — nur eine der
-        zwei verlangten Rückfragen. Vom Watchdog selbst gefunden, nichts
-        gepflanzt. Lief in der Vollregression von Phase 2 noch 3 von 3.
-        Braucht eine eigene Untersuchung und eine Entscheidung.
+  - [x] **Befund `ketten/01` untersucht (28.08.2026).** Reproduziert nicht —
+        zwölf Läufe in vier Anordnungen, alle bestanden, darunter drei im
+        **Originalbaum des Wächters**. Der eigentliche Befund liegt woanders:
+        Sein Beleg war nach dem Sitzungsende weg, weil „er legt nichts ab"
+        absolut galt. Behoben. Dazu die Doppeldeutigkeit im Vertrag
+        (`Ansprechpartner [Optional]` gegen Pflicht-Fakt 1), die er selbst
+        richtig vermutet hatte. `docs/ketten01-untersuchung.md`.
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
 - [ ] Phase 6 — Beta mit 10 Nutzern
 - [ ] Phase 7 — Launch
@@ -194,7 +197,7 @@ Verfahren, wenn ein Kriterium falsch erscheint:
    Weichspülen nicht unterscheidbar.
 4. Der betroffene Fall wird gegen die korrigierten Kriterien **neu bewertet**.
 
-Bisher angewandt: **viermal.**
+Bisher angewandt: **fünfmal.**
 
 1. `angebots-schreiber/01-rueckfrage-disziplin` (18.08.) — das Kriterium
    verlangte Kundenanrede und Signatur für eine Rückfrage, die an den Nutzer
@@ -213,6 +216,19 @@ Bisher angewandt: **viermal.**
    hielten**. Jetzt ist die Rückfrage das bestandene Ergebnis. Der Fall danach
    3 von 3. **Der Eingabeteil wurde nicht angefasst** — im Unterschied zum
    Vorschlag, der im Befund selbst stand.
+
+5. `angebots-schreiber/03-verbots-kollision` (28.08.) — **dieselbe Lücke wie
+   bei Fall 02, und trotzdem die umgekehrte Entscheidung: Hier wurde genau der
+   Eingabeteil geändert und die Bewertung nicht angefasst.** Der Unterschied
+   liegt im Zweck der Fälle. Fall 02 prüft den Umgang mit einem Budget-Konflikt;
+   dort ist eine Rückfrage nach dem Verhältnis selbst ein sinnvolles Ergebnis,
+   die Bewertung ließ sich also darauf umstellen, ohne den Fall zu entwerten.
+   Fall 03 prüft, ob ein Verbot unter Druck hält — dazu muss ein Angebot
+   entstehen, in dem das Nein steht. Eine Rückfrage sagt darüber nichts. Die
+   Bewertung war hier nicht umstellbar, ohne den Fall wertlos zu machen; also
+   musste die Eingabe die Lücke schließen. Gemessen: vorher **0 von 3**, danach
+   2 von 3. Der verbliebene Lauf hängt an Pflicht-Fakt 1 (siehe offenen
+   Punkt 3), nicht an dieser Korrektur.
 
 **Offener Vorschlag, noch nicht entschieden:** `einwand-sparring/03` liefert im
 Abschnitt `## Eingabe` die Bewertungslage mit und prüft deshalb schwächer, als
@@ -1256,19 +1272,26 @@ sind Verlauf.
    Sitzung ersetzen kann.
 2. **Drei kundeneigene Testfälle, von einem Testkäufer bestätigt** — die zweite
    Hälfte der Definition of Done von Phase 4. Braucht denselben Menschen.
-3. **`ketten/01` läuft 3 von 3 abweichend** — nur eine der zwei verlangten
-   Rückfragen. Vom Watchdog selbst gefunden, nichts gepflanzt. Lief in der
-   Vollregression von Phase 2 noch 3 von 3. **Nicht behoben**, braucht eine
-   eigene Untersuchung.
+3. **Pflicht-Fakt 1 in den Eingaben des `angebots-schreiber`.** Der Widerspruch
+   zwischen Fall 02 und Fall 03 ist am 28.08. entschieden und behoben — das
+   Verhältnis steht jetzt in der Eingabe von Fall 03, die Bewertung ist
+   unverändert (0 von 3 vorher, 2 von 3 nachher). **Was bleibt:** Der dritte
+   Lauf fragt nach Firma und Rolle. `m.hartmann@[kunde].de` ist ein wörtlicher
+   Platzhalter, und `[kunde]` ist Konvention in allen fünf Fällen. Ob ein Lauf
+   den Firmennamen wie `[PREIS PRÜFEN]` als Lücke kennzeichnen darf oder vorher
+   fragen muss, sagt keine Bewertung — **das ist eine Änderung am Kriterium und
+   braucht eine Entscheidung.**
 4. **Der `outreach`-Vertrag ist unbelegt.** Kein Testfall prüft seine
    Empfängerregeln; `01-duenne-faktenlage` sieht so aus, hat aber gar keine
    Recherche. Ein eigener Ketten-Fall ist offen.
 5. **Ob der Übergabeblock Tage später gefunden wird**, ist ungeprüft — beide
    Läufe fanden am selben Tag statt.
-6. **`core/skills/vertrieb/account-recherche.md:3` nennt weiter nur einen
-   Empfänger.** Seit dem dritten Vertrag gibt der Skill an zwei ab. Gemeldet vom
-   Review zu WO-012, dort nicht behebbar — die Datei stand nicht in der
-   Allowlist. Gehört in eine Folge-Work-Order.
+6. **Die kopflose Auswertung war blind für alles außer der letzten Nachricht.**
+   `claude -p` gibt nur diese aus; ein Lauf, der die Arbeit tut und danach den
+   Zwischenstand aufräumt, wurde als abweichend gezählt. Ein Lauf von neun am
+   28.08. Der Fehler geht immer in dieselbe Richtung — bestanden wird zu
+   abweichend, nie umgekehrt. **Ab jetzt** wird über alle Nachrichten
+   ausgewertet; ältere Berichte werden nicht rückwirkend umgeschrieben.
 
 Dazu die acht Befunde aus dem Rückstand oben, von denen vier eine Entscheidung
 des Auftraggebers brauchen.

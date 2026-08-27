@@ -24,7 +24,7 @@ RECHERCHE-ERGEBNIS
 Stand:            <Datum der Recherche>                   [Pflicht]
 Firma:            <Name>                                  [Pflicht]
 Verhältnis:       neukunde | bestandskunde | unbekannt    [Pflicht]
-Ansprechpartner:  <Name, Rolle>                           [Optional]
+Ansprechpartner:  <Name, Rolle>                           [Optional*]
 Branche/Größe:    <…>                                     [Optional]
 Anlass:           <warum ausgerechnet jetzt angefragt>    [Optional]
 Belegte Fakten:   <je Zeile: Fakt — Quelle>               [Pflicht, ggf. "—"]
@@ -53,6 +53,14 @@ Bindend für `angebots-schreiber`:
   gebündelt mit allen anderen Lücken in einer Nachricht.
 - **`Verhältnis: unbekannt`** ist ein gültiger Wert und löst Rückfrage zu
   Pflicht-Fakt 6 aus. Es wird nicht zu „neukunde" veredelt.
+- **`Ansprechpartner` ist `[Optional*]` — der Stern ist der Unterschied.**
+  Optional heißt: Die Recherche muss ihn nicht liefern. Es heißt **nicht**,
+  dass der `angebots-schreiber` ohne ihn weitermacht. Der Name gehört zu
+  Pflicht-Fakt 1 (Wer fragt an — Firma, Ansprechpartner, Rolle). Steht er
+  weder hier noch in der Anfrage, ist Fakt 1 unvollständig und löst eine
+  Rückfrage aus — gebündelt mit allen anderen Lücken in derselben Nachricht.
+  Für `Branche/Größe` und `Anlass` gilt das nicht: Die berühren keinen
+  Pflicht-Fakt, und ihr Fehlen ist folgenlos.
 
 ## Was bei fehlenden Feldern passiert
 
@@ -60,7 +68,8 @@ Bindend für `angebots-schreiber`:
 |---|---|
 | `Firma` oder `Verhältnis` fehlt | **Abbruch mit Meldung**: „Die Recherche ist unvollständig — es fehlt <Feld>. Soll ich sie neu anstoßen?" |
 | Eines der drei Listenfelder fehlt ganz (nicht mal `—`) | **Abbruch mit Meldung.** Ein fehlendes „Nicht gefunden" ist nicht von einer gründlichen Recherche unterscheidbar — genau der Zustand, den dieser Vertrag ausschließt. |
-| Optionales Feld fehlt | Weiter. Wird in Block B unter „Angenommen" nicht erwähnt, weil nichts angenommen wurde. |
+| Optionales Feld fehlt (`Branche/Größe`, `Anlass`) | Weiter. Wird in Block B unter „Angenommen" nicht erwähnt, weil nichts angenommen wurde. |
+| `Ansprechpartner` ist leer (`—`) oder fehlt, und steht auch nicht in der Anfrage | **Rückfrage**, gebündelt. Nicht weitermachen: Der Name gehört zu Pflicht-Fakt 1. Ohne ihn entsteht keine Anrede — und eine erfundene ist der schlimmere Fehler. |
 | Recherche liegt gar nicht vor | Kein Fehler. `angebots-schreiber` arbeitet allein und fragt Fakt 1 und 6 nach. |
 
 Nie stilles Raten, nie ein Feld sinngemäß aus einem anderen ableiten.
