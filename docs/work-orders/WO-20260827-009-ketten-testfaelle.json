@@ -1,0 +1,57 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/11#issuecomment-5436513928",
+    "reviewed_at": "2026-08-27T08:37:45Z",
+    "reviewed_payload_sha256": "9740e77883f588897dc68463ac99db9fdf102ba6ab06b2b4df0bc7b2e8f60b6e",
+    "reviewed_scope_sha256": "8b2781db00340b840efdacceac49f33ce205f0050fa0beb0479860969644a3a5",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-27T08:30:20Z",
+    "payload_sha256": "d9ae2a347c8a0af116d2d8befa8601f5ef44eaa8875bb27d515ed16e008c4a7a",
+    "proof_ref": "owner-auftrag fang an mit punkt 2, sitzung 27.08.2026",
+    "valid_until": "2026-08-29T08:30:20Z"
+  },
+  "business_outcome": "Fehler pruefbar machen, die erst ueber zwei Uebergaben entstehen \u2014 jede Stufe fuer sich vertretbar, das Ergebnis trotzdem falsch. Ohne Ketten-Zugriff ist die Definition of Done von Phase 4 unerreichbar.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "core/testfaelle/ketten/03-volle-kette-fehlerakkumulation.md",
+    "core/testfaelle/ketten/04-fehlendes-pflichtfeld.md",
+    "core/testfaelle/ketten/05-abgelaufener-preisstand.md",
+    "core/waechter/watchdog.md",
+    "docs/STATUS-BAU.md",
+    "docs/entscheidungen.md",
+    "docs/ketten-testfaelle.md",
+    "docs/work-orders/WO-20260827-009-ketten-testfaelle.json"
+  ],
+  "id": "WO-20260827-009",
+  "in_scope": [
+    "Drei neue Ketten-Testfaelle (volle Kette, fehlendes Pflichtfeld, abgelaufener Preisstand); watchdog.md erfasst core/testfaelle/ketten/; alle Laeufe und Vorbehalte in einem Bericht; STATUS-BAU und Entscheidungsprotokoll nachziehen"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an den zehn Skills, an den Vertraegen, am Installer oder an der Governance; die beiden vorhandenen Ketten-Faelle bleiben unberuehrt; kundeneigene Testfaelle (Punkt 4) sind ein eigener Auftrag"
+  ],
+  "repository_context": {
+    "base_commit": "6b20e53cf194be44ebe3f6bd65bbdba4556afdc8",
+    "branch": "wo-009-ketten-testfaelle",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-009-ketten-testfaelle verwerfen; auf main bleibt alles unveraendert",
+  "status": "verified",
+  "title": "Fuenf Ketten-Testfaelle und Zugriff des Watchdogs darauf",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

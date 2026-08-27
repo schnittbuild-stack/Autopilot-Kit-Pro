@@ -47,6 +47,23 @@ braucht den Angebots-Helfer nicht geprüft.
 
 Je Helfer alle seine Fälle aus `system/core/testfaelle/<helfer>/`.
 
+**Dazu die Ketten.** In `system/core/testfaelle/ketten/` liegen Fälle, die
+nicht einem Helfer gehören, sondern einer **Übergabe** zwischen zweien. Jeder
+nennt oben unter „Schnittstelle", welche Helfer beteiligt sind.
+
+**Eine Kette wird geprüft, sobald einer ihrer Helfer in der Nutzungsliste
+steht.** Nicht erst, wenn alle beteiligten liefen — sonst würden die Ketten
+fast nie geprüft, und ein Vertragsbruch fiele erst auf, wenn er beim Nutzer
+schon passiert ist.
+
+Wer nur Erstansprachen geschrieben hat, bekommt keine Kette geprüft: Der
+`outreach-personalisierer` kommt in keiner vor.
+
+**Warum die Ketten eigene Fälle brauchen:** Jede Stufe kann für sich
+tadellos arbeiten, und trotzdem steht am Ende etwas Falsches — weil eine
+Vermutung über zwei Übergaben hinweg zur Tatsache geworden ist. Das sieht kein
+Einzelfall.
+
 ## Wie oft je Fall: dreimal
 
 **Jeder Fall wird dreimal erzeugt und dreimal getrennt bewertet.** Bestanden
@@ -153,6 +170,8 @@ bleibt die Liste stehen, damit der nächste Anlauf weiß, was noch offen war.
 ## Checkliste
 
 - [ ] Nur die Helfer aus der Nutzungsliste geprüft, keine anderen.
+- [ ] Jede Kette geprüft, an der ein Helfer aus der Liste beteiligt ist —
+      und keine, an der keiner beteiligt ist.
 - [ ] Je Fall dreimal erzeugt und dreimal getrennt bewertet.
 - [ ] Beim Erzeugen nicht in den Soll-Teil gesehen, beim Bewerten nicht in die
       Anleitung.

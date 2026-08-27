@@ -83,7 +83,11 @@
         **Einschränkung:** Der Defekt wurde beim Lesen der Anleitung gefunden,
         nicht durch den Testlauf; der war grün. Der Nachweis ist damit
         schwächer, als die Meldung aussieht.
-  - [ ] Punkt 2 — fünf Ketten-Testfälle statt zwei
+  - [x] **Punkt 2 — fünf Ketten-Testfälle statt zwei (27.08.2026)** — volle
+        Kette, fehlendes Pflichtfeld, abgelaufener Preisstand; alle 3 von 3.
+        Der Watchdog erfasst `ketten/` jetzt: Eine Kette läuft, sobald einer
+        ihrer Helfer benutzt wurde. **Vorbehalt:** Fall 03 wurde viermal
+        überarbeitet, bevor er grün war (`docs/ketten-testfaelle.md`).
   - [ ] Punkt 4 — kundeneigene Testfälle aus dem Material des Käufers
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
 - [ ] Phase 6 — Beta mit 10 Nutzern
