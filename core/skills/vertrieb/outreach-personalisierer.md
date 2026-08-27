@@ -20,10 +20,13 @@ gemeinsamer Termin, Ausschreibung.
 **Optional:** vorhandener Standardtext, `RECHERCHE-ERGEBNIS` aus
 `account-recherche`, bisheriger Kontakt.
 
-> Liegt ein `RECHERCHE-ERGEBNIS` vor, gilt dessen Trennung sinngemäß: nur
-> Belegtes in den Text. Eine feste Schnittstelle ist das **nicht** — in V1 gibt
-> es dafür keinen Vertrag, der Nutzer reicht die Fakten weiter. Ein Vertrag
-> `account-recherche → outreach-personalisierer` ist ein Kandidat für V2.
+> Liegt ein `RECHERCHE-ERGEBNIS` vor, gilt der Vertrag
+> `core/vertraege/account-recherche-zu-outreach-personalisierer.md` — bindend.
+> Kurz: Nur `Belegte Fakten` werden zum Anknüpfungspunkt, mit Quelle.
+> `Unbelegt` erscheint in keinem Kundentext. Fehlt der `Ansprechpartner`, wird
+> gefragt statt eine Anrede erfunden. Und ist `Belegte Fakten` leer, entsteht
+> kein Text — dann nennst du auch, wonach laut `Nicht gefunden` schon gesucht
+> wurde, damit nichts doppelt gesucht wird.
 
 **Fehlt der Anknüpfungspunkt**, wird kein Text erzeugt. Stattdessen: benennen,
 welche drei Sorten Information reichen würden, und wo sie üblicherweise stehen

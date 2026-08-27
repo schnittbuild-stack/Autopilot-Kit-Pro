@@ -28,6 +28,7 @@ Zwei Schnittstellen, zwei Verträge:
 |---|---|
 | account-recherche → angebots-schreiber | `account-recherche-zu-angebots-schreiber.md` |
 | angebots-schreiber → follow-up-generator | `angebots-schreiber-zu-follow-up-generator.md` |
+| account-recherche → outreach-personalisierer | `account-recherche-zu-outreach-personalisierer.md` |
 
 **Beide Übergaben sind optional in eine Richtung:** `angebots-schreiber` läuft
 auch ohne Recherche (fragt dann nach), und nicht jedes Angebot geht ins

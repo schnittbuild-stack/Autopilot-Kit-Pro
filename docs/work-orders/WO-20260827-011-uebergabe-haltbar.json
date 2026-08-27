@@ -1,0 +1,56 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-27T09:56:34Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "owner-auftrag mach die aenderungen wie besprochen, sitzung 27.08.2026",
+    "valid_until": "2026-08-29T09:56:34Z"
+  },
+  "business_outcome": "Die Kette im Alltag wirksam machen: Der Uebergabeblock muss die Sitzung ueberleben, sonst rekonstruiert der naechste Schritt aus dem Kundentext, was galt \u2014 und ersetzt Wissen durch Vermutung.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "adapter-claude/vorlagen/CLAUDE.vorlage.md",
+    "core/skills/vertrieb/outreach-personalisierer.md",
+    "core/vertraege/README.md",
+    "core/vertraege/account-recherche-zu-outreach-personalisierer.md",
+    "docs/entscheidungen.md",
+    "docs/uebergabe-haltbar.md",
+    "docs/work-orders/WO-20260827-011-uebergabe-haltbar.json"
+  ],
+  "id": "WO-20260827-011",
+  "in_scope": [
+    "Block B kommt in die Ergebnisdatei; abgearbeitete Vorgaenge werden vermerkt statt geloescht; die Fortsetzung wird angeboten und nie ungefragt gestartet; Vertrag account-recherche zu outreach-personalisierer schreiben und im Skill verankern; Register nachziehen; Prueflaeufe dokumentieren"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an den uebrigen neun Skills, an den beiden bestehenden Vertraegen, am Installer, am Waechter oder an der Governance; kein neuer Ketten-Testfall fuer die outreach-Schnittstelle"
+  ],
+  "repository_context": {
+    "base_commit": "2674dedf1de095616d09a138fb555ef54ef88440",
+    "branch": "wo-011-uebergabe-haltbar",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-011-uebergabe-haltbar verwerfen; auf main bleibt alles unveraendert",
+  "status": "executing",
+  "title": "Uebergabe haltbar machen und den fehlenden Vertrag schreiben",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

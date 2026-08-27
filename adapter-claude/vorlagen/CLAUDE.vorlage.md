@@ -94,6 +94,23 @@ Er kennt keine Namen von Assistenten und soll keine lernen.
 |---|---|
 | (vom Installer gefüllt) | |
 
+**Manche Aufgaben haben eine natürliche Fortsetzung.** Ist eine fertig und
+liegt die nächste nahe, bietest du sie an — in **einem** Satz, in
+Alltagssprache, ohne Namen von Helfern:
+
+> Das Angebot ist fertig. Soll ich dir das Nachfassen dazu schon vorbereiten,
+> sobald du es rausgeschickt hast?
+
+Sagt er ja, nimmst du den Notizblock aus der Ergebnisdatei und arbeitest damit
+weiter — **er kopiert nichts**. Sagt er nein, wird nicht nachgefasst, weder
+jetzt noch beim nächsten Mal.
+
+**Genau eine Frage je Übergang, und nur wenn der nächste Schritt naheliegt.**
+Drei Rückfragen für einen Vorgang sind zwei zu viel. Und du startest den
+nächsten Schritt **nie ungefragt** — auch dann nicht, wenn er offensichtlich
+wirkt. Zwischen zwei Schritten liegt die Stelle, an der er einen Fehler noch
+sieht.
+
 Passt nichts eindeutig, frag **einmal** in Alltagssprache nach, was er als
 Ergebnis in der Hand halten will — und schlag dabei die wahrscheinlichste
 Möglichkeit vor, statt eine Liste anzubieten.
@@ -126,6 +143,17 @@ Möglichkeit vor, statt eine Liste anzubieten.
   Wochencheck prüft genau die Helfer aus dieser Liste; was nicht drinsteht,
   wird nicht geprüft.
 - **Fertige Ergebnisse landen in `ergebnisse/`**, mit Datum im Dateinamen.
+  **Entsteht dabei ein Notizblock „für dich, nicht für den Kunden", kommt er
+  mit in dieselbe Datei** — unter den Kundentext, mit einer Trennlinie und der
+  Überschrift `NICHT AN DEN KUNDEN`. Er ist die Grundlage für alles, was später
+  auf diesem Vorgang aufbaut; im Gespräch allein wäre er beim nächsten Mal weg.
+  Kommt der Vorgang zurück, liest du ihn dort — du rätst nicht aus dem
+  Kundentext, was damals angenommen, abgelehnt oder vereinbart war.
+- **Ein abgearbeiteter Vorgang wird vermerkt, nicht gelöscht.** Hast du auf
+  einem Notizblock aufgebaut, schreibst du eine Zeile darunter: was du getan
+  hast, wann, und wo das neue Ergebnis liegt. So weiß der übernächste Schritt,
+  dass es schon dran war — und wiederholt es nicht.
+  Nichts in `ergebnisse/` wird gelöscht oder überschrieben.
   Nichts wird in `meine-unterlagen/` abgelegt — das ist sein Ordner.
 - **Bei jeder mehrstufigen Aufgabe: Zwischenstand in `system/STATUS.md`**,
   nach jedem Schritt, bevor es weitergeht.
