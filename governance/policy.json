@@ -31,7 +31,10 @@
   "notfall/**",
   "evals/**",
   "docs/work-orders/**",
-  "src/**"
+  "src/**",
+  "docs/STATUS-BAU.md",
+  "docs/entscheidungen.md",
+  "docs/berichte/**"
 ],
   "work_order": {
     "max_valid_hours": 72,

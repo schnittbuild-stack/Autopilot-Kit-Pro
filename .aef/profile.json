@@ -32,7 +32,10 @@
       "notfall/**",
       "evals/**",
       "docs/work-orders/**",
-      "src/**"
+      "src/**",
+      "docs/STATUS-BAU.md",
+      "docs/entscheidungen.md",
+      "docs/berichte/**"
     ],
     "owner_login": "schnittbuild-stack",
     "required_checks": [
