@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/12#issuecomment-5436807265",
+    "reviewed_at": "2026-08-27T09:04:58Z",
+    "reviewed_payload_sha256": "912cccd1e6adb792e882e389f4b9f5febec1f884faa00d91ce6be282d31e9347",
+    "reviewed_scope_sha256": "9c1d5345e80be9e74645212c7b308ce810779d4918ef80f68b8c661ef47984aa",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-27T08:58:22Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "87c88f803fc305c1b252e6725986042e57d90ff10bc3a851b129ecac284243f8",
     "proof_ref": "owner-auftrag punkt 4 bitte nun, sitzung 28.08.2026",
     "valid_until": "2026-08-29T08:58:22Z"
   },
@@ -49,7 +49,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch wo-010-eigene-testfaelle verwerfen; auf main bleibt alles unveraendert",
-  "status": "executing",
+  "status": "verified",
   "title": "Kundeneigene Testfaelle und Ketten-Rotation",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
