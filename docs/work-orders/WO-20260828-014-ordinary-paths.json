@@ -27,10 +27,12 @@
   },
   "file_allowlist": [
     ".aef/profile.json",
+    ".aef/onboarding-state.json",
     "governance/policy.json",
     "docs/STATUS-BAU.md",
     "docs/entscheidungen.md",
-    "docs/work-orders/WO-20260828-014-ordinary-paths.json"
+    "docs/work-orders/WO-20260828-014-ordinary-paths.json",
+    "docs/berichte/README.md"
   ],
   "id": "WO-20260828-014",
   "in_scope": [

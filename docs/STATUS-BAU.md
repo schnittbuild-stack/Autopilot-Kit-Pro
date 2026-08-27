@@ -1296,6 +1296,19 @@ sind Verlauf.
 Dazu die acht Befunde aus dem Rückstand oben, von denen vier eine Entscheidung
 des Auftraggebers brauchen.
 
+**Seit dem 28.08. zusätzlich erledigt:**
+
+3. **`ketten/01` untersucht** — der Befund reproduziert nicht (zwölf Läufe,
+   vier Anordnungen). Der Wächter sichert seinen Beleg jetzt nach
+   `system/befunde/`; die Doppeldeutigkeit im Vertrag ist aufgelöst.
+   `docs/ketten01-untersuchung.md`.
+4. **Zustandsprotokoll und Berichte sind gewöhnliche Pfade.**
+   `docs/STATUS-BAU.md`, `docs/entscheidungen.md` und `docs/berichte/**` stehen
+   in `ordinary_paths`. Damit sperrt die von uns selbst verlangte Pflege nicht
+   mehr den ordentlichen Merge. **Berichte ab dem 28.08. liegen in
+   `docs/berichte/`**, die 14 älteren bleiben in `docs/` — siehe
+   `docs/berichte/README.md`.
+
 **Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
 ist **zweimal beanstandet** worden — beim zweiten Mal, weil die neue Regel
 „nichts wird überschrieben" der Korrekturschleife aus `INSTALLER.md` widersprach
