@@ -51,7 +51,11 @@ Nie stilles Raten, nie ein Feld sinngemäß aus einem anderen ableiten.
 
 ## Testfälle für diese Schnittstelle
 
-`core/testfaelle/outreach-personalisierer/01-duenne-faktenlage.md` prüft den
-Hauptfall: Recherche fast leer, kein Text, drei Sorten Fundort, Suche
-angeboten. Ein eigener Ketten-Fall für diese Schnittstelle ist ein Kandidat,
-sobald sich zeigt, dass sie im Alltag benutzt wird.
+**Kein vorhandener Testfall prüft diese Schnittstelle.**
+`outreach-personalisierer/01-duenne-faktenlage.md` sieht ähnlich aus, ist es
+aber nicht: Dort liegt **gar keine Recherche** vor, also geht auch kein
+`RECHERCHE-ERGEBNIS` hinein und keine der Empfängerregeln oben wird berührt.
+
+Ein eigener Ketten-Fall ist damit **offen**, nicht optional — der Vertrag ist
+bis dahin geschrieben, aber unbelegt. Er gehört gebaut, sobald sich zeigt, dass
+die Schnittstelle im Alltag benutzt wird.

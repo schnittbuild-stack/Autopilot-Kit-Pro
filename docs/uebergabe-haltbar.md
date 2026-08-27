@@ -95,6 +95,8 @@ selben Tag statt. Der ehrliche Anschlusstest wäre eine Sitzung nach echtem
 Zeitabstand, die auf „fass bei Ostermann nach" den Block aus der Datei zieht.
 Der Prüfstand liegt dafür bereit.
 
-**Ob der `outreach`-Vertrag im Alltag greift.** Er ist geschrieben und im Skill
-verankert, die drei Fälle laufen grün — aber kein Ketten-Fall prüft diese
-Schnittstelle. Ein eigener ist ein Kandidat, sobald sie benutzt wird.
+**Der `outreach`-Vertrag ist unbelegt.** Er ist geschrieben und im Skill
+verankert, die drei Fälle des Skills laufen grün — aber **kein Testfall prüft
+seine Empfängerregeln**. `01-duenne-faktenlage` sieht so aus, ist es nicht:
+Dort liegt gar keine Recherche vor. Ein eigener Ketten-Fall ist damit ein
+offener Punkt, kein Kandidat.

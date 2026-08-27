@@ -1,7 +1,9 @@
 # outreach-personalisierer
 
-<!-- Agent Nr. 4. Keine Ketteneinbindung in V1 — nimmt Fakten entgegen,
-     holt sie nicht selbst. Kein Profil-/Stilwissen hier (Prinzip 1). -->
+<!-- Agent Nr. 4. Nimmt Fakten entgegen, holt sie nicht selbst.
+     Empfaengt seit 27.08.2026 aus account-recherche — bindend nach
+     core/vertraege/account-recherche-zu-outreach-personalisierer.md.
+     Kein Profil-/Stilwissen hier (Prinzip 1). -->
 
 ## Zweck (ein Satz)
 Macht aus einem Standardtext eine Erstansprache, die erkennbar an **diesen einen**
