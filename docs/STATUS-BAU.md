@@ -1309,6 +1309,14 @@ des Auftraggebers brauchen.
    `docs/berichte/`**, die 14 älteren bleiben in `docs/` — siehe
    `docs/berichte/README.md`.
 
+   **Was das noch nicht bewirkt, ausdrücklich:** `.aef/onboarding-state.json`
+   steht auf `activation_status: inactive`, und `aef_merge.py:189` verlangt
+   `configuration_verified`. **Die ordentliche Spur ist damit heute für jeden
+   Pull Request zu**, unabhängig von den Pfaden. Gemeldet vom Review zu WO-014;
+   meine Formulierung „ab dem nächsten PR greift die Änderung" ging zu weit.
+   Die Pfad-Sperre ist beseitigt, die Aktivierungssperre nicht — das ist
+   dieselbe Sache wie der Org-Zwang und braucht einen eigenen Auftrag.
+
 **Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
 ist **zweimal beanstandet** worden — beim zweiten Mal, weil die neue Regel
 „nichts wird überschrieben" der Korrekturschleife aus `INSTALLER.md` widersprach
