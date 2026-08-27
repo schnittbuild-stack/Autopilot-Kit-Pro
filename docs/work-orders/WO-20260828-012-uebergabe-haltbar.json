@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/14#issuecomment-5439336267",
+    "reviewed_at": "2026-08-27T12:47:00Z",
+    "reviewed_payload_sha256": "a4354604a41f4fb9648ee1e7b543f7ca5ed056fcdd5718ef87bf1ea305099a92",
+    "reviewed_scope_sha256": "a8c6f8ec398d763dd0310e96552f1109bae9a74fbc9022a77f1c3553d5892a0c",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-27T12:15:00Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "2eb5387c398a5e5daeaa70bda41d483ca4511aff9bac6dff4a3f43187bd2ea3b",
     "proof_ref": "owner-entscheidung nach anhalten und neu planen, sitzung 28.08.2026",
     "valid_until": "2026-08-29T12:15:00Z"
   },
@@ -49,7 +49,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch wo-012-uebergabe-neu verwerfen; auf main bleibt alles unveraendert",
-  "status": "executing",
+  "status": "verified",
   "title": "Uebergabe haltbar machen, fehlenden Vertrag schreiben (neu geplant)",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
