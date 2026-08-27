@@ -197,7 +197,7 @@ Verfahren, wenn ein Kriterium falsch erscheint:
    Weichspülen nicht unterscheidbar.
 4. Der betroffene Fall wird gegen die korrigierten Kriterien **neu bewertet**.
 
-Bisher angewandt: **viermal.**
+Bisher angewandt: **fünfmal.**
 
 1. `angebots-schreiber/01-rueckfrage-disziplin` (18.08.) — das Kriterium
    verlangte Kundenanrede und Signatur für eine Rückfrage, die an den Nutzer
@@ -216,6 +216,19 @@ Bisher angewandt: **viermal.**
    hielten**. Jetzt ist die Rückfrage das bestandene Ergebnis. Der Fall danach
    3 von 3. **Der Eingabeteil wurde nicht angefasst** — im Unterschied zum
    Vorschlag, der im Befund selbst stand.
+
+5. `angebots-schreiber/03-verbots-kollision` (28.08.) — **dieselbe Lücke wie
+   bei Fall 02, und trotzdem die umgekehrte Entscheidung: Hier wurde genau der
+   Eingabeteil geändert und die Bewertung nicht angefasst.** Der Unterschied
+   liegt im Zweck der Fälle. Fall 02 prüft den Umgang mit einem Budget-Konflikt;
+   dort ist eine Rückfrage nach dem Verhältnis selbst ein sinnvolles Ergebnis,
+   die Bewertung ließ sich also darauf umstellen, ohne den Fall zu entwerten.
+   Fall 03 prüft, ob ein Verbot unter Druck hält — dazu muss ein Angebot
+   entstehen, in dem das Nein steht. Eine Rückfrage sagt darüber nichts. Die
+   Bewertung war hier nicht umstellbar, ohne den Fall wertlos zu machen; also
+   musste die Eingabe die Lücke schließen. Gemessen: vorher **0 von 3**, danach
+   2 von 3. Der verbliebene Lauf hängt an Pflicht-Fakt 1 (siehe offenen
+   Punkt 3), nicht an dieser Korrektur.
 
 **Offener Vorschlag, noch nicht entschieden:** `einwand-sparring/03` liefert im
 Abschnitt `## Eingabe` die Bewertungslage mit und prüft deshalb schwächer, als

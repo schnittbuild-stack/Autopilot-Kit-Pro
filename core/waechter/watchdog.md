@@ -218,7 +218,9 @@ bleibt die Liste stehen, damit der nächste Anlauf weiß, was noch offen war.
 - [ ] Nichts geändert ohne ausdrückliches Ja.
 - [ ] Kein Testfall angefasst.
 - [ ] Nichts in `ergebnisse/` abgelegt und niemand in die Nutzungsliste
-      eingetragen — ein Testlauf hinterlässt keine Spur im Kundenordner.
+      eingetragen — ein Testlauf hinterlässt keine Spur in den Ordnern des
+      Nutzers. In `system/befunde/` liegt danach genau das, was abgewichen ist,
+      und sonst nichts.
 - [ ] Nach **jedem** Fall ein Zwischenstand geschrieben, nicht erst am Ende.
 - [ ] Bei vorhandenem Zwischenstand fortgesetzt statt neu angefangen.
 - [ ] Nutzungsliste und Zwischenstand erst nach der Meldung geleert.

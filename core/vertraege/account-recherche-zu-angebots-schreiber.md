@@ -69,7 +69,7 @@ Bindend für `angebots-schreiber`:
 | `Firma` oder `Verhältnis` fehlt | **Abbruch mit Meldung**: „Die Recherche ist unvollständig — es fehlt <Feld>. Soll ich sie neu anstoßen?" |
 | Eines der drei Listenfelder fehlt ganz (nicht mal `—`) | **Abbruch mit Meldung.** Ein fehlendes „Nicht gefunden" ist nicht von einer gründlichen Recherche unterscheidbar — genau der Zustand, den dieser Vertrag ausschließt. |
 | Optionales Feld fehlt (`Branche/Größe`, `Anlass`) | Weiter. Wird in Block B unter „Angenommen" nicht erwähnt, weil nichts angenommen wurde. |
-| `Ansprechpartner` fehlt und steht auch nicht in der Anfrage | **Rückfrage**, gebündelt. Nicht weitermachen: Der Name gehört zu Pflicht-Fakt 1. Ohne ihn entsteht keine Anrede — und eine erfundene ist der schlimmere Fehler. |
+| `Ansprechpartner` ist leer (`—`) oder fehlt, und steht auch nicht in der Anfrage | **Rückfrage**, gebündelt. Nicht weitermachen: Der Name gehört zu Pflicht-Fakt 1. Ohne ihn entsteht keine Anrede — und eine erfundene ist der schlimmere Fehler. |
 | Recherche liegt gar nicht vor | Kein Fehler. `angebots-schreiber` arbeitet allein und fragt Fakt 1 und 6 nach. |
 
 Nie stilles Raten, nie ein Feld sinngemäß aus einem anderen ableiten.
