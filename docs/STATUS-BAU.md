@@ -1198,7 +1198,7 @@ dreimal bewerten, Bericht schreiben, committen, pushen. Bestanden nur bei
 ## Nächster Schritt — Stand 21.08.2026
 
 > **Überholt.** Den aktuellen Stand hält der Abschnitt „Nächster Schritt —
-> Stand 27.08.2026" am Ende dieser Datei.
+> Stand 28.08.2026" am Ende dieser Datei.
 
 Dieser Abschnitt hält den Stand. Alle „Nächster Schritt"-Abschnitte darüber
 sind Verlauf.
@@ -1265,6 +1265,10 @@ sind Verlauf.
    Recherche. Ein eigener Ketten-Fall ist offen.
 5. **Ob der Übergabeblock Tage später gefunden wird**, ist ungeprüft — beide
    Läufe fanden am selben Tag statt.
+6. **`core/skills/vertrieb/account-recherche.md:3` nennt weiter nur einen
+   Empfänger.** Seit dem dritten Vertrag gibt der Skill an zwei ab. Gemeldet vom
+   Review zu WO-012, dort nicht behebbar — die Datei stand nicht in der
+   Allowlist. Gehört in eine Folge-Work-Order.
 
 Dazu die acht Befunde aus dem Rückstand oben, von denen vier eine Entscheidung
 des Auftraggebers brauchen.

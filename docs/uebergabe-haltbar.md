@@ -39,8 +39,11 @@ Nachlauf:
    Trennlinie und Überschrift `NICHT AN DEN KUNDEN`.
 2. **Vermerken statt löschen.** Wer auf einem Notizblock aufgebaut hat,
    schreibt darunter, was er getan hat, wann und wo das neue Ergebnis liegt.
-   Nichts in `ergebnisse/` wird gelöscht oder überschrieben — dieselbe Haltung
-   wie bei den Preislisten (`preisregeln.md`).
+   Keine Datei in `ergebnisse/` wird gelöscht, und keine wird durch einen
+   anderen Vorgang ersetzt — dieselbe Haltung wie bei den Preislisten
+   (`preisregeln.md`). Dieselbe Datei nachzuziehen, weil eine Formulierung
+   oder ein Preis korrigiert wurde, ist ausdrücklich etwas anderes; der
+   Nachlauf unten prüft genau diese Grenze.
 3. **Die Fortsetzung wird angeboten, nie ungefragt gestartet.** Ein Satz,
    Alltagssprache, keine Helfernamen. Sagt er ja, nimmt der Agent den Block aus
    der Datei — **er kopiert nichts**.
