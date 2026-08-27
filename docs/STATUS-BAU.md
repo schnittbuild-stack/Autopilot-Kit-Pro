@@ -1197,6 +1197,9 @@ dreimal bewerten, Bericht schreiben, committen, pushen. Bestanden nur bei
 
 ## Nächster Schritt — Stand 21.08.2026
 
+> **Überholt.** Den aktuellen Stand hält der Abschnitt „Nächster Schritt —
+> Stand 27.08.2026" am Ende dieser Datei.
+
 Dieser Abschnitt hält den Stand. Alle „Nächster Schritt"-Abschnitte darüber
 sind Verlauf.
 
@@ -1227,3 +1230,50 @@ fremden Rechner. Punkte 2, 3 und 4 der Definition of Done sind erfüllt.
 **Was übrig bleibt, ohne Phase 3 zu blockieren:** unverändert unter „Offene
 Punkte" oben — die Testfall-Befunde aus dem Nachlauf, der nie gelaufene
 Wochencheck, die Wortlaut-Befunde aus dem dritten Abbruch-Durchlauf.
+
+## Nächster Schritt — Stand 28.08.2026
+
+Dieser Abschnitt hält den Stand. Alle „Nächster Schritt"-Abschnitte darüber
+sind Verlauf.
+
+**Seit dem 21.08. erledigt:**
+
+1. **Phase 4 vollständig gebaut** — Watchdog-Testlauf und Reparatur-Flow, fünf
+   Ketten-Testfälle statt zwei, kundeneigene Prüffälle, Ketten-Rotation.
+   Einzelheiten in `docs/watchdog-test.md`, `docs/ketten-testfaelle.md`,
+   `docs/eigene-testfaelle.md`.
+2. **Die Übergabe haltbar gemacht** (27.08.). Der Notizblock „für dich, nicht
+   für den Kunden" überlebt jetzt die Sitzung, ein abgearbeiteter Vorgang wird
+   vermerkt statt gelöscht, und die Fortsetzung wird angeboten statt ungefragt
+   gestartet. Dazu der bis dahin fehlende Vertrag
+   `account-recherche → outreach-personalisierer`. Bericht:
+   `docs/uebergabe-haltbar.md`.
+
+**Was offen ist:**
+
+1. **Der 30-Minuten-Durchlauf** mit einer Testperson ohne Vorkenntnisse. Der
+   einzige Punkt, der Phase 3 noch blockiert — und der einzige, den keine
+   Sitzung ersetzen kann.
+2. **Drei kundeneigene Testfälle, von einem Testkäufer bestätigt** — die zweite
+   Hälfte der Definition of Done von Phase 4. Braucht denselben Menschen.
+3. **`ketten/01` läuft 3 von 3 abweichend** — nur eine der zwei verlangten
+   Rückfragen. Vom Watchdog selbst gefunden, nichts gepflanzt. Lief in der
+   Vollregression von Phase 2 noch 3 von 3. **Nicht behoben**, braucht eine
+   eigene Untersuchung.
+4. **Der `outreach`-Vertrag ist unbelegt.** Kein Testfall prüft seine
+   Empfängerregeln; `01-duenne-faktenlage` sieht so aus, hat aber gar keine
+   Recherche. Ein eigener Ketten-Fall ist offen.
+5. **Ob der Übergabeblock Tage später gefunden wird**, ist ungeprüft — beide
+   Läufe fanden am selben Tag statt.
+
+Dazu die acht Befunde aus dem Rückstand oben, von denen vier eine Entscheidung
+des Auftraggebers brauchen.
+
+**Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
+ist **zweimal beanstandet** worden — beim zweiten Mal, weil die neue Regel
+„nichts wird überschrieben" der Korrekturschleife aus `INSTALLER.md` widersprach
+und weil ein Prüfstand-Bericht nach echten Kundendaten klang. Nach der Regel des
+Abnahme-Tors („eine Korrektur, ein erneuter Review, dann anhalten und neu
+planen") ist der Versuch abgebrochen und als **WO-012 neu geplant** worden,
+auf einem frischen Branch von `main`. Der gescheiterte Versuch bleibt als
+geschlossener Pull Request sichtbar.

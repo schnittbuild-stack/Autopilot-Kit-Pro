@@ -22,20 +22,22 @@ Der Watchdog testet genau diese Punkte — hier bricht Drift zuerst sichtbar.
                                                    follow-up-generator
 ```
 
-Zwei Schnittstellen, zwei Verträge:
+Drei Schnittstellen, drei Verträge:
 
 | Vertrag | Datei |
 |---|---|
 | account-recherche → angebots-schreiber | `account-recherche-zu-angebots-schreiber.md` |
 | angebots-schreiber → follow-up-generator | `angebots-schreiber-zu-follow-up-generator.md` |
+| account-recherche → outreach-personalisierer | `account-recherche-zu-outreach-personalisierer.md` |
 
-**Beide Übergaben sind optional in eine Richtung:** `angebots-schreiber` läuft
-auch ohne Recherche (fragt dann nach), und nicht jedes Angebot geht ins
-Nachfassen. Was nicht optional ist: Wenn übergeben wird, dann in diesem Format.
+**Alle drei Übergaben sind optional in eine Richtung:** `angebots-schreiber`
+und `outreach-personalisierer` laufen auch ohne Recherche (fragen dann nach),
+und nicht jedes Angebot geht ins Nachfassen. Was nicht optional ist: Wenn
+übergeben wird, dann in diesem Format.
 
-## Das gemeinsame Muster beider Verträge
+## Das gemeinsame Muster aller Verträge
 
-Beide sind um dieselbe Idee gebaut — **Unwissen ist ein Wert, kein Nichts**:
+Alle sind um dieselbe Idee gebaut — **Unwissen ist ein Wert, kein Nichts**:
 
 - Was nicht belegt ist, wird als unbelegt gekennzeichnet und darf nicht in
   den Kundentext (`Unbelegt`, `Nicht gefunden`, `[PREIS PRÜFEN]`).
