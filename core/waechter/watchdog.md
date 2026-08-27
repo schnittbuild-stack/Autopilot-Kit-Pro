@@ -45,16 +45,36 @@ auseinandergehen, gilt die Liste.
 `system/STATUS.md`. Nicht alle. Wer diese Woche kein Angebot geschrieben hat,
 braucht den Angebots-Helfer nicht geprüft.
 
-Je Helfer alle seine Fälle aus `system/core/testfaelle/<helfer>/`.
+Je Helfer alle seine Fälle — aus **zwei** Sammlungen:
+
+1. `system/eigene-testfaelle/<helfer>/` — die Fälle aus seinem eigenen
+   Material. **Diese zuerst**, weil sie näher an seinem Alltag sind.
+2. `system/core/testfaelle/<helfer>/` — die mitgelieferten, neutralen Fälle.
+
+Gibt es keine eigenen, ist das kein Mangel und keine Meldung wert. Wie welche
+entstehen, steht in `system/core/waechter/eigene-testfaelle.md`.
 
 **Dazu die Ketten.** In `system/core/testfaelle/ketten/` liegen Fälle, die
 nicht einem Helfer gehören, sondern einer **Übergabe** zwischen zweien. Jeder
 nennt oben unter „Schnittstelle", welche Helfer beteiligt sind.
 
-**Eine Kette wird geprüft, sobald einer ihrer Helfer in der Nutzungsliste
+**Eine Kette kommt in Frage, sobald einer ihrer Helfer in der Nutzungsliste
 steht.** Nicht erst, wenn alle beteiligten liefen — sonst würden die Ketten
 fast nie geprüft, und ein Vertragsbruch fiele erst auf, wenn er beim Nutzer
 schon passiert ist.
+
+**Aber es läuft höchstens eine Kette je Check, reihum.** Ein Ketten-Fall
+kostet ein Vielfaches eines Einzelfalls, weil er zwei Anleitungen und beide
+Verträge mitträgt. Liefen alle fünf bei jedem Angebot mit, wäre der Check so
+teuer wie eine Vollprüfung — und der Nutzungsbezug umsonst.
+
+Welche dran ist, steht in `system/STATUS.md` unter **„Zuletzt geprüfte Kette"**.
+Genommen wird die nächste in der Reihenfolge der Dateinamen, die überhaupt in
+Frage kommt. Danach wird der Name dort eingetragen.
+
+Steht dort nichts, fang bei der ersten an. Steht dort ein Name, den es nicht
+mehr gibt, fang ebenfalls bei der ersten an — und sag dazu nichts, das ist
+keine Meldung wert.
 
 Wer nur Erstansprachen geschrieben hat, bekommt keine Kette geprüft: Der
 `outreach-personalisierer` kommt in keiner vor.

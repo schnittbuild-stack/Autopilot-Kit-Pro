@@ -1,0 +1,57 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-27T08:58:22Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "owner-auftrag punkt 4 bitte nun, sitzung 28.08.2026",
+    "valid_until": "2026-08-29T08:58:22Z"
+  },
+  "business_outcome": "Aus 'gruen gegen unsere Faelle' ein 'gruen gegen seinen Alltag' machen \u2014 und den Wochencheck bezahlbar halten, nachdem die gemessenen Ketten-Kosten die Annahme vom 26.08. widerlegt haben.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "adapter-claude/vorlagen/STATUS.vorlage.md",
+    "core/waechter/eigene-testfaelle.md",
+    "core/waechter/watchdog.md",
+    "core/waechter/wochencheck.md",
+    "docs/STATUS-BAU.md",
+    "docs/eigene-testfaelle.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260828-010-eigene-testfaelle.json"
+  ],
+  "id": "WO-20260828-010",
+  "in_scope": [
+    "Ketten-Rotation: hoechstens eine je Check, Stand in STATUS; eigene-testfaelle.md mit der Bestaetigungsregel fuer Sollkriterien; getrennte Ablage unter system/eigene-testfaelle/; Wochencheck bietet es an; Watchdog prueft beide Sammlungen; Prueflauf und offener Befund dokumentieren"
+  ],
+  "out_of_scope": [
+    "Der Befund an ketten/01 wird NICHT behoben \u2014 eigener Auftrag mit eigener Entscheidung; keine Aenderung an Skills, Vertraegen, Testfaellen, Installer oder Governance"
+  ],
+  "repository_context": {
+    "base_commit": "2674dedf1de095616d09a138fb555ef54ef88440",
+    "branch": "wo-010-eigene-testfaelle",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-010-eigene-testfaelle verwerfen; auf main bleibt alles unveraendert",
+  "status": "executing",
+  "title": "Kundeneigene Testfaelle und Ketten-Rotation",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}
