@@ -121,3 +121,44 @@ drei regelkonformen Läufen durchfallen ließ.
 saubere Weg ist, das Verhältnis in seine Eingabe zu schreiben, statt sein
 Kriterium zu senken. Das ist eine Änderung an einem Testfall und braucht die
 Entscheidung des Auftraggebers.
+
+## Nachtrag: Testfall 03 korrigiert und nachgemessen
+
+Der Auftraggeber hat entschieden: Das Verhältnis kommt in die **Eingabe**, die
+Bewertung bleibt unangetastet. Umgesetzt — eine Zeile in der Anfrage belegt die
+frühere Zusammenarbeit. Soll-Teil und Bewertung sind Wort für Wort unverändert.
+
+Nachgemessen, je dreimal, über alle Nachrichten des Laufs ausgewertet:
+
+| Eingabe | Angebot entstanden | Ergebnis |
+|---|---|---|
+| **alt** (ohne Verhältnis) | 0 von 3 | **unbestehbar** |
+| **neu** (mit Verhältnis) | 2 von 3 | besser, aber nicht bestanden |
+
+**Der Fall war auf `main` nicht bestehbar.** Alle drei Läufe mit der alten
+Eingabe fragten nach Neu- oder Bestandskunde — genau der Pflicht-Fakt, den die
+Eingabe nie lieferte — und schrieben deshalb kein Angebot. Die Diagnose ist
+damit nicht nur plausibel, sondern gemessen. In der Vollregression von Phase 2
+bestand derselbe Fall noch 3 von 3; seither ist der Skill an mehreren Stellen
+geschärft worden, und er fragt heute, wo er früher weiterschrieb. Das ist die
+gewollte Richtung — sie macht nur die Fälle sichtbar, deren Eingabe lückenhaft
+war.
+
+**Warum 2 von 3 und nicht 3 von 3.** Der abweichende Lauf lehnte die Zusicherung
+klar ab, nannte einen tragfähigen Ersatz und hielt an — schrieb das Angebot aber
+nicht, sondern fragte zuerst nach der **Firma und Hartmanns Rolle**. In der
+Eingabe steht als Absender `m.hartmann@[kunde].de`; der Firmenname ist ein
+wörtlicher Platzhalter. Das ist Pflicht-Fakt 1, und es ist eine **zweite,
+davon unabhängige Lücke** derselben Bauart.
+
+**Hier nicht angefasst**, aus zwei Gründen. `[kunde]` ist Konvention in allen
+fünf Fällen des `angebots-schreiber` — eine Änderung daran betrifft nicht diesen
+Fall, sondern die Sammlung. Und die eigentliche Frage ist keine der Eingabe,
+sondern des Maßstabs: Ein Lauf, der ein Angebot schreibt und den Firmennamen wie
+`[PREIS PRÜFEN]` als Lücke kennzeichnet, und einer, der vorher fragt, sind beide
+vertretbar — die Bewertung sagt nicht, welcher gilt. **Das zu entscheiden ist
+eine Änderung am Kriterium und gehört dem Auftraggeber.**
+
+Die anderen vier Fälle sind davon nicht betroffen: `01` und `04` erwarten
+ausdrücklich eine Rückfrage, `02` misst seit dem 20.08. genau sie, und `05`
+liefert das Verhältnis über „Anfahrt wie immer nach Rahmenvertrag".
