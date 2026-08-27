@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/15#issuecomment-5441007117",
+    "reviewed_at": "2026-08-27T15:00:17Z",
+    "reviewed_payload_sha256": "4aae484ffddecc7dd05b70c103eafd648862adf588b122530fd9687b4f1d9c2e",
+    "reviewed_scope_sha256": "4342d9f12e23a601f20698ee3273bc0aa525fe985259cd3ad2c48b8b21bd002b",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-27T13:36:54Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "f10869d7d918866aff77eb41c3a12ef53a5055f348636b457c89085ac209705b",
     "proof_ref": "owner-auftrag offener befund ketten/01, sitzung 28.08.2026",
     "valid_until": "2026-08-29T13:36:54Z"
   },
@@ -50,7 +50,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch wo-013-ketten01-untersuchung verwerfen",
-  "status": "executing",
+  "status": "verified",
   "title": "ketten/01 untersucht: Waechter-Beleg haltbar, Vertragsluecke geschlossen, Testfall-Widerspruch",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
