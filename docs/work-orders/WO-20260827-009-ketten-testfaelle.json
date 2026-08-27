@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/11#issuecomment-5436513928",
+    "reviewed_at": "2026-08-27T08:37:45Z",
+    "reviewed_payload_sha256": "9740e77883f588897dc68463ac99db9fdf102ba6ab06b2b4df0bc7b2e8f60b6e",
+    "reviewed_scope_sha256": "8b2781db00340b840efdacceac49f33ce205f0050fa0beb0479860969644a3a5",
+    "reviewer_subject": "readonly-process:claude-review",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-27T08:30:20Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "d9ae2a347c8a0af116d2d8befa8601f5ef44eaa8875bb27d515ed16e008c4a7a",
     "proof_ref": "owner-auftrag fang an mit punkt 2, sitzung 27.08.2026",
     "valid_until": "2026-08-29T08:30:20Z"
   },
@@ -49,7 +49,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch wo-009-ketten-testfaelle verwerfen; auf main bleibt alles unveraendert",
-  "status": "executing",
+  "status": "verified",
   "title": "Fuenf Ketten-Testfaelle und Zugriff des Watchdogs darauf",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
