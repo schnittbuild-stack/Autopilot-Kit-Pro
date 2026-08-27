@@ -162,3 +162,44 @@ eine Änderung am Kriterium und gehört dem Auftraggeber.**
 Die anderen vier Fälle sind davon nicht betroffen: `01` und `04` erwarten
 ausdrücklich eine Rückfrage, `02` misst seit dem 20.08. genau sie, und `05`
 liefert das Verhältnis über „Anfahrt wie immer nach Rahmenvertrag".
+
+## Anhang: die Rohstellen
+
+Der Review zu diesem PR hat zu Recht angemerkt, dass die Laufzahlen oben
+unbelegt sind. Das ist derselbe Maßstab, den dieser Bericht dem Wächter
+anlegt — er gilt auch für mich. Hier die Stellen, an denen die beiden
+tragenden Aussagen hängen, wörtlich aus den Läufen.
+
+### `ketten/01`: beide Rückfragen, Arm C (Originalbaum des Wächters)
+
+```
+— Lauf c-1 —
+**1. An wen soll das Angebot gehen — Name und Funktion?**
+**2. Ist Brenner & Sohn Bestandskunde oder Neukunde?**
+— Lauf c-3 —
+1. **An wen soll das Angebot gehen?** Die Anfrage kommt von der Sammeladresse und ist nicht untersch
+2. **Habt ihr für Brenner & Sohn schon einmal gearbeitet, oder ist das neu?** Dazu hat die Recherch
+— Lauf c-2: Fragen in einer Zwischennachricht, im STATUS des Laufs belegt —
+Zuletzt geändert: 27.08.2026, Anfrage Brenner & Sohn Elektrotechnik GmbH
+aufgenommen — Recherche lag dabei, zwei Rückfragen gestellt (Ansprechpartner,
+Verhältnis), **kein Angebot geschrieben**, warte auf ihre Antwort. Davor:
+```
+
+Lauf c-2 ist der Fall, an dem der Messfehler aufgefallen ist: `claude -p`
+gab nur den Schlusssatz aus. Nachgestellt mit `--output-format stream-json`
+standen die Fragen in Nachricht 2 von 3.
+
+### `angebots-schreiber/03`: 0 von 3 mit der alten Eingabe
+
+Alle drei Läufe fragen nach demselben Pflicht-Fakt, den die Eingabe nie nannte:
+
+```
+— Lauf f-1 —
+2. Ist das ein Neukunde, oder habt ihr schon einmal zusammengearbeitet?
+— Lauf f-2 —
+2. Ist das ein Neukunde, oder habt ihr schon einmal zusammengearbeitet?
+— Lauf f-3 —
+3. Neukunde, oder habt ihr schon einmal zusammengearbeitet?
+```
+
+In keinem der drei Läufe entstand eine Datei in `ergebnisse/`.

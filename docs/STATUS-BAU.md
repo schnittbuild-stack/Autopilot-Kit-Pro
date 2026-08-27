@@ -1259,12 +1259,15 @@ sind Verlauf.
    Sitzung ersetzen kann.
 2. **Drei kundeneigene Testfälle, von einem Testkäufer bestätigt** — die zweite
    Hälfte der Definition of Done von Phase 4. Braucht denselben Menschen.
-3. **Widerspruch zwischen `angebots-schreiber/02` und `/03`.** Beide Eingaben
-   nennen Pflicht-Fakt 6 nicht; Fall 02 erklärt einen gesetzten Wert für
-   durchgefallen, Fall 03 verlangt ein fertiges Angebot — das ohne gesetzten
-   Wert nicht entstehen kann. Vom Wächter gefunden und als „Sache für den
-   Hersteller" beiseitegelegt, von mir nachgeprüft und bestätigt.
-   **Braucht eine Entscheidung**, weil die Reparatur einen Testfall anfasst.
+3. **Pflicht-Fakt 1 in den Eingaben des `angebots-schreiber`.** Der Widerspruch
+   zwischen Fall 02 und Fall 03 ist am 28.08. entschieden und behoben — das
+   Verhältnis steht jetzt in der Eingabe von Fall 03, die Bewertung ist
+   unverändert (0 von 3 vorher, 2 von 3 nachher). **Was bleibt:** Der dritte
+   Lauf fragt nach Firma und Rolle. `m.hartmann@[kunde].de` ist ein wörtlicher
+   Platzhalter, und `[kunde]` ist Konvention in allen fünf Fällen. Ob ein Lauf
+   den Firmennamen wie `[PREIS PRÜFEN]` als Lücke kennzeichnen darf oder vorher
+   fragen muss, sagt keine Bewertung — **das ist eine Änderung am Kriterium und
+   braucht eine Entscheidung.**
 4. **Der `outreach`-Vertrag ist unbelegt.** Kein Testfall prüft seine
    Empfängerregeln; `01-duenne-faktenlage` sieht so aus, hat aber gar keine
    Recherche. Ein eigener Ketten-Fall ist offen.
