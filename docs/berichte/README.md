@@ -24,3 +24,24 @@ die Pfade weiter.
 
 Für den Kunden ändert sich nichts: `docs/` erreicht das Kunden-ZIP ohnehin
 nicht (`release.yml`).
+
+## Nachweis
+
+Einstufung gegen die geänderte Policy, direkt aus `aef_validate` heraus geprüft
+(`validate_policy` bestanden — keine Überschneidung, Sternregel eingehalten):
+
+```
+docs/STATUS-BAU.md                       gewöhnlich
+docs/entscheidungen.md                   gewöhnlich
+docs/berichte/README.md                  gewöhnlich
+docs/berichte/<neuer-bericht>.md         gewöhnlich
+core/waechter/watchdog.md                gewöhnlich
+docs/agentic/ACCEPTANCE-GATE.md          RESERVIERT
+.aef/profile.json                        RESERVIERT
+docs/uebergabe-haltbar.md                weder noch → sperrt den Merge
+```
+
+Die letzte Zeile ist die Grenze dieser Lösung, ausdrücklich stehen gelassen:
+Wird einer der 14 alten Berichte doch einmal geändert, geht dieser Pull Request
+wieder über die manuelle Spur. Das ist selten und der Preis dafür, 25 Dateien
+nicht anzufassen.
