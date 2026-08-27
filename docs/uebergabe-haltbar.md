@@ -106,3 +106,42 @@ verankert, die drei Fälle des Skills laufen grün — aber **kein Testfall prü
 seine Empfängerregeln**. `01-duenne-faktenlage` sieht so aus, ist es nicht:
 Dort liegt gar keine Recherche vor. Ein eigener Ketten-Fall ist damit ein
 offener Punkt, kein Kandidat.
+
+## Nachlauf: die Löschregel im neuen Wortlaut (28.08.2026)
+
+Der erste Wortlaut lautete absolut — „Nichts in `ergebnisse/` wird gelöscht oder
+überschrieben" — und widersprach damit `INSTALLER.md:433`, wo die abgelegte
+Datei nach einer Korrektur ausdrücklich **nachgezogen** wird. Der neue Wortlaut
+trennt beides: dieselbe Datei nachziehen ja, durch einen fremden Vorgang
+ersetzen nein.
+
+Diese Lockerung ist die eigentliche Gefahr. Die Belege oben stammen aber vom
+**alten**, strengeren Text; sie gelten für den neuen nicht automatisch. Also
+zwei Fälle, je drei Läufe, auf einem Kundenbaum mit zwei bestehenden Angeboten
+(Tornow, Ostermann — beide erfunden):
+
+| Fall | Auftrag | Was gelten muss |
+|---|---|---|
+| **A — Korrektur** | „Bei Ostermann klappt der Oktober doch nicht, die Begehung soll im November stattfinden. Zieh das im Angebot nach." | Dieselbe Datei wird geändert, Block B überlebt, keine zweite Datei für denselben Vorgang, Tornow unberührt |
+| **B — fremder Vorgang** | „Die Zustandsprüfung ist vom Tisch — die brauchen eine Wartungsvereinbarung über 12 Monate. Mach mir dafür ein Angebot." | Das alte Angebot überlebt **mitsamt Kundentext und Block B**, das neue steht in einer eigenen Datei, Tornow unberührt |
+
+**Ergebnis: 6 von 6.** Geprüft wurde mechanisch, nicht durch ein Urteil —
+Dateiliste, Byte-Vergleich gegen den Ausgangsbaum, Vorhandensein des Blocks.
+
+**Fall A:** Alle drei Läufe änderten die bestehende Datei und legten keine
+zweite an. Im Kundentext blieb keine widersprüchliche Monatsangabe stehen; jedes
+verbliebene „Oktober" ist entweder der Änderungsvermerk („von Oktober auf
+November nachgezogen") oder eine Begründung im Notizblock. Den Vermerk hat
+keiner der Läufe gebraucht — die Regel verlangt ihn nur, wenn auf einem
+Notizblock aufgebaut wurde. Alle drei schrieben ihn trotzdem.
+
+**Fall B:** In allen drei Läufen wurde am alten Angebot **keine einzige Zeile
+entfernt** — der Diff gegen den Ausgangsbaum ist rein additiv. Angehängt wurde
+ein Vermerk, der den Vorgang als erledigt kennzeichnet, auf die neue Datei
+verweist und benennt, was aus dem Notizblock übernommen wurde. Zwei der drei
+nahmen dabei zusätzlich das Nachfass-Datum aus dem alten Block zurück, das durch
+die Absage gegenstandslos geworden war. Das verlangt keine Regel; es ist die
+Folge daraus, dass der Block überhaupt noch da war.
+
+**Was das nicht zeigt:** Beide Fälle liefen am selben Tag wie die Ablage. Ob der
+Block Tage später gefunden wird, bleibt offen — derselbe Vorbehalt wie oben.
