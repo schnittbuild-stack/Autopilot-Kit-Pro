@@ -72,6 +72,13 @@ Beispiel: `angebots-schreiber — 21.08., 23.08.`>
 
 keine
 
+## Zuletzt geprüfte Kette
+
+<Dateiname der Kette, die im letzten Wochencheck an der Reihe war. Der nächste
+Check nimmt die nächste in der Reihenfolge. Beispiel: `03-volle-kette-…`>
+
+keine
+
 ## Laufender Testlauf
 
 <Nur während eines Wochenchecks gefüllt. Je Zeile ein fertiger Fall:

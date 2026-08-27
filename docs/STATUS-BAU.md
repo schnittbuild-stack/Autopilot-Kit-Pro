@@ -88,7 +88,16 @@
         Der Watchdog erfasst `ketten/` jetzt: Eine Kette läuft, sobald einer
         ihrer Helfer benutzt wurde. **Vorbehalt:** Fall 03 wurde viermal
         überarbeitet, bevor er grün war (`docs/ketten-testfaelle.md`).
-  - [ ] Punkt 4 — kundeneigene Testfälle aus dem Material des Käufers
+  - [x] **Punkt 4 — kundeneigene Testfälle (28.08.2026)** — der Wächter
+        bietet an, aus dem Material des Nutzers Prüffälle zu bauen;
+        Sollkriterien werden einzeln bestätigt, nie vom Modell gesetzt.
+        Dazu die Ketten-Rotation aus dem Kostenbefund von WO-009.
+        **Offen bleibt die zweite Hälfte der Definition of Done:** drei Fälle,
+        die ein Testkäufer als treffend bestätigt (`docs/eigene-testfaelle.md`).
+  - [ ] **Offener Befund: `ketten/01` läuft 3 von 3 abweichend** — nur eine der
+        zwei verlangten Rückfragen. Vom Watchdog selbst gefunden, nichts
+        gepflanzt. Lief in der Vollregression von Phase 2 noch 3 von 3.
+        Braucht eine eigene Untersuchung und eine Entscheidung.
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
 - [ ] Phase 6 — Beta mit 10 Nutzern
 - [ ] Phase 7 — Launch

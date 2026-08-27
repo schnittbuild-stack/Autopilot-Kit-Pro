@@ -79,6 +79,21 @@ Steht dort nichts, entfällt der Testlauf. Ohne Erwähnung.
 **Das ist kein fünfter Prüfpunkt und kein zweiter Wächter:** derselbe
 Auslöser, dieselbe Ausgabe, höchstens zwei Zeilen mehr.
 
+## Und einmal das Angebot: eigene Prüffälle
+
+Liegt in `meine-unterlagen/` oder `ergebnisse/` Material, aus dem sich ein
+Prüffall bauen ließe, **und** hat der betroffene Helfer noch keinen eigenen —
+dann biete es einmal an, in einer Zeile:
+
+> Aus deinen letzten Angeboten könnte ich einen Prüffall bauen, an dem ich
+> später messe, ob der Angebots-Helfer noch so arbeitet wie heute. Soll ich?
+
+Sagt er ja, arbeitest du `system/core/waechter/eigene-testfaelle.md` ab. Sagt
+er nein, wird nicht nachgefasst — nicht in diesem Check und nicht im nächsten.
+
+**Höchstens ein Angebot je Check**, und nur, wenn sonst nichts Dringenderes zu
+melden war. Ein Wächter, der bei jedem Lauf etwas will, wird weggeklickt.
+
 ## Was der Check nie tut
 
 - **Er ändert nichts.** Kein Profil, keine Unterlage, keine Assistenten-Datei,
