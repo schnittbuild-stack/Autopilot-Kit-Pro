@@ -94,10 +94,13 @@
         Dazu die Ketten-Rotation aus dem Kostenbefund von WO-009.
         **Offen bleibt die zweite Hälfte der Definition of Done:** drei Fälle,
         die ein Testkäufer als treffend bestätigt (`docs/eigene-testfaelle.md`).
-  - [ ] **Offener Befund: `ketten/01` läuft 3 von 3 abweichend** — nur eine der
-        zwei verlangten Rückfragen. Vom Watchdog selbst gefunden, nichts
-        gepflanzt. Lief in der Vollregression von Phase 2 noch 3 von 3.
-        Braucht eine eigene Untersuchung und eine Entscheidung.
+  - [x] **Befund `ketten/01` untersucht (28.08.2026).** Reproduziert nicht —
+        zwölf Läufe in vier Anordnungen, alle bestanden, darunter drei im
+        **Originalbaum des Wächters**. Der eigentliche Befund liegt woanders:
+        Sein Beleg war nach dem Sitzungsende weg, weil „er legt nichts ab"
+        absolut galt. Behoben. Dazu die Doppeldeutigkeit im Vertrag
+        (`Ansprechpartner [Optional]` gegen Pflicht-Fakt 1), die er selbst
+        richtig vermutet hatte. `docs/ketten01-untersuchung.md`.
 - [ ] Phase 5 — Smoke-Test (parallel, außerhalb dieses Repos: Ads + Landingpage)
 - [ ] Phase 6 — Beta mit 10 Nutzern
 - [ ] Phase 7 — Launch
@@ -1256,19 +1259,23 @@ sind Verlauf.
    Sitzung ersetzen kann.
 2. **Drei kundeneigene Testfälle, von einem Testkäufer bestätigt** — die zweite
    Hälfte der Definition of Done von Phase 4. Braucht denselben Menschen.
-3. **`ketten/01` läuft 3 von 3 abweichend** — nur eine der zwei verlangten
-   Rückfragen. Vom Watchdog selbst gefunden, nichts gepflanzt. Lief in der
-   Vollregression von Phase 2 noch 3 von 3. **Nicht behoben**, braucht eine
-   eigene Untersuchung.
+3. **Widerspruch zwischen `angebots-schreiber/02` und `/03`.** Beide Eingaben
+   nennen Pflicht-Fakt 6 nicht; Fall 02 erklärt einen gesetzten Wert für
+   durchgefallen, Fall 03 verlangt ein fertiges Angebot — das ohne gesetzten
+   Wert nicht entstehen kann. Vom Wächter gefunden und als „Sache für den
+   Hersteller" beiseitegelegt, von mir nachgeprüft und bestätigt.
+   **Braucht eine Entscheidung**, weil die Reparatur einen Testfall anfasst.
 4. **Der `outreach`-Vertrag ist unbelegt.** Kein Testfall prüft seine
    Empfängerregeln; `01-duenne-faktenlage` sieht so aus, hat aber gar keine
    Recherche. Ein eigener Ketten-Fall ist offen.
 5. **Ob der Übergabeblock Tage später gefunden wird**, ist ungeprüft — beide
    Läufe fanden am selben Tag statt.
-6. **`core/skills/vertrieb/account-recherche.md:3` nennt weiter nur einen
-   Empfänger.** Seit dem dritten Vertrag gibt der Skill an zwei ab. Gemeldet vom
-   Review zu WO-012, dort nicht behebbar — die Datei stand nicht in der
-   Allowlist. Gehört in eine Folge-Work-Order.
+6. **Die kopflose Auswertung war blind für alles außer der letzten Nachricht.**
+   `claude -p` gibt nur diese aus; ein Lauf, der die Arbeit tut und danach den
+   Zwischenstand aufräumt, wurde als abweichend gezählt. Ein Lauf von neun am
+   28.08. Der Fehler geht immer in dieselbe Richtung — bestanden wird zu
+   abweichend, nie umgekehrt. **Ab jetzt** wird über alle Nachrichten
+   ausgewertet; ältere Berichte werden nicht rückwirkend umgeschrieben.
 
 Dazu die acht Befunde aus dem Rückstand oben, von denen vier eine Entscheidung
 des Auftraggebers brauchen.
