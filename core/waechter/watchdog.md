@@ -65,7 +65,7 @@ schon passiert ist.
 
 **Aber es läuft höchstens eine Kette je Check, reihum.** Ein Ketten-Fall
 kostet ein Vielfaches eines Einzelfalls, weil er zwei Anleitungen und beide
-Verträge mitträgt. Liefen alle fünf bei jedem Angebot mit, wäre der Check so
+Verträge mitträgt. Liefen sie bei jedem Angebot alle mit, wäre der Check so
 teuer wie eine Vollprüfung — und der Nutzungsbezug umsonst.
 
 Welche dran ist, steht in `system/STATUS.md` unter **„Zuletzt geprüfte Kette"**.
@@ -76,8 +76,22 @@ Steht dort nichts, fang bei der ersten an. Steht dort ein Name, den es nicht
 mehr gibt, fang ebenfalls bei der ersten an — und sag dazu nichts, das ist
 keine Meldung wert.
 
-Wer nur Erstansprachen geschrieben hat, bekommt keine Kette geprüft: Der
-`outreach-personalisierer` kommt in keiner vor.
+Nicht jeder Helfer gehört zu einer Kette. **Ob einer dazugehört, liest du an
+zwei Stellen ab und nirgends sonst:** oben in jedem Ketten-Fall unter
+„Schnittstelle", und in Zeile 3 der Anleitung des Helfers selbst. Steht dort
+„Keine Ketteneinbindung", kommt für ihn keine Kette in Frage — hat der Nutzer
+nur solche Helfer benutzt, wird in diesem Check keine Kette geprüft, und das
+ist keine Meldung wert.
+
+Zähl das nicht aus dem Kopf und schreib hier keine Liste ab: Kommt ein
+Ketten-Fall dazu, ist eine Liste am nächsten Tag falsch — die beiden Stellen
+oben sind es nie.
+
+**Widersprechen die zwei Stellen einander** — ein Ketten-Fall nennt einen
+Helfer, dessen Anleitung „Keine Ketteneinbindung" sagt —, dann rate nicht,
+welche gilt. Das ist ein Befund für den Hersteller, wie ein Testfall, der
+falsch zu sein scheint: melden, nichts ändern, und diese Kette in diesem Check
+auslassen.
 
 **Warum die Ketten eigene Fälle brauchen:** Jede Stufe kann für sich
 tadellos arbeiten, und trotzdem steht am Ende etwas Falsches — weil eine

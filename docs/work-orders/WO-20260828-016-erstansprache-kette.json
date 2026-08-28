@@ -1,0 +1,56 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/18#issuecomment-5450598212",
+    "reviewed_at": "2026-08-28T09:06:52Z",
+    "reviewed_payload_sha256": "29108fbbf5fcd1af3dde50a38c06b5d61475690b8a72e35eb9d781d1d06a46aa",
+    "reviewed_scope_sha256": "9589eb19fb73759dbf1b7073c48d1e8811b7a9d62f90d341b718e3b3b239953e",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-28T08:48:48Z",
+    "payload_sha256": "05c31976c2c52bb8270a6d1040fa517fe0384f50abaeba4f98a022d2909af6d7",
+    "proof_ref": "owner-entscheidung nach anhalten und neu planen, sitzung 28.08.2026",
+    "valid_until": "2026-08-30T08:48:48Z"
+  },
+  "business_outcome": "Zwei Zusagen des Kits waren Behauptungen. Beide sind jetzt geprueft \u2014 und der neue Ketten-Fall macht eine Aussage im Waechter falsch, die sonst genau den Nutzer trifft, fuer den er gebaut wurde.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "core/testfaelle/ketten/06-recherche-zu-erstansprache.md",
+    "core/vertraege/account-recherche-zu-outreach-personalisierer.md",
+    "core/waechter/watchdog.md",
+    "docs/STATUS-BAU.md",
+    "docs/berichte/unbelegte-versprechen.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260828-016-erstansprache-kette.json"
+  ],
+  "id": "WO-20260828-016",
+  "in_scope": [
+    "Haltbarkeit des Uebergabeblocks ueber Sitzungsende messen; Ketten-Testfall 06 fuer die Schnittstelle account-recherche zu outreach-personalisierer; den outreach-Vertrag nachziehen; **core/waechter/watchdog.md nachziehen**, weil der neue Fall dessen Aussage widerlegt, der outreach-personalisierer komme in keiner Kette vor; Bericht, STATUS und Entscheidungen"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an Skills, an bestehenden Testfaellen, an der CLAUDE-Vorlage oder an Governance und reservierten Pfaden"
+  ],
+  "repository_context": {
+    "base_commit": "4034f583da51268b7524d009c0a2de5db9ac8314",
+    "branch": "wo-016-erstansprache-kette",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch verwerfen",
+  "status": "verified",
+  "title": "Erstansprache-Kette belegen und den Waechter nachziehen (Neuplanung nach PR 17)",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

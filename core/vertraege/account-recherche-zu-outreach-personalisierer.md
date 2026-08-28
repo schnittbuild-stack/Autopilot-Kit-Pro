@@ -51,11 +51,18 @@ Nie stilles Raten, nie ein Feld sinngemäß aus einem anderen ableiten.
 
 ## Testfälle für diese Schnittstelle
 
-**Kein vorhandener Testfall prüft diese Schnittstelle.**
-`outreach-personalisierer/01-duenne-faktenlage.md` sieht ähnlich aus, ist es
-aber nicht: Dort liegt **gar keine Recherche** vor, also geht auch kein
-`RECHERCHE-ERGEBNIS` hinein und keine der Empfängerregeln oben wird berührt.
+`core/testfaelle/ketten/06-recherche-zu-erstansprache.md` — zweistufig, prüft
+die Empfängerregeln oben an ihrer schärfsten Stelle: `Verhältnis: bestandskunde`
+bei ausdrücklichem Auftrag zur Erstansprache, fehlender `Ansprechpartner`, und
+eine Unbelegt-Liste, die genau die Sätze hergibt, die den Text lebendig machen
+würden. **3 von 3 am 28.08.2026** (`docs/berichte/unbelegte-versprechen.md`).
 
-Ein eigener Ketten-Fall ist damit **offen**, nicht optional — der Vertrag ist
-bis dahin geschrieben, aber unbelegt. Er gehört gebaut, sobald sich zeigt, dass
-die Schnittstelle im Alltag benutzt wird.
+`outreach-personalisierer/01-duenne-faktenlage.md` prüft diese Schnittstelle
+**nicht**, auch wenn es so aussieht: Dort liegt gar keine Recherche vor, also
+geht kein `RECHERCHE-ERGEBNIS` hinein und keine der Empfängerregeln oben wird
+berührt.
+
+**Was auch der neue Fall nicht prüft:** den Pflicht-Fall `Belegte Fakten: —`
+(kein Text, stattdessen benennen, welche Information reichen würde) und den
+Abbruch bei einem ganz fehlenden Listenfeld. Beides steht in der Tabelle oben
+und ist weiterhin unbelegt.
