@@ -161,12 +161,18 @@ wörtlicher Platzhalter. Das ist Pflicht-Fakt 1, und es ist eine **zweite,
 davon unabhängige Lücke** derselben Bauart.
 
 **Hier nicht angefasst**, aus zwei Gründen. `[kunde]` ist Konvention in allen
-fünf Fällen des `angebots-schreiber` — eine Änderung daran betrifft nicht diesen
-Fall, sondern die Sammlung. Und die eigentliche Frage ist keine der Eingabe,
+fünf Fällen des `angebots-schreiber` — eine Änderung daran betrifft nicht
+diesen Fall, sondern die Sammlung. Und die eigentliche Frage ist keine der Eingabe,
 sondern des Maßstabs: Ein Lauf, der ein Angebot schreibt und den Firmennamen wie
 `[PREIS PRÜFEN]` als Lücke kennzeichnet, und einer, der vorher fragt, sind beide
 vertretbar — die Bewertung sagt nicht, welcher gilt. **Das zu entscheiden ist
 eine Änderung am Kriterium und gehört dem Auftraggeber.**
+
+> **Überholt am 28.08.2026.** Der Auftraggeber hat beides entschieden: Die
+> Maskierung `[kunde]` ist aus allen Fällen verschwunden, und ohne Empfänger
+> entsteht kein Angebot — festgehalten im neuen Fall
+> `angebots-schreiber/06-fehlender-absender`. Einzelheiten in
+> `docs/berichte/testfall-widersprueche.md`.
 
 Die anderen vier Fälle sind davon nicht betroffen: `01` und `04` erwarten
 ausdrücklich eine Rückfrage, `02` misst seit dem 20.08. genau sie, und `05`

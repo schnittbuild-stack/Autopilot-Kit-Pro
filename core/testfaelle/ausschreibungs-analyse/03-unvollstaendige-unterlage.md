@@ -5,6 +5,12 @@
 > nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
 > wird nicht durch einen Praxisfall ersetzt.
 
+> **Korrigiert am 28.08.2026:** Die Adresse im Ausschreibungstext trug den
+> maskierten Platzhalter `[kunde]`. Kein Kriterium dieses Falls berührt ihn —
+> geändert wurde er nur, damit die Maskierung nicht an einer Stelle
+> stehenbleibt, während sie überall sonst verschwunden ist. Soll-Teil und
+> Bewertung unverändert.
+
 **Prüft:** Ob Lücken zu Bieterfragen werden oder zu Annahmen. Ausschreibungs-
 unterlagen sind formelhaft, und ein Modell kennt die üblichen Klauseln — es
 kann eine fehlende Bindefrist mühelos „ergänzen". Genau daraus entstehen
@@ -27,7 +33,7 @@ Umfang:
   - Vierteljährliche Wartung, Störungsbeseitigung nach Bedarf
   - Reaktionszeit bei Störung: 8 Stunden
 
-Angebote bitte an einkauf@[kunde].de.
+Angebote bitte an einkauf@lemke-molkereitechnik.de.
 Rückfragen an Herrn Weiland, Instandhaltung.
 ```
 

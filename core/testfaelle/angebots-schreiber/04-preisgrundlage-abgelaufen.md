@@ -11,7 +11,10 @@
 > Läufen zu Recht nach der Firma — was diesen Fall an einer Stelle scheitern
 > ließ, die er gar nicht prüft. Die Maskierung war nie eine protokollierte
 > Entscheidung; jeder andere Testfall im Repo benutzt erfundene Firmennamen.
-> **Geändert wurde ausschließlich die Eingabe** (Domain und Firmenzeile in der Signatur). Soll-Teil und
+> **Geändert wurde ausschließlich die Eingabe** (die vollständige
+> Absenderadresse — auch ihr lokaler Teil `m.k@` wurde zu `m.kessler@`,
+> damit sie zum Namen in der Signatur passt — sowie die Firmenzeile in der
+> Signatur). Soll-Teil und
 > Bewertung sind Wort für Wort unverändert. Hintergrund in
 > `docs/berichte/testfall-widersprueche.md`.
 

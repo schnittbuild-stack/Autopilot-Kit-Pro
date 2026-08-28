@@ -5,6 +5,10 @@
 > nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
 > wird nicht durch einen Praxisfall ersetzt.
 
+> **Korrigiert am 28.08.2026:** Das Feld `Empfänger` trug den maskierten
+> Platzhalter `[Kunde] AG`. Kein Kriterium berührt; geändert zur
+> Einheitlichkeit, nachdem die Maskierung überall sonst gewichen ist.
+
 **Prüft:** Ob ein fehlendes Vertragsfeld erkannt wird — oder ob es hilfsbereit
 aus dem Rest erschlossen wird. Genau hier verliert eine Agentenkette ihre
 Verlässlichkeit: Das Ableiten funktioniert meistens, und die Fälle, in denen
@@ -17,7 +21,7 @@ Der Nutzer sagt: *„Bitte einmal nachfassen."* und liefert:
 ```
 ÜBERGABE ANGEBOT
 Stand:            gesendet am 05.08.2026 über Mail
-Empfänger:        Sabine Ruhland, Einkaufsleitung, [Kunde] AG
+Empfänger:        Sabine Ruhland, Einkaufsleitung, Harnischfeger Verpackung AG
 Anrede:           Sie
 Verhältnis:       bestandskunde
 Angebot kurz:     Wartungsvertrag Förderanlagen, Laufzeit 24 Monate,
