@@ -17,8 +17,9 @@ Läufen am selben Tag, teils aus derselben Sitzung. Der Alltag sieht anders aus:
 Zwischen Angebot und Nachfassen liegt zwingend das Versenden, also Tage.
 
 **Aufbau.** Ein Kundenbaum mit einem Angebot vom **10.08.2026** — 18 Tage vor
-dem Testtag. Block B trägt vier scharf gestellte Felder, je eines für jede
-harte Regel des Vertrags `angebots-schreiber → follow-up-generator`:
+dem Testtag. Block B trägt vier scharf gestellte Felder — je eines für vier
+der **fünf** harten Regeln des Vertrags `angebots-schreiber →
+follow-up-generator`. Regel 5 kam nur beiläufig dran; dazu unten:
 
 | Feld | Inhalt | Prüft Regel |
 |---|---|---|
@@ -33,7 +34,7 @@ verschickt" — kein Wort vom Zwischenreview. Wer ihn benutzt, hat die Datei
 gelesen. Jeder Lauf startete als frischer Prozess ohne jedes Vorwissen; der
 Auftrag lautete nur: *„Ich will bei Kessler nachfassen."*
 
-**Ergebnis: 3 von 3 auf allen vier Regeln.**
+**Ergebnis: 3 von 3 auf allen vier scharf gestellten Regeln.**
 
 | | Lauf 1 | Lauf 2 | Lauf 3 |
 |---|---|---|---|
@@ -45,6 +46,23 @@ Auftrag lautete nur: *„Ich will bei Kessler nachfassen."*
 
 Ein Lauf sagte es selbst: *„Im Notizblock dazu steht, worauf beim Nachfassen
 der Aufhänger liegt — den nehme ich, statt mir einen eigenen auszudenken."*
+
+**Zur fünften Regel, die ich zuerst übersehen hatte.** Der Review zu diesem
+PR hat gemeldet, dass der Vertrag **fünf** harte Regeln hat und mein Bericht
+„je eines für jede" behauptete — eine Vollständigkeitsaussage ohne Deckung, in
+genau dem Dokument, das unbelegte Behauptungen schließen soll. Zutreffend.
+
+Regel 5 sagt: `Preisstand` ist eine reine Innenangabe — sie erscheint in keinem
+Kundentext, und ihr Fehlen löst **keine** Rückfrage aus. Nachgemessen an
+denselben drei Läufen, ohne neue: Mein Block B trug `Preisstand: —`, der
+Fehl-Fall war also da. In keinem der drei Kundentexte steht „Preisstand",
+„Preisdatei", „Preisliste" oder „Preisebene", und kein Lauf hat danach gefragt.
+**3 von 3.**
+
+**Was das trotzdem nicht zeigt:** Die schärfere Hälfte der Regel bleibt offen.
+Ein `Preisstand: —` kann nicht durchsickern, weil nichts drinsteht. Ob ein
+**gefüllter** Preisstand — Datei, Stand, Ebene — im Kundentext landet, ist
+ungeprüft. Genau das ist die Form, in der die Regel wehtut.
 
 Und die Regel aus WO-012 hält über den Zeitabstand hinweg mit: In allen drei
 Läufen wurde am alten Angebot **keine Zeile entfernt**, nur ein Vermerk
@@ -90,10 +108,13 @@ für eine Verschärfung; ich habe sie nicht vorgenommen.
 
 ## Was weiterhin unbelegt bleibt
 
-Der neue Fall prüft **nicht** den Pflicht-Fall `Belegte Fakten: —` (kein Text,
-stattdessen benennen, welche Sorte Information reichen würde) und nicht den
-Abbruch bei einem ganz fehlenden Listenfeld. Beides steht in der Tabelle des
-Vertrags und ist jetzt dort ausdrücklich als offen vermerkt.
+**Am `outreach`-Vertrag:** der Pflicht-Fall `Belegte Fakten: —` (kein Text,
+stattdessen benennen, welche Sorte Information reichen würde) und der Abbruch
+bei einem ganz fehlenden Listenfeld. Beides steht in der Tabelle des Vertrags
+und ist jetzt dort ausdrücklich als offen vermerkt.
+
+**Am Vertrag zum `follow-up-generator`:** Regel 5 mit einem **gefüllten**
+`Preisstand`, siehe oben. Der Fehl-Fall ist belegt, der gefüllte nicht.
 
 ## Ein Nebenbefund aus einem eigenen Fehler
 

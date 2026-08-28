@@ -1304,8 +1304,10 @@ des Auftraggebers brauchen.
    `docs/ketten01-untersuchung.md`.
 5. **Die zwei unbelegten Versprechen sind belegt** (28.08.). Der
    Übergabeblock überlebt die Sitzung: 18 Tage Abstand, frischer Prozess ohne
-   Vorwissen, Aufhänger nur in Block B — **3 von 3 auf allen vier harten Regeln**
-   des Vertrags. Und der `outreach`-Vertrag hat seinen Ketten-Testfall:
+   Vorwissen, Aufhänger nur in Block B — **3 von 3 auf vier scharf gestellten
+   Regeln**, plus Regel 5 in ihrer Fehl-Form beiläufig belegt. **Offen bleibt
+   Regel 5 mit gefülltem `Preisstand`** — ein leeres Feld kann nicht
+   durchsickern. Und der `outreach`-Vertrag hat seinen Ketten-Testfall:
    `ketten/06`, zweistufig, **3 von 3**. Damit sind es sechs Ketten-Fälle.
    `docs/berichte/unbelegte-versprechen.md`.
 
