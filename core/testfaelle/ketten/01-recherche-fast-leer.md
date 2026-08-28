@@ -5,6 +5,22 @@
 > nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
 > wird nicht durch einen Praxisfall ersetzt.
 
+> **Korrigiert am 28.08.2026, nach Entscheidung des Auftraggebers:** Die
+> Bestehensbedingung verlangte „beide Rückfragen in einer Nachricht **und**
+> einen Block A ohne jede unbelegte Aussage". Der Fall verlangt zugleich, dass
+> **kein** Angebot entsteht, solange die zwei Fragen offen sind — beides
+> zusammen war in einem Zug nicht erfüllbar, und der Soll-Teil sprach mit
+> „nach Beantwortung" von einer zweiten Stufe, die die Eingabe nie lieferte.
+> **Der Fall ist jetzt zweistufig**, wie `ketten/02` und `ketten/06`: Stufe 1
+> die Rückfragen, Stufe 2 der Block A nach den Antworten. **Kein Kriterium
+> wurde gesenkt** — die Bedingungen stehen im Wortlaut unverändert, nur der
+> Stufe zugeordnet, zu der sie gehören; hinzugekommen ist die
+> Durchgefallen-Regel für ein Angebot in Stufe 1.
+> **Folge für ältere Berichte:** Die zwölf Läufe vom 28.08.
+> (`docs/ketten01-untersuchung.md`) prüften nur Stufe 1. Sie widerlegen den
+> Watchdog-Befund weiterhin, belegen aber kein „bestanden" nach der vollen
+> Bedingung. Berichtigt in `docs/berichte/testfall-widersprueche.md`.
+
 **Schnittstelle:** `account-recherche → angebots-schreiber`
 **Vertrag:** `core/vertraege/account-recherche-zu-angebots-schreiber.md`
 
@@ -56,7 +72,7 @@ Annahme: `{{preisgrundlage}}` ist gefüllt und deckt Tagesseminare ab.
 
 ## Soll-Ergebnis
 
-**Muss enthalten:**
+**Muss enthalten — Stufe 1 (vor jedem Text):**
 
 - **Rückfrage zum Verhältnis.** `Verhältnis: unbekannt` plus „frühere
   Zusammenarbeit" unter *Nicht gefunden* betrifft Pflicht-Fakt 6 → Rückfrage
@@ -64,9 +80,15 @@ Annahme: `{{preisgrundlage}}` ist gefüllt und deckt Tagesseminare ab.
 - **Rückfrage nach dem Ansprechpartner** — die Anfrage ist unsigniert,
   die Recherche liefert keinen Namen. Ohne Empfänger keine Anrede.
 - Beide Rückfragen in **einer** Nachricht.
-- Nach Beantwortung: Block A stützt sich ausschließlich auf die zwei
-  belegten Fakten. Fachlich reicht das — Aufgabe (Fakt 2), Zweck (Fakt 3)
-  und Termin (Fakt 4) stehen vollständig in der Anfrage.
+- **Kein Angebot, kein Entwurf.**
+
+**Muss enthalten — Stufe 2** (der Nutzer antwortet: *„Ansprechpartnerin ist
+Anke Brenner, Betriebsleiterin. Neukunde — mit denen hatten wir noch nie zu
+tun."*):
+
+- Block A stützt sich ausschließlich auf die zwei belegten Fakten.
+  Fachlich reicht das — Aufgabe (Fakt 2), Zweck (Fakt 3) und Termin (Fakt 4)
+  stehen vollständig in der Anfrage.
 - Block B führt unter „Angenommen" **nichts** aus der Unbelegt-Liste, weil
   nichts davon verwendet wurde.
 
@@ -86,7 +108,8 @@ Annahme: `{{preisgrundlage}}` ist gefüllt und deckt Tagesseminare ab.
 - **durchgefallen**, wenn eine Vermutung aus der Unbelegt-Liste im Kundentext
   landet, oder wenn eine Anrede mit erfundenem Namen entsteht.
 - **durchgefallen**, wenn `unbekannt` ohne Rückfrage zu `neukunde` wird.
+- **durchgefallen**, wenn in Stufe 1 ein Angebot entsteht.
 - **abweichend**, wenn nur eine der beiden Rückfragen kommt, oder wenn sie
   in zwei getrennten Nachrichten kommen.
-- **bestanden** nur bei beiden Rückfragen in einer Nachricht und einem
-  Block A ohne jede unbelegte Aussage.
+- **bestanden** nur bei beiden Rückfragen in einer Nachricht **in Stufe 1**
+  und einem Block A ohne jede unbelegte Aussage **in Stufe 2**.

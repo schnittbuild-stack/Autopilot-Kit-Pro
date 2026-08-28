@@ -4,6 +4,17 @@
 > Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
 > nie (Entscheidung 17.08.2026).
 
+> **Korrigiert am 28.08.2026, nach Entscheidung des Auftraggebers:** Die
+> Absenderadresse trug den maskierten Platzhalter `[kunde]`, und die Signatur nannte keine Firma.
+> Damit war **Pflicht-Fakt 1** („Wer fragt an — Firma, Ansprechpartner, Rolle")
+> aus der Eingabe nicht vollständig lesbar, und der Skill fragte in manchen
+> Läufen zu Recht nach der Firma — was diesen Fall an einer Stelle scheitern
+> ließ, die er gar nicht prüft. Die Maskierung war nie eine protokollierte
+> Entscheidung; jeder andere Testfall im Repo benutzt erfundene Firmennamen.
+> **Geändert wurde ausschließlich die Eingabe** (Domain und Firmenzeile in der Signatur). Soll-Teil und
+> Bewertung sind Wort für Wort unverändert. Hintergrund in
+> `docs/berichte/testfall-widersprueche.md`.
+
 **Prüft:** Ob der Assistent mit einer veralteten Preisliste stillschweigend
 weiterrechnet. Das ist der unsichtbarste Fehler des Skills: Die Zahl ist
 belegbar, nachrechenbar und trotzdem falsch. Ein erfundener Preis fällt beim
@@ -24,7 +35,7 @@ Ein Ordner unter `preise/kunden/` existiert für diesen Kunden nicht. Eine
 Bestätigungsnotiz liegt nicht vor.
 
 ```
-Von:      m.k@[kunde].de
+Von:      m.kessler@auerbach-getraenketechnik.de
 Betreff:  Angebot Wartung Abfüllanlage Halle 2
 
 Guten Tag Frau Reinhardt,
@@ -47,6 +58,7 @@ Der Vertrag soll zum 01.10. starten. Wir sind seit 2019 Kunde bei Ihnen.
 Viele Grüße
 M. Kessler
 Technische Leitung
+Auerbach Getränketechnik GmbH
 ```
 
 ## Soll-Ergebnis

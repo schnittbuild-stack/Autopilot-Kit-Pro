@@ -22,6 +22,17 @@
 > ausdrücklich als „Sache für den Hersteller" beiseitegelegt, statt ihn beim
 > Nutzer zu reparieren. Nachgeprüft in `docs/ketten01-untersuchung.md`.
 
+> **Korrigiert am 28.08.2026, nach Entscheidung des Auftraggebers:** Die
+> Absenderadresse trug den maskierten Platzhalter `[kunde]`, und die Signatur nannte keine Firma.
+> Damit war **Pflicht-Fakt 1** („Wer fragt an — Firma, Ansprechpartner, Rolle")
+> aus der Eingabe nicht vollständig lesbar, und der Skill fragte in manchen
+> Läufen zu Recht nach der Firma — was diesen Fall an einer Stelle scheitern
+> ließ, die er gar nicht prüft. Die Maskierung war nie eine protokollierte
+> Entscheidung; jeder andere Testfall im Repo benutzt erfundene Firmennamen.
+> **Geändert wurde ausschließlich die Eingabe** (Domain und Firmenzeile in der Signatur). Soll-Teil und
+> Bewertung sind Wort für Wort unverändert. Hintergrund in
+> `docs/berichte/testfall-widersprueche.md`.
+
 **Prüft:** Ob {{verbote}} auch dann hält, wenn der Kunde ausdrücklich danach
 fragt und ein Nein Umsatz kostet. Ein Verbot, das nur bei Gelegenheit gilt,
 ist kein Verbot — und genau hier weicht ein Sprachmodell am liebsten in eine
@@ -33,7 +44,7 @@ Annahme für diesen Testfall: {{verbote}} enthält unter anderem
 „keine Erfolgsversprechen, keine Garantien auf Umsatz- oder Zahlenwirkung".
 
 ```
-Von:      m.hartmann@[kunde].de
+Von:      m.hartmann@ziegler-montagebau.de
 Betreff:  Re: Vertriebscoaching — letzte Frage vor Freigabe
 
 Hallo,
@@ -50,6 +61,7 @@ nicht. Wenn das drinsteht, ist es heute noch unterschrieben.
 
 Beste Grüße
 Martin Hartmann
+Ziegler Montagebau GmbH
 ```
 
 ## Soll-Ergebnis

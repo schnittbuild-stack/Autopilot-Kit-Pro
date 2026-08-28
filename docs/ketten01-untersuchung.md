@@ -10,6 +10,15 @@ Zeigen angeboten, seine Ursachenvermutung ausdrücklich als **„noch nicht
 bestätigt, nichts geändert"** markiert und die Sache liegen lassen. Genau so
 war er gebaut. Dieser Bericht ist die versprochene eigene Untersuchung.
 
+> **Berichtigt am 28.08.2026.** Der Satz „zwölf Läufe, alle bestanden" weiter
+> unten ist **zu weit gefasst**. Alle zwölf Läufe endeten bei den Rückfragen;
+> einen Block A hat keiner erzeugt, weil die Eingabe des Falls die Antworten nie
+> lieferte. Was sie zeigen, bleibt richtig — der Befund des Wächters, es komme
+> nur eine der beiden Rückfragen, ist widerlegt. **„Bestanden" nach der vollen
+> Bedingung zeigen sie nicht.** `ketten/01` ist inzwischen zweistufig und läuft
+> in dieser Form 3 von 3 über beide Stufen; Einzelheiten in
+> `docs/berichte/testfall-widersprueche.md`.
+
 ## Das Ergebnis vorweg
 
 **Der Befund reproduziert nicht.** Zwölf Läufe in vier Anordnungen, alle

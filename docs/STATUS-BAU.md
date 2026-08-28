@@ -1033,11 +1033,12 @@ Produkt geprüft wird (Anmerkung zur Redlichkeit im Bericht).
   Profilwissen steht beim Kunden wieder genau einmal, wie im Repo. Einzelheiten
   im Abschnitt „Baustein 1“ oben, Begründung in `docs/entscheidungen.md`.
   **Belegt** im wiederholten Abbruch-Test (Fälle 3 bis 5, 3 von 3).
-- **Testfall-Befund `einwand-sparring/03` — Entscheidung steht aus.** Der
-  Abschnitt `## Eingabe` enthält einen Absatz „Bewertungslage", der die
-  Soll-Bewertung weitgehend vorwegnimmt; der erzeugende Lauf bekommt die
-  Analyse also mitgeliefert. Vorschlag: Absatz in den Kriterienteil verschieben.
-  Der Fall ist bestanden — aber er prüft schwächer, als er aussieht.
+- **Erledigt (19.08.2026, am 28.08. nachgetragen): `einwand-sparring/03`.** Der
+  Absatz „Bewertungslage" stand im Eingabeteil und lieferte dem erzeugenden Lauf
+  die fertige Analyse mit. **Bereits am 19.08. in den Kriterienteil verschoben**,
+  mit Änderungsvermerk im Fall und eigenem Commit — diese Liste führte ihn nur
+  weiter als offen. Ein Befund an zwei Orten: im Fall und hier. Wer nur einen
+  pflegt, erzeugt Arbeit.
 - **Erledigt (19.08.2026): `{{preisgrundlage}}` entschieden.** Keine eigene
   Interviewfrage. Primärquelle ist `meine-unterlagen/preise/`; Frage 9 wird zur
   Materialfrage; bedingte Zusatzfrage nur, wenn kein Preismaterial da ist und
@@ -1272,15 +1273,15 @@ sind Verlauf.
    Sitzung ersetzen kann.
 2. **Drei kundeneigene Testfälle, von einem Testkäufer bestätigt** — die zweite
    Hälfte der Definition of Done von Phase 4. Braucht denselben Menschen.
-3. **Pflicht-Fakt 1 in den Eingaben des `angebots-schreiber`.** Der Widerspruch
-   zwischen Fall 02 und Fall 03 ist am 28.08. entschieden und behoben — das
-   Verhältnis steht jetzt in der Eingabe von Fall 03, die Bewertung ist
-   unverändert (0 von 3 vorher, 2 von 3 nachher). **Was bleibt:** Der dritte
-   Lauf fragt nach Firma und Rolle. `m.hartmann@[kunde].de` ist ein wörtlicher
-   Platzhalter, und `[kunde]` ist Konvention in allen fünf Fällen. Ob ein Lauf
-   den Firmennamen wie `[PREIS PRÜFEN]` als Lücke kennzeichnen darf oder vorher
-   fragen muss, sagt keine Bewertung — **das ist eine Änderung am Kriterium und
-   braucht eine Entscheidung.**
+3. **`angebots-schreiber/01` läuft 2 von 3 — neuer Befund vom 28.08.** Der Fall
+   verlangt **genau zwei** Fragen und begründet das damit, dass das
+   Bestandsverhältnis in der Mail stehe. Es steht dort nicht, es ist nur
+   **ableitbar** („Sie hatten mir Ihre Karte gegeben, ich komme jetzt darauf
+   zurück"). Zwei Läufe lasen die Ableitung als ausreichend, einer fragte nach
+   und fiel deshalb auf `abweichend`. **Dieselbe Familie wie die vier
+   Entscheidungen vom 28.08.:** Der Fall bestraft den, der nicht rät. Zwei Wege
+   offen — die Zeile in die Mail schreiben, oder die dritte Frage zulassen.
+   **Braucht eine Entscheidung.** `docs/berichte/testfall-widersprueche.md`.
 4. **Was am `outreach`-Vertrag weiterhin unbelegt ist.** Seine Empfängerregeln
    sind seit dem 28.08. durch `ketten/06-recherche-zu-erstansprache` belegt
    (3 von 3). **Nicht** geprüft sind zwei Zeilen seiner Tabelle: der
@@ -1328,6 +1329,15 @@ des Auftraggebers brauchen.
    meine Formulierung „ab dem nächsten PR greift die Änderung" ging zu weit.
    Die Pfad-Sperre ist beseitigt, die Aktivierungssperre nicht — das ist
    dieselbe Sache wie der Org-Zwang und braucht einen eigenen Auftrag.
+
+6. **Vier Testfall-Entscheidungen umgesetzt** (28.08.). Die `[kunde]`-Maskierung
+   ist raus — die fünf Angebots-Fälle tragen lesbare Firmennamen, wie jeder
+   andere Fall im Repo. Neu: `06-fehlender-absender` hält die Entscheidung fest,
+   dass ohne Empfänger kein Angebot entsteht. `follow-up-generator/02` verlangt
+   nicht mehr, dass der Helfer seinen eigenen Zeitpunkt für zu früh erklärt.
+   `ketten/01` ist zweistufig und erfüllt seine volle Bedingung erstmals.
+   Acht Fälle je dreimal nachgelaufen: siebenmal 3 von 3, einmal 2 von 3 (siehe
+   offenen Punkt 3). `docs/berichte/testfall-widersprueche.md`.
 
 **Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
 ist **zweimal beanstandet** worden — beim zweiten Mal, weil die neue Regel
