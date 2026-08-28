@@ -158,8 +158,8 @@ kein erfundener Firmenname.
 
 ## Die Maskierung ist restlos raus
 
-WO-017 hatte sie in den fünf Angebots-Fällen beseitigt. Vier Stellen blieben —
-eine hatte der Review gemeldet, drei fand die Gegenprobe:
+WO-017 hatte sie in den fünf Angebots-Fällen beseitigt. **Drei** Stellen
+blieben — eine hatte der Review gemeldet, zwei fand die Gegenprobe:
 
 | Stelle | vorher | jetzt |
 |---|---|---|

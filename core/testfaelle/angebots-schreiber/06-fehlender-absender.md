@@ -66,7 +66,7 @@ Thomas
 - Eine Anrede aus dem Vornamen allein („Sehr geehrter Herr Thomas").
 - Eine Frage nach etwas, das in der Anfrage steht: Leistung, Teilnehmerzahl,
   Dauer, Zeitraum, Ziel und das Bestandsverhältnis („Sie haben bei uns im
-  letzten Herbst schon eine Unterweisung gemacht, wir sind also keine
+  letzten Herbst schon eine Sicherheitsunterweisung gemacht, wir sind also keine
   Neukunden") sind alle da — ausdrücklich, nicht nur erschließbar.
 - Ein Angebot mit einer markierten Lücke an der Empfängerstelle — das ist
   genau der Weg, gegen den entschieden wurde.

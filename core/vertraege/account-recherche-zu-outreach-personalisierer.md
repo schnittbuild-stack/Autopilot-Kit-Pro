@@ -62,7 +62,16 @@ würden. **3 von 3 am 28.08.2026** (`docs/berichte/unbelegte-versprechen.md`).
 geht kein `RECHERCHE-ERGEBNIS` hinein und keine der Empfängerregeln oben wird
 berührt.
 
-**Was auch der neue Fall nicht prüft:** den Pflicht-Fall `Belegte Fakten: —`
-(kein Text, stattdessen benennen, welche Information reichen würde) und den
-Abbruch bei einem ganz fehlenden Listenfeld. Beides steht in der Tabelle oben
-und ist weiterhin unbelegt.
+`core/testfaelle/ketten/07-recherche-ohne-belege.md` — der Pflicht-Fall
+`Belegte Fakten: —`: kein Text, stattdessen benennen, welche Sorten Information
+einen Aufhänger trügen, `account-recherche` anbieten und sagen, wonach schon
+vergeblich gesucht wurde. **3 von 3 am 28.08.2026.**
+
+`core/testfaelle/ketten/08-fehlendes-listenfeld.md` — der Abbruch bei einem ganz
+fehlenden Listenfeld, geprüft an der unbequemsten Stelle: Ein belegter, sofort
+verwendbarer Aufhänger liegt vor, und es wird trotzdem abgebrochen.
+**3 von 3 am 28.08.2026.**
+
+**Damit ist jede Zeile der Tabelle oben belegt.** Der Vertrag war vom 27. bis
+zum 28.08.2026 geschrieben und unbelegt; er hat das selbst ausgewiesen, statt
+es zu verschweigen.

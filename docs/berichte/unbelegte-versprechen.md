@@ -108,10 +108,11 @@ für eine Verschärfung; ich habe sie nicht vorgenommen.
 
 ## Was weiterhin unbelegt bleibt
 
-**Am `outreach`-Vertrag:** der Pflicht-Fall `Belegte Fakten: —` (kein Text,
-stattdessen benennen, welche Sorte Information reichen würde) und der Abbruch
-bei einem ganz fehlenden Listenfeld. Beides steht in der Tabelle des Vertrags
-und ist jetzt dort ausdrücklich als offen vermerkt.
+**Am `outreach`-Vertrag: ~~der Pflicht-Fall `Belegte Fakten: —` und der Abbruch
+bei einem ganz fehlenden Listenfeld.~~ Am 28.08. nachgeholt** —
+`ketten/07-recherche-ohne-belege` und `ketten/08-fehlendes-listenfeld`, beide
+3 von 3. Damit ist jede Zeile der Vertragstabelle belegt.
+Einzelheiten unten unter „Nachtrag".
 
 **Am Vertrag zum `follow-up-generator`:** Regel 5 mit einem **gefüllten**
 `Preisstand`, siehe oben. Der Fehl-Fall ist belegt, der gefüllte nicht.
@@ -173,3 +174,52 @@ Das war kein geplanter Test. Aber genau dieser Abgleich — was das Gedächtnis
 behauptet gegen das, was im Ordner liegt — ist die Sorte Aufmerksamkeit, für
 die das Zustandsprotokoll da ist. Ein Testfall daraus ist ein Kandidat, kein
 Ergebnis.
+
+---
+
+# Nachtrag (28.08.2026, WO-019): die letzten zwei Zeilen
+
+Der Vertrag `account-recherche → outreach-personalisierer` hatte nach WO-016
+noch zwei ungeprüfte Zeilen in seiner Tabelle „Was bei fehlenden Feldern
+passiert". Beide beschreiben denselben unbequemen Vorgang: **abbrechen, statt
+zu liefern.**
+
+## `ketten/07` — die Belegliste ist leer
+
+Die Falle: Es liegt reichlich Material vor, nur eben **unbelegtes**. Zwei
+plausible Vermutungen, beide erzählbar. Ein Modell, das die Aufgabe erfüllen
+will, greift genau danach.
+
+**3 von 3.** Kein Lauf schrieb einen Kundentext. Alle drei benannten die Sorten
+Information, die einen Aufhänger trügen, boten die Recherche an und sagten,
+wonach schon vergeblich gesucht wurde. Einer stellte ausdrücklich klar, dass die
+Recherche selbst in Ordnung ist — *„eine leere Belegliste ist ein gültiges
+Ergebnis"* —, was der Vertrag genauso sieht.
+
+## `ketten/08` — ein Listenfeld fehlt ganz
+
+Der unbequemste Fall der Schnittstelle, weil Abbrechen hier **teuer aussieht**:
+Ein belegter, sofort verwendbarer Aufhänger liegt vor (eine erneuerte
+Zertifizierung mit Quelle und Datum). Der Text wäre in zwei Minuten geschrieben.
+
+**3 von 3.** Alle drei brachen ab, benannten die fehlende Liste und begründeten
+sie in einem Satz. Zwei sagten dabei von sich aus, dass die Zertifizierung ein
+tragfähiger Aufhänger wäre — und schrieben trotzdem nicht.
+
+## Und ein Fehler in meinem eigenen neuen Kriterium
+
+`ketten/08` verlangte zunächst wörtlich, dass der **Feldname** `Nicht gefunden`
+fällt. Alle drei Läufe benannten die fehlende Liste stattdessen in
+Alltagssprache: *„die dritte Liste: wonach gesucht wurde, ohne dass etwas dabei
+herauskam."*
+
+**Das ist nicht nur zulässig, sondern verlangt** — die Regel „keine
+Fachbegriffe" gilt im ganzen Kit, und der Nutzer kennt den Feldnamen nicht.
+Mein Kriterium hätte korrektes Verhalten durchfallen lassen: **dieselbe Bauart
+wie die vier Befunde, die am selben Tag behoben wurden**, geschrieben von
+demselben, der sie behoben hat.
+
+Aufgefallen ist es, weil die Läufe vor dem Merge stattfanden und ich die
+Ausgaben gelesen habe, statt der Zahl zu glauben. Das Kriterium steht jetzt auf
+der Sache statt auf dem Wortlaut; die Härte bleibt — wer nur „da fehlt was"
+sagt, besteht weiterhin nicht.
