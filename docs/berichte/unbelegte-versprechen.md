@@ -23,7 +23,7 @@ follow-up-generator`. Regel 5 kam nur beiläufig dran; dazu unten:
 
 | Feld | Inhalt | Prüft Regel |
 |---|---|---|
-| `Stand` | `gesendet am 10.08.2026 über Mail` | 1 — kein Nachfassen bei `entwurf` |
+| `Stand` | `gesendet am 10.08.2026 über Mail` | 1 — **nur der freigebende Zweig**: dass ein Text entstehen *darf*. Der sperrende Zweig (`entwurf` → Rückfrage) wird hier nicht ausgelöst; den prüft `ketten/02` |
 | `Abgelehnt` | die Erfolgsgarantie auf die Abschlussquote | 2 — Abgelehntes bleibt zu |
 | `Summe` | `[PREIS PRÜFEN]` | 3 — Marke nie im Kundentext |
 | `Nachfassen` | Aufhänger: das Zwischenreview nach Termin 2 | 4 — vorgegebener Aufhänger bindend |
