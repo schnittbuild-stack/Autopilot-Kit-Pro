@@ -1274,12 +1274,7 @@ sind Verlauf.
    Sitzung ersetzen kann.
 2. **Drei kundeneigene Testfälle, von einem Testkäufer bestätigt** — die zweite
    Hälfte der Definition of Done von Phase 4. Braucht denselben Menschen.
-3. **Was am `outreach`-Vertrag weiterhin unbelegt ist.** Seine Empfängerregeln
-   sind seit dem 28.08. durch `ketten/06-recherche-zu-erstansprache` belegt
-   (3 von 3). **Nicht** geprüft sind zwei Zeilen seiner Tabelle: der
-   Pflicht-Fall `Belegte Fakten: —` und der Abbruch bei einem ganz fehlenden
-   Listenfeld. Im Vertrag selbst vermerkt.
-4. **Die kopflose Auswertung war blind für alles außer der letzten Nachricht.**
+3. **Die kopflose Auswertung war blind für alles außer der letzten Nachricht.**
    `claude -p` gibt nur diese aus; ein Lauf, der die Arbeit tut und danach den
    Zwischenstand aufräumt, wurde als abweichend gezählt. Ein Lauf von neun am
    28.08. Der Fehler geht immer in dieselbe Richtung — bestanden wird zu
@@ -1338,6 +1333,15 @@ des Auftraggebers brauchen.
    ist jetzt **restlos** raus, auch aus `ausschreibungs-analyse/03`,
    `ketten/02` und `follow-up-generator/01`. Fünf Fälle nachgelaufen, fünfmal
    3 von 3. `docs/berichte/testfall-widersprueche.md`.
+
+8. **Der `outreach`-Vertrag ist vollständig belegt** (28.08.). Die letzten
+   zwei Zeilen seiner Tabelle — leere Belegliste und ganz fehlendes Listenfeld —
+   haben mit `ketten/07` und `ketten/08` eigene Fälle, beide **3 von 3**. Damit
+   acht Ketten-Fälle. **Dabei ein Fehler in meinem eigenen neuen Kriterium:**
+   `ketten/08` verlangte wörtlich den Feldnamen `Nicht gefunden`, während alle
+   drei Läufe ihn regelkonform in Alltagssprache umschrieben — dieselbe Bauart
+   wie die vier Befunde vom selben Tag. Vor dem Merge korrigiert.
+   `docs/berichte/unbelegte-versprechen.md`.
 
 **Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
 ist **zweimal beanstandet** worden — beim zweiten Mal, weil die neue Regel

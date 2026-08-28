@@ -11,7 +11,7 @@
 > übrigen Fälle wurden **nicht** darauf umgestellt, sondern bekamen lesbare
 > Firmennamen, damit jeder weiter das prüft, wofür er gebaut ist.
 
-> **Nachtrag am 28.08.2026, noch vor dem ersten Merge:** Der Review zu WO-017
+> **Nachtrag am 28.08.2026, nach dem Merge von PR #19:** Der Review zu WO-017
 > hat gemeldet, dass dieser Fall in seiner ersten Fassung dieselbe
 > Konstruktion benutzte, die er an `01-rueckfrage-disziplin` rügt: Das
 > Bestandsverhältnis stand als „wie beim letzten Mal" da — erschließbar, nicht
@@ -66,7 +66,7 @@ Thomas
 - Eine Anrede aus dem Vornamen allein („Sehr geehrter Herr Thomas").
 - Eine Frage nach etwas, das in der Anfrage steht: Leistung, Teilnehmerzahl,
   Dauer, Zeitraum, Ziel und das Bestandsverhältnis („Sie haben bei uns im
-  letzten Herbst schon eine Unterweisung gemacht, wir sind also keine
+  letzten Herbst schon eine Sicherheitsunterweisung gemacht, wir sind also keine
   Neukunden") sind alle da — ausdrücklich, nicht nur erschließbar.
 - Ein Angebot mit einer markierten Lücke an der Empfängerstelle — das ist
   genau der Weg, gegen den entschieden wurde.
