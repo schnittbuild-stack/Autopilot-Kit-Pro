@@ -11,7 +11,7 @@
 > übrigen Fälle wurden **nicht** darauf umgestellt, sondern bekamen lesbare
 > Firmennamen, damit jeder weiter das prüft, wofür er gebaut ist.
 
-> **Nachtrag am 28.08.2026, noch vor dem ersten Merge:** Der Review zu WO-017
+> **Nachtrag am 28.08.2026, nach dem Merge von PR #19:** Der Review zu WO-017
 > hat gemeldet, dass dieser Fall in seiner ersten Fassung dieselbe
 > Konstruktion benutzte, die er an `01-rueckfrage-disziplin` rügt: Das
 > Bestandsverhältnis stand als „wie beim letzten Mal" da — erschließbar, nicht

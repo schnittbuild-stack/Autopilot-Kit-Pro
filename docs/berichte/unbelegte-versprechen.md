@@ -223,3 +223,22 @@ Aufgefallen ist es, weil die Läufe vor dem Merge stattfanden und ich die
 Ausgaben gelesen habe, statt der Zahl zu glauben. Das Kriterium steht jetzt auf
 der Sache statt auf dem Wortlaut; die Härte bleibt — wer nur „da fehlt was"
 sagt, besteht weiterhin nicht.
+
+## Ein Nachtrag zum Nachtrag
+
+Der Review zu diesem Paket hat gemeldet, dass einer der drei zugesagten
+Textfehler **nicht** behoben war: „noch vor dem ersten Merge" stand weiter in
+`06-fehlender-absender`, während PR-Text und Commit-Nachricht ihn als erledigt
+führten.
+
+Die Ursache ist unspektakulär und trotzdem lehrreich: Mein Korrekturskript
+enthielt beide Änderungen und brach an der zweiten mit einer Assertion ab —
+**bevor** es die Datei schrieb. Die erste war damit ebenfalls weg. Ich habe die
+zweite danach einzeln nachgezogen und die erste für erledigt gehalten, ohne
+nachzusehen.
+
+**Die Lehre ist nicht „sorgfältiger sein", sondern:** Wer eine Zusage schreibt,
+prüft sie am Ergebnis, nicht am Vorsatz. Ein `grep` über die behauptete
+Korrektur hätte zehn Sekunden gekostet. Gefunden hat es wieder der unabhängige
+Review.
+
