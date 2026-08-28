@@ -1,8 +1,9 @@
 # Die zwei unbelegten Versprechen (28.08.2026)
 
 Zwei Zusagen des Kits waren bis heute Behauptungen. Auf beiden ruht die Kette —
-zwei Verträge, sechs Ketten-Testfälle und ein wöchentlicher Wächter. Hält eine
-nicht, ist die Arbeit aus drei Work Orders wirkungslos, und wir wüssten es nicht.
+zwei Verträge, sechs Ketten-Testfälle (Stand bei Beginn dieser Arbeit; es sind
+inzwischen acht) und ein wöchentlicher Wächter. Hält eine nicht, ist die Arbeit
+aus drei Work Orders wirkungslos, und wir wüssten es nicht.
 
 **Beide halten. 3 von 3 und 3 von 3.**
 

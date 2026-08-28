@@ -203,3 +203,25 @@ Kundentext nicht vorkommt. Genau das verlangt Regel 2 des Vertrags.
 - Der Änderungsvermerk in `04-preisgrundlage-abgelaufen` nannte „Domain und
   Firmenzeile"; geändert wurde auch der lokale Teil der Adresse (`m.k@` →
   `m.kessler@`). Präzisiert.
+
+## Ein Hinweis, der zweimal durchgerutscht ist
+
+Der Review zu WO-018 gab **fünf** nicht blockierende Hinweise; Work Order und
+PR-Text der Folgearbeit nannten **vier**. Der fünfte war der operative:
+`docs/ketten01-untersuchung.md` liegt in keinem `ordinary_paths`-Muster, der
+Pull Request kann also nicht über die ordentliche Merge-Spur laufen.
+
+Er ist **weder erledigt noch bewusst offengelassen** worden — er ist beim Zählen
+verlorengegangen. Hiermit ausdrücklich offen:
+
+> **Offen, Owner-Entscheidung.** Die 14 Berichte bis zum 27.08.2026 liegen in
+> `docs/` und sind nicht „gewöhnlich". Solange keiner von ihnen mehr angefasst
+> wird, kostet das nichts. Zweimal ist es inzwischen doch passiert
+> (`ketten01-untersuchung.md` in PR #19 und #20). Entweder ziehen die alten
+> Berichte nach `docs/berichte/` um — rund 25 Dateien mit Verweisen, darunter
+> die reservierte `CLAUDE.md` —, oder es bleibt bei der manuellen Spur für
+> diese seltenen Fälle. Steht so auch in `docs/berichte/README.md`.
+
+**Die Lehre ist nicht neu, sondern dieselbe wie oben:** Ein Befund, der als Zahl
+weitergegeben wird („vier Hinweise"), verliert unterwegs seinen Inhalt. Wer
+zählt, statt zu benennen, merkt den Verlust nicht.
