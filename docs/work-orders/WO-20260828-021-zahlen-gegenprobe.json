@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/23#issuecomment-5455216625",
+    "reviewed_at": "2026-08-28T16:45:23Z",
+    "reviewed_payload_sha256": "76a3601711fe7f210cb870564ca9355943d55f5760307648633eac340914b957",
+    "reviewed_scope_sha256": "0ac09b652b11ac0566f79d97aa9582dd8c7d59d265b8d7d66a1f8b8ca44b64bf",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-28T16:25:19Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "23fcc2a5f735bf8e06344a9068f6052b5985ac2cf08d50b1b952f990d9d3bdce",
     "proof_ref": "owner-auftrag mach weiter, sitzung 28.08.2026",
     "valid_until": "2026-08-30T16:25:19Z"
   },
@@ -43,7 +43,7 @@
     "Die zwei letzten Review-Hinweise aus WO-020; eine Gegenprobe ueber alle Bestandsaussagen in core/ und adapter-claude/; die gefundenen Aufzaehlungen in vier Skills durch Verweise auf die Quelle ersetzen, statt die Zahlen nachzuziehen; je einen Fall der vier betroffenen Helfer dreimal nachlaufen lassen; Bericht, STATUS, Entscheidungen"
   ],
   "out_of_scope": [
-    "Keine Verhaltensregel in den Skills angefasst — nur die Testfall-Abschnitte am Ende; keine Testfaelle geaendert; keine Governance, keine reservierten Pfade; kein Vollnachlauf ueber alle 41 Faelle, der Umfang wird im Bericht ausdruecklich benannt"
+    "Keine Verhaltensregel in den Skills angefasst \u2014 nur die Testfall-Abschnitte am Ende; keine Testfaelle geaendert; keine Governance, keine reservierten Pfade; kein Vollnachlauf ueber alle 41 Faelle, der Umfang wird im Bericht ausdruecklich benannt"
   ],
   "repository_context": {
     "base_commit": "5c51d047e4a595abb7457596c13babf7074ea38e",
@@ -52,8 +52,8 @@
   },
   "risk_class": "B",
   "rollback": "Branch verwerfen",
-  "status": "executing",
-  "title": "Gegenprobe auf veraltete Bestandsaussagen — vier Skills zeigen jetzt auf die Quelle",
+  "status": "verified",
+  "title": "Gegenprobe auf veraltete Bestandsaussagen \u2014 vier Skills zeigen jetzt auf die Quelle",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
   ]
