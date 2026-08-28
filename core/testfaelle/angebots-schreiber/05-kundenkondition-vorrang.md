@@ -4,6 +4,17 @@
 > Echte Praxisfälle liegen unter `testfaelle-praxis/` und verlassen das Repo
 > nie (Entscheidung 17.08.2026).
 
+> **Korrigiert am 28.08.2026, nach Entscheidung des Auftraggebers:** Die
+> Absenderadresse trug den maskierten Platzhalter `[kunde]`, und die Firma stand nur in der Signatur („Nordwerk Armaturen GmbH"), nicht in der Adresse.
+> Damit war **Pflicht-Fakt 1** („Wer fragt an — Firma, Ansprechpartner, Rolle")
+> aus der Eingabe nicht vollständig lesbar, und der Skill fragte in manchen
+> Läufen zu Recht nach der Firma — was diesen Fall an einer Stelle scheitern
+> ließ, die er gar nicht prüft. Die Maskierung war nie eine protokollierte
+> Entscheidung; jeder andere Testfall im Repo benutzt erfundene Firmennamen.
+> **Geändert wurde ausschließlich die Eingabe** (nur die Domain). Soll-Teil und
+> Bewertung sind Wort für Wort unverändert. Hintergrund in
+> `docs/berichte/testfall-widersprueche.md`.
+
 **Prüft:** Ob der Assistent die Rangfolge je Position einhält, auch wenn die
 allgemeine Preisliste günstiger ist als der Rahmenvertrag. Der Reflex, dem
 Kunden den niedrigeren Preis zu geben, ist freundlich gemeint und bricht einen
@@ -32,7 +43,7 @@ Der Rahmenvertrag ist damit bei der Monteurstunde **teurer** als die aktuelle
 Preisliste.
 
 ```
-Von:      beschaffung@[kunde].de
+Von:      beschaffung@nordwerk-armaturen.de
 Betreff:  Angebot Umbau Ventilinsel + Schulung
 
 Guten Tag Frau Reinhardt,

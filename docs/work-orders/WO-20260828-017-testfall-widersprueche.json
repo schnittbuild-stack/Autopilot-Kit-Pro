@@ -1,0 +1,62 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/19#issuecomment-5451530232",
+    "reviewed_at": "2026-08-28T10:41:54Z",
+    "reviewed_payload_sha256": "1ed625b6d3912ac82c825e5e8568da1393e3c53a642af9d5e69b94bb164ee77b",
+    "reviewed_scope_sha256": "cfdaf26a5ccbb0e72abfa10b8067971e91b757fda29fe7e01ab00ce3b2c39eed",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-28T10:33:47Z",
+    "payload_sha256": "c1e452c123da56653e6d4d65316ee7c2a3fb9c747efe027b990bf45da7c5f427",
+    "proof_ref": "owner-entscheidung vier testfall-befunde, sitzung 28.08.2026",
+    "valid_until": "2026-08-30T10:33:47Z"
+  },
+  "business_outcome": "Testfaelle, die dem Skill widersprechen, melden richtiges Verhalten als Fehler. Vier solche Stellen waren bekannt und unentschieden; sie haben schon zweimal dazu gefuehrt, dass regelkonforme Laeufe durchfielen.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "core/testfaelle/angebots-schreiber/01-rueckfrage-disziplin.md",
+    "core/testfaelle/angebots-schreiber/02-budget-konflikt.md",
+    "core/testfaelle/angebots-schreiber/03-verbots-kollision.md",
+    "core/testfaelle/angebots-schreiber/04-preisgrundlage-abgelaufen.md",
+    "core/testfaelle/angebots-schreiber/05-kundenkondition-vorrang.md",
+    "core/testfaelle/angebots-schreiber/06-fehlender-absender.md",
+    "core/testfaelle/follow-up-generator/02-kein-anlass.md",
+    "core/testfaelle/ketten/01-recherche-fast-leer.md",
+    "docs/STATUS-BAU.md",
+    "docs/berichte/testfall-widersprueche.md",
+    "docs/entscheidungen.md",
+    "docs/ketten01-untersuchung.md",
+    "docs/work-orders/WO-20260828-017-testfall-widersprueche.json"
+  ],
+  "id": "WO-20260828-017",
+  "in_scope": [
+    "Die [kunde]-Maskierung in den fuenf Angebots-Faellen durch lesbare Firmennamen ersetzen; neuen Fall 06 fuer die Entscheidung, dass ohne Empfaenger kein Angebot entsteht; follow-up-generator/02 von der Zeitregel-Kollision befreien; ketten/01 zweistufig machen; meinen zu weit gefassten ketten/01-Bericht berichtigen; alle betroffenen Faelle dreimal laufen lassen; STATUS, Entscheidungen und Bericht"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an Skills oder Vertraegen; keine Aenderung an Governance oder reservierten Pfaden; einwand-sparring/03 wird nicht angefasst \u2014 der Befund war am 19.08. bereits behoben, nur der STATUS fuehrte ihn noch als offen"
+  ],
+  "repository_context": {
+    "base_commit": "f892d293018bf3e03eebe2584bc14ab4cd0655cf",
+    "branch": "wo-017-testfall-widersprueche",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch verwerfen",
+  "status": "verified",
+  "title": "Vier Testfall-Entscheidungen umgesetzt: Maskierung raus, drei Widersprueche aufgeloest",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

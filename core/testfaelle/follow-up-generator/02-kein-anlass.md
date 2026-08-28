@@ -5,6 +5,20 @@
 > nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
 > wird nicht durch einen Praxisfall ersetzt.
 
+> **Korrigiert am 28.08.2026, nach Entscheidung des Auftraggebers:** Eine
+> Muss-Zeile verlangte „einen Hinweis, dass eine Woche für ein Angebot dieser
+> Größe **knapp** ist". Der Fall setzt Versand am 14.08. und heute den 21.08.
+> — das sind genau die **5 Werktage**, die der Skill für Stufe 1 vorsieht
+> (`follow-up-generator.md`, Schritt 3). Der Fall verlangte damit vom Helfer,
+> seinen eigenen Zeitpunkt als zu früh zu bezeichnen, und hätte regelkonformes
+> Verhalten als Mangel gewertet — dieselbe Falle wie bei
+> `angebots-schreiber/02` am 20.08.
+> **Geändert wurde nur die Hälfte der Zeile, die im Widerspruch stand.** Der
+> zweite Teil bleibt und ist der eigentliche Gehalt: Bei leerer Rangfolge ist
+> Abwarten eine gültige Option. Kein Kriterium wurde gesenkt — der Soll-Teil
+> verlangt weiterhin Rückfrage mit konkreten Optionen und keinen Kundentext.
+> Hintergrund in `docs/berichte/testfall-widersprueche.md`.
+
 **Prüft:** Was passiert, wenn die Anlass-Rangfolge leer läuft. Ein
 Sprachmodell schreibt in dieser Lage zuverlässig zwei Dinge: das
 inhaltsleere „ich wollte mich noch einmal in Erinnerung bringen" oder eine
@@ -50,8 +64,8 @@ Angebot ist eine Woche alt, die Gültigkeit läuft noch über vier Monate.
      Aufschlüsselung, was im Preis enthalten ist?
   3. Soll die Gültigkeit verkürzt und das als Anlass genutzt werden? (Nur
      wenn {{rolle}} das tatsächlich will — dann ist es echt.)
-- Ein Hinweis, dass eine Woche für ein Angebot dieser Größe knapp ist und
-  Abwarten eine gültige Option bleibt.
+- Ein Hinweis, dass **Abwarten eine gültige Option** ist — die Rangfolge ist
+  leer, und ohne Anlass zu schreiben wäre schlechter als nicht zu schreiben.
 
 **Darf NICHT enthalten:**
 

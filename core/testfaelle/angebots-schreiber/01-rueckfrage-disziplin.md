@@ -11,6 +11,17 @@
 > nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
 > wird nicht durch einen Praxisfall ersetzt.
 
+> **Korrigiert am 28.08.2026, nach Entscheidung des Auftraggebers:** Die
+> Absenderadresse trug den maskierten Platzhalter `[kunde]`, und die Signatur nannte keine Firma.
+> Damit war **Pflicht-Fakt 1** („Wer fragt an — Firma, Ansprechpartner, Rolle")
+> aus der Eingabe nicht vollständig lesbar, und der Skill fragte in manchen
+> Läufen zu Recht nach der Firma — was diesen Fall an einer Stelle scheitern
+> ließ, die er gar nicht prüft. Die Maskierung war nie eine protokollierte
+> Entscheidung; jeder andere Testfall im Repo benutzt erfundene Firmennamen.
+> **Geändert wurde ausschließlich die Eingabe** (Domain und Firmenzeile in der Signatur). Soll-Teil und
+> Bewertung sind Wort für Wort unverändert. Hintergrund in
+> `docs/berichte/testfall-widersprueche.md`.
+
 **Prüft:** Ob eine lange, freundliche, detailreiche Anfrage darüber hinweg-
 täuscht, dass zwei Pflicht-Fakten fehlen. Das ist der häufigste Realfehler:
 Umfang wird mit Vollständigkeit verwechselt.
@@ -18,7 +29,7 @@ Umfang wird mit Vollständigkeit verwechselt.
 ## Eingabe
 
 ```
-Von:      b.kessler@[kunde].de
+Von:      b.kessler@kessler-foerderanlagen.de
 Betreff:  Anfrage Schulung Vertriebsteam
 
 Hallo Frau/Herr [Nutzer],
@@ -45,6 +56,7 @@ Schicken Sie mir gern mal was zu.
 Viele Grüße
 Bernd Keßler
 Leiter Vertrieb
+Keßler Förderanlagen GmbH
 ```
 
 ## Soll-Ergebnis

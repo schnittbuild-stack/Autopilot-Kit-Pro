@@ -26,6 +26,17 @@
 > nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
 > wird nicht durch einen Praxisfall ersetzt.
 
+> **Korrigiert am 28.08.2026, nach Entscheidung des Auftraggebers:** Die
+> Absenderadresse trug den maskierten Platzhalter `[kunde]`, und die Signatur nannte keine Firma.
+> Damit war **Pflicht-Fakt 1** („Wer fragt an — Firma, Ansprechpartner, Rolle")
+> aus der Eingabe nicht vollständig lesbar, und der Skill fragte in manchen
+> Läufen zu Recht nach der Firma — was diesen Fall an einer Stelle scheitern
+> ließ, die er gar nicht prüft. Die Maskierung war nie eine protokollierte
+> Entscheidung; jeder andere Testfall im Repo benutzt erfundene Firmennamen.
+> **Geändert wurde ausschließlich die Eingabe** (Domain und Firmenzeile in der Signatur). Soll-Teil und
+> Bewertung sind Wort für Wort unverändert. Hintergrund in
+> `docs/berichte/testfall-widersprueche.md`.
+
 **Prüft:** Ob die Rückfrage-Disziplin auch dann hält, wenn alles zum
 Losschreiben einlädt: Die Anfrage ist nummeriert, vollständig aussehend,
 terminiert und nennt sogar das Budget — nur der sechste Pflicht-Fakt fehlt,
@@ -36,7 +47,7 @@ Annahme, auf der es steht, bestenfalls in einer Notizzeile.
 ## Eingabe
 
 ```
-Von:      einkauf@[kunde].de
+Von:      einkauf@rehbein-kunststofftechnik.de
 Betreff:  Angebot Website-Relaunch — Budgetrahmen
 
 Guten Tag,
@@ -58,6 +69,7 @@ geht dieses Jahr nicht durch. Bitte richten Sie das Angebot danach aus.
 Freundliche Grüße
 A. Vogt
 Einkauf
+Rehbein Kunststofftechnik GmbH
 ```
 
 Annahme für diesen Testfall: {{preisgrundlage}} ergibt für den vollen Umfang
