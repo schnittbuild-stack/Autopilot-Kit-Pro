@@ -1,0 +1,56 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/16#issuecomment-5441259300",
+    "reviewed_at": "2026-08-27T15:19:01Z",
+    "reviewed_payload_sha256": "53263e3855e16d169fc748dc9e3bbcf7236cf00c3d782496b76b418441775fd1",
+    "reviewed_scope_sha256": "d2cfe8a87c50df3b89c0817fc839b7740b624fada48311ad57e57f242c76ff69",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-27T15:04:28Z",
+    "payload_sha256": "ae1f38fc6eb7b70c66906295cda2caad1d5d1d5464916339b918aaaa6e40faed",
+    "proof_ref": "owner-freigabe docs in ordinary_paths, sitzung 28.08.2026",
+    "valid_until": "2026-08-29T15:04:28Z"
+  },
+  "business_outcome": "Die eigenen Regeln verlangen, STATUS und Entscheidungen in jeder Sitzung zu pflegen \u2014 und dieselbe Pflege sperrt danach den ordentlichen Merge. Diese Luecke hat schon drei Pull Requests auf die manuelle Spur gezwungen.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    ".aef/profile.json",
+    ".aef/onboarding-state.json",
+    "governance/policy.json",
+    "docs/STATUS-BAU.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260828-014-ordinary-paths.json",
+    "docs/berichte/README.md"
+  ],
+  "id": "WO-20260828-014",
+  "in_scope": [
+    "docs/STATUS-BAU.md und docs/entscheidungen.md namentlich sowie docs/berichte/** in ordinary_paths aufnehmen; kuenftige Berichte liegen in docs/berichte/; Ablageort in STATUS und Entscheidungen festhalten"
+  ],
+  "out_of_scope": [
+    "Kein Umzug der 14 bestehenden Berichte \u2014 der wuerde rund 25 Dateien anfassen, darunter die reservierte CLAUDE.md; keine Aenderung an reserved_paths, an den Pflichtlisten im Validator oder an sonstiger Governance; kein docs/** als Muster, das ist technisch ausgeschlossen"
+  ],
+  "repository_context": {
+    "base_commit": "a319032035dd822a6600bf0f9af74d56729d55f3",
+    "branch": "wo-014-ordinary-paths",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch wo-014-ordinary-paths verwerfen; auf main bleibt das Profil unveraendert",
+  "status": "verified",
+  "title": "Zustandsprotokoll und Berichte als gewoehnliche Pfade fuehren",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

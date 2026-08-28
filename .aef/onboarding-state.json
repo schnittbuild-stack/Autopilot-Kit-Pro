@@ -1,14 +1,14 @@
 {
   "activation_status": "inactive",
   "created_at": "2026-08-21T08:07:01Z",
-  "profile_sha256": "caca9303a885de3e5b904456992fa1a2b008423f415f19d8836da8de99b9ac83",
+  "profile_sha256": "38589df5337c6a877c6d979aa19f0b1f8596c049d61cef412d48931242dd6134",
   "repository": "schnittbuild-stack/Autopilot-Kit-Pro",
   "schema_version": 1,
   "steps": [
     {
       "actor_type": "local_tool",
       "completed_at": "2026-08-21T08:07:01Z",
-      "evidence_ref": "sha256:caca9303a885de3e5b904456992fa1a2b008423f415f19d8836da8de99b9ac83",
+      "evidence_ref": "sha256:38589df5337c6a877c6d979aa19f0b1f8596c049d61cef412d48931242dd6134",
       "human_gate": false,
       "id": "profile_validated",
       "status": "complete"
