@@ -1,0 +1,54 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-28T17:29:35Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "owner-auftrag mach den letzten punkt, sitzung 28.08.2026",
+    "valid_until": "2026-08-30T17:29:35Z"
+  },
+  "business_outcome": "Die siebte Fundstelle derselben Bauart an einem Tag ausgerechnet in dem Paket, das sie abschafft. Sie stehenzulassen hiesse, die Regel zu formulieren und nicht zu befolgen.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "small",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 2,
+    "max_parallel_readers": 1,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "core/vertraege/account-recherche-zu-outreach-personalisierer.md",
+    "docs/STATUS-BAU.md",
+    "docs/berichte/zahlen-gegenprobe.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260828-022-letzter-punkt.json"
+  ],
+  "id": "WO-20260828-022",
+  "in_scope": [
+    "STATUS und Entscheidungen sagen 'vier Skills', seit Runde 2 sind zwei Vertraege dazugekommen \u2014 beide Rueckblicke berichtigen; den Testfall-Abschnitt des outreach-Vertrags ausdruecklich als Beleg statt als Bestandsliste kennzeichnen und auf die Quelle verweisen; Sweep nach dem Muster statt nach der Zahl wiederholen; Bericht nachziehen"
+  ],
+  "out_of_scope": [
+    "Keine Verhaltensregel, kein Testfall, keine Governance, keine reservierten Pfade; kein Nachlauf, weil keine Anleitung im Verhaltensteil beruehrt wird"
+  ],
+  "repository_context": {
+    "base_commit": "dbdedd81cb3231878d6b64b6258f9b5a855fd9d7",
+    "branch": "wo-022-letzter-punkt",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch verwerfen",
+  "status": "executing",
+  "title": "Letzter Punkt: zwei Rueckblicke berichtigt, Belegabschnitt vom Bestand getrennt",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

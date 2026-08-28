@@ -114,3 +114,49 @@ Ko-Präsenz, die die Entscheidung vom 25.08.2026 ausdrücklich zulässt.
 **Beide sind wieder dieselbe Bauart.** Das ist an diesem Tag die fünfte und
 sechste Fundstelle — und der Grund, warum dieses Paket die Aufzählungen nicht
 repariert, sondern abschafft.
+
+---
+
+## Nachtrag: die siebte Fundstelle
+
+Der Review zu diesem Paket hat zum Schluss angemerkt, dass `STATUS-BAU.md` und
+`entscheidungen.md` weiter „vier Skills" sagen — obwohl in Runde 2 zwei
+Verträge dazugekommen sind.
+
+**Siebte Fundstelle derselben Bauart an einem Tag, ausgerechnet in dem Paket,
+das sie abschafft.** Beide Rückblicke sind berichtigt; sie sind datierte
+Aussagen über ein abgeschlossenes Paket, dort ist eine Zahl legitim — sie war
+nur falsch.
+
+### Der Sweep, diesmal nach dem Muster
+
+Die Lehre aus Runde 1 war: Ein `grep` ist nur so gut wie sein Muster, und „eine
+Aussage über den Bestand" ist keine Zeichenfolge. Also diesmal nicht nach
+Zahlwörtern gesucht, sondern nach der **Form**: nennt eine ausgelieferte Datei
+einzelne Testfall-Pfade?
+
+Drei Treffer, alle im `outreach`-Vertrag — und alle **keine** Bestandsaussage:
+Es sind Belege, je mit Fall, geprüfter Regel und Datum. Ein neuer Ketten-Fall
+macht keinen davon falsch.
+
+**Trotzdem geändert**, um eine Zeile: Der Abschnitt sagt jetzt selbst, dass er
+Belege führt und keine Bestandsliste, und verweist für die vollständige
+Zugehörigkeit auf dieselbe Quelle wie alle anderen Stellen. Der Unterschied
+zwischen „hier sind die Belege" und „hier sind die Fälle" ist einem Leser sonst
+nicht anzusehen — und genau diese Verwechslung hat den ganzen Tag über Arbeit
+gemacht.
+
+### Die Bilanz des Tages
+
+| | |
+|---|---|
+| Fundstellen derselben Bauart | 7 |
+| davon vom unabhängigen Review gefunden | 7 |
+| davon von der Testsuite gefunden | 0 |
+| davon von mir vor der Meldung gefunden | 0 |
+
+Das ist der belastbarste Befund dieses Tages, und er betrifft nicht das Produkt,
+sondern das Verfahren: **Ein Bauender findet die eigene Duplikatspflege nicht.**
+Nicht aus Nachlässigkeit — sondern weil er beim Schreiben der zweiten Stelle
+sicher ist, die erste zu kennen. Der Review teilt diese Sicherheit nicht, und
+darin liegt sein ganzer Wert.

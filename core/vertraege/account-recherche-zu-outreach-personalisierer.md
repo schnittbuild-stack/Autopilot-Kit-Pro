@@ -51,6 +51,12 @@ Nie stilles Raten, nie ein Feld sinngemäß aus einem anderen ableiten.
 
 ## Testfälle für diese Schnittstelle
 
+**Was hier steht, sind Belege, keine Bestandsliste:** je ein Fall, die Regel,
+die er prüft, und das Datum. Kommt ein Ketten-Fall dazu, wird dieser Abschnitt
+dadurch nicht falsch — er wird nur nicht von selbst länger. **Welche Fälle
+diese Schnittstelle insgesamt führen, steht in den Fällen selbst**, oben in der
+Zeile „Schnittstelle".
+
 `core/testfaelle/ketten/06-recherche-zu-erstansprache.md` — zweistufig, prüft
 die Empfängerregeln oben an ihrer schärfsten Stelle: `Verhältnis: bestandskunde`
 bei ausdrücklichem Auftrag zur Erstansprache, fehlender `Ansprechpartner`, und
