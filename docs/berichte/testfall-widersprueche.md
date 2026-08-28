@@ -225,3 +225,29 @@ verlorengegangen. Hiermit ausdrücklich offen:
 **Die Lehre ist nicht neu, sondern dieselbe wie oben:** Ein Befund, der als Zahl
 weitergegeben wird („vier Hinweise"), verliert unterwegs seinen Inhalt. Wer
 zählt, statt zu benennen, merkt den Verlust nicht.
+
+## Und dasselbe noch einmal, im selben Atemzug
+
+Der Absatz oben endet mit: *„Wer zählt statt zu benennen, merkt den Verlust
+nicht."* Im selben Paket habe ich die falsche Aussage „jede Zeile der Tabelle
+ist belegt" an **zwei** Stellen berichtigt — im Vertrag und im STATUS — und
+ausgerechnet in dem Bericht stehen lassen, auf den beide berichtigten Stellen
+**als Quelle verweisen**. Das Repository behauptete danach beides.
+
+Gefunden hat es der Review, in der Runde, die den Absatz oben schon enthielt.
+
+**Dreimal an einem Tag dieselbe Bauart:** eine Aussage steht an mehreren Orten,
+gepflegt wird einer.
+
+- `einwand-sparring/03` war neun Tage lang im Fall behoben und in der
+  Statusliste offen.
+- Die Zahl der Maskierungsstellen stand im Bericht und in den Entscheidungen,
+  berichtigt wurde der Bericht.
+- Und jetzt diese Vollständigkeitsaussage, an drei Orten, berichtigt an zweien.
+
+**Was daraus folgt, und es ist keine Fleißfrage:** Eine Aussage über den Bestand
+gehört an **genau eine** Stelle, alles andere verweist dorthin — dieselbe Regel,
+die Prinzip 1 für Profildaten aufstellt und die der Wächter seit dem 28.08. für
+die Ketten-Zugehörigkeit befolgt. Wo eine Aussage doch mehrfach steht, ist die
+Gegenprobe ein `grep` über den Wortlaut, nicht das Gedächtnis. Ich habe an
+diesem Tag oft genug bewiesen, dass mein Gedächtnis dafür nicht reicht.
