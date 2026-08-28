@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/18#issuecomment-5450598212",
+    "reviewed_at": "2026-08-28T09:06:52Z",
+    "reviewed_payload_sha256": "29108fbbf5fcd1af3dde50a38c06b5d61475690b8a72e35eb9d781d1d06a46aa",
+    "reviewed_scope_sha256": "9589eb19fb73759dbf1b7073c48d1e8811b7a9d62f90d341b718e3b3b239953e",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-28T08:48:48Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "05c31976c2c52bb8270a6d1040fa517fe0384f50abaeba4f98a022d2909af6d7",
     "proof_ref": "owner-entscheidung nach anhalten und neu planen, sitzung 28.08.2026",
     "valid_until": "2026-08-30T08:48:48Z"
   },
@@ -48,7 +48,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch verwerfen",
-  "status": "executing",
+  "status": "verified",
   "title": "Erstansprache-Kette belegen und den Waechter nachziehen (Neuplanung nach PR 17)",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
