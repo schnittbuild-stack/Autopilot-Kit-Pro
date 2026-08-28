@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/24#issuecomment-5455709180",
+    "reviewed_at": "2026-08-28T17:35:15Z",
+    "reviewed_payload_sha256": "415c2d7bdec24157459af61d60cc4d9450d4cdf831082428343deb53da4b0210",
+    "reviewed_scope_sha256": "9426a1436ffef84cb07d882b2e152e1de8eaadb207a9b0b543ded114b56eff6a",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-28T17:29:35Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "c5ba4d6a64c58ecdcb94c56b40a498860bdf52069e1d19dd8fca9bbaee197c2d",
     "proof_ref": "owner-auftrag mach den letzten punkt, sitzung 28.08.2026",
     "valid_until": "2026-08-30T17:29:35Z"
   },
@@ -46,7 +46,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch verwerfen",
-  "status": "executing",
+  "status": "verified",
   "title": "Letzter Punkt: zwei Rueckblicke berichtigt, Belegabschnitt vom Bestand getrennt",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
