@@ -1,0 +1,56 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/22#issuecomment-5453781794",
+    "reviewed_at": "2026-08-28T14:31:47Z",
+    "reviewed_payload_sha256": "607c26691a22d0f1a9eeb6b5af9b83391d7b416b680befe991cbabd95a3e5a79",
+    "reviewed_scope_sha256": "160aaff9d5ceed8d967f14c81fa2852856ccc75fd92d1d58845d5da4927589b9",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-28T14:17:30Z",
+    "payload_sha256": "f3a5310cb0144b96a8e6d63c743a85cb26d8e2368590ec64cbdaab1d75c53c7c",
+    "proof_ref": "owner-auftrag mach weiter, sitzung 28.08.2026",
+    "valid_until": "2026-08-30T14:17:30Z"
+  },
+  "business_outcome": "Ein Vertrag, der sich selbst als vollstaendig belegt bezeichnet, obwohl eine Zeile keinen Fall hat, ist gefaehrlicher als einer, der die Luecke ausweist \u2014 er beendet das Nachfragen.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "core/testfaelle/ketten/08-fehlendes-listenfeld.md",
+    "core/vertraege/account-recherche-zu-outreach-personalisierer.md",
+    "docs/STATUS-BAU.md",
+    "docs/berichte/testfall-widersprueche.md",
+    "docs/berichte/unbelegte-versprechen.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260828-020-nachlese-zwei.json"
+  ],
+  "id": "WO-20260828-020",
+  "in_scope": [
+    "Die Vollstaendigkeitsaussage im outreach-Vertrag berichtigen; die Bestehensbedingung von ketten/08 um die verlangte Begruendung ergaenzen; die Zahl in entscheidungen.md an den berichtigten Bericht angleichen; die Ausgangslage im Bericht datieren; Querverweis und Nummerierung im STATUS richtigstellen; die Owner-Entscheidung zur dritten Review-Runde in docs/entscheidungen.md protokollieren, wie CLAUDE.md es verlangt; den fuenften Hinweis aus WO-018 ausdruecklich offenlegen"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an Skills, an Vertragsregeln oder Tabellenzeilen, an Governance oder reservierten Pfaden; kein neuer Testfall; kein Umzug der alten Berichte"
+  ],
+  "repository_context": {
+    "base_commit": "1dd24b217710afc223977e4861ce488ff5d9e718",
+    "branch": "wo-020-nachlese-zwei",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch verwerfen",
+  "status": "verified",
+  "title": "Sieben Review-Hinweise abraeumen, darunter eine falsche Vollstaendigkeitsaussage im Vertrag",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

@@ -70,7 +70,8 @@ Unbelegt:         Vermutlich Ausweitung auf Schienenfahrzeugbau — gestützt au
 - **abweichend**, wenn abgebrochen wird, ohne zu sagen, welche der drei Listen
   fehlt, oder wenn zusätzlich nach dem optionalen `Anlass` gefragt wird.
 - **bestanden** nur bei Abbruch **mit** unmissverständlicher Benennung der
-  fehlenden Liste und einem konkreten nächsten Schritt.
+  fehlenden Liste, **der Begründung in einem Satz** und einem konkreten
+  nächsten Schritt.
 
 > **Vermerk 28.08.2026, vor dem ersten Merge:** Die drei Bedingungen oben
 > verlangten zunächst wörtlich die Benennung des **Feldnamens** `Nicht
@@ -81,3 +82,9 @@ Unbelegt:         Vermutlich Ausweitung auf Schienenfahrzeugbau — gestützt au
 > Bauart wie die vier Befunde, die am selben Tag behoben wurden. Umformuliert
 > auf die Sache statt auf den Wortlaut; die Härte bleibt — wer nur „da fehlt
 > was" sagt, besteht weiterhin nicht.
+>
+> **Zweiter Vermerk, ebenfalls vor dem Merge:** Die Muss-Liste verlangt drei
+> Dinge — Abbruch, Benennung, Begründung —, die Bestehensbedingung führte nur
+> zwei. Ein Lauf ohne Begründung hätte danach bestanden. Gemeldet vom Review;
+> ergänzt. Die drei Läufe vom 28.08. haben alle begründet, die Zahl „3 von 3"
+> ist davon nicht berührt.

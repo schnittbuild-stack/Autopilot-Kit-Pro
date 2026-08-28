@@ -1290,7 +1290,7 @@ des Auftraggebers brauchen.
    vier Anordnungen). Der Wächter sichert seinen Beleg jetzt nach
    `system/befunde/`; die Doppeldeutigkeit im Vertrag ist aufgelöst.
    `docs/ketten01-untersuchung.md`.
-5. **Die zwei unbelegten Versprechen sind belegt** (28.08.). Der
+4. **Die zwei unbelegten Versprechen sind belegt** (28.08.). Der
    Übergabeblock überlebt die Sitzung: 18 Tage Abstand, frischer Prozess ohne
    Vorwissen, Aufhänger nur in Block B — **3 von 3 auf vier scharf gestellten
    Regeln**, plus Regel 5 in ihrer Fehl-Form beiläufig belegt. **Offen bleibt
@@ -1302,7 +1302,7 @@ des Auftraggebers brauchen.
    falsch geworden, und die Datei widersprach sich selbst. Berichtigt.
    `docs/berichte/unbelegte-versprechen.md`.
 
-4. **Zustandsprotokoll und Berichte sind gewöhnliche Pfade.**
+5. **Zustandsprotokoll und Berichte sind gewöhnliche Pfade.**
    `docs/STATUS-BAU.md`, `docs/entscheidungen.md` und `docs/berichte/**` stehen
    in `ordinary_paths`. Damit sperrt die von uns selbst verlangte Pflege nicht
    mehr den ordentlichen Merge. **Berichte ab dem 28.08. liegen in
@@ -1324,7 +1324,7 @@ des Auftraggebers brauchen.
    nicht mehr, dass der Helfer seinen eigenen Zeitpunkt für zu früh erklärt.
    `ketten/01` ist zweistufig und erfüllt seine volle Bedingung erstmals.
    Acht Fälle je dreimal nachgelaufen: siebenmal 3 von 3, einmal 2 von 3 (siehe
-   offenen Punkt 3). `docs/berichte/testfall-widersprueche.md`.
+   Punkt 7 dieser Liste). `docs/berichte/testfall-widersprueche.md`.
 
 7. **Nachlese (28.08.).** `angebots-schreiber/01` bekam das Bestandsverhältnis
    ausdrücklich in die Eingabe — **3 von 3** statt 2 von 3. Denselben Griff
@@ -1334,14 +1334,18 @@ des Auftraggebers brauchen.
    `ketten/02` und `follow-up-generator/01`. Fünf Fälle nachgelaufen, fünfmal
    3 von 3. `docs/berichte/testfall-widersprueche.md`.
 
-8. **Der `outreach`-Vertrag ist vollständig belegt** (28.08.). Die letzten
+8. **Drei der vier Zeilen des `outreach`-Vertrags sind belegt** (28.08.). Die letzten
    zwei Zeilen seiner Tabelle — leere Belegliste und ganz fehlendes Listenfeld —
    haben mit `ketten/07` und `ketten/08` eigene Fälle, beide **3 von 3**. Damit
    acht Ketten-Fälle. **Dabei ein Fehler in meinem eigenen neuen Kriterium:**
    `ketten/08` verlangte wörtlich den Feldnamen `Nicht gefunden`, während alle
    drei Läufe ihn regelkonform in Alltagssprache umschrieben — dieselbe Bauart
    wie die vier Befunde vom selben Tag. Vor dem Merge korrigiert.
-   `docs/berichte/unbelegte-versprechen.md`.
+   **Die vierte Tabellenzeile bleibt ohne eigenen Fall** und braucht auch
+   keinen: Sie beschreibt den Fall, in dem gar keine Recherche vorliegt, der
+   Vertrag also nicht greift. Ich hatte hier und im Vertrag „vollständig
+   belegt" geschrieben — falsch, dreimal vom Review gemeldet, am 28.08.
+   berichtigt. `docs/berichte/unbelegte-versprechen.md`.
 
 **Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
 ist **zweimal beanstandet** worden — beim zweiten Mal, weil die neue Regel

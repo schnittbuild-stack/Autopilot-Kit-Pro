@@ -72,6 +72,20 @@ fehlenden Listenfeld, geprüft an der unbequemsten Stelle: Ein belegter, sofort
 verwendbarer Aufhänger liegt vor, und es wird trotzdem abgebrochen.
 **3 von 3 am 28.08.2026.**
 
-**Damit ist jede Zeile der Tabelle oben belegt.** Der Vertrag war vom 27. bis
-zum 28.08.2026 geschrieben und unbelegt; er hat das selbst ausgewiesen, statt
-es zu verschweigen.
+**Drei der vier Zeilen der Tabelle oben tragen damit einen datierten Beleg.**
+Die vierte — „Recherche liegt gar nicht vor" — beschreibt den Fall, in dem
+**dieser Vertrag gar nicht greift**: Es geht kein `RECHERCHE-ERGEBNIS` hinein,
+der Skill arbeitet allein. Was er dann tut, prüft
+`outreach-personalisierer/01-duenne-faktenlage`; über diese **Schnittstelle**
+sagt der Fall nichts, und genau deshalb steht er oben als „prüft sie nicht".
+Ein eigener Ketten-Fall wäre hier sinnlos — es gibt keine Kette zu prüfen.
+
+Der Vertrag war vom 27. bis zum 28.08.2026 geschrieben und unbelegt; er hat das
+selbst ausgewiesen, statt es zu verschweigen.
+
+> **Berichtigt am 28.08.2026.** Hier stand „Damit ist jede Zeile der Tabelle
+> oben belegt". Das war falsch: Die vierte Zeile hat keinen benannten Fall, und
+> zwei Absätze weiter oben steht, dass `01-duenne-faktenlage` diese
+> Schnittstelle nicht prüft. **Eine Vollständigkeitsaussage, die das Nachfragen
+> beendet, ist gefährlicher als eine ausgewiesene Lücke** — gemeldet vom
+> unabhängigen Review, dreimal hintereinander, bis sie behoben war.

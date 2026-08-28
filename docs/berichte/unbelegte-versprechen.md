@@ -1,8 +1,9 @@
 # Die zwei unbelegten Versprechen (28.08.2026)
 
 Zwei Zusagen des Kits waren bis heute Behauptungen. Auf beiden ruht die Kette —
-zwei Verträge, sechs Ketten-Testfälle und ein wöchentlicher Wächter. Hält eine
-nicht, ist die Arbeit aus drei Work Orders wirkungslos, und wir wüssten es nicht.
+zwei Verträge, sechs Ketten-Testfälle (Stand bei Beginn dieser Arbeit; es sind
+inzwischen acht) und ein wöchentlicher Wächter. Hält eine nicht, ist die Arbeit
+aus drei Work Orders wirkungslos, und wir wüssten es nicht.
 
 **Beide halten. 3 von 3 und 3 von 3.**
 
@@ -111,7 +112,7 @@ für eine Verschärfung; ich habe sie nicht vorgenommen.
 **Am `outreach`-Vertrag: ~~der Pflicht-Fall `Belegte Fakten: —` und der Abbruch
 bei einem ganz fehlenden Listenfeld.~~ Am 28.08. nachgeholt** —
 `ketten/07-recherche-ohne-belege` und `ketten/08-fehlendes-listenfeld`, beide
-3 von 3. Damit ist jede Zeile der Vertragstabelle belegt.
+3 von 3. Damit tragen **drei der vier** Zeilen der Vertragstabelle einen datierten Beleg. Die vierte beschreibt den Fall, in dem gar keine Recherche vorliegt — dort greift dieser Vertrag nicht, und ein Ketten-Fall ohne Kette wäre sinnlos.
 Einzelheiten unten unter „Nachtrag".
 
 **Am Vertrag zum `follow-up-generator`:** Regel 5 mit einem **gefüllten**
