@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/22#issuecomment-5453781794",
+    "reviewed_at": "2026-08-28T14:31:47Z",
+    "reviewed_payload_sha256": "607c26691a22d0f1a9eeb6b5af9b83391d7b416b680befe991cbabd95a3e5a79",
+    "reviewed_scope_sha256": "160aaff9d5ceed8d967f14c81fa2852856ccc75fd92d1d58845d5da4927589b9",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-28T14:17:30Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "f3a5310cb0144b96a8e6d63c743a85cb26d8e2368590ec64cbdaab1d75c53c7c",
     "proof_ref": "owner-auftrag mach weiter, sitzung 28.08.2026",
     "valid_until": "2026-08-30T14:17:30Z"
   },
@@ -48,7 +48,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch verwerfen",
-  "status": "executing",
+  "status": "verified",
   "title": "Sieben Review-Hinweise abraeumen, darunter eine falsche Vollstaendigkeitsaussage im Vertrag",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
