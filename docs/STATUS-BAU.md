@@ -1281,12 +1281,12 @@ sind Verlauf.
    den Firmennamen wie `[PREIS PRÜFEN]` als Lücke kennzeichnen darf oder vorher
    fragen muss, sagt keine Bewertung — **das ist eine Änderung am Kriterium und
    braucht eine Entscheidung.**
-4. **Der `outreach`-Vertrag ist unbelegt.** Kein Testfall prüft seine
-   Empfängerregeln; `01-duenne-faktenlage` sieht so aus, hat aber gar keine
-   Recherche. Ein eigener Ketten-Fall ist offen.
-5. **Ob der Übergabeblock Tage später gefunden wird**, ist ungeprüft — beide
-   Läufe fanden am selben Tag statt.
-6. **Die kopflose Auswertung war blind für alles außer der letzten Nachricht.**
+4. **Was am `outreach`-Vertrag weiterhin unbelegt ist.** Seine Empfängerregeln
+   sind seit dem 28.08. durch `ketten/06-recherche-zu-erstansprache` belegt
+   (3 von 3). **Nicht** geprüft sind zwei Zeilen seiner Tabelle: der
+   Pflicht-Fall `Belegte Fakten: —` und der Abbruch bei einem ganz fehlenden
+   Listenfeld. Im Vertrag selbst vermerkt.
+5. **Die kopflose Auswertung war blind für alles außer der letzten Nachricht.**
    `claude -p` gibt nur diese aus; ein Lauf, der die Arbeit tut und danach den
    Zwischenstand aufräumt, wurde als abweichend gezählt. Ein Lauf von neun am
    28.08. Der Fehler geht immer in dieselbe Richtung — bestanden wird zu
@@ -1302,6 +1302,13 @@ des Auftraggebers brauchen.
    vier Anordnungen). Der Wächter sichert seinen Beleg jetzt nach
    `system/befunde/`; die Doppeldeutigkeit im Vertrag ist aufgelöst.
    `docs/ketten01-untersuchung.md`.
+5. **Die zwei unbelegten Versprechen sind belegt** (28.08.). Der
+   Übergabeblock überlebt die Sitzung: 18 Tage Abstand, frischer Prozess ohne
+   Vorwissen, Aufhänger nur in Block B — **3 von 3 auf allen vier harten Regeln**
+   des Vertrags. Und der `outreach`-Vertrag hat seinen Ketten-Testfall:
+   `ketten/06`, zweistufig, **3 von 3**. Damit sind es sechs Ketten-Fälle.
+   `docs/berichte/unbelegte-versprechen.md`.
+
 4. **Zustandsprotokoll und Berichte sind gewöhnliche Pfade.**
    `docs/STATUS-BAU.md`, `docs/entscheidungen.md` und `docs/berichte/**` stehen
    in `ordinary_paths`. Damit sperrt die von uns selbst verlangte Pflege nicht

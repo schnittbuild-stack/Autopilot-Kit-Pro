@@ -1,0 +1,56 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-28T08:20:03Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "owner-auftrag mach weiter mit den zwei unbelegten versprechen, sitzung 28.08.2026",
+    "valid_until": "2026-08-30T08:20:03Z"
+  },
+  "business_outcome": "Zwei Zusagen des Kits sind bis heute Behauptungen: dass der Uebergabeblock eine Sitzung ueberlebt, und dass der outreach-Vertrag gilt. Auf beiden ruht die Kette. Haelt eine nicht, ist die Arbeit aus drei Work Orders wirkungslos \u2014 und wir wuessten es nicht.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "adapter-claude/vorlagen/CLAUDE.vorlage.md",
+    "core/testfaelle/ketten/06-recherche-zu-erstansprache.md",
+    "core/vertraege/account-recherche-zu-outreach-personalisierer.md",
+    "docs/STATUS-BAU.md",
+    "docs/berichte/unbelegte-versprechen.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260828-015-unbelegte-versprechen.json"
+  ],
+  "id": "WO-20260828-015",
+  "in_scope": [
+    "Haltbarkeit des Uebergabeblocks ueber ein Sitzungsende hinweg messen, mit echtem Zeitabstand und ohne Vorwissen im Kontext; einen Ketten-Testfall fuer die Schnittstelle account-recherche zu outreach-personalisierer bauen und dreimal laufen lassen; den Vertrag nachziehen, der sich bisher selbst als unbelegt ausweist; Bericht nach docs/berichte/; STATUS und Entscheidungen pflegen"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an den Skills; keine Aenderung an bestehenden Testfaellen; keine Aenderung an Governance oder reservierten Pfaden. Die CLAUDE-Vorlage wird nur angefasst, falls die Haltbarkeitspruefung einen Mangel zeigt \u2014 und dann nur an der belegten Stelle"
+  ],
+  "repository_context": {
+    "base_commit": "4034f583da51268b7524d009c0a2de5db9ac8314",
+    "branch": "wo-015-unbelegte-versprechen",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch verwerfen",
+  "status": "executing",
+  "title": "Die zwei unbelegten Versprechen schliessen: Uebergabe nach Sitzungsende, outreach-Vertrag",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}
