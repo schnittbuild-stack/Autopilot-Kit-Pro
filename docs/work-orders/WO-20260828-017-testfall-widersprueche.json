@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/19#issuecomment-5451530232",
+    "reviewed_at": "2026-08-28T10:41:54Z",
+    "reviewed_payload_sha256": "1ed625b6d3912ac82c825e5e8568da1393e3c53a642af9d5e69b94bb164ee77b",
+    "reviewed_scope_sha256": "cfdaf26a5ccbb0e72abfa10b8067971e91b757fda29fe7e01ab00ce3b2c39eed",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-28T10:33:47Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "c1e452c123da56653e6d4d65316ee7c2a3fb9c747efe027b990bf45da7c5f427",
     "proof_ref": "owner-entscheidung vier testfall-befunde, sitzung 28.08.2026",
     "valid_until": "2026-08-30T10:33:47Z"
   },
@@ -54,7 +54,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch verwerfen",
-  "status": "executing",
+  "status": "verified",
   "title": "Vier Testfall-Entscheidungen umgesetzt: Maskierung raus, drei Widersprueche aufgeloest",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
