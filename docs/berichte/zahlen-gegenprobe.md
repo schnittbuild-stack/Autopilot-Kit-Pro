@@ -15,7 +15,7 @@ Dieses Paket wendet die Lehre an, statt sie nur aufzuschreiben.
 | Ketten-Testfälle | 8 |
 | Übergabeverträge | 3 |
 | Helfer | 10 |
-| Testfälle gesamt | 42 |
+| Testfälle gesamt | 41 |
 
 ## Was die Gegenprobe gefunden hat
 
@@ -54,6 +54,32 @@ Quelle, alles andere verweist.**
 
 Die Aufzählung der Bruchstellen im `angebots-schreiber` bleibt — sie sagt, was
 die Fälle prüfen, nicht wie viele es sind. Der neue sechste ist ergänzt.
+
+## Der Sweep selbst war zu eng — und der Review hat es gezeigt
+
+Meine Gegenprobe suchte nach **Zahlwörtern** vor „Verträge", „Ketten",
+„Helfer", „Fälle". Sie hat damit eine ganze Klasse übersehen: **bloße
+Pfad-Aufzählungen ohne Zahlwort.** Genau die standen in zwei Verträgen:
+
+| Datei | führte auf | tatsächlich |
+|---|---|---|
+| `account-recherche-zu-angebots-schreiber.md` | nur `ketten/01` | `01`, `03`, `04` |
+| `angebots-schreiber-zu-follow-up-generator.md` | nur `ketten/02` | `02`, `03`, `05` |
+
+Dieselbe Bauart, dieselbe Wirkung, in `core/` — und die Work Order hatte eine
+Gegenprobe „über **alle** Bestandsaussagen in `core/`" zugesagt. Gefunden hat
+sie der unabhängige Review, nicht mein Sweep.
+
+Beide Stellen zeigen jetzt auf dieselbe Quelle wie die vier Skills. Die Zusage
+der Work Order ist damit eingelöst — aber sie war es zum Zeitpunkt der
+Behauptung nicht.
+
+**Was das über die Methode sagt:** Ein `grep` ist nur so gut wie sein Muster.
+„Eine Aussage über den Bestand" ist keine Zeichenfolge; sie kann als Zahl, als
+Aufzählung oder als einzelner Pfad auftreten. Wer nach der Zahl sucht, findet
+die Aufzählung nicht — und hält seine Suche trotzdem für vollständig. **Das ist
+dieselbe Falle wie die Vollständigkeitsaussage im Vertrag**, eine Ebene höher:
+Nicht die Aussage war falsch, sondern die Annahme, sie geprüft zu haben.
 
 ## Nachlauf
 

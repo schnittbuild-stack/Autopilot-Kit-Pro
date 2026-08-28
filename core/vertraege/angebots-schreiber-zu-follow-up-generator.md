@@ -96,4 +96,7 @@ Angebot gesiezt wurde, wird im Nachfassen nicht geduzt.
 
 ## Testfälle für diese Schnittstelle
 
-`core/testfaelle/ketten/02-entwurf-und-abgelehnte-forderung.md`
+`core/testfaelle/ketten/` — **welche Fälle diese Schnittstelle prüfen, steht in
+den Fällen selbst**, oben in der Zeile „Schnittstelle". Hier steht bewusst keine
+Liste: Sie wäre mit dem nächsten Ketten-Fall falsch, und dann fiele es niemandem
+auf, weil sie ja gerade gepflegt wurde.

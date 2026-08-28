@@ -26,6 +26,8 @@
     "on_exhaustion": "stop_and_replan"
   },
   "file_allowlist": [
+    "core/vertraege/angebots-schreiber-zu-follow-up-generator.md",
+    "core/vertraege/account-recherche-zu-angebots-schreiber.md",
     "core/skills/vertrieb/account-recherche.md",
     "core/skills/vertrieb/angebots-schreiber.md",
     "core/skills/vertrieb/follow-up-generator.md",
@@ -41,7 +43,7 @@
     "Die zwei letzten Review-Hinweise aus WO-020; eine Gegenprobe ueber alle Bestandsaussagen in core/ und adapter-claude/; die gefundenen Aufzaehlungen in vier Skills durch Verweise auf die Quelle ersetzen, statt die Zahlen nachzuziehen; je einen Fall der vier betroffenen Helfer dreimal nachlaufen lassen; Bericht, STATUS, Entscheidungen"
   ],
   "out_of_scope": [
-    "Keine Verhaltensregel in den Skills angefasst \u2014 nur die Testfall-Abschnitte am Ende; keine Testfaelle geaendert; keine Governance, keine reservierten Pfade; kein Vollnachlauf ueber alle 42 Faelle, der Umfang wird im Bericht ausdruecklich benannt"
+    "Keine Verhaltensregel in den Skills angefasst — nur die Testfall-Abschnitte am Ende; keine Testfaelle geaendert; keine Governance, keine reservierten Pfade; kein Vollnachlauf ueber alle 41 Faelle, der Umfang wird im Bericht ausdruecklich benannt"
   ],
   "repository_context": {
     "base_commit": "5c51d047e4a595abb7457596c13babf7074ea38e",
@@ -51,7 +53,7 @@
   "risk_class": "B",
   "rollback": "Branch verwerfen",
   "status": "executing",
-  "title": "Gegenprobe auf veraltete Bestandsaussagen \u2014 vier Skills zeigen jetzt auf die Quelle",
+  "title": "Gegenprobe auf veraltete Bestandsaussagen — vier Skills zeigen jetzt auf die Quelle",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
   ]
