@@ -241,4 +241,3 @@ nachzusehen.
 prüft sie am Ergebnis, nicht am Vorsatz. Ein `grep` über die behauptete
 Korrektur hätte zehn Sekunden gekostet. Gefunden hat es wieder der unabhängige
 Review.
-
