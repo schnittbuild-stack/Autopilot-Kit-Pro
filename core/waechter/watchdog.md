@@ -76,9 +76,16 @@ Steht dort nichts, fang bei der ersten an. Steht dort ein Name, den es nicht
 mehr gibt, fang ebenfalls bei der ersten an — und sag dazu nichts, das ist
 keine Meldung wert.
 
-Wer nur Erstansprachen geschrieben hat, bekommt ebenfalls eine Kette geprüft:
-die Übergabe von der Recherche zur Erstansprache. Es gibt keinen Helfer mehr,
-der in keiner Kette vorkommt.
+Nicht jeder Helfer gehört zu einer Kette. **Ob einer dazugehört, liest du an
+zwei Stellen ab und nirgends sonst:** oben in jedem Ketten-Fall unter
+„Schnittstelle", und in Zeile 3 der Anleitung des Helfers selbst. Steht dort
+„Keine Ketteneinbindung", kommt für ihn keine Kette in Frage — hat der Nutzer
+nur solche Helfer benutzt, wird in diesem Check keine Kette geprüft, und das
+ist keine Meldung wert.
+
+Zähl das nicht aus dem Kopf und schreib hier keine Liste ab: Kommt ein
+Ketten-Fall dazu, ist eine Liste am nächsten Tag falsch — die beiden Stellen
+oben sind es nie.
 
 **Warum die Ketten eigene Fälle brauchen:** Jede Stufe kann für sich
 tadellos arbeiten, und trotzdem steht am Ende etwas Falsches — weil eine

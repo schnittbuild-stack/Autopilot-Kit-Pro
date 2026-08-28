@@ -132,14 +132,31 @@ Wächter hätte beim reinen Erstansprache-Nutzer keine Kette gezogen. **Also
 ausgerechnet bei dem Nutzer, für den der neue Fall gebaut wurde.** Und
 `core/` geht vollständig ins Kunden-ZIP.
 
-Der Satz ist berichtigt. Gegenprobe über den ganzen Kern: Die sechs anderen
-Stellen mit „Keine Ketteneinbindung" betreffen Helfer, die tatsächlich in keiner
-Kette vorkommen, und die Köpfe von `account-recherche` und
-`outreach-personalisierer` nennen beide die Schnittstelle korrekt.
+**Mein erster Berichtigungsversuch war ebenfalls falsch.** Ich schrieb „Es gibt
+keinen Helfer mehr, der in keiner Kette vorkommt" — und hatte die Gegenprobe,
+die das widerlegt, unmittelbar davor selbst laufen lassen: **Sechs der zehn
+Helfer kommen in keiner Kette vor** und sagen das in Zeile 3 ihrer eigenen
+Anleitung. Der Review hat auch das gefunden. Ein falscher Satz war durch einen
+anderen falschen ersetzt, mit demselben Schadensbild: Beim Nutzer, der nur
+`einwand-sparring` benutzt hat, hätte der neue Satz eine Kette versprochen, die
+es nicht gibt.
 
-**Was daraus zu lernen ist:** Ein neuer Testfall ändert nicht nur die Prüfung,
-sondern macht Aussagen anderswo falsch — und nichts zeigt darauf. Gefunden hat
-es der unabhängige Review, nicht ich und nicht die Testsuite.
+**Die Berichtigung zeigt jetzt auf die Quelle, statt eine Zahl zu behaupten.**
+Ob ein Helfer zu einer Kette gehört, liest der Wächter an zwei Stellen ab — der
+Zeile „Schnittstelle" im Ketten-Fall und Zeile 3 der Anleitung des Helfers — und
+nirgends sonst. Dazu ausdrücklich: keine Liste abschreiben, keine Zahl merken.
+Eine Liste ist am Tag nach dem nächsten Ketten-Fall falsch; die beiden Stellen
+sind es nie.
+
+**Was daraus zu lernen ist**, und es ist die eigentliche Ausbeute dieses
+Vorhabens: Ein neuer Testfall ändert nicht nur die Prüfung, er macht Aussagen
+anderswo falsch — und nichts zeigt darauf. Zweimal hintereinander habe ich an
+derselben Stelle eine Behauptung hingeschrieben, die aus dem Repository
+widerlegbar war, und zweimal hat der unabhängige Review sie gefunden, nicht ich
+und nicht die Testsuite. Beide Male war es dieselbe Sorte Fehler: **eine
+gezählte Aussage über den Bestand, statt eines Verweises auf die Stelle, an der
+der Bestand steht.** Genau dagegen ist Prinzip 1 gebaut, und es galt hier nicht,
+weil der Satz wie Prosa aussah und nicht wie Konfiguration.
 
 ## Ein Nebenbefund aus einem eigenen Fehler
 
