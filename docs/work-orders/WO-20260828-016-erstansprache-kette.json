@@ -1,0 +1,56 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-28T08:48:48Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "owner-entscheidung nach anhalten und neu planen, sitzung 28.08.2026",
+    "valid_until": "2026-08-30T08:48:48Z"
+  },
+  "business_outcome": "Zwei Zusagen des Kits waren Behauptungen. Beide sind jetzt geprueft \u2014 und der neue Ketten-Fall macht eine Aussage im Waechter falsch, die sonst genau den Nutzer trifft, fuer den er gebaut wurde.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "core/testfaelle/ketten/06-recherche-zu-erstansprache.md",
+    "core/vertraege/account-recherche-zu-outreach-personalisierer.md",
+    "core/waechter/watchdog.md",
+    "docs/STATUS-BAU.md",
+    "docs/berichte/unbelegte-versprechen.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260828-016-erstansprache-kette.json"
+  ],
+  "id": "WO-20260828-016",
+  "in_scope": [
+    "Haltbarkeit des Uebergabeblocks ueber Sitzungsende messen; Ketten-Testfall 06 fuer die Schnittstelle account-recherche zu outreach-personalisierer; den outreach-Vertrag nachziehen; **core/waechter/watchdog.md nachziehen**, weil der neue Fall dessen Aussage widerlegt, der outreach-personalisierer komme in keiner Kette vor; Bericht, STATUS und Entscheidungen"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an Skills, an bestehenden Testfaellen, an der CLAUDE-Vorlage oder an Governance und reservierten Pfaden"
+  ],
+  "repository_context": {
+    "base_commit": "4034f583da51268b7524d009c0a2de5db9ac8314",
+    "branch": "wo-016-erstansprache-kette",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch verwerfen",
+  "status": "executing",
+  "title": "Erstansprache-Kette belegen und den Waechter nachziehen (Neuplanung nach PR 17)",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

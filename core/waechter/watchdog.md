@@ -76,8 +76,9 @@ Steht dort nichts, fang bei der ersten an. Steht dort ein Name, den es nicht
 mehr gibt, fang ebenfalls bei der ersten an — und sag dazu nichts, das ist
 keine Meldung wert.
 
-Wer nur Erstansprachen geschrieben hat, bekommt keine Kette geprüft: Der
-`outreach-personalisierer` kommt in keiner vor.
+Wer nur Erstansprachen geschrieben hat, bekommt ebenfalls eine Kette geprüft:
+die Übergabe von der Recherche zur Erstansprache. Es gibt keinen Helfer mehr,
+der in keiner Kette vorkommt.
 
 **Warum die Ketten eigene Fälle brauchen:** Jede Stufe kann für sich
 tadellos arbeiten, und trotzdem steht am Ende etwas Falsches — weil eine
