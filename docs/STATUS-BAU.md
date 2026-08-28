@@ -230,10 +230,11 @@ Bisher angewandt: **fünfmal.**
    2 von 3. Der verbliebene Lauf hängt an Pflicht-Fakt 1 (siehe offenen
    Punkt 3), nicht an dieser Korrektur.
 
-**Offener Vorschlag, noch nicht entschieden:** `einwand-sparring/03` liefert im
-Abschnitt `## Eingabe` die Bewertungslage mit und prüft deshalb schwächer, als
-er aussieht. Vorschlag: den Absatz in den Kriterienteil verschieben. Betrifft
-einen Fall, keinen Skill — kein Hindernis für Phase 3.
+**Erledigt am 19.08.2026** (hier am 28.08. nachgetragen): `einwand-sparring/03`
+lieferte im Abschnitt `## Eingabe` die Bewertungslage mit und prüfte deshalb
+schwächer, als er aussah. Der Absatz steht seit dem 19.08. im Kriterienteil,
+mit Änderungsvermerk im Fall. Diese Zeile führte ihn neun Tage länger als
+offen — der Befund stand an zwei Orten, gepflegt wurde einer.
 
 **Lehre aus 2. und 3.:** Eine Bestehensbedingung beschreibt, **was** in einem
 Feld stehen muss und was dort nicht stehen darf — nie, **wie viele** Zeilen es
@@ -1273,21 +1274,12 @@ sind Verlauf.
    Sitzung ersetzen kann.
 2. **Drei kundeneigene Testfälle, von einem Testkäufer bestätigt** — die zweite
    Hälfte der Definition of Done von Phase 4. Braucht denselben Menschen.
-3. **`angebots-schreiber/01` läuft 2 von 3 — neuer Befund vom 28.08.** Der Fall
-   verlangt **genau zwei** Fragen und begründet das damit, dass das
-   Bestandsverhältnis in der Mail stehe. Es steht dort nicht, es ist nur
-   **ableitbar** („Sie hatten mir Ihre Karte gegeben, ich komme jetzt darauf
-   zurück"). Zwei Läufe lasen die Ableitung als ausreichend, einer fragte nach
-   und fiel deshalb auf `abweichend`. **Dieselbe Familie wie die vier
-   Entscheidungen vom 28.08.:** Der Fall bestraft den, der nicht rät. Zwei Wege
-   offen — die Zeile in die Mail schreiben, oder die dritte Frage zulassen.
-   **Braucht eine Entscheidung.** `docs/berichte/testfall-widersprueche.md`.
-4. **Was am `outreach`-Vertrag weiterhin unbelegt ist.** Seine Empfängerregeln
+3. **Was am `outreach`-Vertrag weiterhin unbelegt ist.** Seine Empfängerregeln
    sind seit dem 28.08. durch `ketten/06-recherche-zu-erstansprache` belegt
    (3 von 3). **Nicht** geprüft sind zwei Zeilen seiner Tabelle: der
    Pflicht-Fall `Belegte Fakten: —` und der Abbruch bei einem ganz fehlenden
    Listenfeld. Im Vertrag selbst vermerkt.
-5. **Die kopflose Auswertung war blind für alles außer der letzten Nachricht.**
+4. **Die kopflose Auswertung war blind für alles außer der letzten Nachricht.**
    `claude -p` gibt nur diese aus; ein Lauf, der die Arbeit tut und danach den
    Zwischenstand aufräumt, wurde als abweichend gezählt. Ein Lauf von neun am
    28.08. Der Fehler geht immer in dieselbe Richtung — bestanden wird zu
@@ -1338,6 +1330,14 @@ des Auftraggebers brauchen.
    `ketten/01` ist zweistufig und erfüllt seine volle Bedingung erstmals.
    Acht Fälle je dreimal nachgelaufen: siebenmal 3 von 3, einmal 2 von 3 (siehe
    offenen Punkt 3). `docs/berichte/testfall-widersprueche.md`.
+
+7. **Nachlese (28.08.).** `angebots-schreiber/01` bekam das Bestandsverhältnis
+   ausdrücklich in die Eingabe — **3 von 3** statt 2 von 3. Denselben Griff
+   brauchte mein eigener neuer Fall 06, der die gerügte Konstruktion selbst
+   benutzte; gefunden hat das der Review, nicht ich. Die `[kunde]`-Maskierung
+   ist jetzt **restlos** raus, auch aus `ausschreibungs-analyse/03`,
+   `ketten/02` und `follow-up-generator/01`. Fünf Fälle nachgelaufen, fünfmal
+   3 von 3. `docs/berichte/testfall-widersprueche.md`.
 
 **Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
 ist **zweimal beanstandet** worden — beim zweiten Mal, weil die neue Regel

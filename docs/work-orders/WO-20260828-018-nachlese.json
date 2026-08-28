@@ -1,0 +1,60 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-28T12:40:58Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "owner-entscheidung fall 01 verhaeltnis in die eingabe, sitzung 28.08.2026",
+    "valid_until": "2026-08-30T12:40:58Z"
+  },
+  "business_outcome": "Ein Testfall, der den bestraft, der nicht raet, arbeitet gegen das Kernversprechen des Produkts. Und eine halb abgeschaffte Konvention ist schlechter als gar keine \u2014 sie sieht nach Absicht aus.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "core/testfaelle/angebots-schreiber/01-rueckfrage-disziplin.md",
+    "core/testfaelle/angebots-schreiber/04-preisgrundlage-abgelaufen.md",
+    "core/testfaelle/angebots-schreiber/06-fehlender-absender.md",
+    "core/testfaelle/ausschreibungs-analyse/03-unvollstaendige-unterlage.md",
+    "core/testfaelle/follow-up-generator/01-unvollstaendiger-uebergabeblock.md",
+    "core/testfaelle/ketten/02-entwurf-und-abgelehnte-forderung.md",
+    "docs/STATUS-BAU.md",
+    "docs/berichte/testfall-widersprueche.md",
+    "docs/entscheidungen.md",
+    "docs/ketten01-untersuchung.md",
+    "docs/work-orders/WO-20260828-018-nachlese.json"
+  ],
+  "id": "WO-20260828-018",
+  "in_scope": [
+    "angebots-schreiber/01 bekommt das Bestandsverhaeltnis ausdruecklich in die Eingabe; derselbe Griff an meinem eigenen Fall 06, der die geruegte Konstruktion selbst benutzte; die restlichen vier Firmen-Platzhalter in ausschreibungs-analyse/03, ketten/02 und follow-up-generator/01 abraeumen; die fuenf nicht blockierenden Hinweise aus dem Review zu WO-017; betroffene Faelle dreimal nachlaufen lassen"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an Skills, Vertraegen, Governance oder reservierten Pfaden; die Sprecher-Label [Kunde] im einwand-sparring bleiben, sie sind Dialogmarkierung und kein Firmenplatzhalter"
+  ],
+  "repository_context": {
+    "base_commit": "b9cf16b93973681b5b9e33241ee22cc25b9e3127",
+    "branch": "wo-018-nachlese",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch verwerfen",
+  "status": "executing",
+  "title": "Nachlese: Fall 01 entschieden, Maskierung restlos raus, fuenf Review-Hinweise",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

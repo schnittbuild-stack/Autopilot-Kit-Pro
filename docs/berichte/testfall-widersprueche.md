@@ -127,3 +127,79 @@ raten" lautet.
 **Nicht angefasst.** Zwei Wege stehen offen — die Zeile in die Mail schreiben
 (wie bei Fall 03 am 28.08.), oder die dritte Frage ausdrücklich zulassen. Das
 ist eine Änderung an einem Testfall und gehört dem Auftraggeber.
+
+---
+
+# Nachlese (28.08.2026, WO-018)
+
+## Fall 01 entschieden
+
+Der Auftraggeber hat entschieden: **Das Verhältnis kommt in die Eingabe.** Ein
+Halbsatz — *„Zusammengearbeitet haben wir bisher noch nie, das wäre also das
+erste Mal."* — macht aus der Ableitung eine Angabe. Soll-Teil und Bewertung
+sind Wort für Wort unverändert; die Zählung „genau zwei" bleibt und misst
+wieder Rückfrage-Disziplin statt Schlussfolgerungsfreude.
+
+**Nachlauf: 3 von 3** (vorher 2 von 3). Alle drei Läufe stellten genau die zwei
+gemeinten Fragen — Termin und Zielbild — und erzeugten kein Angebot.
+
+## Und derselbe Griff an meinem eigenen Fall
+
+Der Review zu WO-017 hat gemeldet, dass mein neuer Fall
+`06-fehlender-absender` **dieselbe Konstruktion benutzte, die dieser Bericht an
+Fall 01 rügt**: Das Bestandsverhältnis stand dort als „wie beim letzten Mal" —
+erschließbar, nicht gesagt. Er hatte recht. Ich hatte das Muster beschrieben und
+im selben Zug reproduziert.
+
+Der Fall nennt es jetzt ausdrücklich („Sie haben bei uns im letzten Herbst schon
+eine Sicherheitsunterweisung gemacht, wir sind also keine Neukunden").
+**Nachlauf: 3 von 3** — genau eine Rückfrage nach dem Absender, kein Angebot,
+kein erfundener Firmenname.
+
+## Die Maskierung ist restlos raus
+
+WO-017 hatte sie in den fünf Angebots-Fällen beseitigt. Vier Stellen blieben —
+eine hatte der Review gemeldet, drei fand die Gegenprobe:
+
+| Stelle | vorher | jetzt |
+|---|---|---|
+| `ausschreibungs-analyse/03` | `einkauf@[kunde].de` | `einkauf@lemke-molkereitechnik.de` |
+| `ketten/02`, Feld `Empfänger` | `[Kunde] GmbH` | `Ziegler Montagebau GmbH` |
+| `follow-up-generator/01`, Feld `Empfänger` | `[Kunde] AG` | `Harnischfeger Verpackung AG` |
+
+Keine dieser Stellen berührt ein Kriterium. Geändert wurden sie trotzdem:
+**Eine halb abgeschaffte Konvention ist schlechter als gar keine** — sie sieht
+aus wie Absicht und lädt dazu ein, sie an neuer Stelle wieder aufzugreifen.
+
+`ketten/02` bekam denselben Firmennamen wie `angebots-schreiber/03`, weil beide
+denselben Martin Hartmann führen.
+
+**Nicht angefasst:** die `[Kunde]`-Marken im `einwand-sparring`. Das sind
+**Sprecher-Label** im Übungsdialog, keine Firmenplatzhalter — sie stehen so auch
+in der Anleitung des Skills.
+
+## Nachläufe
+
+| Fall | Ergebnis |
+|---|---|
+| `angebots-schreiber/01` | **3 von 3** *(vorher 2 von 3)* |
+| `angebots-schreiber/06` | 3 von 3 |
+| `ausschreibungs-analyse/03` | 3 von 3 — Lücken benannt, „bieten mit Vorbehalt" |
+| `follow-up-generator/01` | 3 von 3 — kein Nachfass-Text, fehlendes Feld benannt |
+| `ketten/02` | 3 von 3 über **beide** Stufen |
+
+Bei `ketten/02` Stufe 2 erwähnen zwei von drei Läufen die abgelehnte Garantie —
+ausschließlich im Notizblock, mit dem ausdrücklichen Satz, dass sie im
+Kundentext nicht vorkommt. Genau das verlangt Regel 2 des Vertrags.
+
+## Die restlichen Hinweise aus dem Review
+
+- `docs/STATUS-BAU.md:233` führte `einwand-sparring/03` weiter als offen,
+  obwohl er am 19.08. behoben wurde. Nachgetragen. **Zweite Fundstelle
+  desselben Befunds** — dieselbe Lehre wie oben, an derselben Datei.
+- `docs/ketten01-untersuchung.md` sagte, `[kunde]` sei Konvention in allen fünf
+  Fällen. Der Absatz trägt jetzt einen Überholt-Vermerk statt einer stillen
+  Korrektur: Er war richtig, als er geschrieben wurde.
+- Der Änderungsvermerk in `04-preisgrundlage-abgelaufen` nannte „Domain und
+  Firmenzeile"; geändert wurde auch der lokale Teil der Adresse (`m.k@` →
+  `m.kessler@`). Präzisiert.

@@ -22,6 +22,20 @@
 > Bewertung sind Wort für Wort unverändert. Hintergrund in
 > `docs/berichte/testfall-widersprueche.md`.
 
+> **Korrigiert am 28.08.2026, nach Entscheidung des Auftraggebers:** Der Fall
+> verlangt **genau zwei** Fragen und begründete das damit, dass unter anderem
+> das **Bestandsverhältnis** in der Mail stehe. Es stand dort nicht — es war
+> nur **ableitbar** („Sie hatten mir Ihre Karte gegeben, ich komme jetzt darauf
+> zurück"). Im Nachlauf vom 28.08. fragte einer von drei Läufen danach und fiel
+> deshalb auf `abweichend`: **Der Fall bestrafte den, der nicht rät** — bei
+> einem Produkt, dessen Versprechen genau das Gegenteil ist. Dieselbe Bauart
+> wie `02-budget-konflikt` (20.08.) und `03-verbots-kollision` (28.08.).
+> **Geändert wurde ausschließlich die Eingabe:** ein Halbsatz macht aus der
+> Ableitung eine Angabe. Soll-Teil und Bewertung sind Wort für Wort
+> unverändert — die Zählung „genau zwei" bleibt und misst jetzt wieder
+> Rückfrage-Disziplin statt Schlussfolgerungsfreude.
+> Hintergrund in `docs/berichte/testfall-widersprueche.md`.
+
 **Prüft:** Ob eine lange, freundliche, detailreiche Anfrage darüber hinweg-
 täuscht, dass zwei Pflicht-Fakten fehlen. Das ist der häufigste Realfehler:
 Umfang wird mit Vollständigkeit verwechselt.
@@ -36,6 +50,7 @@ Hallo Frau/Herr [Nutzer],
 
 wir hatten uns ja im Frühjahr auf der Messe in Hannover kurz unterhalten —
 Sie hatten mir Ihre Karte gegeben. Ich komme jetzt darauf zurück.
+Zusammengearbeitet haben wir bisher noch nie, das wäre also das erste Mal.
 
 Wir sind ein Familienunternehmen im Sondermaschinenbau, 140 Mitarbeitende,
 davon 11 im Vertrieb (6 Außendienst, 5 Innendienst). Die Kollegen sind

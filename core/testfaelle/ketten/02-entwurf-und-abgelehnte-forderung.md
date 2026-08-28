@@ -5,6 +5,12 @@
 > nie (Entscheidung 17.08.2026). Beide bestehen nebeneinander; dieser Fall
 > wird nicht durch einen Praxisfall ersetzt.
 
+> **Korrigiert am 28.08.2026:** Das Feld `Empfänger` trug den maskierten
+> Platzhalter `[Kunde] GmbH`. Der Name ist derselbe Martin Hartmann wie in
+> `angebots-schreiber/03`, also steht dort jetzt dieselbe Firma. Kein Kriterium
+> berührt; geändert nur zur Einheitlichkeit, nachdem die Maskierung überall
+> sonst gewichen ist.
+
 **Schnittstelle:** `angebots-schreiber → follow-up-generator`
 **Vertrag:** `core/vertraege/angebots-schreiber-zu-follow-up-generator.md`
 
@@ -20,7 +26,7 @@ Der Nutzer sagt: *„Fass mal zum Hartmann-Angebot nach."* und liefert:
 ```
 ÜBERGABE ANGEBOT
 Stand:            entwurf
-Empfänger:        Martin Hartmann, Vertriebsleitung, [Kunde] GmbH
+Empfänger:        Martin Hartmann, Vertriebsleitung, Ziegler Montagebau GmbH
 Anrede:           Sie
 Verhältnis:       neukunde
 Angebot kurz:     Vertriebscoaching, 4 Termine à 1 Tag, Start September;
