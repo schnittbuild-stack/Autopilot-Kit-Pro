@@ -76,4 +76,7 @@ Nie stilles Raten, nie ein Feld sinngemäß aus einem anderen ableiten.
 
 ## Testfälle für diese Schnittstelle
 
-`core/testfaelle/ketten/01-recherche-fast-leer.md`
+`core/testfaelle/ketten/` — **welche Fälle diese Schnittstelle prüfen, steht in
+den Fällen selbst**, oben in der Zeile „Schnittstelle". Hier steht bewusst keine
+Liste: Sie wäre mit dem nächsten Ketten-Fall falsch, und dann fiele es niemandem
+auf, weil sie ja gerade gepflegt wurde.
