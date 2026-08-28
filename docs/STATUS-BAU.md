@@ -227,8 +227,8 @@ Bisher angewandt: **fünfmal.**
    entstehen, in dem das Nein steht. Eine Rückfrage sagt darüber nichts. Die
    Bewertung war hier nicht umstellbar, ohne den Fall wertlos zu machen; also
    musste die Eingabe die Lücke schließen. Gemessen: vorher **0 von 3**, danach
-   2 von 3. Der verbliebene Lauf hängt an Pflicht-Fakt 1 (siehe offenen
-   Punkt 3), nicht an dieser Korrektur.
+   2 von 3 — der verbliebene Lauf fragte nach der Firma, weil die Adresse einen
+   Platzhalter trug. **Seit die Maskierung raus ist (WO-017): 3 von 3.**
 
 **Erledigt am 19.08.2026** (hier am 28.08. nachgetragen): `einwand-sparring/03`
 lieferte im Abschnitt `## Eingabe` die Bewertungslage mit und prüfte deshalb
@@ -1346,6 +1346,15 @@ des Auftraggebers brauchen.
    Vertrag also nicht greift. Ich hatte hier und im Vertrag „vollständig
    belegt" geschrieben — falsch, dreimal vom Review gemeldet, am 28.08.
    berichtigt. `docs/berichte/unbelegte-versprechen.md`.
+
+9. **Gegenprobe auf veraltete Bestandsaussagen** (28.08.). Vier ausgelieferte
+   Skill-Dateien nannten Testfälle und Ketten namentlich und waren dadurch
+   veraltet — der `outreach-personalisierer` stand in drei Ketten und wusste
+   es selbst nicht. **Die Zahlen sind nicht nachgezogen, sondern durch
+   Verweise auf die Quelle ersetzt** worden; eine berichtigte Liste wäre mit
+   dem nächsten Ketten-Fall wieder falsch. Je ein Fall der vier Helfer
+   dreimal nachgelaufen, viermal 3 von 3.
+   `docs/berichte/zahlen-gegenprobe.md`.
 
 **Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
 ist **zweimal beanstandet** worden — beim zweiten Mal, weil die neue Regel

@@ -353,9 +353,11 @@ still die teurere Listenrechnung.
 
 ## Testfälle
 
-`core/testfaelle/angebots-schreiber/` — fünf Fälle, jeder prüft eine andere
+`core/testfaelle/angebots-schreiber/` — jeder Fall prüft eine andere
 Bruchstelle: Rückfrage-Disziplin, Budget-Konflikt, Verbots-Kollision,
-abgelaufene Preisgrundlage, Vorrang der Kundenkonditionen.
+abgelaufene Preisgrundlage, Vorrang der Kundenkonditionen, fehlender Absender.
 
-`core/testfaelle/ketten/` — zusätzlich die beiden Schnittstellen-Fälle:
-Umgang mit dünner Recherche (01) und Übergabe ans Nachfassen (02).
+`core/testfaelle/ketten/` — zusätzlich die Schnittstellen-Fälle. **Welche
+diesen Helfer betreffen, steht in den Fällen selbst**, oben unter
+„Schnittstelle" — hier steht bewusst keine Liste, weil sie mit dem nächsten
+Ketten-Fall falsch wäre.

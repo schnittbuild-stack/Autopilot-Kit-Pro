@@ -1,0 +1,58 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-28T16:25:19Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "owner-auftrag mach weiter, sitzung 28.08.2026",
+    "valid_until": "2026-08-30T16:25:19Z"
+  },
+  "business_outcome": "Vier ausgelieferte Skill-Dateien nannten Testfaelle und Ketten namentlich und waren damit veraltet, sobald ein Fall dazukam. Der Kunde liest das als Bestandsaufnahme.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "core/skills/vertrieb/account-recherche.md",
+    "core/skills/vertrieb/angebots-schreiber.md",
+    "core/skills/vertrieb/follow-up-generator.md",
+    "core/skills/vertrieb/outreach-personalisierer.md",
+    "docs/STATUS-BAU.md",
+    "docs/berichte/unbelegte-versprechen.md",
+    "docs/berichte/zahlen-gegenprobe.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260828-021-zahlen-gegenprobe.json"
+  ],
+  "id": "WO-20260828-021",
+  "in_scope": [
+    "Die zwei letzten Review-Hinweise aus WO-020; eine Gegenprobe ueber alle Bestandsaussagen in core/ und adapter-claude/; die gefundenen Aufzaehlungen in vier Skills durch Verweise auf die Quelle ersetzen, statt die Zahlen nachzuziehen; je einen Fall der vier betroffenen Helfer dreimal nachlaufen lassen; Bericht, STATUS, Entscheidungen"
+  ],
+  "out_of_scope": [
+    "Keine Verhaltensregel in den Skills angefasst \u2014 nur die Testfall-Abschnitte am Ende; keine Testfaelle geaendert; keine Governance, keine reservierten Pfade; kein Vollnachlauf ueber alle 42 Faelle, der Umfang wird im Bericht ausdruecklich benannt"
+  ],
+  "repository_context": {
+    "base_commit": "5c51d047e4a595abb7457596c13babf7074ea38e",
+    "branch": "wo-021-zahlen-gegenprobe",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch verwerfen",
+  "status": "executing",
+  "title": "Gegenprobe auf veraltete Bestandsaussagen \u2014 vier Skills zeigen jetzt auf die Quelle",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

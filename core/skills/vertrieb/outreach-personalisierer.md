@@ -182,3 +182,7 @@ bei {{rolle}}.
 
 `core/testfaelle/outreach-personalisierer/` — dünne Faktenlage, erfundene Nähe,
 Massenversand.
+Dazu die Ketten-Fälle unter `core/testfaelle/ketten/`, die diesen Helfer als
+Empfänger führen. **Welche das sind, steht in den Fällen selbst**, oben unter
+„Schnittstelle" — hier steht bewusst keine Liste, weil sie mit dem nächsten
+Ketten-Fall falsch wäre.

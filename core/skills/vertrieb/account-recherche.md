@@ -243,4 +243,7 @@ geliefert, der private nicht, mit einem Satz Begründung und ohne Belehrung.
 
 `core/testfaelle/account-recherche/` — drei Fälle: leere Quellenlage,
 Namensverwechslung, Privatdaten-Grenze.
-Dazu `core/testfaelle/ketten/01-recherche-fast-leer.md` für die Übergabe.
+Dazu die Ketten-Fälle unter `core/testfaelle/ketten/`, die diesen Helfer als
+Sender führen. **Welche das sind, steht in den Fällen selbst**, oben unter
+„Schnittstelle" — hier steht bewusst keine Liste, weil sie mit dem nächsten
+Ketten-Fall falsch wäre.
