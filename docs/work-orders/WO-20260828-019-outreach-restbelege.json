@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/21#issuecomment-5453483449",
+    "reviewed_at": "2026-08-28T14:05:29Z",
+    "reviewed_payload_sha256": "25e860e38e927af61ab13251b7ac9912fe09414eb615bb4107638bb752d7f26f",
+    "reviewed_scope_sha256": "6c31a8e4bbf69629fdb9ac38b68af455e55e9e3bf33b6d8643429828f60e7275",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-28T13:39:13Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "0913f84edcd1495a7ee0b01a696792ed0729cae7748aaba01e9a0dd5b9d36d1a",
     "proof_ref": "owner-auftrag mach weiter, sitzung 28.08.2026",
     "valid_until": "2026-08-30T13:39:13Z"
   },
@@ -50,7 +50,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch verwerfen",
-  "status": "executing",
+  "status": "verified",
   "title": "Die letzten zwei unbelegten Vertragszeilen schliessen, vier Review-Hinweise",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
