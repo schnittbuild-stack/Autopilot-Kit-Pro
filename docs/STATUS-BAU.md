@@ -1348,12 +1348,14 @@ des Auftraggebers brauchen.
    berichtigt. `docs/berichte/unbelegte-versprechen.md`.
 
 9. **Gegenprobe auf veraltete Bestandsaussagen** (28.08.). Vier ausgelieferte
-   Skill-Dateien nannten Testfälle und Ketten namentlich und waren dadurch
-   veraltet — der `outreach-personalisierer` stand in drei Ketten und wusste
-   es selbst nicht. **Die Zahlen sind nicht nachgezogen, sondern durch
-   Verweise auf die Quelle ersetzt** worden; eine berichtigte Liste wäre mit
-   dem nächsten Ketten-Fall wieder falsch. Je ein Fall der vier Helfer
-   dreimal nachgelaufen, viermal 3 von 3.
+   Skill-Dateien **und zwei Verträge** nannten Testfälle und Ketten namentlich
+   und waren dadurch veraltet — der `outreach-personalisierer` stand in drei
+   Ketten und wusste es selbst nicht. **Die Zahlen sind nicht nachgezogen,
+   sondern durch Verweise auf die Quelle ersetzt** worden; eine berichtigte
+   Liste wäre mit dem nächsten Ketten-Fall wieder falsch. Je ein Fall der vier
+   Helfer dreimal nachgelaufen, viermal 3 von 3. **Die zwei Verträge fand
+   erst der Review** — mein Sweep suchte nach Zahlwörtern und übersah bloße
+   Pfad-Aufzählungen.
    `docs/berichte/zahlen-gegenprobe.md`.
 
 **Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
