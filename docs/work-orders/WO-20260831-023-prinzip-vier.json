@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/25#issuecomment-5476024988",
+    "reviewed_at": "2026-08-31T08:51:36Z",
+    "reviewed_payload_sha256": "3221306b6f7caa06e7b869e96de7c331085671c93d5f340f6b531473ababfc57",
+    "reviewed_scope_sha256": "4331bbd26a6b196a21bbf35d1885e90ccd49e29886059a5d00c98adb4fccd2b5",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-31T08:46:03Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "7f20ccdec00c4d0a06d5957067335d572d4031d10a7b4b68e81aabcc1d717b72",
     "proof_ref": "owner-auftrag kit fuer codex nutzbar machen, sitzung 31.08.2026",
     "valid_until": "2026-09-02T08:46:03Z"
   },
@@ -48,7 +48,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch verwerfen",
-  "status": "executing",
+  "status": "verified",
   "title": "Drei Claude-Spezifika aus den plattformneutralen Ordnern entfernen",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
