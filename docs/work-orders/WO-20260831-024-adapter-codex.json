@@ -1,0 +1,60 @@
+{
+  "acceptance_review": {
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/26#issuecomment-5479491549",
+    "reviewed_at": "2026-08-31T14:04:11Z",
+    "reviewed_payload_sha256": "14f92bf8247d8f0782fc4fccee27ad67813380372a3014f3d1ebad3f55540f90",
+    "reviewed_scope_sha256": "b3a11778887a36a2cabda22cc2d2a99ce565e967102e3dfe98e7af3273e6f508",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-31T13:48:46Z",
+    "payload_sha256": "9d98a45dc510751b6d6431cc9b90b634e308410aa9392befca31535bda1c75b2",
+    "proof_ref": "owner-auftrag kit fuer codex fertig machen, sitzung 31.08.2026",
+    "valid_until": "2026-09-02T13:48:46Z"
+  },
+  "business_outcome": "Der Bauplan sah zwei Plattformen von Anfang an vor, gebaut war eine. Die naechste Testperson hat kein Claude-Konto \u2014 ohne zweiten Adapter kann der 30-Minuten-Durchlauf nicht stattfinden, und der blockiert Phase 3.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "standard",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 3,
+    "max_parallel_readers": 2,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    ".github/workflows/release.yml",
+    "START_HIER.md",
+    "adapter-codex/INSTALLER.md",
+    "adapter-codex/vorlagen/AGENTS.vorlage.md",
+    "adapter-codex/vorlagen/START.vorlage.md",
+    "adapter-codex/vorlagen/STATUS.vorlage.md",
+    "adapter-codex/vorlagen/profil.vorlage.md",
+    "docs/STATUS-BAU.md",
+    "docs/berichte/adapter-codex.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260831-024-adapter-codex.json"
+  ],
+  "id": "WO-20260831-024",
+  "in_scope": [
+    "adapter-codex mit eigenem Installer und vier Vorlagen aus adapter-claude ableiten; die Gedaechtnisdatei heisst AGENTS.md; den Software-Check durch einen Zugriffs-Check ersetzen, weil die ChatGPT-App sich selbst aktualisiert; START_HIER.md in zwei Wege gabeln, mit der tatsaechlichen Bedienoberflaeche statt abstrakter Anweisungen; release.yml liefert beide Adapter aus und prueft, dass jeder vollstaendig und im Einstieg genannt ist; belegen, dass der Agent bei zwei Adaptern den richtigen waehlt"
+  ],
+  "out_of_scope": [
+    "Keine Aenderung an core/, an Skills, Vertraegen oder Testfaellen; kein Durchlauf des Codex-Installers von hier aus, weil Codex aus dieser Umgebung nicht startbar ist \u2014 was gemessen und was angenommen ist, steht im Kopf des Codex-Installers"
+  ],
+  "repository_context": {
+    "base_commit": "afc37446b7d19c91d600015acd14dd228a47530e",
+    "branch": "wo-024-adapter-codex",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch verwerfen; auf main bleibt der Claude-Adapter unveraendert",
+  "status": "verified",
+  "title": "Zweiter Adapter: das Kit laeuft auch mit ChatGPT/Codex",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}

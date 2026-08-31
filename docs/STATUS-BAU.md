@@ -1366,6 +1366,20 @@ des Auftraggebers brauchen.
     Wochenchecks dreimal nachgelaufen: 3 von 3.
     `docs/berichte/prinzip-vier.md`.
 
+11. **Zweiter Adapter: das Kit läuft auch mit ChatGPT/Codex** (31.08.).
+    `adapter-codex` mit eigenem Installer und vier Vorlagen, Gedächtnisdatei
+    `AGENTS.md`. **Vorher gemessen statt geraten:** Der Auftraggeber hat auf
+    seinem Rechner belegt, dass Codex eine `AGENTS.md` von selbst liest —
+    damit ließ sich der Installer fast eins zu eins übersetzen, nur der
+    Software-Check wich einem Zugriffs-Check. `START_HIER.md` gabelt sich in
+    zwei Wege. **Belegt:** Bei zwei Adaptern im Ordner greift der Agent 3 von
+    3 zum richtigen. **Ungeprüft:** Der Codex-Installer ist nie gelaufen — ich
+    kann Codex von hier nicht starten. **Offen:** `adapter-codex/**` und
+    `START_HIER.md` stehen in keinem `ordinary_paths`-Muster — heute
+    folgenlos, weil die Spur ohnehin zu ist, aber ein eigener Auftrag,
+    weil die Korrektur in `governance/policy.json` liegt.
+    `docs/berichte/adapter-codex.md`.
+
 **Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
 ist **zweimal beanstandet** worden — beim zweiten Mal, weil die neue Regel
 „nichts wird überschrieben" der Korrekturschleife aus `INSTALLER.md` widersprach

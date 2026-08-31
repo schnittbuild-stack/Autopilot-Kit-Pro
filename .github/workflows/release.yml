@@ -15,10 +15,47 @@ jobs:
           set -euo pipefail
           mkdir -p build/autopilot-kit
           cp START_HIER.md build/autopilot-kit/
-          cp -r core adapter-claude notfall build/autopilot-kit/
+          cp -r core adapter-claude adapter-codex notfall build/autopilot-kit/
           rm -f build/autopilot-kit/core/skills/vertrieb/_TEMPLATE_SKILL.md \
                 build/autopilot-kit/core/vertraege/_TEMPLATE_VERTRAG.md \
                 build/autopilot-kit/core/testfaelle/_TEMPLATE_TESTFALL.md
+
+      - name: Sicherung — jeder Adapter ist vollstaendig
+        run: |
+          set -euo pipefail
+          fehler=0
+          for a in build/autopilot-kit/adapter-*; do
+            for n in INSTALLER.md vorlagen/START.vorlage.md vorlagen/STATUS.vorlage.md vorlagen/profil.vorlage.md; do
+              if [ ! -f "$a/$n" ]; then
+                echo "::error::$a fehlt $n — ein unvollstaendiger Adapter laesst den Nutzer mitten in der Einrichtung stehen."
+                fehler=1
+              fi
+            done
+            # Genau eine Gedaechtnis-Vorlage je Adapter, egal wie sie heisst.
+            # Ohne Pipeline gezaehlt: Unter 'set -o pipefail' bricht ein leeres
+            # grep sonst ab, bevor die Fehlermeldung unten erscheint — der Build
+            # scheitert dann zwar, sagt aber nicht warum.
+            n=0
+            for v in "$a"/vorlagen/*.vorlage.md; do
+              [ -f "$v" ] || continue
+              case "$(basename "$v")" in START*|STATUS*|profil*) continue ;; esac
+              n=$((n+1))
+            done
+            if [ "$n" -ne 1 ]; then
+              echo "::error::$a hat $n Gedaechtnis-Vorlagen statt genau einer."
+              fehler=1
+            fi
+          done
+          # Der Einstieg muss jeden ausgelieferten Adapter nennen.
+          for a in build/autopilot-kit/adapter-*; do
+            name=$(basename "$a")
+            if ! grep -q "$name" build/autopilot-kit/START_HIER.md; then
+              echo "::error::START_HIER.md nennt $name nicht — dann findet der Nutzer diesen Weg nie."
+              fehler=1
+            fi
+          done
+          [ "$fehler" -ne 0 ] && { echo "Release abgebrochen."; exit 1; }
+          echo "Geprueft: jeder Adapter vollstaendig und im Einstieg genannt."
           # testfaelle-praxis/ liegt außerhalb der kopierten Ordner und kann
           # deshalb gar nicht erst mitkommen (Entscheidung 17.08.2026).
 
