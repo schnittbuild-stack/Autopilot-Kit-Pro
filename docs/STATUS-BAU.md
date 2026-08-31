@@ -1358,6 +1358,14 @@ des Auftraggebers brauchen.
    Pfad-Aufzählungen.
    `docs/berichte/zahlen-gegenprobe.md`.
 
+10. **Drei Verstöße gegen Bauprinzip 4 behoben** (31.08.). `core/` und
+    `notfall/` nannten an drei Stellen `CLAUDE.md` oder einen
+    `adapter-claude/`-Pfad. Aufgefallen bei der Frage, ob das Kit für Codex
+    bereit ist. Behoben nicht durch Aufzählung beider Plattformen, sondern
+    durch Verweis auf die Quelle, die den Namen kennt. Prüfpunkt 4 des
+    Wochenchecks dreimal nachgelaufen: 3 von 3.
+    `docs/berichte/prinzip-vier.md`.
+
 **Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
 ist **zweimal beanstandet** worden — beim zweiten Mal, weil die neue Regel
 „nichts wird überschrieben" der Korrekturschleife aus `INSTALLER.md` widersprach

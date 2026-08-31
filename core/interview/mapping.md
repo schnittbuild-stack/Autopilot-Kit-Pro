@@ -61,8 +61,11 @@ es jetzt genauso halten.
 | {{preisfrist}} | **Standardwert** — 6 Monate, keine Frage | `mein-profil.md` → „Wie lange ein Preisstand ohne Rückfrage gilt" | Wie lange ein Preisstand ohne Rückfrage gilt. Danach fragt der Skill **einmal** nach, statt stillschweigend weiterzurechnen (`core/unterlagen/preisregeln.md`) |
 
 Die Feldnamen in der dritten Spalte sind die Überschriften bzw. Zeilenanfänge
-aus `adapter-claude/vorlagen/profil.vorlage.md`. Wer dort eine Zeile umbenennt,
-ändert sie **hier zuerst** — sonst zeigt ein Verweis ins Leere.
+aus der Profil-Vorlage des jeweiligen Adapters
+(`adapter-*/vorlagen/profil.vorlage.md`). Wer dort eine Zeile umbenennt, ändert
+sie **hier zuerst** — sonst zeigt ein Verweis ins Leere. **Und in allen
+Adaptern**, nicht nur in dem, an dem gerade gearbeitet wird: Diese Tabelle gilt
+für alle.
 
 ## Frage 9 ist die Materialfrage
 

@@ -18,8 +18,9 @@ Ich nutze das Autopilot Kit, und es geht nicht weiter. Bitte geh so vor:
 1. Lies `system/STATUS.md` vollständig und sag mir in **einem** Satz, was dort
    als erledigt und was als nächster Schritt steht.
 2. Vergleiche das mit dem, was tatsächlich in meinem Ordner liegt: Gibt es
-   `mein-profil.md`, gibt es `START.md`, gibt es `CLAUDE.md`? Sag mir, wo
-   die Datei und die Wirklichkeit auseinandergehen.
+   `mein-profil.md`, gibt es `START.md`, gibt es die Gedächtnisdatei, die
+   `START.md` nennt? Sag mir, wo die Datei und die Wirklichkeit
+   auseinandergehen.
 3. Wenn eine Phase als erledigt markiert ist, es aber nicht ist: Sag mir das
    und mach genau diese Phase zu Ende. Fang nichts von vorn an, was schon
    fertig ist.

@@ -1,0 +1,56 @@
+{
+  "acceptance_review": {
+    "evidence_ref": null,
+    "reviewed_at": null,
+    "reviewed_payload_sha256": null,
+    "reviewed_scope_sha256": null,
+    "reviewer_subject": null,
+    "verdict": "PENDING"
+  },
+  "approval": {
+    "approver_subject": "github-owner:schnittbuild-stack",
+    "issued_at": "2026-08-31T08:46:03Z",
+    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "proof_ref": "owner-auftrag kit fuer codex nutzbar machen, sitzung 31.08.2026",
+    "valid_until": "2026-09-02T08:46:03Z"
+  },
+  "business_outcome": "Bauprinzip 4 verlangt, dass core/ ohne Claude-Spezifika auskommt. Drei Stellen verletzten das. Heute harmlos, weil es nur einen Adapter gibt \u2014 beim zweiten wird jede zu einer falschen Anweisung fuer die Haelfte der Kunden.",
+  "execution_budget": {
+    "context_mode": "minimum_necessary",
+    "effort_class": "small",
+    "full_regression_runs": 1,
+    "host_token_budget": null,
+    "max_builder_rounds": 2,
+    "max_parallel_readers": 1,
+    "max_review_rounds": 2,
+    "on_exhaustion": "stop_and_replan"
+  },
+  "file_allowlist": [
+    "core/interview/mapping.md",
+    "core/waechter/wochencheck.md",
+    "docs/STATUS-BAU.md",
+    "docs/berichte/prinzip-vier.md",
+    "docs/entscheidungen.md",
+    "docs/work-orders/WO-20260831-023-prinzip-vier.json",
+    "notfall/05-es-geht-nicht-weiter.md"
+  ],
+  "id": "WO-20260831-023",
+  "in_scope": [
+    "Die drei Stellen in core/waechter/wochencheck.md, core/interview/mapping.md und notfall/05 plattformneutral formulieren; sie zeigen statt auf einen Dateinamen auf die Quelle, die den Namen kennt; Pruefpunkt 4 des Wochenchecks dreimal nachlaufen lassen, weil die Aenderung verhaltensrelevant ist; Bericht, STATUS, Entscheidungen"
+  ],
+  "out_of_scope": [
+    "Kein Codex-Adapter \u2014 der wartet auf die Messung der Gedaechtnis-Mechanik durch den Auftraggeber; kein Testfall geaendert; keine Governance, keine reservierten Pfade; START_HIER.md bleibt vorerst Claude-spezifisch, weil sie erst mit dem zweiten Adapter gegabelt wird"
+  ],
+  "repository_context": {
+    "base_commit": "5a3c604ff72f366eee15705d92e5c10950bf797d",
+    "branch": "wo-023-prinzip-vier",
+    "repository": "schnittbuild-stack/Autopilot-Kit-Pro"
+  },
+  "risk_class": "B",
+  "rollback": "Branch verwerfen",
+  "status": "executing",
+  "title": "Drei Claude-Spezifika aus den plattformneutralen Ordnern entfernen",
+  "validation": [
+    "python3 -m unittest discover -s tests -p 'test*.py'"
+  ]
+}
