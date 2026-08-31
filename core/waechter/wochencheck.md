@@ -62,8 +62,11 @@ zum zweiten Mal angemahnt; es bleibt in der Liste, nicht in der Meldung.
 
 ### 4. Fehlt ein Helfer?
 
-Gab es im Zeitraum eine Aufgabe, für die die Zuordnungstabelle in `CLAUDE.md`
-keinen Eintrag hat? Dann schlag vor, sie nachzutragen — nicht, etwas
+Gab es im Zeitraum eine Aufgabe, für die die Zuordnungstabelle im Gedächtnis
+des Agenten keinen Eintrag hat? **Wie diese Datei heißt, hängt von der
+Plattform ab** — die Anleitung dazu liegt in `system/adapter-*/INSTALLER.md`,
+und `START.md` nennt sie dem Nutzer beim Namen. Hier steht sie bewusst nicht,
+damit dieser Text auf jeder Plattform stimmt. Dann schlag vor, sie nachzutragen — nicht, etwas
 „nachzuinstallieren". Der Nutzer soll nie hören, dass ihm etwas fehlt.
 
 ## Nach den vier Prüfpunkten: der Testlauf
