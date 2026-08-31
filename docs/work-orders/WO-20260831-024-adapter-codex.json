@@ -1,16 +1,16 @@
 {
   "acceptance_review": {
-    "evidence_ref": null,
-    "reviewed_at": null,
-    "reviewed_payload_sha256": null,
-    "reviewed_scope_sha256": null,
-    "reviewer_subject": null,
-    "verdict": "PENDING"
+    "evidence_ref": "readonly-review:https://github.com/schnittbuild-stack/Autopilot-Kit-Pro/pull/26#issuecomment-5479491549",
+    "reviewed_at": "2026-08-31T14:04:11Z",
+    "reviewed_payload_sha256": "14f92bf8247d8f0782fc4fccee27ad67813380372a3014f3d1ebad3f55540f90",
+    "reviewed_scope_sha256": "b3a11778887a36a2cabda22cc2d2a99ce565e967102e3dfe98e7af3273e6f508",
+    "reviewer_subject": "readonly-process:aef-review-runner",
+    "verdict": "PASS"
   },
   "approval": {
     "approver_subject": "github-owner:schnittbuild-stack",
     "issued_at": "2026-08-31T13:48:46Z",
-    "payload_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "payload_sha256": "9d98a45dc510751b6d6431cc9b90b634e308410aa9392befca31535bda1c75b2",
     "proof_ref": "owner-auftrag kit fuer codex fertig machen, sitzung 31.08.2026",
     "valid_until": "2026-09-02T13:48:46Z"
   },
@@ -52,7 +52,7 @@
   },
   "risk_class": "B",
   "rollback": "Branch verwerfen; auf main bleibt der Claude-Adapter unveraendert",
-  "status": "executing",
+  "status": "verified",
   "title": "Zweiter Adapter: das Kit laeuft auch mit ChatGPT/Codex",
   "validation": [
     "python3 -m unittest discover -s tests -p 'test*.py'"
