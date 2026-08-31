@@ -1374,7 +1374,11 @@ des Auftraggebers brauchen.
     Software-Check wich einem Zugriffs-Check. `START_HIER.md` gabelt sich in
     zwei Wege. **Belegt:** Bei zwei Adaptern im Ordner greift der Agent 3 von
     3 zum richtigen. **Ungeprüft:** Der Codex-Installer ist nie gelaufen — ich
-    kann Codex von hier nicht starten. `docs/berichte/adapter-codex.md`.
+    kann Codex von hier nicht starten. **Offen:** `adapter-codex/**` und
+    `START_HIER.md` stehen in keinem `ordinary_paths`-Muster — heute
+    folgenlos, weil die Spur ohnehin zu ist, aber ein eigener Auftrag,
+    weil die Korrektur in `governance/policy.json` liegt.
+    `docs/berichte/adapter-codex.md`.
 
 **Zum Weg dieser Änderung:** Sie lag als WO-011 schon einmal zum Review vor und
 ist **zweimal beanstandet** worden — beim zweiten Mal, weil die neue Regel

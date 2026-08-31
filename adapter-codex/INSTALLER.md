@@ -197,7 +197,10 @@ Genau diese drei Sätze, in seiner Sprache, ohne Aufzählung von Geprüftem:
 - [ ] Schreibrecht im Ordner geprüft — und bei Fehlschlag ein Weg in
       Alltagssprache angeboten, kein Befehl zum Kopieren.
 - [ ] Betriebssystem erkannt, **ohne** danach zu fragen.
-- [ ] Version geprüft; eine veraltete Version hat **nicht** angehalten.
+- [ ] Zugriff geklärt — und falls um Erlaubnis gebeten werden musste,
+      **einmal** angesagt, was kommt, und danach nicht mehr erwähnt.
+      **Nicht** nach einer Version gefragt und nichts zum Nachinstallieren
+      vorgeschlagen: Die App hält sich selbst aktuell.
 - [ ] Alle Ordner aus dem Aufbau angelegt, auch die leeren.
 - [ ] `system/` enthält `core/`, `adapter-codex/`, `notfall/`.
 - [ ] `system/STATUS.md` existiert und nennt Phase 1 als erledigt, mit dem

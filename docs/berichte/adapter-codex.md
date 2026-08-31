@@ -102,3 +102,34 @@ Sicherung schlägt in allen drei Fällen an.
 Der erste echte Beleg ist der 30-Minuten-Durchlauf selbst. Er misst dann
 **zwei** Dinge auf einmal — Kit und Adapter —, und das steht hier, damit es
 später niemand für ein reines Kit-Ergebnis hält.
+
+## Zwei Befunde aus dem Review
+
+**Die Checkliste widersprach dem neu geschriebenen Schritt.** Phase 1 verlangte
+weiter „Version geprüft", während Schritt 4 derselben Phase das Fragen nach
+einer Version ausdrücklich verbietet. Die Zeile war der einzige unveränderte
+Rest des ersetzten Schritts — die Fließtext-Übersetzung war vollständig, die
+Checkliste nicht. Nebenwirkung: Der neue Zugriffs-Check war die einzige
+Handlung der Phase ohne eigenen Checklisten-Punkt. Beides behoben.
+
+**Und die neue Sicherung hätte abbrechen können, bevor sie sagt, warum.** Die
+Zählung der Gedächtnis-Vorlagen lief über eine Pipeline; unter `set -o pipefail`
+beendet ein leeres `grep` das Skript, bevor die `::error::`-Meldung erscheint.
+Der Build wäre gescheitert — aber ohne Diagnose, und genau dann ist eine
+Sicherung wertlos.
+
+**Warum ich das nicht selbst gefunden habe:** Ich hatte es geprüft — in **zsh**,
+meiner Shell. Die Action läuft in **bash**, und dort verhält sich `set -e` bei
+Zuweisungen anders. Ein grüner Probelauf in der falschen Shell ist kein
+Probelauf. Die Zählung kommt jetzt ohne Pipeline aus, und beide Fälle sind in
+bash durchgespielt: guter Fall besteht, fehlende Vorlage schlägt **mit** Meldung
+an.
+
+## Ein offener Punkt für einen eigenen Auftrag
+
+`adapter-codex/**` und `START_HIER.md` stehen in keinem `ordinary_paths`-Muster
+— `adapter-claude/**` schon. Heute folgenlos, weil die ordentliche Merge-Spur
+über `activation_status: inactive` ohnehin zu ist. Sobald sie aufgeht, wäre
+jede Codex-Änderung gesperrt. Die Korrektur liegt in `governance/policy.json`,
+einem reservierten Pfad, und braucht deshalb einen eigenen Auftrag mit
+Owner-Freigabe.
